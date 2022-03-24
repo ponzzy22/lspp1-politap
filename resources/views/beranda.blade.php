@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LSP-P1 POLITAP</title>
+    <title>LSPP1-POLITAP &Diamond; BERANDA</title>
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
@@ -58,18 +58,18 @@
                 <!-- ICON SOSIAL MEDIA -->
                 <!-- /////////////////////////////////// -->
                 <ul class="navbar-nav navbar-nav-right">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" id="notificationDropdown" href="#">
                             <i class="fab fa-facebook mx-0"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator " id="notificationDropdown" target="_blank" href="https://www.instagram.com/lsppolitap/" >
                             <i class="fab fa-instagram mx-0"></i>
                         </a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" id="messageDropdown" href="#"  aria-expanded="false">
                             <i class="fab fa-youtube mx-0"></i>
                         </a>
                     </li>
@@ -400,7 +400,7 @@
                                                     <li><i class="icon-sm far fa-comment mr-2"></i>08965386474683</li>
                                                     <li><i class="icon-sm far fa-envelope mr-2"></i>lsp@politap.ac.id</li>
                                                     <li><i class="icon-sm fab fa-instagram mr-2"></i>
-                                                        <a href="https://www.instagram.com/lsppolitap/">lsppolitap</li>
+                                                        <a href="https://www.instagram.com/lsppolitap/" target="_blank">lsppolitap</li>
                                                     </a>
                                                 </ul>
                                             </p>
