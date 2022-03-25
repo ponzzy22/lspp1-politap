@@ -2,9 +2,13 @@
 @section('isi')
     
 <div class="page-header">
+    @foreach ($beranda as $apa)
+        
+    
     <h2>
-        LSP P1-POLITAP <br> Politeknik Negeri Ketapang
+        {{ $apa->judul }} <br> 
     </h2>
+    @endforeach
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
