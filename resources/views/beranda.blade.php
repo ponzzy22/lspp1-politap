@@ -83,42 +83,19 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="row portfolio-grid">
+
+                                                @foreach ($image2 as $asu)
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
-                                                        <img src="public/assets/images/photo-karyawan/1.png" alt="image" />
+                                                        <img src="{{ asset($asu->image) }}" alt="image" />
                                                         <figcaption>
                                                             <!-- <h5>Budi Pratomo Sibuea, S.ST.,M.ST</h5> -->
-                                                            <p>Ketua LSP P1 POLITAP </p>
+                                                            <p>{{ $asu->keterangan }}</p>
                                                         </figcaption>
                                                     </figure>
                                                 </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                                                    <figure class="effect-text-in">
-                                                        <img src="public/assets/images/photo-karyawan/4.png" alt="image" />
-                                                        <figcaption>
-                                                            <!-- <h5>Ahmad Ravi, S.Pd.,M.Pd</h5> -->
-                                                            <p>Manajer Mutu LSP P1 POLITAP </p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                                                    <figure class="effect-text-in">
-                                                        <img src="public/assets/images/photo-karyawan/3.png" alt="image" />
-                                                        <figcaption>
-                                                            <!-- <h5>Firmanilah Kamil, S.Pd.,M.Pd</h5> -->
-                                                            <p>Manajer Administrasi LSP P1 POLITAP</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
-                                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                                                    <figure class="effect-text-in">
-                                                        <img src="public/assets/images/photo-karyawan/2.png" alt="image" />
-                                                        <figcaption>
-                                                            <!-- <h5>A. Nova Zulfahmi, S.Pi.,M.Sc</h5> -->
-                                                            <p>Manajer Sertifikasi LSP P1 POLITAP</p>
-                                                        </figcaption>
-                                                    </figure>
-                                                </div>
+                                                @endforeach
+
                                             </div>
                                         </div>
                                     </div>

@@ -34,10 +34,10 @@ class Beranda_img1Controller extends Controller
 
         $beranda_img1 = Beranda_img1::create([
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/'.$new_image,
+            'image' => 'public/uploads/beranda_img1/'.$new_image,
         ]);
 
-        $image->move('public/uploads/', $new_image);
+        $image->move('public/uploads/beranda_img1/', $new_image);
         return redirect()->route('beranda_img1.index')->with('success','Artikel anda berhasil di Posting');
     }
 
@@ -69,11 +69,11 @@ class Beranda_img1Controller extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/', $new_image);
+            $image->move('public/uploads/beranda_img1/', $new_image);
 
             $beranda_img1_data = [
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/'.$new_image,
+                'image' => 'public/uploads/beranda_img1/'.$new_image,
             ];
         }
 
@@ -91,7 +91,11 @@ class Beranda_img1Controller extends Controller
 
     public function destroy($id)
     {
-        //
+        $beranda_img1 = Beranda_img1::findorfail($id);
+        $beranda_img1->delete();
+
+        return redirect()->back()->with('success','Kategori Berhasil Dihapus (Cek Tempat Sampah)');
+
     }
 
     

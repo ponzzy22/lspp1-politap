@@ -148,6 +148,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('beranda_img1.index') }}"> <i class="fas fa-ellipsis-h"></i> 2</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('beranda_img2.index') }}"> <i class="fas fa-ellipsis-h"></i> 3</a>
+                                </li>
                             </ul>
                         </div>
                     </li>
