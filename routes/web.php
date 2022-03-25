@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\Beranda_img1Controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\UiController;
-use App\Models\Beranda;
+use App\Models\Beranda_img1;
 
 Route::get('/', function () {
     return view('beranda');
@@ -14,6 +14,9 @@ Route::get('admin', function () {
 
 Route::resource('sett-beranda', UiController::class);
 Route::get('/', [UiController::class, 'judul_deskripsi']);
+Route::resource('beranda_img1', Beranda_img1Controller::class);
+// Route::get('/', [Beranda_img1Controller::class, 'image']);
+
 
 // Route::get('sett-beranda/index', [BerandaController::class, 'index']);
 // Route::get('sett-beranda/create', [BerandaController::class, 'create']);

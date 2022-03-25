@@ -33,8 +33,6 @@ class UiController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
         return redirect()->route('sett-beranda.index');
-
-
     }
 
 
