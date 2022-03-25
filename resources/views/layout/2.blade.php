@@ -9,11 +9,11 @@
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
-    <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style-admin.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/style-admin.css') }}">
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
 <body class="sidebar-mini">
@@ -23,11 +23,11 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="#"><img src="{{ asset('assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="#"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
-                <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo/mini3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
             <!-- MENU NAVIGASI -->
@@ -118,7 +118,7 @@
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ asset('assets/images/faces/thumb-v-v-1.jpg') }}" alt="image" /></a>
+                                <a href="#"> <img src="{{ asset('public/assets/images/faces/thumb-v-v-1.jpg') }}" alt="image" /></a>
                             </div>
                             <div class="profile-name">
                                 <p class="name">
@@ -135,7 +135,7 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('sett-beranda.index') }}">
                             <i class="fa fa-home menu-icon"></i>
                             <span class="menu-title">Beranda</span>
                         </a>
@@ -242,16 +242,16 @@
     <!-- /////////////////////////////////// -->
     <!-- JAVASCRIPTS -->
     <!-- /////////////////////////////////// -->
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('assets/js/misc.js') }}"></script>
-    <script src="{{ asset('assets/js/settings.js') }}"></script>
-    <script src="{{ asset('assets/js/todolist.js') }}"></script>
-    <script src="{{ asset('assets/js/google-maps.js') }}"></script>
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/assets/js/misc.js') }}"></script>
+    <script src="{{ asset('public/assets/js/settings.js') }}"></script>
+    <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
+    <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
 </body>
 
 

@@ -9,11 +9,11 @@
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
-    <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
 <body>
@@ -23,15 +23,15 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="https://www.kemdikbud.go.id/"><img src="{{ asset('assets/images/logo/1.png') }}" alt="logo" /></a>
-                <a class="navbar-brand brand-logo" href="https://politap.ac.id/"><img src="{{ asset('assets/images/logo/2.png') }}" alt="logo" /></a>
-                <a class="navbar-brand brand-logo" href="#"><img src="{{ asset('assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="https://www.kemdikbud.go.id/"><img src="public/assets/images/logo/1.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="https://politap.ac.id/"><img src="public/assets/images/logo/2.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="#"><img src="public/assets/images/logo/3.png" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
-                <a class="navbar-brand brand-logo-mini" href="https://www.kemdikbud.go.id/"><img src="{{ asset('assets/images/logo/mini1.png') }}" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="https://politap.ac.id/"><img src="{{ asset('assets/images/logo/mini2.png') }}" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('assets/images/logo/mini3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="https://www.kemdikbud.go.id/"><img src="public/assets/images/logo/mini1.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="https://politap.ac.id/"><img src="public/assets/images/logo/mini2.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="#"><img src="public/assets/images/logo/mini3.png" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
             <!-- MENU NAVIGASI -->
@@ -232,22 +232,22 @@
                                     <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                                         <div class="statistics-item">
                                             <div class="card-img">
-                                                <img src="{{ asset('assets/images/logo/bnsp.png') }}" width="150px" alt="">
+                                                <img src="public/assets/images/logo/bnsp.png" width="150px" alt="">
                                             </div>
                                         </div>
                                         <div class="statistics-item">
                                             <div class="card-img">
-                                                <img src="{{ asset('assets/images/logo/kemendikbud.png') }}" width="90px" alt="">
+                                                <img src="public/assets/images/logo/kemendikbud.png" width="90px" alt="">
                                             </div>
                                         </div>
                                         <div class="statistics-item">
                                             <div class="card-img">
-                                                <img src="{{ asset('assets/images/logo/politap.png') }}" width="90px" alt="">
+                                                <img src="public/assets/images/logo/politap.png" width="90px" alt="">
                                             </div>
                                         </div>
                                         <div class="statistics-item">
                                             <div class="card-img">
-                                                <img src="{{ asset('assets/images/logo/lsp.png') }}" width="110px" alt="">
+                                                <img src="public/assets/images/logo/lsp.png" width="110px" alt="">
                                             </div>
                                         </div>
                                         <!-- /////////////////////////////////// -->
@@ -288,16 +288,16 @@
     <!-- /////////////////////////////////// -->
     <!-- JAVASCRIPTS -->
     <!-- /////////////////////////////////// -->
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('assets/js/misc.js') }}"></script>
-    <script src="{{ asset('assets/js/settings.js') }}"></script>
-    <script src="{{ asset('assets/js/todolist.js') }}"></script>
-    <script src="{{ asset('assets/js/google-maps.js') }}"></script>
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <script src="public/assets/vendors/js/vendor.bundle.base.js"></script>
+    <script src="public/assets/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="public/assets/js/off-canvas.js"></script>
+    <script src="public/assets/js/hoverable-collapse.js"></script>
+    <script src="public/assets/js/misc.js"></script>
+    <script src="public/assets/js/settings.js"></script>
+    <script src="public/assets/js/todolist.js"></script>
+    <script src="public/assets/js/google-maps.js"></script>
+    <script src="public/assets/js/dashboard.js"></script>
+    <script src="public/assets/js/owl-carousel.js"></script>
 </body>
 
 

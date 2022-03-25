@@ -1,5 +1,6 @@
 @extends('layout/2')
 @section('isi')
+@include('layout/verifikasi')
 
 <div class="page-header">
     <h3>
@@ -21,11 +22,11 @@
 
 <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Basic Sortable Table</h4>
-      <p class="page-description">Add class <code>.sortable-table</code></p>
+      <h4 class="card-title">Pengaturan Judul & Deskripsi Web</h4>
       <div class="row">
+        @foreach ($beranda as $apa)
         <div class="table-sorter-wrapper col-lg-12 table-responsive">
-           <a href="{{ route('sett-beranda.create') }}"> <button type="button" class="btn btn-primary btn-icon-text">
+           <a href="{{ route('sett-beranda.edit', $apa->id) }}"> <button type="button" class="btn btn-primary btn-icon-text">
                 <i class="far fa-check-square btn-icon-prepend"></i>
                 Submit
               </button></a>
@@ -35,36 +36,31 @@
                     
                 
               <tr>
-                <th>#</th>
-                <th class="sortStyle">JUDUL<i class="fa fa-angle-down"></i></th>
-                <th class="sortStyle">DESKRIPSI <i class="fa fa-angle-down"></i></th>
-                <th class="sortStyle">AKSI<i class="fa fa-angle-down"></i></th>
+                <th class="sortStyle">Judul Utama<i class="fa fa-angle-down"></i></th>
+                <th class="sortStyle">Judul Baris Kedua <i class="fa fa-angle-down"></i></th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($beranda as $apa)
+             
               <tr>
-                <td>#</td>
-                <td><h4>{{ $apa->judul }}</h4></td>
-                <td>{{ $apa->deskripsi }}</td>
-                <td>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="{{ route('sett-beranda.edit', $apa->id) }}"><button type="button" class="btn btn-info">
-                          <i class="fas fa-pencil-alt"></i>
-                        </button></a>
-                        <button type="button" class="btn btn-success">
-                          <i class="far fa-calendar"></i>
-                        </button>
-                        <button type="button" class="btn btn-danger">
-                          <i class="fas fa-trash"></i>
-                        </button>
-                      </div>
-                </td>
-              </tr>
-              @endforeach
+                <td><h5>{{ $apa->judul }}</h5></td>
+                <td><h5>{{ $apa->judul2 }}</h5></td>
+              
             </tbody>
           </table>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title">
+                <h5>Deskripsi Web</h5>
+              </div>
+            </div>
+<div class="card-body">
+  <h6>{{ $apa->deskripsi }}</h6>
+</div>
+         
         </div>
+        </div>
+        @endforeach
       </div>
     </div>
   </div>

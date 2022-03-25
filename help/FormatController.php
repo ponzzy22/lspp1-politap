@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Beranda;
 use Illuminate\Http\Request;
 
-class BerandaController extends Controller
+class UiController extends Controller
 {
+
     public function index()
     {
         $beranda = Beranda::all();
@@ -18,10 +19,12 @@ class BerandaController extends Controller
         return view('admin/beranda/create');
     }
 
+
     public function store(Request $request)
     {
         $this->validate($request, [
-            'judul' => 'required|min:3'
+            'judul' => 'required',
+            'deskripsi' => 'required'
         ]);
 
 
@@ -29,15 +32,24 @@ class BerandaController extends Controller
             'judul' => $request->judul,
             'deskripsi' => $request->deskripsi,
         ]);
+        return redirect()->route('sett-beranda.index');
 
-        return redirect()->url('admin/beranda/index')->with('success','Kategori Anda Berhasil Disimpan');
+
     }
+
+
+    public function show($id)
+    {
+        //
+    }
+
 
     public function edit($id)
     {
         $beranda = Beranda::findorfail($id);
         return view('admin/beranda/edit', compact('beranda'));
     }
+
 
     public function update(Request $request, $id)
     {
@@ -53,6 +65,26 @@ class BerandaController extends Controller
 
         Beranda::whereId($id)->update($beranda_data);
 
-        return redirect()->url('sett-beranda/index');
+        return redirect()->route('sett-beranda.index');
     }
+
+
+    public function destroy($id)
+    {
+        // $category = Category::findorfail($id);
+        // $category->delete();
+
+        // return redirect()->back()->with('success','Kategori Berhasil Dihapus');
+    }
+
+    public function judul_deskripsi()
+    {
+        $beranda = Beranda::all();
+        return view('beranda', compact('beranda'));
+    }
+
+
+
+
+
 }

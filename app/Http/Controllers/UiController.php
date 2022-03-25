@@ -14,34 +14,8 @@ class UiController extends Controller
         return view('admin/beranda/index', compact('beranda'));
     }
 
-    public function create()
-    {
-        return view('admin/beranda/create');
-    }
 
 
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'judul' => 'required',
-            'deskripsi' => 'required'
-        ]);
-
-
-        $beranda = Beranda::create([
-            'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-        ]);
-        return redirect()->route('sett-beranda.index');
-
-
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
 
 
     public function edit($id)
@@ -54,28 +28,22 @@ class UiController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'judul' => 'required',
+            'judul' => 'required|max:16',
+            'judul2' => 'required|max:28',
             'deskripsi' => 'required'
         ]);
         
         $beranda_data = [
             'judul' => $request->judul,
+            'judul2' => $request->judul2,
             'deskripsi' => $request->deskripsi,
         ];
 
         Beranda::whereId($id)->update($beranda_data);
 
-        return redirect()->route('sett-beranda.index');
+        return redirect()->route('sett-beranda.index')->with('success','Kategori Anda Berhasil Disimpan');
     }
 
-
-    public function destroy($id)
-    {
-        // $category = Category::findorfail($id);
-        // $category->delete();
-
-        // return redirect()->back()->with('success','Kategori Berhasil Dihapus');
-    }
 
     public function judul_deskripsi()
     {

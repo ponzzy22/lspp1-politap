@@ -2,13 +2,13 @@
 @section('isi')
     
 <div class="page-header">
-    @foreach ($beranda as $apa)
+    @foreach ($beranda as $asu)
         
     
     <h2>
-        {{ $apa->judul }} <br> 
+        {{ $asu->judul }} <br> {{ $asu->judul2 }}
     </h2>
-    @endforeach
+    
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
@@ -32,13 +32,13 @@
                             <div class="card-img-top">
                                 <div class="owl-carousel owl-theme full-width">
                                     <div class="item">
-                                        <img src="{{ asset('assets/images/carousel/banner_12.jpg') }}" alt="image" />
+                                        <img src="public/assets/images/carousel/banner_12.jpg" alt="image" />
                                     </div>
                                     <div class="item">
-                                        <img src="{{ asset('assets/images/carousel/banner_2.jpg') }}" alt="image" />
+                                        <img src="public/assets/images/carousel/banner_2.jpg" alt="image" />
                                     </div>
                                     <div class="item">
-                                        <img src="{{ asset('assets/images/carousel/banner_1.jpg') }}" alt="image" />
+                                        <img src="public/assets/images/carousel/banner_1.jpg" alt="image" />
                                     </div>
                                 </div>
                             </div>
@@ -55,11 +55,12 @@
                                     <div class="card-title">
                                         <h5> <i class="fas fa-globe"></i> DESKRIPSI WEB</h5>
                                     </div>
+                                    <h4>{{ $asu->deskripsi }}</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
                     <br>
 
                     <!-- /////////////////////////////////// -->
@@ -77,7 +78,7 @@
                                             <div class="row portfolio-grid">
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
-                                                        <img src="{{ asset('assets/images/photo-karyawan/1.png') }}" alt="image" />
+                                                        <img src="public/assets/images/photo-karyawan/1.png" alt="image" />
                                                         <figcaption>
                                                             <!-- <h5>Budi Pratomo Sibuea, S.ST.,M.ST</h5> -->
                                                             <p>Ketua LSP P1 POLITAP </p>
@@ -86,7 +87,7 @@
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
-                                                        <img src="{{ asset('assets/images/photo-karyawan/4.png') }}" alt="image" />
+                                                        <img src="public/assets/images/photo-karyawan/4.png" alt="image" />
                                                         <figcaption>
                                                             <!-- <h5>Ahmad Ravi, S.Pd.,M.Pd</h5> -->
                                                             <p>Manajer Mutu LSP P1 POLITAP </p>
@@ -95,7 +96,7 @@
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
-                                                        <img src="{{ asset('assets/images/photo-karyawan/3.png') }}" alt="image" />
+                                                        <img src="public/assets/images/photo-karyawan/3.png" alt="image" />
                                                         <figcaption>
                                                             <!-- <h5>Firmanilah Kamil, S.Pd.,M.Pd</h5> -->
                                                             <p>Manajer Administrasi LSP P1 POLITAP</p>
@@ -104,7 +105,7 @@
                                                 </div>
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
-                                                        <img src="{{ asset('assets/images/photo-karyawan/2.png') }}" alt="image" />
+                                                        <img src="public/assets/images/photo-karyawan/2.png" alt="image" />
                                                         <figcaption>
                                                             <!-- <h5>A. Nova Zulfahmi, S.Pi.,M.Sc</h5> -->
                                                             <p>Manajer Sertifikasi LSP P1 POLITAP</p>

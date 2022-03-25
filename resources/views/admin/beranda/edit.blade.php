@@ -1,5 +1,7 @@
 @extends('layout/2')
+
 @section('isi')
+@include('layout/verifikasi')
 
 <div class="page-header">
     <h3>
@@ -11,9 +13,6 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
             <li class="breadcrumb-item"><a href="#">Setting-Beranda</a></li>
-            <li class="breadcrumb-item">
-                <a href="#"> </a>
-            </li>
             <li class="breadcrumb-item active" aria-current="page">create</li>
         </ol>
     </nav>
@@ -27,6 +26,11 @@
   <div class="form-group">
       <label for="exampleTextarea1">judul</label>
       <textarea class="form-control" id="exampleTextarea1" rows="4" name="judul" >{{ $beranda->judul }}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleTextarea1">judul2</label>
+      <textarea class="form-control" id="exampleTextarea1" rows="4" name="judul2" >{{ $beranda->judul2 }}</textarea>
     </div>
   
     <div class="form-group">
