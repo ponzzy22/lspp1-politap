@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Beranda;
+use App\Models\Beranda_img1;
 use Illuminate\Http\Request;
 
 class UiController extends Controller
@@ -14,10 +15,7 @@ class UiController extends Controller
         return view('admin/beranda/index', compact('beranda'));
     }
 
-
-
-
-
+    
     public function edit($id)
     {
         $beranda = Beranda::findorfail($id);
@@ -45,14 +43,11 @@ class UiController extends Controller
     }
 
 
-    public function judul_deskripsi()
+    public function ui_beranda()
     {
+        $image = Beranda_img1::all();
         $beranda = Beranda::all();
-        return view('beranda', compact('beranda'));
+        return view('beranda', compact('beranda', 'image'));
     }
-
-
-
-
 
 }

@@ -82,6 +82,14 @@
                 </button>
               </div>
           </form>
+
+          {{-- @foreach ($image as $asu)
+              
+         
+          <div id="lightgallery" class="row lightGallery">
+            <a href="../../images/samples/1280x768/1.jpg" class="image-tile"><img src="{{ asset('$asu->image') }}" alt="image small"></a>
+          </div>
+          @endforeach --}}
       </div>
     </div>
   </div>
