@@ -65,34 +65,6 @@
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-body">
-      <div class="card-title">
-        
-        <form action="{{ route('beranda_img1.store') }}" method="POST" enctype="multipart/form-data">
-          @csrf
-          
-              <label>Gambar Slide Banner</label>
-              <input type="file" class="form-control" name="image">
-          
-              <div class="form-action">
-                <button type="submit" class="btn btn-primary btn-icon-text">
-                  <i class="far fa-check-square btn-icon-prepend"></i>
-                  Update
-                </button>
-              </div>
-          </form>
-
-          {{-- @foreach ($image as $asu)
-              
-         
-          <div id="lightgallery" class="row lightGallery">
-            <a href="../../images/samples/1280x768/1.jpg" class="image-tile"><img src="{{ asset('$asu->image') }}" alt="image small"></a>
-          </div>
-          @endforeach --}}
-      </div>
-    </div>
-  </div>
 
   
   

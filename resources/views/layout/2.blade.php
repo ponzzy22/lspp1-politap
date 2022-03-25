@@ -135,10 +135,21 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('sett-beranda.index') }}">
-                            <i class="fa fa-home menu-icon"></i>
-                            <span class="menu-title">Beranda</span>
+                        <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
+                            <i class="fab fa-trello menu-icon"></i>
+                            <span class="menu-title">Profil</span>
+                            <i class="menu-arrow"></i>
                         </a>
+                        <div class="collapse" id="page-layouts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item d-none d-lg-block">
+                                    <a class="nav-link" href="{{ route('sett-beranda.index') }}"> <i class="fas fa-ellipsis-h"></i> 1</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('beranda_img1.index') }}"> <i class="fas fa-ellipsis-h"></i> 2</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
