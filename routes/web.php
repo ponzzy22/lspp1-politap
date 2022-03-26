@@ -16,4 +16,3 @@ Route::resource('sett-beranda', UiController::class);
 Route::get('/', [UiController::class, 'ui_beranda']);
 Route::resource('beranda_img1', Beranda_img1Controller::class);
 Route::resource('beranda_img2', Beranda_img2Controller::class);
-

@@ -79,7 +79,6 @@ class Beranda_img2Controller extends Controller
     {
         $beranda_img2 = Beranda_img2::findorfail($id);
         $beranda_img2->delete();
-
         return redirect()->back()->with('success','Kategori Berhasil Dihapus (Cek Tempat Sampah)');
     }
 }

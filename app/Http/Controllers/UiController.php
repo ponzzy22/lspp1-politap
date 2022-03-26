@@ -39,7 +39,6 @@ class UiController extends Controller
         ];
 
         Beranda::whereId($id)->update($beranda_data);
-
         return redirect()->route('sett-beranda.index')->with('success','Kategori Anda Berhasil Disimpan');
     }
 

@@ -14,13 +14,14 @@ class Beranda_img1Controller extends Controller
         return view('admin/beranda_img1/index', compact('beranda_img1'));
     }
 
+    
 
     public function create()
     {
-        // return view('admin/beranda_img1/index');
+        //
     }
 
-
+    
 
     public function store(Request $request)
     {
@@ -42,19 +43,20 @@ class Beranda_img1Controller extends Controller
     }
 
 
-
+    
     public function show($id)
     {
         $beranda_img1 = Beranda_img1::findorfail();
         return view('admin/beranda_img1/edit', compact('beranda_img1'));
     }
 
-
+    
     public function edit($id)
     {
-        // return view('admin/beranda_img1/edit');
+        //
     }
 
+    
 
     public function update(Request $request, $id)
     {
@@ -88,15 +90,12 @@ class Beranda_img1Controller extends Controller
     }
 
 
-
+    
     public function destroy($id)
     {
         $beranda_img1 = Beranda_img1::findorfail($id);
         $beranda_img1->delete();
-
         return redirect()->back()->with('success','Kategori Berhasil Dihapus (Cek Tempat Sampah)');
-
     }
-
     
 }

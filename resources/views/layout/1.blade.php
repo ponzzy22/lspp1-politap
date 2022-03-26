@@ -296,9 +296,10 @@
     <script src="public/assets/js/settings.js"></script>
     <script src="public/assets/js/todolist.js"></script>
     <script src="public/assets/js/google-maps.js"></script>
+    {{-- <script async="" defer="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7975.610675686746!2d109.98240116873171!3d-1.8201171048164577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e0518e6aef713bf%3A0xe05ee65e3627ba6c!2sPoliteknik%20Negeri%20Ketapang!5e0!3m2!1sid!2sid!4v1648253502012!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></script> --}}
+    <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnT63XUjqjPgXZ0lFTU_pdpfUX7swzTTM&amp;callback=initMap"></script>
     <script src="public/assets/js/dashboard.js"></script>
     <script src="public/assets/js/owl-carousel.js"></script>
 </body>
-
 
 </html>
