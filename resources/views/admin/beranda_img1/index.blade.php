@@ -3,102 +3,90 @@
 @include('layout/verifikasi')
 
 <div class="page-header">
-    <h3>
-    <i class="fas fa-cogs"></i> SETTINGAN HALAMAN BERANDA
-    </h3>
-    <!-- /////////////////////////////////// -->
-    <!-- BREADCRUMB -->
-    <!-- /////////////////////////////////// -->
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
-            <li class="breadcrumb-item"><a href="#">Setting-Beranda </a></li>
-            <li class="breadcrumb-item">
-                <a href="#"> </a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page"></li>
-        </ol>
-    </nav>
+  <h3>
+  <i class="fas fa-cogs"></i> SETTINGAN CAROUSEL
+  </h3>
+  <!-- /////////////////////////////////// -->
+  <!-- BREADCRUMB -->
+  <!-- /////////////////////////////////// -->
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+          <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+          {{-- <li class="breadcrumb-item">
+              <a href="#"> </a>
+          </li> --}}
+          <li class="breadcrumb-item active" aria-current="page">Carousel</li>
+      </ol>
+  </nav>
 </div><br>
 
-
-
+<!-- /////////////////////////////////// -->
+{{-- TAMBAH GAMBAR --}}
+<!-- /////////////////////////////////// -->
 <div class="card">
   <div class="card-body">
-    <div class="card-title">
-      
-      <form action="{{ route('beranda_img1.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        
-            <label>Gambar Slide Banner</label>
-            <input type="text" name="keterangan">
-            <input type="file" class="form-control" name="image">
-        
-            <div class="form-action">
-              <button type="submit" class="btn btn-primary btn-icon-text">
-                <i class="far fa-check-square btn-icon-prepend"></i>
-                Update
-              </button>
-            </div>
-        </form>
-    </div>
+    <h4 class="card-title">Tambah Carousel</h4>
+    <p class="card-description">
+      Persyaratan: Ukuran gambar harus -> 800x390px
+    </p>
+    <form action="{{ route('beranda_img1.store') }}"  class="forms-sample" method="POST" enctype="multipart/form-data">
+      @csrf
+      <div class="form-group">
+        <label>File upload</label>
+        <input type="file" class="form-control" name="image">        
+      </div>
+      <button type="submit" class="btn btn-success btn-icon-text">
+        <i class="fa fa-plus btn-icon-prepend"></i>
+        TAMBAH
+      </button>       
+      <a href="{{ route('beranda_img1.index') }}"><button type="button" class="btn btn-danger btn-icon-text">
+        <i class="fa fa-times btn-icon-prepend"></i>
+        BATAL
+      </button></a>    
+    </form>
   </div>
 </div>
 
-
+<!-- /////////////////////////////////// -->
+{{-- TAMPIL GAMBAR --}}
+<!-- /////////////////////////////////// -->
   <div class="card">
     <div class="card-body">
       <div class="card-title">
-        
-        
-
-    
-              
-        
-          {{-- <div id="lightgallery" class="row lightGallery">
-            @foreach ($beranda_img1 as $asu)
-            <input type="file" name="image">
-            <a href="#" class="image-tile"><img src="{{ asset($asu->image) }}" alt="image small"></a>
-            @endforeach 
-          </div> --}}
-
           <div class="card-columns">
+
             @foreach ($beranda_img1 as $asu)
             <div class="card">
               <img class="card-img-top" src="{{ asset($asu->image) }}" alt="Card image cap">
               <div class="card-body">
 
-                <form action="{{ route('beranda_img1.update', $asu->id) }}" method="post" enctype="multipart/form-data">
+              <form action="{{ route('beranda_img1.update', $asu->id) }}" method="post" enctype="multipart/form-data">
                   @csrf
                   @method('patch')
-                  <input type="text" name="keterangan">
                 <input type="file" class="form-control" name="image">
+                <br>
                 <div class="form-action">
-                  <button type="submit" class="btn btn-primary btn-icon-text">
+                  <button type="submit" class="btn btn-info btn-icon-text">
                     <i class="far fa-check-square btn-icon-prepend"></i>
                     Update
                   </button>
                 </div>
-              </form>
-
-                <p class="card-text">{{ $asu->keterangan }}</p>
-
-                <form action="{{ route('beranda_img1.destroy', $asu->id) }}" method="POST" onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
+              </form><br> 
+              
+              <form action="{{ route('beranda_img1.destroy', $asu->id) }}" method="POST" onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
                   @csrf
-                  @method('delete')
-                  
-                  <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                  @method('delete')                  
+                  <button type="submit" class="btn btn-danger btn-icon-text">
+                    <i class="fas fa-trash btn-icon-prepend"></i>
+                    Hapus
+                  </button>
               </form> 
-
               </div>
             </div>
             @endforeach 
-          </div>
-          
-        
+          </div>        
       </div>
     </div>
   </div>
-
-  
   
 @endsection

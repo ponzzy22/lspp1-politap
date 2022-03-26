@@ -32,14 +32,13 @@ class Beranda_img1Controller extends Controller
 
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
-
         $beranda_img1 = Beranda_img1::create([
             'keterangan' =>$request->keterangan,
             'image' => 'public/uploads/beranda_img1/'.$new_image,
         ]);
 
         $image->move('public/uploads/beranda_img1/', $new_image);
-        return redirect()->route('beranda_img1.index')->with('success','Artikel anda berhasil di Posting');
+        return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Posting');
     }
 
 
@@ -67,7 +66,6 @@ class Beranda_img1Controller extends Controller
         // ]);
 
         $beranda_img1 = Beranda_img1::findorfail($id);
-
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
@@ -78,7 +76,6 @@ class Beranda_img1Controller extends Controller
                 'image' => 'public/uploads/beranda_img1/'.$new_image,
             ];
         }
-
         else{
             $beranda_img1_data = [
                 'keterangan' =>$request->keterangan,
@@ -86,7 +83,7 @@ class Beranda_img1Controller extends Controller
         }
 
         $beranda_img1->update($beranda_img1_data);
-        return redirect()->route('beranda_img1.index')->with('success','Artikel anda berhasil di Update');
+        return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Update');
     }
 
 
@@ -95,7 +92,7 @@ class Beranda_img1Controller extends Controller
     {
         $beranda_img1 = Beranda_img1::findorfail($id);
         $beranda_img1->delete();
-        return redirect()->back()->with('success','Kategori Berhasil Dihapus (Cek Tempat Sampah)');
+        return redirect()->back()->with('success','Carousel Berhasil Dihapus');
     }
     
 }

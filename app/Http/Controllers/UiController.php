@@ -24,6 +24,7 @@ class UiController extends Controller
     }
 
 
+    
     public function update(Request $request, $id)
     {
         // $this->validate($request, [
@@ -31,16 +32,15 @@ class UiController extends Controller
         //     'judul2' => 'required|max:28',
         //     'deskripsi' => 'required'
         // ]);
-        
         $beranda_data = [
             'judul' => $request->judul,
             'judul2' => $request->judul2,
             'deskripsi' => $request->deskripsi,
         ];
-
         Beranda::whereId($id)->update($beranda_data);
-        return redirect()->route('sett-beranda.index')->with('success','Kategori Anda Berhasil Disimpan');
+        return redirect()->route('sett-beranda.index')->with('success','Data Anda Berhasil di Ubah');
     }
+
 
 
     public function ui_beranda()

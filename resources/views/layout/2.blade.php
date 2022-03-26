@@ -135,38 +135,27 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
-                            <i class="fab fa-trello menu-icon"></i>
-                            <span class="menu-title">Profil</span>
-                            <i class="menu-arrow"></i>
+                        <a class="nav-link" href={{ url('admin') }}>
+                            <i class="fa fa-dot-circle  menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
                         </a>
-                        <div class="collapse" id="page-layouts">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block">
-                                    <a class="nav-link" href="{{ route('sett-beranda.index') }}"> <i class="fas fa-ellipsis-h"></i> 1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('beranda_img1.index') }}"> <i class="fas fa-ellipsis-h"></i> 2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('beranda_img2.index') }}"> <i class="fas fa-ellipsis-h"></i> 3</a>
-                                </li>
-                            </ul>
-                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
-                            <i class="fab fa-trello menu-icon"></i>
-                            <span class="menu-title">Profil</span>
+                            <i class="fa fa-home menu-icon"></i>
+                            <span class="menu-title">Beranda</span>
                             <i class="menu-arrow"></i>
-                        </a>
+                        </a>                        
                         <div class="collapse" id="page-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item d-none d-lg-block">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Visi & Misi</a>
+                                    <a class="nav-link" href="{{ route('sett-beranda.index') }}">Judul & Deskripsi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Struktur Organisasi</a>
+                                    <a class="nav-link" href="{{ route('beranda_img1.index') }}">Carousel</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('beranda_img2.index') }}">Portofolio Karyawan</a>
                                 </li>
                             </ul>
                         </div>
@@ -266,6 +255,14 @@
     <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
     <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
     <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
+    <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
 </body>
 
 

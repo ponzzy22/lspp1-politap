@@ -14,10 +14,10 @@
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
-            <li class="breadcrumb-item"><a href="#">Beranda </a></li>
-            <li class="breadcrumb-item">
+            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+            {{-- <li class="breadcrumb-item">
                 <a href="#"> </a>
-            </li>
+            </li> --}}
             <li class="breadcrumb-item active" aria-current="page"></li>
 
         </ol>
