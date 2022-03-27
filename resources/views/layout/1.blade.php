@@ -130,7 +130,7 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ url('/') }}">
                             <i class="fa fa-home menu-icon"></i>
                             <span class="menu-title">Beranda</span>
                         </a>
@@ -144,10 +144,10 @@
                         <div class="collapse" id="page-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item d-none d-lg-block">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-v menu-icon"></i> Visi & Misi</a>
+                                    <a class="nav-link" href="{{ url('profil') }}"> <i class="fas fa-ellipsis-v menu-icon"></i>LSP P1 - POLITAP</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-v menu-icon"></i> Struktur Organisasi</a>
+                                    <a class="nav-link" href="{{ url('strorg') }}"> <i class="fas fa-ellipsis-v menu-icon"></i> Struktur Organisasi</a>
                                 </li>
                             </ul>
                         </div>

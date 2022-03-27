@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Beranda;
 use App\Models\Beranda_img1;
 use App\Models\Beranda_img2;
+use App\Models\F_profil;
 use Illuminate\Http\Request;
 
 class UiController extends Controller
@@ -49,6 +50,14 @@ class UiController extends Controller
         $image = Beranda_img1::all();
         $beranda = Beranda::all();
         return view('beranda', compact('beranda', 'image', 'image2'));
+    }
+
+
+
+    public function profil()
+    {
+        $profil = F_profil::all();
+        return view('front/profil', compact('profil'));
     }
 
 }

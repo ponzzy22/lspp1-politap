@@ -143,7 +143,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                             <i class="fa fa-home menu-icon"></i>
-                            <span class="menu-title">Beranda</span>
+                            <span class="menu-title">Frontend Web</span>
                             <i class="menu-arrow"></i>
                         </a>                        
                         <div class="collapse" id="page-layouts">
@@ -156,6 +156,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('beranda_img2.index') }}">Portofolio Karyawan</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('f_profil.index') }}">Profil LSP P1-POLITAP</a>
                                 </li>
                             </ul>
                         </div>

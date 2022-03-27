@@ -22453,7 +22453,8 @@ code {
 }
 
 .stretch-card>.card {
-    width: 100%;
+    width: 100px;
+    height: 200px;
     min-width: 100%;
 }
 
@@ -31381,14 +31382,14 @@ body.avgrund-active {
 .owl-carousel.full-width .owl-nav .owl-prev,
 .owl-carousel.full-width .owl-nav .owl-next {
     background: transparent;
-    color: #ffffff;
+    color: #000;
 }
 
 .owl-carousel.full-width .owl-nav .owl-prev i,
 .owl-carousel.full-width .owl-nav .owl-next i {
     width: 60px;
     height: 60px;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border-radius: 100%;
 }
 
