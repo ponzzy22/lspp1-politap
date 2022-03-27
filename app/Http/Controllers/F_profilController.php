@@ -15,12 +15,6 @@ class F_profilController extends Controller
     }
 
 
-    public function create()
-    {
-        //
-    }
-
-
     public function store(Request $request)
     {
         $image = $request->image;
@@ -36,12 +30,6 @@ class F_profilController extends Controller
         return redirect()->route('f_profil.index')->with('success','Portofolio anda berhasil di Posting');
     }
 
-    
-
-    public function show($id)
-    {
-        //
-    }
 
 
     public function edit($id)
@@ -51,10 +39,10 @@ class F_profilController extends Controller
     }
 
 
+
     public function update(Request $request, $id)
     {
         $profil = F_profil::findorfail($id);
-
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
@@ -75,14 +63,7 @@ class F_profilController extends Controller
                 'motto' =>$request->motto,
             ];
         }
-
         $profil->update($profil_data);
         return redirect()->route('f_profil.index')->with('success','Data Profil Web anda berhasil di Update');
-    }
-
-
-    public function destroy($id)
-    {
-        //
     }
 }

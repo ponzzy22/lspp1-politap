@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>ADMIN &diamond; LSPP1-POLITAP</title>
+    <title>Admin | LSP P1-POLITAP</title>
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
@@ -23,7 +23,7 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="#"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ url('admin') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
@@ -46,7 +46,7 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5>WEBSITE ADMINISTRASI <i class="fas fa-ellipsis-h"></i> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITEKNIK NEGERI KETAPANG</h5>
+                            <h5>WEBSITE ADMINISTRASI <i class="fas fa-ellipsis-h"></i> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP</h5>
                         </div>
                     </li>
                 </ul>
@@ -60,7 +60,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ url('/') }}">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
                             <i class="fas fa-database mx-0"></i>
                         </a>
                     </li>
@@ -159,6 +159,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('f_profil.index') }}">Profil LSP P1-POLITAP</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('strorg.index') }}">Struktur Organisasi</a>
                                 </li>
                             </ul>
                         </div>
@@ -266,6 +269,8 @@
     <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
     <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
     <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
+    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
 </body>
 
 

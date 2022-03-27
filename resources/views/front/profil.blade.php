@@ -4,7 +4,7 @@
 
 <div class="page-header">
   <h3>
-  <i class="fas fa-building"></i> PROFIL LSP P1-POLITAP
+  <i class="fas fa-building"></i> Profil LSP P1-POLITAP
   </h3>
 
   <!-- /////////////////////////////////// -->
@@ -54,45 +54,41 @@
             <div class="tab-pane fade  active show" id="pills-bro" role="tabpanel" aria-labelledby="pills-profile-tab-custom">
               <div class="media">
                 @foreach ($profil as $asu)
-                <img class="mr-3 w-25 rounded" src="{{ asset($asu->image) }}" alt="sample image">
-                
-                    
-               
-                <div class="media-body">
-                  <p>
+                <img class="mr-1 w-25 rounded" src="{{ asset($asu->image) }}" alt="sample image">
+                  <div class="col-md-10">
+                  <h6>
                     {{ $asu->profil }}
-                  </p>
-                </div>
+                  </h6>
+                  </div>
               </div>
             </div>
             <div class="tab-pane fade" id="pills-music" role="tabpanel" aria-labelledby="pills-contact-tab-custom">
               <div class="media">
                 <img class="mr-3 w-25 rounded" src="public/assets/images/carousel/banner_12.jpg" alt="sample image">
-                <div class="media-body">
-                  <p>
+                <div class="col-md-10">
+                  <h6>
                       {{ $asu->motto }}
-                  </p>
+                  </h6>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="pills-energy" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
               <div class="media">
                 <img class="mr-3 w-25 rounded" src="public/assets/images/logo/lsp.png" alt="sample image">
-                <div class="media-body">
-                  <p>
+                <div class="col-md-10">
+                  <h6>
                     {{ $asu->visi }}  
-                  </p>
+                  </h6>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="pills-asu" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
               <div class="media">
                 <img class="mr-3 w-25 rounded" src="public/assets/images/logo/lsp.png" alt="sample image">
-                <div class="media-body">
-
-                  <p>
+                <div class="col-md-10">
+                  <h6>
                     {{ $asu->misi }}  
-                  </p>
+                  </h6>
                   @endforeach
                 </div>
               </div>

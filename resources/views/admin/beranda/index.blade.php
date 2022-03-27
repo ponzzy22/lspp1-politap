@@ -4,7 +4,7 @@
 
 <div class="page-header">
     <h3>
-    <i class="fas fa-cogs"></i>SETTINGAN HALAMAN BERANDA
+    <i class="fas fa-cogs"></i> Setting Judul & Deskripsi
     </h3>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
@@ -62,6 +62,6 @@
         @endforeach
       </div>
     </div>
-  </div>
-  
+</div>
+
 @endsection

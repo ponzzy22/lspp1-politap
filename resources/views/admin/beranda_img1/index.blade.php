@@ -4,7 +4,7 @@
 
 <div class="page-header">
   <h3>
-  <i class="fas fa-cogs"></i> SETTINGAN CAROUSEL
+  <i class="fas fa-cogs"></i> Settingan Carousel
   </h3>
   <!-- /////////////////////////////////// -->
   <!-- BREADCRUMB -->
@@ -88,5 +88,4 @@
       </div>
     </div>
   </div>
-  
 @endsection

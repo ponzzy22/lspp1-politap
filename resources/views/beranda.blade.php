@@ -2,9 +2,7 @@
 @section('isi')
     
 <div class="page-header">
-    @foreach ($beranda as $jodi)
-        
-    
+    @foreach ($beranda as $jodi)      
     <h2>
         {{ $jodi->judul }} <br> {{ $jodi->judul2 }}
     </h2>
@@ -19,39 +17,30 @@
                 <a href="#"> </a>
             </li> --}}
             <li class="breadcrumb-item active" aria-current="page"></li>
-
         </ol>
     </nav>
     @endforeach
 </div><br>
 
- <!-- /////////////////////////////////// -->
-                    <!-- CAROUSEL -->
-                    <!-- /////////////////////////////////// -->
-                    
-                    <div class="col-lg-12 grid-margin stretch-card">
-                        <div class="card">
-                            
-                            <div class="card-img-top">
-                                
-                                <div class="owl-carousel owl-theme full-width">
-                                    @foreach ($image as $asu)
-                                    <div class="item">
-                                        <img src="{{ asset($asu->image) }}" alt="image" />
-                                    </div>@endforeach
-                                </div>
-                                
-                            </div>
-                           
-                        </div>
-                    </div>
+<!-- /////////////////////////////////// -->
+<!-- CAROUSEL -->
+<!-- /////////////////////////////////// -->
 
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">                            
+        <div class="card-img-top">                                
+            <div class="owl-carousel owl-theme full-width">
+                @foreach ($image as $asu)
+                <div class="item">
+                    <img src="{{ asset($asu->image) }}" alt="image" />
+                </div>@endforeach
+            </div>            
+        </div>
+    </div>
+</div>
                     <!-- /////////////////////////////////// -->
                     <!-- DESKRIPSI WEB -->
-                    <!-- /////////////////////////////////// -->
-                    
-                        
-                    
+                    <!-- /////////////////////////////////// -->     
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
@@ -66,8 +55,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
-                    
+                    </div>                   
                     <br>
 
                     <!-- /////////////////////////////////// -->
@@ -83,7 +71,6 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="row portfolio-grid">
-
                                                 @foreach ($image2 as $asu)
                                                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                                     <figure class="effect-text-in">
@@ -95,16 +82,13 @@
                                                     </figure>
                                                 </div>
                                                 @endforeach
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <br>
+                    </div><br>
 
                     <!-- /////////////////////////////////// -->
                     <!-- PETA -->

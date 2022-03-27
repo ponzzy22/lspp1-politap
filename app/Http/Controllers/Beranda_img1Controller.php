@@ -16,13 +16,6 @@ class Beranda_img1Controller extends Controller
 
     
 
-    public function create()
-    {
-        //
-    }
-
-    
-
     public function store(Request $request)
     {
         // $this->validate($request, [
@@ -36,7 +29,6 @@ class Beranda_img1Controller extends Controller
             'keterangan' =>$request->keterangan,
             'image' => 'public/uploads/beranda_img1/'.$new_image,
         ]);
-
         $image->move('public/uploads/beranda_img1/', $new_image);
         return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Posting');
     }
@@ -47,12 +39,6 @@ class Beranda_img1Controller extends Controller
     {
         $beranda_img1 = Beranda_img1::findorfail();
         return view('admin/beranda_img1/edit', compact('beranda_img1'));
-    }
-
-    
-    public function edit($id)
-    {
-        //
     }
 
     
@@ -81,7 +67,6 @@ class Beranda_img1Controller extends Controller
                 'keterangan' =>$request->keterangan,
             ];
         }
-
         $beranda_img1->update($beranda_img1_data);
         return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Update');
     }

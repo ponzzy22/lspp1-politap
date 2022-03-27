@@ -1,3 +1,8 @@
+/*------------------------------------------------------------------
+
+-------------------------------------------------------------------*/
+
+
 /*-------------------------------------------------------------------
   ===== Table of Contents =====
 
@@ -15322,7 +15327,7 @@ input[type="button"].btn-block {
 }
 
 .card-subtitle2 {
-    margin-top: 0.400rem;
+    margin-top: 0.800rem;
     margin-bottom: 0.400rem;
     margin-left: -0.080rem;
     color: #ffffff;
@@ -15550,7 +15555,6 @@ input[type="button"].btn-block {
 
 .breadcrumb-item+.breadcrumb-item {
     padding-left: 0.5rem;
-    color: #ffffff;
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
@@ -15562,7 +15566,6 @@ input[type="button"].btn-block {
 
 .breadcrumb-item+.breadcrumb-item:hover::before {
     text-decoration: underline;
-    color: #ebf3fa;
 }
 
 .breadcrumb-item+.breadcrumb-item:hover::before {
@@ -15570,7 +15573,7 @@ input[type="button"].btn-block {
 }
 
 .breadcrumb-item.active {
-    color: #ffffff;
+    color: #495057;
 }
 
 .pagination,
@@ -20402,7 +20405,7 @@ input:focus {
 }
 
 
-/* josidebar */
+/* Sidebar */
 
 .sidebar {
     min-height: calc(100vh - 70px);
@@ -20500,7 +20503,7 @@ input:focus {
     font-size: 0.875rem;
     line-height: 1;
     vertical-align: middle;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .sidebar .nav .nav-item .nav-link .badge {
@@ -20565,7 +20568,7 @@ input:focus {
 .sidebar .nav .nav-item.nav-profile .profile-name .name,
 .sidebar .nav .nav-item.nav-profile .profile-name .designation {
     font-family: "PTSans", sans-serif;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 0;
     line-height: 1.5;
 }
@@ -20597,19 +20600,15 @@ input:focus {
     }
 }
 
-
-/* text dan hightligth menu */
-
 .sidebar .nav:not(.sub-menu)>.nav-item:hover:not(.nav-profile)>.nav-link {
-    background: #392c70;
-    color: #ffffff;
+    background: #f6f6f6;
+    color: #8d9498;
 }
 
 .sidebar .nav.sub-menu {
     margin-top: 0;
     list-style: none;
     padding: 0 0 0 4.25rem;
-    font-weight: bold;
 }
 
 .sidebar .nav.sub-menu .nav-item {
@@ -20642,11 +20641,8 @@ input:focus {
     margin-right: -1rem;
 }
 
-
-/* text submenu */
-
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
-    color: #ffffff;
+    color: #000;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover:before {
@@ -20662,11 +20658,8 @@ input:focus {
     color: #392C70;
 }
 
-
-/* warna hightlight submenu */
-
 .sidebar .nav.sub-menu .nav-item:hover {
-    background: #392c70;
+    background: transparent;
 }
 
 .sidebar-dark .sidebar {
@@ -22453,8 +22446,7 @@ code {
 }
 
 .stretch-card>.card {
-    width: 100px;
-    height: 200px;
+    width: 100%;
     min-width: 100%;
 }
 
@@ -24772,12 +24764,12 @@ code {
 /* inverse breadcrumb */
 
 .bg-inverse-primary {
-    background: #6a005b;
-    border-color: #6a005b;
+    background: #6f5cbf;
+    border-color: #392C70;
 }
 
 .bg-inverse-primary .breadcrumb-item {
-    color: #6a005b;
+    color: #392C70;
 }
 
 .bg-inverse-primary .breadcrumb-item:before {
@@ -24793,20 +24785,20 @@ code {
 }
 
 .bg-inverse-primary.breadcrumb-custom .breadcrumb-item {
-    background: #6a005b;
+    background: #6f5cbf;
 }
 
 .bg-inverse-primary.breadcrumb-custom .breadcrumb-item a {
-    color: #ffffff;
+    color: #392C70;
     border: none;
 }
 
 .bg-inverse-primary.breadcrumb-custom .breadcrumb-item a:before {
-    border-left-color: #6a005b;
+    border-left-color: #6f5cbf;
 }
 
 .bg-inverse-primary.breadcrumb-custom .breadcrumb-item span {
-    color: #6a005b;
+    color: #392C70;
 }
 
 .bg-inverse-primary.breadcrumb-custom .breadcrumb-item:last-child {
@@ -31382,14 +31374,14 @@ body.avgrund-active {
 .owl-carousel.full-width .owl-nav .owl-prev,
 .owl-carousel.full-width .owl-nav .owl-next {
     background: transparent;
-    color: #000;
+    color: #ffffff;
 }
 
 .owl-carousel.full-width .owl-nav .owl-prev i,
 .owl-carousel.full-width .owl-nav .owl-next i {
     width: 60px;
     height: 60px;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 100%;
 }
 

@@ -4,7 +4,7 @@
 
 <div class="page-header">
   <h3>
-  <i class="fas fa-cogs"></i> SETTINGAN PORTOFOLIO KARYAWAN
+  <i class="fas fa-cogs"></i> Settingan Portofolio Karyawan
   </h3>
 
   <!-- /////////////////////////////////// -->
@@ -82,8 +82,7 @@
 
                       <form action="{{ route('beranda_img2.destroy', $asu->id) }}" method="POST" onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
                           @csrf
-                          @method('delete')
-                    
+                          @method('delete')                    
                           <button type="submit" class="btn btn-danger btn-icon-text">
                             <i class="fas fa-trash btn-icon-prepend"></i>
                             Hapus
@@ -96,8 +95,6 @@
         </div>        
       </div>
     </div>
-  </div>
-
-  
+  </div>  
   
 @endsection

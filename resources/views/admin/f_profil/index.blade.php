@@ -4,7 +4,7 @@
 
 <div class="page-header">
   <h3>
-  <i class="fas fa-cogs"></i> SETTINGAN CAROUSEL
+  <i class="fas fa-cogs"></i> Settingan Profil
   </h3>
   <!-- /////////////////////////////////// -->
   <!-- BREADCRUMB -->
@@ -15,13 +15,13 @@
           {{-- <li class="breadcrumb-item">
               <a href="#"> </a>
           </li> --}}
-          <li class="breadcrumb-item active" aria-current="page">Carousel</li>
+          <li class="breadcrumb-item active" aria-current="page">Profil</li>
       </ol>
   </nav>
 </div><br>
 
 <!-- /////////////////////////////////// -->
-{{-- TAMBAH GAMBAR --}}
+{{-- SETTING PROFIL --}}
 <!-- /////////////////////////////////// -->
 @foreach ($profil as $asu)
 <div class="faq-section">
@@ -48,7 +48,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
@@ -56,7 +55,7 @@
                 Visi LSP P1 - POLITAP
             </a>
           </h5>
-        </div>
+        </div>        
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-1">
           <div class="card-body">
             {{ $asu->visi }}
@@ -95,7 +94,7 @@
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapseThree">
-              logo LSP P1 - POLITAP
+              Logo LSP P1 - POLITAP
             </a>
           </h5>
         </div>

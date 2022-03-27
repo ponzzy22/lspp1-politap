@@ -6,6 +6,7 @@ use App\Models\Beranda;
 use App\Models\Beranda_img1;
 use App\Models\Beranda_img2;
 use App\Models\F_profil;
+use App\Models\Strorg;
 use Illuminate\Http\Request;
 
 class UiController extends Controller
@@ -18,6 +19,7 @@ class UiController extends Controller
     }
 
     
+
     public function edit($id)
     {
         $beranda = Beranda::findorfail($id);
@@ -43,7 +45,6 @@ class UiController extends Controller
     }
 
 
-
     public function ui_beranda()
     {
         $image2 = Beranda_img2::orderBy('created_at','desc')->take(4)->get();
@@ -53,11 +54,17 @@ class UiController extends Controller
     }
 
 
-
     public function profil()
     {
         $profil = F_profil::all();
         return view('front/profil', compact('profil'));
+    }
+
+
+    public function show_strorg()
+    {
+        $strorg = Strorg::all();
+        return view('front/strorg', compact('strorg'));
     }
 
 }

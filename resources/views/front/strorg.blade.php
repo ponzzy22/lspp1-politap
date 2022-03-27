@@ -4,7 +4,7 @@
 
 <div class="page-header">
     <h3>
-    <i class="fas fa-users"></i> STRUKTUR ORGANISASI LSP P1-POLITAP
+    <i class="fas fa-users"></i> Struktur Organisasi LSP P1-POLITAP
     </h3>
 
     <!-- /////////////////////////////////// -->
@@ -24,7 +24,11 @@
     <!-- /////////////////////////////////// -->
     <!-- MAIN WEB -->
     <!-- /////////////////////////////////// -->
-    <img src="public/assets/images/carousel/banner_1.jpg" width="1000px" style="position: relative" alt="image small">
-
-
+@foreach ($strorg as $asu)
+<div class="card">
+    <div class="card-body">
+        <img src="{{ asset($asu->image) }}" width="500px" style="position: relative" alt="image small">
+    </div>
+</div>
+@endforeach
 @endsection

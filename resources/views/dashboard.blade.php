@@ -2,9 +2,9 @@
 @section('isi')
 
 <div class="page-header">
-    <h5>
-        DASHBOARD
-    </h5>
+    <h3>
+        <i class="fas fa-cogs"></i>  Dashboard
+    </h3>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->

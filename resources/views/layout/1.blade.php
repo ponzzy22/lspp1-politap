@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LSPP1-POLITAP &Diamond; BERANDA</title>
+    <title>LSP P1-POLITAP | 2022</title>
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
@@ -25,13 +25,13 @@
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo" href="https://www.kemdikbud.go.id/"><img src="public/assets/images/logo/1.png" alt="logo" /></a>
                 <a class="navbar-brand brand-logo" href="https://politap.ac.id/"><img src="public/assets/images/logo/2.png" alt="logo" /></a>
-                <a class="navbar-brand brand-logo" href="#"><img src="public/assets/images/logo/3.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ url('/') }}"><img src="public/assets/images/logo/3.png" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
                 <a class="navbar-brand brand-logo-mini" href="https://www.kemdikbud.go.id/"><img src="public/assets/images/logo/mini1.png" alt="logo" /></a>
                 <a class="navbar-brand brand-logo-mini" href="https://politap.ac.id/"><img src="public/assets/images/logo/mini2.png" alt="logo" /></a>
-                <a class="navbar-brand brand-logo-mini" href="#"><img src="public/assets/images/logo/mini3.png" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{{ url('/') }}"><img src="public/assets/images/logo/mini3.png" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
             <!-- MENU NAVIGASI -->
@@ -147,7 +147,7 @@
                                     <a class="nav-link" href="{{ url('profil') }}"> <i class="fas fa-ellipsis-v menu-icon"></i>LSP P1 - POLITAP</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('strorg') }}"> <i class="fas fa-ellipsis-v menu-icon"></i> Struktur Organisasi</a>
+                                    <a class="nav-link" href="{{ url('strorg1') }}"> <i class="fas fa-ellipsis-v menu-icon"></i> Struktur Organisasi</a>
                                 </li>
                             </ul>
                         </div>
@@ -161,7 +161,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-v menu-icon"></i> Skema</a>
+                                    <a class="nav-link" href="{{ url('skema1') }}"> <i class="fas fa-ellipsis-v menu-icon"></i> Skema</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"> <i class="fas fa-ellipsis-v menu-icon"></i> Asesor</a>
