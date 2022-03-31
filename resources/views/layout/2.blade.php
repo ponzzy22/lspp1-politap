@@ -9,6 +9,7 @@
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
@@ -68,10 +69,10 @@
             <div class="d-sm-none d-lg-inline-block"><i class="fas fa-cog"></i></div></a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">{{ __('Profil') }}</a>
-              {{-- <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault(); --}}
+              <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
                   {{ __('Logout') }}</a>
-              {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> --}}
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
               </form>
           </div>
@@ -283,6 +284,9 @@
     <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
     <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
     <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
 </body>
 
 

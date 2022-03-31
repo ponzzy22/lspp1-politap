@@ -10,16 +10,6 @@ use App\Http\Controllers\UiController;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return view('beranda');
@@ -29,23 +19,17 @@ Route::get('profil', function () {
     return view('front/profil');
 });
 
-
-
-
 Route::get('skema1', function () {
     return view('front/skema');
 });
+
 Route::get('strorg1', function () {
     return view('front/strorg');
 });
-   
-    Route::get('/', [UiController::class, 'ui_beranda']);
-   
-    Route::get('profil', [UiController::class, 'profil']);
-   
-    Route::get('strorg1', [UiController::class, 'show_strorg']);
-// Route::resource('/asu', AsuController::class);
-Route::get('/asu', [AsuController::class, 'index']);
+
+Route::get('/', [UiController::class, 'ui_beranda']);
+Route::get('profil', [UiController::class, 'profil']);
+Route::get('strorg1', [UiController::class, 'show_strorg']);
 
 Auth::routes();
 
@@ -62,12 +46,11 @@ Route::group(['middleware' => 'role:admin'], function(){
 });
 
 Route::group(['middleware' => 'role:user'], function(){
-    Route::get('frontend', function () {
-        return view('frontend');
+    Route::get('asesion', function () {
+        return view('asesion');
     });
 });
 
-Route:: get('/frontend', [App\Http\Controllers\HomeController::class, 'index3'])->name('frontend');
+Route:: get('/asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
 Route::middleware('role:admin')->get('backend', [App\Http\Controllers\HomeController::class, 'index2'])->name('backend');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-

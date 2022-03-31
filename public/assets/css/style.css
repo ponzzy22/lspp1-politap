@@ -32554,7 +32554,7 @@ div.tagsinput span.tag a {
 /* Auth */
 
 .auth .login-half-bg {
-    background: url("public/assets/images/auth/login-bg.jpg");
+    background: url("../images/auth/login-bg.jpg");
     background-size: cover;
 }
 
