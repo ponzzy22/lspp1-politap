@@ -63,7 +63,19 @@
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
                             <i class="fas fa-database mx-0"></i>
                         </a>
-                    </li>
+                    </li>                    
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <div class="d-sm-none d-lg-inline-block"><i class="fas fa-cog"></i></div></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">{{ __('Profil') }}</a>
+              {{-- <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault(); --}}
+              document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}</a>
+              {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none"> --}}
+                  @csrf
+              </form>
+          </div>
+          </li>
                     <!-- /////////////////////////////////// -->
                     <!-- PENCARIAN -->
                     <!-- /////////////////////////////////// -->

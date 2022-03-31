@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class F_profilController extends Controller
 {
 
+
     public function index()
     {
         $profil = F_profil::all();
