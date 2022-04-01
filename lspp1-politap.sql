@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2022 at 03:47 PM
+-- Generation Time: Apr 01, 2022 at 08:39 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `lspp1-politap`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asesor`
+--
+
+CREATE TABLE `asesor` (
+  `id` int(11) NOT NULL,
+  `nik` bigint(20) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `asesor`
+--
+
+INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`) VALUES
+(4, 3423423, 'Ponsianus Jopi', 'public/uploads/asesor/1648836603logo-pegadaian-01.png', 'sdas', NULL, 'cino7130@gmail.com', 'Aktif', '2022-04-01 11:10:03.000000', '2022-04-01 18:10:03.923912'),
+(7, 22112, 'Ponsianus Jopi2322', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 10:36:08.000000', '2022-04-01 17:36:08.632028');
 
 -- --------------------------------------------------------
 
@@ -232,6 +259,28 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `prodi`
+--
+
+CREATE TABLE `prodi` (
+  `id` int(6) NOT NULL,
+  `prodi` varchar(255) NOT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `prodi`
+--
+
+INSERT INTO `prodi` (`id`, `prodi`, `updated_at`, `created_at`) VALUES
+(1, 'Teknik Informatika', '2022-04-01 07:40:46.000000', '2022-04-01 07:40:46.000000'),
+(2, 'Teknik Sipil', '2022-04-01 07:41:19.000000', '2022-04-01 07:41:19.000000'),
+(4, 'Teknik Elektro', '2022-04-01 07:37:33.000000', '2022-04-01 07:37:33.000000');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -265,6 +314,30 @@ CREATE TABLE `role_has_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `skema`
+--
+
+CREATE TABLE `skema` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(225) NOT NULL DEFAULT 'SKM-',
+  `skema` varchar(255) DEFAULT NULL,
+  `prodi_id` int(11) DEFAULT NULL,
+  `status` varchar(225) DEFAULT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `skema`
+--
+
+INSERT INTO `skema` (`id`, `kode`, `skema`, `prodi_id`, `status`, `updated_at`, `created_at`) VALUES
+(3, 'sedfsdfq', 'asdasdasdd', 2, NULL, '2022-04-01 08:20:18.013986', '2022-04-01 08:20:18.013986'),
+(8, '23123123', 's1231231', 2, NULL, '2022-04-01 05:49:33.000000', '2022-04-01 12:49:33.234388');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `strorg`
 --
 
@@ -282,6 +355,27 @@ CREATE TABLE `strorg` (
 
 INSERT INTO `strorg` (`id`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
 (1, NULL, 'public/uploads/strorg/1648393890ceb99d0f22759041b43f10a726f0a392.jpg', '2022-03-27 08:11:30', '2022-03-27 15:11:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tuk`
+--
+
+CREATE TABLE `tuk` (
+  `id` int(11) NOT NULL,
+  `tuk` varchar(255) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tuk`
+--
+
+INSERT INTO `tuk` (`id`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
+(2, '3423', 'erer', '2022-04-01 11:34:52.000000', '2022-04-01 11:34:52.000000');
 
 -- --------------------------------------------------------
 
@@ -305,12 +399,21 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 111, NULL, '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
-(2, 'User Role', 222, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52');
+(1, 'Admin Role', 111, NULL, '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', 'AjP6LorcvxaHPGnlon7I12gvwxO4JetdnblwUMfBtsYIGgHDmB1Tb0AaBuPT', '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(2, 'User Role', 222, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
+(3, 'Ponsianus Jopi', 3042020058, NULL, '$2y$10$EHEYxI9fb0yNz6tXj6p3vOx7XD6nEauxFONoFZdpOWgGp8qC./W1u', NULL, '2022-03-31 08:58:15', '2022-03-31 08:58:15');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `asesor`
+--
+ALTER TABLE `asesor`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nik` (`nik`),
+  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `beranda`
@@ -385,6 +488,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `prodi`
+--
+ALTER TABLE `prodi`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -399,9 +508,23 @@ ALTER TABLE `role_has_permissions`
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
 
 --
+-- Indexes for table `skema`
+--
+ALTER TABLE `skema`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode` (`kode`),
+  ADD KEY `prodi_id` (`prodi_id`);
+
+--
 -- Indexes for table `strorg`
 --
 ALTER TABLE `strorg`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tuk`
+--
+ALTER TABLE `tuk`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -414,6 +537,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `asesor`
+--
+ALTER TABLE `asesor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `beranda`
@@ -464,10 +593,22 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `prodi`
+--
+ALTER TABLE `prodi`
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `skema`
+--
+ALTER TABLE `skema`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `strorg`
@@ -476,10 +617,16 @@ ALTER TABLE `strorg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tuk`
+--
+ALTER TABLE `tuk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables

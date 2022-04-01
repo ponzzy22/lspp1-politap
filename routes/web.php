@@ -1,12 +1,17 @@
 <?php
 
+use App\Http\Controllers\AsesorController;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AsuController;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
+use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
+use App\Models\Asesor;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
@@ -43,6 +48,11 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('beranda_img2', Beranda_img2Controller::class);
     Route::resource('f_profil', F_profilController::class);
     Route::resource('strorg', StrorgController::class);
+    Route::resource('skema', SkemaController::class);
+    Route::resource('prodi', ProdiController::class);
+    Route::resource('asesor', AsesorController::class);
+    Route::resource('tuk', TukController::class);
+
 });
 
 Route::group(['middleware' => 'role:user'], function(){

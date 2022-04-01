@@ -188,13 +188,16 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Skema</a>
+                                    <a class="nav-link" href="{{ Route('skema.index') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesor</a>
+                                    <a class="nav-link" href="{{ Route('prodi.index') }}"> <i class="fas fa-ellipsis-h"></i> Prodi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> TUK</a>
+                                    <a class="nav-link" href="{{ Route('asesor.index') }}"> <i class="fas fa-ellipsis-h"></i> Asesor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('tuk.index') }}"> <i class="fas fa-ellipsis-h"></i> TUK</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>
@@ -287,6 +290,7 @@
     <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
 </body>
 
 
