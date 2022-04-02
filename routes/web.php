@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AsesiController;
 use App\Http\Controllers\AsesorController;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AsuController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\StrorgController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\UnikomController;
+use App\Http\Controllers\UpdateProfileController;
 use App\Models\Asesor;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
@@ -54,15 +56,19 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('asesor', AsesorController::class);
     Route::resource('tuk', TukController::class);
     Route::resource('unikom', UnikomController::class);
-
 });
 
-Route::group(['middleware' => 'role:user'], function(){
+Route::group(['middleware' => 'auth'], function(){
     Route::get('asesion', function () {
         return view('asesion');
     });
+
+    Route::resource('asesi', AsesiController::class);
 });
 
-Route:: get('/asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
+Route::get('asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
 Route::middleware('role:admin')->get('backend', [App\Http\Controllers\HomeController::class, 'index2'])->name('backend');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
+Route::put('update', [AsesiController::class, 'update'])->name('profil.update');

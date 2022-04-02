@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2022 at 06:18 AM
+-- Generation Time: Apr 02, 2022 at 08:02 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `lspp1-politap`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asesi_data`
+--
+
+CREATE TABLE `asesi_data` (
+  `nim` bigint(20) DEFAULT NULL,
+  `nama` varchar(255) DEFAULT NULL,
+  `tmpt_lahir` varchar(255) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `negara` varchar(255) DEFAULT NULL,
+  `alamat` varchar(255) DEFAULT NULL,
+  `kode_pos` int(11) DEFAULT NULL,
+  `no_hp` bigint(20) DEFAULT NULL,
+  `provinsi` varchar(255) DEFAULT NULL,
+  `kabupaten` varchar(255) DEFAULT NULL,
+  `kota` varchar(255) DEFAULT NULL,
+  `kecamatan` varchar(255) DEFAULT NULL,
+  `tamatan_id` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `ttd` varchar(255) DEFAULT NULL,
+  `jurusan_id` int(11) DEFAULT NULL,
+  `semester_id` int(11) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -156,6 +184,31 @@ CREATE TABLE `f_profil` (
 
 INSERT INTO `f_profil` (`id`, `profil`, `visi`, `misi`, `motto`, `image`, `updated_at`, `created_at`) VALUES
 (1, 'text1', 'text2', 'text13', 'text14', 'public/uploads/f_profil/1648393351lsp.png', '2022-03-27 08:02:31.000000', '2022-03-27 15:02:31.869071');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jurusan`
+--
+
+CREATE TABLE `jurusan` (
+  `id` int(11) NOT NULL,
+  `jurusan` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `jurusan`
+--
+
+INSERT INTO `jurusan` (`id`, `jurusan`, `updated_at`, `created_at`) VALUES
+(1, 'Teknik Pertambangan', '2022-04-02 11:54:46.000000', '2022-04-02 11:54:46.000000'),
+(2, 'Teknik Mesin', '2022-04-02 11:54:46.000000', '2022-04-02 11:54:46.000000'),
+(3, 'Teknik Pertanian/ Pengelolahan Hasil Perkebunan', '2022-04-02 11:59:07.000000', '2022-04-02 11:59:07.000000'),
+(4, 'Teknik Informatika', '2022-04-02 12:00:20.000000', '2022-04-02 12:00:20.000000'),
+(5, 'Teknik Elektro', '2022-04-02 12:00:40.000000', '2022-04-02 12:00:40.000000'),
+(6, 'Teknik Sipil', '2022-04-02 12:00:40.000000', '2022-04-02 12:00:40.000000');
 
 -- --------------------------------------------------------
 
@@ -314,6 +367,32 @@ CREATE TABLE `role_has_permissions` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `semester`
+--
+
+CREATE TABLE `semester` (
+  `id` int(11) NOT NULL,
+  `semester` int(11) DEFAULT NULL,
+  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `semester`
+--
+
+INSERT INTO `semester` (`id`, `semester`, `updated_at`, `created_at`) VALUES
+(1, 1, '2022-04-02 12:03:06.000000', '2022-04-02 12:03:06.000000'),
+(2, 2, '2022-04-02 12:03:21.000000', '2022-04-02 12:03:21.000000'),
+(3, 3, '2022-04-02 12:03:21.000000', '2022-04-02 12:03:21.000000'),
+(4, 4, '2022-04-02 12:03:49.000000', '2022-04-02 12:03:49.000000'),
+(5, 5, '2022-04-02 12:03:49.000000', '2022-04-02 12:03:49.000000'),
+(6, 6, '2022-04-02 12:04:16.000000', '2022-04-02 12:04:16.000000'),
+(7, 7, '2022-04-02 12:04:16.000000', '2022-04-02 12:04:16.000000');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `skema`
 --
 
@@ -435,10 +514,11 @@ INSERT INTO `unit_kompetensi` (`id`, `kode`, `unikom`, `skema_id`, `updated_at`,
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` bigint(20) NOT NULL,
+  `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode` int(11) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -447,14 +527,22 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 111, NULL, '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', 'AjP6LorcvxaHPGnlon7I12gvwxO4JetdnblwUMfBtsYIGgHDmB1Tb0AaBuPT', '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
-(2, 'User Role', 222, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
-(3, 'Ponsianus Jopi', 3042020058, NULL, '$2y$10$EHEYxI9fb0yNz6tXj6p3vOx7XD6nEauxFONoFZdpOWgGp8qC./W1u', NULL, '2022-03-31 08:58:15', '2022-03-31 08:58:15');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `kode`, `created_at`, `updated_at`) VALUES
+(1, 'Admin Role', 'admin', NULL, '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', 'osXKbgTcz3sPf11uknQo1hKdsm4wcKeATonVFJxSOz434GlfMmiisdjN4OnZ', 0, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(2, 'User Role', 'user', NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, 0, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
+(5, 'Ponsianus Jopi', '3042020058', NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', NULL, 23245545, '2022-04-02 07:38:26', '2022-04-02 10:21:46'),
+(6, '12345', '12345', NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, 12334, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
+(7, 'sdasd', '23434343', NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, 1112, '2022-04-02 09:05:50', '2022-04-02 09:52:53');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `asesi_data`
+--
+ALTER TABLE `asesi_data`
+  ADD UNIQUE KEY `nim` (`nim`);
 
 --
 -- Indexes for table `asesor`
@@ -493,6 +581,12 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `f_profil`
 --
 ALTER TABLE `f_profil`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jurusan`
+--
+ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -555,6 +649,12 @@ ALTER TABLE `roles`
 ALTER TABLE `role_has_permissions`
   ADD PRIMARY KEY (`permission_id`,`role_id`),
   ADD KEY `role_has_permissions_role_id_foreign` (`role_id`);
+
+--
+-- Indexes for table `semester`
+--
+ALTER TABLE `semester`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `skema`
@@ -637,6 +737,12 @@ ALTER TABLE `f_profil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -665,6 +771,12 @@ ALTER TABLE `prodi`
 --
 ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `semester`
+--
+ALTER TABLE `semester`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `skema`
@@ -700,7 +812,7 @@ ALTER TABLE `unit_kompetensi`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

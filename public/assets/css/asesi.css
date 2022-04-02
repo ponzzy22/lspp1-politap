@@ -20583,7 +20583,7 @@ input:focus {
 }
 
 .sidebar .nav .nav-item.nav-profile .profile-name .name {
-    color: #ec3732;
+    color: #0050e3;
     font-size: 1rem;
     font-weight: bold;
 }
@@ -20613,7 +20613,7 @@ input:focus {
 /* text dan hightligth menu */
 
 .sidebar .nav:not(.sub-menu)>.nav-item:hover:not(.nav-profile)>.nav-link {
-    background: #ec3732;
+    background: #0050e3;
     color: #ffffff;
 }
 
@@ -20671,14 +20671,14 @@ input:focus {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active:before {
-    color: #392C70;
+    color: #0050e3;
 }
 
 
 /* warna hightlight submune */
 
 .sidebar .nav.sub-menu .nav-item:hover {
-    background: #ec3732;
+    background: #0050e3;
 }
 
 .sidebar-dark .sidebar {
@@ -20952,7 +20952,7 @@ input:focus {
 /* jonavbar */
 
 .navbar.default-layout-navbar .navbar-menu-wrapper {
-    background: linear-gradient(85deg, #ec3732, #ec3732);
+    background: #0050e3;
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;

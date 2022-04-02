@@ -2,63 +2,238 @@
 <html lang="en">
 
 
-<!-- Mirrored from www.urbanui.com/melody/template/pages/samples/register-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:54 GMT -->
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Melody Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-  <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
-  <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="../../css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="../../images/favicon.png" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Asesi | LSP P1-POLITAP</title>
+    <!-- /////////////////////////////////// -->
+    <!-- ASSETS -->
+    <!-- /////////////////////////////////// -->
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi.css') }}">
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
-<body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
-        <div class="row flex-grow">
-          <div class="col-lg-6 d-flex align-items-center justify-content-center">
-            <div class="auth-form-transparent text-left p-3">
-              
-              
-              @yield('isi')
-
+<body class="sidebar-mini">
+    <div class="container-scroller">
+        <!-- /////////////////////////////////// -->
+        <!-- LOGO NAVIGASI -->
+        <!-- /////////////////////////////////// -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="{{ url('admin') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
+                <!-- /////////////////////////////////// -->
+                <!-- LOGO MINI -->
+                <!-- /////////////////////////////////// -->
+                <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
             </div>
+            <!-- /////////////////////////////////// -->
+            <!-- MENU NAVIGASI -->
+            <!-- /////////////////////////////////// -->
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler  align-self-center" type="button" data-toggle="minimize">
+                <span class="fas fa-bars"></span></button>
+                <!-- /////////////////////////////////// -->
+                <!-- JUDUL BARIS -->
+                <!-- /////////////////////////////////// -->
+                <ul class="navbar-nav navbar-nav-left">
+                    <li class="nav-item dropdown">
+                        <!-- <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#map" data-toggle="dropdown">
+                            <i class="fas fa-map-marker mx-0"></i>
+                        </a> -->
+                    </li>
+                    <li>
+                        <div class="card-subtitle2">
+                            <h5>WEBSITE ASESI <i class="fas fa-ellipsis-h"></i> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP</h5>
+                        </div>
+                    </li>
+                </ul>
+                <!-- /////////////////////////////////// -->
+                <!-- ICON SOSIAL MEDIA -->
+                <!-- /////////////////////////////////// -->
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ url('/') }}">
+                            <i class="fas fa-desktop mx-0"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
+                            <i class="fas fa-database mx-0"></i>
+                        </a>
+                    </li>                    
+                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+            <div class="d-sm-none d-lg-inline-block"><i class="fas fa-cog"></i></div></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">{{ __('Profil') }}</a>
+              <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                  @csrf
+              </form>
           </div>
-          <div class="col-lg-6 register-half-bg d-flex flex-row">
-            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018  All rights reserved.</p>
-          </div>
+          </li>
+                    <!-- /////////////////////////////////// -->
+                    <!-- PENCARIAN -->
+                    <!-- /////////////////////////////////// -->
+                    <li class="">
+                        <div class="nav-link">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Pencarian" aria-label="Search">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid page-body-wrapper">
+            <!-- /////////////////////////////////// -->
+            <!-- TEMA WEBSITE -->
+            <!-- /////////////////////////////////// -->
+            <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close fa fa-times"></i>
+                    <p class="settings-heading">Tema Sidebar</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+                    <p class="settings-heading mt-2">Tema Navigasi</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles primary"></div>
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- /////////////////////////////////// -->
+            <!-- SIDEBAR -->
+            <!-- /////////////////////////////////// -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <!-- NAMA PENGGUNA -->
+                    <li class="nav-item nav-profile">
+                        <div class="nav-link">
+                            <div class="profile-image">
+                                <a href="#"> <img src="{{ asset('public/assets/images/faces/thumb-v-v-1.jpg') }}" alt="image" /></a>
+                            </div>
+                            <div class="profile-name">
+                                <p class="name">
+                                    Name Admin
+                                </p>
+                                <p class="designation">
+                                    Administrator
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- /////////////////////////////////// -->
+                    <!-- MENU SIDEBAR -->
+                    <!-- /////////////////////////////////// -->
+                    <li class="nav-item">
+                        <a class="nav-link" href={{ url('asesion') }}>
+                            <i class="fa fa-dot-circle  menu-icon"></i>
+                            <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('edit') }}">
+                            <i class="fa fa-user menu-icon"></i>
+                            <span class="menu-title">Profil Anda</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-plus menu-icon"></i>
+                            <span class="menu-title">Pendaftaran</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <i class="fa fa-address-card menu-icon"></i>
+                            <span class="menu-title">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- /////////////////////////////////// -->
+            <!-- MAIN WEBSITE -->
+            <!-- /////////////////////////////////// -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    
+
+
+                    <!-- ///////////////////////////////////////////////////////////////////// -->
+                    <!-- ///////////////////////////////////////////////////////////////////// -->
+                    <!-- ISI WEBSITE -->
+                    @yield('isi')
+                    <!-- ///////////////////////////////////////////////////////////////////// -->
+                    <!-- ///////////////////////////////////////////////////////////////////// -->
+
+
+
+                </div>          
+            </div>
         </div>
-      </div>
-      <!-- content-wrapper ends -->
     </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="../../vendors/js/vendor.bundle.base.js"></script>
-  <script src="../../vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="../../js/off-canvas.js"></script>
-  <script src="../../js/hoverable-collapse.js"></script>
-  <script src="../../js/misc.js"></script>
-  <script src="../../js/settings.js"></script>
-  <script src="../../js/todolist.js"></script>
-  <!-- endinject -->
+
+    <!-- /////////////////////////////////// -->
+    <!-- FOOTER -->
+    <!-- /////////////////////////////////// -->
+    <footer class="card card-statistics2">
+        <div class="footer1">
+            <span class="">Copyright © 2022 &diamondsuit; Designed & Developed By Politeknik Negeri Ketapang.</span>
+        </div>
+    </footer>
+
+
+    <!-- /////////////////////////////////// -->
+    <!-- JAVASCRIPTS -->
+    <!-- /////////////////////////////////// -->
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/assets/js/misc.js') }}"></script>
+    <script src="{{ asset('public/assets/js/settings.js') }}"></script>
+    <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
+    <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
+    <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
+    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
 </body>
 
 
-<!-- Mirrored from www.urbanui.com/melody/template/pages/samples/register-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 15 Sep 2018 06:08:54 GMT -->
 </html>

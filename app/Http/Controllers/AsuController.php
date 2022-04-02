@@ -8,7 +8,7 @@ class AsuController extends Controller
 {
     public function index()
     {
-        //
+        return view('asesi/asu/index');
     }
 
 
