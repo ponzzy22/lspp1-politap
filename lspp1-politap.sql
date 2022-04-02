@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2022 at 08:39 PM
+-- Generation Time: Apr 02, 2022 at 06:18 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -46,7 +46,7 @@ CREATE TABLE `asesor` (
 
 INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`) VALUES
 (4, 3423423, 'Ponsianus Jopi', 'public/uploads/asesor/1648836603logo-pegadaian-01.png', 'sdas', NULL, 'cino7130@gmail.com', 'Aktif', '2022-04-01 11:10:03.000000', '2022-04-01 18:10:03.923912'),
-(7, 22112, 'Ponsianus Jopi2322', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 10:36:08.000000', '2022-04-01 17:36:08.632028');
+(7, 22112, 'bujang', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 20:11:28.000000', '2022-04-02 03:11:29.416920');
 
 -- --------------------------------------------------------
 
@@ -322,7 +322,9 @@ CREATE TABLE `skema` (
   `kode` varchar(225) NOT NULL DEFAULT 'SKM-',
   `skema` varchar(255) DEFAULT NULL,
   `prodi_id` int(11) DEFAULT NULL,
-  `status` varchar(225) DEFAULT NULL,
+  `tuk_id` int(11) DEFAULT NULL,
+  `asesor_id` int(11) DEFAULT NULL,
+  `status_id` int(11) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -331,9 +333,30 @@ CREATE TABLE `skema` (
 -- Dumping data for table `skema`
 --
 
-INSERT INTO `skema` (`id`, `kode`, `skema`, `prodi_id`, `status`, `updated_at`, `created_at`) VALUES
-(3, 'sedfsdfq', 'asdasdasdd', 2, NULL, '2022-04-01 08:20:18.013986', '2022-04-01 08:20:18.013986'),
-(8, '23123123', 's1231231', 2, NULL, '2022-04-01 05:49:33.000000', '2022-04-01 12:49:33.234388');
+INSERT INTO `skema` (`id`, `kode`, `skema`, `prodi_id`, `tuk_id`, `asesor_id`, `status_id`, `updated_at`, `created_at`) VALUES
+(8, 'Web desain', 'Web desain 2', 2, 4, 7, 2, '2022-04-02 03:56:31.553171', '2022-04-02 03:56:31.553171'),
+(12, '231231232312312', 'Wadimor 2', 4, 3, 4, 2, '2022-04-01 21:14:59.000000', '2022-04-02 04:14:59.869221');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `id` int(11) NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `status`, `updated_at`, `created_at`) VALUES
+(1, 'Aktif', '2022-04-02 03:46:08', '2022-04-02 03:46:08'),
+(2, 'Nonaktif', '2022-04-02 03:46:51', '2022-04-02 03:46:51');
 
 -- --------------------------------------------------------
 
@@ -375,7 +398,33 @@ CREATE TABLE `tuk` (
 --
 
 INSERT INTO `tuk` (`id`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
-(2, '3423', 'erer', '2022-04-01 11:34:52.000000', '2022-04-01 11:34:52.000000');
+(3, 'LAB KOMPUTER', 'DSDFSD', '2022-04-01 20:30:07.000000', '2022-04-01 20:30:07.000000'),
+(4, 'LAB KIMIA', 'DFFSD', '2022-04-01 20:30:18.000000', '2022-04-01 20:30:18.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unit_kompetensi`
+--
+
+CREATE TABLE `unit_kompetensi` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(255) DEFAULT NULL,
+  `unikom` varchar(255) DEFAULT NULL,
+  `skema_id` int(11) DEFAULT NULL,
+  `updated_at` timestamp(6) NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `unit_kompetensi`
+--
+
+INSERT INTO `unit_kompetensi` (`id`, `kode`, `unikom`, `skema_id`, `updated_at`, `created_at`) VALUES
+(1, 'dfsd-3423', 'sasdasfasf', 3, '2022-04-02 01:03:36.005410', '2022-04-02 01:03:36.005410'),
+(3, 'aaaa', 'aaa', 3, '2022-04-01 18:48:49.000000', '2022-04-01 18:48:49.000000'),
+(4, 'jopi', 'jopi', 3, '2022-04-01 20:09:49.000000', '2022-04-02 03:09:49.742597'),
+(6, 'ASU', 'KOE', 3, '2022-04-01 19:30:57.000000', '2022-04-01 19:30:57.000000');
 
 -- --------------------------------------------------------
 
@@ -516,6 +565,12 @@ ALTER TABLE `skema`
   ADD KEY `prodi_id` (`prodi_id`);
 
 --
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `strorg`
 --
 ALTER TABLE `strorg`
@@ -526,6 +581,13 @@ ALTER TABLE `strorg`
 --
 ALTER TABLE `tuk`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `unit_kompetensi`
+--
+ALTER TABLE `unit_kompetensi`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode` (`kode`);
 
 --
 -- Indexes for table `users`
@@ -608,7 +670,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `skema`
 --
 ALTER TABLE `skema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `strorg`
@@ -620,7 +688,13 @@ ALTER TABLE `strorg`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `unit_kompetensi`
+--
+ALTER TABLE `unit_kompetensi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`

@@ -11,6 +11,7 @@ use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
+use App\Http\Controllers\UnikomController;
 use App\Models\Asesor;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
@@ -52,6 +53,7 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('prodi', ProdiController::class);
     Route::resource('asesor', AsesorController::class);
     Route::resource('tuk', TukController::class);
+    Route::resource('unikom', UnikomController::class);
 
 });
 

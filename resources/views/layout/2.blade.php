@@ -200,6 +200,9 @@
                                     <a class="nav-link" href="{{ Route('tuk.index') }}"> <i class="fas fa-ellipsis-h"></i> TUK</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('unikom.index') }}"> <i class="fas fa-ellipsis-h"></i> Unit Kompetensi</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>
                                 </li>
                             </ul>

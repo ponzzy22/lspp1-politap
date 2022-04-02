@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asesor;
 use App\Models\Prodi;
 use App\Models\Skema;
+use App\Models\Status;
+use App\Models\Tuk;
 use Illuminate\Http\Request;
 
 class SkemaController extends Controller
@@ -11,9 +14,12 @@ class SkemaController extends Controller
 
     public function index()
     {
+        $status = Status::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
         $prodi = Prodi::all();
         $skema = Skema::all();
-        return view('admin/skema/index', compact('skema', 'prodi'));
+        return view('admin/skema/index', compact('skema', 'prodi', 'asesor', 'tuk', 'status'));
     }
 
 
@@ -24,6 +30,10 @@ class SkemaController extends Controller
             'kode' =>$request->kode,
             'skema' =>$request->skema,
             'prodi_id' =>$request->prodi_id,
+            'asesor_id' =>$request->asesor_id,
+            'tuk_id' =>$request->tuk_id,
+            'status_id' =>$request->status_id,
+
         ]);
         return redirect()->route('skema.index')->with('success','Skema anda berhasil di Posting');
     }
@@ -37,9 +47,12 @@ class SkemaController extends Controller
 
     public function edit($id)
     {
+        $status = Status::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
         $prodi = Prodi::all();
         $skema = Skema::findorfail($id);
-        return view('admin/skema/edit', compact('skema', 'prodi'));
+        return view('admin/skema/edit', compact('skema', 'prodi', 'asesor', 'tuk', 'status'));
     }
 
 
@@ -49,6 +62,9 @@ class SkemaController extends Controller
             'kode' =>$request->kode,
             'skema' =>$request->skema,
             'prodi_id' =>$request->prodi_id,
+            'asesor_id' =>$request->asesor_id,
+            'tuk_id' =>$request->tuk_id,
+            'status_id' =>$request->status_id,
         ];
         Skema::whereId($id)->update($skema_data);
         return redirect()->route('skema.index')->with('success','Skema Anda Berhasil di Ubah');

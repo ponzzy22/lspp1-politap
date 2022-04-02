@@ -27,21 +27,22 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Kode Skema</label>
-                    <div class="col-sm-9">
-                      <input type="text" name="kode" class="form-control" />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Nama Skema</label>
                     <div class="col-sm-9">
                       <input type="text" name="skema" class="form-control" />
                     </div>
                   </div>
                 </div>
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Kode Skema</label>
+                    <div class="col-sm-9">
+                      <input type="text" name="kode" class="form-control" />
+                    </div>
+                  </div>
+                </div>                
               </div>
+
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group row">
@@ -56,7 +57,53 @@
                     </select>   
                     </div>
                   </div>
-                </div>                
+                </div>   
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Asesor</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="asesor_id">
+                        <option value="" holder>Pilih Asesor</option>
+                        @foreach ($asesor as $result)
+                            <option value="{{ $result->id }}">{{ $result->nama }}</option> 
+                            select
+                        @endforeach           
+                    </select>   
+                    </div>
+                  </div>
+                </div>  
+              </div>   
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Tempat Uji Kompetensi</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="tuk_id">
+                        <option value="" holder>Pilih TUK</option>
+                        @foreach ($tuk as $result)
+                            <option value="{{ $result->id }}">{{ $result->tuk }}</option> 
+                            select
+                        @endforeach           
+                    </select>   
+                    </div>
+                  </div>
+                </div> 
+                <div class="col-md-6">
+                  <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Status</label>
+                    <div class="col-sm-9">
+                      <select class="form-control" name="status_id">
+                        <option value="" holder>Pilih Status</option>
+                        @foreach ($status as $result)
+                            <option value="{{ $result->id }}">{{ $result->status }}</option> 
+                            select
+                        @endforeach           
+                    </select>   
+                    </div>
+                  </div>
+                </div>  
+              </div>
             </form>
       </div>
     </div>
@@ -84,8 +131,10 @@
                   <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column ascending" style="width: 61.4219px;">Kode Skema</th>
                   <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Customer: activate to sort column ascending" style="width: 75.75px;">Skema</th>
                   <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 57.5469px;">Prodi</th>
+                  <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Ship to: activate to sort column ascending" style="width: 57.5469px;">Asesor</th>
+                  <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 66.1094px;">TUK</th>
                   <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 66.1094px;">Status</th>
-                  <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 194.141px;">Actions</th></tr>
+                  <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 60.141px;">Actions</th></tr>
               </thead>
               <tbody>
                 @foreach ($skema as $hasil => $asu)
@@ -93,8 +142,10 @@
                   <td class="">{{ $asu->kode }}</td>
                   <td>{{ $asu->skema }}</td>
                   <td>{{ $asu->prodi->prodi }}</td>
+                  <td>{{ $asu->asesor->nama }}</td>
+                  <td>{{ $asu->tuk->tuk }}</td>
                   <td>
-                    <label class="badge badge-success">{{ $asu->status }}</label>                    
+                    <label class="badge badge-light">{{ $asu->status->status }}</label>                    
                   </td>
                   <td class="text-right">                    
                       <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button" id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
