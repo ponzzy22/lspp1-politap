@@ -41,7 +41,12 @@ class SkemaController extends Controller
 
     public function show($id)
     {
-        //
+        $status = Status::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
+        $prodi = Prodi::all();
+        $skema = Skema::findorfail($id);
+        return view('admin/skema/edit', compact('skema', 'prodi', 'asesor', 'tuk', 'status'));
     }
 
 

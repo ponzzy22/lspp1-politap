@@ -194,7 +194,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('login') }}">
                             <i class="fa fa-address-card menu-icon"></i>
                             <span class="menu-title">Login</span>
                         </a>

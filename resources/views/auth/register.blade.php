@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/style-admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 

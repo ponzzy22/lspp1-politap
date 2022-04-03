@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2022 at 08:02 PM
+-- Generation Time: Apr 03, 2022 at 05:46 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,34 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `lspp1-politap`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `asesi_data`
---
-
-CREATE TABLE `asesi_data` (
-  `nim` bigint(20) DEFAULT NULL,
-  `nama` varchar(255) DEFAULT NULL,
-  `tmpt_lahir` varchar(255) DEFAULT NULL,
-  `tgl_lahir` date DEFAULT NULL,
-  `sex` varchar(255) DEFAULT NULL,
-  `negara` varchar(255) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
-  `kode_pos` int(11) DEFAULT NULL,
-  `no_hp` bigint(20) DEFAULT NULL,
-  `provinsi` varchar(255) DEFAULT NULL,
-  `kabupaten` varchar(255) DEFAULT NULL,
-  `kota` varchar(255) DEFAULT NULL,
-  `kecamatan` varchar(255) DEFAULT NULL,
-  `tamatan_id` int(11) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `ttd` varchar(255) DEFAULT NULL,
-  `jurusan_id` int(11) DEFAULT NULL,
-  `semester_id` int(11) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -393,6 +365,27 @@ INSERT INTO `semester` (`id`, `semester`, `updated_at`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `sex`
+--
+
+CREATE TABLE `sex` (
+  `id` int(11) NOT NULL,
+  `sex` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `sex`
+--
+
+INSERT INTO `sex` (`id`, `sex`, `updated_at`, `created_at`) VALUES
+(1, 'Laki-laki', '2022-04-03 01:40:39', '2022-04-03 01:40:40'),
+(2, 'Perempuan', '2022-04-03 01:40:40', '2022-04-03 01:40:40');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `skema`
 --
 
@@ -414,7 +407,8 @@ CREATE TABLE `skema` (
 
 INSERT INTO `skema` (`id`, `kode`, `skema`, `prodi_id`, `tuk_id`, `asesor_id`, `status_id`, `updated_at`, `created_at`) VALUES
 (8, 'Web desain', 'Web desain 2', 2, 4, 7, 2, '2022-04-02 03:56:31.553171', '2022-04-02 03:56:31.553171'),
-(12, '231231232312312', 'Wadimor 2', 4, 3, 4, 2, '2022-04-01 21:14:59.000000', '2022-04-02 04:14:59.869221');
+(12, '231231232312312', 'Wadimor 2', 4, 3, 4, 2, '2022-04-01 21:14:59.000000', '2022-04-02 04:14:59.869221'),
+(13, '23123123', 'asu', 2, 3, 4, 1, '2022-04-03 08:32:55.000000', '2022-04-03 08:32:55.000000');
 
 -- --------------------------------------------------------
 
@@ -500,10 +494,12 @@ CREATE TABLE `unit_kompetensi` (
 --
 
 INSERT INTO `unit_kompetensi` (`id`, `kode`, `unikom`, `skema_id`, `updated_at`, `created_at`) VALUES
-(1, 'dfsd-3423', 'sasdasfasf', 3, '2022-04-02 01:03:36.005410', '2022-04-02 01:03:36.005410'),
-(3, 'aaaa', 'aaa', 3, '2022-04-01 18:48:49.000000', '2022-04-01 18:48:49.000000'),
-(4, 'jopi', 'jopi', 3, '2022-04-01 20:09:49.000000', '2022-04-02 03:09:49.742597'),
-(6, 'ASU', 'KOE', 3, '2022-04-01 19:30:57.000000', '2022-04-01 19:30:57.000000');
+(1, 'dfsd-3423', 'sasdasfasf', 8, '2022-04-03 15:36:12.720355', '2022-04-03 15:36:12.720355'),
+(3, 'aaaa', 'aaa', 8, '2022-04-03 15:36:43.623491', '2022-04-03 15:36:43.623491'),
+(4, 'jopi', 'jopi', 8, '2022-04-03 15:36:47.056970', '2022-04-03 15:36:47.056970'),
+(6, 'ASU', 'KOE', 8, '2022-04-03 15:36:50.187103', '2022-04-03 15:36:50.187103'),
+(7, '3434', 'aaa', 8, '2022-04-03 08:37:34.000000', '2022-04-03 08:37:34.000000'),
+(8, 'sdfsd', 'fdfdf', 13, '2022-04-03 08:38:17.000000', '2022-04-03 08:38:17.000000');
 
 -- --------------------------------------------------------
 
@@ -515,10 +511,30 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
-  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kode` int(11) DEFAULT NULL,
+  `surel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tmpt_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `sex_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `negara` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode_post` int(11) DEFAULT NULL,
+  `no_hp` bigint(20) DEFAULT NULL,
+  `provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kabupaten` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kota` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kecamatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tamatan_id` int(11) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ttd` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jurusan_id` int(11) DEFAULT NULL,
+  `semester_id` int(11) DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `khs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ktm` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -527,22 +543,16 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `kode`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 'admin', NULL, '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', 'osXKbgTcz3sPf11uknQo1hKdsm4wcKeATonVFJxSOz434GlfMmiisdjN4OnZ', 0, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
-(2, 'User Role', 'user', NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, 0, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
-(5, 'Ponsianus Jopi', '3042020058', NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', NULL, 23245545, '2022-04-02 07:38:26', '2022-04-02 10:21:46'),
-(6, '12345', '12345', NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, 12334, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
-(7, 'sdasd', '23434343', NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, 1112, '2022-04-02 09:05:50', '2022-04-02 09:52:53');
+INSERT INTO `users` (`id`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
+(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ZxCo07HmOrXd7Cu1SXwet1l33g8OfXKPp51ix8PNNklHmmMQYVIfGm67K6UX', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(2, 'User Role', 'user', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
+(5, 'Ponsianus Jopi', '3042020058432423', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1648987042Screenshot (6).png', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1648987001ASSIST-1.png', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-03 04:57:22'),
+(6, '12345', '12345', 12334, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
+(7, 'sdasd', '23434343', 1112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, NULL, NULL, '2022-04-02 09:05:50', '2022-04-02 09:52:53');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `asesi_data`
---
-ALTER TABLE `asesi_data`
-  ADD UNIQUE KEY `nim` (`nim`);
 
 --
 -- Indexes for table `asesor`
@@ -657,6 +667,12 @@ ALTER TABLE `semester`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `sex`
+--
+ALTER TABLE `sex`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `skema`
 --
 ALTER TABLE `skema`
@@ -694,7 +710,9 @@ ALTER TABLE `unit_kompetensi`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD UNIQUE KEY `surel` (`surel`),
+  ADD UNIQUE KEY `no_hp` (`no_hp`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -779,10 +797,16 @@ ALTER TABLE `semester`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT for table `sex`
+--
+ALTER TABLE `sex`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `skema`
 --
 ALTER TABLE `skema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -806,7 +830,7 @@ ALTER TABLE `tuk`
 -- AUTO_INCREMENT for table `unit_kompetensi`
 --
 ALTER TABLE `unit_kompetensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`

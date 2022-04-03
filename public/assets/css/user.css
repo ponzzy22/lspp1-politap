@@ -22011,7 +22011,7 @@ code {
 /* Footer */
 
 .footer {
-    background: #f2f2f2;
+    background: #0B94F7;
     padding: 30px 1rem;
     transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -25226,15 +25226,9 @@ code {
 
 /* jostatis */
 
-.card.card-statistics {
-    background: linear-gradient(85deg, #392c70, #6a005b);
+.kaki {
+    background: #0050e3;
     color: #ffffff;
-}
-
-.card.card-statistics2 {
-    background: linear-gradient(180deg, #ec3732, #ec3732);
-    color: #ffffff;
-    border-color: #ec3732;
 }
 
 .card.card-statistics .statistics-item {

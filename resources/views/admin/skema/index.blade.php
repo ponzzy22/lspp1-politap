@@ -162,9 +162,9 @@
                     <a href="{{ route('skema.edit', $asu->id) }}"><button class="btn btn-inverse-warning">
                       <i class="fa fa-edit"></i>
                     </button></a>
-                    <button class="btn btn-inverse-info">
+                    <a href="{{ route('skema.show', $asu->id) }}"><button class="btn btn-inverse-info">
                       <i class="fa fa-eye"></i>
-                    </button>
+                    </button></a>
                     <form action="{{ route('skema.destroy', $asu->id) }}" method="POST" onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
                       @csrf
                       @method('delete')                 

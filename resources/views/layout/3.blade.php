@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/user.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -199,7 +199,7 @@
     <!-- /////////////////////////////////// -->
     <!-- FOOTER -->
     <!-- /////////////////////////////////// -->
-    <footer class="card card-statistics2">
+    <footer class="kaki">
         <div class="footer1">
             <span class="">Copyright © 2022 &diamondsuit; Designed & Developed By Politeknik Negeri Ketapang.</span>
         </div>
@@ -233,6 +233,8 @@
     <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-validation.js') }}"></script>
+    <script src="{{ asset('public/assets/js/bt-maxLength.js') }}"></script>
 </body>
 
 
