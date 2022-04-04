@@ -1,13 +1,17 @@
 <?php
 
 use App\Http\Controllers\AsesiController;
+use App\Http\Controllers\AsesmanController;
+use App\Http\Controllers\AsesMandiriController;
 use App\Http\Controllers\AsesorController;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AsuController;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\SantetController;
 use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
 use App\Http\Controllers\TukController;
@@ -15,6 +19,8 @@ use App\Http\Controllers\UiController;
 use App\Http\Controllers\UnikomController;
 use App\Http\Controllers\UpdateProfileController;
 use App\Models\Asesor;
+use App\Models\Unikom;
+use App\Models\Skema;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
@@ -27,9 +33,9 @@ Route::get('profil', function () {
     return view('front/profil');
 });
 
-Route::get('skema1', function () {
-    return view('front/skema');
-});
+// Route::get('skema1', function () {
+//     return view('front/skema');
+// });
 
 Route::get('strorg1', function () {
     return view('front/strorg');
@@ -41,17 +47,26 @@ Route::get('strorg1', [UiController::class, 'show_strorg']);
 
 Auth::routes();
 
+
+
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('backend', function () {
         return view('backend');
     });
-
+        
+    Route::get('skemas/{skema:skema}', [SantetController::class, 'skemas'])->name('detail');    
+    Route::get('skema/index', [SantetController::class, 'index'])->name('skema');
+    Route::get('skema/edit/{id}', [SantetController::class, 'edit'])->name('skema.edit');
+    Route::post('skema/store', [SantetController::class, 'store'])->name('skema.store');
+    Route::put('skema/{id}', [SantetController::class, 'update'])->name('skema.update');
+    Route::delete('skema/{id}', [SantetController::class, 'destroy'])->name('skema.destroy');
+    Route::get('kluster/show/{id}', [SantetController::class, 'show_kluster'])->name('skema.show');
+    Route::resource('asesman', AsesmanController::class);
     Route::resource('sett-beranda', UiController::class);
     Route::resource('beranda_img1', Beranda_img1Controller::class);
     Route::resource('beranda_img2', Beranda_img2Controller::class);
     Route::resource('f_profil', F_profilController::class);
     Route::resource('strorg', StrorgController::class);
-    Route::resource('skema', SkemaController::class);
     Route::resource('prodi', ProdiController::class);
     Route::resource('asesor', AsesorController::class);
     Route::resource('tuk', TukController::class);
@@ -72,3 +87,6 @@ Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name(
 
 Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
 Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
+
+Route::get('skema1', [HomeController::class, 'skema1'])->name('skema1');
+Route::get('list', [HomeController::class, 'list'])->name('list');

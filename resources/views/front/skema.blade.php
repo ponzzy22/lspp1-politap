@@ -2,6 +2,12 @@
 @include('layout/verifikasi')
 @section('isi')
 
+<ul>
+  @foreach ($skema as $asu)
+      <li><a href="{{ route('list', $asu->skema) }}">{{ $asu->skema }} <span>{{ $asu->unikom->count() }}</span> </a></li>
+  @endforeach
+</ul>
+
 <div class="card">
     <div class="card-body">
       <h4 class="card-title">Orders</h4>

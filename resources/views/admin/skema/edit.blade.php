@@ -10,7 +10,7 @@
         <div class="card-body">
             <form action="{{ route('skema.update', $skema->id) }}" method="POST" class="form-sample">
               @csrf
-              @method('patch')
+              @method('put')
                 <div class="card-description text-right">
                   <button type="submit" class="btn btn-success btn-icon-text">
                     <i class="fa fa-plus btn-icon-prepend"></i>

@@ -110,7 +110,6 @@
   </div>
 </div>
 
-
 <!-- /////////////////////////////////// -->
 {{-- TAMPIL SKEMA --}}
 <!-- /////////////////////////////////// -->
@@ -142,7 +141,7 @@
                   <td class="">{{ $asu->kode }}</td>
                   <td>{{ $asu->skema }}</td>
                   <td>{{ $asu->prodi->prodi }}</td>
-                  <td>{{ $asu->asesor->nama }}</td>
+                  <td>{{ $asu->asesor->id }}</td>
                   <td>{{ $asu->tuk->tuk }}</td>
                   <td>
                     <label class="badge badge-light">{{ $asu->status->status }}</label>                    
@@ -185,5 +184,16 @@
 </div>
 </div>
 </div>
+
+{{-- <ul>
+  @foreach ($skema as $asu)
+      <li><a href="">{{ $asu->skema }} <span>{{ $asu->unikom->count() }}</span> </a></li>
+  @endforeach
+</ul> --}}
+
+{{-- @foreach ($skema as $asu)
+    <a href="{{ route('show_kluster', $asu->id ) }}"><h1>{{ $asu->skema }}</h1></a>
+    
+    @endforeach --}}
 
 @endsection

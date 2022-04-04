@@ -153,6 +153,39 @@
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
+                            <i class="fab fa-pagelines menu-icon"></i>
+                            <span class="menu-title">Layanan</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="sidebar-layouts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('skema') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('prodi.index') }}"> <i class="fas fa-ellipsis-h"></i> Prodi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('asesor.index') }}"> <i class="fas fa-ellipsis-h"></i> Asesor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('tuk.index') }}"> <i class="fas fa-ellipsis-h"></i> TUK</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('unikom.index') }}"> <i class="fas fa-ellipsis-h"></i> Unit Kompetensi</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('asesman.index') }}"> <i class="fas fa-ellipsis-h"></i> Formulir APL-02</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                             <i class="fa fa-home menu-icon"></i>
@@ -179,35 +212,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
-                            <i class="fab fa-pagelines menu-icon"></i>
-                            <span class="menu-title">Layanan</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="sidebar-layouts">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('skema.index') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('prodi.index') }}"> <i class="fas fa-ellipsis-h"></i> Prodi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('asesor.index') }}"> <i class="fas fa-ellipsis-h"></i> Asesor</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('tuk.index') }}"> <i class="fas fa-ellipsis-h"></i> TUK</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('unikom.index') }}"> <i class="fas fa-ellipsis-h"></i> Unit Kompetensi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-info-circle menu-icon"></i>

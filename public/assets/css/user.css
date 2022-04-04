@@ -9230,9 +9230,13 @@ mark,
     color: #6c757d;
 }
 
+asu {
+    color: #0050e3;
+}
+
 code {
     font-size: 87.5%;
-    color: #e83e8c;
+    color: #3e5de8;
     word-break: break-word;
 }
 
@@ -21965,7 +21969,7 @@ pre {
 
 code {
     padding: 5px;
-    color: #FF5E6D;
+    color: #000;
     font-family: "PTSans", sans-serif;
     font-weight: 300;
     font-size: 0.8125rem;
