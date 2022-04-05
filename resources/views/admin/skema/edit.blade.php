@@ -30,7 +30,7 @@
                     <div class="form-group row">
                       <label class="col-sm-3 col-form-label">Kode Skema</label>
                       <div class="col-sm-9">
-                        <input type="text" name="kode" class="form-control" value="{{ $skema->kode }}"/>
+                        <input type="text" name="kode_skema" class="form-control" value="{{ $skema->kode_skema }}"/>
                       </div>
                     </div>
                   </div>                

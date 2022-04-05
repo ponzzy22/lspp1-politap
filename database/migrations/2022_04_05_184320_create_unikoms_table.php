@@ -14,11 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('unikoms', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('skema_id');
+            $table->id('id');
+            $table->BigInteger('skema_id');
             $table->string('unikom');
-            $table->string('slug')->unique();
             $table->timestamps();
+            $table->foreign('skema_id')
+                ->references('id')
+                ->on('skemas')
+                ->onDelete('cascade');
         });
     }
 

@@ -41,7 +41,7 @@
                 @foreach ($unikom as $hasil => $asu)
                 <tr role="row" class="odd">
                   <td class="">{{ $loop->iteration}}</td>
-                  <td>{{ $asu->kode }}</td>
+                  <td>{{ $asu->kode_unikom }}</td>
                   <td>{{ $asu->unikom }}</td>
                   <td>{{ $asu->skema->skema }}</td>
                   <td class="text-right">                    

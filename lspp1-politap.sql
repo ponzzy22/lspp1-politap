@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2022 at 05:46 PM
+-- Generation Time: Apr 05, 2022 at 10:49 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -20,6 +20,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `lspp1-politap`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `asesmens`
+--
+
+CREATE TABLE `asesmens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `unikom_id` bigint(20) UNSIGNED NOT NULL,
+  `asesmen` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `asesmens`
+--
+
+INSERT INTO `asesmens` (`id`, `unikom_id`, `asesmen`, `created_at`, `updated_at`) VALUES
+(1, 2, 'asd', '2022-04-05 13:03:57', '2022-04-05 13:03:57'),
+(2, 2, 'sdsd', '2022-04-05 13:10:12', '2022-04-05 13:10:12'),
+(3, 3, 'bgbg', '2022-04-05 13:10:21', '2022-04-05 13:10:21'),
+(4, 3, 'bgbgbg', '2022-04-05 13:10:31', '2022-04-05 13:10:31'),
+(5, 3, 'bgbgb', '2022-04-05 13:10:37', '2022-04-05 13:10:37'),
+(6, 3, 'bgbgbgb', '2022-04-05 13:10:43', '2022-04-05 13:10:43'),
+(7, 4, 'qwqw', '2022-04-05 13:10:53', '2022-04-05 13:10:53'),
+(8, 4, 'qwqqw', '2022-04-05 13:11:07', '2022-04-05 13:11:07'),
+(9, 6, 'rtrtrtr', '2022-04-05 13:11:13', '2022-04-05 13:11:13'),
+(10, 6, 'rtrt', '2022-04-05 13:11:20', '2022-04-05 13:11:20'),
+(11, 7, 'yuyuyuyu', '2022-04-05 13:11:30', '2022-04-05 13:11:30'),
+(12, 7, 'klkl', '2022-04-05 13:11:36', '2022-04-05 13:11:36');
 
 -- --------------------------------------------------------
 
@@ -46,7 +78,9 @@ CREATE TABLE `asesor` (
 
 INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`) VALUES
 (4, 3423423, 'Ponsianus Jopi', 'public/uploads/asesor/1648836603logo-pegadaian-01.png', 'sdas', NULL, 'cino7130@gmail.com', 'Aktif', '2022-04-01 11:10:03.000000', '2022-04-01 18:10:03.923912'),
-(7, 22112, 'bujang', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 20:11:28.000000', '2022-04-02 03:11:29.416920');
+(7, 22112, 'bujang', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 20:11:28.000000', '2022-04-02 03:11:29.416920'),
+(8, 34234233333, 'Sukiman', 'public/uploads/asesor/1649183000ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas', 'Laki-laki', 'cino7sd130343@gmail.com', 'Aktif', '2022-04-05 11:23:20.000000', '2022-04-05 11:23:20.000000'),
+(9, 342342389333, 'Bang Toyib', 'public/uploads/asesor/1649183057ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas23123', 'Laki-laki', 'cino7sd1231230@gmail.com', 'Aktif', '2022-04-05 11:24:17.000000', '2022-04-05 11:24:17.000000');
 
 -- --------------------------------------------------------
 
@@ -203,7 +237,18 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_03_31_053712_create_permission_tables', 1);
+(5, '2022_03_31_053712_create_permission_tables', 1),
+(6, '2022_04_04_064735_create_skemas_table', 2),
+(7, '2022_04_04_065104_create_unikoms_table', 2),
+(8, '2022_04_04_142623_create_skemas_table', 3),
+(9, '2022_04_04_162549_create_ases_mandiri_table', 4),
+(10, '2022_04_05_035640_create_skemas_table', 5),
+(11, '2022_04_05_035931_create_unikoms_table', 5),
+(12, '2022_04_05_040007_create_asesman_table', 5),
+(13, '2022_04_05_040903_create_asesman_table', 6),
+(14, '2022_04_05_041003_create_unikoms_table', 6),
+(15, '2022_04_05_184320_create_unikoms_table', 7),
+(16, '2022_04_05_194410_create_asesmens_table', 8);
 
 -- --------------------------------------------------------
 
@@ -301,7 +346,9 @@ CREATE TABLE `prodi` (
 INSERT INTO `prodi` (`id`, `prodi`, `updated_at`, `created_at`) VALUES
 (1, 'Teknik Informatika', '2022-04-01 07:40:46.000000', '2022-04-01 07:40:46.000000'),
 (2, 'Teknik Sipil', '2022-04-01 07:41:19.000000', '2022-04-01 07:41:19.000000'),
-(4, 'Teknik Elektro', '2022-04-01 07:37:33.000000', '2022-04-01 07:37:33.000000');
+(4, 'Teknik Elektro', '2022-04-01 07:37:33.000000', '2022-04-01 07:37:33.000000'),
+(6, 'Teknik Pertambangan', '2022-04-05 11:27:11.000000', '2022-04-05 11:27:11.000000'),
+(7, 'Teknik Bedukun', '2022-04-05 11:27:25.000000', '2022-04-05 11:27:25.000000');
 
 -- --------------------------------------------------------
 
@@ -386,29 +433,32 @@ INSERT INTO `sex` (`id`, `sex`, `updated_at`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skema`
+-- Table structure for table `skemas`
 --
 
-CREATE TABLE `skema` (
-  `id` int(11) NOT NULL,
-  `kode` varchar(225) NOT NULL DEFAULT 'SKM-',
-  `skema` varchar(255) DEFAULT NULL,
-  `prodi_id` int(11) DEFAULT NULL,
-  `tuk_id` int(11) DEFAULT NULL,
-  `asesor_id` int(11) DEFAULT NULL,
-  `status_id` int(11) DEFAULT NULL,
-  `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `skemas` (
+  `id` bigint(20) NOT NULL,
+  `kode_skema` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skema` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prodi_id` bigint(20) UNSIGNED NOT NULL,
+  `tuk_id` bigint(20) UNSIGNED NOT NULL,
+  `asesor_id` bigint(20) UNSIGNED NOT NULL,
+  `status_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `skema`
+-- Dumping data for table `skemas`
 --
 
-INSERT INTO `skema` (`id`, `kode`, `skema`, `prodi_id`, `tuk_id`, `asesor_id`, `status_id`, `updated_at`, `created_at`) VALUES
-(8, 'Web desain', 'Web desain 2', 2, 4, 7, 2, '2022-04-02 03:56:31.553171', '2022-04-02 03:56:31.553171'),
-(12, '231231232312312', 'Wadimor 2', 4, 3, 4, 2, '2022-04-01 21:14:59.000000', '2022-04-02 04:14:59.869221'),
-(13, '23123123', 'asu', 2, 3, 4, 1, '2022-04-03 08:32:55.000000', '2022-04-03 08:32:55.000000');
+INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `tuk_id`, `asesor_id`, `status_id`, `created_at`, `updated_at`) VALUES
+(1, 'SKM-2312323', 'Teknik Seribu Bayangan', 4, 4, 4, 1, '2022-04-05 11:11:48', '2022-04-05 11:15:55'),
+(2, 'SKM-32412323', 'Jaringan LAN', 1, 3, 4, 1, '2022-04-05 11:18:59', '2022-04-05 11:18:59'),
+(3, 'SKM-2q312323', 'Teknik Byakugan', 2, 3, 7, 1, '2022-04-05 11:19:32', '2022-04-05 11:19:32'),
+(5, 'SKM-22112323', 'Mugen Tsukoyomi', 2, 3, 4, 2, '2022-04-05 11:21:08', '2022-04-05 11:33:40'),
+(7, 'SKM-22212323', 'Basis Data', 1, 3, 7, 1, '2022-04-05 11:21:48', '2022-04-05 11:21:48'),
+(8, 'SKM-3241232323', 'PONZZI', 2, 5, 9, 1, '2022-04-05 11:26:03', '2022-04-05 11:26:03');
 
 -- --------------------------------------------------------
 
@@ -472,34 +522,36 @@ CREATE TABLE `tuk` (
 
 INSERT INTO `tuk` (`id`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
 (3, 'LAB KOMPUTER', 'DSDFSD', '2022-04-01 20:30:07.000000', '2022-04-01 20:30:07.000000'),
-(4, 'LAB KIMIA', 'DFFSD', '2022-04-01 20:30:18.000000', '2022-04-01 20:30:18.000000');
+(4, 'LAB KIMIA', 'DFFSD', '2022-04-01 20:30:18.000000', '2022-04-01 20:30:18.000000'),
+(5, 'LAB MIPA', 'WQW', '2022-04-05 11:24:42.000000', '2022-04-05 11:24:42.000000'),
+(6, 'KANTIN', '312', '2022-04-05 11:25:00.000000', '2022-04-05 11:25:00.000000'),
+(7, 'KONOHA', '2323', '2022-04-05 11:25:11.000000', '2022-04-05 11:25:11.000000');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `unit_kompetensi`
+-- Table structure for table `unikoms`
 --
 
-CREATE TABLE `unit_kompetensi` (
-  `id` int(11) NOT NULL,
-  `kode` varchar(255) DEFAULT NULL,
-  `unikom` varchar(255) DEFAULT NULL,
-  `skema_id` int(11) DEFAULT NULL,
-  `updated_at` timestamp(6) NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+CREATE TABLE `unikoms` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kode_unikom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skema_id` bigint(20) NOT NULL,
+  `unikom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `unit_kompetensi`
+-- Dumping data for table `unikoms`
 --
 
-INSERT INTO `unit_kompetensi` (`id`, `kode`, `unikom`, `skema_id`, `updated_at`, `created_at`) VALUES
-(1, 'dfsd-3423', 'sasdasfasf', 8, '2022-04-03 15:36:12.720355', '2022-04-03 15:36:12.720355'),
-(3, 'aaaa', 'aaa', 8, '2022-04-03 15:36:43.623491', '2022-04-03 15:36:43.623491'),
-(4, 'jopi', 'jopi', 8, '2022-04-03 15:36:47.056970', '2022-04-03 15:36:47.056970'),
-(6, 'ASU', 'KOE', 8, '2022-04-03 15:36:50.187103', '2022-04-03 15:36:50.187103'),
-(7, '3434', 'aaa', 8, '2022-04-03 08:37:34.000000', '2022-04-03 08:37:34.000000'),
-(8, 'sdfsd', 'fdfdf', 13, '2022-04-03 08:38:17.000000', '2022-04-03 08:38:17.000000');
+INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, `updated_at`) VALUES
+(2, 'UNIT-2112', 2, 'Rajin Merantau', '2022-04-05 12:07:35', '2022-04-05 12:07:35'),
+(3, 'UNIT-2112232', 5, 'Rajin Begadang', '2022-04-05 12:11:16', '2022-04-05 12:11:16'),
+(4, 'UNIT-723112', 8, 'Suka Ngutang sana sini', '2022-04-05 12:11:44', '2022-04-05 12:11:44'),
+(6, 'UNIT-00003', 2, 'APA YA', '2022-04-05 12:13:09', '2022-04-05 12:13:09'),
+(7, 'UNIT-42112232', 2, 'Rajin Ibadah', '2022-04-05 12:13:54', '2022-04-05 12:13:54');
 
 -- --------------------------------------------------------
 
@@ -544,15 +596,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'ZxCo07HmOrXd7Cu1SXwet1l33g8OfXKPp51ix8PNNklHmmMQYVIfGm67K6UX', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'NzmkQZIhAW6ceKZrfxr123Zlx7ufVkPM03Z9lnJqqHMa1zevvCBTIlrpyMGG', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
 (2, 'User Role', 'user', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
-(5, 'Ponsianus Jopi', '3042020058432423', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1648987042Screenshot (6).png', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1648987001ASSIST-1.png', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-03 04:57:22'),
+(5, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1648987042Screenshot (6).png', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1648987001ASSIST-1.png', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-04 08:51:37'),
 (6, '12345', '12345', 12334, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
 (7, 'sdasd', '23434343', 1112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, NULL, NULL, '2022-04-02 09:05:50', '2022-04-02 09:52:53');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `asesmens`
+--
+ALTER TABLE `asesmens`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `asesmens_unikom_id_foreign` (`unikom_id`);
 
 --
 -- Indexes for table `asesor`
@@ -673,12 +732,11 @@ ALTER TABLE `sex`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `skema`
+-- Indexes for table `skemas`
 --
-ALTER TABLE `skema`
+ALTER TABLE `skemas`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kode` (`kode`),
-  ADD KEY `prodi_id` (`prodi_id`);
+  ADD UNIQUE KEY `kode_skema` (`kode_skema`);
 
 --
 -- Indexes for table `status`
@@ -699,11 +757,12 @@ ALTER TABLE `tuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `unit_kompetensi`
+-- Indexes for table `unikoms`
 --
-ALTER TABLE `unit_kompetensi`
+ALTER TABLE `unikoms`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kode` (`kode`);
+  ADD UNIQUE KEY `kode_unikom` (`kode_unikom`),
+  ADD KEY `unikoms_skema_id_foreign` (`skema_id`);
 
 --
 -- Indexes for table `users`
@@ -719,10 +778,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `asesmens`
+--
+ALTER TABLE `asesmens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT for table `asesor`
 --
 ALTER TABLE `asesor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `beranda`
@@ -764,7 +829,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -782,7 +847,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -803,10 +868,10 @@ ALTER TABLE `sex`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `skema`
+-- AUTO_INCREMENT for table `skemas`
 --
-ALTER TABLE `skema`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+ALTER TABLE `skemas`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -824,13 +889,13 @@ ALTER TABLE `strorg`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `unit_kompetensi`
+-- AUTO_INCREMENT for table `unikoms`
 --
-ALTER TABLE `unit_kompetensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+ALTER TABLE `unikoms`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -841,6 +906,12 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `asesmens`
+--
+ALTER TABLE `asesmens`
+  ADD CONSTRAINT `asesmens_unikom_id_foreign` FOREIGN KEY (`unikom_id`) REFERENCES `unikoms` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `model_has_permissions`
@@ -860,6 +931,12 @@ ALTER TABLE `model_has_roles`
 ALTER TABLE `role_has_permissions`
   ADD CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `unikoms`
+--
+ALTER TABLE `unikoms`
+  ADD CONSTRAINT `unikoms_skema_id_foreign` FOREIGN KEY (`skema_id`) REFERENCES `skemas` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

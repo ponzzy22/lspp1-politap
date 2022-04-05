@@ -4,28 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use app\Models\Prodi;
-use app\Models\Asesor;
-use app\Models\Tuk;
-use app\Models\Status;
 
 class Skema extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'id', 
-        'kode', 
+        'kode_skema', 
         'skema', 
         'prodi_id', 
         'asesor_id', 
         'tuk_id', 
         'status_id'
     ];
-    
-    public function unikoms(){
-        return $this->hasMany(Unikom::class);
-    }
 
 
     public function prodi(){
@@ -44,5 +35,22 @@ class Skema extends Model
 
     public function status(){
         return $this->belongsTo(Status::class);
+    }
+
+
+    public function unikoms(){
+        return $this->hasMany(Unikom::class);
+    }
+    
+
+    public function asesmens()
+    {
+        return $this->hasManyThrough(
+            Asesmen::class,
+            Unikom::class,
+            'skema_id',
+            'unikom_id'
+
+        );
     }
 }

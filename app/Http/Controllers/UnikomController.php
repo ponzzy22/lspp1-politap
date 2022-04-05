@@ -8,27 +8,22 @@ use Illuminate\Http\Request;
 
 class UnikomController extends Controller
 {
-
-
-    public function index()
-    {
+    public function index()  {
         $skema = Skema::all();
         $unikom = Unikom::all();
         return view('admin/unikom/index', compact('unikom', 'skema'));
     }
 
-    public function create()
-    {
+
+    public function create()  {
         $skema = Skema::all();
         return view('admin/unikom/create', compact('skema'));
     }
 
 
-
-    public function store(Request $request)
-    {
-;        $unikom = Unikom::create([
-            'kode' => $request->kode,
+    public function store(Request $request) {
+        $unikom = Unikom::create([
+            'kode_unikom' => $request->kode_unikom,
             'unikom' => $request->unikom,
             'skema_id'=> $request->skema_id
         ]);
@@ -36,27 +31,21 @@ class UnikomController extends Controller
     }
 
 
-
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
 
-
-    public function edit($id)
-    {
+    public function edit($id) {
         $skema = Skema::all();
         $unikom = Unikom::findorfail($id);
         return view('admin/unikom/edit', compact('unikom', 'skema'));
     }
 
 
-
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         $unikom_data = [
-            'kode' => $request->kode,
+            'kode_unikom' => $request->kode_unikom,
             'unikom' => $request->unikom,
             'skema_id' => $request->skema_id,
         ];
@@ -65,9 +54,7 @@ class UnikomController extends Controller
     }
 
 
-
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $unikom = Unikom::findorfail($id);
         $unikom->delete();
         return redirect()->back()->with('success','Unit Kompetensi Berhasil Dihapus');

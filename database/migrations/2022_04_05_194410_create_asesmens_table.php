@@ -13,12 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('asesman', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('skema_id');
-            $table->string('name');
-            $table->string('echo');
+        Schema::create('asesmens', function (Blueprint $table) {
+            $table->id('id');
+            $table->unsignedBigInteger('unikom_id');
+            $table->string('asesmen');
             $table->timestamps();
+            $table->foreign('unikom_id')
+                ->references('id')
+                ->on('unikoms')
+                ->onDelete('cascade');
         });
     }
 
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asesman');
+        Schema::dropIfExists('asesmens');
     }
 };

@@ -37,7 +37,7 @@
                   <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Kode Skema</label>
                     <div class="col-sm-9">
-                      <input type="text" name="kode" class="form-control" />
+                      <input type="text" name="kode_skema" class="form-control" />
                     </div>
                   </div>
                 </div>                
@@ -138,10 +138,10 @@
               <tbody>
                 @foreach ($skema as $hasil => $asu)
                 <tr role="row" class="odd">
-                  <td class="">{{ $asu->kode }}</td>
+                  <td class="">{{ $asu->kode_skema }}</td>
                   <td>{{ $asu->skema }}</td>
                   <td>{{ $asu->prodi->prodi }}</td>
-                  <td>{{ $asu->asesor->id }}</td>
+                  <td>{{ $asu->asesor->nama }}</td>
                   <td>{{ $asu->tuk->tuk }}</td>
                   <td>
                     <label class="badge badge-light">{{ $asu->status->status }}</label>                    
@@ -151,12 +151,7 @@
                         <i class="fa fa-cog"></i>
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Assesmen Mandiri</a>
                       </div>
                     <a href="{{ route('skema.edit', $asu->id) }}"><button class="btn btn-inverse-warning">
                       <i class="fa fa-edit"></i>

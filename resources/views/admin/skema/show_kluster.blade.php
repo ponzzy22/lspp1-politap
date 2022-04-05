@@ -2,8 +2,10 @@
 @section('isi')
 
 <a href=""><h1>{{ $skema->skema }}</h1></a>
-{{-- <a href="{{ route('detail', $unikom->skema->slug) }}"><label for="">{{ $skema->skema }}</label></a> --}}
-<a href="{{ route('detail', $unikom->skema->skema) }}"><label for="">{{ $skema->skema }}</label></a>
+<a href="{{ route('detail', $unikom->skema->slug) }}"><label for="">{{ $skema->skema }}</label></a>
+<a href="{{ route('detail', $unikom->skema->skema) }}"><label for="">{{ $skema->skema }}</label></a><br>
+
+<a href="{{ route('for_apl2', $asesman->skema->skema) }}">formulir apl2</a>
 
 
 {{-- <div class="card">

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AsesiController;
 use App\Http\Controllers\AsesmanController;
 use App\Http\Controllers\AsesMandiriController;
+use App\Http\Controllers\AsesmenController;
 use App\Http\Controllers\AsesorController;
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AsuController;
@@ -33,10 +34,6 @@ Route::get('profil', function () {
     return view('front/profil');
 });
 
-// Route::get('skema1', function () {
-//     return view('front/skema');
-// });
-
 Route::get('strorg1', function () {
     return view('front/strorg');
 });
@@ -48,20 +45,13 @@ Route::get('strorg1', [UiController::class, 'show_strorg']);
 Auth::routes();
 
 
-
 Route::group(['middleware' => 'role:admin'], function(){
     Route::get('backend', function () {
         return view('backend');
     });
-        
-    Route::get('skemas/{skema:skema}', [SantetController::class, 'skemas'])->name('detail');    
-    Route::get('skema/index', [SantetController::class, 'index'])->name('skema');
-    Route::get('skema/edit/{id}', [SantetController::class, 'edit'])->name('skema.edit');
-    Route::post('skema/store', [SantetController::class, 'store'])->name('skema.store');
-    Route::put('skema/{id}', [SantetController::class, 'update'])->name('skema.update');
-    Route::delete('skema/{id}', [SantetController::class, 'destroy'])->name('skema.destroy');
-    Route::get('kluster/show/{id}', [SantetController::class, 'show_kluster'])->name('skema.show');
-    Route::resource('asesman', AsesmanController::class);
+
+    Route::resource('skema', SkemaController::class);
+    Route::resource('asesmen', AsesmenController::class);
     Route::resource('sett-beranda', UiController::class);
     Route::resource('beranda_img1', Beranda_img1Controller::class);
     Route::resource('beranda_img2', Beranda_img2Controller::class);

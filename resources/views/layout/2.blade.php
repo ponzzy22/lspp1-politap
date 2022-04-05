@@ -162,7 +162,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('skema') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
+                                    <a class="nav-link" href="{{ route('skema.index') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('prodi.index') }}"> <i class="fas fa-ellipsis-h"></i> Prodi</a>
@@ -177,7 +177,7 @@
                                     <a class="nav-link" href="{{ route('unikom.index') }}"> <i class="fas fa-ellipsis-h"></i> Unit Kompetensi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('asesman.index') }}"> <i class="fas fa-ellipsis-h"></i> Formulir APL-02</a>
+                                    <a class="nav-link" href="{{ route('asesmen.index') }}"> <i class="fas fa-ellipsis-h"></i> Formulir APL-02</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>

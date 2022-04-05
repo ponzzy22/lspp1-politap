@@ -16,7 +16,7 @@
             <form action="{{ route('unikom.store') }}" method="POST" class="form-inline">
                 @csrf
                 <label class="sr-only" for="inlineFormInputName2"></label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="kode" placeholder="Kode Unit">
+                <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="kode_unikom" placeholder="Kode Unit">
                 
                 <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
                 <div class="input-group mb-2 mr-sm-2">
