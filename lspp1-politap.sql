@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 05, 2022 at 10:49 PM
+-- Generation Time: Apr 06, 2022 at 08:16 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -46,12 +46,17 @@ INSERT INTO `asesmens` (`id`, `unikom_id`, `asesmen`, `created_at`, `updated_at`
 (4, 3, 'bgbgbg', '2022-04-05 13:10:31', '2022-04-05 13:10:31'),
 (5, 3, 'bgbgb', '2022-04-05 13:10:37', '2022-04-05 13:10:37'),
 (6, 3, 'bgbgbgb', '2022-04-05 13:10:43', '2022-04-05 13:10:43'),
-(7, 4, 'qwqw', '2022-04-05 13:10:53', '2022-04-05 13:10:53'),
-(8, 4, 'qwqqw', '2022-04-05 13:11:07', '2022-04-05 13:11:07'),
 (9, 6, 'rtrtrtr', '2022-04-05 13:11:13', '2022-04-05 13:11:13'),
-(10, 6, 'rtrt', '2022-04-05 13:11:20', '2022-04-05 13:11:20'),
 (11, 7, 'yuyuyuyu', '2022-04-05 13:11:30', '2022-04-05 13:11:30'),
-(12, 7, 'klkl', '2022-04-05 13:11:36', '2022-04-05 13:11:36');
+(12, 7, 'klkl', '2022-04-05 13:11:36', '2022-04-05 13:11:36'),
+(13, 8, 'asd', '2022-04-05 19:35:40', '2022-04-05 19:35:40'),
+(14, 8, 'sdsd212121', '2022-04-05 19:35:49', '2022-04-05 19:35:49'),
+(15, 3, 'asd121212', '2022-04-05 23:43:19', '2022-04-05 23:43:19'),
+(17, 4, 'utang1', '2022-04-06 09:11:43', '2022-04-06 09:11:43'),
+(18, 4, 'utang2', '2022-04-06 09:11:51', '2022-04-06 09:11:51'),
+(19, 4, 'utang3', '2022-04-06 09:11:57', '2022-04-06 09:11:57'),
+(20, 19, 'ora1', '2022-04-06 09:12:33', '2022-04-06 09:12:33'),
+(21, 19, 'ora2', '2022-04-06 09:12:39', '2022-04-06 09:12:39');
 
 -- --------------------------------------------------------
 
@@ -170,6 +175,20 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `formulirs`
+--
+
+CREATE TABLE `formulirs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `echo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `f_profil`
 --
 
@@ -248,7 +267,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (13, '2022_04_05_040903_create_asesman_table', 6),
 (14, '2022_04_05_041003_create_unikoms_table', 6),
 (15, '2022_04_05_184320_create_unikoms_table', 7),
-(16, '2022_04_05_194410_create_asesmens_table', 8);
+(16, '2022_04_05_194410_create_asesmens_table', 8),
+(17, '2022_04_06_112234_create_formulirs_table', 9);
 
 -- --------------------------------------------------------
 
@@ -453,12 +473,12 @@ CREATE TABLE `skemas` (
 --
 
 INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `tuk_id`, `asesor_id`, `status_id`, `created_at`, `updated_at`) VALUES
-(1, 'SKM-2312323', 'Teknik Seribu Bayangan', 4, 4, 4, 1, '2022-04-05 11:11:48', '2022-04-05 11:15:55'),
 (2, 'SKM-32412323', 'Jaringan LAN', 1, 3, 4, 1, '2022-04-05 11:18:59', '2022-04-05 11:18:59'),
 (3, 'SKM-2q312323', 'Teknik Byakugan', 2, 3, 7, 1, '2022-04-05 11:19:32', '2022-04-05 11:19:32'),
 (5, 'SKM-22112323', 'Mugen Tsukoyomi', 2, 3, 4, 2, '2022-04-05 11:21:08', '2022-04-05 11:33:40'),
 (7, 'SKM-22212323', 'Basis Data', 1, 3, 7, 1, '2022-04-05 11:21:48', '2022-04-05 11:21:48'),
-(8, 'SKM-3241232323', 'PONZZI', 2, 5, 9, 1, '2022-04-05 11:26:03', '2022-04-05 11:26:03');
+(8, 'SKM-3241232323', 'PONZZI', 2, 5, 9, 1, '2022-04-05 11:26:03', '2022-04-05 11:26:03'),
+(9, 'SKM-2zzz312323', 'Amaterasu', 6, 7, 9, 2, '2022-04-05 19:29:52', '2022-04-05 19:29:52');
 
 -- --------------------------------------------------------
 
@@ -525,7 +545,8 @@ INSERT INTO `tuk` (`id`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
 (4, 'LAB KIMIA', 'DFFSD', '2022-04-01 20:30:18.000000', '2022-04-01 20:30:18.000000'),
 (5, 'LAB MIPA', 'WQW', '2022-04-05 11:24:42.000000', '2022-04-05 11:24:42.000000'),
 (6, 'KANTIN', '312', '2022-04-05 11:25:00.000000', '2022-04-05 11:25:00.000000'),
-(7, 'KONOHA', '2323', '2022-04-05 11:25:11.000000', '2022-04-05 11:25:11.000000');
+(7, 'KONOHA', '2323', '2022-04-05 11:25:11.000000', '2022-04-05 11:25:11.000000'),
+(8, '2222', '2312', '2022-04-05 22:25:00.000000', '2022-04-05 22:25:00.000000');
 
 -- --------------------------------------------------------
 
@@ -551,7 +572,18 @@ INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, 
 (3, 'UNIT-2112232', 5, 'Rajin Begadang', '2022-04-05 12:11:16', '2022-04-05 12:11:16'),
 (4, 'UNIT-723112', 8, 'Suka Ngutang sana sini', '2022-04-05 12:11:44', '2022-04-05 12:11:44'),
 (6, 'UNIT-00003', 2, 'APA YA', '2022-04-05 12:13:09', '2022-04-05 12:13:09'),
-(7, 'UNIT-42112232', 2, 'Rajin Ibadah', '2022-04-05 12:13:54', '2022-04-05 12:13:54');
+(7, 'UNIT-42112232', 2, 'Rajin Ibadah', '2022-04-05 12:13:54', '2022-04-05 12:13:54'),
+(8, 'UNIT-2WWW112', 9, 'AHDJSJKDJA', '2022-04-05 19:34:38', '2022-04-05 19:34:38'),
+(9, 'UNIT-2112343', 2, 'Unit 12312', '2022-04-05 22:38:18', '2022-04-05 22:38:18'),
+(10, 'UNIT-42112232ww', 2, 'aaa', '2022-04-05 22:42:01', '2022-04-05 22:42:01'),
+(12, 'UNIT-211234534', 2, '34234', '2022-04-05 22:42:55', '2022-04-05 22:42:55'),
+(13, 'UNIT-211212312331232', 2, 'Wadidaw', '2022-04-05 22:50:11', '2022-04-05 22:50:11'),
+(14, 'UNIT-2112wer', 2, 'aaaerwe', '2022-04-05 22:52:46', '2022-04-05 22:52:46'),
+(16, 'UNIT-42112232ww12', 2, 'Unit 12312343', '2022-04-05 22:54:11', '2022-04-05 22:54:11'),
+(17, 'UNIT-2', 2, 'Rajin Merantau2', '2022-04-05 22:55:31', '2022-04-05 22:55:31'),
+(19, 'UNIT-42', 8, 'Orra UMUM', '2022-04-05 22:56:53', '2022-04-06 09:10:32'),
+(20, 'UNIT-211223212', 5, 'Inul', '2022-04-05 22:58:29', '2022-04-05 22:58:29'),
+(21, 'UNIT-2112z', 7, 'h', '2022-04-06 05:22:36', '2022-04-06 05:22:36');
 
 -- --------------------------------------------------------
 
@@ -596,11 +628,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'NzmkQZIhAW6ceKZrfxr123Zlx7ufVkPM03Z9lnJqqHMa1zevvCBTIlrpyMGG', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tQ7fofXA0RHduneyXFy6ig4xOKRnzAyfnyJ7xxfGbr0lj7BuGTKUPdABpDM1', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
 (2, 'User Role', 'user', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
-(5, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1648987042Screenshot (6).png', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1648987001ASSIST-1.png', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-04 08:51:37'),
+(5, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1649257070lspp1-politap.pdf', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1649256639ceb99d0f22759041b43f10a726f0a392.jpg', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-06 07:57:50'),
 (6, '12345', '12345', 12334, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
-(7, 'sdasd', '23434343', 1112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, NULL, NULL, '2022-04-02 09:05:50', '2022-04-02 09:52:53');
+(7, 'sdasd', '23434343', 1112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, NULL, NULL, '2022-04-02 09:05:50', '2022-04-02 09:52:53'),
+(8, 'sukiman', '23123123123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$6owq2StfKfJb11WH5Phf0.5DXaEiYEJcFEvo3EmhLJd3a9WuNhTiC', NULL, NULL, NULL, '2022-04-06 07:10:11', '2022-04-06 07:10:11');
 
 --
 -- Indexes for dumped tables
@@ -645,6 +678,12 @@ ALTER TABLE `beranda_img2`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `formulirs`
+--
+ALTER TABLE `formulirs`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `f_profil`
@@ -781,7 +820,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `asesmens`
 --
 ALTER TABLE `asesmens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `asesor`
@@ -814,6 +853,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `formulirs`
+--
+ALTER TABLE `formulirs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `f_profil`
 --
 ALTER TABLE `f_profil`
@@ -829,7 +874,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -871,7 +916,7 @@ ALTER TABLE `sex`
 -- AUTO_INCREMENT for table `skemas`
 --
 ALTER TABLE `skemas`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -889,19 +934,19 @@ ALTER TABLE `strorg`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `unikoms`
 --
 ALTER TABLE `unikoms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
