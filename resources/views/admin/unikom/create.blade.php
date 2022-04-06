@@ -2,6 +2,7 @@
 @section('isi')
 @include('layout/verifikasi')
 
+
 <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">    
     <div class="card">
         <div class="card-header" role="tab" id="heading-11">
@@ -39,5 +40,7 @@
         </div>
     </div>
 </div>
+
+
     
 @endsection

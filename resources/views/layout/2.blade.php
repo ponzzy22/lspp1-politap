@@ -299,6 +299,8 @@
     <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
+    <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
+
 </body>
 
 

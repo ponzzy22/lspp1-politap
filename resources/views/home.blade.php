@@ -56,6 +56,8 @@
     <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
     <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
     <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/assets/js/wizards.js') }}"></script>
+
 </body>
 
 

@@ -10,8 +10,11 @@ use app\Http\Controllers\AsuController;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PendaftaranController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\SantetController;
 use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
@@ -50,6 +53,9 @@ Route::group(['middleware' => 'role:admin'], function(){
         return view('backend');
     });
 
+    Route::get('show_asesmen/{id}', [SkemaController::class, 'show_asesmen'])->name('show_asesmen');
+    Route::get('detail/{id}', [SkemaController::class, 'detail'])->name('skema.detail');
+
     Route::resource('skema', SkemaController::class);
     Route::resource('asesmen', AsesmenController::class);
     Route::resource('sett-beranda', UiController::class);
@@ -69,6 +75,8 @@ Route::group(['middleware' => 'auth'], function(){
     });
 
     Route::resource('asesi', AsesiController::class);
+    Route::resource('formulir', FormulirController::class);
+    Route::resource('registrasi', RegistrasiController::class);
 });
 
 Route::get('asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');

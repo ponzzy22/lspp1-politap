@@ -156,6 +156,9 @@
                     <a href="{{ route('skema.edit', $asu->id) }}"><button class="btn btn-inverse-warning">
                       <i class="fa fa-edit"></i>
                     </button></a>
+                    <a href="{{ route('skema.detail', $asu->id) }}"><button class="btn btn-inverse-warning">
+                      <i class="fa fa-info"></i>
+                    </button></a>
                     <a href="{{ route('skema.show', $asu->id) }}"><button class="btn btn-inverse-info">
                       <i class="fa fa-eye"></i>
                     </button></a>

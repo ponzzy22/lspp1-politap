@@ -15,4 +15,9 @@ class Unikom extends Model
         return $this->belongsTo(Skema::class);
     }
 
+
+    public function asesmens(){
+        return $this->hasMany(Asesmen::class);
+    }
+
 }

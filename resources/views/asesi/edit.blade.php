@@ -232,7 +232,7 @@
                         <div class="input-group-prepend"> 
                             <input type="file"  name="image" class="form-control">
                             <a href="{{ old('image', Auth::user()->image) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                        </div><br>
+                        </div><br><p>{{ old('ktp', Auth::user()->image) }}</p>
                         <embed src="{{ old('image', Auth::user()->image) }}"  type="application/pdf">
                     </div>
                 </div>
@@ -244,7 +244,7 @@
                         <div class="input-group-prepend"> 
                             <input type="file"  name="ktm" class="form-control">
                             <a href="{{ old('ktm', Auth::user()->ktm) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                        </div><br>
+                        </div><br><p>{{ old('ktp', Auth::user()->ktm) }}</p>
                         <embed src="{{ old('ktm', Auth::user()->ktm) }}"  type="application/pdf">                   </div>
                 </div>
             </div>
@@ -258,7 +258,7 @@
                         <div class="input-group-prepend"> 
                             <input type="file"  name="ktp" class="form-control">
                             <a href="{{ old('ktp', Auth::user()->ktp) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                        </div><br>
+                        </div><br><p>{{ old('ktp', Auth::user()->ktp) }}</p>
                         <embed src="{{ old('ktp', Auth::user()->ktp) }}"  type="application/pdf">
                     </div>
                 </div>
@@ -270,7 +270,7 @@
                         <div class="input-group-prepend"> 
                             <input type="file"  name="khs" class="form-control">
                             <a href="{{ old('khs', Auth::user()->khs) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                        </div><br>
+                        </div><br><p>{{ old('ktp', Auth::user()->khs) }}</p>
                         <embed src="{{ old('khs', Auth::user()->khs) }}"  type="application/pdf">                   </div>
                 </div>
             </div>

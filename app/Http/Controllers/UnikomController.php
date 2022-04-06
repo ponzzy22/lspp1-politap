@@ -27,7 +27,7 @@ class UnikomController extends Controller
             'unikom' => $request->unikom,
             'skema_id'=> $request->skema_id
         ]);
-        return redirect()->route('unikom.index')->with('success', 'Unit Kompetensi Berhasil Ditambahkan');
+        return redirect()->back()->with('success', 'Unit Kompetensi Berhasil Ditambahkan');
     }
 
 

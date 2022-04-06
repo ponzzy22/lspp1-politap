@@ -15,6 +15,35 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/user.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
+    <style>
+        .box {
+            color: #fff;
+            padding: 20px;
+            display: none;
+            margin-top: 20px;
+        }
+        
+        .red {
+            background: #ff0000;
+        }
+        
+        .green {
+            background: #228B22;
+        }
+        
+        .blue {
+            background: #0000ff;
+        }
+    </style>
+    <script src="{{ asset('public/assets/js/jquery-3.5.1.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('input[type="checkbox"]').click(function() {
+                var inputValue = $(this).attr("value");
+                $("." + inputValue).toggle();
+            });
+        });
+    </script>
 </head>
 
 <body class="sidebar-mini">
@@ -160,7 +189,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{ route('registrasi.index') }}">
                             <i class="fa fa-plus menu-icon"></i>
                             <span class="menu-title">Pendaftaran</span>
                         </a>
@@ -235,6 +264,8 @@
     <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
     <script src="{{ asset('public/assets/js/form-validation.js') }}"></script>
     <script src="{{ asset('public/assets/js/bt-maxLength.js') }}"></script>
+    <script src="{{ asset('public/assets/js/wizards.js') }}"></script>
+
 </body>
 
 

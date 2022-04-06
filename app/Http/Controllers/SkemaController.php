@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asesmen;
 use App\Models\Asesor;
 use App\Models\Prodi;
 use App\Models\Skema;
 use App\Models\Status;
 use App\Models\Tuk;
+use App\Models\Unikom;
 use Illuminate\Http\Request;
 
 class SkemaController extends Controller
@@ -75,5 +77,18 @@ class SkemaController extends Controller
         $skema = Skema::findorfail($id);
         $skema->delete();
         return redirect()->back()->with('success','Skema Berhasil Dihapus');
+    }
+
+
+    public function show_asesmen($id){
+        // $asesmen = Asesmen::findorfail($id);
+        $unikom = Unikom::findorfail($id);
+        return view('admin/skema/show_asesmen')->with('unikom', $unikom);
+    }
+
+
+    public function detail($id){
+        $skema = Skema::findorfail($id);
+        return view('admin/skema/detail', compact('skema'));
     }
 }

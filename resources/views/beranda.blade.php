@@ -25,6 +25,53 @@
 <!-- /////////////////////////////////// -->
 <!-- CAROUSEL -->
 <!-- /////////////////////////////////// -->
+{{-- <div class="card">
+    <div class="card-body">
+      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators2" data-slide-to="0" class=""></li>
+          <li data-target="#carouselExampleIndicators2" data-slide-to="1" class=""></li>
+          <li data-target="#carouselExampleIndicators2" data-slide-to="2" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_12.jpg') }}" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Heading</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_1.jpg') }}" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Heading</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_2.jpg') }}" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Heading</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div> --}}
+
+
 
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">                            
