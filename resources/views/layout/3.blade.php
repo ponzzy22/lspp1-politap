@@ -44,6 +44,78 @@
             });
         });
     </script>
+
+<style type="text/css">/* Chart.js */ @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+<style type="text/css">span.im-caret {
+    -webkit-animation: 1s blink step-end infinite;
+    animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+@-webkit-keyframes blink {
+    from, to {
+        border-right-color: black;
+    }
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+span.im-static {
+    color: grey;
+}
+
+div.im-colormask {
+    display: inline-block;
+    border-style: inset;
+    border-width: 2px;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+div.im-colormask > input {
+    position: absolute;
+    display: inline-block;
+    background-color: transparent;
+    color: transparent;
+    -webkit-appearance: caret;
+    -moz-appearance: caret;
+    appearance: caret;
+    border-style: none;
+    left: 0; /*calculated*/
+}
+
+div.im-colormask > input:focus {
+    outline: none;
+}
+
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > input::selection{
+    background: none;
+}
+div.im-colormask > input::-moz-selection{
+    background: none;
+}
+
+div.im-colormask > div {
+    color: black;
+    display: inline-block;
+    width: 100px; /*calculated*/
+}</style>
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
 </head>
 
 <body class="sidebar-mini">
@@ -53,7 +125,7 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ url('admin') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
@@ -160,7 +232,7 @@
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ asset('public/assets/images/faces/thumb-v-v-1.jpg') }}" alt="image" /></a>
+                                <a href="#"> <img src="{{ Auth::user()->image }}" alt="image" /></a>
                             </div>
                             <div class="profile-name">
                                 <p class="name">
@@ -265,6 +337,8 @@
     <script src="{{ asset('public/assets/js/form-validation.js') }}"></script>
     <script src="{{ asset('public/assets/js/bt-maxLength.js') }}"></script>
     <script src="{{ asset('public/assets/js/wizards.js') }}"></script>
+    <script src="{{ asset('public/assets/js/js-grid.js') }}"></script>
+    <script src="{{ asset('public/assets/js/db.js') }}"></script>
 
 </body>
 

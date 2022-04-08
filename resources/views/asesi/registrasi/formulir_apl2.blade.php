@@ -13,6 +13,8 @@
         <th>upload</th>
     </tr>
     </thead>
+    <form action="{{ route('registrasi.store', $skema->id) }}" method="post">
+    @csrf
     @foreach ($skema->asesmens as $asu)
     <tbody>
     <tr>
@@ -20,44 +22,19 @@
         <td>
                 {{ $asu->asesmen }}                        
             </td>
-        <td><input type="checkbox" name="colorCheckbox" value="red"></td>
-        <td><input type="checkbox" name="" id=""></td>
-        <td><input type="file" name="" id=""></td>               
+        <td><input type="checkbox" name="echo" value="{{ $asu->asesmen }}"></td>
+        <td><input type="text" name="image" value=""></td>
+        <td><input type="text" name="" id=""></td>               
     </tr>
 </tbody>
+
     @endforeach
     
-</table>  
+</table> 
+<button type="submit">tambah</button>
+</form> 
 </div>
 
-<div class="col-md-6">
-    <div class="form-group">
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="">
-          Default
-        <i class="input-helper"></i></label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2" checked="">
-          Selected
-        <i class="input-helper"></i></label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadios2" id="optionsRadios3" value="option3" disabled="">
-          Disabled
-        <i class="input-helper"></i></label>
-      </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <input type="radio" class="form-check-input" name="optionsRadio2" id="optionsRadios4" value="option4" disabled="" checked="">
-          Selected and disabled
-        <i class="input-helper"></i></label>
-      </div>
-    </div>
-  </div>
 
 {{-- <div> --}}
     {{-- <label><input type="checkbox" name="colorCheckbox" value="red"> red</label>

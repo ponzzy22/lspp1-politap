@@ -148,7 +148,7 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('admin') }}>
+                        <a class="nav-link" href={{ url('backend') }}>
                             <i class="fa fa-dot-circle  menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -178,9 +178,6 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('asesmen.index') }}"> <i class="fas fa-ellipsis-h"></i> Formulir APL-02</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#"> <i class="fas fa-ellipsis-h"></i> Asesi</a>
                                 </li>
                             </ul>
                         </div>
@@ -212,7 +209,13 @@
                             </ul>
                         </div>
                     </li>
-                    
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.index') }}">
+                            <i class="fa fa-users menu-icon"></i>
+                            <span class="menu-title">Pengguna Web</span>
+                        </a>
+                    </li>                    
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-info-circle menu-icon"></i>

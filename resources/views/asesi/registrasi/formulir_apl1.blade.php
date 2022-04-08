@@ -277,9 +277,9 @@
                 </div>
             </div>
     
-            <a href""><button class="btn btn-inverse-info"><i class="fas fa-save"></i> Simpan</button></a>
+            {{-- <a href""><button class="btn btn-inverse-info"><i class="fas fa-save"></i> Simpan</button></a> --}}
         </form><br>
-        <a href="{{ route('registrasi.show', $skema->id) }} }}"><button class="btn btn-inverse-success"><i class="fas fa-save"></i> Selanjutnya</button></a>
+        <a href="{{ route('xnxx.show', $skema->id) }} }}"><button class="btn btn-inverse-success"><i class="fas fa-save"></i> Selanjutnya</button></a>
         </div>
     </div>
 @endsection

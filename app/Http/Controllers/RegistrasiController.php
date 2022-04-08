@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Formulir;
 use App\Models\Jurusan;
 use App\Models\Semester;
 use App\Models\Sex;
@@ -35,8 +36,9 @@ class RegistrasiController extends Controller
 
     public function show($id)
     {
+        $formulir = Formulir::all();
         $skema = Skema::findorfail($id);
-        return view('asesi/registrasi/formulir_apl2')->with('skema', $skema);
+        return view('asesi/registrasi/formulir_apl2')->with('skema', $skema, 'formulir', $formulir);
     }
 
     public function edit($id)
