@@ -5,8 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Xnxx extends Model
+class Token extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'image', 'status', 'user_id', 'user_nama', 'skema_name', 'skema_id'];
+
+    protected $fillable = [
+        'token',
+        'user_id'
+    ];
 }

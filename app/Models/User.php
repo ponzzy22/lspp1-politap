@@ -72,5 +72,20 @@ class User extends Authenticatable
         return $this->belongsTo(Semester::class);
     }
 
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+    
+
+    // public function asesmens()
+    // {
+    //     return $this->hasManyThrough(
+    //         Asesmen::class,
+    //         Unikom::class,
+    //         'skema_id',
+    //         'unikom_id'
+
+    //     );
+    // }
     
 }

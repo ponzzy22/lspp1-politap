@@ -13,6 +13,7 @@ use App\Http\Controllers\F_profilController;
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PendaftaranController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\SantetController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\XnxxController;
 use App\Models\Asesor;
 use App\Models\Unikom;
 use App\Models\Skema;
+use App\Models\Xnxx;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
@@ -80,8 +82,15 @@ Route::group(['middleware' => 'auth'], function(){
     Route::resource('asesi', AsesiController::class);
     Route::resource('registrasi', RegistrasiController::class);
     Route::resource('xnxx', XnxxController::class);
+    Route::post('xnxx2', [XnxxController::class, 'store2'])->name('xnxx.store2');
 
+    Route::post('for_apl2', [XnxxController::class, 'token_store'])->name('token.store');
+    Route::post('Registrasi_Validate', [XnxxController::class, 'token2_store'])->name('token2.store');
+    Route::get('rekap_registrasi', [XnxxController::class, 'rekap_registrasi'])->name('rekap.registrasi');
+    Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
 });
+
+Route::resource('post', PostController::class);
 
 Route::get('asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
 Route::middleware('role:admin')->get('backend', [App\Http\Controllers\HomeController::class, 'index2'])->name('backend');
