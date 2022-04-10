@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Data_register;
 use App\Models\Formulir;
 use App\Models\Jurusan;
 use App\Models\Semester;
@@ -14,28 +15,53 @@ use Illuminate\Http\Request;
 class RegistrasiController extends Controller
 {
 
-    public function index()
-    {
+    public function index() {
         $skema = Skema::all();
         $unikom =Unikom::all();
         return view('asesi/registrasi/pilihan_skema')->with('skema', $skema, 'unikom', $unikom);
     }
 
 
-    public function create()
-    {
+    public function create() {
         //
     }
 
 
     public function store(Request $request)
     {
-        //
+        // dd($request->all());        
+            $data_register = Data_register::create([
+                'id' => $request->id,
+                'nim' => $request->nim,
+                'skema_name' => $request->skema_name,
+                'skema_id' => $request->skema_id,
+                'user_id' => $request->user_id,
+                'user_name' => $request->user_name,
+                'status' => $request->status,
+                'email' => $request->email,
+                'sex_id' => $request->sex_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'tmpt_lahir' => $request->tmpt_lahir,
+                'negara' => $request->negara,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'kode_post' => $request->kode_post,
+                'surel' => $request->surel,
+                'provinsi' => $request->provinsi,
+                'kabupaten' => $request->kabupaten,
+                'kecamatan' => $request->kecamatan,
+                'kota' => $request->kota,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
+            ]);
+        
+        
+        return back()->with('success', ' Data Profil Anda Berhasil di Update');    
     }
 
 
     public function show($id)
-    {
+     {
         $formulir = Formulir::all();
         $skema = Skema::findorfail($id);
         return view('asesi/registrasi/formulir_apl2')->with('skema', $skema, 'formulir', $formulir);
@@ -176,7 +202,9 @@ class RegistrasiController extends Controller
             ]);
         }
 
-        return back()->with('success', ' Data Profil Anda Berhasil di Update');
+        $skema = Skema::findorfail($id);
+
+        return redirect()->route('xnxx.show', $skema->id)->with('success', ' Data Profil Anda Berhasil di Update');
     }
 
 

@@ -18,4 +18,8 @@ class Register extends Model
         'created_at',
         'status'
     ];
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
 }

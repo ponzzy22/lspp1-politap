@@ -24,6 +24,7 @@ use App\Http\Controllers\UiController;
 use App\Http\Controllers\UnikomController;
 use App\Http\Controllers\UpdateProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\XnxxController;
 use App\Models\Asesor;
 use App\Models\Unikom;
@@ -72,6 +73,8 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('tuk', TukController::class);
     Route::resource('unikom', UnikomController::class);
     Route::resource('user', UserController::class);
+    Route::resource('validasi', ValidasiController::class);
+
 });
 
 Route::group(['middleware' => 'auth'], function(){

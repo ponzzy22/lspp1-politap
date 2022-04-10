@@ -13,17 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('registers', function (Blueprint $table) {
+        Schema::create('xnxxes', function (Blueprint $table) {
             $table->id('id');
-            $table->bigInteger('kode_register')->unique();
-            $table->string('skema_id');
-            $table->string('user_id');
-            $table->unsignedBigInteger('xnxx_id');
+            $table->bigInteger('user_id');
+            $table->bigInteger('unikom_id');
+            $table->string('unikom_name');
+            $table->string('skema_name');
+            $table->bigInteger('skema_id');
+            $table->string('image');
+            $table->string('status');
             $table->timestamps();
-            $table->foreign('xnxx_id')
-                ->references('id')
-                ->on('xnxxes')
-                ->onDelete('cascade');
         });
     }
 
@@ -34,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registers');
+        Schema::dropIfExists('xnxxes');
     }
 };

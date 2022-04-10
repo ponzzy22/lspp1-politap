@@ -369,6 +369,8 @@ div.im-colormask > div {
     <script src="{{ asset('public/assets/js/tooltips.js') }}"></script>
     <script src="{{ asset('public/assets/js/popover.js') }}"></script>
     <script src="{{ asset('public/assets/js/modal-demo.js') }}"></script>
+    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
 </body>
 
 

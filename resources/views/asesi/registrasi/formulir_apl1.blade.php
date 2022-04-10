@@ -2,12 +2,17 @@
 @section('isi')
 @include('layout/verifikasi')
     {{ Auth::user()->name }}
+    {{ $skema->kode_skema }}
     <div class="card">
         <div class="card-body">
         <h4 class="card-title">Lengkapi Profile Anda</h4>
-        <form action="{{ route('registrasi.update', $skema->id) }}" method="POST" enctype="multipart/form-data" class="form-sample">
+        <form action="{{ route('registrasi.store') }}" method="POST" enctype="multipart/form-data" class="form-sample">
             @csrf
-            @method('put')
+            <input type="hidden" name="id" value="{{ Auth::user()->id }}{{ $skema->id }}">
+            <input type="hidden" name="skema_name" value="{{ $skema->skema }}">
+            <input type="hidden" name="skema_id" value="{{ $skema->kode_skema }}">
+            <input type="hidden" name="user_id" value="{{ Auth::user()->id  }}">
+            <input type="hidden" name="status" value="Belum di Validasi">
             <p class="card-description">
                 info Personal 
             </p>
@@ -16,8 +21,8 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">                                             
-                            <input type="text" class="form-control" name="name" value="{{ old('name', Auth::user()->name) }}">
-                            @error('name')
+                            <input type="text" class="form-control" name="user_name" value="{{ old('name', Auth::user()->name) }}">
+                            @error('user_name')
                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                             @enderror
                         </div>
@@ -27,8 +32,8 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nomor Induk Mahasiswa</label>
                         <div class="col-sm-9">
-                            <input type="number" maxlength="25" class="form-control" name="email" value="{{ old('email', Auth::user()->email) }}">
-                            @error('email')
+                            <input type="number" maxlength="25" class="form-control" name="nim" value="{{ old('email', Auth::user()->email) }}">
+                            @error('nim')
                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                             @enderror
                         </div>
@@ -68,7 +73,7 @@
                     <label class="col-sm-3 col-form-label">Tempat Lahir</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="tmpt_lahir" value="{{ old('tmpt_lahir', Auth::user()->tmpt_lahir) }}">
-                            @error('tgl_lahir')
+                            @error('tmpt_lahir')
                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                             @enderror
                         </div>
@@ -172,7 +177,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Kabupaten</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="kabupaten">
                   </div>
                 </div>
               </div>
@@ -194,7 +199,7 @@
                 <div class="form-group row">
                   <label class="col-sm-3 col-form-label">Kecamatan</label>
                   <div class="col-sm-9">
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="kecamatan">
                   </div>
                 </div>
               </div>
@@ -215,69 +220,16 @@
                     <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Kota</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="kota">
                         </div>
                     </div>
                 </div>
             </div>
     
-            <p class="card-description">
-                Upload Identitas Personal
-            </p>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Photo</label>
-                        <div class="col-sm-9">
-                            <div class="input-group-prepend"> 
-                                <input type="file"  name="image" class="form-control">
-                                <a href="{{ old('image', Auth::user()->image) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                            </div><br>
-                            <embed src="{{ old('image', Auth::user()->image) }}"  type="application/pdf">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Kartu Tanda Mahasiswa</label>
-                        <div class="col-sm-9">
-                            <div class="input-group-prepend"> 
-                                <input type="file"  name="ktm" class="form-control">
-                                <a href="{{ old('ktm', Auth::user()->ktm) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                            </div><br>
-                            <embed src="{{ old('ktm', Auth::user()->ktm) }}"  type="application/pdf">                   </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Kartu Tanda Penduduk</label>
-                        <div class="col-sm-9">
-                            <div class="input-group-prepend"> 
-                                <input type="file"  name="ktp" class="form-control">
-                                <a href="{{ Auth::user()->ktp }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                            </div><br>
-                            <p>{{ Auth::user()->ktp }}</p>
-                            {{-- <embed src="{{ old('ktp', Auth::user()->ktp) }}"  type="application/pdf"> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Kartu Hasil Studi</label>
-                        <div class="col-sm-9">
-                            <div class="input-group-prepend"> 
-                                <input type="file"  name="khs" class="form-control">
-                                <a href="{{ old('khs', Auth::user()->khs) }}" target="_blank" class="btn btn-info"><i class="fas fa-download"></i></a>                         
-                            </div><br>
-                            <embed src="{{ old('khs', Auth::user()->khs) }}"  type="application/pdf">                   </div>
-                    </div>
-                </div>
-            </div>
+            <button class="btn btn-inverse-info" onclick="showSwal('success-message')"><i class="fas fa-save"></i>Simpan</button> 
+
     
-            {{-- <a href""><button class="btn btn-inverse-info"><i class="fas fa-save"></i> Simpan</button></a> --}}
+            {{-- <button class="btn btn-inverse-info"><i class="fas fa-save"></i> Simpan</button> --}}
         </form><br>
         <a href="{{ route('xnxx.show', $skema->id) }} }}"><button class="btn btn-inverse-success"><i class="fas fa-save"></i> Selanjutnya</button></a>
         </div>

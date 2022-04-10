@@ -211,6 +211,12 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('validasi.index') }}">
+                            <i class="fa fa-users menu-icon"></i>
+                            <span class="menu-title">Peserta Asesi</span>
+                        </a>
+                    </li>   
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('user.index') }}">
                             <i class="fa fa-users menu-icon"></i>
                             <span class="menu-title">Pengguna Web</span>

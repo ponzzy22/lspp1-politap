@@ -35,35 +35,39 @@ class XnxxController extends Controller
     public function store(Request $request )
     {
         // dd($request->all());
+
         $request->validate([
-            'image' => ['required']
+            'image' => ['required'],
+            'unikom_name' => ['required', 'unique:xnxxes,unikom_name']
         ]);
 
         if ($request->has('image')) 
         {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img2/', $new_image);
+            $image->move('public/uploads/data_register_apl2/', $new_image);
             $xnxx = Xnxx::create([
-                'name' => $request->name,
+                'unikom_name' => $request->unikom_name,
+                'unikom_id' => $request->unikom_id,
+                'data_register_id' => $request->data_register_id,
                 'user_id' => $request->user_id,
-                'user_nama' => $request->user_nama,
                 'status' => $request->status,
                 'users_id' => Auth::id() ,
                 'skema_id' => $request->skema_id,
                 'skema_name' => $request->skema_name,
-                'image' => 'public/uploads/beranda_img2/'.$new_image,
+                'image' => 'public/uploads/data_register_apl2/'.$new_image,
             ]);
         }
 
 
         else{
             $xnxx = Xnxx::create([
-                'name' => $request->name,
+                'unikom_name' => $request->unikom_name,
+                'unikom_id' => $request->unikom_id,
+                'data_register_id' => $request->data_register_id,
                 'user_id' => $request->user_id,
-                'user_nama' => $request->user_nama,
                 'status' => $request->status,
-                'users_id' => Auth::id(),
+                'users_id' => Auth::id() ,
                 'skema_id' => $request->skema_id,
                 'skema_name' => $request->skema_name,
             ]);
@@ -85,15 +89,18 @@ class XnxxController extends Controller
         // dd($request->all());
         
         $request->validate([
-            'name' => ['required', 'unique:xnxxes,name']
+            'unikom_name' => ['required', 'unique:xnxxes,unikom_name']
         ]);
 
         $xnxx = Xnxx::create([
-            'name' => $request->name,
+            'unikom_name' => $request->unikom_name,
+            'unikom_id' => $request->unikom_id,
+            'data_register_id' => $request->data_register_id,
             'user_id' => $request->user_id,
-            'user_nama' => $request->user_nama,
             'status' => $request->status,
-            'users_id' => Auth::id() 
+            'users_id' => Auth::id() ,
+            'skema_id' => $request->skema_id,
+            'skema_name' => $request->skema_name,
         ]);
         return back();
     }
