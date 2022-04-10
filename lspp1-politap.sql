@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 06, 2022 at 08:16 PM
+-- Generation Time: Apr 10, 2022 at 08:54 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -56,7 +56,8 @@ INSERT INTO `asesmens` (`id`, `unikom_id`, `asesmen`, `created_at`, `updated_at`
 (18, 4, 'utang2', '2022-04-06 09:11:51', '2022-04-06 09:11:51'),
 (19, 4, 'utang3', '2022-04-06 09:11:57', '2022-04-06 09:11:57'),
 (20, 19, 'ora1', '2022-04-06 09:12:33', '2022-04-06 09:12:33'),
-(21, 19, 'ora2', '2022-04-06 09:12:39', '2022-04-06 09:12:39');
+(21, 19, 'ora2', '2022-04-06 09:12:39', '2022-04-06 09:12:39'),
+(22, 2, 'bgbgbg121212', '2022-04-07 00:59:07', '2022-04-07 00:59:07');
 
 -- --------------------------------------------------------
 
@@ -159,6 +160,51 @@ INSERT INTO `beranda_img2` (`id`, `keterangan`, `image`, `updated_at`, `created_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_registers`
+--
+
+CREATE TABLE `data_registers` (
+  `id` bigint(20) NOT NULL,
+  `skema_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skema_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `surel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tmpt_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `sex_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `negara` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode_post` int(11) DEFAULT NULL,
+  `no_hp` bigint(20) DEFAULT NULL,
+  `provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kabupaten` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kota` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kecamatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jurusan_id` int(11) DEFAULT NULL,
+  `semester_id` int(11) DEFAULT NULL,
+  `ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ktm` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `khs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lain` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `nim` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `data_registers`
+--
+
+INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `image`, `jurusan_id`, `semester_id`, `ktp`, `ktm`, `khs`, `lain`, `created_at`, `updated_at`, `nim`) VALUES
+(52, 'Jaringan LAN', 'SKM-32412323', '5', 'Ponsianus Jopi', 'Belum di Validasi', 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '1', 'Indonesia', 'sadas', 7888912, 232356456, 'sdfsdf', 'sdfsd', 'dfsdf', 'dfsdf', NULL, 4, 5, NULL, NULL, NULL, NULL, '2022-04-10 10:41:06', '2022-04-10 10:41:06', 3042020058),
+(55, 'Mugen Tsukoyomi', 'SKM-22112323', '5', 'Ponsianus Jopi', 'Belum di Validasi', 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 4, 5, NULL, NULL, NULL, NULL, '2022-04-10 11:43:30', '2022-04-10 11:43:30', 3042020058);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -170,20 +216,6 @@ CREATE TABLE `failed_jobs` (
   `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `formulirs`
---
-
-CREATE TABLE `formulirs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `echo` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -268,7 +300,20 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (14, '2022_04_05_041003_create_unikoms_table', 6),
 (15, '2022_04_05_184320_create_unikoms_table', 7),
 (16, '2022_04_05_194410_create_asesmens_table', 8),
-(17, '2022_04_06_112234_create_formulirs_table', 9);
+(17, '2022_04_06_112234_create_formulirs_table', 9),
+(18, '2022_04_07_070821_create_xnxxes_table', 10),
+(19, '2022_04_08_154429_create_posts_table', 11),
+(20, '2022_04_09_084617_create_tokens_table', 12),
+(21, '2022_04_10_063220_create_data_registers_table', 13),
+(22, '2022_04_10_104413_create_xnxxes_table', 14),
+(23, '2022_04_10_104856_add_new_post_id_table', 15),
+(24, '2022_04_10_105849_add_new_posdfst_id_table', 16),
+(25, '2022_04_10_115354_create_xnxxes_table', 17),
+(26, '2022_04_10_120142_create_xnxxes_table', 18),
+(27, '2022_04_10_120226_add_new_psdfosdfst_id_table', 19),
+(28, '2022_04_10_122844_create_xnxxes_table', 20),
+(29, '2022_04_10_124409_add_new_psdfosdfst_id_tablefgdfgffgf', 21),
+(30, '2022_04_10_124454_add_new_psdfosdfst_id_tablefgdfgffgfsdssd', 22);
 
 -- --------------------------------------------------------
 
@@ -349,6 +394,30 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `published_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `image`, `status`, `published_at`, `created_at`, `updated_at`, `user_id`) VALUES
+(4, 'sas', 'dsadasdas', 'sadas', NULL, '2022-04-08 11:10:17', '2022-04-08 11:10:17', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `prodi`
 --
 
@@ -369,6 +438,24 @@ INSERT INTO `prodi` (`id`, `prodi`, `updated_at`, `created_at`) VALUES
 (4, 'Teknik Elektro', '2022-04-01 07:37:33.000000', '2022-04-01 07:37:33.000000'),
 (6, 'Teknik Pertambangan', '2022-04-05 11:27:11.000000', '2022-04-05 11:27:11.000000'),
 (7, 'Teknik Bedukun', '2022-04-05 11:27:25.000000', '2022-04-05 11:27:25.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registers`
+--
+
+CREATE TABLE `registers` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kode_register` bigint(20) DEFAULT NULL,
+  `skema_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `skema_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -525,6 +612,33 @@ INSERT INTO `strorg` (`id`, `keterangan`, `image`, `updated_at`, `created_at`) V
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tokens`
+--
+
+CREATE TABLE `tokens` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `token` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `tokens`
+--
+
+INSERT INTO `tokens` (`id`, `token`, `user_id`, `created_at`, `updated_at`) VALUES
+(1, 89, 8, '2022-04-09 01:54:48', '2022-04-09 01:54:48'),
+(2, 82, 8, '2022-04-09 01:58:08', '2022-04-09 01:58:08'),
+(4, 85, 8, '2022-04-09 02:05:41', '2022-04-09 02:05:41'),
+(5, 52, 5, '2022-04-09 06:53:34', '2022-04-09 06:53:34'),
+(6, 59, 5, '2022-04-09 07:24:17', '2022-04-09 07:24:17'),
+(7, 53, 5, '2022-04-09 07:25:43', '2022-04-09 07:25:43'),
+(8, 58, 5, '2022-04-09 07:48:50', '2022-04-09 07:48:50');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tuk`
 --
 
@@ -593,6 +707,7 @@ INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, 
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `role` varchar(111) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kode` int(11) DEFAULT NULL,
@@ -627,13 +742,43 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
-(1, 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'tQ7fofXA0RHduneyXFy6ig4xOKRnzAyfnyJ7xxfGbr0lj7BuGTKUPdABpDM1', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
-(2, 'User Role', 'user', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
-(5, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1649257070lspp1-politap.pdf', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1649256639ceb99d0f22759041b43f10a726f0a392.jpg', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-06 07:57:50'),
-(6, '12345', '12345', 12334, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
-(7, 'sdasd', '23434343', 1112, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$Wl8FEAjlDBU7TqkMDqsrlOEvO2uhQDzbG9WMzjaoHxMnHAucPJum2', NULL, NULL, NULL, '2022-04-02 09:05:50', '2022-04-02 09:52:53'),
-(8, 'sukiman', '23123123123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$6owq2StfKfJb11WH5Phf0.5DXaEiYEJcFEvo3EmhLJd3a9WuNhTiC', NULL, NULL, NULL, '2022-04-06 07:10:11', '2022-04-06 07:10:11');
+INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
+(1, 'Administrator', 'Admin Role', 'admin', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'D9VQ1tcqH4muh9rlyGDzrbi5JzBgaVixcskXHHQ5KCC8oKdtd1N84aeLDyF0', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-03-31 01:01:51'),
+(2, 'Administrator', 'User Role', 'user', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-03-31 01:01:52'),
+(5, NULL, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sadas', 7888912, 232356456, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1649257070lspp1-politap.pdf', NULL, 4, 5, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1649256639ceb99d0f22759041b43f10a726f0a392.jpg', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-06 07:57:50'),
+(6, NULL, '12345', '12345', 12334, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-02 10:34:32'),
+(8, NULL, 'sukiman', '23123123123', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$6owq2StfKfJb11WH5Phf0.5DXaEiYEJcFEvo3EmhLJd3a9WuNhTiC', NULL, NULL, NULL, '2022-04-06 07:10:11', '2022-04-06 07:10:11');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `xnxxes`
+--
+
+CREATE TABLE `xnxxes` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `unikom_id` bigint(20) DEFAULT NULL,
+  `unikom_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `skema_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `skema_id` bigint(20) DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `data_register_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `xnxxes`
+--
+
+INSERT INTO `xnxxes` (`id`, `user_id`, `unikom_id`, `unikom_name`, `skema_name`, `skema_id`, `image`, `status`, `created_at`, `updated_at`, `data_register_id`) VALUES
+(13, 5, 2, 'sdsd', 'Jaringan LAN', 2, 'public/uploads/data_register_apl2/1649612510180-Article Text-492-1-10-20190103.pdf', 'Kompeten', '2022-04-10 10:41:50', '2022-04-10 10:41:50', 52),
+(14, 5, 9, 'rtrtrtr', 'Jaringan LAN', 2, 'public/uploads/data_register_apl2/1649612523ceb99d0f22759041b43f10a726f0a392.jpg', 'Kompeten', '2022-04-10 10:42:03', '2022-04-10 10:42:03', 52),
+(15, 5, 11, 'yuyuyuyu', 'Jaringan LAN', 2, 'public/uploads/data_register_apl2/16496125342168-Article Text-6427-1-10-20220315.pdf', 'Kompeten', '2022-04-10 10:42:14', '2022-04-10 10:42:14', 52),
+(16, 5, 12, 'klkl', 'Jaringan LAN', 2, 'public/uploads/data_register_apl2/16496125512168-Article Text-6427-1-10-20220315.pdf', 'Kompeten', '2022-04-10 10:42:31', '2022-04-10 10:42:31', 52),
+(19, 5, 22, 'bgbgbg121212', 'Jaringan LAN', 2, 'public/uploads/data_register_apl2/1649612937lspp1-politap.pdf', 'Kompeten', '2022-04-10 10:48:57', '2022-04-10 10:48:57', 52);
 
 --
 -- Indexes for dumped tables
@@ -673,17 +818,18 @@ ALTER TABLE `beranda_img2`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `data_registers`
+--
+ALTER TABLE `data_registers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
-
---
--- Indexes for table `formulirs`
---
-ALTER TABLE `formulirs`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `f_profil`
@@ -739,10 +885,23 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `prodi`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `registers`
+--
+ALTER TABLE `registers`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `kode_register` (`kode_register`);
 
 --
 -- Indexes for table `roles`
@@ -790,6 +949,13 @@ ALTER TABLE `strorg`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tokens`
+--
+ALTER TABLE `tokens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `tokens_token_unique` (`token`);
+
+--
 -- Indexes for table `tuk`
 --
 ALTER TABLE `tuk`
@@ -813,6 +979,13 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `no_hp` (`no_hp`);
 
 --
+-- Indexes for table `xnxxes`
+--
+ALTER TABLE `xnxxes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `xnxxes_data_register_id_foreign` (`data_register_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -820,7 +993,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `asesmens`
 --
 ALTER TABLE `asesmens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `asesor`
@@ -853,12 +1026,6 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `formulirs`
---
-ALTER TABLE `formulirs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `f_profil`
 --
 ALTER TABLE `f_profil`
@@ -874,7 +1041,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -889,10 +1056,22 @@ ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `registers`
+--
+ALTER TABLE `registers`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -931,6 +1110,12 @@ ALTER TABLE `strorg`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `tokens`
+--
+ALTER TABLE `tokens`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
@@ -947,6 +1132,12 @@ ALTER TABLE `unikoms`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `xnxxes`
+--
+ALTER TABLE `xnxxes`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
@@ -982,6 +1173,12 @@ ALTER TABLE `role_has_permissions`
 --
 ALTER TABLE `unikoms`
   ADD CONSTRAINT `unikoms_skema_id_foreign` FOREIGN KEY (`skema_id`) REFERENCES `skemas` (`id`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `xnxxes`
+--
+ALTER TABLE `xnxxes`
+  ADD CONSTRAINT `xnxxes_data_register_id_foreign` FOREIGN KEY (`data_register_id`) REFERENCES `data_registers` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
