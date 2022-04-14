@@ -23,12 +23,12 @@
                             <h2 for="examplePassword1">Selamat Bergabung...</h2>
                         </div>
                         <div class="mt-5">
-                            <a class="btn btn-block btn-success btn-lg font-weight-medium" href="{{ route('asesion') }}">Menuju Halaman Asesi</a>
+                            <a class="btn btn-block btn-success btn-lg font-weight-medium" href="{{ route('dashasesi.index') }}">Menuju Halaman Asesi</a>
                         </div>
                         <div class="mt-3 text-center">
                             <a href="#" class="auth-link text-white">Kembali Ke Halaman Beranda</a>
                         </div>
-                        </form>                
+                        </form>
                     </div>
                 </div>
             </div>

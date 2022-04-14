@@ -28,6 +28,6 @@ class LoginController extends Controller
             return redirect()->route('backend');
         }
 
-        return redirect()->route('asesion');
+        return redirect()->route('dashasesi.index');
     }
 }

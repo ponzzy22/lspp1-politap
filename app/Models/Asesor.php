@@ -10,5 +10,16 @@ class Asesor extends Model
     use HasFactory;
     
     protected $table = 'asesor';
-    protected $fillable = ['nik', 'nama', 'image', 'alamat','sex', 'email', 'status'];
+    protected $fillable = [
+        'nik', 
+        'nama', 
+        'image', 
+        'alamat',
+        'sex', 
+        'email', 
+        'status'];
+
+    public function skemas(){
+        return $this->hasMany(Skema::class);
+    }
 }

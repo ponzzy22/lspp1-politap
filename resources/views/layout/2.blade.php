@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +22,7 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ url('admin') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
@@ -47,7 +45,7 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5>WEBSITE ADMINISTRASI <i class="fas fa-ellipsis-h"></i> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP</h5>
+                            <h5>LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP    <i class="fas fa-ellipsis-h"></i>    ADMINISTRASI WEBSITE</h5>
                         </div>
                     </li>
                 </ul>
@@ -64,28 +62,39 @@
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
                             <i class="fas fa-database mx-0"></i>
                         </a>
-                    </li>                    
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <div class="d-sm-none d-lg-inline-block"><i class="fas fa-cog"></i></div></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">{{ __('Profil') }}</a>
-              <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}</a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-              </form>
-          </div>
-          </li>
+                    </li>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <img src="{{ asset(Auth::user()->image) }}" alt="profile">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            {{-- <a class="dropdown-item">
+                                <i class="fas fa-cog text-primary"></i>
+                                Settings
+                            </a> --}}
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><i class="fas fa-power-off text-primary"></i>
+                                {{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                        </div>
+                    </li>
+                    {{-- <li class="nav-item nav-settings d-none d-lg-block">
+                        <a class="nav-link" href="#">
+                            <i class="fas fa-ellipsis-h"></i>
+                        </a>
+                    </li> --}}
                     <!-- /////////////////////////////////// -->
                     <!-- PENCARIAN -->
                     <!-- /////////////////////////////////// -->
-                    <li class="">
+                    <li>
                         <div class="nav-link">
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">
-                                <i class="fas fa-search"></i>
+                                        <i class="fas fa-search"></i>
                                     </span>
                                 </div>
                                 <input type="text" class="form-control" placeholder="Pencarian" aria-label="Search">
@@ -95,7 +104,6 @@
                 </ul>
             </div>
         </nav>
-
         <div class="container-fluid page-body-wrapper">
             <!-- /////////////////////////////////// -->
             <!-- TEMA WEBSITE -->
@@ -121,7 +129,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- /////////////////////////////////// -->
             <!-- SIDEBAR -->
             <!-- /////////////////////////////////// -->
@@ -131,19 +138,18 @@
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ asset('public/assets/images/faces/thumb-v-v-1.jpg') }}" alt="image" /></a>
+                                <a href="#"> <img src="{{ asset(Auth::user()->image) }}" alt="image" /></a>
                             </div>
                             <div class="profile-name">
                                 <p class="name">
-                                    Name Admin
+                                    {{ Auth::user()->name }}
                                 </p>
-                                <p class="designation">
+                                <p class="designation text-center">
                                     Administrator
                                 </p>
                             </div>
                         </div>
                     </li>
-
                     <!-- /////////////////////////////////// -->
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
@@ -162,33 +168,44 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('skema.index') }}"> <i class="fas fa-ellipsis-h"></i> Skema</a>
+                                    <a class="nav-link" href="{{ route('skema.index') }}">Skema/Kluster</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('prodi.index') }}"> <i class="fas fa-ellipsis-h"></i> Prodi</a>
+                                    <a class="nav-link" href="{{ Route('prodi.index') }}">Prodi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('asesor.index') }}"> <i class="fas fa-ellipsis-h"></i> Asesor</a>
+                                    <a class="nav-link" href="{{ Route('asesor.index') }}">Asesor</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('tuk.index') }}"> <i class="fas fa-ellipsis-h"></i> TUK</a>
+                                    <a class="nav-link" href="{{ Route('tuk.index') }}">TUK</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('unikom.index') }}"> <i class="fas fa-ellipsis-h"></i> Unit Kompetensi</a>
+                                    <a class="nav-link" href="{{ route('unikom.index') }}">Unit Kompetensi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('asesmen.index') }}"> <i class="fas fa-ellipsis-h"></i> Formulir APL-02</a>
+                                    <a class="nav-link" href="{{ route('asesmen.index') }}">Formulir APL-02</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('validasi.index') }}">
+                            <i class="fa fa-id-card  menu-icon"></i>
+                            <span class="menu-title">Data Registrasi</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.index') }}">
+                            <i class="fa fa-users menu-icon"></i>
+                            <span class="menu-title">Pengguna</span>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false" aria-controls="page-layouts">
                             <i class="fa fa-home menu-icon"></i>
                             <span class="menu-title">Frontend Web</span>
                             <i class="menu-arrow"></i>
-                        </a>                        
+                        </a>
                         <div class="collapse" id="page-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item d-none d-lg-block">
@@ -209,19 +226,6 @@
                             </ul>
                         </div>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('validasi.index') }}">
-                            <i class="fa fa-users menu-icon"></i>
-                            <span class="menu-title">Peserta Asesi</span>
-                        </a>
-                    </li>   
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.index') }}">
-                            <i class="fa fa-users menu-icon"></i>
-                            <span class="menu-title">Pengguna Web</span>
-                        </a>
-                    </li>                    
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="fa fa-info-circle menu-icon"></i>
@@ -235,16 +239,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-plus menu-icon"></i>
-                            <span class="menu-title">Pendaftaran</span>
+                        <a class="nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="fas fa-power-off menu-icon"></i>
+                            <span class="menu-title">Logout</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-address-card menu-icon"></i>
-                            <span class="menu-title">Login</span>
-                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -254,7 +255,7 @@
             <!-- /////////////////////////////////// -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    
+
 
 
                     <!-- ///////////////////////////////////////////////////////////////////// -->
@@ -266,7 +267,7 @@
 
 
 
-                </div>          
+                </div>
             </div>
         </div>
     </div>
@@ -274,9 +275,10 @@
     <!-- /////////////////////////////////// -->
     <!-- FOOTER -->
     <!-- /////////////////////////////////// -->
-    <footer class="card card-statistics2">
-        <div class="footer1">
-            <span class="">Copyright © 2022 &diamondsuit; Designed & Developed By Politeknik Negeri Ketapang.</span>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 &diamondsuit; Designed & Developed By  <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri Ketapang</a>.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank">  Teknik Informatika </a><code> v.1.4.22</code></span>
         </div>
     </footer>
 
@@ -309,8 +311,8 @@
     <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
     <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
     <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
+    {{-- <script src="{{ asset('public/assets/js/toastDemo.js') }}"></script>
+    <script src="{{ asset('public/assets/js/desktop-notification.js') }}"></script> --}}
 
 </body>
-
-
 </html>

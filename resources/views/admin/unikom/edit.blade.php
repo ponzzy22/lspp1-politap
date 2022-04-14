@@ -2,13 +2,29 @@
 @section('isi')
 @include('layout/verifikasi')
 
+<div class="page-header">
+  <h4>
+      <i class="fas fa-list"></i>  Edit Unit Kompetensi
+  </h4>
+  <!-- /////////////////////////////////// -->
+  <!-- BREADCRUMB -->
+  <!-- /////////////////////////////////// -->
+  <nav aria-label="breadcrumb">
+      <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+          <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('unikom.index') }}">Unit Kompetensi</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edit Unit Kompetensi</li>
+      </ol>
+  </nav>
+</div><br>
+
 <!-- /////////////////////////////////// -->
 {{-- TAMBAH UJIKOM --}}
 <!-- /////////////////////////////////// -->
 <div class="card">
   <div class="card-body">
     <h4 class="card-title">
-      Edit Unit Kompetensi
+     <i class="fas fa-list"></i> Edit Unit Kompetensi
     </h4>
     <form action="{{ route('unikom.update', $unikom->id) }}" method="POST" class="form-inline">
         @csrf

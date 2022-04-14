@@ -15,134 +15,6 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/user.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
-   <style>
-       .upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
-
-.btn2 {
-  border: 1px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 1px;
-  border-radius: 8px;
-  font-size: 10px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 10px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-   </style>
-
-
-   <style>
-        .box {
-            color: #fff;
-            padding: 20px;
-            display: none;
-            margin-top: 20px;
-        }
-        
-        .red {
-            background: #ff0000;
-        }
-        
-        .green {
-            background: #228B22;
-        }
-        
-        .blue {
-            background: #0000ff;
-        }
-    </style>
-    <script src="{{ asset('public/assets/js/jquery-3.5.1.min.js') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $('input[type="checkbox"]').click(function() {
-                var inputValue = $(this).attr("value");
-                $("." + inputValue).toggle();
-            });
-        });
-    </script>
-
-<style type="text/css">/* Chart.js */ @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
-<style type="text/css">span.im-caret {
-    -webkit-animation: 1s blink step-end infinite;
-    animation: 1s blink step-end infinite;
-}
-
-@keyframes blink {
-    from, to {
-        border-right-color: black;
-    }
-    50% {
-        border-right-color: transparent;
-    }
-}
-
-@-webkit-keyframes blink {
-    from, to {
-        border-right-color: black;
-    }
-    50% {
-        border-right-color: transparent;
-    }
-}
-
-span.im-static {
-    color: grey;
-}
-
-div.im-colormask {
-    display: inline-block;
-    border-style: inset;
-    border-width: 2px;
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
-}
-
-div.im-colormask > input {
-    position: absolute;
-    display: inline-block;
-    background-color: transparent;
-    color: transparent;
-    -webkit-appearance: caret;
-    -moz-appearance: caret;
-    appearance: caret;
-    border-style: none;
-    left: 0; /*calculated*/
-}
-
-div.im-colormask > input:focus {
-    outline: none;
-}
-
-div.im-colormask > input::-moz-selection{
-    background: none;
-}
-
-div.im-colormask > input::selection{
-    background: none;
-}
-div.im-colormask > input::-moz-selection{
-    background: none;
-}
-
-div.im-colormask > div {
-    color: black;
-    display: inline-block;
-    width: 100px; /*calculated*/
-}</style>
-
-<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;box-sizing: content-box;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
 </head>
 
 <body class="sidebar-icon-only">
@@ -152,7 +24,7 @@ div.im-colormask > div {
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img src="{{ asset('public/assets/images/logo/3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
@@ -175,8 +47,7 @@ div.im-colormask > div {
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5>WEBSITE ASESI <i class="fas fa-ellipsis-h"></i> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP</h5>
-                        </div>
+                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP <i class="fas fa-ellipsis-h"></i> WEBSITE ASESI</h5>                        </div>
                     </li>
                 </ul>
                 <!-- /////////////////////////////////// -->
@@ -188,23 +59,24 @@ div.im-colormask > div {
                             <i class="fas fa-desktop mx-0"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
-                            <i class="fas fa-database mx-0"></i>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                         </a>
-                    </li>                    
-                    <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-            <div class="d-sm-none d-lg-inline-block"><i class="fas fa-cog"></i></div></a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">{{ __('Profil') }}</a>
-              <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-                  {{ __('Logout') }}</a>
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-              </form>
-          </div>
-          </li>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+                            {{-- <a class="dropdown-item">
+                                <i class="fas fa-cog text-primary"></i>
+                                Settings
+                            </a> --}}
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><i class="fas fa-power-off text-primary"></i>
+                                {{ __('Logout') }}</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                                </form>
+                        </div>
+                    </li>
                     <!-- /////////////////////////////////// -->
                     <!-- PENCARIAN -->
                     <!-- /////////////////////////////////// -->
@@ -259,14 +131,14 @@ div.im-colormask > div {
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ Auth::user()->image }}" alt="image" /></a>
+                                <a href="#"> <img src="{{ Auth::user()->image }}" alt="" /></a>
                             </div>
                             <div class="profile-name">
                                 <p class="name">
-                                    Name Admin
+                                    {{ Auth::user()->name }}
                                 </p>
                                 <p class="designation">
-                                    Administrator
+                                    Pengguna
                                 </p>
                             </div>
                         </div>
@@ -276,7 +148,7 @@ div.im-colormask > div {
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('asesion') }}>
+                        <a class="nav-link" href="{{ route('dashasesi.index') }}">
                             <i class="fa fa-dot-circle  menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -307,7 +179,7 @@ div.im-colormask > div {
             <!-- /////////////////////////////////// -->
             <div class="main-panel">
                 <div class="content-wrapper">
-                    
+
 
 
                     <!-- ///////////////////////////////////////////////////////////////////// -->
@@ -319,7 +191,7 @@ div.im-colormask > div {
 
 
 
-                </div>          
+                </div>
             </div>
         </div>
     </div>

@@ -11,13 +11,14 @@ class Xnxx extends Model
 
     protected $fillable = [
         'id',
-        'unikom_id', 
+        'kode',
+        'unikom_id',
         'unikom_name',
         'data_register_id',
-        'image', 
-        'status', 
-        'user_id', 
-        'skema_name', 
+        'image',
+        'status',
+        'user_id',
+        'skema_name',
         'skema_id'
     ];
 

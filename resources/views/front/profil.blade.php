@@ -32,7 +32,7 @@
             <li class="nav-item">
               <a class="nav-link active show" id="pills-energy-tab-custom" data-toggle="pill" href="#pills-bro" role="tab" aria-controls="pills-contact" aria-selected="true">
                 Profil
-              </a>              
+              </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" id="pills-contact-tab-custom" data-toggle="pill" href="#pills-music" role="tab" aria-controls="pills-contact" aria-selected="false">
@@ -64,7 +64,6 @@
             </div>
             <div class="tab-pane fade" id="pills-music" role="tabpanel" aria-labelledby="pills-contact-tab-custom">
               <div class="media">
-                <img class="mr-3 w-25 rounded" src="public/assets/images/carousel/banner_12.jpg" alt="sample image">
                 <div class="col-md-10">
                   <h6>
                       {{ $asu->motto }}
@@ -74,20 +73,18 @@
             </div>
             <div class="tab-pane fade" id="pills-energy" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
               <div class="media">
-                <img class="mr-3 w-25 rounded" src="public/assets/images/logo/lsp.png" alt="sample image">
                 <div class="col-md-10">
                   <h6>
-                    {{ $asu->visi }}  
+                    {{ $asu->visi }}
                   </h6>
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="pills-asu" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
               <div class="media">
-                <img class="mr-3 w-25 rounded" src="public/assets/images/logo/lsp.png" alt="sample image">
                 <div class="col-md-10">
                   <h6>
-                    {{ $asu->misi }}  
+                    {{ $asu->misi }}
                   </h6>
                   @endforeach
                 </div>
@@ -99,5 +96,5 @@
     </div>
   </div>
 
-  
+
 @endsection

@@ -11,10 +11,10 @@ class Data_register extends Model
 
     protected $fillable = [
         'id',
-        'nim', 
+        'nim',
         'surel',
         'skema_name',
-        'skema_id', 
+        'skema_id',
         'user_id',
         'user_name',
         'status',
@@ -32,14 +32,40 @@ class Data_register extends Model
         'tamatan_id',
         'image',
         'jurusan_id',
-        'semester_id',        
+        'semester_id',
         'ktp',
         'khs',
         'ktm',
-        'lain'
+        'lain',
+        'date', 'time', 'tuk_id', 'asesor_id', 'keterangan'
     ];
 
     public function xnxxes(){
         return $this->hasMany(Xnxx::class);
+    }
+
+    public function upload_files(){
+        return $this->hasMany(Upload_file::class);
+    }
+
+    public function jurusan(){
+        return $this->belongsTo(Jurusan::class);
+    }
+
+    public function semester(){
+        return $this->belongsTo(Semester::class);
+    }
+
+    public function sex(){
+        return $this->belongsTo(Sex::class);
+    }
+
+    public function asesor(){
+        return $this->belongsTo(Asesor::class);
+    }
+
+
+    public function tuk(){
+        return $this->belongsTo(Tuk::class);
     }
 }

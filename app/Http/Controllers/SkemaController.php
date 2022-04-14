@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Asesmen;
 use App\Models\Asesor;
 use App\Models\Prodi;
 use App\Models\Skema;
@@ -14,7 +13,7 @@ use Illuminate\Http\Request;
 class SkemaController extends Controller
 {
 
-    public function index() {
+    public function index(){
         $status = Status::all();
         $tuk = Tuk::all();
         $asesor = Asesor::all();
@@ -24,12 +23,15 @@ class SkemaController extends Controller
     }
 
 
-    public function create() {
-        //
-    }
-
-
-    public function store(Request $request) {
+    public function store(Request $request){
+        $request->validate([
+            'kode_skema' => ['required', 'unique:skemas,kode_skema'],
+            'skema' => ['required'],
+            'prodi_id' => ['required'],
+            'asesor_id' => ['required'],
+            'tuk_id' => ['required'],
+            'status_id' => ['required']
+        ]);
         $skema = Skema::create([
             'kode_skema' =>$request->kode_skema,
             'skema' =>$request->skema,
@@ -37,7 +39,6 @@ class SkemaController extends Controller
             'asesor_id' =>$request->asesor_id,
             'tuk_id' =>$request->tuk_id,
             'status_id' =>$request->status_id,
-
         ]);
         return redirect()->route('skema.index')->with('success','Skema anda berhasil di Posting');
     }
@@ -60,6 +61,14 @@ class SkemaController extends Controller
 
 
     public function update(Request $request, $id) {
+        $request->validate([
+            'kode_skema' => ['required', 'unique:skemas,kode_skema'],
+            'skema' => ['required'],
+            'prodi_id' => ['required'],
+            'asesor_id' => ['required'],
+            'tuk_id' => ['required'],
+            'status_id' => ['required']
+        ]);
         $skema_data = [
             'kode_skema' =>$request->kode_skema,
             'skema' =>$request->skema,
@@ -81,7 +90,6 @@ class SkemaController extends Controller
 
 
     public function show_asesmen($id){
-        // $asesmen = Asesmen::findorfail($id);
         $unikom = Unikom::findorfail($id);
         return view('admin/skema/show_asesmen')->with('unikom', $unikom);
     }

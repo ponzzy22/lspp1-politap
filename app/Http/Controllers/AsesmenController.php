@@ -11,8 +11,7 @@ use Illuminate\Http\Request;
 class AsesmenController extends Controller
 {
 
-    public function index()
-    {
+    public function index() {
         $skema = Skema::all();
         $unikom = Unikom::all();
         $asesmen = Asesmen::all();
@@ -20,13 +19,11 @@ class AsesmenController extends Controller
     }
 
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $request->validate([
             'asesmen' => ['required'],
             'unikom_id' => ['required']
         ]);
-
         $asesmen = Asesmen::create([
             'asesmen' => $request->asesmen,
             'unikom_id' => $request->unikom_id
@@ -35,26 +32,22 @@ class AsesmenController extends Controller
     }
 
 
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
 
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
 
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
 
-    public function destroy($id)
-    {
+    public function destroy($id) {
         $asesmen = Asesmen::findorfail($id);
         $asesmen->delete();
         return redirect()->back()->with('success','Asesor Berhasil Dihapus');

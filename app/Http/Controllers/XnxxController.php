@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
 use App\Models\Register;
 use App\Models\Skema;
 use App\Models\Token;
+use App\Models\Upload_file;
 use App\Models\Xnxx;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,35 +13,20 @@ use Illuminate\Support\Facades\DB;
 
 class XnxxController extends Controller
 {
-    public function __construct()
-    {
+    public function __construct() {
         $this->middleware('auth');
     }
 
-    public function index()
-    {
-        //
-    }
 
-
-
-    public function create()
-    {
-        
-    }
-
-
-
-    public function store(Request $request )
-    {
+    public function store(Request $request ) {
         // dd($request->all());
 
         $request->validate([
             'image' => ['required'],
-            'unikom_name' => ['required', 'unique:xnxxes,unikom_name']
+            'kode' => ['required', 'unique:xnxxes,kode']
         ]);
 
-        if ($request->has('image')) 
+        if ($request->has('image'))
         {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
@@ -52,14 +37,13 @@ class XnxxController extends Controller
                 'data_register_id' => $request->data_register_id,
                 'user_id' => $request->user_id,
                 'status' => $request->status,
+                'kode' => $request->kode,
                 'users_id' => Auth::id() ,
                 'skema_id' => $request->skema_id,
                 'skema_name' => $request->skema_name,
                 'image' => 'public/uploads/data_register_apl2/'.$new_image,
             ]);
         }
-
-
         else{
             $xnxx = Xnxx::create([
                 'unikom_name' => $request->unikom_name,
@@ -67,58 +51,96 @@ class XnxxController extends Controller
                 'data_register_id' => $request->data_register_id,
                 'user_id' => $request->user_id,
                 'status' => $request->status,
+                'kode' => $request->kode,
                 'users_id' => Auth::id() ,
                 'skema_id' => $request->skema_id,
                 'skema_name' => $request->skema_name,
             ]);
         }
-
-        // $xnxx = Xnxx::create([
-        //     'name' => $request->name,
-        //     'image' => $request->image,
-        //     'user_id' => $request->user_id,
-        //     'user_nama' => $request->user_nama,
-        //     'status' => $request->status,
-        //     'users_id' => Auth::id() 
-        // ]);
-        return back();
+        return back()->with('success', 'Data Berhasil Disimpan');
     }
 
-    public function store2(Request $request )
-    {
-        // dd($request->all());
-        
-        $request->validate([
-            'unikom_name' => ['required', 'unique:xnxxes,unikom_name']
-        ]);
 
+    public function store2(Request $request ){
+        // dd($request->all());
+
+        $request->validate([
+            'kode' => ['required', 'unique:xnxxes,kode']
+        ]);
+        
         $xnxx = Xnxx::create([
             'unikom_name' => $request->unikom_name,
             'unikom_id' => $request->unikom_id,
             'data_register_id' => $request->data_register_id,
             'user_id' => $request->user_id,
             'status' => $request->status,
+            'kode' => $request->kode,
             'users_id' => Auth::id() ,
             'skema_id' => $request->skema_id,
             'skema_name' => $request->skema_name,
         ]);
+        return back()->with('success', 'Data Berhasil Disimpan');
+    }
+
+
+    public function upload_identitas_store(Request $request ){
+        // dd($request->all());
+        $request->validate([
+            'kode' => ['required', 'unique:upload_files,kode'],
+            'image' => ['required'],
+            'name' =>['required']
+        ]);
+
+        $image = $request->image;
+            $new_image = time().$image->getClientOriginalName();
+            $image->move('public/uploads/data_register_apl2/', $new_image);
+        $xnxx = Upload_file::create([
+            'data_register_id' => $request->data_register_id,
+            'name' => $request->name,
+            'user_id' => $request->user_id,
+            'status' => $request->status,
+            'kode' => $request->kode,
+            'image' => 'public/uploads/data_register_apl2/'.$new_image,
+        ]);
+        return back()->with('success', 'Data Berhasil Disimpan');
+    }
+
+
+    public function upload_identitas_store2(Request $request ){
+        // dd($request->all());
+        $request->validate([
+            'kode' => ['required', 'unique:upload_files,kode'],
+            'name' =>['required']
+        ]);
+
+        $xnxx = Upload_file::create([
+            'data_register_id' => $request->data_register_id,
+            'name' => $request->name,
+            'user_id' => $request->user_id,
+            'kode' => $request->kode,
+            'status' => $request->status,
+        ]);
+        return back()->with('success', 'Data Berhasil Disimpan');
+    }
+
+
+    public function destroy3($id){
+        $identitas = Upload_file::findorfail($id);
+        $identitas->delete();
         return back();
     }
 
 
-
-    public function show($id)
-    {
-        // $post = Post::where('user_id', auth()->user()->id)->get();
+    public function show($id){
         $xnxx = Xnxx::where('user_id', auth()->user()->id)->get();
+        $identitas = Upload_file::where('user_id', auth()->user()->id)->get();
         $skema = Skema::findorfail($id);
-        return view('asesi/registrasi/formulir2', compact('skema', 'xnxx'));
+        return view('asesi/registrasi/formulir2', compact('skema','identitas', 'xnxx'));
     }
 
 
     public function token_store(Request $request){
         // dd($request->all());
-
         $request->validate([
             'token' => ['required', 'unique:tokens,token'],
             'user_id' => ['required']
@@ -132,29 +154,13 @@ class XnxxController extends Controller
     }
 
 
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-
-    public function destroy($id)
-    {
+    public function destroy($id){
         $xnxx = Xnxx::findorfail($id);
         $xnxx->delete();
         return redirect()->back()->with('success','Data Berhasil Dihapus');
     }
 
-    
+
     public function rekap_register(){
         return view('asesi/registrasi/rekap_register');
     }
@@ -164,7 +170,7 @@ class XnxxController extends Controller
         $request->validate([
             'kode_register' => ['required', 'unique:registers,kode_register']
         ]);
-                
+
         $xnxx = Register::create([
             'kode_register' => $request->kode_register,
             'skema_id' => $request->skema_id,
@@ -176,12 +182,13 @@ class XnxxController extends Controller
         return redirect()->route('rekap.registrasi');
     }
 
+
     public function rekap_registrasi(){
         $register = Register::where('user_id', auth()->user()->id)->get();
-        // $register = Register::all();
         $xnxx = Xnxx::all();
         return view('asesi/registrasi/rekap_register', compact('register', 'xnxx'));
     }
+
 
     public function destroy2($id){
         $register = Register::findorfail($id);

@@ -10,11 +10,11 @@ class Skema extends Model
     use HasFactory;
 
     protected $fillable = [
-        'kode_skema', 
-        'skema', 
-        'prodi_id', 
-        'asesor_id', 
-        'tuk_id', 
+        'kode_skema',
+        'skema',
+        'prodi_id',
+        'asesor_id',
+        'tuk_id',
         'status_id'
     ];
 
@@ -41,7 +41,7 @@ class Skema extends Model
     public function unikoms(){
         return $this->hasMany(Unikom::class);
     }
-    
+
 
     public function asesmens()
     {
@@ -50,7 +50,6 @@ class Skema extends Model
             Unikom::class,
             'skema_id',
             'unikom_id'
-
         );
     }
 }

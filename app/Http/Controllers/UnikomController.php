@@ -15,24 +15,18 @@ class UnikomController extends Controller
     }
 
 
-    public function create()  {
-        $skema = Skema::all();
-        return view('admin/unikom/create', compact('skema'));
-    }
-
-
     public function store(Request $request) {
+        $request->validate([
+            'kode_unikom' => ['required', 'unique:unikoms,kode_unikom'],
+            'unikom' => ['required'],
+            'skema_id' => ['required']
+        ]);
         $unikom = Unikom::create([
             'kode_unikom' => $request->kode_unikom,
             'unikom' => $request->unikom,
             'skema_id'=> $request->skema_id
         ]);
         return redirect()->back()->with('success', 'Unit Kompetensi Berhasil Ditambahkan');
-    }
-
-
-    public function show($id) {
-        //
     }
 
 

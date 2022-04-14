@@ -1,31 +1,31 @@
 @extends('layout/1')
 @section('isi')
-    
-<div class="page-header">
-    @foreach ($beranda as $jodi)      
+
+{{-- <div class="page-header">
+    @foreach ($beranda as $jodi)
     <h2>
         {{ $jodi->judul }} <br> {{ $jodi->judul2 }}
-    </h2>
-    
+    </h2> --}}
+
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
-    <nav aria-label="breadcrumb">
+    {{-- <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
-            <li class="breadcrumb-item"><a href="#">Beranda</a></li>
+            <li class="breadcrumb-item"><a href="#">Beranda</a></li> --}}
             {{-- <li class="breadcrumb-item">
                 <a href="#"> </a>
             </li> --}}
-            <li class="breadcrumb-item active" aria-current="page"></li>
+            {{-- <li class="breadcrumb-item active" aria-current="page"></li>
         </ol>
-    </nav>
-    @endforeach
-</div><br>
+    </nav> --}}
+    {{-- @endforeach --}}
+{{-- </div><br> --}}
 
 <!-- /////////////////////////////////// -->
 <!-- CAROUSEL -->
 <!-- /////////////////////////////////// -->
-{{-- <div class="card">
+<div class="card">
     <div class="card-body">
       <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -34,28 +34,23 @@
           <li data-target="#carouselExampleIndicators2" data-slide-to="2" class="active"></li>
         </ol>
         <div class="carousel-inner">
+            @foreach ($image as $asu)
           <div class="carousel-item">
-            <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_12.jpg') }}" alt="First slide">
+            <img class="d-block w-100" src="{{ asset($asu->image) }}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
               <h5>Heading</h5>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_1.jpg') }}" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Heading</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-          </div>
+          @endforeach
+
           <div class="carousel-item active">
             <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_2.jpg') }}" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
-              <h5>Heading</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h1>Heading</h1>
+              <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua.</h5>
             </div>
           </div>
         </div>
@@ -69,32 +64,32 @@
         </a>
       </div>
     </div>
-  </div> --}}
+  </div>
 
 
 
-<div class="col-lg-12 grid-margin stretch-card">
-    <div class="card">                            
-        <div class="card-img-top">                                
+{{-- <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-img-top">
             <div class="owl-carousel owl-theme full-width">
                 @foreach ($image as $asu)
                 <div class="item">
                     <img src="{{ asset($asu->image) }}" alt="image" />
                 </div>@endforeach
-            </div>            
+            </div>
         </div>
     </div>
-</div>
+</div> --}}
                     <!-- /////////////////////////////////// -->
                     <!-- DESKRIPSI WEB -->
-                    <!-- /////////////////////////////////// -->     
-                    <div class="row">
+                    <!-- /////////////////////////////////// -->
+                    {{-- <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 @foreach ($beranda as $jodi)
                                 <div class="card-body">
                                     <div class="card-title">
-                                        
+
                                         <h5> <i class="fas fa-globe"></i> DESKRIPSI WEB</h5>
                                     </div>
                                     <h4>{{ $jodi->deskripsi }}</h4>
@@ -102,8 +97,31 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>                   
-                    <br>
+                    </div>
+                    <br> --}}
+<br>
+                        <div class="card">
+                          <div class="card-body">
+                            <h4 class="card-title">Lazy load</h4>
+                            <div class="owl-carousel owl-theme lazy-load owl-loaded owl-drag" style="">
+
+                                @foreach ($image as $asu)
+                                <div><img src="{{ asset($asu->image) }}" alt=""></div>
+
+                                @endforeach
+
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                          </div>
+                        </div>
+                      <br>
 
                     <!-- /////////////////////////////////// -->
                     <!-- SDM LSP  -->
@@ -137,6 +155,8 @@
                         </div>
                     </div><br>
 
+
+
                     <!-- /////////////////////////////////// -->
                     <!-- PETA -->
                     <!-- /////////////////////////////////// -->
@@ -163,7 +183,7 @@
                         <!-- /////////////////////////////////// -->
                         <!-- KALENDER -->
                         <!-- /////////////////////////////////// -->
-                        <div class="col-md-6 grid-margin stretch-card">
+                        <div class="col-md-5 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="card-title">
@@ -175,5 +195,5 @@
                             </div>
                         </div>
                     </div>
-                    
+
 @endsection

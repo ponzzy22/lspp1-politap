@@ -8,44 +8,23 @@ use Illuminate\Http\Request;
 class TukController extends Controller
 {
 
-    public function index()
-    {
+    public function index() {
         $tuk = Tuk::all();
         return view('admin/tuk/index', compact('tuk'));
     }
 
 
-
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        $request->validate([
+            'tuk' => ['required'],
+            'alamat' => ['required']
+        ]);
         $tuk = Tuk::create([
             'tuk' => $request->tuk,
             'alamat' => $request->alamat
         ]);
         return redirect()->route('tuk.index')->with('success', 'TUK Berhasil Ditambahkan');
     }
-
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
 
 
     public function destroy($id)
