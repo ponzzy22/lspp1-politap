@@ -40,18 +40,18 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {{-- @foreach ($skema as $hasil => $asu) --}}
+                    @foreach ($datareg as $hasil => $asu)
                         <tr role="row" class="odd">
                             <td></td>
                             <td class="text-right">
                                 {{-- <a href="{{ route('info_skema.show', $asu->id) }}"><button type="submit" class="btn btn-inverse-info btn-sm btn-block"><i class="fa fa-eye "></i>  Lihat Detail Skema</button></a> --}}
                             </td>
                             <td class=""></td>
-                            <td></td>
+                            <td>{{ $asu->id }}</td>
                             <td></td>
                             <td><label class="badge badge-light"></label></td>
                         </tr>
-                    {{-- @endforeach --}}
+                    @endforeach
                     </tbody>
                     </table>
                     </div>

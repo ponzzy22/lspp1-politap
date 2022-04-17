@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesi;
+use App\Models\Data_register;
 use App\Models\Jurusan;
 use App\Models\Semester;
 use App\Models\Sex;
@@ -105,7 +106,8 @@ class AsesiController extends Controller
 
 
     public function koleksi_sertifikat(){
-        return view('asesi/sertifikasi');
+        $datareg = Data_register::where('user_id', auth()->user()->id)->get();
+        return view('asesi/sertifikasi', compact('datareg'));
     }
 
 

@@ -32,13 +32,11 @@ class F_profilController extends Controller
     }
 
 
-
     public function edit($id)
     {
         $profil = F_profil::findorfail($id);
         return view('admin/f_profil/edit', compact('profil'));
     }
-
 
 
     public function update(Request $request, $id)

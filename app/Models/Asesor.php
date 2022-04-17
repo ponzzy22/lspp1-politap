@@ -16,7 +16,8 @@ class Asesor extends Model
         'image', 
         'alamat',
         'sex', 
-        'email', 
+        'email',
+        'no_hp' ,
         'status'];
 
     public function skemas(){

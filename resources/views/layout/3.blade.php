@@ -78,21 +78,6 @@
                                 </form>
                             </div>
                     </li>
-                    <!-- /////////////////////////////////// -->
-                    <!-- PENCARIAN -->
-                    <!-- /////////////////////////////////// -->
-                    <li class="">
-                        <div class="nav-link">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                <i class="fas fa-search"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Pencarian" aria-label="Search">
-                            </div>
-                        </div>
-                    </li>
                 </ul>
             </div>
         </nav>

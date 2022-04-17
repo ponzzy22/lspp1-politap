@@ -41,11 +41,11 @@ class StrorgController extends Controller
             ];
         }
         else{
-            $profil_data = [
+            $strorg_data = [
                 'keterangan' =>$request->keterangan,
             ];
         }
-        $strorg->update($strorg_data);
+        Strorg::whereId($id)->update($strorg_data);
         return redirect()->route('strorg.index')->with('success','Gambar Struktur Organisasi berhasil di Update');
     }
 }

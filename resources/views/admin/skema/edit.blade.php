@@ -1,7 +1,6 @@
 @extends('layout/2')
 @section('isi')
 @include('layout/verifikasi')
-
 <div class="page-header">
     <h4>
         <i class="fab fa-pagelines"></i>  Edit Skema
@@ -17,7 +16,6 @@
         </ol>
     </nav>
 </div><br>
-
 <!-- /////////////////////////////////// -->
 {{-- EDIT SKEMA --}}
 <!-- /////////////////////////////////// -->
@@ -27,7 +25,7 @@
         @csrf
         @method('put')
             <div class="card-description text-left">
-                <button type="submit" class="btn btn-inverse-info btn-icon-text">
+                <button type="submit" class="btn btn-inverse-info btn-icon-text btn-block">
                     <i class="fa fa-magic btn-icon-prepend"></i>
                     Update
                 </button>

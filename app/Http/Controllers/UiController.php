@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Beranda;
 use App\Models\Beranda_img1;
 use App\Models\Beranda_img2;
+use App\Models\Data_register;
 use App\Models\F_profil;
 use App\Models\Strorg;
 use Illuminate\Http\Request;

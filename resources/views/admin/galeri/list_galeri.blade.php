@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/5')
 @section('isi')
 @include('layout/verifikasi')
 <!-- /////////////////////////////////// -->

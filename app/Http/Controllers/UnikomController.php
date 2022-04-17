@@ -10,7 +10,7 @@ class UnikomController extends Controller
 {
     public function index()  {
         $skema = Skema::all();
-        $unikom = Unikom::all();
+        $unikom = Unikom::orderBy('created_at','desc')->get();
         return view('admin/unikom/index', compact('unikom', 'skema'));
     }
 

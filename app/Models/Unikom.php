@@ -19,5 +19,4 @@ class Unikom extends Model
     public function asesmens(){
         return $this->hasMany(Asesmen::class);
     }
-
 }

@@ -13,13 +13,13 @@ class AsesorController extends Controller
     }
 
 
-
     public function store(Request $request) {
         $request->validate([
-            'nik' => ['required'],
+            'nik' => ['required', 'unique:asesor,nik'],
             'nama' => ['required'],
             'alamat' => ['required'],
             'sex' => ['required'],
+            'no_hp' => ['required'],
             'email' => ['required', 'unique:asesor,email'],
             'status' => ['required'],
             'image' => ['required', 'image']
@@ -31,6 +31,7 @@ class AsesorController extends Controller
             'nama' => $request->nama,
             'alamat' => $request->alamat,
             'sex' => $request->sex,
+            'no_hp' => $request->no_hp,
             'email' => $request->email,
             'status' => $request->status,
             'image' => 'public/uploads/asesor/'.$new_image,
@@ -51,8 +52,8 @@ class AsesorController extends Controller
             'nik' => ['required'],
             'nama' => ['required'],
             'alamat' => ['required'],
-            // 'sex' => ['required'],
-            // 'email' => ['required', 'unique:asesor,email'],
+            'sex' => ['required'],
+            'no_hp' => ['required'],
             'status' => ['required'],
         ]);
         $asesor = Asesor::findorfail($id);
@@ -64,6 +65,7 @@ class AsesorController extends Controller
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,
@@ -75,6 +77,7 @@ class AsesorController extends Controller
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,

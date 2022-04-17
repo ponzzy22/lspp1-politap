@@ -25,7 +25,22 @@ class RegistrasiController extends Controller
     public function store(Request $request) {
         // dd($request->all());
         $request->validate([
-            'user_id' => ['required', 'unique:data_registers,user_id']
+            'user_id' => ['required', 'unique:data_registers,user_id'],
+            'sex_id' => ['required'],
+            'nim' => ['required'],
+            'tmpt_lahir' => ['required'],
+            'no_hp' => ['required'],
+            'semester_id' => ['required'],
+            'provinsi' => ['required'],
+            'kabupaten' => ['required'],
+            'kecamatan' => ['required'],
+            'kota' => ['required'],
+            'tgl_lahir' => ['required'],
+            'surel' => ['required'],
+            'jurusan_id' => ['required'],
+            'alamat' => ['required'],
+            'kode_post' => ['required'],
+            'negara' => ['required'],
         ]);
             $data_register = Data_register::create([
                 'id' => $request->id,
@@ -54,7 +69,7 @@ class RegistrasiController extends Controller
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
             ]);
-        return back()->with('success', ' Data Profil Anda Berhasil di Update');
+        return back()->with('success', ' Data Anda Berhasil di Disimpan, Sekarang tekan tombol "SELANJUTNYA" dibawah');
     }
 
 

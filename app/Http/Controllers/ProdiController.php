@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProdiController extends Controller
 {
     public function index() {
-        $prodi = Prodi::all();
+        $prodi = Prodi::orderBy('created_at','desc')->get();
         return view('admin/prodi/index', compact('prodi'));
     }
 
@@ -17,7 +17,7 @@ class ProdiController extends Controller
         $prodi = Prodi::create([
             'prodi' => $request->prodi
         ]);
-        return back()->with('success', 'Prodi Anda Sudah di Posting');
+        return back()->with('success', 'Prodi Sudah Berhasil diBuat');
     }
 
 

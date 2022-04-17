@@ -10,14 +10,16 @@ class Beranda_img2Controller extends Controller
 
     public function index()
     {
-        $beranda_img2 = Beranda_img2::all();
+        $beranda_img2 = Beranda_img2::orderBy('created_at','desc')->get();
         return view('admin/beranda_img2/index', compact('beranda_img2'));
     }
 
 
-
     public function store(Request $request)
     {
+        $request->validate([
+            'image' => 'required'
+        ]);
         
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
@@ -30,11 +32,9 @@ class Beranda_img2Controller extends Controller
     }
 
 
-
     public function update(Request $request, $id)
     {
         $beranda_img2 = Beranda_img2::findorfail($id);
-
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
@@ -49,11 +49,9 @@ class Beranda_img2Controller extends Controller
                 'keterangan' =>$request->keterangan,
             ];
         }
-
         $beranda_img2->update($beranda_img2_data);
         return redirect()->route('beranda_img2.index')->with('success','Portofolio anda berhasil di Update');
     }
-
 
 
     public function destroy($id)

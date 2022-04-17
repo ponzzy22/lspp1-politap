@@ -32,7 +32,7 @@ class UserController extends Controller
             // 'alamat' => ['min:3', 'max:100', 'required'],
             // 'jurusan_id' => ['required'],
             // 'semester_id' => ['required'],
-            'kode_post' => ['max:10000000'],
+            'kode_post' => ['max:100000000000'],
             // 'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
             // 'surel' => ['email','min:3', 'max:100', 'required', 'unique:users,surel,'.auth()->id()],
             // 'image' => ['required'],
@@ -77,13 +77,13 @@ class UserController extends Controller
             ];
         }
         User::whereId($id)->update($user_data);
-        return back()->with('success', ' Data Profil  Berhasil di Update');
+        return back()->with('success', ' Data Profil Pengguna Berhasil diUpdate');
     }
 
 
     public function destroy($id) {
         $user = User::findorfail($id);
         $user->delete();
-        return redirect()->back()->with('success','User Berhasil Dihapus');
+        return redirect()->back()->with('success','Akun Pengguna Berhasil Dihapus');
     }
 }

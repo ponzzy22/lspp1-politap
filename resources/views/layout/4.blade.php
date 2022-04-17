@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/user.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -24,7 +24,7 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ route('dashasesi.index') }}"><img src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
@@ -47,7 +47,8 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP <i class="fas fa-ellipsis-h"></i> WEBSITE ASESI</h5>                        </div>
+                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP <i class="fas fa-ellipsis-h"></i> WEBSITE ASESI</h5>
+                        </div>
                     </li>
                 </ul>
                 <!-- /////////////////////////////////// -->
@@ -56,7 +57,7 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ url('/') }}">
-                            <i class="fas fa-desktop mx-0"></i>
+                            <i class="fas fa-home mx-0"></i>
                         </a>
                     </li>
                     <li class="nav-item nav-profile dropdown">
@@ -75,22 +76,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                                 </form>
-                        </div>
-                    </li>
-                    <!-- /////////////////////////////////// -->
-                    <!-- PENCARIAN -->
-                    <!-- /////////////////////////////////// -->
-                    <li class="">
-                        <div class="nav-link">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">
-                                <i class="fas fa-search"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" placeholder="Pencarian" aria-label="Search">
                             </div>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -131,13 +117,13 @@
                     <li class="nav-item nav-profile">
                         <div class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ Auth::user()->image }}" alt="" /></a>
+                                <a href="#"> <img src="{{ asset(Auth::user()->image) }}" alt="image" /></a>
                             </div>
                             <div class="profile-name">
                                 <p class="name">
                                     {{ Auth::user()->name }}
                                 </p>
-                                <p class="designation">
+                                <p class="designation text-center">
                                     Pengguna
                                 </p>
                             </div>
@@ -149,27 +135,55 @@
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('dashasesi.index') }}">
-                            <i class="fa fa-dot-circle  menu-icon"></i>
+                            <i class="fa fa-th-large  menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('edit') }}">
-                            <i class="fa fa-user menu-icon"></i>
+                            <i class="fa fa-user-circle menu-icon"></i>
                             <span class="menu-title">Profil Anda</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('registrasi.index') }}">
-                            <i class="fa fa-plus menu-icon"></i>
-                            <span class="menu-title">Pendaftaran</span>
+
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
+                            <i class="fab fa-pagelines menu-icon"></i>
+                            <span class="menu-title">Assesment</span>
+                            <i class="menu-arrow"></i>
                         </a>
+                        <div class="collapse" id="sidebar-layouts">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Instruksi Registrasi</a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('info.skema') }}">Info Skema</a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('registrasi.index') }}">Registrasi Sertifikasi</a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi Sertifikat</a>
+                                </li>
+                            </ul>
+                        </div>                        
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-address-card menu-icon"></i>
+                        <a class="nav-link" href="{{ route('logout') }}"onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="fas fa-power-off menu-icon"></i>
                             <span class="menu-title">Logout</span>
                         </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                        </form>
                     </li>
                 </ul>
             </nav>
@@ -199,9 +213,10 @@
     <!-- /////////////////////////////////// -->
     <!-- FOOTER -->
     <!-- /////////////////////////////////// -->
-    <footer class="kaki">
-        <div class="footer1">
-            <span class="">Copyright © 2022 &diamondsuit; Designed & Developed By Politeknik Negeri Ketapang.</span>
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class=" text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 &diamondsuit; Designed & Developed By  <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri Ketapang</a>.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank">  Teknik Informatika </a><code> v.1.4.22</code></span>
         </div>
     </footer>
 
@@ -241,6 +256,8 @@
     <script src="{{ asset('public/assets/js/tooltips.js') }}"></script>
     <script src="{{ asset('public/assets/js/popover.js') }}"></script>
     <script src="{{ asset('public/assets/js/modal-demo.js') }}"></script>
+    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
 </body>
 
 

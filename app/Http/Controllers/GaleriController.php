@@ -11,7 +11,7 @@ class GaleriController extends Controller
 
     public function index()
     {
-        $galeri = Group_galeri::all();
+        $galeri = Group_galeri::orderBy('created_at','desc')->get();
         return view('admin/galeri/list_galeri', compact('galeri'));
     }
 
@@ -32,12 +32,6 @@ class GaleriController extends Controller
         return view('admin/galeri/show', compact('galeri'));
     }
 
-
-    // public function edit($id)
-    // {
-    //     $galeri = Group_galeri::findorfail($id);
-    //     return view('admin/galeri/edit', compact('galeri'));
-    // }
 
     public function edit($id)
     {

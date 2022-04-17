@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
     <!-- /////////////////////////////////// -->
@@ -31,7 +31,7 @@
                     <div class="fallback">
                         <input type="hidden" name="group_galeri_id" value="dfsdf">
                         <input type="file" name="image[]" multiple="true">
-                    </div> <button type="submit" class="btn btn-block btn-su">ass</button>
+                    </div> <button type="submit" class="btn btn-block btn-su"></button>
                 </form>
             </div>
         </div>
@@ -71,7 +71,7 @@
         <!-- /////////////////////////////////// -->
         {{-- EDIT GALERI --}}
         <!-- /////////////////////////////////// -->
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="mt-4">
                 <div class="accordion accordion-solid-header" id="accordion-5" role="tablist">
                     <div class="card">

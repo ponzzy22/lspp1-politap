@@ -18,7 +18,7 @@ class SkemaController extends Controller
         $tuk = Tuk::all();
         $asesor = Asesor::all();
         $prodi = Prodi::all();
-        $skema = Skema::all();
+        $skema = Skema::orderBy('created_at','desc')->get();
         return view('admin/skema/index', compact('skema', 'prodi', 'asesor', 'tuk',  'status'));
     }
 
@@ -62,7 +62,6 @@ class SkemaController extends Controller
 
     public function update(Request $request, $id) {
         $request->validate([
-            'kode_skema' => ['required', 'unique:skemas,kode_skema'],
             'skema' => ['required'],
             'prodi_id' => ['required'],
             'asesor_id' => ['required'],

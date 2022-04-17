@@ -7,18 +7,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\Dashboard_adminController;
 use App\Http\Controllers\Dashboard_asesiController;
-use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DeleteGaleriFotoController;
 use App\Http\Controllers\F_profilController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
+use App\Http\Controllers\ReadAPL2Controller;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
-use App\Http\Controllers\TolakController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\UnikomController;
@@ -39,6 +39,9 @@ Route::get('profil', function () {
 Route::get('strorg1', function () {
     return view('front/strorg');
 });
+Route::get('404', function () {
+    return view('404');
+});
 
 Route::get('/', [UiController::class, 'ui_beranda']);
 Route::get('profil', [UiController::class, 'profil']);
@@ -49,7 +52,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'role:admin'], function () {
     ///////////  BACKEND END /////////////
-    Route::resource('backend', DashboardAdminController::class);
+    Route::resource('admin', Dashboard_adminController::class);
     /////////// SKEMA  /////////////
     Route::resource('skema', SkemaController::class);
     Route::get('show_asesmen/{id}', [SkemaController::class, 'show_asesmen'])->name('show_asesmen');
@@ -62,12 +65,19 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::resource('asesmen', AsesmenController::class);
     /////////// PENGGUNA  /////////////
     Route::resource('user', UserController::class);
-    /////////// DATA PESERTA  /////////////
+    /////////// DATA REGISTRASI  /////////////
     Route::resource('validasi', ValidasiController::class);
     Route::get('validasi2/{validasi}/edit', [ValidasiController::class, 'index_edit'])->name('validasi.edit2');
-    Route::resource('tolak', TolakController::class);
+    Route::get('registrasi_baru', [ValidasiController::class, 'registrasi_baru'])->name('registrasi.baru');
+    Route::get('pengguna_ditolak', [ValidasiController::class, 'list_tolak'])->name('list.tolak');
+    Route::get('pengguna_divalidasi', [ValidasiController::class, 'list_valid'])->name('list.valid');
+    Route::get('pengguna_bersertifikat', [ValidasiController::class, 'list_sertifikat'])->name('list.sertifikat');
+    Route::put('finish/{finish}', [ValidasiController::class, 'update2'])->name('finish.update');
+    Route::put('tolak/{tolak}', [ValidasiController::class, 'update3'])->name('tolak.update');
+    Route::resource('readapl2', ReadAPL2Controller::class);
     /////////// GALERI  /////////////
     Route::resource('galeri', GaleriController::class);
+    Route::resource('dashadmin', Dashboard_adminController::class);
     Route::resource('delete_galeri_foto', DeleteGaleriFotoController::class);
     Route::post('upload_foto', [GaleriController::class, 'foto_store'])->name('foto.store');
     /////////// BERITA  /////////////
@@ -114,7 +124,3 @@ Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
 
 Route::get('skema1', [HomeController::class, 'skema1'])->name('skema1');
 Route::get('list', [HomeController::class, 'list'])->name('list');
-
-Route::get('ujicoba', function () {
-    return view('ujicoba');
-});
