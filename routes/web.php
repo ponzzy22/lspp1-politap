@@ -6,9 +6,12 @@ use App\Http\Controllers\AsesorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\Dashboard_asesiController;
 use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DeleteGaleriFotoController;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
@@ -22,13 +25,20 @@ use App\Http\Controllers\UnikomController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\XnxxController;
+use App\Models\Galeri_foto;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
 ///////////  FRONT END /////////////
-Route::get('/', function () {return view('beranda');});
-Route::get('profil', function () {return view('front/profil');});
-Route::get('strorg1', function () {return view('front/strorg');});
+Route::get('/', function () {
+    return view('beranda');
+});
+Route::get('profil', function () {
+    return view('front/profil');
+});
+Route::get('strorg1', function () {
+    return view('front/strorg');
+});
 
 Route::get('/', [UiController::class, 'ui_beranda']);
 Route::get('profil', [UiController::class, 'profil']);
@@ -37,7 +47,7 @@ Route::get('strorg1', [UiController::class, 'show_strorg']);
 Auth::routes();
 
 
-Route::group(['middleware' => 'role:admin'], function(){
+Route::group(['middleware' => 'role:admin'], function () {
     ///////////  BACKEND END /////////////
     Route::resource('backend', DashboardAdminController::class);
     /////////// SKEMA  /////////////
@@ -56,15 +66,23 @@ Route::group(['middleware' => 'role:admin'], function(){
     Route::resource('validasi', ValidasiController::class);
     Route::get('validasi2/{validasi}/edit', [ValidasiController::class, 'index_edit'])->name('validasi.edit2');
     Route::resource('tolak', TolakController::class);
+    /////////// GALERI  /////////////
+    Route::resource('galeri', GaleriController::class);
+    Route::resource('delete_galeri_foto', DeleteGaleriFotoController::class);
+    Route::post('upload_foto', [GaleriController::class, 'foto_store'])->name('foto.store');
+    /////////// BERITA  /////////////
+    Route::resource('berita', BeritaController::class);
+
 
     Route::resource('sett-beranda', UiController::class);
     Route::resource('beranda_img1', Beranda_img1Controller::class);
     Route::resource('beranda_img2', Beranda_img2Controller::class);
     Route::resource('f_profil', F_profilController::class);
     Route::resource('strorg', StrorgController::class);
+    Route::post('upload', [GaleriController::class, 'upload'])->name('upload');
 });
 
-Route::group(['middleware' => 'auth'], function(){
+Route::group(['middleware' => 'auth'], function () {
     Route::resource('dashasesi', Dashboard_asesiController::class);
     Route::resource('asesi', AsesiController::class);
     Route::resource('registrasi', RegistrasiController::class);
@@ -100,4 +118,3 @@ Route::get('list', [HomeController::class, 'list'])->name('list');
 Route::get('ujicoba', function () {
     return view('ujicoba');
 });
-

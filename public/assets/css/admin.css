@@ -25237,6 +25237,12 @@ code {
     border-color: #ec3732;
 }
 
+.card.card-statistics3 {
+    background: #2c303e;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
 .card.card-statistics .statistics-item {
     position: relative;
 }

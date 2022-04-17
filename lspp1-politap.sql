@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2022 at 08:50 PM
+-- Generation Time: Apr 16, 2022 at 09:07 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -171,6 +171,37 @@ INSERT INTO `beranda_img2` (`id`, `keterangan`, `image`, `updated_at`, `created_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `beritas`
+--
+
+CREATE TABLE `beritas` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `excerpt` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file1` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `beritas`
+--
+
+INSERT INTO `beritas` (`id`, `title`, `excerpt`, `body`, `created_at`, `updated_at`, `image`, `file1`, `file2`) VALUES
+(3, 'dfasdf', 'sdasdas', '<p><b>sdasd&nbsp; &nbsp; &nbsp;</b></p><p><b>1.fdsfsdfs</b></p><p><b>2.dfsdfsdfsdfsd<u>sdfsdfsdfs</u></b></p><p><b style=\"background-color: rgb(255, 255, 0); --darkreader-inline-bgcolor:#999900;\" data-darkreader-inline-bgcolor=\"\">dfsdfdsfdsfasdfdf</b></p>', '2022-04-16 07:22:22', '2022-04-16 11:26:33', 'public/uploads/berita/1650118942ASSIST-3.png', NULL, NULL),
+(4, 'sa', 'dsfadfsad', 'dfadsfasdffsadfasdfsdfsdfsdfsdfdsfdsafsadfasdfsdafasdfsa**fsadfasdfasdfasdfadsfadsfsaf**', '2022-04-16 07:25:44', '2022-04-16 07:25:44', 'public/uploads/berita/1650119144ASSIST-1.png', NULL, NULL),
+(5, 'rtwertwret', 'rtrtr', '**dfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf***dfsdfsdfsdfsdfefwfewedfwefwefwefwefef*[](http://fgdfgsdfgdfsgsrgesrgesgrrsgrgsrgrgrrg)', '2022-04-16 07:29:45', '2022-04-16 07:29:45', 'public/uploads/berita/1650119385SEASON-1.png', NULL, NULL),
+(6, 'er', 'er', '*ererererer*\r\nerwer\r\nerwere', '2022-04-16 08:17:22', '2022-04-16 08:17:22', 'public/uploads/berita/1650122242SEASON-2.png', NULL, NULL),
+(7, 'sds', 'asda', '<p><b>dsfdsfasdf</b></p>', '2022-04-16 09:22:34', '2022-04-16 09:22:34', 'public/uploads/berita/1650126154GOALS-3.png', NULL, NULL),
+(8, 'gfgsf', 'fgfg', '<ol><li>fgsdfg</li><li>fgsdfg</li><li>fgsdfgs</li><li>sfgsdfg</li><li>fgsdfgsdf</li><li>fgsdfgsdfg</li><li><b>fgsfgsdfgsdfgsdfg</b></li></ol>', '2022-04-16 09:23:41', '2022-04-16 09:23:41', 'public/uploads/berita/1650126221SEASON-2.png', NULL, NULL),
+(10, 'd', 'd', '<ol><li><b>sddddddddddddddddd<span style=\"background-color: rgb(255, 255, 0); --darkreader-inline-bgcolor:#999900;\" data-darkreader-inline-bgcolor=\"\">sdddddddddddddddddddddddddddddddd</span></b></li></ol>', '2022-04-16 11:37:55', '2022-04-16 11:37:55', 'public/uploads/berita/1650134275SEASON-1.png', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `data_registers`
 --
 
@@ -261,6 +292,64 @@ INSERT INTO `f_profil` (`id`, `profil`, `visi`, `misi`, `motto`, `image`, `updat
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `galeri_fotos`
+--
+
+CREATE TABLE `galeri_fotos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `group_galeri_id` bigint(20) NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `galeri_fotos`
+--
+
+INSERT INTO `galeri_fotos` (`id`, `group_galeri_id`, `image`, `created_at`, `updated_at`) VALUES
+(28, 1, 'public/uploads/data_register_apl2/1650032363ASSIST-1.png', '2022-04-15 07:19:23', '2022-04-15 07:19:23'),
+(29, 1, 'public/uploads/data_register_apl2/1650032363ASSIST-2.png', '2022-04-15 07:19:23', '2022-04-15 07:19:23'),
+(30, 1, 'public/uploads/data_register_apl2/1650032950ASSIST-1.png', '2022-04-15 07:29:10', '2022-04-15 07:29:10'),
+(31, 1, 'public/uploads/data_register_apl2/1650032950ASSIST-2.png', '2022-04-15 07:29:10', '2022-04-15 07:29:10'),
+(32, 1, 'public/uploads/data_register_apl2/1650036236ASSIST-3.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(33, 1, 'public/uploads/data_register_apl2/1650036236GOALS-1.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(34, 1, 'public/uploads/data_register_apl2/1650036236GOALS-2.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(35, 1, 'public/uploads/data_register_apl2/1650036236GOALS-3.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(36, 1, 'public/uploads/data_register_apl2/1650036236SEASON-1.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(37, 1, 'public/uploads/data_register_apl2/1650036236SEASON-2.png', '2022-04-15 08:23:56', '2022-04-15 08:23:56'),
+(38, 2, 'public/uploads/data_register_apl2/1650036262ASSIST-1.png', '2022-04-15 08:24:22', '2022-04-15 08:24:22'),
+(42, 2, 'public/uploads/data_register_apl2/1650040102ASSIST-2.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22'),
+(43, 2, 'public/uploads/data_register_apl2/1650040102ASSIST-3.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22'),
+(44, 2, 'public/uploads/data_register_apl2/1650040102GOALS-1.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22'),
+(45, 2, 'public/uploads/data_register_apl2/1650040102GOALS-2.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22'),
+(46, 2, 'public/uploads/data_register_apl2/1650040102GOALS-3.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22'),
+(47, 2, 'public/uploads/data_register_apl2/1650040102SEASON-1.png', '2022-04-15 09:28:22', '2022-04-15 09:28:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `group_galeris`
+--
+
+CREATE TABLE `group_galeris` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `galeri` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `group_galeris`
+--
+
+INSERT INTO `group_galeris` (`id`, `galeri`, `created_at`, `updated_at`) VALUES
+(1, 'sgfgfg', '2022-04-01 05:01:40', '2022-04-01 05:01:40'),
+(2, 'jopi', '2022-04-14 22:40:27', '2022-04-15 09:26:47');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jurusan`
 --
 
@@ -333,7 +422,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (31, '2022_04_11_063629_create_upload_files_table', 23),
 (32, '2022_04_11_064002_add_data_table', 24),
 (33, '2022_04_12_135433_asu', 25),
-(34, '2022_04_12_180546_create_sertifikasis_table', 26);
+(34, '2022_04_12_180546_create_sertifikasis_table', 26),
+(35, '2022_04_15_043313_create_group_galeris_table', 27),
+(36, '2022_04_15_071246_create_galeri_fotos_table', 28),
+(37, '2022_04_16_081140_create_beritas_table', 29);
 
 -- --------------------------------------------------------
 
@@ -731,7 +823,6 @@ INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, 
 (19, 'UNIT-42', 8, 'Orra UMUM', '2022-04-05 22:56:53', '2022-04-06 09:10:32', NULL),
 (20, 'UNIT-211223212', 5, 'Inul', '2022-04-05 22:58:29', '2022-04-05 22:58:29', NULL),
 (21, 'UNIT-2112z', 7, 'h', '2022-04-06 05:22:36', '2022-04-06 05:22:36', NULL),
-(22, '23323d2d23', 2, 'efwerer', '2022-04-11 12:27:29', '2022-04-11 12:27:29', NULL),
 (23, 'dfsdf', 2, 'dfsdf', '2022-04-11 12:33:04', '2022-04-11 12:33:04', NULL),
 (29, 'UNIT-2112re', 3, 'aaawer', '2022-04-13 12:25:58', '2022-04-13 12:25:58', NULL),
 (30, 'UNIT-2112dfsd', 5, 'sdfsd', '2022-04-13 12:34:05', '2022-04-13 12:34:05', NULL),
@@ -896,6 +987,12 @@ ALTER TABLE `beranda_img2`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `beritas`
+--
+ALTER TABLE `beritas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `data_registers`
 --
 ALTER TABLE `data_registers`
@@ -912,6 +1009,18 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `f_profil`
 --
 ALTER TABLE `f_profil`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `galeri_fotos`
+--
+ALTER TABLE `galeri_fotos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `group_galeris`
+--
+ALTER TABLE `group_galeris`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1110,6 +1219,12 @@ ALTER TABLE `beranda_img2`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT for table `beritas`
+--
+ALTER TABLE `beritas`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -1122,6 +1237,18 @@ ALTER TABLE `f_profil`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `galeri_fotos`
+--
+ALTER TABLE `galeri_fotos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
+--
+-- AUTO_INCREMENT for table `group_galeris`
+--
+ALTER TABLE `group_galeris`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
@@ -1131,7 +1258,7 @@ ALTER TABLE `jurusan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `permissions`
