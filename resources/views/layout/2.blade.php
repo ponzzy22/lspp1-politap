@@ -239,37 +239,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#page-layouts" aria-expanded="false"
-                            aria-controls="page-layouts">
-                            <i class="fa fa-home menu-icon"></i>
-                            <span class="menu-title">Frontend Web</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="page-layouts">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item d-none d-lg-block">
-                                    <a class="nav-link" href="{{ route('sett-beranda.index') }}">Judul &
-                                        Deskripsi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('beranda_img1.index') }}">Carousel</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('beranda_img2.index') }}">Portofolio
-                                        Karyawan</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('f_profil.index') }}">Profil LSP
-                                        P1-POLITAP</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('strorg.index') }}">Struktur
-                                        Organisasi</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('berita.index') }}">
                             <i class="fa fa-info-circle menu-icon"></i>
                             <span class="menu-title">Berita</span>
@@ -314,12 +283,15 @@
                 </div>
             </div>
         </div>
+        <!-- /////////////////////////////////// -->
+        <!-- SIDEBAR KANAN -->
+        <!-- /////////////////////////////////// -->
         <div id="right-sidebar" class="settings-panel">
             <i class="settings-close fa fa-times"></i>
             <ul class="nav nav-tabs" id="setting-panel" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
-                        aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+                        aria-controls="todo-section" aria-expanded="true">Frontend Setting</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
@@ -329,36 +301,32 @@
             <div class="tab-content" id="setting-content">
                 <div class="tab-pane fade show active scroll-wrapper ps" id="todo-section" role="tabpanel"
                     aria-labelledby="todo-section">
-                    <div class="add-items d-flex px-3 mb-0">
-                        <form class="form w-100">
-                            <div class="form-group d-flex">
-                                <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
-                                <button type="submit" class="add btn btn-primary todo-list-add-btn"
-                                    id="add-task-todo">Add</button>
-                            </div>
-                        </form>
-                    </div>
                     <div class="list-wrapper px-3">
                         <ul class="d-flex flex-column-reverse todo-list">
                             <li>
-                                <a href="">
-                                    <button class="btn btn-inverse-primary btn-block">Judul & Deskripsi</button>
-                                </a>||
-                                <a href="">
-                                    <button class="btn btn-inverse-primary btn-block">Carousel</button>
-                                </a>
+                                <div class="btn btn-danger btn-block">
+                                    <a href="{{ route('strorg.index') }}" class="text text-white">Struktur
+                                        Organisasi</a>
+                                </div>
                             </li>
                             <li>
-                                <a href="">
-                                    <button class="btn btn-inverse-primary btn-block">Portofolio Karyawan</button>
-                                </a>||
-                                <a href="">
-                                    <button class="btn btn-inverse-primary btn-block">Carousel</button>
-                                </a>
+                                <div class="btn btn-danger btn-block">
+                                    <a href="{{ route('f_profil.index') }}" class="text text-white">Profil LSP</a>
+                                </div>
                             </li>
                             <li>
-                                <div class="btn btn-inverse-dark btn-block">
-                                    <a href="">sdaaaaaaaaa</a>
+                                <div class="btn btn-danger btn-block">
+                                    <a href="{{ route('beranda_img2.index') }}" class="text text-white">Portofolio Karyawan</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-danger btn-block">
+                                    <a href="{{ route('beranda_img1.index') }}" class="text text-white">Carousel</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-danger btn-block">
+                                    <a href="{{ route('sett-beranda.index') }}" class="text text-white">Judul Web</a>
                                 </div>
                             </li>
                         </ul>
@@ -477,50 +445,50 @@
     <!-- /////////////////////////////////// -->
     <!-- JAVASCRIPTS -->
     <!-- /////////////////////////////////// -->
-    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('public/assets/js/misc.js') }}"></script>
-    <script src="{{ asset('public/assets/js/settings.js') }}"></script>
-    <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
-    <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
-    <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
-    <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
-    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
-    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
-    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
-    <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
-    <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
-    <script src="{{ asset('public/assets/modules/dropzone.min.js') }}"></script>
-    <script src="{{ asset('public/assets/modules/components-multiple-upload.js') }}"></script>
-    {{-- <script src="{{ asset('public/assets2/modules/jquery.min.js') }}"></script> --}}
-    {{-- <script src="{{ asset('public/assets2/modules/popper.js') }}"></script> --}}
-    {{-- <script src="{{ asset('public/assets2/modules/tooltip.js') }}"></script> --}}
-    {{-- <script src="{{ asset('public/assets2/modules/bootstrap/js/bootstrap.min.js') }}"></script> --}}
-    <script src="{{ asset('public/assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-    <script src="{{ asset('public/assets2/js/stisla.js') }}"></script>
-    <script src="{{ asset('public/assets2/modules/summernote/summernote-bs4.js') }}"></script>
-    <script src="{{ asset('public/assets2/modules/codemirror/lib/codemirror.js') }}"></script>
-    <script src="{{ asset('public/assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
-    <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
-    <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
-    <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
+    <section>
+        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+        <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('public/assets/js/misc.js') }}"></script>
+        <script src="{{ asset('public/assets/js/settings.js') }}"></script>
+        <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
+        <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
+        <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
+        <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
+        <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
+        <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
+        <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
+        <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
+        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
+        <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+        <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+        <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
+        <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
+        <script src="{{ asset('public/assets/modules/dropzone.min.js') }}"></script>
+        <script src="{{ asset('public/assets/modules/components-multiple-upload.js') }}"></script>
+        {{-- <script src="{{ asset('public/assets2/modules/jquery.min.js') }}"></script> --}}
+        {{-- <script src="{{ asset('public/assets2/modules/popper.js') }}"></script> --}}
+        {{-- <script src="{{ asset('public/assets2/modules/tooltip.js') }}"></script> --}}
+        {{-- <script src="{{ asset('public/assets2/modules/bootstrap/js/bootstrap.min.js') }}"></script> --}}
+        <script src="{{ asset('public/assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+        <script src="{{ asset('public/assets2/js/stisla.js') }}"></script>
+        <script src="{{ asset('public/assets2/modules/summernote/summernote-bs4.js') }}"></script>
+        <script src="{{ asset('public/assets2/modules/codemirror/lib/codemirror.js') }}"></script>
+        <script src="{{ asset('public/assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
+        <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+        <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
+        <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
 
-    {{-- <script src="{{ asset('public/assets/js/toastDemo.js') }}"></script>
-    <script src="{{ asset('public/assets/js/desktop-notification.js') }}"></script> --}}
-
-
+        {{-- <script src="{{ asset('public/assets/js/toastDemo.js') }}"></script>
+        <script src="{{ asset('public/assets/js/desktop-notification.js') }}"></script> --}}
+    </section>
 
 </body>
 
