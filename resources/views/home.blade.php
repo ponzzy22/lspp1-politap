@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/user.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -23,10 +23,13 @@
                             <h2 for="examplePassword1">Selamat Bergabung...</h2>
                         </div>
                         <div class="mt-5">
-                            <a class="btn btn-block btn-success btn-lg font-weight-medium" href="{{ route('dashasesi.index') }}">Menuju Halaman Asesi</a>
+                            <a class="btn btn-block btn-info btn-lg font-weight-medium" href="{{ route('dashasesi.index') }}">Menuju Halaman Asesi</a>
+                        </div>
+                        <div class="mt-5">
+                            <a class="btn btn-block btn-danger btn-lg font-weight-medium" href="{{ route('admin') }}">Menuju Halaman Admin</a>
                         </div>
                         <div class="mt-3 text-center">
-                            <a href="#" class="auth-link text-white">Kembali Ke Halaman Beranda</a>
+                            <a href="{{ url('/') }}" class="auth-link text-white">Kembali Ke Halaman Beranda</a>
                         </div>
                         </form>
                     </div>

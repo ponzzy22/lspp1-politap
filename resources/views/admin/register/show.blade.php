@@ -265,6 +265,7 @@
                             @csrf
                             @method('put')
                             <input type="hidden" name="status" value="Sertifikasi Selesai">
+                            <input type="hidden" name="kode" value="{{ $validasi->kode }}2022">
                             <input type="hidden" name="date" value="">
                             <input type="hidden" name="time" value="">
                             <input type="hidden" name="asesor_id" value="1">

@@ -33,6 +33,7 @@ class Data_register extends Model
         'image',
         'jurusan_id',
         'semester_id',
+        'kode',
         'ktp',
         'khs',
         'ktm',

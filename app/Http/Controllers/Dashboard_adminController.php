@@ -2,83 +2,88 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Asesor;
+use App\Models\Berita;
 use App\Models\Data_register;
+use App\Models\Galeri_foto;
+use App\Models\Group_galeri;
+use App\Models\Skema;
+use App\Models\Tuk;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class Dashboard_adminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
+        $datatuk = Tuk::where('id', '>', 1)->count();   
+        $dataasesor = Asesor::where('id', '>', 1)->count();  
+        $dataskema = Skema::all()->count();  
+        $datauser = User::all()->count();
+        $datasertifikat = Data_register::where('status', 'Sertifikasi Selesai')->count();        
+        $datatolak = Data_register::where('status', 'Pendaftaran Ditolak')->count();
+        $databaru = Data_register::where('status', 'Menunggu Validasi...')->count();
+        $datavalid = Data_register::where('status', 'Pendaftaran Divalidasi')->count();
         $datareg = Data_register::all()->count();
-        return view('admin', compact('datareg'));
+        $newreg = Data_register::where('status', 'Menunggu Validasi...')->take(5)->get();
+        $jadwalreg = Data_register::where('status', 'Pendaftaran Divalidasi')->take(5)->get();
+        $datagaleri = Group_galeri::all()->take(5);
+        $datapemegang = Data_register::where('status', 'Sertifikasi Selesai')->take(6)->get(); 
+        $databerita = Berita::all()->take(4);    
+        $image = Galeri_foto::all();   
+
+        return view('admin', compact
+        (
+            'datareg', 
+            'datavalid', 
+            'databaru', 
+            'datatolak', 
+            'datauser', 
+            'datasertifikat',
+            'dataskema',
+            'datatuk',
+            'dataasesor',
+            'newreg',
+            'jadwalreg',
+            'datagaleri',
+            'datapemegang',
+            'databerita',
+            'image'
+        ));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

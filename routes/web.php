@@ -116,7 +116,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::resource('post', PostController::class);
 
 Route::get('asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
-Route::middleware('role:admin')->get('backend', [App\Http\Controllers\HomeController::class, 'index2'])->name('backend');
+Route::middleware('role:admin')->get('admin', [App\Http\Controllers\Dashboard_adminController::class, 'index'])->name('admin');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');

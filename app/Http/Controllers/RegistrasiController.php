@@ -25,7 +25,8 @@ class RegistrasiController extends Controller
     public function store(Request $request) {
         // dd($request->all());
         $request->validate([
-            'user_id' => ['required', 'unique:data_registers,user_id'],
+            'kode' => ['required', 'unique:data_registers,kode'],
+            'skema_id' => ['required', 'unique:data_registers,skema_id'],
             'sex_id' => ['required'],
             'nim' => ['required'],
             'tmpt_lahir' => ['required'],
@@ -41,9 +42,11 @@ class RegistrasiController extends Controller
             'alamat' => ['required'],
             'kode_post' => ['required'],
             'negara' => ['required'],
+            'image' => ['required']
         ]);
             $data_register = Data_register::create([
                 'id' => $request->id,
+                'kode' => $request->kode,
                 'nim' => $request->nim,
                 'skema_name' => $request->skema_name,
                 'tuk_id' => $request->tuk_id,
@@ -68,6 +71,7 @@ class RegistrasiController extends Controller
                 'kota' => $request->kota,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
+                'image' => $request->image
             ]);
         return back()->with('success', ' Data Anda Berhasil di Disimpan, Sekarang tekan tombol "SELANJUTNYA" dibawah');
     }

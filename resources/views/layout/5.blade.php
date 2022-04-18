@@ -179,7 +179,7 @@
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
                     <li class="nav-item">
-                        <a class="nav-link" href={{ url('backend') }}>
+                        <a class="nav-link" href={{ route('admin') }}>
                             <i class="fa fa-dot-circle  menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
@@ -359,18 +359,18 @@
     <!-- /////////////////////////////////// -->
     <!--  -->
     <!-- /////////////////////////////////// -->
-    <section id="FOOTER">
-        <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 &diamondsuit;
-                    Designed & Developed By <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
-                        Ketapang</a>.</span>
-                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with <i
-                        class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
-                        Informatika </a><code> v.1.4.22</code></span>
-            </div>
-        </footer>
-    </section> 
+    <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text text-white text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022
+                &diamondsuit;
+                Designed & Developed By <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
+                    Ketapang</a>.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
+                with
+                <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
+                    Informatika </a><code class="text text-danger"> v.1.4.22</code></span>
+        </div>
+    </footer>
 
     <section id="JAVASCRIPT">
         <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>

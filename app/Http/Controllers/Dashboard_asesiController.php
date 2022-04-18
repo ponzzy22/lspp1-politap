@@ -11,7 +11,10 @@ class Dashboard_asesiController extends Controller
     public function index()
     {
         $datareg = Data_register::where('user_id', auth()->user()->id)->get();
-        return view('asesion', compact('datareg'));
+        return view('asesion', compact
+        (
+            'datareg'
+        ));
     }
 
 

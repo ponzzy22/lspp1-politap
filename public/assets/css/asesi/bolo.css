@@ -1,5 +1,5 @@
 /*-------------------------------------------------------------------
-  ===== Table of Contents =====
+===== Table of Contents =====
 
   * Bootstrap functions
   * Template variables
@@ -9230,13 +9230,9 @@ mark,
     color: #6c757d;
 }
 
-asu {
-    color: #0050e3;
-}
-
 code {
     font-size: 87.5%;
-    color: #3e5de8;
+    color: #e83e8c;
     word-break: break-word;
 }
 
@@ -22015,7 +22011,7 @@ code {
 /* Footer11 */
 
 .footer {
-    background: #025934;
+    background: #000;
     padding: 30px 1rem;
     transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -22041,7 +22037,7 @@ code {
 }
 
 .footer a {
-    color: #04B76B;
+    color: #34ce57;
     font-size: inherit;
 }
 
@@ -32611,7 +32607,7 @@ div.tagsinput span.tag a {
 }
 
 .auth.lock-full-bg {
-    background: url("../images/auth/lockscreen-bg.jpg");
+    background: url("public/assets/images/auth/register-bg.jpg");
     background-size: cover;
 }
 

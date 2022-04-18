@@ -15,419 +15,342 @@
         </nav>
     </div><br>
     <!-- /////////////////////////////////// -->
-    <!-- DASHBOARD -->
+    <!-- STATISTIK ASESI -->
     <!-- /////////////////////////////////// -->
     <div class="card card-statistics">
         <div class="card-body">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <div class="statistics-item">
                     <p>
-                        <i class="icon-sm fa fa-user mr-2"></i>
-                        New users
+                        <i class="icon-sm far fa-address-card mr-2"></i>
+                        Registrasi Baru
                     </p>
-                    <h2>54000</h2>
-                    <label class="badge badge-outline-success badge-pill">2.7% increase</label>
+                    <h2 class="text text-center counter-value">{{ $databaru }}</h2>
                 </div>
                 <div class="statistics-item">
                     <p>
                         <i class="icon-sm fas fa-hourglass-half mr-2"></i>
-                        Avg Time
+                        Proses Sertifikasi
                     </p>
-                    <h2>123.50</h2>
-                    <label class="badge badge-outline-danger badge-pill">30% decrease</label>
+                    <h2 class="text text-center counter-value">{{ $datavalid }}</h2>
                 </div>
                 <div class="statistics-item">
                     <p>
-                        <i class="icon-sm fas fa-cloud-download-alt mr-2"></i>
-                        Downloads
+                        <i class="icon-sm fas fa-times mr-2"></i>
+                        Registrasi ditolak
                     </p>
-                    <h2>3500</h2>
-                    <label class="badge badge-outline-success badge-pill">12% increase</label>
+                    <h2 class="text text-center counter-value">{{ $datatolak }}</h2>
                 </div>
                 <div class="statistics-item">
                     <p>
-                        <i class="icon-sm fas fa-check-circle mr-2"></i>
-                        Update
+                        <i class="icon-sm fa fa-id-badge mr-2"></i>
+                        Jumlah Asesi
                     </p>
-                    <h2>7500</h2>
-                    <label class="badge badge-outline-success badge-pill">57% increase</label>
+                    <h2 class="text text-center  counter-value">{{ $datareg }}</h2>
                 </div>
                 <div class="statistics-item">
                     <p>
-                        <i class="icon-sm fas fa-chart-line mr-2"></i>
-                        Sales
+                        <i class="icon-sm fas fa-users mr-2"></i>
+                        Jumlah Pengguna
                     </p>
-                    <h2>9000</h2>
-                    <label class="badge badge-outline-success badge-pill">10% increase</label>
+                    <h2 class="text text-center counter-value">{{ $datauser }}</h2>
                 </div>
                 <div class="statistics-item">
                     <p>
-                        <i class="icon-sm fas fa-circle-notch mr-2"></i>
-                        Pending
+                        <i class="icon-sm fas fa-certificate mr-2"></i>
+                        Pemegang Sertifikat
                     </p>
-                    <h2>7500</h2>
-                    <label class="badge badge-outline-danger badge-pill">16% decrease</label>
+                    <h2 class="text text-center  counter-value">{{ $datasertifikat }}</h2>
                 </div>
             </div>
         </div>
     </div><br>
-
-
+    <!-- /////////////////////////////////// -->
+    <!-- STATISTIK ADMIN -->
+    <!-- /////////////////////////////////// -->
     <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="far fa-user"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Admin</h4>
+        <div class="counter">
+            <div class="counter-icon">
+                <i class="fa fa-suitcase"></i>
+            </div>
+            <div class="counter-content">
+                <h3>Skema</h3>
+                <span class="counter-value">{{ $dataskema }}</span>
+            </div>
+        </div>
+        <div class="counter blue">
+            <div class="counter-icon">
+                <i class="fa fa-users"></i>
+            </div>
+            <div class="counter-content">
+                <h3>Asesor</h3>
+                <span class="counter-value">{{ $dataasesor }}</span>
+            </div>
+        </div>
+        <div class="counter green">
+            <div class="counter-icon">
+                <i class="fa fa-building"></i>
+            </div>
+            <div class="counter-content">
+                <h3>TUK</h3>
+                <span class="counter-value">{{ $datatuk }}</span>
+            </div>
+        </div>
+    </div><br>
+    <!-- /////////////////////////////////// -->
+    <!-- NEW REGISTER & JADWAL -->
+    <!-- /////////////////////////////////// -->
+    <div class="row">
+        <div class="col-lg-7 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <a href="">
+                            <h4 class="text text-dark"><i class="fas fa-id-card"></i> Register Baru </h4>
+                        </a>
                     </div>
-                    <div class="card-body">
-                        10
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped mb-0">
+                            <thead>
+                                <tr class="text text-muted">
+                                    <th>Nama</th>
+                                    <th>Tanggal Daftar</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($newreg as $asu)
+                                    <tr>
+                                        <td>
+                                            #{{ $asu->id }} | {{ $asu->user_name }}
+                                            <div class="table-links">
+                                                Skema : {{ $asu->skema_name }}
+                                                <div class="bullet"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            {{ $asu->created_at->diffforhumans() }}
+                                            <div class="table-links">
+                                                tanggal: {{ $asu->created_at }}
+                                                <div class="bullet"></div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="row">
+                                                <a href="{{ route('validasi.show', $asu->id) }}"
+                                                    class="btn btn-primary btn-sm btn-rounded btn-action mr-1"
+                                                    data-toggle="tooltip" title="" data-original-title="Edit"><i
+                                                        class="fas fa-pencil-alt"></i></a>
+                                                <form action="{{ route('validasi.destroy', $asu->id) }}" method="POST"
+                                                    onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
+                                                    @csrf
+                                                    @method('delete')
+                                                    <a href=""><button type="submit"
+                                                            class="btn btn-danger btn-rounded btn-sm"><i
+                                                                class="fa fa-trash "></i></button></a>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="far fa-newspaper"></i>
+        <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text text-dark"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h4>
                 </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>News</h4>
-                    </div>
-                    <div class="card-body">
-                        42
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-warning">
-                    <i class="far fa-file"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Reports</h4>
-                    </div>
-                    <div class="card-body">
-                        1,201
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-success">
-                    <i class="fas fa-circle"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Online Users</h4>
-                    </div>
-                    <div class="card-body">
-                        47
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="col-lg-7 col-md-12 col-12 col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                <h4>Latest Posts</h4>
-                <div class="card-header-action">
-                    <a href="#" class="btn btn-primary">View All</a>
-                </div>
-            </div>
-            <div class="card-body p-0">
                 <div class="table-responsive">
-                    <table class="table table-striped mb-0">
+                    <table class="table table-dark">
                         <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Author</th>
-                                <th>Action</th>
+                            <tr class="text text-muted">
+                                <th>Nama</th>
+                                <th>Tanggal Daftar</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    Introduction Laravel 5
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-1" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Laravel 5 Tutorial - Installation
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-2" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Laravel 5 Tutorial - MVC
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-3" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Laravel 5 Tutorial - Migration
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-4" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Laravel 5 Tutorial - Deploy
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-5" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    Laravel 5 Tutorial - Closing
-                                    <div class="table-links">
-                                        in <a href="#">Web Development</a>
-                                        <div class="bullet"></div>
-                                        <a href="#">View</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#" class="font-weight-600"><img src="assets/img/avatar/avatar-1.png"
-                                            alt="avatar" width="30" class="rounded-circle mr-1"> Bagus Dwi Cahya</a>
-                                </td>
-                                <td>
-                                    <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title=""
-                                        data-original-title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                    <a class="btn btn-danger btn-action trigger--fire-modal-6" data-toggle="tooltip"
-                                        title=""
-                                        data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?"
-                                        data-confirm-yes="alert('Deleted')" data-original-title="Delete"><i
-                                            class="fas fa-trash"></i></a>
-                                </td>
-                            </tr>
+                            @foreach ($jadwalreg as $asu)
+                                <tr>
+                                    <td>
+                                        #{{ $asu->id }} | {{ $asu->user_name }}
+                                        <div class="table-links">
+                                            Skema : {{ $asu->skema_name }}
+                                            <div class="bullet"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        {{ $asu->date }}
+                                        <div class="table-links">
+                                            tanggal: {{ $asu->time }}
+                                            <div class="bullet"></div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="col-lg-4 col-md-12 col-12 col-sm-12">
-        <div class="card">
-            <div class="card-header">
-                <h4>Recent Activities</h4>
+    </div><br>
+    <!-- /////////////////////////////////// -->
+    <!-- PEMEGANG SERTIFIKAT, KALENDER-->
+    <!-- /////////////////////////////////// -->
+    <div class="row">
+        {{-- PEMEGANG SERTIFIKAT --}}
+        <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h4 class="text text-dark"><i class="fas fa-certificate"></i> Pemegang Sertifikat</h4>
+                    </div>
+                    @foreach ($datapemegang as $asu)
+                        <div class="list d-flex align-items-center border-bottom py-3">
+                            <img class="img-sm rounded-circle" src="{{ $asu->image }}" alt="">
+                            <div class="wrapper w-100 ml-3">
+                                <p class="mb-0"><b>{{ $asu->user_name }} </b></p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-certificate text-muted mr-1"></i>
+                                        <p class="mb-0">{{ $asu->skema_name }}</p>
+                                    </div>
+                                    <small class="text-muted ml-auto">{{ $asu->updated_at->diffforhumans() }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
+        </div>
+        {{-- KALENDER --}}
+        <div class="col-md-5 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 class="text text-dark">
+                            <i class="fas fa-calendar-alt"></i> Kalender
+                        </h4>
+                    </div>
+                    <div id="inline-datepicker-example" class="datepicker"></div>
+                </div>
+            </div>
+        </div>
+
+    </div><br>
+    <!-- /////////////////////////////////// -->
+    <!-- GALERI -->
+    <!-- /////////////////////////////////// -->
+    <div class="card">
+        <div class="card-body">
+            <a href="{{ route('galeri.index') }}">
+                <h4 class="text text-dark"><i class="fas fa-images"></i> Galeri</h4>
+            </a>
+            <div class="owl-carousel owl-theme lazy-load owl-loaded owl-drag" style="">
+                @foreach ($image as $asu)
+                    <div><img src="{{ asset($asu->image) }}" alt=""></div>
+                @endforeach
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div><br>
+    <br>
+    <!-- /////////////////////////////////// -->
+    <!-- BERITA -->
+    <!-- /////////////////////////////////// -->
+    <div class="row">
+        @foreach ($databerita as $asu)
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                <article class="article article-style-b">
+                    <div class="article-header">
+                        <img src="{{ asset($asu->image) }}" width="100%" alt="">
+                    </div>
+                    <div class="article-details">
+                        <div class="article-title">
+                            <h2 class="text text-dark"><a href="#">{{ $asu->title }}</a></h2>
+                        </div>
+                        <p>{{ $asu->excerpt }}</p>
+                        <div class="article article-title">
+                            <a href="{{ route('berita.show', $asu->id) }}"><h6>Read More</h6> <i
+                                    class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        @endforeach
+    </div>
+    <!-- /////////////////////////////////// -->
+    <!-- PETA -->
+    <!-- /////////////////////////////////// -->
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
             <div class="card-body">
-                <ul class="list-unstyled list-unstyled-border">
-                    <li class="media">
-                        <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-1.png" alt="avatar">
-                        <div class="media-body">
-                            <div class="float-right text-primary">Now</div>
-                            <div class="media-title">Farhan A Mujib</div>
-                            <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                                metus scelerisque ante sollicitudin.</span>
+                <div class="card-title">
+                    <h5>
+                        <i class="fas fa-map"></i> Peta
+                    </h5>
+                </div>
+                <div id="map-with-marker" class="google-map"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /////////////////////////////////// -->
+    <!-- FOOTER -->
+    <!-- /////////////////////////////////// -->
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+                    <div class="statistics-item">
+                        <div class="card-img">
+                            <img src="public/assets/images/logo/bnsp.png" width="150px" alt="">
                         </div>
-                    </li>
-                    <li class="media">
-                        <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-2.png" alt="avatar">
-                        <div class="media-body">
-                            <div class="float-right">12m</div>
-                            <div class="media-title">Ujang Maman</div>
-                            <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                                metus scelerisque ante sollicitudin.</span>
+                    </div>
+                    <div class="statistics-item">
+                        <div class="card-img">
+                            <img src="public/assets/images/logo/kemendikbud.png" width="90px" alt="">
                         </div>
-                    </li>
-                    <li class="media">
-                        <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-3.png" alt="avatar">
-                        <div class="media-body">
-                            <div class="float-right">17m</div>
-                            <div class="media-title">Rizal Fakhri</div>
-                            <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                                metus scelerisque ante sollicitudin.</span>
+                    </div>
+                    <div class="statistics-item">
+                        <div class="card-img">
+                            <img src="public/assets/images/logo/politap.png" width="90px" alt="">
                         </div>
-                    </li>
-                    <li class="media">
-                        <img class="mr-3 rounded-circle" width="50" src="assets/img/avatar/avatar-4.png" alt="avatar">
-                        <div class="media-body">
-                            <div class="float-right">21m</div>
-                            <div class="media-title">Alfa Zulkarnain</div>
-                            <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel
-                                metus scelerisque ante sollicitudin.</span>
+                    </div>
+                    <div class="statistics-item">
+                        <div class="card-img">
+                            <img src="public/assets/images/logo/lsp.png" width="110px" alt="">
                         </div>
-                    </li>
-                </ul>
-                <div class="text-center pt-1 pb-1">
-                    <a href="#" class="btn btn-primary btn-lg btn-round">
-                        View All
-                    </a>
+                    </div>
+                    <!-- /////////////////////////////////// -->
+                    <!-- KONTAK ADMIN -->
+                    <!-- /////////////////////////////////// -->
+                    <div class="statistics-item">
+                        <h5>Kontak Admin</h5>
+                        <p>
+                        <ul>
+                            <li><i class="icon-sm far fa-comment mr-2"></i>08965386474683</li>
+                            <li><i class="icon-sm far fa-envelope mr-2"></i>lsp@politap.ac.id</li>
+                            <li><i class="icon-sm fab fa-instagram mr-2"></i>
+                                <a href="https://www.instagram.com/lsppolitap/" target="_blank">lsppolitap
+                            </li>
+                            </a>
+                        </ul>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="col-md-5 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">
-                    <i class="fas fa-rocket"></i>
-                    Projects
-                </h4>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>
-                                    Assigned to
-                                </th>
-                                <th>
-                                    Project name
-                                </th>
-                                <th>
-                                    Priority
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="py-1">
-                                    <img src="images/faces/face1.jpg" alt="profile" class="img-sm rounded-circle">
-                                </td>
-                                <td>
-                                    South Shyanne
-                                </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">Medium</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-1">
-                                    <img src="images/faces/face2.jpg" alt="profile" class="img-sm rounded-circle">
-                                </td>
-                                <td>
-                                    New Trystan
-                                </td>
-                                <td>
-                                    <label class="badge badge-danger badge-pill">High</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-1">
-                                    <img src="images/faces/face3.jpg" alt="profile" class="img-sm rounded-circle">
-                                </td>
-                                <td>
-                                    East Helga
-                                </td>
-                                <td>
-                                    <label class="badge badge-success badge-pill">Low</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="py-1">
-                                    <img src="images/faces/face4.jpg" alt="profile" class="img-sm rounded-circle">
-                                </td>
-                                <td>
-                                    Omerbury
-                                </td>
-                                <td>
-                                    <label class="badge badge-warning badge-pill">Medium</label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    {{ $datareg }}
 @endsection

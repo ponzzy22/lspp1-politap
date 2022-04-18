@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Asesi | LSP P1-POLITAP</title>
+    <title>LSP P1-POLITAP | ASESI</title>
     <!-- /////////////////////////////////// -->
     <!-- ASSETS -->
     <!-- /////////////////////////////////// -->
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -215,8 +215,14 @@
     <!-- /////////////////////////////////// -->
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class=" text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022 &diamondsuit; Designed & Developed By  <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri Ketapang</a>.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted &amp; made with <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank">  Teknik Informatika </a><code> v.1.4.22</code></span>
+            <span class="text text-white text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022
+                &diamondsuit;
+                Designed & Developed By <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
+                    Ketapang</a>.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
+                with
+                <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
+                    Informatika </a><code class="text text-danger"> v.1.4.22</code></span>
         </div>
     </footer>
 

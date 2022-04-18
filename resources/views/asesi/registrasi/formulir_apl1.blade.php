@@ -19,12 +19,14 @@
                 class="form-sample">
                 @csrf
                 <input type="hidden" name="id" value="{{ Auth::user()->id }}{{ $skema->id }}">
+                <input type="hidden" name="kode" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="skema_name" value="{{ $skema->skema }}">
-                <input type="hidden" name="skema_id" value="{{ $skema->kode_skema }}">
+                <input type="hidden" name="skema_id" value="{{ $skema->kode_skema }}{{ Auth::user()->id }}">
                 <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                 <input type="hidden" name="status" value="Menunggu Validasi...">
                 <input type="hidden" name="tuk_id" value="1">
                 <input type="hidden" name="asesor_id" value="1">
+                <input type="hidden" name="image" value="{{ Auth::user()->image }}">
                 <br>
                 <p class="card-description">
                     info Personal

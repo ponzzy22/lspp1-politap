@@ -1,5 +1,5 @@
 /*-------------------------------------------------------------------
-  ===== Table of Contents =====
+===== Table of Contents =====
 
   * Bootstrap functions
   * Template variables
@@ -9233,6 +9233,12 @@ mark,
 code {
     font-size: 87.5%;
     color: #e83e8c;
+    word-break: break-word;
+}
+
+codex {
+    font-size: 87.5%;
+    color: #ffffff;
     word-break: break-word;
 }
 
@@ -22024,7 +22030,7 @@ code {
 }
 
 .footer a {
-    color: #04B76B;
+    color: #34ce57;
     font-size: inherit;
 }
 
@@ -25227,7 +25233,7 @@ code {
 /* jostatis */
 
 .card.card-statistics {
-    background: linear-gradient(85deg, #392c70, #6a005b);
+    background: #000;
     color: #ffffff;
 }
 

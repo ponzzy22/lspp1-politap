@@ -67,6 +67,7 @@ class ValidasiController extends Controller
         $validasi_data = [
             'status' => $request->status,
             'date' => $request->date,
+            'kode' => $request->kode,
             'time' => $request->time,
             'asesor_id' => $request->asesor_id,
             'tuk_id' => $request->tuk_id,
