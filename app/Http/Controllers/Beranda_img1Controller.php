@@ -22,11 +22,19 @@ class Beranda_img1Controller extends Controller
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
         $beranda_img1 = Beranda_img1::create([
+            'judul' =>$request->judul,
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/beranda_img1/'.$new_image,
+            'image' => 'public/uploads/carousel/'.$new_image,
         ]);
-        $image->move('public/uploads/beranda_img1/', $new_image);
+        $image->move('public/uploads/carousel/', $new_image);
         return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Posting');
+    }
+
+
+    public function edit($id)
+    {
+        $beranda_img1 = Beranda_img1::findorfail($id);
+        return view('admin/beranda_img1/edit', compact('beranda_img1'));
     }
 
 
@@ -39,18 +47,21 @@ class Beranda_img1Controller extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $beranda_img1 = Beranda_img1::findorfail($id);
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img1/', $new_image);
+            $image->move('public/uploads/carousel/', $new_image);
             $beranda_img1_data = [
+                'judul' =>$request->judul,
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/beranda_img1/'.$new_image,
+                'image' => 'public/uploads/carousel/'.$new_image,
             ];
         }
         else{
             $beranda_img1_data = [
+                'judul' =>$request->judul,
                 'keterangan' =>$request->keterangan,
             ];
         }
@@ -65,5 +76,5 @@ class Beranda_img1Controller extends Controller
         $beranda_img1->delete();
         return redirect()->back()->with('success','Carousel Berhasil Dihapus');
     }
-    
+
 }

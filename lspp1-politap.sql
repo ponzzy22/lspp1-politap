@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2022 at 08:47 PM
+-- Generation Time: Apr 20, 2022 at 05:09 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -79,24 +79,25 @@ CREATE TABLE `asesor` (
   `status` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `no_hp` bigint(20) DEFAULT NULL
+  `no_hp` bigint(20) DEFAULT NULL,
+  `value` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `asesor`
 --
 
-INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`) VALUES
-(1, 133243, '-', 'public/uploads/asesor/1649875927ceb99d0f22759041b43f10a726f0a392.jpg', 'sdasdfs', 'Laki-laki', 'cino7sd13dfd0@gmail.com', 'Nonaktif', '2022-04-14 09:21:17.271280', '2022-04-14 09:21:17.271280', NULL),
-(4, 3423423, 'Ponsianus Jopi', 'public/uploads/asesor/1649874795ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-04-13 11:36:05.000000', '2022-04-13 18:36:05.220887', NULL),
-(7, 22112, 'bujang', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 20:11:28.000000', '2022-04-02 03:11:29.416920', NULL),
-(8, 34234233333, 'Sukiman', 'public/uploads/asesor/1649183000ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas', 'Laki-laki', 'cino7sd130343@gmail.com', 'Aktif', '2022-04-05 11:23:20.000000', '2022-04-05 11:23:20.000000', NULL),
-(9, 342342389333, 'Bang Toyib', 'public/uploads/asesor/1649183057ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas23123', 'Laki-laki', 'cino7sd1231230@gmail.com', 'Aktif', '2022-04-05 11:24:17.000000', '2022-04-05 11:24:17.000000', NULL),
-(11, 3324234, 'sdasd', 'public/uploads/asesor/16497900542020-10-30 07.27.27 1.jpg', 'dasda', 'Laki-laki', '082150040132@fdf', 'Aktif', '2022-04-12 12:00:54.000000', '2022-04-12 12:00:54.000000', NULL),
-(13, 345345, 'dfsdf', 'public/uploads/asesor/1649868954ceb99d0f22759041b43f10a726f0a392.jpg', 'fdsd', 'Laki-laki', 'admin@fgf', 'Aktif', '2022-04-13 09:55:54.000000', '2022-04-13 09:55:54.000000', NULL),
-(15, 34234, 'dsfsdf', 'public/uploads/asesor/1649869695ceb99d0f22759041b43f10a726f0a392.jpg', 'fefef', 'Laki-laki', 'fefefe@fsdfd', 'Aktif', '2022-04-13 10:08:15.000000', '2022-04-13 10:08:15.000000', NULL),
-(17, 342342335334234, 'Ponsianus Jopi222', 'public/uploads/asesor/16502014271648393351lsp.png', 'sdas23123', 'Laki-laki', 'cino7sd1231343230@gmail.com', 'Aktif', '2022-04-17 06:17:07.000000', '2022-04-17 06:17:07.000000', NULL),
-(18, 3423423343433434, 'Ponsianus Jopi23123123', 'public/uploads/asesor/16502020811648393351lsp.png', 'sddsds', 'Perempuan', 'cino7130343ds@gmail.com', 'Aktif', '2022-04-17 06:29:54.000000', '2022-04-17 13:29:54.527829', 8215004013223213);
+INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`, `value`) VALUES
+(1, 133243, '-', 'public/uploads/asesor/1649875927ceb99d0f22759041b43f10a726f0a392.jpg', 'sdasdfs', 'Laki-laki', 'cino7sd13dfd0@gmail.com', 'Nonaktif', '2022-04-14 09:21:17.271280', '2022-04-14 09:21:17.271280', NULL, NULL),
+(4, 3423423, 'Ponsianus Jopi', 'public/uploads/asesor/1649874795ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-04-13 11:36:05.000000', '2022-04-13 18:36:05.220887', NULL, NULL),
+(7, 22112, 'bujang', 'public/uploads/asesor/1648831776Screenshot (6).png', 'sddsds', NULL, 'user@role.com', 'Nonaktif', '2022-04-01 20:11:28.000000', '2022-04-02 03:11:29.416920', NULL, NULL),
+(8, 34234233333, 'Sukiman', 'public/uploads/asesor/1649183000ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas', 'Laki-laki', 'cino7sd130343@gmail.com', 'Aktif', '2022-04-05 11:23:20.000000', '2022-04-05 11:23:20.000000', NULL, NULL),
+(9, 342342389333, 'Bang Toyib', 'public/uploads/asesor/1649183057ceb99d0f22759041b43f10a726f0a392.jpg', 'sdas23123', 'Laki-laki', 'cino7sd1231230@gmail.com', 'Aktif', '2022-04-05 11:24:17.000000', '2022-04-05 11:24:17.000000', NULL, NULL),
+(11, 3324234, 'sdasd', 'public/uploads/asesor/16497900542020-10-30 07.27.27 1.jpg', 'dasda', 'Laki-laki', '082150040132@fdf', 'Aktif', '2022-04-12 12:00:54.000000', '2022-04-12 12:00:54.000000', NULL, NULL),
+(13, 345345, 'dfsdf', 'public/uploads/asesor/1649868954ceb99d0f22759041b43f10a726f0a392.jpg', 'fdsd', 'Laki-laki', 'admin@fgf', 'Aktif', '2022-04-13 09:55:54.000000', '2022-04-13 09:55:54.000000', NULL, NULL),
+(15, 34234, 'dsfsdf', 'public/uploads/asesor/1649869695ceb99d0f22759041b43f10a726f0a392.jpg', 'fefef', 'Laki-laki', 'fefefe@fsdfd', 'Aktif', '2022-04-13 10:08:15.000000', '2022-04-13 10:08:15.000000', NULL, NULL),
+(17, 342342335334234, 'Ponsianus Jopi222', 'public/uploads/asesor/16502014271648393351lsp.png', 'sdas23123', 'Laki-laki', 'cino7sd1231343230@gmail.com', 'Aktif', '2022-04-17 06:17:07.000000', '2022-04-17 06:17:07.000000', NULL, NULL),
+(18, 3423423343433434, 'Ponsianus Jopi23123123', 'public/uploads/asesor/16502020811648393351lsp.png', 'sddsds', 'Perempuan', 'cino7130343ds@gmail.com', 'Aktif', '2022-04-17 06:29:54.000000', '2022-04-17 13:29:54.527829', 8215004013223213, NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,7 @@ CREATE TABLE `beranda` (
 --
 
 INSERT INTO `beranda` (`id`, `judul`, `judul2`, `deskripsi`, `updated_at`, `created_at`) VALUES
-(1, 'LSP P1 - POLITAP', 'POLITEKNIK NEGERI KETAPANG', '<p><b>Lembaga Sertifikasi Profesi (LSP) Universitas Gunadarma </b></p><p>adalah lembaga sertifikasi profesi yang telah memperoleh sertifikat lisensi no. KEP.817/BNSP/IV/2020 dari Badan Nasional Sertifikasi Profesi (BNSP).\r\n</p><p>\r\nSebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema yang dimiliki LSP Universitas Gunadarma diselaraskan dengan Kerangka Kualifikasi Nasional Indonesia (KKNI) dan Standar Kualifikasi Kerja Nasional Indonesia (SKKNI).\r\n\r\nMemiliki 43 skema dan 209 asesor, LSP Universitas Gunadarma siap melaksanakan uji kompetensi pada seluruh mahasiswa Universitas Gunadarma dari berbagai program studi dalam rangka menyiapkan lulusan Universitas Gunadarma yang memiliki kompetensi mumpuni sesuai bidangnya dan memiliki nilai lebih di pasar tenaga kerja baik nasional maupun internasional.</p>', '2022-04-17 07:49:12.000000', '2022-04-17 14:49:12.371171');
+(1, '<h5><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Lembaga Sertifikasi Profesi Pihak Kesatu - Politeknik Negeri Ketapang</span></h5>', 'POLITEKNIK NEGERI KETAPANG', '<div style=\"color: rgb(106, 112, 107); font-family: &quot;Fira Code SemiBold&quot;, Consolas, &quot;Courier New&quot;, monospace; font-size: 14px; line-height: 19px; white-space: pre;\"><div><span style=\"background-color: inherit;\"><b><span style=\"color: #6a706b;\">Lembaga Sertifikasi Profesi Pihak Kesatu - Politeknik</span></b></span></div><div><span style=\"background-color: inherit;\"><b><span style=\"color: #6a706b;\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Negeri Ketapang</span></b></span></div></div>', '2022-04-19 10:22:21.000000', '2022-04-19 17:22:21.164458');
 
 -- --------------------------------------------------------
 
@@ -128,6 +129,7 @@ INSERT INTO `beranda` (`id`, `judul`, `judul2`, `deskripsi`, `updated_at`, `crea
 
 CREATE TABLE `beranda_img1` (
   `id` int(11) NOT NULL,
+  `judul` varchar(255) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
@@ -138,13 +140,10 @@ CREATE TABLE `beranda_img1` (
 -- Dumping data for table `beranda_img1`
 --
 
-INSERT INTO `beranda_img1` (`id`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
-(50, NULL, 'public/uploads/beranda_img1/1648393014banner_2.jpg', '2022-03-27 07:56:54.000000', '2022-03-27 07:56:54.000000'),
-(52, NULL, 'public/uploads/beranda_img1/1649794658IMG_0133.JPG', '2022-04-12 13:17:38.000000', '2022-04-12 13:17:38.000000'),
-(53, NULL, 'public/uploads/beranda_img1/1649794795IMG_0136.JPG', '2022-04-12 13:19:55.000000', '2022-04-12 13:19:55.000000'),
-(54, NULL, 'public/uploads/beranda_img1/1649794922IMG_0359.JPG', '2022-04-12 13:22:02.000000', '2022-04-12 13:22:02.000000'),
-(55, NULL, 'public/uploads/beranda_img1/1649795156banner_1.jpg', '2022-04-12 13:25:56.000000', '2022-04-12 13:25:56.000000'),
-(56, NULL, 'public/uploads/beranda_img1/1649795163banner_12.jpg', '2022-04-12 13:26:03.000000', '2022-04-12 13:26:03.000000');
+INSERT INTO `beranda_img1` (`id`, `judul`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
+(61, NULL, NULL, 'public/uploads/carousel/16504210771.png', '2022-04-19 19:17:57.000000', '2022-04-20 02:17:57.920684'),
+(62, NULL, NULL, 'public/uploads/carousel/16504210502.png', '2022-04-19 19:17:30.000000', '2022-04-20 02:17:30.360383'),
+(63, NULL, NULL, 'public/uploads/carousel/16504210323.png', '2022-04-19 19:17:12.000000', '2022-04-20 02:17:12.923945');
 
 -- --------------------------------------------------------
 
@@ -178,6 +177,7 @@ INSERT INTO `beranda_img2` (`id`, `keterangan`, `image`, `updated_at`, `created_
 
 CREATE TABLE `beritas` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `kategori_id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `excerpt` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -192,8 +192,11 @@ CREATE TABLE `beritas` (
 -- Dumping data for table `beritas`
 --
 
-INSERT INTO `beritas` (`id`, `title`, `excerpt`, `body`, `created_at`, `updated_at`, `image`, `file1`, `file2`) VALUES
-(11, 'sas', 'dsfadfsad', '<p><b>tytyfdfsdf</b></p>', '2022-04-17 08:43:11', '2022-04-17 08:49:08', 'public/uploads/berita/1650210191wp4676582.jpg', NULL, NULL);
+INSERT INTO `beritas` (`id`, `kategori_id`, `title`, `excerpt`, `body`, `created_at`, `updated_at`, `image`, `file1`, `file2`) VALUES
+(11, 2, 'JUDUL ARTIKEL2', 'Konten Artikel2', '<p><b>tytyfdfsdf</b></p>', '2022-04-17 08:43:11', '2022-04-19 20:02:47', 'public/uploads/berita/1650210191wp4676582.jpg', NULL, NULL),
+(14, 2, 'ARTIKEL1', 'Konten Artikel1', '<p>1<br></p>', '2022-04-19 12:52:41', '2022-04-19 20:01:58', 'public/uploads/berita/1650397961wp4676582.jpg', NULL, NULL),
+(16, 1, 'JUDUL BERITA1', 'Konten Berita', '<p>sdas<br></p>', '2022-04-19 19:59:39', '2022-04-19 20:00:20', 'public/uploads/berita/1650423577560381-student-desktop-wallpaper-top-free-student-desktop-background.jpg', NULL, NULL),
+(17, 1, 'JUDUL BERITA2', 'Konten Berita2', '<p>fd<br></p>', '2022-04-19 20:01:25', '2022-04-19 20:01:25', 'public/uploads/berita/1650423685travelblogspostpandemic1.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -234,17 +237,20 @@ CREATE TABLE `data_registers` (
   `time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `asesor_id` int(11) DEFAULT NULL,
   `tuk_id` bigint(20) DEFAULT NULL,
-  `keterangan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `keterangan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `data_registers`
 --
 
-INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `image`, `jurusan_id`, `semester_id`, `ktp`, `ktm`, `khs`, `lain`, `created_at`, `updated_at`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`) VALUES
-(52, 'Jaringan LAN', 'SKM-32412323', '5', 'Ponsianus Jopi', 'Pendaftaran Divalidasi', 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sdas', 788892, 34534, 'wewere', 'sdf', 'sdf', 'sdas', NULL, 3, 2, NULL, NULL, NULL, NULL, '2022-04-17 01:43:48', '2022-04-17 04:17:40', 3042020058, '2022-04-19', '2:56 PM', 8, 3, '<p>fgfgdfg<span style=\"background-color: rgb(255, 255, 0);\">fgsdfgsfgfg</span></p><ol><li><span style=\"background-color: rgb(255, 255, 0);\">fgfdg</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgsdfgs</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgsdfg</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgfg</span></li></ol>'),
-(62, 'Jaringan LAN', 'SKM-32412323', '6', 'Ngeteh Asu', 'Menunggu Validasi...', 'ponzzy222@gmail.com', 'Ketapang2', '2022-04-18', '1', 'Indonesia', 'dfsdfsdfsdfsdf', 788892, 34534, 'esdf', 'sdf', 'sdf', 'erwer', NULL, 3, 3, NULL, NULL, NULL, NULL, '2022-04-17 09:25:28', '2022-04-17 09:25:28', 3042020050, NULL, NULL, 1, 1, NULL),
-(1010, 'Ahli Pawang Hujan2', '3423423efrwe', '10', 'asu123231', 'Sertifikasi Selesai', 'ponzzy222gtggg@gmail.com', 'Ketapang2', NULL, '1', 'Indonesia', 'sdas', 788892, 34534, 'wewere', 'sdf', 'sdf', 'erwer', NULL, 2, 3, NULL, NULL, NULL, NULL, '2022-04-17 00:09:42', '2022-04-17 04:18:20', 12345, NULL, NULL, 1, 1, NULL);
+INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `image`, `jurusan_id`, `semester_id`, `ktp`, `ktm`, `khs`, `lain`, `created_at`, `updated_at`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`) VALUES
+(12, 'Jaringan LAN', 'SKM-324123231', '1', 'Admin LSP-POLITAP', 'Sertifikasi Selesai', 'ponzzy22@gmail.com', 'Ketapang', '1998-08-27', '2', 'Indonesia', 'df', 788892, 82150040132, 'dfs', 'dfsd', 'dfds', 'fd', 'public/uploads/beranda_img2/16501955401648393351lsp.png', 1, 2, NULL, NULL, NULL, NULL, '2022-04-18 07:07:56', '2022-04-18 07:13:27', 12345678, NULL, NULL, 1, 1, NULL, '12022'),
+(52, 'Jaringan LAN', 'SKM-32412323', '5', 'Ponsianus Jopi', 'Pendaftaran Divalidasi', 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sdas', 788892, 34534, 'wewere', 'sdf', 'sdf', 'sdas', NULL, 3, 2, NULL, NULL, NULL, NULL, '2022-04-17 01:43:48', '2022-04-17 04:17:40', 3042020058, '2022-04-19', '2:56 PM', 8, 3, '<p>fgfgdfg<span style=\"background-color: rgb(255, 255, 0);\">fgsdfgsfgfg</span></p><ol><li><span style=\"background-color: rgb(255, 255, 0);\">fgfdg</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgsdfgs</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgsdfg</span></li><li><span style=\"background-color: rgb(255, 255, 0);\">fgfg</span></li></ol>', NULL),
+(62, 'Jaringan LAN', 'SKM-32412323', '6', 'Ngeteh Asu', 'Menunggu Validasi...', 'ponzzy222@gmail.com', 'Ketapang2', '2022-04-18', '2', 'Indonesia', 'sddsds', 788892, 82150040132, 'sdsd', 'sdf', 'sdf', 'erwer', NULL, 2, 6, NULL, NULL, NULL, NULL, '2022-04-18 01:24:05', '2022-04-18 01:24:05', 3042020050, NULL, NULL, 1, 1, NULL, NULL),
+(215, 'Teknik Seribu Bayangan12132', 'SKM-2312323erere', '2', 'asu', 'Pendaftaran Divalidasi', 'ponzzy2dsf22@gmail.com', 'Ketapang2', '2022-04-20', '2', 'Indonesia', 'sdas', 788892, 34534, 'df', 'df', 'df', 'df', NULL, 6, 3, NULL, NULL, NULL, NULL, '2022-04-17 22:08:06', '2022-04-17 22:45:05', 123, '2022-04-19', '2:56 PM', 8, 4, NULL, NULL),
+(1010, 'Ahli Pawang Hujan2', '3423423efrwe', '10', 'asu123231', 'Sertifikasi Selesai', 'ponzzy222gtggg@gmail.com', 'Ketapang2', NULL, '1', 'Indonesia', 'sdas', 788892, 34534, 'wewere', 'sdf', 'sdf', 'erwer', NULL, 2, 3, NULL, NULL, NULL, NULL, '2022-04-17 00:09:42', '2022-04-17 04:18:20', 12345, NULL, NULL, 1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -284,7 +290,7 @@ CREATE TABLE `f_profil` (
 --
 
 INSERT INTO `f_profil` (`id`, `profil`, `visi`, `misi`, `motto`, `image`, `updated_at`, `created_at`) VALUES
-(1, '<p>Profil1<span style=\"background-color: rgb(255, 255, 0);\">fsdfsdfsdf<b>fsdfsdfsdfdfd</b></span></p><p><span style=\"background-color: rgb(255, 255, 0);\"><b>fsdfsdf\\]</b></span></p><p><span style=\"background-color: rgb(255, 255, 0);\"><b>dfsdf</b></span></p>', 'Visi', 'Misi', 'Motto', 'public/uploads/f_profil/1650209166wp4676582.jpg', '2022-04-17 08:31:47.000000', '2022-04-17 15:31:47.221833');
+(1, '<b>PROFIL <br></b>', '<h1>visi<br></h1>', '<b><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Misi</span></b>', 'Motto', 'public/uploads/f_profil/1650423145lsp.png', '2022-04-19 19:52:25.000000', '2022-04-20 02:52:26.515181');
 
 -- --------------------------------------------------------
 
@@ -324,7 +330,8 @@ INSERT INTO `galeri_fotos` (`id`, `group_galeri_id`, `image`, `created_at`, `upd
 (65, 1, 'public/uploads/data_register_apl2/1650210879Screenshot (24).png', '2022-04-17 08:54:39', '2022-04-17 08:54:39'),
 (66, 1, 'public/uploads/data_register_apl2/1650210879Screenshot (25).png', '2022-04-17 08:54:39', '2022-04-17 08:54:39'),
 (67, 1, 'public/uploads/data_register_apl2/1650210879Screenshot (26).png', '2022-04-17 08:54:39', '2022-04-17 08:54:39'),
-(68, 1, 'public/uploads/data_register_apl2/1650210879Screenshot (27).png', '2022-04-17 08:54:39', '2022-04-17 08:54:39');
+(68, 1, 'public/uploads/data_register_apl2/1650210879Screenshot (27).png', '2022-04-17 08:54:39', '2022-04-17 08:54:39'),
+(69, 1, 'public/uploads/data_register_apl2/1650396240wp4676582.jpg', '2022-04-19 12:24:00', '2022-04-19 12:24:00');
 
 -- --------------------------------------------------------
 
@@ -371,6 +378,27 @@ INSERT INTO `jurusan` (`id`, `jurusan`, `updated_at`, `created_at`) VALUES
 (4, 'Teknik Informatika', '2022-04-02 12:00:20.000000', '2022-04-02 12:00:20.000000'),
 (5, 'Teknik Elektro', '2022-04-02 12:00:40.000000', '2022-04-02 12:00:40.000000'),
 (6, 'Teknik Sipil', '2022-04-02 12:00:40.000000', '2022-04-02 12:00:40.000000');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategoris`
+--
+
+CREATE TABLE `kategoris` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kategoris`
+--
+
+INSERT INTO `kategoris` (`id`, `kategori`, `created_at`, `updated_at`) VALUES
+(1, 'Pengumuman', '2022-04-19 19:33:27', '2022-04-19 19:33:27'),
+(2, 'Artikel', '2022-04-19 19:33:57', '2022-04-19 19:33:57');
 
 -- --------------------------------------------------------
 
@@ -425,7 +453,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (34, '2022_04_12_180546_create_sertifikasis_table', 26),
 (35, '2022_04_15_043313_create_group_galeris_table', 27),
 (36, '2022_04_15_071246_create_galeri_fotos_table', 28),
-(37, '2022_04_16_081140_create_beritas_table', 29);
+(37, '2022_04_16_081140_create_beritas_table', 29),
+(38, '2022_04_19_193029_create_kategoris_table', 30);
 
 -- --------------------------------------------------------
 
@@ -910,7 +939,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', '12345678', 0, 'ponzzy22@gmail.com', 'Ketapang', '1998-08-27', NULL, 'Indonesia', NULL, 788892, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/16501955401648393351lsp.png', NULL, NULL, NULL, NULL, 'ETGmAthJXls18MK0IpWHJIbFyTi1aMEyQ7GB51SANfeVL7wYAFMWGUupwfmt', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-04-17 04:49:38'),
+(1, 'Administrator', 'Admin LSP-POLITAP', '12345678', 0, 'ponzzy22@gmail.com', 'Ketapang', '1998-08-27', NULL, 'Indonesia', NULL, 788892, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/16501955401648393351lsp.png', NULL, NULL, NULL, NULL, 'LKD3I5s14903011eUNKREOh3P5IrJkcYZBFMk5SkMNCB0Zf8Ai9hUkhp6Vi4', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-04-17 04:49:38'),
 (2, 'Administrator', 'asu', '123', 0, NULL, NULL, '2022-04-20', '2', 'Indonesia', 'sdas', NULL, 34534, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1649955301ceb99d0f22759041b43f10a726f0a392.jpg', NULL, 3, 3, NULL, NULL, '$2y$10$SWgeJ2o7bKY2HX77jaVz9OKRX1QC83qdgzvaqGGCVH.o5amTu4cXS', NULL, NULL, NULL, '2022-03-31 01:01:52', '2022-04-14 10:54:50'),
 (5, NULL, 'Ponsianus Jopi', '3042020058', 23245545, 'ponzzy22@gmail.com', 'Ketapang', '2013-01-08', '2', 'Indonesia', 'sdas23123', NULL, 2323564561111, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650175848GOALS-3.png', NULL, 3, 2, NULL, NULL, '$2y$10$MRwgjmSTHReZ1dKNg57OruXd4bi9A6paOIyzrjoT05hU9HOW7In3m', 'public/uploads/beranda_img2/1649256639ceb99d0f22759041b43f10a726f0a392.jpg', 'public/uploads/beranda_img2/1648986790Screenshot (24).png', 'public/uploads/beranda_img2/1648987026Screenshot (11).png', '2022-04-02 07:38:26', '2022-04-16 23:10:48'),
 (6, NULL, 'Ngeteh Asu', '3042020050', 12334, 'ponzzy222@gmail.com', 'Ketapang2', '2022-04-18', '2', 'Indonesia', 'sddsds', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650194841Screenshot 2022-04-03 194755.png', NULL, 2, 6, NULL, NULL, '$2y$10$E9EAyJ7Q9SCX/csBxQXmvuF9aTlQQASEeUSkzl/KIzU7KlQjvQkz2', NULL, NULL, NULL, '2022-04-02 08:12:07', '2022-04-17 09:26:23');
@@ -1025,6 +1054,12 @@ ALTER TABLE `group_galeris`
 -- Indexes for table `jurusan`
 --
 ALTER TABLE `jurusan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kategoris`
+--
+ALTER TABLE `kategoris`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1206,7 +1241,7 @@ ALTER TABLE `beranda`
 -- AUTO_INCREMENT for table `beranda_img1`
 --
 ALTER TABLE `beranda_img1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `beranda_img2`
@@ -1218,7 +1253,7 @@ ALTER TABLE `beranda_img2`
 -- AUTO_INCREMENT for table `beritas`
 --
 ALTER TABLE `beritas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1236,7 +1271,7 @@ ALTER TABLE `f_profil`
 -- AUTO_INCREMENT for table `galeri_fotos`
 --
 ALTER TABLE `galeri_fotos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `group_galeris`
@@ -1251,10 +1286,16 @@ ALTER TABLE `jurusan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `kategoris`
+--
+ALTER TABLE `kategoris`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `permissions`

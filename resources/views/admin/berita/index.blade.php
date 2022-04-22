@@ -42,6 +42,16 @@
                                 <input type="file" name="image">
                             </div><br>
                             <div class="col-md-12">
+                                <label for="">Kategori</label>
+                                <select class="form-control" name="kategori_id">
+                                    <option value="" holder>Pilih Kategori</option>
+                                    @foreach ($kategori as $result)
+                                        <option value="{{ $result->id }}">{{ $result->kategori }}</option>
+                                        select
+                                    @endforeach
+                                </select>
+                            </div><br>
+                            <div class="col-md-12">
                                 <label for="">Judul Berita</label>
                                 <input type="text" class="form-control" placeholder="Judul berita" name="title"
                                     maxlength="100">

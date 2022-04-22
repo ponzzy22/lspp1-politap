@@ -28,7 +28,7 @@ class F_profilController extends Controller
             'image' => 'public/uploads/f_profil/'.$new_image,
         ]);
         $image->move('public/uploads/f_profil/', $new_image);
-        return redirect()->route('f_profil.index')->with('success','Portofolio anda berhasil di Posting');
+        return redirect()->route('f_profil.index')->with('success','Profil LSP POLITAP berhasil di Posting');
     }
 
 

@@ -25,7 +25,7 @@
     <!-- CAROUSEL -->
     <!-- /////////////////////////////////// -->
     <div class="card">
-        <div class="card-body">
+        <div class="card-body " data-aos="fade-up" data-aos-delay="100">
             <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators2" data-slide-to="0" class=""></li>
@@ -38,7 +38,7 @@
                             <img class="d-block w-100" src="{{ asset($asu->image) }}" alt="First slide">
                             <div class="carousel-caption d-none d-md-block">
                                 <h5>Heading</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                <p  data-aos="fade-up" data-aos-delay="200">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                     tempor incididunt ut labore et dolore magna aliqua.</p>
                             </div>
                         </div>
@@ -48,7 +48,7 @@
                         <img class="d-block w-100" src="{{ asset('public/assets/images/carousel/banner_2.jpg') }}"
                             alt="Third slide">
                         <div class="carousel-caption d-none d-md-block">
-                            <h1>Heading</h1>
+                            <h1  data-aos="fade-up" data-aos-delay="200">Heading</h1>
                             <h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                                 tempor incididunt ut labore et dolore magna aliqua.</h5>
                         </div>
@@ -102,7 +102,7 @@
     <br>
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Lazy load</h4>
+            <h4 class="card-title" data-aos="fade-up" data-aos-delay="100">Lazy load</h4>
             <div class="owl-carousel owl-theme lazy-load owl-loaded owl-drag" style="">
 
                 @foreach ($image as $asu)
@@ -129,7 +129,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="card-title">
+                    <div class="card-title" data-aos="fade-up" data-aos-delay="100>
                         <h5><i class="far fa-user"></i> SDM LSP P1-POLITAP</h5>
                     </div>
                     <div class="row">

@@ -243,69 +243,9 @@
         </div>
 
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- GALERI -->
-    <!-- /////////////////////////////////// -->
-    <div class="card">
-        <div class="card-body">
-            <a href="{{ route('galeri.index') }}">
-                <h4 class="text text-dark"><i class="fas fa-images"></i> Galeri</h4>
-            </a>
-            <div class="owl-carousel owl-theme lazy-load owl-loaded owl-drag" style="">
-                @foreach ($image as $asu)
-                    <div><img src="{{ asset($asu->image) }}" alt=""></div>
-                @endforeach
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div><br>
+
     <br>
-    <!-- /////////////////////////////////// -->
-    <!-- BERITA -->
-    <!-- /////////////////////////////////// -->
-    <div class="row">
-        @foreach ($databerita as $asu)
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-                <article class="article article-style-b">
-                    <div class="article-header">
-                        <img src="{{ asset($asu->image) }}" width="100%" alt="">
-                    </div>
-                    <div class="article-details">
-                        <div class="article-title">
-                            <h2 class="text text-dark"><a href="#">{{ $asu->title }}</a></h2>
-                        </div>
-                        <p>{{ $asu->excerpt }}</p>
-                        <div class="article article-title">
-                            <a href="{{ route('berita.show', $asu->id) }}"><h6>Read More</h6> <i
-                                    class="fas fa-chevron-right"></i></a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        @endforeach
-    </div>
-    <!-- /////////////////////////////////// -->
-    <!-- PETA -->
-    <!-- /////////////////////////////////// -->
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-title">
-                    <h5>
-                        <i class="fas fa-map"></i> Peta
-                    </h5>
-                </div>
-                <div id="map-with-marker" class="google-map"></div>
-            </div>
-        </div>
-    </div>
+
     <!-- /////////////////////////////////// -->
     <!-- FOOTER -->
     <!-- /////////////////////////////////// -->

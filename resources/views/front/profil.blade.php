@@ -1,100 +1,55 @@
 @extends('layout/1')
-@include('layout/verifikasi')
 @section('isi')
-
+{{-- <---------------------- PAGE HEADER ----------------------> --}}
 <div class="page-header">
-  <h3>
-  <i class="fas fa-building"></i> Profil LSP P1-POLITAP
-  </h3>
-
-  <!-- /////////////////////////////////// -->
-  <!-- BREADCRUMB -->
-  <!-- /////////////////////////////////// -->
-  <nav aria-label="breadcrumb">
-      <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
-          <li class="breadcrumb-item"><a href="{{ url('/') }}">Beranda</a></li>
-          {{-- <li class="breadcrumb-item">
-              <a href="#"> </a>
-          </li> --}}
-          <li class="breadcrumb-item active" aria-current="page">LSP P1-POLITAP</li>
-      </ol>
-  </nav>
-</div><br>
-
-  <!-- /////////////////////////////////// -->
-  <!-- MAIN WEB -->
-  <!-- /////////////////////////////////// -->
-<div class="card">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-md-10 mx-auto">
-          <ul class="nav nav-pills nav-pills-custom" id="pills-tab-custom" role="tablist">
-            <li class="nav-item">
-              <a class="nav-link active show" id="pills-energy-tab-custom" data-toggle="pill" href="#pills-bro" role="tab" aria-controls="pills-contact" aria-selected="true">
-                Profil
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-contact-tab-custom" data-toggle="pill" href="#pills-music" role="tab" aria-controls="pills-contact" aria-selected="false">
-                MOTTO
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab-custom" data-toggle="pill" href="#pills-energy" role="tab" aria-controls="pills-profile" aria-selected="false">
-                VISI
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="pills-profile-tab-custom" data-toggle="pill" href="#pills-asu" role="tab" aria-controls="pills-profile" aria-selected="false">
-                MISI
-              </a>
-            </li>
-          </ul>
-          <div class="tab-content tab-content-custom-pill" id="pills-tabContent-custom">
-            <div class="tab-pane fade  active show" id="pills-bro" role="tabpanel" aria-labelledby="pills-profile-tab-custom">
-              <div class="media">
-                @foreach ($profil as $asu)
-                <img class="mr-1 w-25 rounded" src="{{ asset($asu->image) }}" alt="sample image">
-                  <div class="col-md-10">
-                  <h6>
-                    {{ $asu->profil }}
-                  </h6>
-                  </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="pills-music" role="tabpanel" aria-labelledby="pills-contact-tab-custom">
-              <div class="media">
-                <div class="col-md-10">
-                  <h6>
-                      {{ $asu->motto }}
-                  </h6>
+    <h3 class="font-weight-normal text-primary" data-aos="fade-left" data-aos-delay="200"><i class="fas fa-building"></i>
+        Profil LSP - POLITAP</h3>
+    <nav aria-label="breadcrumb" data-aos="fade-left" data-aos-delay="300">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}">
+                    <p>beranda</p>
+                </a></li>
+            <li class="breadcrumb-item active" aria-current="page">Profil LSP - POLITAP</li>
+        </ol>
+    </nav>
+</div><br><br>
+{{-- <---------------------- TAMPIL DATA ----------------------> --}}
+    <div class="col-12 mb-5">
+        <div data-aos="zoom-in" data-aos-delay="100" class="hero text-white hero-bg-image hero-bg-parallax" style="background-image: url('public/assets/images/gedung/12.png'); position: relative;
+                background-size: cover">
+            @foreach ($profil as $asu)
+                <div data-aos="fade-up" data-aos-delay="200" class="hero-inner" style="padding-left: 18%"><br><br>
+                    <p class="lead">{!! $asu->profil !!}</p>
+                    <div class="mt-4"><br><br><br><br>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="pills-energy" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
-              <div class="media">
-                <div class="col-md-10">
-                  <h6>
-                    {{ $asu->visi }}
-                  </h6>
-                </div>
-              </div>
-            </div>
-            <div class="tab-pane fade" id="pills-asu" role="tabpanel" aria-labelledby="pills-vibes-tab-custom">
-              <div class="media">
-                <div class="col-md-10">
-                  <h6>
-                    {{ $asu->misi }}
-                  </h6>
-                  @endforeach
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+    <div class="card">
+        <div class="card-body" data-aos="fade-up" data-aos-delay="200">
+            <p>{!! $asu->visi !!}</p>
+        </div>
+        <div class="card-body" data-aos="fade-up" data-aos-delay="300">
+            <br><br>
+            <p>{!! $asu->misi !!}</p>
+        </div>
+        <div style="padding-top: 1%" class="card-body" data-aos="fade-up" data-aos-delay="400">
+            <p>{!! $asu->motto !!}</p>
+        </div>
+    </div>
+
+    <div class="card"></div><br>
+    <h3 class="text text-primary" data-aos="fade-up" data-aos-delay="100" style="padding-left: 39%" class="text text-black">Logo Identitas</h3>
+    <div data-aos="zoom-in" data-aos-delay="200" style="padding-left: 36%; padding-top: 5%">
+        <img src="{{ $asu->image }}" width="300px" alt="">
+        @endforeach
+    </div><br><br><br><br><br><br><br>
+    @foreach ($strorg as $asu) <div class="card"></div><br>
+    <h3 class="text text-primary" data-aos="fade-up" data-aos-delay="100" style="padding-left: 36%" class="text text-black">Struktur Organisasi</h3>
+    <div data-aos="zoom-in" data-aos-delay="200" style="padding-left: 26%; padding-top: 10%">
+        <img src="{{ $asu->image }}" width="600px" alt="">
+    </div><br><br><br><br><br><br><br>
+    @endforeach
 
 
 @endsection

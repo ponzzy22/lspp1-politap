@@ -1,26 +1,24 @@
 @extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
+    {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
         <h3>
-            <i class="fas fa-cogs"></i> Edit PROFIL LSP P1-POLITAP
+            <i class="fas fa-cogs"></i> Edit Profil LSP - POLITAP
         </h3>
-        <!-- /////////////////////////////////// -->
-        <!-- BREADCRUMB -->
-        <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item">
                     <a href="{{ route('f_profil.index') }}">LSP P1-POLITAP</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Edit PROFIL LSP P1-POLITAP</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Profil LSP-POLITAP</li>
             </ol>
         </nav>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- MAIN WEBSITE -->
-    <!-- /////////////////////////////////// -->
+
+
+    {{-- <---------------------- EDIT PROFIL ----------------------> --}}
     <div class="card">
         <div class="card-body">
             <form action="{{ route('f_profil.update', $profil->id) }}" enctype="multipart/form-data" method="POST"
@@ -29,25 +27,26 @@
                 @method('patch')
                 <div class="form-group">
                     <label for="exampleTextarea1">Profil LSP P1-POLITAP</label>
-                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1" rows="4"
+                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="profil">{{ $profil->profil }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Visi LSP P1-POLITAP</label>
-                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1" rows="4"
+                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="visi">{{ $profil->visi }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Misi LSP P1-POLITAP</label>
-                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1" rows="4"
+                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="misi">{{ $profil->misi }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Motto LSP P1-POLITAP</label>
-                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1" rows="1"
+                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="motto">{{ $profil->motto }}</textarea>
                 </div>
-                <input type="file" class="form-control" name="image"><br>
+                <label for="input">Logo Politap</label>
+                <input type="file" id="input" class="form-control" name="image"><br>
                 <button type="submit" class="btn btn-info btn-icon-text">
                     <i class="far fa-check-square btn-icon-prepend"></i>
                     Update

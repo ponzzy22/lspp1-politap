@@ -17,40 +17,73 @@ class Beranda_img2Controller extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
-            'image' => 'required'
+            'image' => ['required'],
+            'nama' => ['required'],
+            'keterangan' => ['required'],
+            'no_hp' => ['required', 'numeric']
         ]);
-        
+
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
         $beranda_img2 = Beranda_img2::create([
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/beranda_img2/'.$new_image,
+            'nama' =>$request->nama,
+            'facebook' =>$request->facebook,
+            'twitter' =>$request->keterangan,
+            'intagram' =>$request->intagram,
+            'no_hp' =>$request->no_hp,
+            'email' =>$request->email,
+            'image' => 'public/uploads/pengelola/'.$new_image,
         ]);
-        $image->move('public/uploads/beranda_img2/', $new_image);
-        return redirect()->route('beranda_img2.index')->with('success','Portofolio anda berhasil di Posting');
+        $image->move('public/uploads/pengelola/', $new_image);
+        return back()->with('success','Portofolio anda berhasil di Posting');
     }
 
+    public function edit($id)
+    {
+        $pengelola = Beranda_img2::findorfail($id);
+        return view('admin/beranda_img2/edit', compact('pengelola'));
+    }
 
     public function update(Request $request, $id)
     {
+        // dd($request->all());
+        $request->validate([
+            'nama' => ['required'],
+            'keterangan' => ['required'],
+            'no_hp' => ['required', 'numeric']
+        ]);
         $beranda_img2 = Beranda_img2::findorfail($id);
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img2/', $new_image);
+            $image->move('public/uploads/pengelola/', $new_image);
             $beranda_img2_data = [
+                'nama' =>$request->nama,
+                'facebook' =>$request->facebook,
+                'twitter' =>$request->keterangan,
+                'intagram' =>$request->intagram,
+                'no_hp' =>$request->no_hp,
+                'email' =>$request->email,
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/beranda_img2/'.$new_image,
+                'image' => 'public/uploads/pengelola/'.$new_image,
             ];
         }
         else{
             $beranda_img2_data = [
                 'keterangan' =>$request->keterangan,
+                'nama' =>$request->nama,
+                'facebook' =>$request->facebook,
+                'twitter' =>$request->keterangan,
+                'intagram' =>$request->intagram,
+                'no_hp' =>$request->no_hp,
+                'email' =>$request->email,
             ];
         }
         $beranda_img2->update($beranda_img2_data);
-        return redirect()->route('beranda_img2.index')->with('success','Portofolio anda berhasil di Update');
+        return back()->with('success','Portofolio anda berhasil di Update');
     }
 
 

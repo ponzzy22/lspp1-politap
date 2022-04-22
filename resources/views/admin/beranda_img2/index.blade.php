@@ -21,27 +21,84 @@
     <!-- /////////////////////////////////// -->
     {{-- TAMBAH GAMBAR --}}
     <!-- /////////////////////////////////// -->
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title">
-                <form action="{{ route('beranda_img2.store') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <label>Tambah Portofolio Karyawan</label>
-                    <textarea class="form-control" id="exampleTextarea1" rows="1" name="keterangan"
-                        placeholder="Jabatan Karyawan"></textarea><br>
-                    <input type="file" class="form-control" name="image"><br>
-                    <div class="form-action">
-                        <button type="submit" class="btn btn-primary btn-icon-text">
-                            <i class="fas fa-plus btn-icon-prepend"></i>
-                            TAMBAH
-                        </button>
-                        <a href="{{ route('beranda_img2.index') }}"><button type="button"
-                                class="btn btn-danger btn-icon-text">
-                                <i class="fa fa-times btn-icon-prepend"></i>
-                                BATAL
-                            </button></a>
-                    </div>
-                </form>
+    <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
+        <div class="card">
+            <div class="card-header" role="tab" id="heading-11">
+                <h6 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" href="#collapse-11" aria-expanded="true"
+                        aria-controls="collapse-11">
+                        &plus; Klik disini Untuk Menambahkan Pengelola
+                    </a>
+                </h6>
+            </div>
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+                data-parent="#accordion-4">
+                <div class="card-body">
+                    <p class="card-description">
+                        <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >>
+                        <code>470x625px</code>
+                    </p>
+                    <form action="{{ route('beranda_img2.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Nama Pengelola</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="nama" placeholder="Nama Pengelola"></textarea><br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Jabatan</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="keterangan" placeholder="Jabatan Pengelola"></textarea><br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>No Handphone</label>
+                                <input type="text" class="form-control" maxlength="40" placeholder="No Hp" name="no_hp"
+                                    id="">
+                                @error('no_hp')
+                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Link Facebook</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="facebook" placeholder="Link Facebook"></textarea><br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Link Twitter</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="twitter" placeholder="Link Twitter"></textarea><br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Link Instagram</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="instagram" placeholder="Link Instagram"></textarea><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label>Link Email</label>
+                                <textarea class="form-control" maxlength="40" rows="1" name="email" placeholder="Link Email"></textarea><br>
+                            </div>
+
+                            <div class="col-md-4">
+                                <input type="file" class="form-control" name="image"><br>
+                            </div>
+                        </div>
+                        <div class="form-action">
+                            <button type="submit" class="btn btn-primary btn-icon-text">
+                                <i class="fas fa-plus btn-icon-prepend"></i>
+                                TAMBAH
+                            </button>
+                            <a href="{{ route('beranda_img2.index') }}"><button type="button"
+                                    class="btn btn-danger btn-icon-text">
+                                    <i class="fa fa-times btn-icon-prepend"></i>
+                                    BATAL
+                                </button></a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -65,21 +122,11 @@
                                     <div class="card">
                                         <img src="{{ asset($asu->image) }}" alt="image" />
                                         <div class="card-body">
-                                            <form action="{{ route('beranda_img2.update', $asu->id) }}" method="post"
-                                                enctype="multipart/form-data">
-                                                @csrf
-                                                @method('patch')
-                                                <textarea class="form-control" id="exampleTextarea1" rows="1" name="keterangan"
-                                                    placeholder="Jabatan Karyawan"></textarea><br>
-                                                <input type="file" class="form-control" name="image"><br>
-                                                <div class="form-action">
-                                                    <button type="submit"
-                                                        class="btn btn-sm btn-block btn-info btn-icon-text">
-                                                        <i class="far fa-check-square btn-icon-prepend"></i>
-                                                        Update
-                                                    </button>
-                                                </div>
-                                            </form><br>
+                                            <a href="{{ route('beranda_img2.edit', $asu->id) }}"><button type="submit"
+                                                    class="btn btn-info btn-block btn-sm btn-icon-text">
+                                                    <i class="fas fa-edit  btn-icon-prepend"></i>
+                                                    Edit
+                                                </button><br></a>
                                             <form action="{{ route('beranda_img2.destroy', $asu->id) }}" method="POST"
                                                 onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
                                                 @csrf

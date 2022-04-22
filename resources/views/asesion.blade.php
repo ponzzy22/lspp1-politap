@@ -22,7 +22,9 @@
             <div class="col-md-6 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-0">{{ $asu->skema_name }}</h4>
+                        <div class="row">
+                            <h4 class="card-title mb-0">{{ $asu->skema_name }}</h4>
+                        </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="d-inline-block pt-3">
                                 <div class="d-md-flex">

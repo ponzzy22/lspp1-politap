@@ -40,6 +40,19 @@
                                 <input type="file" name="image">
                             </div><br>
                             <div class="col-md-12">
+                                <label for="">Kategori</label>
+                                <select class="form-control" name="kategori_id">
+                                    <option value="" holder></option>
+                                    @foreach ($kategori as $result)
+                                        <option value="{{ $result->id }}"
+                                        @if ($berita->kategori_id == $result->id)
+                                            selected
+                                        @endif>{{ $result->kategori }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div><br>
+                            <div class="col-md-12">
                                 <label for="">Judul Berita</label>
                                 <input type="text" class="form-control" placeholder="Judul berita" name="title" maxlength="100"
                                     value="{{ $berita->title }}">

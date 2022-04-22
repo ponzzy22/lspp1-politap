@@ -279,7 +279,7 @@
         <!-- /////////////////////////////////// -->
         <!-- SIDEBAR KANAN -->
         <!-- /////////////////////////////////// -->
-        <div id="right-sidebar" class="settings-panel">
+        <div id="right-sidebar" class="settings-panel" style="background-color: #ffffff">
             <i class="settings-close fa fa-times"></i>
             <ul class="nav nav-tabs" id="setting-panel" role="tablist">
                 <li class="nav-item">
@@ -300,6 +300,12 @@
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('galeri.index') }}" class="text text-white"><i
                                             class="fas fa-th-large"></i> Galeri</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-primary btn-block">
+                                    <a href="{{ route('info.index') }}" class="text text-white"><i
+                                            class="fas fa-info"></i> Info Pendaftaran</a>
                                 </div>
                             </li>
                             <li>
@@ -353,7 +359,7 @@
                         <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
                         <p class="text-gray mb-0 ">Call Sarah Graves</p>
                     </div>
-                    @endforeach                    
+                    @endforeach
                 </div> --}}
                 <!-- chat tab ends -->
             </div>

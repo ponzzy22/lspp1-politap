@@ -1,13 +1,11 @@
 @extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
+    {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
         <h3>
-            <i class="fas fa-building"></i> Settingan Profil LSP-POLITAP
+            <i class="fas fa-cogs"></i> Settingan Profil LSP-POLITAP
         </h3>
-        <!-- /////////////////////////////////// -->
-        <!-- BREADCRUMB -->
-        <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
@@ -15,9 +13,9 @@
             </ol>
         </nav>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    {{-- SETTING PROFIL --}}
-    <!-- /////////////////////////////////// -->
+
+
+    {{-- <---------------------- SETTING PROFIL ----------------------> --}}
     @foreach ($profil as $asu)
         <div class="faq-section">
             <div class="container-fluid bg-light py-2">

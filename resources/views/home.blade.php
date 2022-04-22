@@ -19,18 +19,21 @@
                 <div class="row w-100">
                     <div class="col-lg-4 mx-auto">
                         <form class="pt-5">
-                        <div class="mt-3 text-center">
-                            <h2 for="examplePassword1">Selamat Bergabung...</h2>
-                        </div>
-                        <div class="mt-5">
-                            <a class="btn btn-block btn-info btn-lg font-weight-medium" href="{{ route('dashasesi.index') }}">Menuju Halaman Asesi</a>
-                        </div>
-                        <div class="mt-5">
-                            <a class="btn btn-block btn-danger btn-lg font-weight-medium" href="{{ route('admin') }}">Menuju Halaman Admin</a>
-                        </div>
-                        <div class="mt-3 text-center">
-                            <a href="{{ url('/') }}" class="auth-link text-white">Kembali Ke Halaman Beranda</a>
-                        </div>
+                            <div class="mt-3 text-center">
+                                <h2 for="examplePassword1" class="text text-white">Selamat Bergabung...</h2>
+                            </div>
+                            <div class="mt-5">
+                                <a class="btn btn-block btn-info btn-lg font-weight-medium"
+                                    href="{{ route('dashasesi.index') }}"><i class="fas fa-user"></i> Halaman Asesi</a>
+                            </div>
+                            <div class="mt-5">
+                                <a class="btn btn-block btn-danger btn-lg font-weight-medium"
+                                    href="{{ route('admin') }}"><i class="fas fa-cogs"></i> Halaman Admin</a>
+                            </div>
+                            <div class="mt-5">
+                                <a class="btn btn-block btn-primary btn-lg font-weight-medium"
+                                    href="{{ url('/') }}"><i class="fas fa-home"></i> Ke Halaman Beranda</a>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -301,6 +301,12 @@
                             </li>
                             <li>
                                 <div class="btn btn-primary btn-block">
+                                    <a href="{{ route('info.index') }}" class="text text-white"><i
+                                            class="fas fa-info"></i> Info Pendaftaran</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-primary btn-block">
                                     <a href="{{ route('berita.index') }}" class="text text-white"><i
                                             class="fas fa-info-circle"></i> Berita</a>
                                 </div>
@@ -350,7 +356,7 @@
                         <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
                         <p class="text-gray mb-0 ">Call Sarah Graves</p>
                     </div>
-                    @endforeach                    
+                    @endforeach
                 </div> --}}
                 <!-- chat tab ends -->
             </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Berita;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -10,8 +11,9 @@ class BeritaController extends Controller
 
     public function index()
     {
+        $kategori = Kategori::all();
         $berita = Berita::orderBy('created_at','desc')->get();
-        return view('admin/berita/index', compact('berita'));
+        return view('admin/berita/index', compact('berita', 'kategori'));
     }
 
 
@@ -21,6 +23,7 @@ class BeritaController extends Controller
         $request->validate([
             'title' => ['required'],
             'excerpt' => ['required'],
+            'kategori_id' => ['required'],
             'body' => ['required'],
             'image' => ['required']
         ]);
@@ -29,6 +32,7 @@ class BeritaController extends Controller
         $berita = Berita::create([
             'title' => $request->title,
             'excerpt' => $request->excerpt,
+            'kategori_id' => $request->kategori_id,
             'body' => $request->body,
             'image' => 'public/uploads/berita/' . $new_image,
         ]);
@@ -39,8 +43,9 @@ class BeritaController extends Controller
 
     public function show($id)
     {
+        $kategori = Kategori::all();
         $berita = Berita::findorfail($id);
-        return view('admin/berita/show', compact('berita'));
+        return view('admin/berita/show', compact('berita', 'kategori'));
     }
 
 
@@ -60,6 +65,7 @@ class BeritaController extends Controller
             $berita_data = [
                 'title' => $request->title,
                 'excerpt' => $request->excerpt,
+                'kategori_id' => $request->kategori_id,
                 'body' => $request->body,
                 'image' => 'public/uploads/berita/' . $new_image,
             ];
@@ -67,7 +73,8 @@ class BeritaController extends Controller
             $berita_data = [
                 'title' => $request->title,
                 'excerpt' => $request->excerpt,
-                'body' => $request->body
+                'body' => $request->body,
+                'kategori_id' => $request->kategori_id,
             ];
         }
 

@@ -29,12 +29,12 @@
                 @method('patch')
                 <div class="form-group">
                     <label for="exampleInputName1">Judul Baris Pertama</label>
-                    <textarea class="form-control" maxlength="20" id="exampleTextarea1" rows="1"
+                    <textarea class="summernote" maxlength="50" id="exampleTextarea1" rows="3"
                         name="judul">{{ $beranda->judul }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputName1">Judul Baris Kedua</label>
-                    <textarea class="form-control" maxlength="30" id="exampleTextarea1" rows="1"
+                    <textarea class="form-control" maxlength="30" id="exampleTextarea1" rows="3"
                         name="judul2">{{ $beranda->judul2 }}</textarea>
                 </div>
                 <div class="form-group">

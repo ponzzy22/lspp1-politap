@@ -13,6 +13,7 @@ use App\Http\Controllers\DeleteGaleriFotoController;
 use App\Http\Controllers\F_profilController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InfoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ReadAPL2Controller;
@@ -21,6 +22,7 @@ use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\StrorgController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
+use App\Http\Controllers\UiFotosController;
 use App\Http\Controllers\UnikomController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidasiController;
@@ -44,8 +46,14 @@ Route::get('404', function () {
 });
 
 Route::get('/', [UiController::class, 'ui_beranda']);
-Route::get('profil', [UiController::class, 'profil']);
-Route::get('strorg1', [UiController::class, 'show_strorg']);
+Route::get('/2', [UiController::class, 'ui_beranda2']);
+Route::get('profil', [UiController::class, 'profil'])->name('profil.front');
+Route::get('show_artikel_berita', [UiController::class, 'berita_list'])->name('berita.list');
+Route::get('show_pengumuman', [UiController::class, 'pengumuman_list'])->name('pengumuman.list');
+Route::get('uiskemas/{uiskema}', [UiController::class, 'uiskema_show'])->name('uiskema.show');
+Route::get('tampil_skema', [UiController::class, 'tampil_skema'])->name('tampil.skema');
+Route::get('berita_tampil/{berita_tampil}', [UiController::class, 'berita_tampil'])->name('berita.tampil');
+Route::resource('uifoto', UiFotosController::class);
 
 Auth::routes();
 
@@ -82,6 +90,8 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::post('upload_foto', [GaleriController::class, 'foto_store'])->name('foto.store');
     /////////// BERITA  /////////////
     Route::resource('berita', BeritaController::class);
+    Route::resource('info', InfoController::class);
+
 
 
     Route::resource('sett-beranda', UiController::class);
@@ -103,7 +113,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('info_skema/show/{id}', [AsesiController::class, 'info_skema_show'])->name('info_skema.show');
     Route::get('koleksi_sertifikat', [AsesiController::class, 'koleksi_sertifikat'])->name('koleksi.sertifikat');
     Route::get('instruksi_registrasi', [AsesiController::class, 'instruksi_registrasi'])->name('instruksi.registrasi');
-    /////////// XNXX  /////////////    
+    /////////// XNXX  /////////////
     Route::post('for_apl2', [XnxxController::class, 'token_store'])->name('token.store');
     Route::post('Registrasi_Validate', [XnxxController::class, 'token2_store'])->name('token2.store');
     Route::get('rekap_registrasi', [XnxxController::class, 'rekap_registrasi'])->name('rekap.registrasi');
