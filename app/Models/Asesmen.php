@@ -9,7 +9,7 @@ class Asesmen extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['unikom_id', 'asesmen'];
+    protected $fillable = ['unikom_id', 'kriteria', 'asesmen'];
 
     public function unikom(){
         return $this->belongsTo(unikom::class);

@@ -1,41 +1,35 @@
 @extends('layout/2')
 @section('isi')
 @include('layout/verifikasi')
+{{-- <---------------------- PAGE HEADER ----------------------> --}}
 <div class="page-header">
     <h4>
         <i class="fab fa-pagelines"></i>  Edit Skema
     </h4>
-    <!-- /////////////////////////////////// -->
-    <!-- BREADCRUMB -->
-    <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-            <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Skema/Kluster</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit Skema</li>
         </ol>
     </nav>
 </div><br>
-<!-- /////////////////////////////////// -->
-{{-- EDIT SKEMA --}}
-<!-- /////////////////////////////////// -->
+
+
+{{-- <----------------------EDIT SKEMA ----------------------> --}}
 <div class="card">
     <div class="card-body">
         <form action="{{ route('skema.update', $skema->id) }}" method="POST" class="form-sample">
         @csrf
         @method('put')
             <div class="card-description text-left">
-                <button type="submit" class="btn btn-inverse-info btn-icon-text btn-block">
-                    <i class="fa fa-magic btn-icon-prepend"></i>
-                    Update
-                </button>
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Nama Skema</label>
                         <div class="col-sm-9">
-                        <input type="text" name="skema" class="form-control" value="{{ $skema->skema }}" />
+                        <input type="text" maxlength="100" name="skema" class="form-control" value="{{ $skema->skema }}" />
                             @error('skema')
                                 <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                             @enderror
@@ -46,7 +40,7 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Kode Skema</label>
                         <div class="col-sm-9">
-                            <input type="text" name="kode_skema" class="form-control" value="{{ $skema->kode_skema }}"/>
+                            <input type="text" name="kode_skema" class="form-control" maxlength="100" value="{{ $skema->kode_skema }}"/>
                             @error('kode_skema')
                                 <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                             @enderror
@@ -93,7 +87,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Tempat Uji Kompetensi</label>
+                    <label class="col-sm-3 col-form-label">TUK</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="tuk_id">
                                 <option value="" holder></option>
@@ -126,6 +120,10 @@
                     </div>
                 </div>
             </div>
+            <button type="submit" class="btn btn-info btn-icon-text btn-block">
+                <i class="fa fa-magic btn-icon-prepend"></i>
+                Update
+            </button>
         </form>
     </div>
 </div>

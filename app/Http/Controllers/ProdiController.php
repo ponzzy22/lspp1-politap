@@ -14,6 +14,9 @@ class ProdiController extends Controller
 
 
     public function store(Request $request) {
+        $request->validate([
+            'prodi' => ['required']
+        ]);
         $prodi = Prodi::create([
             'prodi' => $request->prodi
         ]);

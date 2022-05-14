@@ -77,10 +77,10 @@ class GaleriController extends Controller
             $images = $request->image;
             foreach ($images as $image) {
                 $new_image = time() . $image->getClientOriginalName();
-                $image->move('public/uploads/data_register_apl2/', $new_image);
+                $image->move('public/uploads/galeri/', $new_image);
                 $galeri = Galeri_foto::create([
                     'group_galeri_id' => $request->group_galeri_id,
-                    'image' => 'public/uploads/data_register_apl2/' . $new_image,
+                    'image' => 'public/uploads/galeri/' . $new_image,
                 ]);
             }
         } else {

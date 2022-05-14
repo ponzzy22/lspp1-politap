@@ -10,10 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
-                {{-- <li class="breadcrumb-item">
-              <a href="#"> </a>
-          </li> --}}
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Portofolio Karyawan</li>
             </ol>
         </nav>
@@ -83,7 +80,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="file" class="form-control" name="image"><br>
+                                <input type="file" class="form-control" accept=".png" name="image"><br>
                             </div>
                         </div>
                         <div class="form-action">
@@ -120,7 +117,13 @@
                                         </figcaption>
                                     </figure>
                                     <div class="card">
-                                        <img src="{{ asset($asu->image) }}" alt="image" />
+                                        <div class="row">
+                                            <img src="{{ asset($asu->image) }}" width="100px" alt="image" />
+                                            <div>
+                                                <p style="padding-left: 2%">{{ $asu->nama }}</p>
+                                            <p style="padding-left: 2%">{{ $asu->keterangan }}</p>
+                                            </div>
+                                        </div>
                                         <div class="card-body">
                                             <a href="{{ route('beranda_img2.edit', $asu->id) }}"><button type="submit"
                                                     class="btn btn-info btn-block btn-sm btn-icon-text">

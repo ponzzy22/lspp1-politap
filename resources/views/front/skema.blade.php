@@ -5,14 +5,14 @@
     <div class="page-header">
         <h3 class="font-weight-normal text-primary" data-aos="fade-left" data-aos-delay="300"><i class="fab fa-pagelines"></i>
             {{ $skema->skema }}</h3>
-        <nav aria-label="breadcrumb" data-aos="fade-left" data-aos-delay="300">
+        {{-- <nav aria-label="breadcrumb" data-aos="fade-left" data-aos-delay="300">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/') }}">
                         <p>beranda</p>
                     </a></li>
                 <li class="breadcrumb-item active" aria-current="page">LIST UNIT KOMPETENSI</li>
             </ol>
-        </nav>
+        </nav> --}}
     </div><br>
     {{-- <---------------------- TAMPIL SKEMA ----------------------> --}}
     <div class="card-body">

@@ -8,7 +8,7 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item">
                     <a href="{{ route('f_profil.index') }}">LSP P1-POLITAP</a>
                 </li>
@@ -26,9 +26,14 @@
                 @csrf
                 @method('patch')
                 <div class="form-group">
-                    <label for="exampleTextarea1">Profil LSP P1-POLITAP</label>
+                    <label for="exampleTextarea1">Judul Profil LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="profil">{{ $profil->profil }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea1">Isi Profil LSP P1-POLITAP</label>
+                    <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
+                        name="isi">{{ $profil->isi }}</textarea>
                 </div>
                 <div class="form-group">
                     <label for="exampleTextarea1">Visi LSP P1-POLITAP</label>
@@ -46,7 +51,7 @@
                         name="motto">{{ $profil->motto }}</textarea>
                 </div>
                 <label for="input">Logo Politap</label>
-                <input type="file" id="input" class="form-control" name="image"><br>
+                <input type="file" id="input" class="form-control" accept=".png" name="image"><br>
                 <button type="submit" class="btn btn-info btn-icon-text">
                     <i class="far fa-check-square btn-icon-prepend"></i>
                     Update

@@ -9,7 +9,7 @@ class TukController extends Controller
 {
 
     public function index() {
-        $tuk = Tuk::orderBy('created_at','desc')->get();
+        $tuk = Tuk::where('id', '>', 1)->get();
         return view('admin/tuk/index', compact('tuk'));
     }
 

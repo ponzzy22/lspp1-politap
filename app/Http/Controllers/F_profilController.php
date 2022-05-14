@@ -11,8 +11,9 @@ class F_profilController extends Controller
 
     public function index()
     {
-        $profil = F_profil::all();
-        return view('admin/f_profil/index', compact('profil'));
+        $profil = F_profil::where('id', '1' )->get();
+        $profil2 = F_profil::where('id', '2' )->get();
+        return view('admin/f_profil/index', compact('profil', 'profil2'));
     }
 
 
@@ -22,6 +23,7 @@ class F_profilController extends Controller
         $new_image = time().$image->getClientOriginalName();
         $profil = F_profil::create([
             'profil' =>$request->profil,
+            'isi' =>$request->isi,
             'visi' =>$request->visi,
             'misi' =>$request->misi,
             'motto' =>$request->motto,
@@ -49,6 +51,7 @@ class F_profilController extends Controller
             $profil_data = [
                 'profil' =>$request->profil,
                 'visi' =>$request->visi,
+                'isi' =>$request->isi,
                 'misi' =>$request->misi,
                 'motto' =>$request->motto,
                 'image' => 'public/uploads/f_profil/'.$new_image,
@@ -58,6 +61,7 @@ class F_profilController extends Controller
             $profil_data = [
                 'profil' =>$request->profil,
                 'visi' =>$request->visi,
+                'isi' =>$request->isi,
                 'misi' =>$request->misi,
                 'motto' =>$request->motto,
             ];

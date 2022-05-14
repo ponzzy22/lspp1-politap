@@ -8,35 +8,49 @@ use Illuminate\Http\Request;
 class AsesorController extends Controller
 {
     public function index(){
-        $asesor = Asesor::all();
+        $asesor = Asesor::where('id', '>', 1)->get();
         return view('admin/asesor/index', compact('asesor'));
     }
 
 
     public function store(Request $request) {
         $request->validate([
-            'nik' => ['required', 'unique:asesor,nik'],
+            // 'nik' => ['required', 'unique:asesor,nik'],
             'nama' => ['required'],
-            'alamat' => ['required'],
-            'sex' => ['required'],
-            'no_hp' => ['required'],
-            'email' => ['required', 'unique:asesor,email'],
-            'status' => ['required'],
-            'image' => ['required', 'image']
+            // 'alamat' => ['required'],
+            // 'sex' => ['required'],
+            // 'no_hp' => ['required'],
+            // 'email' => ['required', 'unique:asesor,email'],
+            // 'status' => ['required'],
+            // 'image' => ['required', 'image']
         ]);
-        $image = $request->image;
-        $new_image = time().$image->getClientOriginalName();
-        $asesor = Asesor::create([
-            'nik' => $request->nik,
-            'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'sex' => $request->sex,
-            'no_hp' => $request->no_hp,
-            'email' => $request->email,
-            'status' => $request->status,
-            'image' => 'public/uploads/asesor/'.$new_image,
-        ]);
-        $image->move('public/uploads/asesor/', $new_image);
+        if ($request->has('image')) {
+            $image = $request->image;
+            $new_image = time().$image->getClientOriginalName();
+            $image->move('public/uploads/asesor/', $new_image);
+            $asesor_data = [
+                'nik' => $request->nik,
+                'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'sex' => $request->sex,
+                'email' => $request->email,
+                'status' => $request->status,
+                'image' => 'public/uploads/asesor/'.$new_image,
+            ];
+        }
+        else{
+            $asesor_data = Asesor::create( [
+                'nik' => $request->nik,
+                'nama' => $request->nama,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'sex' => $request->sex,
+                'email' => $request->email,
+                'status' => $request->status,
+            ]);
+        }
+        // $image->move('public/uploads/asesor/', $new_image);
         return redirect()->route('asesor.index')->with('success','Asesor Berhasil Ditambah');
     }
 

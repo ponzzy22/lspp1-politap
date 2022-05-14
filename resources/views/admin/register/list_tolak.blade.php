@@ -11,7 +11,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Data Registrasi Ditolak</li>
             </ol>
         </nav>
@@ -21,7 +21,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4>
+            {{-- <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4> --}}
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -33,7 +33,7 @@
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
-                                            <tr class="bg-danger text-white" role="row">
+                                            <tr class="bg-light text-black" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Order #: activate to sort column ascending"

@@ -81,7 +81,7 @@
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('user.show', $asu->id) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-warning btn-sm btn-block"><i
+                                                                    class="btn btn-warning btn-sm btn-block"><i
                                                                         class="fa fa-edit "></i> Lihat & Edit
                                                                     Pengguna</button></a>
                                                             {{-- <a href=""><button type="submit" class="btn btn-inverse-primary btn-sm btn-block"><i class="fa fa-list "></i>  List Pengguna</button></a> --}}
@@ -91,7 +91,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-sm btn-block"><i
+                                                                        class="btn btn-danger btn-sm btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus</button></a>
                                                             </form>
                                                         </div>

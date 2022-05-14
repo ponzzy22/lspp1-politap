@@ -2,7 +2,7 @@
 @section('isi')
 <div class="page-header">
     <h4>
-        <i class="fas fa-eye"></i>  Detail Skema {{ $skema->skema }}
+        <i class="fas fa-eye"></i>  Detail Skema 
     </h4>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
@@ -11,7 +11,7 @@
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('info.skema') }}">Skema/Kluster</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detail Skema {{ $skema->skema }}</li>
+            <li class="breadcrumb-item active" aria-current="page">Detail Skema </li>
         </ol>
     </nav>
 </div><br>
@@ -103,12 +103,15 @@
                 <div class="card rounded border mb-2">
                     <div class="card-body p-3">
                         <table class="table table-bordered">
-                            @foreach ($skema->unikoms as $item)
+                            @forelse ($skema->unikoms as $item)
                             <tr>
                                 <th style="width: 20px">{{ $loop->iteration }}</th>
                                 <td>{{ $item->unikom }}</td>
+                                
                             </tr>
-                            @endforeach
+                            @empty
+                                
+                            @endforelse 
                         </table>
                     </div>
                 </div>

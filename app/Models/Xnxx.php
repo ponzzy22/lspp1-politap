@@ -19,7 +19,12 @@ class Xnxx extends Model
         'status',
         'user_id',
         'skema_name',
-        'skema_id'
+        'skema_id',
+        'koreksi',
+        'unikom_kode',
+        'kriteria',
+        'asesmen_name',
+        'kode_elemen'
     ];
 
     public function data_register(){

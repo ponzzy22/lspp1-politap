@@ -3,16 +3,16 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h4>
-            <i class="fas fa-bullhorn"></i> Edit & Detail Berita {{ $berita->title }}
+            <i class="fas fa-bullhorn"></i> Edit & Detail Berita
         </h4>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('berita.index') }}">Berita</a></li>
-                <li class="breadcrumb-item active" aria-current="page"> Edit & Detail Berita {{ $berita->title }}</li>
+                <li class="breadcrumb-item active" aria-current="page"> Edit & Detail Berita</li>
             </ol>
         </nav>
     </div><br>
@@ -63,7 +63,9 @@
                                     value="{{ $berita->excerpt }}">
                             </div><br>
                             <label for="">Isi Konten Berita</label>
-                            <textarea class="summernote" name="body">{{ $berita->body }}</textarea>
+                            <div class="col-md-9">
+                                <textarea class="summernote" name="body">{{ $berita->body }}</textarea>
+                            </div>
                             <br>
                             <button type="submit" class="btn btn-inverse-info btn-block"><i class="fas fa-upload"></i>
                                 Posting</button><br>

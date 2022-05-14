@@ -9,7 +9,7 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Carousel</li>
             </ol>
         </nav>
@@ -30,9 +30,9 @@
                     <div class="card-columns">
                         <label>File upload</label>
                         <input type="file" class="form-control" name="image">
-                        <label>Text Judul</label>
+                        <label> Judul</label>
                         <input type="text" class="form-control" maxlength="100" name="judul">
-                        <label>Text Konten</label>
+                        <label>Keterangan</label>
                         <input type="text" class="form-control" maxlength="100" name="keterangan">
                     </div>
                 </div><br>
@@ -55,7 +55,7 @@
             <div class="card-title">
                 <div class="card-columns">
                     @foreach ($beranda_img1 as $asu)
-                        <div class="card" style="background-color: rgb(58, 72, 39)">
+                        <div class="card" style="background-color: rgb(196, 199, 191)">
                             <a href="{{ asset($asu->image) }}" target="_blank"><img class="card-img-top"
                                     src="{{ asset($asu->image) }}" alt="Card image cap"></a>
                             <div class="card-body">

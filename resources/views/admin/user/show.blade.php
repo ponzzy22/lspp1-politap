@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Pengguna</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Pengguna</li>
             </ol>
@@ -25,7 +25,7 @@
                 class="form-sample">
                 @csrf
                 @method('put')
-                <a href=""><button class="btn btn-inverse-info btn-block"><i class="fas fa-save"></i> Update data
+                <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i> Update data
                         Pengguna</button></a>
                 <br>
                 <div class="row">
@@ -61,10 +61,10 @@
                             <div class="col-sm-9">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">@</span>
-                                    <input type="email" maxlength="100" class="form-control" name="surel"
-                                        value="{{ old('surel', $user->surel) }}">
+                                    <input type="email" maxlength="100" class="form-control" name="email2"
+                                        value="{{ old('email2', $user->email2) }}">
                                 </div>
-                                @error('surel')
+                                @error('email2')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -85,9 +85,9 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Tempat Lahir</label>
                             <div class="col-sm-9">
-                                <input type="text" maxlength="100" class="form-control" name="tmpt_lahir"
-                                    value="{{ old('tmpt_lahir', $user->tmpt_lahir) }}">
-                                @error('tmpt_lahir')
+                                <input type="text" maxlength="100" class="form-control" name="tempat_lahir"
+                                    value="{{ old('tempat_lahir', $user->tempat_lahir) }}">
+                                @error('tempat_lahir')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                 @enderror
                             </div>

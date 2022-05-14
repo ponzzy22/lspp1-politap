@@ -1,98 +1,158 @@
 @extends('layout/2')
 @section('isi')
     @include('layout/verifikasi')
+    {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
         <h4>
-            <i class="fab fa-pagelines"></i> List Assesmen Mandiri/Formulir APL-02
+            <i class="fas fa-list-alt"></i> Elemen
         </h4>
-        <!-- /////////////////////////////////// -->
-        <!-- BREADCRUMB -->
-        <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">List Skema</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Unit Kompetensi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">List Assesmen Mandiri/Formulir APL-02</li>
+                <li class="breadcrumb-item active" aria-current="page">List Elemen</li>
             </ol>
         </nav>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- TAMPILAN DATA -->
-    <!-- /////////////////////////////////// -->
-    <div class="row">
-        <div class="col-lg-8 grid-margin stretch-card">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Assesmen Mandiri dari Unit Kompetensi {{ $unikom->unikom }}</h4>
-                    <p class="card-description">
-                        {{-- Add class <code>.table</code> --}}
-                    </p>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 10px">Action</th>
-                                    <th style="width: 10px">#</th>
-                                    <th style="width: 700px">Assesmen.</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($unikom->asesmens as $asu)
-                                    <tr>
-                                        <td class="text-right">
-                                            <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
-                                                id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                <i class="fa fa-cog"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
-                                                {{-- <a href="{{ route('unikom.edit', $asu->id) }}"><button type="submit" class="btn btn-inverse-warning btn-sm"><i class="fa fa-edit "></i>  Edit Unit Kompetensi</button></a> --}}
-                                                {{-- <a href="{{ route('show_asesmen', $asu->id) }}"><button type="submit" class="btn btn-inverse-info btn-sm"><i class="fa fa-eye "></i>  List Asesmen Mandiri</button></a> --}}
-                                                <form action="{{ route('asesmen.destroy', $asu->id) }}" method="POST"
-                                                    onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <a href=""><button type="submit"
-                                                            class="btn btn-inverse-danger btn-sm btn-block"><i
-                                                                class="fa fa-trash "></i> Hapus</button></a>
-                                                </form>
-                                            </div>
-                                        </td>
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $asu->asesmen }}</td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="col-lg-4 grid-margin stretch-card">
-            <div class="card">
+    {{-- <---------------------- TAMBAH ELEMEN ----------------------> --}}
+    <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
+        <div class="card">
+            <div class="card-header" role="tab" id="heading-11">
+                <h6 class="mb-0">
+                    <a class="collapsed" data-toggle="collapse" href="#collapse-11" aria-expanded="true"
+                        aria-controls="collapse-11">
+                        &plus; Klik disini Untuk Menambahkan Elemen
+                    </a>
+                </h6>
+            </div>
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+                data-parent="#accordion-4">
                 <div class="card-body">
-                    <h4 class="card-title">Tambah Assesmen</h4>
-                    <p class="card-description">
-                        {{-- Add class <code>.table-hover</code> --}}
-                    </p>
                     <form action="{{ route('asesmen.store') }}" method="POST">
                         @csrf
-                        <div class="input-group">
-                            <input type="text" maxlength="100" class="form-control" name="asesmen"
-                                placeholder="Assesmen Mandiri" aria-label="Recipient's username">
-                            @error('asesmen')
-                                <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                            @enderror
-                            <div class="input-group-append">
-                                <button class="btn btn-sm btn-success" name="unikom_id" value="{{ $unikom->id }}"
-                                    type="submit">Simpan</button>
-                            </div>
+                        <label for="">Nama Elemen</label>
+                        <input type="text" maxlength="100" class="form-control" name="asesmen"
+                            placeholder="Isi Nama Elemen" aria-label="Recipient's username">
+                        @error('asesmen')
+                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                        @enderror
+                        <br>
+                        <label for="">Kriteria</label>
+                        <textarea type="text" class="summernote" maxlength="1000" class="form-control" name="kriteria"
+                            placeholder="Kriteria" aria-label="Recipient's username"></textarea>
+                        @error('kriteria')
+                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                        @enderror
+                        <br>
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-block btn-success" name="unikom_id" value="{{ $unikom->id }}"
+                                type="submit"><i class="fas fa-save"></i> Simpan Elemen</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+    {{-- <---------------------- TAMPIL DATA ----------------------> --}}
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+
+            <div class="card-body">
+                <h4 class="card-title"><i class="fab fa-pagelines"></i> Skema : {{ $unikom->skema->skema }} </h4>
+                <h4 class="card-title"><i class="fas fa-list-alt"></i> Unit : {{ $unikom->unikom }} </h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th style="width: 10px">Action</th>
+                                <th style="width: 300px">Elemen</th>
+                                <th style="width: 700px">Kriteria</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($unikom->asesmens as $asu)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td class="text-right">
+                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
+                                            id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <i class="fa fa-cog"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
+                                            <div class="btn btn-warning btn-block btn-sm" data-toggle="modal"
+                                                data-target="#exampleModal2-{{ $asu->id }}"><i
+                                                    class="fas fa-edit "></i> Edit Elemen
+                                            </div>
+                                            <form action="{{ route('asesmen.destroy', $asu->id) }}" method="POST"
+                                                onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
+                                                @csrf
+                                                @method('delete')
+                                                <a href=""><button type="submit"
+                                                        class="btn btn-danger btn-sm btn-block"><i
+                                                            class="fa fa-trash "></i> Hapus</button></a>
+                                            </form>
+                                        </div>
+                                    </td>
+                                    <td>{{ $asu->asesmen }}</td>
+                                    <td>{!! $asu->kriteria !!}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- <--------------- MODAL INFO ---------------> --}}
+    @foreach ($unikom->asesmens as $asu)
+    <div class="modal fade" id="exampleModal2-{{ $asu->id }}" tabindex="-1" role="dialog"
+        aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">{{ $asu->asesmen }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('asesmen.update', $asu->id) }}" method="POST">
+                        @csrf
+                        @method('put')
+                        <label for="">Nama Elemen</label>
+                        <input type="text" maxlength="100" class="form-control" value="{{ $asu->asesmen }}" name="asesmen"
+                            placeholder="Isi Nama Elemen" aria-label="Recipient's username">
+                        @error('asesmen')
+                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                        @enderror
+                        <br>
+                        <label for="">Kriteria</label>
+                        <textarea type="text" class="summernote" maxlength="1000" class="form-control" name="kriteria"
+                            placeholder="Kriteria" aria-label="Recipient's username">{!! $asu->kriteria !!}</textarea>
+                        @error('kriteria')
+                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                        @enderror
+                        <br>
+                        <div class="input-group-append">
+                            <button class="btn btn-sm btn-block btn-info" name="unikom_id" value="{{ $unikom->id }}"
+                                type="submit"><i class="fas fa-magic"></i> Update Elemen</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <i class="fas fa-flag-checkered"></i></button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endforeach
 @endsection

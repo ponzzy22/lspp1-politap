@@ -23,8 +23,8 @@
                             <img src="{{ asset('public/assets/images/logo/lsp.png') }}" alt="logo">
                         </div>
                         <h4>Belum Gabung kah?</h4>
-                        <h6 class="font-weight-light">Ayo Gabung Sekarang! Lengkapi Form Berikut:</h6>              
-                        
+                        <h6 class="font-weight-light">Ayo Gabung Sekarang! Lengkapi Form Berikut:</h6>
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="form-group">
@@ -56,9 +56,49 @@
                                 <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                                 </span>
-                                @enderror  
+                                @enderror
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label>Jurusan</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend bg-transparent">
+                                    <span class="input-group-text bg-transparent border-right-0">
+                                        <i class="fas fa-graduation-cap text-primary"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control form-control-lg" name="jurusan_id">
+                                    <option value="" holder>Pilihan Jurusan</option>
+                                    @foreach ($jurusan as $result)
+                                        <option value="{{ $result->id }}">
+                                            {{ $result->jurusan }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                                @error('email2')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend bg-transparent">
+                                    <span class="input-group-text bg-transparent border-right-0">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                    </span>
+                                </div>
+                                <input type="email" class="form-control @error('email2') is-invalid @enderror form-control-lg border-left-0" name="email2" value="{{ old('email2') }}" required autocomplete="email" placeholder="Email">
+                                @error('email2')
+                                <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label>Password</label>
                             <div class="input-group">
@@ -67,7 +107,7 @@
                                         <i class="fa fa-lock text-primary"></i>
                                     </span>
                                 </div>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror form-control-lg border-left-0" id="exampleInputPassword" name="password" required autocomplete="new-password" placeholder="Password">                        
+                                <input type="password" class="form-control @error('password') is-invalid @enderror form-control-lg border-left-0" id="exampleInputPassword" name="password" required autocomplete="new-password" placeholder="Password">
                             </div>
                         </div>
                         <div class="form-group">
@@ -78,7 +118,7 @@
                                         <i class="fa fa-lock text-primary"></i>
                                     </span>
                                 </div>
-                                <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" name="password_confirmation" required autocomplete="new-password" placeholder="Password">                        
+                                <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" name="password_confirmation" required autocomplete="new-password" placeholder="Password">
                             </div>
                         </div>
 
@@ -86,7 +126,7 @@
                             <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN UP</button>
                         </div>
                         <div class="text-center mt-4 font-weight-light">
-                            Sudah Punya Akun? 
+                            Sudah Punya Akun?
                             <a href="{{ route('login') }}" class="text-primary">Login</a>
                         </div>
                     </form>

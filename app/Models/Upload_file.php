@@ -13,6 +13,8 @@ class Upload_file extends Model
         'data_register_id',
         'name',
         'kode',
+        'kode_dokumen',
+        'koreksi',
         'status',
         'user_id',
         'image'

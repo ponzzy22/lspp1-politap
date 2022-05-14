@@ -4,10 +4,10 @@
     <br><br>
     <div class="page-header">
         <h3 class="font-weight-normal text-primary" data-aos="fade-left" data-aos-delay="300"><i class="fas fa-images"></i>
-            dfdfsf</h3>
+            {{ $galeri->galeri }}</h3>
         <nav aria-label="breadcrumb" data-aos="fade-left" data-aos-delay="300">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/') }}">
+                <li class="breadcrumb-item"><a href="{{ route('beranda') }}">
                         <p>beranda</p>
                     </a></li>
                 <li class="breadcrumb-item active" aria-current="page">GALERI</li>

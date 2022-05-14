@@ -1,10 +1,9 @@
-@extends('layout/2')
+@extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('beranda_img2.update', $pengelola->id) }}" method="post"
-                enctype="multipart/form-data">
+            <form action="{{ route('beranda_img2.update', $pengelola->id) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
                 <div class="row">
@@ -15,13 +14,13 @@
 
                     <div class="col-md-4">
                         <label>Jabatan</label>
-                        <textarea class="form-control" maxlength="40" rows="1" name="keterangan" >{{ $pengelola->keterangan }}</textarea><br>
+                        <textarea class="form-control" maxlength="40" rows="1" name="keterangan">{{ $pengelola->keterangan }}</textarea><br>
                     </div>
 
                     <div class="col-md-4">
                         <label>No Handphone</label>
-                        <input type="text" class="form-control" value="{{ $pengelola->no_hp }}"  maxlength="40" name="no_hp"
-                            id="">
+                        <input type="text" class="form-control" value="{{ $pengelola->no_hp }}" maxlength="40"
+                            name="no_hp" id="">
                     </div>
                 </div>
                 <div class="row">
@@ -43,11 +42,11 @@
                 <div class="row">
                     <div class="col-md-4">
                         <label>Link Email</label>
-                        <textarea class="form-control" maxlength="40" rows="1" name="email" >{{ $pengelola->email }}</textarea><br>
+                        <textarea class="form-control" maxlength="40" rows="1" name="email">{{ $pengelola->email }}</textarea><br>
                     </div>
 
                     <div class="col-md-4">
-                        <input type="file" class="form-control" name="image"><br>
+                        <input type="file" class="form-control" accept=".png" name="image"><br>
                     </div>
                 </div>
                 <div class="form-action">

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/4.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/44.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
     <link rel="stylesheet" href="{{ asset('public/assets3/css/aos.css') }}">
     <style>
@@ -68,7 +68,9 @@
         <nav class="navbar horizontal-layout-navbar fixed-top navbar-expand-lg" data-aos="fade-down"
             data-aos-delay="100">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-                <a class="navbar" href="https://www.kemdikbud.go.id/"><img
+                <a class="navbar" href="https://www.bnsp.go.id/"><img
+                    src="{{ asset('public/assets/images/logo/bnsp.png') }}" width="70px" alt="logo" /></a>
+                <a style="padding-left: 30%" class="navbar" href="https://www.kemdikbud.go.id/"><img
                         src="{{ asset('public/assets/images/logo/kemendikbud.png') }}" width="32px" alt="logo" /></a>
                 <a class="navbar" href="https://politap.ac.id/"><img
                         src="{{ asset('public/assets/images/logo/politap.png') }}" width="31px" alt="logo" /></a>
@@ -88,24 +90,23 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-nav-right">
-
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fab fa-facebook"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
@@ -118,8 +119,30 @@
         </nav><br>
 
         <div class="container-fluid page-body-wrapper">
-
             {{-- <-------------------- SETTING TRIGGER --------------------> --}}
+            {{-- <div class="theme-setting-wrapper">
+                <div id="settings-trigger"><i class="fas fa-tasks"></i></div>
+                <div id="theme-settings" class="settings-panel">
+                    <i class="settings-close fa fa-times"></i>
+                    <p class="settings-heading">Tema Sidebar</p>
+                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+                    </div>
+                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+                    </div>
+                    <p class="settings-heading mt-2">Tema Navigasi</p>
+                    <div class="color-tiles mx-0 px-4">
+                        <div class="tiles primary"></div>
+                        <div class="tiles success"></div>
+                        <div class="tiles warning"></div>
+                        <div class="tiles danger"></div>
+                        <div class="tiles info"></div>
+                        <div class="tiles dark"></div>
+                        <div class="tiles default"></div>
+                    </div>
+                </div>
+            </div> --}}
             <div class="theme-setting-wrapper">
                 <a href="#home">
                     <div id="settings-trigger" data-toggle="tooltip" data-placement="right" title=""
@@ -134,7 +157,7 @@
             </div>
             <div class="theme-setting-wrapper">
                 <a href="{{ route('profil.front') }}">
-                    <div id="settings-trigger4" data-toggle="tooltip" data-placement="right" title="Profil, Visi, Misi, Struktur Organisasi & Pengelola"
+                    <div id="settings-trigger4" data-toggle="tooltip" data-placement="right" title="Profil, Visi, Misi, Struktur Organisasi & Data Pengelola"
                         data-original-title="Basic tooltip"><i class="fas fa-building"></i></div>
                 </a>
             </div>
@@ -152,18 +175,18 @@
             </div>
             <div class="theme-setting-wrapper">
                 <a href="{{ route('pengumuman.list') }}">
-                    <div id="settings-trigger7" data-toggle="tooltip" data-placement="right" title="Pengumuman"
+                    <div id="settings-trigger7" data-toggle="tooltip" data-placement="right" title="Berita/Pengumuman"
                         data-original-title="Basic tooltip"><i class="fas fa-bullhorn"></i></div>
                 </a>
             </div>
             <div class="theme-setting-wrapper">
                 <a href="{{ route('berita.list') }}">
-                    <div id="settings-trigger8" data-toggle="tooltip" data-placement="right" title="Artikel/Berita"
+                    <div id="settings-trigger8" data-toggle="tooltip" data-placement="right" title="Informasi Pendaftaran"
                         data-original-title="Basic tooltip"><i class="fas fa-info"></i></div>
                 </a>
             </div>
             <div class="theme-setting-wrapper">
-                <a href="#">
+                <a href="{{ route('file.tampil') }}">
                     <div id="settings-trigger9" data-toggle="tooltip" data-placement="right" title="Download Dokumen"
                         data-original-title="Basic tooltip"><i class="fas fa-file-download"></i></div>
                 </a>
@@ -186,7 +209,7 @@
             <div class="main-panel">
                 <br><br><br>
                 {{-- <---------------------- CAROUSEL ----------------------> --}}
-                <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-aos="zoom-in"
+                <div style="padding-top: 30px" id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-aos="zoom-in"
                     data-aos-delay="100">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators2" data-slide-to="0" class="">

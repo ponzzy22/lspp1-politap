@@ -1,7 +1,7 @@
 @extends('layout/6')
 @section('isi')
     {{-- <---------------------- PROFIL ----------------------> --}}
-    <div id="profil" class="card">
+    <div id="profil" class="card col-md-12">
         <div class="card-body" style="background-size: cover" style="background-repeat: no-repeat">
             <h4 class="text text-primary" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-building"></i> Tentang
                 Kami</h4><br>
@@ -17,13 +17,13 @@
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="200">
                             <a class="nav-link" id="pills-profile-tab-custom" data-toggle="pill" href="#pills-career"
                                 role="tab" aria-controls="pills-profile" aria-selected="false">
-                                VISI LSP - POLITAP
+                                VISI
                             </a>
                         </li>
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="300">
                             <a class="nav-link" id="pills-contact-tab-custom" data-toggle="pill" href="#pills-music"
                                 role="tab" aria-controls="pills-contact" aria-selected="false">
-                                MISI LSP -POLITAP
+                                MISI
                             </a>
                         </li>
                         <li class="nav-item" data-aos="fade-up" data-aos-delay="400">
@@ -51,6 +51,9 @@
                                             {!! $asu->profil !!}
                                         </p>
                                     </div>
+                                </div><br>
+                                <div data-aos="fade-up" data-aos-delay="600">
+                                    {!! $asu->isi !!}
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-career" role="tabpanel"
@@ -88,7 +91,7 @@
                             <div class="tab-pane fade" id="pills-energy" role="tabpanel"
                                 aria-labelledby="pills-energy-tab-custom">
                                 <div class="media">
-                                    <img class="mr-5 w-35 rounded" src="{{ asset($asu->image) }}" alt="image"
+                                    <img style="width: 800px" src="{{ asset($asu->image) }}" alt="image"
                                         data-aos="fade-up" data-aos-delay="700">
                                     <div class="media-body" data-aos="fade-up" data-aos-delay="700">
                                     </div>
@@ -96,16 +99,16 @@
                             </div>
                         @endforeach
                     </div>
-                    <a href="" data-aos="fade-right" data-aos-delay="600" style="padding-left: 90%"><button
+                    <a href="{{ route('profil.front') }}" data-aos="fade-right" data-aos-delay="600" style="padding-left: 90%"><button
                             class="btn btn-black"><i class="fas fa-arrow-alt-circle-right"></i> Halaman Profil</button></a>
                 </div>
             </div>
         </div>
-    </div><br>
+    </div><br><br>
 
 
     {{-- <---------------------- LAYANAN ----------------------> --}}
-    <div id="layanan" class="card">
+    {{-- <div id="layanan" class="card">
         <div class="card-body">
             <h4 class="text text-primary" data-aos="fade-right" data-aos-delay="100"><i class="fab fa-pagelines"></i>
                 Layanan di LSP - POLITAP</h4>
@@ -140,7 +143,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-9 col-lg-6">
+                <div class="col-6 col-lg-7">
                     <div class="tab-content tab-content-vertical tab-content-vertical-custom">
                         <div class="tab-pane fade active show" id="home-3" role="tabpanel"
                             aria-labelledby="home-tab-custom">
@@ -304,53 +307,7 @@
             <a href="" data-aos="fade-up" data-aos-delay="500" style="padding-left: 82%"><button class="btn btn-black"><i
                         class="fas fa-arrow-alt-circle-right"></i> Halaman Layanan</button></a>
         </div>
-    </div><br>
-
-
-    {{-- <---------------------- INFORMASI PENDAFTARAN ----------------------> --}}
-    <div class="card" style="">
-        <div class="card-body" style="background-image: url('#')">
-            <h4 class="text text-primary" data-aos="fade-up" data-aos-delay="100"><i class="fas  fa-info-circle"></i>
-                Informasi Pendaftaran </h4><br>
-            <ul class="nav nav-pills nav-pills-info" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-                        aria-controls="pills-home" aria-selected="true" data-aos="fade-up" data-aos-delay="200">Prosedur
-                        Pendaftaran</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-                        aria-controls="pills-profile" aria-selected="false" data-aos="fade-up" data-aos-delay="200">Download
-                        Dokumen</a>
-                </li>
-            </ul>
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    @foreach ($info as $asu)
-                        <div class="media">
-                            <a href="{{ asset($asu->image) }}" target="_blank"><img class="mr-3 w-800 rounded"
-                                    src="{{ asset($asu->image) }}" height="500px" alt="" data-aos="zoom-in"
-                                    data-aos-delay="200"></a>
-                            <div class="media-body" data-aos="fade-left" data-aos-delay="200">
-                                <p class="text text-white" data-aos="fade-left" data-aos-delay="200">
-                                    {!! $asu->keterangan !!}
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    <div class="media">
-                        {{-- <img class="mr-3 w-25 rounded" src="http://www.urbanui.com/" alt="sample image"> --}}
-                        <div class="media-body">
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br><br>
-
+    </div><br> --}}
 
     {{-- <---------------------- BERITA ----------------------> --}}
     <h4 class="text text-primary" data-aos="fade-up" data-aos-delay="100"><i class="fas  fa-bullhorn"></i>
@@ -377,48 +334,48 @@
     </div><br>
 
     {{-- <---------------------- FLIP CARD KARYAWAN ----------------------> --}}
-    <div id="pengelola" class="col-md-12" style="padding-left: 5%">
-        <h4 class="text text-primary" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-users"></i>
-            Pengelola LSP - POLITAP</h4>
-        <div class="row">
-            @foreach ($karyawan as $asu)
-                <div class="flip-card" style="padding-top: 30px" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img style="padding-top: 14%" height="240px" src="{{ asset($asu->image) }}" alt=""
-                                width="150px">
-                        </div>
-                        <div class="flip-card-back">
-                            <p></p>
-                            <p>{{ $asu->nama }}</p>
-                            <p>{{ $asu->keterangan }}</p>
-                            <img style="padding-top: 4%" height="100px" src="{{ asset($asu->image) }}" alt="">
-                            <br><br><br>
-                            <p>{{ $asu->no_hp }}</p>
-                            <p>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ $asu->facebook }}" type="_blank"><button type="button"
-                                        class="btn btn-dark"><i class="fab fa-facebook"></i></button></a>
-                                <a href="{{ $asu->instagram }}" type="_blank"><button type="button"
-                                        class="btn btn-dark"><i class="fab fa-instagram"></i></button></a>
-                                <a href="{{ $asu->twitter }}" type="_blank"><button type="button"
-                                        class="btn btn-dark"><i class="fab fa-twitter"></i></button></a>
-                                <a href="{{ $asu->email }}" type="_blank"><button type="button"
-                                        class="btn btn-dark"><i class="far fa-envelope "></i></button></a>
+        <div id="pengelola" class="col-md-12" style="padding-left: 5%">
+            <h4 class="text text-primary" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-users"></i>
+                Pengelola LSP - POLITAP</h4>
+            <div class="row">
+                @foreach ($karyawan as $asu)
+                    <div class="flip-card" style="padding-top: 30px" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img style="padding-top: 14%" height="240px" src="{{ asset($asu->image) }}" alt=""
+                                    width="150px">
                             </div>
-                            </p>
+                            <div class="flip-card-back">
+                                <p></p>
+                                <p>{{ $asu->nama }}</p>
+                                <p>{{ $asu->keterangan }}</p>
+                                <img style="padding-top: 4%" height="100px" src="{{ asset($asu->image) }}" alt="">
+                                <br><br><br>
+                                {{-- <p>{{ $asu->no_hp }}</p> --}}
+                                <p>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="{{ $asu->facebook }}" type="_blank"><button type="button"
+                                            class="btn btn-dark"><i class="fab fa-facebook"></i></button></a>
+                                    <a href="{{ $asu->instagram }}" type="_blank"><button type="button"
+                                            class="btn btn-dark"><i class="fab fa-instagram"></i></button></a>
+                                    <a href="{{ $asu->twitter }}" type="_blank"><button type="button"
+                                            class="btn btn-dark"><i class="fab fa-twitter"></i></button></a>
+                                    <a href="{{ $asu->email }}" type="_blank"><button type="button"
+                                            class="btn btn-dark"><i class="far fa-envelope "></i></button></a>
+                                </div>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div><br>
-            @endforeach
+                    </div><br>
+                @endforeach
+            </div>
         </div>
-    </div>
 
 
     {{-- <---------------------- PETA ----------------------> --}}
-    <h4 style="padding-left: 10%" class="text text-primary" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-map"></i>
+    <h4 style="padding-left: 5%" class="text text-primary" data-aos="fade-right" data-aos-delay="100"><i class="fas fa-map"></i>
         Peta Lokasi LSP - POLITAP</h4><br>
-    <div class="row" style="padding-left: 10%">
+    <div class="row" style="padding-left: 5%">
         <div class="col-md-6">
             <iframe data-aos="zoom-in" data-aos-delay="200"
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15951.250339779255!2d109.988631!3d-1.8168375!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe05ee65e3627ba6c!2sPoliteknik%20Negeri%20Ketapang!5e0!3m2!1sid!2sid!4v1650546915934!5m2!1sid!2sid"
@@ -426,8 +383,9 @@
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
+        <div data-aos="zoom-in" data-aos-delay="200 class="card"></div><div data-aos="zoom-in" data-aos-delay="200 class="card"></div>
         <div class="card col-md-5" data-aos="zoom-in" data-aos-delay="200">
-            <img class="rounded-0" style="padding-top: 7% ; padding-left: 8%"
+            <img class="rounded-0" style="padding-top: 7% ; padding-left: 10%"
                 src="{{ asset('public/assets/images/gedung/IMG_20220420_131245.jpg') }}" width="180px" height="110px"
                 alt="">
             <h5 style="padding-top: 10%; padding-left: 2%" class="text text-primary">Alamat:</h5>
@@ -474,12 +432,12 @@
                 </div>
             </div>
             <div class="statistics-item">
-                <div class="card-img" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="200">
                     <img src="public/assets/images/logo/politap.png" width="90px" alt="">
                 </div>
             </div>
             <div class="statistics-item">
-                <div class="card-img" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-img" data-aos="fade-up" data-aos-delay="200">
                     <img src="public/assets/images/logo/lsp.png" width="110px" alt="">
                 </div>
             </div>

@@ -24,8 +24,8 @@ class User extends Authenticatable
         'email',
         'password',
         'kode',
-        'id', 
-        'nim', 
+        'id',
+        'nim',
         'nama',
         'tmpt_lahir	',
         'tgl_lahir',
@@ -44,12 +44,14 @@ class User extends Authenticatable
         'ktp',
         'ktm',
         'khs',
+        'email2',
         'jurusan_id',
         'semester_id',
+        'tempat_lahir',
         'email'
     ];
 
-    
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -75,7 +77,7 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);
     }
-    
+
 
     // public function asesmens()
     // {
@@ -87,5 +89,5 @@ class User extends Authenticatable
 
     //     );
     // }
-    
+
 }

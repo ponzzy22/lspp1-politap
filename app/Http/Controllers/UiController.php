@@ -9,12 +9,15 @@ use App\Models\Beranda_img2;
 use App\Models\Berita;
 use App\Models\Data_register;
 use App\Models\F_profil;
+use App\Models\File;
 use App\Models\Galeri_foto;
 use App\Models\Group_galeri;
 use App\Models\Info;
 use App\Models\Skema;
 use App\Models\Strorg;
 use App\Models\Tuk;
+use App\Models\Unikom;
+use App\Models\Upload_file;
 use Illuminate\Http\Request;
 
 class UiController extends Controller
@@ -58,9 +61,10 @@ class UiController extends Controller
         $image2 = Beranda_img2::orderBy('created_at','desc')->take(4)->get();
         $carousel = Beranda_img1::all();
         $beranda = Beranda::all();
-        $profil = F_profil::all();
+        $profil = F_profil::where('id', '1')->get();
         $strorg = Strorg::all();
         $skema = Skema::all();
+        $unikom = Unikom::all();
         $tuk = Tuk::where('id', '>', 1)->get();
         $asesor = Asesor::where('id', '>', 1)->get();
         $sertifikat = Data_register::where('status', 'Sertifikasi Selesai')->get();
@@ -77,12 +81,13 @@ class UiController extends Controller
             'sertifikat',
             'tuk',
             'skema',
+            'unikom',
             'strorg',
             'profil',
             'carousel',
             'image2',
             'info',
-            'karyawan'
+            'karyawan',
         ));
     }
 
@@ -97,18 +102,20 @@ class UiController extends Controller
     {
         $strorg = Strorg::all();
         $beranda = Beranda::all();
-        $profil = F_profil::all();
+        $profil = F_profil::where('id', '2')->get();
         return view('front/profil', compact('profil', 'strorg', 'beranda'));
     }
 
 
     public function berita_list()
     {
+        $file = File::all();
+        $info = Info::all();
         $carousel = Beranda_img1::all();
         $beranda = Beranda::all();
         $berita = Berita::where('kategori_id', '1')->get();
         $pengumuman = Berita::where('kategori_id', '2')->get();
-        return view('front/berita', compact('berita','carousel', 'beranda', 'pengumuman'));
+        return view('front/berita', compact('berita', 'file', 'carousel', 'info', 'beranda', 'pengumuman'));
     }
 
 
@@ -159,10 +166,22 @@ class UiController extends Controller
 
     public function tampil_skema()
     {
+        $tuk = Tuk::where('id', '>', 1)->get();
+        $asesor = Asesor::where('id', '>', 1)->get();
+        $sertifikat = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->get();
         $skema = Skema::all();
+        $info = Info::all();
         $carousel = Beranda_img1::all();
         $beranda = Beranda::all();
         $galeri = Group_galeri::all();
-        return view('front/tampil_skema', compact('galeri','skema','carousel', 'beranda'));
+        return view('front/tampil_skema', compact('galeri', 'info', 'tuk', 'asesor', 'sertifikat', 'skema','carousel', 'beranda'));
+    }
+
+
+    public function file()
+    {
+        $beranda = Beranda::all();
+        $file = File::all();
+        return view('front/file', compact('file', 'beranda'));
     }
 }

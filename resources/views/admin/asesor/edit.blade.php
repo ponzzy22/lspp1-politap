@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('asesor.index') }}">Asesor</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detail & Update data Asesor</li>
             </ol>
@@ -32,7 +32,7 @@
                         <div class="d-flex mb-3">
                             <div class="progress progress-md flex-grow">
                                 <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="55"
-                                    style="width: 55%" aria-valuemin="0" aria-valuemax="100"></div>
+                                    style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="border-bottom py-4">
@@ -46,7 +46,7 @@
                         <div class="d-flex">
                             <div class="progress progress-md flex-grow">
                                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="75"
-                                    style="width: 75%" aria-valuemin="0" aria-valuemax="100"></div>
+                                    style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="py-4">
@@ -125,7 +125,7 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Kode Asesor</label>
                                             <div class="col-sm-9">
-                                                <input type="number" name="nik" class="form-control"
+                                                <input type="text" maxlength="100" name="nik" class="form-control"
                                                     value="{{ $asesor->nik }}">
                                                 @error('nik')
                                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
@@ -151,9 +151,10 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Email</label>
+                                            <label class="col-sm-3  col-form-label">Email</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" name="email" value="{{ $asesor->email }}">
+                                                <input class="form-control" maxlength="100" type="email" name="email"
+                                                    value="{{ $asesor->email }}">
                                                 @error('email')
                                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                                 @enderror
@@ -161,21 +162,22 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                      <div class="form-group row">
-                                          <label class="col-sm-3 col-form-label">Nomor Handphone</label>
-                                          <div class="col-sm-9">
-                                              <input class="form-control" name="no_hp" value="{{ $asesor->no_hp }}">
-                                              @error('no_hp')
-                                                  <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                              @enderror
-                                          </div>
-                                      </div>
-                                  </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Nomor Handphone</label>
+                                            <div class="col-sm-9">
+                                                <input class="form-control" type="number" name="no_hp"
+                                                    value="{{ $asesor->no_hp }}">
+                                                @error('no_hp')
+                                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Alamat</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" name="alamat"
+                                                <input class="form-control" maxlength="100" name="alamat"
                                                     value="{{ $asesor->alamat }}">
                                                 @error('alamat')
                                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>

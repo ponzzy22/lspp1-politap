@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tempat Uji Kompetensi</li>
             </ol>
         </nav>
@@ -33,18 +33,13 @@
                 <div class="card-body">
                     <form action="{{ route('tuk.store') }}" method="POST" class="form-sample">
                         @csrf
-                        <div class="card-description text-right">
-                            <button type="submit" class="btn btn-success btn-icon-text btn-block">
-                                <i class="fa fa-save btn-icon-prepend"></i>
-                                Tambahkan
-                            </button>
-                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">TUK</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="100" name="tuk" class="form-control" />
+                                        <input type="text" placeholder="Tempat Uji Kompetensi" maxlength="100" name="tuk"
+                                            class="form-control" />
                                         @error('tuk')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -55,7 +50,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Keterangan</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="100" name="alamat" class="form-control" />
+                                        <input type="text" placeholder="Keterangan" maxlength="100" name="alamat"
+                                            class="form-control" />
                                         @error('alamat')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -63,6 +59,10 @@
                                 </div>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                            <i class="fa fa-save btn-icon-prepend"></i>
+                            Simpan
+                        </button>
                     </form>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-sm btn-block"><i
+                                                                        class="btn btn-danger btn-sm btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus
                                                                         TUK</button></a>
                                                             </form>

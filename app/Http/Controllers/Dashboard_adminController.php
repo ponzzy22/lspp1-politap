@@ -21,15 +21,15 @@ class Dashboard_adminController extends Controller
         $dataasesor = Asesor::where('id', '>', 1)->count();  
         $dataskema = Skema::all()->count();  
         $datauser = User::all()->count();
-        $datasertifikat = Data_register::where('status', 'Sertifikasi Selesai')->count();        
-        $datatolak = Data_register::where('status', 'Pendaftaran Ditolak')->count();
-        $databaru = Data_register::where('status', 'Menunggu Validasi...')->count();
-        $datavalid = Data_register::where('status', 'Pendaftaran Divalidasi')->count();
+        $datasertifikat = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->count();        
+        $datatolak = Data_register::where('status', "<h4 style='color: rgb(141, 7, 7)'>Pendaftaran Ditolak</h4>")->count();
+        $databaru = Data_register::where('status', "<h4 style='color: green'>Menunggu Validasi...</h4>")->count();
+        $datavalid = Data_register::where('status', "<h4 style='color: rgb(34, 123, 138)'>Pendaftaran Divalidasi</h4>")->count();
         $datareg = Data_register::all()->count();
-        $newreg = Data_register::where('status', 'Menunggu Validasi...')->take(5)->get();
-        $jadwalreg = Data_register::where('status', 'Pendaftaran Divalidasi')->take(5)->get();
+        $newreg = Data_register::where('status', "<h4 style='color: green'>Menunggu Validasi...</h4>")->take(5)->get();
+        $jadwalreg = Data_register::where('status', "<h4 style='color: rgb(34, 123, 138)'>Pendaftaran Divalidasi</h4>")->take(5)->get();
         $datagaleri = Group_galeri::all()->take(5);
-        $datapemegang = Data_register::where('status', 'Sertifikasi Selesai')->take(6)->get(); 
+        $datapemegang = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->take(6)->get(); 
         $databerita = Berita::all()->take(4);    
         $image = Galeri_foto::all();   
 
@@ -53,39 +53,4 @@ class Dashboard_adminController extends Controller
         ));
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-    public function destroy($id)
-    {
-        //
-    }
 }

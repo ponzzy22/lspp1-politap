@@ -3,18 +3,18 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h3>
-            <i class="fas fa-cogs"></i> Setting Judul & Deskripsi
+            <i class="fas fa-cogs"></i> Setting Navigasi Atas
         </h3>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 {{-- <li class="breadcrumb-item">
                 <a href="#"> </a>
             </li> --}}
-                <li class="breadcrumb-item active" aria-current="page">Judul & Deskripsi</li>
+                <li class="breadcrumb-item active" aria-current="page">Setting Navigasi Atas</li>
             </ol>
         </nav>
     </div><br>
@@ -36,30 +36,16 @@
                         <table id="sortable-table-1" class="table">
                             <thead>
                                 <tr>
-                                    <th class="sortStyle">Judul Utama<i class="fa fa-angle-down"></i></th>
-                                    <th class="sortStyle">Judul Baris Kedua <i class="fa fa-angle-down"></i></th>
+                                    <th class="sortStyle">Nama Website<i class="fa fa-angle-down"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <h5>{{ $apa->judul }}</h5>
-                                    </td>
-                                    <td>
-                                        <h5>{{ $apa->judul2 }}</h5>
+                                        <h5>{!! $apa->judul !!}</h5>
                                     </td>
                             </tbody>
                         </table>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h5>Deskripsi Web</h5>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h6>{!! $apa->deskripsi !!}</h6>
-                            </div>
-                        </div>
                     </div>
                 @endforeach
             </div>

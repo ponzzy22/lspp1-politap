@@ -11,6 +11,8 @@ class Data_register extends Model
 
     protected $fillable = [
         'id',
+        'id_skema',
+        'kode_skema',
         'nim',
         'surel',
         'skema_name',
@@ -38,6 +40,7 @@ class Data_register extends Model
         'khs',
         'ktm',
         'lain',
+        'koreksi',
         'date', 'time', 'tuk_id', 'asesor_id', 'keterangan'
     ];
 

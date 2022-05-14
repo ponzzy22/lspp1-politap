@@ -6,7 +6,7 @@
             <i class="fas fa-info"></i> Informasi Pendaftaran
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-primary">
+            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Informasi Pendaftaran</li>
             </ol>

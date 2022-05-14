@@ -11,7 +11,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Data Pemegang Sertifikat</li>
             </ol>
         </nav>
@@ -21,7 +21,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4>
+            {{-- <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4> --}}
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -57,7 +57,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
-                                                    style="width: 117.5469px;">Mendaftar</th>
+                                                    style="width: 117.5469px;">Tanggal</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -76,7 +76,7 @@
                                                             {{-- <a href="{{ route('validasi.edit', $asu->id) }}"><button type="submit" class="btn btn-inverse-warning btn-sm btn-block"><i class="fa fa-edit "></i>  Edit </button></a> --}}
                                                             <a href="{{ route('validasi.show', $asu->id) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-info btn-sm btn-block"><i
+                                                                    class="btn btn-inverse-info  btn-block"><i
                                                                         class="fa fa-eye "></i> Detail Data</button></a>
                                                             <form action="{{ route('validasi.destroy', $asu->id) }}"
                                                                 method="POST"
@@ -84,7 +84,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-sm btn-block"><i
+                                                                        class="btn btn-inverse-danger  btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus</button></a>
                                                             </form>
                                                         </div>
@@ -92,7 +92,7 @@
                                                     <td>{{ $asu->id }}</td>
                                                     <td>{{ $asu->user_name }}</td>
                                                     <td>{{ $asu->skema_name }}</td>
-                                                    <td>{{ $asu->created_at }}</td>
+                                                    <td>{{ $asu->updated_at }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -6,13 +6,13 @@
     <!-- /////////////////////////////////// -->
     <div class="page-header">
         <h4>
-            <i class="fas fa-eye"></i> Album Foto {{ $galeri->galeri }}
+            <i class="fas fa-eye"></i> Album Foto
         </h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('galeri.index') }}">Galeri Foto</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Album Foto {{ $galeri->galeri }}</li>
+                <li class="breadcrumb-item active" aria-current="page">Album Foto </li>
             </ol>
         </nav>
     </div>
@@ -91,7 +91,7 @@
                                     @csrf
                                     @method('put')
                                     <input type="text" name="galeri" class="form-control"
-                                        value="{{ $galeri->galeri }}">
+                                        value="{{ $galeri->galeri }}"><br>
                                     <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
                                             class="fas fa-save"></i></button>
                                 </form>

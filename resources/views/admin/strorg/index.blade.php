@@ -10,10 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
-                {{-- <li class="breadcrumb-item">
-            <a href="#"> </a>
-            </li> --}}
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Struktur Organisasi</li>
             </ol>
         </nav>
@@ -37,7 +34,7 @@
                         <input type="file" class="form-control" name="image">
                     </div>
                     <button type="submit" class="btn btn-info btn-icon-text">
-                        <i class="fa fa-edit btn-icon-prepend"></i>
+                        <i class="fa fa-magic btn-icon-prepend"></i>
                         UPDATE
                     </button>
                     <a href="{{ route('strorg.index') }}"><button type="button" class="btn btn-danger btn-icon-text">

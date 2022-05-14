@@ -47,7 +47,7 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP <i class="fas fa-ellipsis-h"></i> WEBSITE ASESI</h5>
+                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP - WEBSITE ASESI</h5>
                         </div>
                     </li>
                 </ul>
@@ -56,7 +56,7 @@
                 <!-- /////////////////////////////////// -->
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ url('/') }}">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ route('beranda') }}">
                             <i class="fas fa-home mx-0"></i>
                         </a>
                     </li>
@@ -86,7 +86,7 @@
             <!-- /////////////////////////////////// -->
             <!-- TEMA WEBSITE -->
             <!-- /////////////////////////////////// -->
-            <div class="theme-setting-wrapper">
+            {{-- <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
                 <div id="theme-settings" class="settings-panel">
                     <i class="settings-close fa fa-times"></i>
@@ -106,7 +106,7 @@
                         <div class="tiles default"></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <!-- /////////////////////////////////// -->
             <!-- SIDEBAR -->
@@ -155,7 +155,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Instruksi Registrasi</a>
+                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Tutorial Pendaftaran</a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
@@ -163,11 +163,11 @@
                                     <a class="nav-link" href="{{ route('info.skema') }}">Info Skema</a>
                                 </li>
                             </ul>
-                            <ul class="nav flex-column sub-menu">
+                            {{-- <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('registrasi.index') }}">Registrasi Sertifikasi</a>
                                 </li>
-                            </ul>
+                            </ul> --}}
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi Sertifikat</a>

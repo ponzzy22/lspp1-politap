@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('unikom.index') }}">Unit Kompetensi</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Unit Kompetensi</li>
             </ol>
@@ -46,7 +46,7 @@
                         @endforeach
                     </select>
                 </div>
-                <button type="submit" class="btn btn-info mb-2 btn-block"><i class="fas fa-save"> </i>  Update</button>
+                <button type="submit" class="btn btn-info mb-2 btn-block"><i class="fas fa-save"> </i> Update</button>
             </form>
         </div>
     </div>

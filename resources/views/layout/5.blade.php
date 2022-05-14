@@ -5,21 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>LSP P1-POLITAP | ADMINISTRASI</title>
-    <!-- /////////////////////////////////// -->
-    <!-- ASSETS -->
-    <!-- /////////////////////////////////// -->
+
+    {{-- <---------------------- ASSET ----------------------> --}}
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
-    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
+    <link rel="stylesheet" href="{{ asset('public/assets/css/counter.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/modules/dropzone.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/modules/components.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets2/modules/summernote/summernote-bs4.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets2/modules/codemirror/lib/codemirror.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets2/modules/codemirror/theme/duotone-dark.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets2/modules/jquery-selectric/selectric.css') }}">
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 </head>
 
@@ -30,12 +31,12 @@
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ url('backend') }}"><img
+                <a class="navbar-brand brand-logo" href="{{ route('admin') }}"><img
                         src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
-                <a class="navbar-brand brand-logo-mini" href="#"><img
+                <a class="navbar-brand brand-logo-mini" href="{{ route('admin') }}"><img
                         src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
@@ -55,7 +56,7 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5>LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP <i class="fas fa-ellipsis-h"></i>
+                            <h5>LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP -
                                 ADMINISTRASI WEBSITE</h5>
                         </div>
                     </li>
@@ -66,8 +67,14 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
-                            href="{{ url('/') }}">
-                            <i class="fas fa-desktop mx-0"></i>
+                            href="{{ route('beranda') }}">
+                            <i class="fas fa-home mx-0"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
+                            href="{{ route('dashasesi.index') }}">
+                            <i class="fas fa-user mx-0"></i>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -83,10 +90,10 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
-                            {{-- <a class="dropdown-item">
+                            <a href="{{ route('user.show', Auth::user()->id) }}" class="dropdown-item">
                                 <i class="fas fa-cog text-primary"></i>
-                                Settings
-                            </a> --}}
+                                Setting Akun
+                            </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"><i
@@ -127,11 +134,12 @@
             </div>
         </nav>
 
+        {{-- <----------------------  SETTING WRAPPER ----------------------> --}}
         <div class="container-fluid page-body-wrapper">
             <!-- /////////////////////////////////// -->
             <!-- TEMA WEBSITE -->
             <!-- /////////////////////////////////// -->
-            <div class="theme-setting-wrapper">
+            {{-- <div class="theme-setting-wrapper">
                 <div id="settings-trigger"><i class="fas fa-tasks"></i></div>
                 <div id="theme-settings" class="settings-panel">
                     <i class="settings-close fa fa-times"></i>
@@ -153,7 +161,14 @@
                         <div class="tiles default"></div>
                     </div>
                 </div>
+            </div> --}}
+            <div class="theme-setting-wrapper">
+                <a href="#home">
+                    <div id="settings-trigger" data-toggle="tooltip" data-placement="right" title=""
+                        data-original-title=""><i class="fas fa-arrow-up"></i></div>
+                </a>
             </div>
+
             <!-- /////////////////////////////////// -->
             <!-- SIDEBAR -->
             <!-- /////////////////////////////////// -->
@@ -161,7 +176,7 @@
                 <ul class="nav">
                     <!-- NAMA PENGGUNA -->
                     <li class="nav-item nav-profile">
-                        <div class="nav-link">
+                        <div id="home" class="nav-link">
                             <div class="profile-image">
                                 <a href="#"> <img src="{{ asset(Auth::user()->image) }}" alt="image" /></a>
                             </div>
@@ -194,7 +209,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('skema.index') }}">Skema/Kluster</a>
+                                    <a class="nav-link" href="{{ route('skema.index') }}">Skema</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('prodi.index') }}">Program Studi</a>
@@ -209,8 +224,8 @@
                                     <a class="nav-link" href="{{ route('unikom.index') }}">Unit Kompetensi</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('asesmen.index') }}">Formulir
-                                        APL-02</a>
+                                    <a class="nav-link" href="{{ route('asesmen.index') }}">Elemen
+                                        </a>
                                 </li>
                             </ul>
                         </div>
@@ -219,20 +234,19 @@
                         <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts2" aria-expanded="false"
                             aria-controls="sidebar-layouts">
                             <i class="fas fa-id-card  menu-icon"></i>
-                            <span class="menu-title">Data Sertifikasi</span>
+                            <span class="menu-title"> Sertifikasi</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="collapse" id="sidebar-layouts2">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('registrasi.baru') }}">Regsitrasi
-                                        Baru</a>
+                                    <a class="nav-link" href="{{ Route('registrasi.baru') }}">Pendaftaran Terbaru</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('list.valid') }}">Proses Sertifikasi</a>
+                                    <a class="nav-link" href="{{ route('list.valid') }}">Pendaftaran Diterima</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('list.tolak') }}">Registrasi Ditolak</a>
+                                    <a class="nav-link" href="{{ Route('list.tolak') }}">Pendaftaran Ditolak</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('list.sertifikat') }}">Pemegang
@@ -259,9 +273,9 @@
                     </li>
                 </ul>
             </nav>
-            <!-- /////////////////////////////////// -->
-            <!-- MAIN WEBSITE -->
-            <!-- /////////////////////////////////// -->
+
+
+            {{-- <----------------------  MAIN WEBSITE ----------------------> --}}
             <div class="main-panel">
                 <div class="content-wrapper">
                     <!-- ///////////////////////////////////////////////////////////////////// -->
@@ -273,15 +287,15 @@
                 </div>
             </div>
         </div>
-        <!-- /////////////////////////////////// -->
-        <!-- SIDEBAR KANAN -->
-        <!-- /////////////////////////////////// -->
+
+
+        {{-- <----------------------  SIDEBAR KANAN ----------------------> --}}
         <div id="right-sidebar" class="settings-panel">
             <i class="settings-close fa fa-times"></i>
             <ul class="nav nav-tabs" id="setting-panel" role="tablist">
                 <li class="nav-item">
                     <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
-                        aria-controls="todo-section" aria-expanded="true">SETTING ANTARMUKA</a>
+                        aria-controls="todo-section" aria-expanded="true">Menu Antarmuka</a>
                 </li>
                 {{-- <li class="nav-item">
                     <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
@@ -295,20 +309,32 @@
                         <ul class="d-flex flex-column-reverse todo-list">
                             <li>
                                 <div class="btn btn-primary btn-block">
+                                    <a href="{{ route('note.index') }}" class="text text-white"><i
+                                            class="fas fa-book-open"></i> Catatan</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-primary btn-block">
                                     <a href="{{ route('galeri.index') }}" class="text text-white"><i
-                                            class="fas fa-th-large"></i> Galeri</a>
+                                            class="fas fa-images"></i> Galeri</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn btn-primary btn-block">
+                                    <a href="{{ route('file.index') }}" class="text text-white"><i
+                                            class="fas fa-file-upload"></i> Upload File</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('info.index') }}" class="text text-white"><i
-                                            class="fas fa-info"></i> Info Pendaftaran</a>
+                                            class="fas fa-info-circle"></i> Info Pendaftaran</a>
                                 </div>
                             </li>
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('berita.index') }}" class="text text-white"><i
-                                            class="fas fa-info-circle"></i> Berita</a>
+                                            class="fas fa-bullhorn"></i> Berita</a>
                                 </div>
                             </li>
                             <li>
@@ -327,7 +353,7 @@
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('beranda_img2.index') }}" class="text text-white"><i
-                                            class="fas fa-users"></i> Portofolio Karyawan</a>
+                                            class="fas fa-users"></i> Pengelola</a>
                                 </div>
                             </li>
                             <li>
@@ -339,7 +365,7 @@
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('sett-beranda.index') }}" class="text text-white"><i
-                                            class="fas fa-window-maximize"></i> Judul Web</a>
+                                            class="fas fa-window-maximize"></i> Navigasi Atas</a>
                                 </div>
                             </li>
                         </ul>
@@ -362,9 +388,9 @@
             </div>
         </div>
     </div>
-    <!-- /////////////////////////////////// -->
-    <!--  -->
-    <!-- /////////////////////////////////// -->
+
+
+    {{-- <----------------------  FOOTER----------------------> --}}
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text text-white text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022
@@ -378,7 +404,8 @@
         </div>
     </footer>
 
-    <section id="JAVASCRIPT">
+
+    {{-- <----------------------  JS----------------------> --}}
         <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
         <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
         <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
@@ -414,7 +441,6 @@
         <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
         <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
         <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
-    </section>
 
 </body>
 

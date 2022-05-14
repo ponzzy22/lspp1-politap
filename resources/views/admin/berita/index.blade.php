@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Berita</li>
             </ol>
         </nav>
@@ -39,7 +39,7 @@
                             <div class="col-md-12">
                                 <label for="image-upload" id="image-label">Pilih Gambar <i
                                         class="fas fa-image"></i></label>
-                                <input type="file" name="image">
+                                <input accept=".jpg," type="file" name="image">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Kategori</label>
@@ -61,7 +61,9 @@
                                 <input type="text" class="form-control" placeholder="Excerpt" name="excerpt">
                             </div><br>
                             <label for="">Isi Konten Berita</label>
-                            <textarea class="summernote" name="body"></textarea>
+                            <div class="col-md-9">
+                                <textarea class="summernote" name="body"></textarea>
+                            </div>
                             <br>
                             <button type="submit" class="btn btn-inverse-success btn-block"><i class="fas fa-upload"></i>
                                 Posting</button><br>

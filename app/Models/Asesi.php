@@ -14,8 +14,8 @@ class Asesi extends Model
     protected $table = 'asesi_data';
 
     protected $fillable = [
-        'id', 
-        'nim', 
+        'id',
+        'nim',
         'nama',
         'tmpt_lahir	',
         'tgl_lahir',
@@ -33,6 +33,7 @@ class Asesi extends Model
         'ttd',
         'jurusan_id',
         'semester_id',
+        'surel',
         'email'
     ];
 
@@ -43,5 +44,5 @@ class Asesi extends Model
     public function semester(){
         return $this->belongsTo(Semester::class);
     }
-    
+
 }

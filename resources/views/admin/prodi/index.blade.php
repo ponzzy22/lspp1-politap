@@ -3,14 +3,14 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h4>
-            <i class="fa  fa-ellipsis-h"></i> Program Studi
+            <i class="fa  fa-pencil-alt"></i> Program Studi
         </h4>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Program Studi</li>
             </ol>
         </nav>
@@ -34,14 +34,14 @@
                     <form action="{{ route('prodi.store') }}" method="POST" class="form-sample">
                         @csrf
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Nama Prodi</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" maxlength="100" name="prodi" class="form-control" /><br>
+                                    <div class="col-md-12">
+                                        <input type="text" maxlength="100" name="prodi" class="form-control" placeholder="Nama Prodi" /><br>
                                         <button type="submit" class="btn btn-success btn-icon-text btn-block">
-                                            <i class="fa fa-plus btn-icon-prepend"></i>
-                                            Tambahkan
+                                            <i class="fa fa-save btn-icon-prepend"></i>
+                                            Simpan
                                         </button>
                                     </div>
                                 </div>
@@ -57,7 +57,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fa fa-cogs "> List Program Studi</i></h4>
+            <h4 class="card-title"><i class="fa fa-tasks "> List Program Studi</i></h4>
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -103,8 +103,8 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-sm btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus</button></a>
+                                                                        class="btn btn-inverse-danger btn-block"><i
+                                                                            class="fa fa-trash "></i> Hapus Prodi</button></a>
                                                             </form>
                                                         </div>
                                                     </td>

@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/5')
 @section('isi')
     @include('layout/verifikasi')
 
@@ -9,7 +9,7 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('beranda_img1.index') }}">Carousel</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Carousel</li>
             </ol>
@@ -29,10 +29,10 @@
                 <label for="file">Pilih Gambar</label>
                 <input type="file" class="form-control" id="file" name="image">
                 <br>
-                <label for="judul">Text Judul</label>
+                <label for="judul">Judul</label>
                 <input type="text" name="judul" class="form-control" value="{{ $beranda_img1->judul }}">
                 <br>
-                <label for="keterangan">TextKonten</label>
+                <label for="keterangan">Keterangan</label>
                 <input type="text" name="keterangan" class="form-control" value="{{ $beranda_img1->keterangan }}">
                 <div class="form-action"><br>
                     <button type="submit" class="btn btn-info btn-icon-text btn-block">

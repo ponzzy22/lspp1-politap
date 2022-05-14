@@ -3,6 +3,7 @@
 use App\Http\Controllers\AsesiController;
 use App\Http\Controllers\AsesmenController;
 use App\Http\Controllers\AsesorController;
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
@@ -11,9 +12,11 @@ use App\Http\Controllers\Dashboard_adminController;
 use App\Http\Controllers\Dashboard_asesiController;
 use App\Http\Controllers\DeleteGaleriFotoController;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ReadAPL2Controller;
@@ -24,6 +27,7 @@ use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
 use App\Http\Controllers\UiFotosController;
 use App\Http\Controllers\UnikomController;
+use App\Http\Controllers\Upload_DokumenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\XnxxController;
@@ -45,7 +49,9 @@ Route::get('404', function () {
     return view('404');
 });
 
-Route::get('/', [UiController::class, 'ui_beranda']);
+Route::get('/exportPDF', [ValidasiController::class, 'generatepdf'])->name('pdf');
+
+Route::get('/', [UiController::class, 'ui_beranda'])->name('beranda');
 Route::get('/2', [UiController::class, 'ui_beranda2']);
 Route::get('profil', [UiController::class, 'profil'])->name('profil.front');
 Route::get('show_artikel_berita', [UiController::class, 'berita_list'])->name('berita.list');
@@ -53,13 +59,14 @@ Route::get('show_pengumuman', [UiController::class, 'pengumuman_list'])->name('p
 Route::get('uiskemas/{uiskema}', [UiController::class, 'uiskema_show'])->name('uiskema.show');
 Route::get('tampil_skema', [UiController::class, 'tampil_skema'])->name('tampil.skema');
 Route::get('berita_tampil/{berita_tampil}', [UiController::class, 'berita_tampil'])->name('berita.tampil');
+Route::get('file_download', [UiController::class, 'file'])->name('file.tampil');
 Route::resource('uifoto', UiFotosController::class);
 
 Auth::routes();
 
 
 Route::group(['middleware' => 'role:admin'], function () {
-    ///////////  BACKEND END /////////////
+    ///////////  DASHBOARD  /////////////
     Route::resource('admin', Dashboard_adminController::class);
     /////////// SKEMA  /////////////
     Route::resource('skema', SkemaController::class);
@@ -82,6 +89,9 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::get('pengguna_bersertifikat', [ValidasiController::class, 'list_sertifikat'])->name('list.sertifikat');
     Route::put('finish/{finish}', [ValidasiController::class, 'update2'])->name('finish.update');
     Route::put('tolak/{tolak}', [ValidasiController::class, 'update3'])->name('tolak.update');
+    Route::put('koreksiformulir_update/{koreksiformulir_update}', [ValidasiController::class, 'koreksiformulir_update'])->name('koreksiformulir_update.update');
+    Route::put('koreksiformulirapl2_update/{koreksiformulirapl2_update}', [ValidasiController::class, 'koreksiformulirapl2_update'])->name('koreksiformulirapl2_update');
+    Route::get('koreksiformulir/{id}', [ValidasiController::class, 'koreksiformulir'])->name('koreksiformulir');
     Route::resource('readapl2', ReadAPL2Controller::class);
     /////////// GALERI  /////////////
     Route::resource('galeri', GaleriController::class);
@@ -91,22 +101,26 @@ Route::group(['middleware' => 'role:admin'], function () {
     /////////// BERITA  /////////////
     Route::resource('berita', BeritaController::class);
     Route::resource('info', InfoController::class);
-
-
-
+    /////////// FILE UPLOAD  /////////////
+    Route::resource('file', FileController::class);
+     /////////// NOTE  /////////////
+    Route::resource('note', NoteController::class);
+     /////////// FRONT SETTING  /////////////
     Route::resource('sett-beranda', UiController::class);
     Route::resource('beranda_img1', Beranda_img1Controller::class);
     Route::resource('beranda_img2', Beranda_img2Controller::class);
     Route::resource('f_profil', F_profilController::class);
     Route::resource('strorg', StrorgController::class);
     Route::post('upload', [GaleriController::class, 'upload'])->name('upload');
+    Route::post('finishstore', [ValidasiController::class, 'finishstore'])->name('finishstore');
 });
 
 Route::group(['middleware' => 'auth'], function () {
+     /////////// REGISTER  /////////////
     Route::resource('dashasesi', Dashboard_asesiController::class);
     Route::resource('asesi', AsesiController::class);
     Route::resource('registrasi', RegistrasiController::class);
-    Route::resource('xnxx', XnxxController::class);
+    Route::resource('pendaftaran', XnxxController::class);
     Route::post('xnxx2', [XnxxController::class, 'store2'])->name('xnxx.store2');
     /////////// ASSESMENT  /////////////
     Route::get('info_skema', [AsesiController::class, 'info_skema'])->name('info.skema');
@@ -118,9 +132,22 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('Registrasi_Validate', [XnxxController::class, 'token2_store'])->name('token2.store');
     Route::get('rekap_registrasi', [XnxxController::class, 'rekap_registrasi'])->name('rekap.registrasi');
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
-    Route::post('Identitas_upload_ada', [XnxxController::class, 'upload_identitas_store'])->name('identitas.store');
-    Route::post('Identitas_upload_tidak_ada', [XnxxController::class, 'upload_identitas_store2'])->name('identitas.store2');
-    Route::delete('identitas/{identitas}', [XnxxController::class, 'destroy3'])->name('identitas.destroy');
+    Route::resource('identitas', Upload_DokumenController::class);
+
+    Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
+    Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
+
+    Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
+    Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');
+
+    Route::get('formulirapl2edit/{id}', [RegistrasiController::class, 'formulirapl2edit'])->name('formulirapl2edit');
+
+    Route::get('sertifikat_show/{id}', [AsesiController::class, 'sertifikat_show'])->name('sertifikat_show');
+    Route::get('rekap_pendaftaran/{id}', [RegistrasiController::class, 'rekap_pendaftaran'])->name('rekap_pendaftaran');
+    Route::get('info_sertifikasi/{id}', [RegistrasiController::class, 'info_sertifikasi'])->name('info_sertifikasi');
+    Route::get('data_edit_tolak/{id}', [RegistrasiController::class, 'data_edit_tolak'])->name('data_edit_tolak');
+    Route::get('formulirapl2edit_tolak/{id}', [RegistrasiController::class, 'formulirapl2edit_tolak'])->name('formulirapl2edit_tolak');
+
 });
 
 Route::resource('post', PostController::class);

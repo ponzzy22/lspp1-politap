@@ -5,6 +5,7 @@
         <!-- /////////////////////////////////// -->
         <!-- SISI KIRI  DATA -->
         <!-- /////////////////////////////////// -->
+        {{-- <a href="{{ route('pdf') }}">dfsdfsdfsd</a> --}}
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -12,16 +13,10 @@
                         <div class="col-lg-4">
                             <h4 class="card-title"><i class="far fa-id-card "></i> Data Identitas Personal</h4>
                             {{-- <div class="border-bottom py-4"> --}}
-                            <div class="d-flex mb-3">
-                                <div class="progress progress-md flex-grow">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="55"
-                                        style="width: 55%" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
                             <div class="d-flex">
                                 <div class="progress progress-md flex-grow">
-                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="75"
-                                        style="width: 75%" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="75"
+                                        style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                             {{-- </div> --}}
@@ -48,14 +43,6 @@
                                     </span>
                                     <span class="float-right ">
                                         {{ $validasi->skema_id }}
-                                    </span>
-                                </p>
-                                <p class="clearfix">
-                                    <span class="float-left text-muted">
-                                        Status &rarr;
-                                    </span>
-                                    <span class="float-right">
-                                        {{ $validasi->status }}
                                     </span>
                                 </p>
                                 <p class="clearfix">
@@ -185,10 +172,13 @@
                                         </h5>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary text-white">{{ $validasi->status }}</button>
+                                <button class="btn btn-light text-white">{!! $validasi->status !!}</button>
                                 <h4 class="card-title"></h4>
                             </div>
                             <div class="mt-4 py-2 border-top border-bottom">
+                                <a href="{{ route('koreksiformulir', $validasi->id) }}"><button
+                                        class="btn btn-warning btn-block btn-sm"><i class="fas fa-edit"></i> Koreksi Data
+                                        Formulir</button></a>
                                 <ul class="nav profile-navbar">
                                     @foreach ($validasi->upload_files as $asu)
                                         <li class="nav-item">
@@ -203,33 +193,34 @@
                                             </a>
                                         </li>
                                     @endforeach
+                            </div>
+                            <div class="d-flex">
+                                <div class="progress progress-md flex-grow">
+                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="75"
+                                        style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div><br>
                             <h4 class="card-title"><i class="far fa-id-card "></i> Hasil Assesment Mandiri</h4>
                             <div class="mt-4 py-2 border-top border-bottom">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th>Status</th>
-                                            <th>Assesmen</th>
+                                            <th style="width: 10px">#</th>
+                                            <th style="width: 10px">Status</th>
+                                            <th style="width: 400px">Elemen</th>
                                         </tr>
                                     </thead>
-                                    @foreach ($xnxx as $data)
+                                    @foreach ($validasi->xnxxes as $data)
                                         <tbody>
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>
-                                                    <div class="badge badge-dark">{{ $data->status }}</div>
+                                                    {!! $data->status !!}
                                                 </td>
-                                                <td>{{ $data->unikom_name }}</td>
+                                                <td>{{ $data->asesmen_name }}</td>
                                                 <td>
                                                     <a href="{{ asset($data->image) }}" target="_blank"
                                                         class="btn btn-info btn-rounded"><i class="fas fa-download"></i></a>
-                                                </td>
-                                                <td>
-                                                    {{-- {{ route('readapl2.show') }} --}}
-                                                    <a href="{{ url('404') }}" target="_blank"
-                                                        class="btn btn-info btn-rounded"><i class="fas fa-eye"></i></a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -243,120 +234,5 @@
         </div>
     </div>
     </div>
-    <!-- /////////////////////////////////// -->
-    <!-- VALIDASI DATA -->
-    <!-- /////////////////////////////////// -->
-    <div class="col-md-12">
-        <div class="accordion accordion-multi-colored" id="accordion-7" role="tablist">
-            <div class="card">
-                <div class="card-header" role="tab" id="heading-7">
-                    <h5 class="mb-0">
-                        <a data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7"
-                            class="">
-                            Jika Asesi telah menyelesaikan serangkaian test dan layak mendapatkan sertifikat, maka validasi
-                            datanya disini.
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapse-7" class="collapse" role="tabpanel" aria-labelledby="heading-7"
-                    data-parent="#accordion-3" style="">
-                    <div class="card-body">
-                        <form action="{{ route('finish.update', $validasi->id) }}" method="POST">
-                            @csrf
-                            @method('put')
-                            <input type="hidden" name="status" value="Sertifikasi Selesai">
-                            <input type="hidden" name="kode" value="{{ $validasi->kode }}2022">
-                            <input type="hidden" name="date" value="">
-                            <input type="hidden" name="time" value="">
-                            <input type="hidden" name="asesor_id" value="1">
-                            <input type="hidden" name="tuk_id" value="1">
-                            <button type="submit" class="btn btn-light btn-block"><i class="fas fa-save"></i>
-                                SIMPAN</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header" role="tab" id="heading-8">
-                    <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" href="#collapse-8" aria-expanded="false"
-                            aria-controls="collapse-8">
-                            Klik Panel ini jika anda ingin menyetujui form pendaftaran ini..
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapse-8" class="collapse" role="tabpanel" aria-labelledby="heading-8"
-                    data-parent="#accordion-3" style="">
-                    <div class="card-body">
-                        <form action="{{ route('validasi.update', $validasi->id) }}" method="POST">
-                            @csrf
-                            @method('put')
-                            <input type="hidden" name="status" value="Pendaftaran Divalidasi">
-                            <li><label for="">Tanggal</label></li>
-                            <input type="date" class="form-control" name="date">
-                            <li>Waktu</li>
-                            <div class="input-group date" id="timepicker-example" data-target-input="nearest">
-                                <div class="input-group" data-target="#timepicker-example" data-toggle="datetimepicker">
-                                    <input name="time" type="text" class="form-control datetimepicker-input"
-                                        style="width: 10px" data-target="#timepicker-example">
-                                    <div class="input-group-addon input-group-append"><i
-                                            class="far fa-clock input-group-text"></i></div>
-                                </div>
-                            </div>
-                            <li>Asesor</li>
-                            <select class="form-control" name="asesor_id">
-                                <option value="" holder>Pilih Asesor</option>
-                                @foreach ($asesor as $result)
-                                    <option value="{{ $result->id }}">{{ $result->nama }}</option>
-                                    select
-                                @endforeach
-                            </select>
-                            <li>Tempat Uji Kompetensi</li>
-                            <select class="form-control" name="tuk_id">
-                                <option value="" holder>Pilih Tempat Uji Kompetensi</option>
-                                @foreach ($tuk as $result)
-                                    <option value="{{ $result->id }}">{{ $result->tuk }}</option>
-                                    select
-                                @endforeach
-                            </select>
-                            <li>Keterangan Lain</li>
-                            <textarea name="keterangan" class="summernote" id="" cols="36" rows="5"></textarea><br>
-                            <button type="submit" class="btn btn-dark btn-block"><i class="fas fa-check"></i>
-                                Validasi</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header" role="tab" id="heading-9">
-                    <h5 class="mb-0">
-                        <a class="collapsed" data-toggle="collapse" href="#collapse-9" aria-expanded="false"
-                            aria-controls="collapse-9">
-                            Atau jika ingin menolak, anda bisa klik panel ini..
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapse-9" class="collapse" role="tabpanel" aria-labelledby="heading-9"
-                    data-parent="#accordion-3">
-                    <div class="card-body">
-                        <form action="{{ route('tolak.update', $validasi->id) }}" method="POST">
-                            @csrf
-                            @method('put')
-                            <input type="hidden" name="status" value="Pendaftaran Ditolak">
-                            <input type="hidden" name="date" value="">
-                            <input type="hidden" name="time" value="">
-                            <input type="hidden" name="asesor_id" value="1">
-                            <input type="hidden" name="tuk_id" value="1">
-                            <li>Alasan/Keterangan</li>
-                            <textarea name="keterangan" class="summernote" id="" cols="36" rows="5"></textarea><br>
-                            <button type="submit" class="btn btn-dark btn-block"><i class="fas fa-times"></i>
-                                Tolak</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 @endsection

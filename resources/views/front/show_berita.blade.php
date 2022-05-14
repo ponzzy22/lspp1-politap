@@ -12,12 +12,14 @@
         <div class="col-lg-9 col-md-6 col-12">
             <div class="tab-pane fade active show" id="pills-health" role="tabpanel" aria-labelledby="pills-home-tab-custom">
                 <div class="media">
-                    <img class="mr-5 rounded" width="700px" src="{{ asset($berita->image) }}" alt="image" data-aos="fade-up"
-                        data-aos-delay="700">
+                    <img class="mr-5 rounded" width="700px" src="{{ asset($berita->image) }}" alt="image" data-aos="fade-down"
+                        data-aos-delay="500">
                 </div>
-                <p>
-                    {!! $berita->body !!}
-                </p>
+                <div data-aos="fade-up" data-aos-delay="300" >
+                    <p>
+                        {!! $berita->body !!}
+                    </p>
+                </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6 col-12">

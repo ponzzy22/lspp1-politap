@@ -1,29 +1,26 @@
 @extends('layout/2')
 @section('isi')
+    {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
         <h3>
-            <i class="fas fa-cogs"></i> Dashboard
+            <i class="fas fa-chart-pie"></i> Dashboard
         </h3>
-        <!-- /////////////////////////////////// -->
-        <!-- BREADCRUMB -->
-        <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page"></li>
+                {{-- <li class="breadcrumb-item"><a href="#">Dashboard</a></li> --}}
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- STATISTIK ASESI -->
-    <!-- /////////////////////////////////// -->
+
+    {{-- <---------------------- STATISTIK ASESI ----------------------> --}}
     <div class="card card-statistics">
         <div class="card-body">
             <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                 <div class="statistics-item">
                     <p>
                         <i class="icon-sm far fa-address-card mr-2"></i>
-                        Registrasi Baru
+                        Registrasi Terbaru
                     </p>
                     <h2 class="text text-center counter-value">{{ $databaru }}</h2>
                 </div>
@@ -65,9 +62,8 @@
             </div>
         </div>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- STATISTIK ADMIN -->
-    <!-- /////////////////////////////////// -->
+
+    {{-- <---------------------- STATISTIK ADMIN ----------------------> --}}
     <div class="row">
         <div class="counter">
             <div class="counter-icon">
@@ -97,22 +93,21 @@
             </div>
         </div>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- NEW REGISTER & JADWAL -->
-    <!-- /////////////////////////////////// -->
+
     <div class="row">
+        {{-- <---------------------- NEW REGISTER ----------------------> --}}
         <div class="col-lg-7 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
                     <div class="row">
                         <a href="">
-                            <h4 class="text text-dark"><i class="fas fa-id-card"></i> Register Baru </h4>
+                            <h4 class="text text-dark"><i class="fas fa-id-card"></i> Register Terbaru </h4>
                         </a>
                     </div>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
-                        <table class="table table-striped mb-0">
+                        <table class="table table-hover mb-0">
                             <thead>
                                 <tr class="text text-muted">
                                     <th>Nama</th>
@@ -161,17 +156,19 @@
                 </div>
             </div>
         </div>
+
+        {{-- <---------------------- JADWAL SERTIFIKASI ----------------------> --}}
         <div class="col-lg-5 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
                     <h4 class="text text-dark"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h4>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-dark">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="text text-muted">
                                 <th>Nama</th>
-                                <th>Tanggal Daftar</th>
+                                <th>Waktu Sertifikasi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -199,9 +196,8 @@
             </div>
         </div>
     </div><br>
-    <!-- /////////////////////////////////// -->
-    <!-- PEMEGANG SERTIFIKAT, KALENDER-->
-    <!-- /////////////////////////////////// -->
+
+    {{-- <---------------------- PEMEGANG SERTIFIKAT ----------------------> --}}
     <div class="row">
         {{-- PEMEGANG SERTIFIKAT --}}
         <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
@@ -242,13 +238,10 @@
             </div>
         </div>
 
-    </div><br>
+    </div><br><br>
 
-    <br>
 
-    <!-- /////////////////////////////////// -->
-    <!-- FOOTER -->
-    <!-- /////////////////////////////////// -->
+    {{-- <---------------------- FOOTERT ----------------------> --}}
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
@@ -273,9 +266,6 @@
                             <img src="public/assets/images/logo/lsp.png" width="110px" alt="">
                         </div>
                     </div>
-                    <!-- /////////////////////////////////// -->
-                    <!-- KONTAK ADMIN -->
-                    <!-- /////////////////////////////////// -->
                     <div class="statistics-item">
                         <h5>Kontak Admin</h5>
                         <p>

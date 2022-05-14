@@ -10,7 +10,7 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('backend') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Asesor</li>
             </ol>
         </nav>
@@ -35,10 +35,6 @@
                         class="form-sample">
                         @csrf
                         <div class="card-description text-right">
-                            <button type="submit" class="btn btn-success btn-icon-text btn-block">
-                                <i class="fa fa-plus btn-icon-prepend"></i>
-                                Tambahkan
-                            </button>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
@@ -56,7 +52,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">NIK</label>
                                     <div class="col-sm-9">
-                                        <input type="number" maxlength="100" name="nik" class="form-control">
+                                        <input type="text" maxlength="100" name="nik" class="form-control">
                                         @error('nik')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -150,6 +146,10 @@
                                 </div>
                             </div>
                         </div>
+                        <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                            <i class="fa fa-save btn-icon-prepend"></i>
+                            Simpan
+                        </button>
                     </form>
                 </div>
             </div>
@@ -212,8 +212,8 @@
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('asesor.edit', $asu->id) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-warning btn-sm btn-block"><i
-                                                                        class="fa fa-edit "></i> Lihat & Edit
+                                                                    class="btn btn-info  btn-block"><i
+                                                                        class="fa fa-eye "></i> Lihat & Edit
                                                                     Asesor</button></a>
                                                             <form action="{{ route('asesor.destroy', $asu->id) }}"
                                                                 method="POST"
@@ -221,7 +221,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-sm btn-block"><i
+                                                                        class="btn btn-danger  btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus
                                                                         Asesor</button></a>
                                                             </form>

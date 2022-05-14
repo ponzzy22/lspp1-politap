@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/4.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/44.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
     <link rel="stylesheet" href="{{ asset('public/assets3/css/aos.css') }}">
     <style>
@@ -68,6 +68,8 @@
         <nav class="navbar horizontal-layout-navbar fixed-top navbar-expand-lg" data-aos="fade-down"
             data-aos-delay="100">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+                <a  style="padding-left: 30%"  class="navbar" href="https://www.bnsp.go.id/"><img
+                    src="{{ asset('public/assets/images/logo/bnsp.png') }}" width="70px" alt="logo" /></a>
                 <a class="navbar" href="https://www.kemdikbud.go.id/"><img
                         src="{{ asset('public/assets/images/logo/kemendikbud.png') }}" width="32px" alt="logo" /></a>
                 <a class="navbar" href="https://politap.ac.id/"><img
@@ -152,18 +154,18 @@
             </div>
             <div class="theme-setting-wrapper">
                 <a href="{{ route('pengumuman.list') }}">
-                    <div id="settings-trigger7" data-toggle="tooltip" data-placement="right" title="Pengumuman"
+                    <div id="settings-trigger7" data-toggle="tooltip" data-placement="right" title="Berita/Pengumuman"
                         data-original-title="Basic tooltip"><i class="fas fa-bullhorn"></i></div>
                 </a>
             </div>
             <div class="theme-setting-wrapper">
                 <a href="{{ route('berita.list') }}">
-                    <div id="settings-trigger8" data-toggle="tooltip" data-placement="right" title="Artikel/Berita"
+                    <div id="settings-trigger8" data-toggle="tooltip" data-placement="right" title="Informasi Pendaftaran"
                         data-original-title="Basic tooltip"><i class="fas fa-info"></i></div>
                 </a>
             </div>
             <div class="theme-setting-wrapper">
-                <a href="#">
+                <a href="{{ route('file.tampil') }}">
                     <div id="settings-trigger9" data-toggle="tooltip" data-placement="right" title="Download Dokumen"
                         data-original-title="Basic tooltip"><i class="fas fa-file-download"></i></div>
                 </a>

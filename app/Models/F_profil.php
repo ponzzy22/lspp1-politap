@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class F_profil extends Model
 {
-    protected $fillable = ['profil','image', 'visi', 'misi', 'motto'];
+    protected $fillable = ['profil','image', 'visi', 'misi', 'isi', 'motto'];
     protected $table = 'f_profil';
 }

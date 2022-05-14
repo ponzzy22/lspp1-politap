@@ -3,18 +3,18 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h3>
-            <i class="fas fa-cogs"></i> Edit Judul & Deskripsi
+            <i class="fas fa-cogs"></i> Edit Nama Website
         </h3>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item">
-                    <a href="{{ route('sett-beranda.index') }}">Judul & Deskripsi</a>
+                    <a href="{{ route('sett-beranda.index') }}">Nama Website</a>
                 </li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Judul & Deskripsi</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit Nama Website</li>
             </ol>
         </nav>
     </div><br>
@@ -28,19 +28,9 @@
                 @csrf
                 @method('patch')
                 <div class="form-group">
-                    <label for="exampleInputName1">Judul Baris Pertama</label>
+                    <label for="exampleInputName1">Nama Website</label>
                     <textarea class="summernote" maxlength="50" id="exampleTextarea1" rows="3"
                         name="judul">{{ $beranda->judul }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputName1">Judul Baris Kedua</label>
-                    <textarea class="form-control" maxlength="30" id="exampleTextarea1" rows="3"
-                        name="judul2">{{ $beranda->judul2 }}</textarea>
-                </div>
-                <div class="form-group">
-                    <label for="exampleTextarea1">Deskripsi</label>
-                    <textarea class="summernote" maxlength="1000" id="exampleTextarea1" rows="6"
-                        name="deskripsi">{{ $beranda->deskripsi }}</textarea>
                 </div>
                 <button type="submit" class="btn btn-success btn-icon-text">
                     <i class="fa fa-check-square btn-icon-prepend"></i>

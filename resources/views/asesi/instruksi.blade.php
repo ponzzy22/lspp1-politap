@@ -2,7 +2,7 @@
 @section('isi')
 <div class="page-header">
     <h4>
-        <i class="fas fa-question-circle"></i>  Instruksi Registrasi Sertifikasi
+        <i class="fas fa-question-circle"></i>  Tutorial Pendaftaran Sertifikasi
     </h4>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
@@ -10,16 +10,20 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Instruksi Registrasi Sertifikasi</li>
+            <li class="breadcrumb-item active" aria-current="page">Tutorial Pendaftaran Sertifikasi</li>
         </ol>
     </nav>
 </div><br>
     <!-- /////////////////////////////////// -->
     <!-- TAMPILAN DATA -->
     <!-- /////////////////////////////////// -->
-<div class="card">
-    <div class="card-body">
-        <img src="" width="400px" alt="">
+    @foreach ($info as $asu)
+    <div class="media">
+        <video width="1000px" controls>
+            <source src="{{ asset($asu->image) }}" type="video/mp4">
+        </video>
+        <div class="media-body" data-aos="fade-left" data-aos-delay="200">
+        </div>
     </div>
-</div>
+@endforeach
 @endsection
