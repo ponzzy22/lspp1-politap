@@ -1,4 +1,4 @@
-@extends('layout/4')
+@extends('layout/asesi2')
 @section('isi')
 <div class="row">
     <!-- /////////////////////////////////// -->

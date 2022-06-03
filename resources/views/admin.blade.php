@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/admin1')
 @section('isi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">

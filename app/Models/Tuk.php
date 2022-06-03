@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tuk extends Model
 {
     use HasFactory;
-    protected $fillable = ['tuk', 'alamat'];
+    protected $fillable = ['tuk', 'alamat', 'pengelola', 'image'];
     protected $table = 'tuk';
 }

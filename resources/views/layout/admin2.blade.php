@@ -24,7 +24,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 </head>
 
-<body class="sidebar-mini">
+<body class="sidebar-icon-only">
     <div class="container-scroller">
         <!-- /////////////////////////////////// -->
         <!-- LOGO NAVIGASI -->
@@ -260,16 +260,6 @@
                             <i class="fa fa-users menu-icon"></i>
                             <span class="menu-title">Pengguna</span>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i
-                                class="fas fa-power-off menu-icon"></i>
-                            <span class="menu-title">Logout</span>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
                     </li>
                 </ul>
             </nav>

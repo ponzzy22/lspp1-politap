@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/admin1')
 @section('isi')
     @include('layout/verifikasi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
@@ -31,11 +31,6 @@
                 <div class="card-body">
                     <form action="{{ route('skema.store') }}" method="POST" class="form-sample">
                         @csrf
-                        <div class="card-description text-left">
-                            <button type="submit" class="btn btn-inverse-success btn-icon-text btn-block">
-                                <i class="fa fa-save btn-icon-prepend"></i> Simpan
-                            </button>
-                        </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -122,6 +117,12 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <div class="card-description text-left">
+                            <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                                <i class="fa fa-save btn-icon-prepend"></i> Simpan
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -176,7 +177,7 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -185,17 +186,14 @@
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('skema.show', $asu->id) }}"><button
-                                                                type="submit"
-                                                                class="btn btn-success btn-block"><i
-                                                                    class="fa fa-list "></i> Unit
+                                                                    type="submit" class="btn btn-success btn-block"><i
+                                                                        class="fa fa-list "></i> Unit
                                                                 </button></a>
                                                             <a href="{{ route('skema.edit', $asu->id) }}"><button
-                                                                    type="submit"
-                                                                    class="btn btn-warning btn-block"><i
+                                                                    type="submit" class="btn btn-warning btn-block"><i
                                                                         class="fa fa-edit "></i> Edit Skema</button></a>
                                                             <a href="{{ route('skema.detail', $asu->id) }}"><button
-                                                                    type="submit"
-                                                                    class="btn btn-info btn-block"><i
+                                                                    type="submit" class="btn btn-info btn-block"><i
                                                                         class="fa fa-eye "></i> Detail
                                                                     Skema</button></a>
                                                             <form action="{{ route('skema.destroy', $asu->id) }}"
@@ -205,15 +203,15 @@
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
                                                                         class="btn btn-danger btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus Skema</button></a>
+                                                                            class="fa fa-trash "></i> Hapus
+                                                                        Skema</button></a>
                                                             </form>
                                                         </div>
                                                     </td>
                                                     <td class="">{{ $asu->kode_skema }}</td>
                                                     <td>{{ $asu->skema }}</td>
                                                     <td>{{ $asu->asesor->nama }}</td>
-                                                    <td><label
-                                                            class="badge badge-light">{{ $asu->prodi->prodi }}</label>
+                                                    <td><label class="badge badge-light">{{ $asu->prodi->prodi }}</label>
                                                     </td>
                                                 </tr>
                                             @endforeach

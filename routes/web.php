@@ -48,6 +48,9 @@ Route::get('strorg1', function () {
 Route::get('404', function () {
     return view('404');
 });
+Route::get('loginadmin', function () {
+    return view('auth/loginadmin');
+});
 
 Route::get('/exportPDF', [ValidasiController::class, 'generatepdf'])->name('pdf');
 

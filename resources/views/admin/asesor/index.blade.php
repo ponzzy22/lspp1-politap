@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/admin1')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -189,6 +189,10 @@
                                                     style="width: 175.75px;">Kode</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
+                                                    aria-label="Customer: activate to sort column ascending"
+                                                    style="width: 17.75px;">Photo</th>
+                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                    rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
                                                     style="width: 857.5469px;">Nama</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
@@ -228,6 +232,7 @@
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->nik }}</td>
+                                                    <td><img src="{{ asset($asu->image) }}" alt=""></td>
                                                     <td>{{ $asu->nama }}</td>
                                                     <td>
                                                         <label class="badge badge-light">{{ $asu->status }}</label>

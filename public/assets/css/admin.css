@@ -32599,22 +32599,13 @@ div.tagsinput span.tag a {
 /* === Landing screens === */
 
 
-/* Auth */
+/* joAuth */
 
-.auth .login-half-bg {
-    background: url("../images/auth/login-bg.jpg");
-    background-size: cover;
-}
 
-.auth .register-half-bg {
-    background: url("../images/auth/register-bg.jpg");
+/* .auth .login-half-bg {
+    background: url("../images/auth/login.png");
     background-size: cover;
-}
-
-.auth.lock-full-bg {
-    background: url("../images/auth/lockscreen-bg.jpg");
-    background-size: cover;
-}
+} */
 
 .auth .lock-profile-img {
     width: 90px;

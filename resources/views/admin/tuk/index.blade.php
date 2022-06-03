@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/admin1')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -31,7 +31,7 @@
             <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
                 data-parent="#accordion-4">
                 <div class="card-body">
-                    <form action="{{ route('tuk.store') }}" method="POST" class="form-sample">
+                    <form action="{{ route('tuk.store') }}" enctype="multipart/form-data" method="POST" class="form-sample">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -45,6 +45,16 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Gambar TUK</label>
+                                    <div class="col-sm-9">
+                                        <input type="file" accept=".png" name="image"
+                                            class="form-control" />
+                                        @error('image')
+                                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
@@ -53,6 +63,16 @@
                                         <input type="text" placeholder="Keterangan" maxlength="100" name="alamat"
                                             class="form-control" />
                                         @error('alamat')
+                                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Pengelola</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" placeholder="Pengelola" maxlength="100" name="pengelola"
+                                            class="form-control" />
+                                        @error('pengelola')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -118,6 +138,10 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
+                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button type="submit"
+                                                                class="btn btn-info btn-sm btn-block"><i
+                                                                    class="fa fa-eye "></i> Lihat
+                                                                TUK</button></a>
                                                             <form action="{{ route('tuk.destroy', $asu->id) }}"
                                                                 method="POST"
                                                                 onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">

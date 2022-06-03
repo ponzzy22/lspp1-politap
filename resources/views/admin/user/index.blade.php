@@ -1,4 +1,4 @@
-@extends('layout/2')
+@extends('layout/admin1')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">

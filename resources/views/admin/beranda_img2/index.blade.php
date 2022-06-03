@@ -1,9 +1,9 @@
-@extends('layout/5')
+@extends('layout/admin2')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
         <h3>
-            <i class="fas fa-users"></i> Settingan Portofolio Karyawan
+            <i class="fas fa-users"></i> Settingan Portofolio Pengelola
         </h3>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
@@ -11,7 +11,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Portofolio Karyawan</li>
+                <li class="breadcrumb-item active" aria-current="page">Portofolio Pengelola</li>
             </ol>
         </nav>
     </div><br>
@@ -107,42 +107,81 @@
             <div class="card-title">
                 <div class="row">
                     <div class="col-12">
-                        <div class="row portfolio-grid">
-                            @foreach ($beranda_img2 as $asu)
-                                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
-                                    <figure class="effect-text-in">
-                                        <figcaption>
-                                            <!-- <h5>Budi Pratomo Sibuea, S.ST.,M.ST</h5> -->
-                                            <p>{{ $asu->keterangan }}</p>
-                                        </figcaption>
-                                    </figure>
-                                    <div class="card">
-                                        <div class="row">
-                                            <img src="{{ asset($asu->image) }}" width="100px" alt="image" />
-                                            <div>
-                                                <p style="padding-left: 2%">{{ $asu->nama }}</p>
-                                            <p style="padding-left: 2%">{{ $asu->keterangan }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <a href="{{ route('beranda_img2.edit', $asu->id) }}"><button type="submit"
-                                                    class="btn btn-info btn-block btn-sm btn-icon-text">
-                                                    <i class="fas fa-edit  btn-icon-prepend"></i>
-                                                    Edit
-                                                </button><br></a>
-                                            <form action="{{ route('beranda_img2.destroy', $asu->id) }}" method="POST"
-                                                onsubmit="return confirm('Apa anda yakin akan menghapus Artikel ini (Yakinkan lah aku)')">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit" class="btn btn-danger btn-block btn-sm btn-icon-text">
-                                                    <i class="fas fa-trash  btn-icon-prepend"></i>
-                                                    Hapus
-                                                </button><br>
-                                            </form>
-                                        </div>
+                        <div class="table-responsive">
+                            <div id="order-listing_wrapper"
+                                class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table id="order-listing" class="table dataTable no-footer" role="grid"
+                                            aria-describedby="order-listing_info">
+                                            <thead>
+                                                <tr class="bg-dark text-white" role="row">
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Order #: activate to sort column ascending"
+                                                        style="width: 0.4219px;">#</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Ship to: activate to sort column ascending"
+                                                        style="width: 10.5469px;">Action</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Customer: activate to sort column ascending"
+                                                        style="width: 5.75px;">Photo</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Ship to: activate to sort column ascending"
+                                                        style="width: 507.5469px;">Nama</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Ship to: activate to sort column ascending"
+                                                        style="width: 557.5469px;">Jabatan</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($beranda_img2 as $asu)
+                                                    <tr role="row" class="odd">
+                                                        <td class="">{{ $loop->iteration }}</td>
+                                                        <td class="text-right">
+                                                            <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                                type="button" id="dropdownMenuSizeButton3"
+                                                                data-toggle="dropdown" aria-haspopup="true"
+                                                                aria-expanded="false">
+                                                                <i class="fa fa-cog"></i>
+                                                            </button>
+                                                            <div class="dropdown-menu"
+                                                                aria-labelledby="dropdownMenuSizeButton3">
+                                                                <a href="{{ route('beranda_img2.edit', $asu->id) }}"><button
+                                                                        type="submit"
+                                                                        class="btn btn-warning btn-sm btn-block"><i
+                                                                            class="fa fa-edit "></i> Lihat & Edit
+                                                                        Pengelola</button></a>
+                                                                {{-- <a href=""><button type="submit" class="btn btn-inverse-primary btn-sm btn-block"><i class="fa fa-list "></i>  List Pengguna</button></a> --}}
+                                                                <form action="{{ route('beranda_img2.destroy', $asu->id) }}"
+                                                                    method="POST"
+                                                                    onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <a href=""><button type="submit"
+                                                                            class="btn btn-danger btn-sm btn-block"><i
+                                                                                class="fa fa-trash "></i>
+                                                                            Hapus Pengelola</button></a>
+                                                                </form>
+                                                            </div>
+                                                        </td>
+                                                        <td class="py-1" style="align-content: right">
+                                                            <img src="{{ asset($asu->image) }}" alt="image">
+                                                        </td>
+                                                        <td>{{ $asu->nama }}</td>
+                                                        <td>{{ $asu->keterangan }}</td>
+                                                        
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
                                     </div>
-                                </div><br>
-                            @endforeach
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

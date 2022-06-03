@@ -17,27 +17,25 @@
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
-<body class="sidebar-mini">
+<body class="sidebar-icon-only">
     <div class="container-scroller">
         <!-- /////////////////////////////////// -->
         <!-- LOGO NAVIGASI -->
         <!-- /////////////////////////////////// -->
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-                <a class="navbar-brand brand-logo" href="{{ route('dashasesi.index') }}"><img
-                        src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo" href="{{ route('dashasesi.index') }}"><img src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
-                <a class="navbar-brand brand-logo-mini" href="#"><img
-                        src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="#"><img src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
             <!-- MENU NAVIGASI -->
             <!-- /////////////////////////////////// -->
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
                 <button class="navbar-toggler  align-self-center" type="button" data-toggle="minimize">
-                    <span class="fas fa-bars"></span></button>
+                <span class="fas fa-bars"></span></button>
                 <!-- /////////////////////////////////// -->
                 <!-- JUDUL BARIS -->
                 <!-- /////////////////////////////////// -->
@@ -58,32 +56,27 @@
                 <!-- /////////////////////////////////// -->
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
-                            href="{{ url('/') }}">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ route('beranda') }}">
                             <i class="fas fa-home mx-0"></i>
                         </a>
                     </li>
                     <li class="nav-item nav-profile dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown"
-                            aria-expanded="false">
-                            <img src="{{ asset(Auth::user()->image) }}" alt="image">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown" aria-expanded="false">
+                            <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
-                            aria-labelledby="profileDropdown">
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
                             {{-- <a class="dropdown-item">
                                 <i class="fas fa-cog text-primary"></i>
                                 Settings
                             </a> --}}
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"><i
-                                    class="fas fa-power-off text-primary"></i>
+                                <a class="dropdown-item" href="{{ route('logout') }}"onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><i class="fas fa-power-off text-primary"></i>
                                 {{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
-                            </form>
-                        </div>
+                                </form>
+                            </div>
                     </li>
                 </ul>
             </div>
@@ -136,6 +129,7 @@
                             </div>
                         </div>
                     </li>
+
                     <!-- /////////////////////////////////// -->
                     <!-- MENU SIDEBAR -->
                     <!-- /////////////////////////////////// -->
@@ -151,9 +145,9 @@
                             <span class="menu-title">Profil Anda</span>
                         </a>
                     </li>
+
                     <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false"
-                            aria-controls="sidebar-layouts">
+                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false" aria-controls="sidebar-layouts">
                             <i class="fab fa-pagelines menu-icon"></i>
                             <span class="menu-title">Assesment</span>
                             <i class="menu-arrow"></i>
@@ -161,8 +155,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Tutorial 
-                                        Pendaftaran</a>
+                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Tutorial Pendaftaran</a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
@@ -172,27 +165,15 @@
                             </ul>
                             {{-- <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('formulirapl2.edit') }}">Registrasi
-                                        Sertifikasi</a>
+                                    <a class="nav-link" href="{{ route('registrasi.index') }}">Registrasi Sertifikasi</a>
                                 </li>
                             </ul> --}}
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi
-                                        Sertifikat</a>
+                                    <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi Sertifikat</a>
                                 </li>
                             </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();"><i
-                                class="fas fa-power-off menu-icon"></i>
-                            <span class="menu-title">Logout</span>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
+                        </div>                        
                     </li>
                 </ul>
             </nav>

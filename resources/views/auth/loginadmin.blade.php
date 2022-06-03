@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LOGIN-ASESI | LSP P1-POLITAP</title>
+    <title>LOGIN-ADMIN | LSP P1-POLITAP</title>
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
@@ -22,19 +22,18 @@
                             <div class="brand-logo">
                                 <img src="{{ asset('public/assets/images/logo/lsp.png') }}" alt="logo">
                             </div>
-                            <h4>Welcome back!</h4>
-                            <h6 class="font-weight-light">Senang Melihat Anda Kembali</h6>
+                            <h4>Login Sebagai Administrator</h4>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="email">NIM</label>
+                                    <label for="email">Username</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend bg-transparent">
                                             <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="fas fa-graduation-cap text-primary"></i>
+                                                <i class="fas fa-user-alt text-primary"></i>
                                             </span>
                                         </div>
-                                        <input type="number"
+                                        <input type="text"
                                             class="form-control @error('email') is-invalid @enderror form-control-lg border-left-0"
                                             id="email" name="email" value="{{ old('email') }}" required
                                             autocomplete="email" autofocus placeholder="NIM">
@@ -64,13 +63,13 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="my-3">
+                                    <button type="submit"
+                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
+                                </div>
+
                                 <div class="my-2 d-flex justify-content-between align-items-center">
                                     <div class="form-check">
-                                        <label class="form-check-label  text-muted" for="remember">
-                                            <input type="checkbox" name="remember" id="remember"
-                                                class="form-check-input" {{ old('remember') ? 'checked' : '' }}>
-                                            Ijinkan saya masuk
-                                        </label>
                                     </div>
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -78,19 +77,10 @@
                                         </a>
                                     @endif
                                 </div>
-                                <div class="my-3">
-                                    <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
-                                </div>
-
-                                <div class="text-center mt-4 font-weight-light">
-                                    Belum Punya Akun? <a href="{{ route('register') }}" class="text-primary">Daftar
-                                        Sini</a>
-                                </div>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-flex flex-row" style="background-image: url('public/assets/images/auth/login.png'); background-size: cover">
+                    <div class="col-lg-6  d-flex flex-row" style="background-image: url('public/assets/images/auth/loginadmin.png'); background-size: cover">
                         <p class="text-white font-weight-medium text-center flex-grow align-self-end">Designed &
                             Developed By Politeknik Negeri Ketapang 2022</p>
                     </div>
@@ -99,7 +89,7 @@
         </div>
     </div>
 
-    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    {{-- <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
     <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
     <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
@@ -119,7 +109,7 @@
     <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
     <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
     <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
-    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script> --}}
 
 </body>
 
