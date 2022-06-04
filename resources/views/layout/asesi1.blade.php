@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo3.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -131,7 +131,7 @@
                                     {{ Auth::user()->name }}
                                 </p>
                                 <p class="designation text-center">
-                                    Pengguna
+                                    Asesi
                                 </p>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                         <div class="collapse" id="sidebar-layouts">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Tutorial 
+                                    <a class="nav-link" href="{{ route('instruksi.registrasi') }}">Tutorial
                                         Pendaftaran</a>
                                 </li>
                             </ul>

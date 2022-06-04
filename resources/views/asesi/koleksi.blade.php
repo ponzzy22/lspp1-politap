@@ -9,7 +9,7 @@
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
+        <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">Koleksi Sertifikat</li>
         </ol>
@@ -30,7 +30,7 @@
                     <div class="col-sm-12">
                     <table id="order-listing" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
                     <thead>
-                        <tr class="bg-info text-white" role="row">
+                        <tr class="bg-danger text-white" role="row">
                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column ascending" style="width: 10.4219px;">#</th>
                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Order #: activate to sort column ascending" style="width: 10.4219px;">Action</th>
                             <th class="sorting" tabindex="0" aria-controls="order-listing" rowspan="1" colspan="1" aria-label="Actions: activate to sort column ascending" style="width: 150.141px;">Kode Registrasi</th>
@@ -41,13 +41,13 @@
                     <tbody>
                     @foreach ($datareg as $hasil => $asu)
                         <tr role="row" class="odd">
-                            <td>{{ $loop->iteration }}</td>
+                            <td class="font-weight-bold">{{ $loop->iteration }}</td>
                             <td class="text-right">
-                                <a href="{{ route('sertifikat_show', $asu->id) }}"><button type="submit" class="btn btn-inverse-info btn-sm btn-block"><i class="fa fa-eye "></i>  Lihat Detail</button></a>
+                                <a href="{{ route('sertifikat_show', $asu->id) }}"><button type="submit" class="btn btn-inverse-info btn-sm btn-block font-weight-bold"><i class="fa fa-eye "></i>  Lihat Detail</button></a>
                             </td>
-                            <td class="">{{ $asu->id }}</td>
-                            <td>{{ $asu->skema_name }}</td>
-                            <td>{{ $asu->updated_at }}</td>
+                            <td class="font-weight-bold">{{ $asu->id }}</td>
+                            <td class="font-weight-bold">{{ $asu->skema_name }}</td>
+                            <td class="font-weight-bold">{{ $asu->updated_at }}</td>
                         </tr>
                     @endforeach
                     </tbody>

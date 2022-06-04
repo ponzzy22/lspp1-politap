@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo3.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -123,9 +123,9 @@
                                 <p class="name">
                                     {{ Auth::user()->name }}
                                 </p>
-                                <p class="designation text-center">
-                                    Pengguna
-                                </p>
+                                <h4 class="designation text-center font-weight-bold">
+                                Asesi
+                                </h4>
                             </div>
                         </div>
                     </li>
@@ -173,7 +173,7 @@
                                     <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi Sertifikat</a>
                                 </li>
                             </ul>
-                        </div>                        
+                        </div>
                     </li>
                 </ul>
             </nav>

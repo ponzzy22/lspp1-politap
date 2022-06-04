@@ -4,7 +4,7 @@
 
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Lengkapi Profile Anda</h4>
+            <h5 class="font font-weight-bold">Lengkapi Profile Anda</h5>
             <form action="{{ route('formulirapl2.update') }}" method="POST" enctype="multipart/form-data"
                 class="form-sample">
                 @csrf

@@ -2,7 +2,7 @@
 @section('isi')
 <div class="page-header">
     <h4>
-        <i class="fas fa-eye"></i>  Detail Skema 
+        <i class="fas fa-eye"></i>  Detail Skema
     </h4>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
@@ -107,11 +107,11 @@
                             <tr>
                                 <th style="width: 20px">{{ $loop->iteration }}</th>
                                 <td>{{ $item->unikom }}</td>
-                                
+
                             </tr>
                             @empty
-                                
-                            @endforelse 
+
+                            @endforelse
                         </table>
                     </div>
                 </div>

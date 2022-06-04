@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
+            <ol class="breadcrumb breadcrumb-custom  bg-inverse-black font-weight-bold">
                 {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
@@ -24,13 +24,13 @@
                     <div class="d-flex flex-row">
                         <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
                         <div class="ml-3">
-                            <h6 class="text-primary">{{ Auth::user()->name }}</h6>
-                            <p class="text-muted"><i class="fas fa-envelope"></i> {{ Auth::user()->email2 }}</p>
-                            <p class="text-muted">NIM :
+                            <h6 class="text-danger font-weight-bold">{{ Auth::user()->name }}</h6>
+                            <p class="text-black font-weight-bold"><i class="fas fa-envelope"></i> {{ Auth::user()->email2 }}</p>
+                            <p class="text-black font-weight-bold">NIM :
                                 {{ Auth::user()->email }}</p>
-                            <p class="text-muted">Mahasiswa Politeknik Negeri Ketapang</p>
-                            <p class="mt-2 text-muted font-weight-bold">{{ Auth::user()->jurusan->jurusan }}</p>
-                            <a href="{{ route('koleksi.sertifikat') }}"><p class="text text-black"> <i class="fas fa-certificate text-muted"></i> Koleksi Sertifikat: {{ $datasertifikat }}
+                            <p class="text-black font-weight-bold">Mahasiswa Politeknik Negeri Ketapang</p>
+                            <p class="mt-2 text-black font-weight-bold">{{ Auth::user()->jurusan->jurusan }}</p>
+                            <a href="{{ route('koleksi.sertifikat') }}"><p class="text text-black font-weight-bold"> <i class="fas fa-certificate text-black font-weight-bold"></i> Koleksi Sertifikat: {{ $datasertifikat }}
                             </p></a>
                         </div>
                     </div>
@@ -281,7 +281,8 @@
     {{-- <-------------------- TABEL SKEMA --------------------> --}}
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fab fa-pagelines"></i>Tabel Skema</h4>
+            <h4 class="font-weight-bold"><i class="fab fa-pagelines "></i> Tabel Skema</h4>
+
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
@@ -291,7 +292,7 @@
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
-                                            <tr class="bg-info text-white" role="row">
+                                            <tr class="bg-danger text-white" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Order #: activate to sort column ascending"
@@ -317,16 +318,16 @@
                                         <tbody>
                                             @foreach ($skema as $hasil => $asu)
                                                 <tr role="row" class="odd">
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td class="">{{ $asu->kode_skema }}</td>
-                                                    <td>{{ $asu->skema }}</td>
+                                                    <td class="font-weight-bold">{{ $loop->iteration }}</td>
+                                                    <td class="font-weight-bold">{{ $asu->kode_skema }}</td>
+                                                    <td class="font-weight-bold">{{ $asu->skema }}</td>
                                                     <td class="text-right">
                                                         <a href="{{ route('info_skema.show', $asu->id) }}"><button
-                                                                type="submit" class="btn btn-info btn-sm btn-block"><i
+                                                                type="submit" class="btn btn-dark btn-sm btn-block font-weight-bold"><i
                                                                     class="fa fa-eye "></i> Lihat
                                                                 Skema</button></a>
                                                     </td>
-                                                    <td> <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                    <td> <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal"
                                                             data-target="#exampleModal-{{ $asu->id }}"><i
                                                                 class="fas  fa-check-square"></i> Mendaftar</button>
                                                     </td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2022 at 11:58 AM
+-- Generation Time: Jun 03, 2022 at 03:50 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -99,7 +99,7 @@ CREATE TABLE `asesor` (
 
 INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`, `value`) VALUES
 (1, '-', '-', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', NULL, NULL),
-(24, 'MET.000.010629 2017', 'Adha Panca Wardanu', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:52:47.000000', '2022-05-09 21:52:47.000000', NULL, NULL),
+(24, 'MET.000.010629 2017', 'Adha Panca Wardanu', 'public/uploads/asesor/1654176913Screenshot (66).png', 'dfsdfsdfsdfsdf', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-06-02 06:35:13.000000', '2022-06-02 13:35:13.855535', 34534, NULL),
 (25, 'MET.000.009812 2021', 'Ahmad Ravi', NULL, 'Luwu Utara, Sulawesi Selatan', NULL, NULL, 'Aktif', '2022-05-09 21:53:14.000000', '2022-05-09 21:53:14.000000', NULL, NULL),
 (26, 'MET.000.004633 2020', 'Alfath Desita Jumiar', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:35.000000', '2022-05-09 21:53:35.000000', NULL, NULL),
 (27, 'MET.000.010618 2017', 'Ar-Razy Muhammad', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:48.000000', '2022-05-09 21:53:48.000000', NULL, NULL),
@@ -130,18 +130,6 @@ INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `s
 (52, NULL, 'Sy. Indra Septiansyah', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:24.000000', '2022-05-11 12:42:24.000000', NULL, NULL),
 (53, NULL, 'Syarifah Aqla', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:49.000000', '2022-05-11 12:42:49.000000', NULL, NULL),
 (54, NULL, 'Firman', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:47:57.000000', '2022-05-11 12:47:57.000000', NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `asus`
---
-
-CREATE TABLE `asus` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -297,11 +285,9 @@ CREATE TABLE `data_registers` (
 --
 
 INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `image`, `jurusan_id`, `semester_id`, `ktp`, `ktm`, `khs`, `lain`, `created_at`, `updated_at`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`, `id_skema`, `kode_skema`, `koreksi`) VALUES
-(120, 'Junior Graphic Designer', 'belom-1', '1', 'Admin LSP-POLITAP', '<h4 style=\'color: green\'>Menunggu Validasi...</h4>', NULL, NULL, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', 3, 3, NULL, NULL, NULL, NULL, '2022-05-11 13:34:12', '2022-05-11 13:35:42', 1234, NULL, NULL, 1, 1, NULL, '1', '20', '-', NULL),
 (1815, 'Sertifikat III Bidang Pengelasan SMAW', 'belomSKM/1214/00003/1/2018/118', '18', 'asu', '<h4 style=\'color: rgb(141, 7, 7)\'>Pendaftaran Ditolak</h4>', NULL, NULL, '2022-05-11', '1', 'indonesia', 'Ketapang, Kalimantan Barat', NULL, 12121212121212, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/16522457101024px-User-avatar.svg.png', 1, 1, NULL, NULL, NULL, NULL, '2022-05-10 22:21:24', '2022-05-10 22:28:33', 12345678, NULL, NULL, 1, 1, '<p>jsdjfskdlfsdlkfsdfsd<br></p>', '18', '15', 'SKM/1214/00003/1/2018/1', NULL),
 (2115, 'Sertifikat III Bidang Pengelasan SMAW', 'belomSKM/1214/00003/1/2018/121', '21', 'Dwi Ramadhani', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', NULL, NULL, '2022-05-11', '1', 'indonesia', 'Ketapang, Kalimantan Barat', NULL, 12121212121212, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652248540photo.png', 5, 6, NULL, NULL, NULL, NULL, '2022-05-10 22:57:30', '2022-05-10 23:11:44', 12345678, NULL, NULL, 1, 1, NULL, '-', NULL, 'SKM/1214/00003/1/2018/1', NULL),
-(2315, 'Sertifikat III Bidang Pengelasan SMAW', 'SKM/1214/00003/1/2018/123', '23', 'Dwi Ranadhani', '<h4 style=\'color: rgb(163, 129, 8)\'>Lengkapi Data Anda</h4>', NULL, NULL, '2022-05-11', '2', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040912, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/16522867781652248540photo.png', 4, 1, NULL, NULL, NULL, NULL, '2022-05-11 09:33:20', '2022-05-11 09:33:20', 304200058, NULL, NULL, 1, 1, NULL, '23', '15', 'SKM/1214/00003/1/2018/1', NULL),
-(2515, 'Sertifikat III Bidang Pengelasan SMAW', 'belomSKM/1214/00003/1/2018/125', '25', 'Dwi Ramadhani', '<h4 style=\'color: green\'>Menunggu Validasi...</h4>', NULL, NULL, '1995-05-17', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 81256390908, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652287117photo.png', 4, 4, NULL, NULL, NULL, NULL, '2022-05-11 09:38:54', '2022-05-11 09:41:14', 3042020057, NULL, NULL, 1, 1, NULL, '25', '15', 'SKM/1214/00003/1/2018/1', NULL);
+(2315, 'Sertifikat III Bidang Pengelasan SMAW', 'SKM/1214/00003/1/2018/123', '23', 'Dwi Ranadhani', '<h4 style=\'color: rgb(163, 129, 8)\'>Lengkapi Data Anda</h4>', NULL, NULL, '2022-05-11', '2', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040912, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/16522867781652248540photo.png', 4, 1, NULL, NULL, NULL, NULL, '2022-05-11 09:33:20', '2022-05-11 09:33:20', 304200058, NULL, NULL, 1, 1, NULL, '23', '15', 'SKM/1214/00003/1/2018/1', NULL);
 
 -- --------------------------------------------------------
 
@@ -631,7 +617,8 @@ CREATE TABLE `notes` (
 
 INSERT INTO `notes` (`id`, `judul`, `isi`, `created_at`, `updated_at`) VALUES
 (2, 'TO-DO-LIST', '<h5><span style=\"color: rgb(255, 0, 0); --darkreader-inline-color: #ff1a1a; font-family: &quot;Comic Sans MS&quot;;\" data-darkreader-inline-color=\"\">ADMIN</span></h5><ol><li>input link navbar admin<br></li><li>setting akun</li><li>efek aos pada admin</li><li>menambahkan modal di admin</li><li>mengubah validate di admin</li><li>print untuk setiap menu administrasi dan pendaftaran</li><li>edit admin profil</li><li>edit user password</li><li>menu navigasi</li><li>membuat tata cara menggunakan web di info pendaftaran</li><li>galeri thumbnail<br></li></ol>', '2022-04-28 22:32:00', '2022-04-29 07:33:09'),
-(3, 'PENTING', '<ol><li>membuat input tanpa refresh</li><li>membuat desain prosedur sertifikasi</li><li>ajax provinsi-kabupaten<br></li></ol>', '2022-05-09 11:32:33', '2022-05-09 11:37:16');
+(3, 'PENTING', '<ol><li>membuat input tanpa refresh</li><li>membuat desain prosedur sertifikasi</li><li>ajax provinsi-kabupaten<br></li></ol>', '2022-05-09 11:32:33', '2022-05-09 11:37:16'),
+(4, 'catatan', '<p>1.&nbsp; TUK = detail seperti :</p><p>-ketua , pengelola</p><p>-formulir apl , to pdf</p><p>2. datbase:</p><p>-no hp mysql</p><p>-relasi antar tabel</p><p>-key kolom</p><p>3.&nbsp; forimulir apl2</p><p>-centang dan format to pdf</p><p>5. halama login untuk admin</p>', '2022-05-29 03:07:30', '2022-05-29 08:05:56');
 
 -- --------------------------------------------------------
 
@@ -949,6 +936,8 @@ INSERT INTO `tokens` (`id`, `token`, `user_id`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `tuk` (
   `id` int(11) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `pengelola` varchar(255) NOT NULL,
   `tuk` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
@@ -959,9 +948,10 @@ CREATE TABLE `tuk` (
 -- Dumping data for table `tuk`
 --
 
-INSERT INTO `tuk` (`id`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
-(1, '-', NULL, '2022-04-14 09:21:33.428215', '2022-04-14 09:21:33.428215'),
-(13, 'Lab Bengkel Mesin', '-', '2022-05-09 20:31:01.000000', '2022-05-09 20:31:01.000000');
+INSERT INTO `tuk` (`id`, `image`, `pengelola`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
+(1, '', '', '-', NULL, '2022-04-14 09:21:33.428215', '2022-04-14 09:21:33.428215'),
+(13, '', '', 'Lab Bengkel Mesin', '-', '2022-05-09 20:31:01.000000', '2022-05-09 20:31:01.000000'),
+(14, 'public/uploads/pengelola/1654167630Screenshot (67).png', 'gsdfgsdfg1212', 'LAB KIMIA2', 'dfsdfsdfsdfsdf1212', '2022-06-02 04:00:30.000000', '2022-06-02 11:00:30.028158');
 
 -- --------------------------------------------------------
 
@@ -1079,15 +1069,7 @@ INSERT INTO `upload_files` (`id`, `kode_dokumen`, `data_register_id`, `name`, `i
 (441, '12315', 2315, 'Photo', 'public/uploads/uploads_file_register/1652286863photo.png', '2022-05-11 09:33:40', '2022-05-11 09:34:23', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 23, 123, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>'),
 (442, '22315', 2315, 'Kartu Tanda Penduduk', NULL, '2022-05-11 09:33:40', '2022-05-11 09:33:40', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 23, 223, NULL),
 (443, '32315', 2315, 'Kartu Tanda Mahasiswa', NULL, '2022-05-11 09:33:40', '2022-05-11 09:33:40', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 23, 323, NULL),
-(444, '42315', 2315, 'Kartu Hasil Studi', NULL, '2022-05-11 09:33:40', '2022-05-11 09:33:40', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 23, 423, NULL),
-(445, '12515', 2515, 'Photo', 'public/uploads/uploads_file_register/1652287182photo.png', '2022-05-11 09:39:14', '2022-05-11 09:39:42', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 125, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>'),
-(446, '22515', 2515, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1652287192KTP.png', '2022-05-11 09:39:15', '2022-05-11 09:39:52', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 225, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>'),
-(447, '32515', 2515, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1652287203KTM.png', '2022-05-11 09:39:15', '2022-05-11 09:40:03', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 325, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>'),
-(448, '42515', 2515, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1652287210KHS.png', '2022-05-11 09:39:15', '2022-05-11 09:40:10', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 425, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>'),
-(449, '1120', 120, 'Photo', NULL, '2022-05-11 13:34:29', '2022-05-11 13:34:29', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 1, 11, NULL),
-(450, '2120', 120, 'Kartu Tanda Penduduk', NULL, '2022-05-11 13:34:29', '2022-05-11 13:34:29', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 1, 21, NULL),
-(451, '3120', 120, 'Kartu Tanda Mahasiswa', NULL, '2022-05-11 13:34:29', '2022-05-11 13:34:29', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 1, 31, NULL),
-(452, '4120', 120, 'Kartu Hasil Studi', NULL, '2022-05-11 13:34:30', '2022-05-11 13:34:30', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 1, 41, NULL);
+(444, '42315', 2315, 'Kartu Hasil Studi', NULL, '2022-05-11 09:33:40', '2022-05-11 09:33:40', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 23, 423, NULL);
 
 -- --------------------------------------------------------
 
@@ -1135,7 +1117,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`, `surel`, `tmpt_lahir`, `email2`, `tempat_lahir`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', '1234', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'ZWArKL0puaJkIZ1f9VQBipYZ8gkfJDXTX2ASk8ySXJtVDaAz91lTMljHvD4o', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'zWoNR3X9uB1DDvYbxgWfo3QFJFpofIO4l6bYIEItA1prGfFLLDE2mkH9phRr', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
 (25, NULL, 'Dwi Ramadhani', '3042020057', NULL, '1995-05-17', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 81256390908, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652287117photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$ZF9y04L.RUIsE60DjwV0C.Ss3KFMk5VAi9xp2TjYospzqYXImBEPO', NULL, NULL, NULL, '2022-05-11 09:37:32', '2022-05-11 09:38:37', NULL, NULL, 'dwi222@gmail.com', 'Ketapang'),
 (26, NULL, 'Ponsianus JOPI', '3042020058', NULL, '2000-06-12', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 91256789696, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652302506photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$3OTmQaxoxzTHuN555seoHOaqj25qqu0G1Cb9ws.bnZ1yVFuM7panm', NULL, NULL, NULL, '2022-05-11 13:53:25', '2022-05-11 13:55:06', NULL, NULL, 'ponzzy22@gmail.com', 'Ketapang');
 
@@ -1181,35 +1163,7 @@ INSERT INTO `xnxxes` (`id`, `kode_elemen`, `kriteria`, `user_id`, `unikom_id`, `
 (434, '12315', '<p>1.1 Alat Pelindung diri, consummable materials dan perlatan pengelasandi idenfitikasi</p><p>1.2 Alat pelindung diri / PPE diidentifikasi dan diterapkan berdasarkan SOP</p><p>1.3 Jenis dan ukuran bahan dan elektroda las</p><p>1.4 Perlatan utama dan pendukung disiapkan berdasarkan tuntunan pekerja atau WPS<br></p><p><br></p>', 23, 49, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Menyiapkan Fasilitas Pengelasan', 'Sertifikat III Bidang Pengelasan SMAW', 15, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 09:33:46', '2022-05-11 09:33:46', 2315, 123, NULL, 'JIP.SM02.016.01'),
 (435, '22315', '<p>2.1 karakteristik mesin las dan teknik pengelasan dipahami sesuai dengan kebutuhan pengelasan</p><p>2.2 besarnya arus listrik diatur berdasarkan jenis dan ukuran elektroda las yang digunakan atau WPS yang di tentukan</p><p>2.3 Las Cantum ( tack weld ) dibuat dengan ukuran dan jumlah sesuai dengan ukuran bahan yang dilas</p><p>2.4 pengelasan pipa pada pelat posisi sumbu miring tidak dapat diputar didemonstrasikan sesuai dengan teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3</p><p>2.5 pengelasan Pipa sambungan tumpul kampuh V posisi sumbu miring tidak dapat diputar di demonstrasikan sesuai dengan Teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3<br></p>', 23, 50, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melaksanakan pengelasan pipa pada posisis sumbu miring tidak dapat diputar', 'Sertifikat III Bidang Pengelasan SMAW', 15, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 09:33:46', '2022-05-11 09:33:46', 2315, 223, NULL, 'JIP.SM02.016.01'),
 (436, '32315', '<p>3.1 Alat uji dan alat ukur hasil pengelasan diidentifikasi disiapkan dan diperiksa fungsi dan validasinnya</p><p>3.2 Seluruh hasil pengelasan diperiksa secara visual dan dibandingkan dengan standar baku</p><p>3.3 Hasil pemeriksaan visual disimpulkan dan ditafsirkan</p><p>3.4 Perbaikan hasil las (bila diperlukan) dilakukan secara SOP<br></p>', 23, 51, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melakasanakan pemeriksaan hasil pengelasan secara visual', 'Sertifikat III Bidang Pengelasan SMAW', 15, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 09:33:46', '2022-05-11 09:33:46', 2315, 323, NULL, 'JIP.SM02.016.01'),
-(437, '42315', '<p>4.1 Instrumen Pengamatan proses dan pengukuran hasil las ( WPQR ) dipahami</p><p>4.2 Data hasil pengamatan dan pengukuran diinput dalam instrumen</p><p>4.3 Laporan hasil pengamatan dan pengukuran diserahkan kepada yang berhak sesuai dengan SOP<br></p>', 23, 52, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melaporkan hasil pengelasan', 'Sertifikat III Bidang Pengelasan SMAW', 15, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 09:33:47', '2022-05-11 09:33:47', 2315, 423, NULL, 'JIP.SM02.016.01'),
-(438, '12515', '<p>1.1 Alat Pelindung diri, consummable materials dan perlatan pengelasandi idenfitikasi</p><p>1.2 Alat pelindung diri / PPE diidentifikasi dan diterapkan berdasarkan SOP</p><p>1.3 Jenis dan ukuran bahan dan elektroda las</p><p>1.4 Perlatan utama dan pendukung disiapkan berdasarkan tuntunan pekerja atau WPS<br></p><p><br></p>', 25, 49, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Menyiapkan Fasilitas Pengelasan', 'Sertifikat III Bidang Pengelasan SMAW', 15, 'public/uploads/formulir_apl2/1652287241dokumen.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-05-11 09:39:21', '2022-05-11 09:40:41', 2515, 125, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'JIP.SM02.016.01'),
-(439, '22515', '<p>2.1 karakteristik mesin las dan teknik pengelasan dipahami sesuai dengan kebutuhan pengelasan</p><p>2.2 besarnya arus listrik diatur berdasarkan jenis dan ukuran elektroda las yang digunakan atau WPS yang di tentukan</p><p>2.3 Las Cantum ( tack weld ) dibuat dengan ukuran dan jumlah sesuai dengan ukuran bahan yang dilas</p><p>2.4 pengelasan pipa pada pelat posisi sumbu miring tidak dapat diputar didemonstrasikan sesuai dengan teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3</p><p>2.5 pengelasan Pipa sambungan tumpul kampuh V posisi sumbu miring tidak dapat diputar di demonstrasikan sesuai dengan Teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3<br></p>', 25, 50, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melaksanakan pengelasan pipa pada posisis sumbu miring tidak dapat diputar', 'Sertifikat III Bidang Pengelasan SMAW', 15, 'public/uploads/formulir_apl2/1652287255dokumen.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-05-11 09:39:21', '2022-05-11 09:40:55', 2515, 225, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'JIP.SM02.016.01'),
-(440, '32515', '<p>3.1 Alat uji dan alat ukur hasil pengelasan diidentifikasi disiapkan dan diperiksa fungsi dan validasinnya</p><p>3.2 Seluruh hasil pengelasan diperiksa secara visual dan dibandingkan dengan standar baku</p><p>3.3 Hasil pemeriksaan visual disimpulkan dan ditafsirkan</p><p>3.4 Perbaikan hasil las (bila diperlukan) dilakukan secara SOP<br></p>', 25, 51, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melakasanakan pemeriksaan hasil pengelasan secara visual', 'Sertifikat III Bidang Pengelasan SMAW', 15, 'public/uploads/formulir_apl2/1652287263dokumen.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-05-11 09:39:21', '2022-05-11 09:41:03', 2515, 325, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'JIP.SM02.016.01'),
-(441, '42515', '<p>4.1 Instrumen Pengamatan proses dan pengukuran hasil las ( WPQR ) dipahami</p><p>4.2 Data hasil pengamatan dan pengukuran diinput dalam instrumen</p><p>4.3 Laporan hasil pengamatan dan pengukuran diserahkan kepada yang berhak sesuai dengan SOP<br></p>', 25, 52, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melaporkan hasil pengelasan', 'Sertifikat III Bidang Pengelasan SMAW', 15, 'public/uploads/formulir_apl2/1652287269dokumen.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-05-11 09:39:21', '2022-05-11 09:41:09', 2515, 425, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'JIP.SM02.016.01'),
-(442, '1120', '<p>1.1 Konsep data dan struktur data diidentifikasi sesuai dengan konteks permasalahan.<br>1.2 Alternatif struktur data dibandingkan kelebihan dan kekurangannya untuk konteks permasalahan yang diselesaikan.<br></p>', 1, 58, 'Menggunakan Struktur Data', 'Mengidentifikasi  konsep data dan struktur data', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:35', '2022-05-11 13:34:35', 120, 11, NULL, 'J.620100.004.02'),
-(443, '2120', '2.1 Struktur data diimplementasikan sesuai dengan bahasa pemrograman yang akan dipergunakan.<br>2.2 Akses terhadap data dinyatakan dalam algoritma yang efisiensi sesuai bahasa pemrograman yang akan dipakai. <br>', 1, 59, 'Menggunakan Struktur Data', 'Menerapkan struktur data dan akses terhadap struktur data tersebut', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:35', '2022-05-11 13:34:35', 120, 21, NULL, 'J.620100.004.02'),
-(444, '3120', '<p>1.1 Rancangan user interface diidentifikasi sesuai kebutuhan. <br>1.2 Komponen user interface dialog diidentifikasi sesuai konteks rancangan proses.<br>1.3 Urutan dari akses komponen user interface dialog dijelaskan.<br>1.4 Simulasi (mock-up) dari aplikasi yang akan dikembangkan dibuat. <br></p>', 1, 60, 'Mengimplementasikan User Interface', 'Mengidentifikasi rancangan user interface', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:35', '2022-05-11 13:34:35', 120, 31, NULL, 'J.620100.005.02'),
-(445, '4120', '<p>2.1 Menu program sesuai dengan rancangan program diterapkan.<br>2.2 Penempatan user interface dialog diatur secara sekuensial.<br>2.3 Setting aktif-pasif komponen user interface dialog disesuaikan dengan urutan alur proses.<br>2.4 Bentuk style dari komponen user interface ditentukan. <br>2.5 Penerapan simulasi dijadikan suatu proses yang sesungguhnya.<br></p>', 1, 61, 'Mengimplementasikan User Interface', 'Melakukan implementasi rancangan user interface', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 41, NULL, 'J.620100.005.02'),
-(446, '5120', '<p>1.1 Platform (lingkungan) yang akan digunakan untuk menjalankan tools pemrograman&nbsp; diidentifikasi sesuai&nbsp; dengan kebutuhan.</p><p>1.2 Tools bahasa pemrogram dipilih sesuai dengan kebutuhaan dan lingkungan pengembangan.<br></p>', 1, 62, 'Melakukan instalasi Software Tools Pemrograman', 'Memilih tools pemrograman yang sesuai dengan kebutuhan', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 51, NULL, 'J.620100.011.01'),
-(447, '6120', '<p>2.1 Tools pemrogaman ter-install sesuai dengan prosedur. &nbsp; </p><p>2.2 Tools pemrograman bisa dijalankan di lingkungan pengembangan yang telah ditetapkan.<br></p>', 1, 63, 'Melakukan instalasi Software Tools Pemrograman', 'Instalasi tool pemrograman', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 61, NULL, 'J.620100.011.01'),
-(448, '7120', '<p>3.1 Script (source code) sederhana dibuat&nbsp; sesuai tools pemrogaman yang di-install </p><p>3.2 Script dapat dijalankan dengan benar dan menghasilkan keluaran sesuai skenario yang diharapkan <br></p>', 1, 64, 'Melakukan instalasi Software Tools Pemrograman', 'Menerapkan hasil pemodelan kedalam eksekusi script sederhana', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 71, NULL, 'J.620100.011.01'),
-(449, '8120', '<p>1.1 Kode sumber dituliskan mengikuti coding-guidelines dan best practices.&nbsp; </p><p>1.2 Struktur program yang sesuai dengan konsep paradigmanya dibuat.&nbsp; </p><p>1.3 Galat/error ditangani. <br></p>', 1, 65, 'Menulis Kode dengan Prinsip Sesuai Guidelines dan Best Practices', 'Menerapkan codingguidelines dan best  practices dalam  penulisan program  (kode sumber)', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 81, NULL, 'J.620100.016.01'),
-(450, '9120', '<p>2.1 Efisiensi penggunaan resources oleh kode dihitung. </p><p>2.2 Kemudahan interaksi selalu diimplementasikan&nbsp; sesuai standar yang berlaku.<br></p>', 1, 66, 'Menulis Kode dengan Prinsip Sesuai Guidelines dan Best Practices', 'Menggunakan ukuran performansi dalam menuliskan kode sumber', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 91, NULL, 'J.620100.016.01'),
-(451, '10120', '<p>1.1 Tipe data yang sesuai standar ditentukan . </p><p>1.2 Syntax program yang dikuasai digunakan sesuai standar. </p><p>1.3 Struktur kontrol program yang dikuasai digunakan sesuai standar.<br></p>', 1, 67, 'Mengimplementasikan Pemrograman Terstruktur', 'Menggunakan tipe data dan control program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 101, NULL, 'J.620100.017.02'),
-(452, '11120', '<p>2.1 Program baca tulis untuk memasukkan data dari keyboard dan menampilkan ke layar monitor termasuk variasinya sesuai standar masukan/keluaran telah dibuat. </p><p>2.2 Struktur kontrol percabangan dan pengulangan dalam membuat program telah digunakan.<br></p>', 1, 68, 'Mengimplementasikan Pemrograman Terstruktur', 'Membuat program sederhana', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 111, NULL, 'J.620100.017.02'),
-(453, '12120', '<p>3.1 Program dengan menggunakan prosedur dibuat sesuai aturan penulisan program. </p><p>3.2 Program dengan menggunakan fungsi dibuat sesuai aturan penulisan program. </p><p>3.3 Program dengan menggunakan prosedur dan fungsi secara bersamaan dibuat sesuai aturan penulisan program. </p><p>3.4 Keterangan untuk setiap prosedur dan fungsi telah diberikan. <br></p>', 1, 69, 'Mengimplementasikan Pemrograman Terstruktur', 'Membuat program menggunakan prosedur dan fungsi', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:36', '2022-05-11 13:34:36', 120, 121, NULL, 'J.620100.017.02'),
-(454, '13120', '<p>4.1 Dimensi array telah ditentukan. </p><p>4.2 Tipe data array telah ditentukan. </p><p>4.3 Panjang array telah&nbsp; ditentukan. </p><p>4.4 Pengurutan array telah digunakan.<br></p>', 1, 70, 'Mengimplementasikan Pemrograman Terstruktur', 'Membuat program menggunakan array', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 131, NULL, 'J.620100.017.02'),
-(455, '14120', '<p>5.1 Program untuk menulis data dalam media penyimpan telah dibuat. </p><p>5.2 Program untuk membaca data dari media penyimpan telah dibuat.<br></p>', 1, 71, 'Mengimplementasikan Pemrograman Terstruktur', 'Membuat program untuk akses file', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 141, NULL, 'J.620100.017.02'),
-(456, '15120', '<p>1.1 Class unit-unit reuse (dari aplikasi lain) yang sesuai dapat diidentifikasi. </p><p>1.2 Keuntungan efisiensi dari pemanfaatan komponen reuse dapat dihitung. </p><p>1.3 Lisensi, Hak cipta dan hak paten tidak dilanggar dalam pemanfaatan komponen reuse tersebut<br></p>', 1, 72, 'Menggunakan Library atau Komponen Pre-Existing', 'Melakukan pemilihan unit-unit reuse yang potensial', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 151, NULL, 'J.620100.019.02'),
-(457, '16120', '<p>2.1 Ketergantungan antar unit diidentifikasi. </p><p>2.2 Penggunaan komponen yang sudah obsolete dihindari. </p><p>2.3 Program yang dihubungkan dengan library diterapkan.<br></p>', 1, 73, 'Menggunakan Library atau Komponen Pre-Existing', 'Melakukan integrasi library atau komponen pre-existing dengan source code yang ada', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 161, NULL, 'J.620100.019.02'),
-(458, '17120', '<p>3.1 Cara-cara pembaharuan library atau komponen pre-existing diidentifikasi. </p><p>3.2 Pembaharuan library atau komponen preexisting berhasil dilakukan.<br><br><br></p>', 1, 74, 'Menggunakan Library atau Komponen Pre-Existing', 'Melakukan pembaharuan library atau komponen preexisting yang  digunakan', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 171, NULL, 'J.620100.019.02'),
-(459, '18120', '<p>1.1 Modul program diidentifikasi </p><p>1.2 Parameter&nbsp; yang&nbsp; dipergunakan&nbsp; diidentifikasi&nbsp; </p><p>1.3 Algoritma dijelaskan cara kerjanya </p><p>1.4 Komentar setiap baris kode termasuk data, eksepsi, fungsi, prosedur dan class (bila ada) diberikan <br></p>', 1, 75, 'Membuat Dokumen Kode Program', 'Melakukan identifikasi kode program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 181, NULL, 'J.620100.023.02'),
-(460, '19120', '<p>2.1 Dokumentasi modul dibuat sesuai dengan identitas untuk memudahkan pelacakan </p><p>2.2 Identifikasi dokumentasi diterapkan </p><p>2.3 Kegunaan modul dijelaskan&nbsp; </p><p>2.4 Dokumen direvisi sesuai perubahan kode program<br></p>', 1, 76, 'Membuat Dokumen Kode Program', 'Membuat dokumentasi modul program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 191, NULL, 'J.620100.023.02'),
-(461, '20120', '<p>3.1 Dokumentasi fungsi, prosedur atau metod dibuat&nbsp; </p><p>3.2 Kemungkinan eksepsi dijelaskan&nbsp; </p><p>3.3 Dokumen direvisi sesuai perubahan kode program <br></p>', 1, 77, 'Membuat Dokumen Kode Program', 'Membuat dokumentasi fungsi, prosedur atau method program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 201, NULL, 'J.620100.023.02'),
-(462, '21120', '<p>4.1 Tools untuk generate dokumentasi diidentifikasi </p><p>4.2 Generate dokumentasi dilakukan <br></p>', 1, 78, 'Membuat Dokumen Kode Program', 'Men-generate dokumentasi', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 211, NULL, 'J.620100.023.02'),
-(463, '22120', '<p>1.1 Kode program sesuai spesifikasi disiapkan. </p><p>1.2 Debugging tools untuk melihat proses suatu modul dipersiapkan. <br></p>', 1, 79, 'Melakukan Debugging', 'Mempersiapkan kode program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 221, NULL, 'J.620100.025.02'),
-(464, '23120', '<p>2.1 Kode program dikompilasi sesuai bahasa pemrograman yang digunakan. </p><p>2.2 Kriteria lulus build dianalisis. </p><p>2.3 Kriteria eksekusi aplikasi dianalisis. </p><p>2.4 Kode kesalahan dicatat. <br></p>', 1, 80, 'Melakukan Debugging', 'Melakukan debugging', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 231, NULL, 'J.620100.025.02'),
-(465, '24120', '<p>3.1 Perbaikan terhadap kesalahan kompilasi maupun build dirumuskan. </p><p>3.2 Perbaikan dilakukan. <br></p>', 1, 81, 'Melakukan Debugging', 'Memperbaiki program', 'Junior Graphic Designer', 20, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 13:34:37', '2022-05-11 13:34:37', 120, 241, NULL, 'J.620100.025.02');
+(437, '42315', '<p>4.1 Instrumen Pengamatan proses dan pengukuran hasil las ( WPQR ) dipahami</p><p>4.2 Data hasil pengamatan dan pengukuran diinput dalam instrumen</p><p>4.3 Laporan hasil pengamatan dan pengukuran diserahkan kepada yang berhak sesuai dengan SOP<br></p>', 23, 52, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', 'Melaporkan hasil pengelasan', 'Sertifikat III Bidang Pengelasan SMAW', 15, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-05-11 09:33:47', '2022-05-11 09:33:47', 2315, 423, NULL, 'JIP.SM02.016.01');
 
 --
 -- Indexes for dumped tables
@@ -1229,12 +1183,6 @@ ALTER TABLE `asesor`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `nik` (`nik`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `asus`
---
-ALTER TABLE `asus`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `beranda`
@@ -1495,12 +1443,6 @@ ALTER TABLE `asesor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT for table `asus`
---
-ALTER TABLE `asus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `beranda`
 --
 ALTER TABLE `beranda`
@@ -1588,7 +1530,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `notes`
 --
 ALTER TABLE `notes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -1672,7 +1614,7 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `unikoms`
@@ -1684,7 +1626,7 @@ ALTER TABLE `unikoms`
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=457;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=461;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1696,7 +1638,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `xnxxes`
 --
 ALTER TABLE `xnxxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=490;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=514;
 
 --
 -- Constraints for dumped tables
