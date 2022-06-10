@@ -56,7 +56,7 @@
                                     <div class="media-body">
                                         <h6 class="mb-1">{{ $skema->asesor->nama }}</h6>
                                         <p class="mb-0 text-muted">
-                                            Asesor
+                                            Penanggung Jawab
                                         </p>
                                     </div>
                                 </div>

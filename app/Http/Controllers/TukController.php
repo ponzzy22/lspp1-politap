@@ -23,13 +23,16 @@ class TukController extends Controller
     public function store(Request $request){
         $request->validate([
             'tuk' => ['required'],
-            'alamat' => ['required']
+            'kode' => ['required'],
+            'alamat' => ['required'],
+            'image' => ['required']
         ]);
 
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
         $tuk = Tuk::create([
             'tuk' => $request->tuk,
+            'kode' => $request->kode,
             'pengelola' => $request->pengelola,
             'alamat' => $request->alamat,
             'image' => 'public/uploads/pengelola/'.$new_image,
@@ -48,6 +51,7 @@ class TukController extends Controller
             $image->move('public/uploads/pengelola/', $new_image);
             $tuk_data = [
                 'tuk' => $request->tuk,
+                'kode' => $request->kode,
                 'pengelola' => $request->pengelola,
                 'alamat' => $request->alamat,
                 'image' => 'public/uploads/pengelola/'.$new_image,
@@ -56,6 +60,7 @@ class TukController extends Controller
         else{
             $tuk_data = [
                 'tuk' => $request->tuk,
+                'kode' => $request->kode,
                 'pengelola' => $request->pengelola,
                 'alamat' => $request->alamat,
             ];

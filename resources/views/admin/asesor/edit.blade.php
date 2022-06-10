@@ -38,9 +38,7 @@
                         <div class="border-bottom py-4">
                             <p>Skema</p>
                             <div>
-                                @foreach ($asesor->skemas as $skema)
-                                    <label class="badge badge-outline-info">{{ $skema->skema }}</label>
-                                @endforeach
+                                    <label class="badge badge-outline-info">{{ $asesor->skema }}</label>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -116,6 +114,18 @@
                                                 <input type="text" maxlength="100" name="nama" class="form-control"
                                                     value="{{ $asesor->nama }}">
                                                 @error('nama')
+                                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Skema </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" maxlength="100" name="skema" class="form-control"
+                                                    value="{{ $asesor->skema }}">
+                                                @error('skema')
                                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                                 @enderror
                                             </div>

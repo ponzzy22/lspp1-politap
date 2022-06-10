@@ -8,19 +8,21 @@ use Illuminate\Database\Eloquent\Model;
 class Asesor extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'asesor';
     protected $fillable = [
-        'nik', 
-        'nama', 
-        'image', 
+        'nik',
+        'nama',
+        'image',
         'alamat',
-        'sex', 
+        'sex',
         'email',
         'no_hp' ,
+        'skema' ,
         'status'];
 
     public function skemas(){
         return $this->hasMany(Skema::class);
     }
+
 }

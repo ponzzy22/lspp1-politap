@@ -1,7 +1,6 @@
 @extends('layout/admin1')
 @section('isi')
     @include('layout/verifikasi')
-    {{-- @include('layout/verifikasi') --}}
     <div class="page-header">
         <h4>
             <i class="fa fa-list-alt"></i> Elemen

@@ -74,10 +74,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Asesor</label>
+                                    <label class="col-sm-3 col-form-label">Penanggung Jawab</label>
                                     <div class="col-sm-9">
                                         <select class="form-control" name="asesor_id">
-                                            <option value="" holder>Pilih Asesor</option>
+                                            <option value="" holder>Pilih Penanggung Jawab</option>
                                             @foreach ($asesor as $result)
                                                 <option value="{{ $result->id }}">{{ $result->nama }}</option>
                                                 select
@@ -117,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="card-description text-left">
                             <button type="submit" class="btn btn-success btn-icon-text btn-block">
                                 <i class="fa fa-save btn-icon-prepend"></i> Simpan

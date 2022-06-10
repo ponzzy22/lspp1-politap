@@ -46,6 +46,16 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Kode TUK</label>
+                                <div class="col-sm-9">
+                                    <input type="text" value="{{ $tuk->kode }}" maxlength="100" name="kode"
+                                        class="form-control" />
+                                    @error('kode')
+                                        <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Gambar TUK</label>
                                 <div class="col-sm-9">
                                     <input type="file" accept=".png" name="image"
@@ -93,12 +103,12 @@
     <div class="card-body">
         <img class="card-img-top" src="{{ asset($tuk->image) }}" alt="Card image cap">
     <div class="card-body">
-        <h4 class="card-title">{{ $tuk->tuk }}</h4>
-        <h4 class="card-title">{{ $tuk->pengelola }}</h4>
-        <p class="card-text">{!! $tuk->alamat !!}</p>
+        <h4 class="card-title">Nama TUK : {{ $tuk->tuk }}</h4>
+        <h4 class="card-title">Kode TUK : {{ $tuk->kode }}</h4>
+        <h4 class="card-title">Pengelola : {{ $tuk->pengelola }}</h4>
+        <p class="card-title">Alamat : {!! $tuk->alamat !!}</p>
     </div>
     </div>
 </div>
 
 @endsection
-    

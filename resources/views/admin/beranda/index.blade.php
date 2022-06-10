@@ -3,7 +3,7 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h3>
-            <i class="fas fa-cogs"></i> Setting Navigasi Atas
+            <i class="fas fa-cogs"></i> Setting Banner
         </h3>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
@@ -14,7 +14,7 @@
                 {{-- <li class="breadcrumb-item">
                 <a href="#"> </a>
             </li> --}}
-                <li class="breadcrumb-item active" aria-current="page">Setting Navigasi Atas</li>
+                <li class="breadcrumb-item active" aria-current="page">Setting Banner</li>
             </ol>
         </nav>
     </div><br>
@@ -23,31 +23,65 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Pengaturan Judul & Deskripsi Web</h4>
-            <div class="row">
-                @foreach ($beranda as $apa)
-                    <div class="table-sorter-wrapper col-lg-12 table-responsive">
-                        <a href="{{ route('sett-beranda.edit', $apa->id) }}">
-                            <button type="button" class="btn btn-warning btn-icon-text">
-                                <i class="far fa-edit btn-icon-prepend"></i>
-                                EDIT
-                            </button>
-                        </a>
-                        <table id="sortable-table-1" class="table">
-                            <thead>
-                                <tr>
-                                    <th class="sortStyle">Nama Website<i class="fa fa-angle-down"></i></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <h5>{!! $apa->judul !!}</h5>
-                                    </td>
-                            </tbody>
-                        </table>
+            <h4 class="card-title">Setting Banner</h4>
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home-1" role="tab"
+                        aria-controls="home-1" aria-selected="true">Skema</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile-1" role="tab"
+                        aria-controls="profile-1" aria-selected="false">TUK</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="home-1" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="media">
+                        <div class="media-body">
+                            @foreach ($skema as $asu)
+
+                                <div class="col-md-6">
+                                    <form action="{{ route('sett-beranda.update', $asu->id) }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('put')
+                                        <label for="file">Input Gambar</label>
+                                        <input type="file" class="form-control" name="image" id="file">
+                                        <br>
+                                        <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
+                                            Update</button><br>
+                                    </form>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="{{ asset($asu->image) }}" width="550px" alt="">
+                                </div><br>
+                            @endforeach
+                        </div>
                     </div>
-                @endforeach
+                </div>
+                <div class="tab-pane fade" id="profile-1" role="tabpanel" aria-labelledby="profile-tab">
+                    <div class="media">
+                        <div class="media-body">
+                            @foreach ($tuk as $asu)
+                            <div class="col-md-6">
+                                <form action="{{ route('sett-beranda.update', $asu->id) }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+                                    @method('put')
+                                    <label for="file">Input Gambar</label>
+                                    <input type="file" class="form-control" name="image" id="file">
+                                    <br>
+                                    <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
+                                        Update</button><br>
+                                </form>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="{{ asset($asu->image) }}" width="550px" alt="">
+                            </div><br>
+                        @endforeach
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

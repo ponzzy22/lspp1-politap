@@ -8,20 +8,25 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\Dashboard_adminController;
 use App\Http\Controllers\Dashboard_asesiController;
 use App\Http\Controllers\DeleteGaleriFotoController;
 use App\Http\Controllers\F_profilController;
+use App\Http\Controllers\Fileapl2Controller;
 use App\Http\Controllers\FileController;
+use App\Http\Controllers\FilelainController;
 use App\Http\Controllers\GaleriController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InfoController;
+use App\Http\Controllers\KkniController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProdiController;
 use App\Http\Controllers\ReadAPL2Controller;
 use App\Http\Controllers\RegistrasiController;
 use App\Http\Controllers\SkemaController;
+use App\Http\Controllers\SkkniController;
 use App\Http\Controllers\StrorgController;
 use App\Http\Controllers\TukController;
 use App\Http\Controllers\UiController;
@@ -31,14 +36,16 @@ use App\Http\Controllers\Upload_DokumenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\XnxxController;
+use App\Models\Fileapl2;
 use App\Models\Galeri_foto;
+use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
 ///////////  FRONT END /////////////
-Route::get('/', function () {
-    return view('beranda');
-});
+// Route::get('/', function () {
+//     return view('beranda');
+// });
 Route::get('profil', function () {
     return view('front/profil');
 });
@@ -52,9 +59,35 @@ Route::get('loginadmin', function () {
     return view('auth/loginadmin');
 });
 
+///////////  CLIENT END /////////////
+Route::get('/', [ClientController::class, 'clientutama'])->name('/');
+Route::get('tentang', [ClientController::class, 'tentang'])->name('tentang');
+Route::get('tutorial', [ClientController::class, 'tutorial'])->name('tutorial');
+Route::get('logo', [ClientController::class, 'logo'])->name('logo');
+Route::get('pengelola', [ClientController::class, 'pengelola'])->name('pengelola');
+Route::get('pengelola_detail/{pengelola_detail}', [ClientController::class, 'pengelola_detail'])->name('pengelola_detail');
+Route::get('struktur', [ClientController::class, 'struktur'])->name('struktur');
+Route::get('visi', [ClientController::class, 'visi'])->name('visi');
+Route::get('download', [ClientController::class, 'download'])->name('download');
+Route::get('client_skkni', [ClientController::class, 'skkni'])->name('client_skkni');
+Route::get('client_kkni', [ClientController::class, 'kkni'])->name('client_kkni');
+Route::get('client_filelain', [ClientController::class, 'filelain'])->name('client_filelain');
+Route::get('clien_fileapl2', [ClientController::class, 'fileapl2'])->name('clien_fileapl2');
+Route::get('client_skema', [ClientController::class, 'skema'])->name('client_skema');
+Route::get('skema_detail/{skema_detail}', [ClientController::class, 'skema_detail'])->name('skema_detail');
+Route::get('client_tuk', [ClientController::class, 'tuk'])->name('client_tuk');
+Route::get('tuk_detail/{tuk_detail}', [ClientController::class, 'tuk_detail'])->name('tuk_detail');
+Route::get('client_sertifikat', [ClientController::class, 'sertifikat'])->name('client_sertifikat');
+Route::get('client_asesor', [ClientController::class, 'asesor'])->name('client_asesor');
+Route::get('asesor_detail/{asesor_detail}', [ClientController::class, 'asesor_detail'])->name('asesor_detail');
+Route::get('client_berita', [ClientController::class, 'berita'])->name('client_berita');
+Route::get('berita_detail/{berita_detail}', [ClientController::class, 'berita_detail'])->name('berita_detail');
+Route::get('client_galeri', [ClientController::class, 'galeri'])->name('client_galeri');
+Route::get('galeri_detail/{galeri_detail}', [ClientController::class, 'galeri_detail'])->name('galeri_detail');
+
 Route::get('/exportPDF', [ValidasiController::class, 'generatepdf'])->name('pdf');
 
-Route::get('/', [UiController::class, 'ui_beranda'])->name('beranda');
+Route::get('/3', [UiController::class, 'ui_beranda'])->name('beranda');
 Route::get('/2', [UiController::class, 'ui_beranda2']);
 Route::get('profil', [UiController::class, 'profil'])->name('profil.front');
 Route::get('show_artikel_berita', [UiController::class, 'berita_list'])->name('berita.list');
@@ -104,8 +137,17 @@ Route::group(['middleware' => 'role:admin'], function () {
     /////////// BERITA  /////////////
     Route::resource('berita', BeritaController::class);
     Route::resource('info', InfoController::class);
+    Route::put('save_image/{save_image}', [InfoController::class, 'save_image'])->name('save_image');
     /////////// FILE UPLOAD  /////////////
     Route::resource('file', FileController::class);
+    Route::resource('skkni', SkkniController::class);
+    Route::get('skkni_detail/{skkni_detail}', [SkkniController::class, 'skkni_detail'])->name('skkni_detail');
+    Route::resource('kkni', KkniController::class);
+    Route::get('kkni_detail/{kkni_detail}', [kkniController::class, 'kkni_detail'])->name('kkni_detail');
+    Route::resource('fileapl2', Fileapl2Controller::class);
+    Route::get('fileapl2_detail/{fileapl2_detail}', [Fileapl2Controller::class, 'fileapl2_detail'])->name('fileapl2_detail');
+    Route::resource('filelain', FilelainController::class);
+    Route::get('filelain_detail/{filelain_detail}', [FilelainController::class, 'filelain_detail'])->name('filelain_detail');
      /////////// NOTE  /////////////
     Route::resource('note', NoteController::class);
      /////////// FRONT SETTING  /////////////

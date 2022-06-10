@@ -31,10 +31,21 @@
             <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
                 data-parent="#accordion-4">
                 <div class="card-body">
-                    <form action="{{ route('tuk.store') }}" enctype="multipart/form-data" method="POST" class="form-sample">
+                    <form action="{{ route('tuk.store') }}" enctype="multipart/form-data" method="POST"
+                        class="form-sample">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Kode TUK</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" placeholder="Kode Tempat Uji Kompetensi" maxlength="100"
+                                            name="kode" class="form-control" />
+                                        @error('kode')
+                                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">TUK</label>
                                     <div class="col-sm-9">
@@ -48,8 +59,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Gambar TUK</label>
                                     <div class="col-sm-9">
-                                        <input type="file" accept=".png" name="image"
-                                            class="form-control" />
+                                        <input type="file" accept=".png" name="image" class="form-control" />
                                         @error('image')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -117,12 +127,12 @@
                                                     style="width: 14.141px;">Actions</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
-                                                    aria-label="Customer: activate to sort column ascending"
-                                                    style="width: 975.75px;">TUK</th>
+                                                    aria-label="Actions: activate to sort column ascending"
+                                                    style="width: 304.141px;">Kode TUK</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
-                                                    aria-label="Ship to: activate to sort column ascending"
-                                                    style="width: 657.5469px;">Keterangan</th>
+                                                    aria-label="Customer: activate to sort column ascending"
+                                                    style="width: 775.75px;">TUK</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -138,10 +148,10 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button type="submit"
-                                                                class="btn btn-info btn-sm btn-block"><i
-                                                                    class="fa fa-eye "></i> Lihat
-                                                                TUK</button></a>
+                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button
+                                                                    type="submit" class="btn btn-warning btn-sm btn-block"><i
+                                                                        class="fa fa-eye "></i> Edit & Lihat
+                                                                    TUK</button></a>
                                                             <form action="{{ route('tuk.destroy', $asu->id) }}"
                                                                 method="POST"
                                                                 onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
@@ -154,8 +164,8 @@
                                                             </form>
                                                         </div>
                                                     </td>
+                                                    <td>{{ $asu->kode }}</td>
                                                     <td>{{ $asu->tuk }}</td>
-                                                    <td>{{ $asu->alamat }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

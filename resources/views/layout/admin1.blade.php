@@ -355,7 +355,7 @@
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('sett-beranda.index') }}" class="text text-white"><i
-                                            class="fas fa-window-maximize"></i> Navigasi Atas</a>
+                                            class="fas fa-window-maximize"></i> Banner</a>
                                 </div>
                             </li>
                         </ul>

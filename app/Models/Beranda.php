@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Beranda extends Model
 {
-    protected $fillable = ['judul','deskripsi'];
-    protected $table = 'beranda';
+    protected $fillable = ['name','image'];
+    protected $table = 'banner';
 }

@@ -68,7 +68,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Asesor</label>
+                    <label class="col-sm-3 col-form-label">Penanggung Jawab</label>
                         <div class="col-sm-9">
                             <select class="form-control" name="asesor_id">
                                 <option value="" holder></option>

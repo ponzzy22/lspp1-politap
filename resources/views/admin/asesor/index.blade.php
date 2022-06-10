@@ -145,6 +145,17 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label class="col-sm-3 col-form-label">Skema</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" maxlength="200" class="form-control" name="skema">
+                                        @error('skema')
+                                            <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <button type="submit" class="btn btn-success btn-icon-text btn-block">
                             <i class="fa fa-save btn-icon-prepend"></i>

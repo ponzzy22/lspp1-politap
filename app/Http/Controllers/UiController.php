@@ -25,34 +25,33 @@ class UiController extends Controller
 
     public function index()
     {
-        $beranda = Beranda::all();
-        return view('admin/beranda/index', compact('beranda'));
+        $skema = Beranda::where('name', 'Skema')->get();
+        $tuk = Beranda::where('name', 'TUK')->get();
+        return view('admin/beranda/index', compact('skema', 'tuk'));
     }
 
 
 
-    public function edit($id)
-    {
-        $beranda = Beranda::findorfail($id);
-        return view('admin/beranda/edit', compact('beranda'));
-    }
+    // public function edit($id)
+    // {
+    //     $skema = Beranda::where('name', 'skema');
+    //     return view('admin/beranda/edit', compact('skema'));
+    // }
 
 
 
     public function update(Request $request, $id)
     {
-        // $this->validate($request, [
-        //     'judul' => 'required|max:16',
-        //     'judul2' => 'required|max:28',
-        //     'deskripsi' => 'required'
-        // ]);
-        $beranda_data = [
-            'judul' => $request->judul,
-            'judul2' => $request->judul2,
-            'deskripsi' => $request->deskripsi,
+        $skema = Beranda::findorfail($id);
+        $image = $request->image;
+        $new_image = time().$image->getClientOriginalName();
+        $image->move('public/uploads/info/', $new_image);
+        $info_data = [
+            'image' => 'public/uploads/info/'.$new_image,
         ];
-        Beranda::whereId($id)->update($beranda_data);
-        return redirect()->route('sett-beranda.index')->with('success','Data Anda Berhasil di Ubah');
+
+        Beranda::whereId($id)->update($info_data);
+        return redirect()->back()->with('success','Data Anda Berhasil di Ubah');
     }
 
 

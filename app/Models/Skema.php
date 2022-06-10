@@ -19,6 +19,7 @@ class Skema extends Model
     ];
 
 
+
     public function prodi(){
         return $this->belongsTo(Prodi::class);
     }

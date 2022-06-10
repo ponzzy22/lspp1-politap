@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesor;
+use App\Models\Skema;
+use App\Models\Tuk;
 use Illuminate\Http\Request;
 
 class AsesorController extends Controller
 {
     public function index(){
         $asesor = Asesor::where('id', '>', 1)->get();
-        return view('admin/asesor/index', compact('asesor'));
+        $skema = Skema::all();
+        return view('admin/asesor/index', compact('skema','asesor'));
     }
 
 
     public function store(Request $request) {
+        // dd($request->all());
         $request->validate([
             // 'nik' => ['required', 'unique:asesor,nik'],
             'nama' => ['required'],
@@ -36,6 +40,7 @@ class AsesorController extends Controller
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,
+                'skema' => $request->skema,
                 'image' => 'public/uploads/asesor/'.$new_image,
             ];
         }
@@ -48,6 +53,7 @@ class AsesorController extends Controller
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,
+                'skema' => $request->skema,
             ]);
         }
         // $image->move('public/uploads/asesor/', $new_image);
@@ -57,7 +63,8 @@ class AsesorController extends Controller
 
     public function edit($id) {
         $asesor = Asesor::findorfail($id);
-        return view('admin/asesor/edit', compact('asesor'));
+        $skema = Skema::all();
+        return view('admin/asesor/edit', compact('asesor', 'skema'));
     }
 
 
@@ -83,6 +90,7 @@ class AsesorController extends Controller
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,
+                'skema' => $request->skema,
                 'image' => 'public/uploads/asesor/'.$new_image,
             ];
         }
@@ -95,6 +103,7 @@ class AsesorController extends Controller
                 'sex' => $request->sex,
                 'email' => $request->email,
                 'status' => $request->status,
+                'skema' => $request->skema,
             ];
         }
         $asesor->update($asesor_data);
