@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2022 at 03:50 PM
+-- Generation Time: Jun 10, 2022 at 08:17 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -89,22 +89,22 @@ CREATE TABLE `asesor` (
   `status` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `no_hp` bigint(20) DEFAULT NULL,
-  `value` int(11) DEFAULT NULL
+  `no_hp` varchar(20) DEFAULT NULL,
+  `skema` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `asesor`
 --
 
-INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`, `value`) VALUES
+INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`, `skema`) VALUES
 (1, '-', '-', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', NULL, NULL),
-(24, 'MET.000.010629 2017', 'Adha Panca Wardanu', 'public/uploads/asesor/1654176913Screenshot (66).png', 'dfsdfsdfsdfsdf', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-06-02 06:35:13.000000', '2022-06-02 13:35:13.855535', 34534, NULL),
+(24, 'MET.000.010629 2017', 'Adha Panca Wardanu', 'public/uploads/asesor/1654176913Screenshot (66).png', '-', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-06-10 00:26:54.000000', '2022-06-10 07:26:54.403378', '34534', 'Skema Sertifikasi Kompetensi KKNI Sertifikat III Bidang Pengelasan SMAw'),
 (25, 'MET.000.009812 2021', 'Ahmad Ravi', NULL, 'Luwu Utara, Sulawesi Selatan', NULL, NULL, 'Aktif', '2022-05-09 21:53:14.000000', '2022-05-09 21:53:14.000000', NULL, NULL),
 (26, 'MET.000.004633 2020', 'Alfath Desita Jumiar', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:35.000000', '2022-05-09 21:53:35.000000', NULL, NULL),
 (27, 'MET.000.010618 2017', 'Ar-Razy Muhammad', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:48.000000', '2022-05-09 21:53:48.000000', NULL, NULL),
 (28, 'MET.000.010613 2017', 'Beny Setiawan', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:03.000000', '2022-05-09 21:54:03.000000', NULL, NULL),
-(29, 'MET.000.009818 2021', 'Darmanto', NULL, 'Lamandau, Kalimantan Tengah', NULL, NULL, 'Aktif', '2022-05-09 21:54:23.000000', '2022-05-09 21:54:23.000000', NULL, NULL),
+(29, 'MET.000.009818 2021', 'Darmanto', 'public/uploads/asesor/1654176913Screenshot (66).png', 'Lamandau, Kalimantan Tengah', NULL, NULL, 'Aktif', '2022-06-09 15:40:08.339415', '2022-06-09 15:40:08.339415', NULL, NULL),
 (30, 'MET.000.009815 2021', 'Erick Radwitya', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:38.000000', '2022-05-09 21:54:38.000000', NULL, NULL),
 (31, 'MET.000.009816 2021', 'Fachrul Rozie', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:54.000000', '2022-05-09 21:54:54.000000', NULL, NULL),
 (32, 'MET.000.009813 2021', 'Firmanilah Kamil', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:07.000000', '2022-05-09 21:55:07.000000', NULL, NULL),
@@ -129,29 +129,30 @@ INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `s
 (51, NULL, 'Sartika', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:41:51.000000', '2022-05-11 12:41:51.000000', NULL, NULL),
 (52, NULL, 'Sy. Indra Septiansyah', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:24.000000', '2022-05-11 12:42:24.000000', NULL, NULL),
 (53, NULL, 'Syarifah Aqla', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:49.000000', '2022-05-11 12:42:49.000000', NULL, NULL),
-(54, NULL, 'Firman', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:47:57.000000', '2022-05-11 12:47:57.000000', NULL, NULL);
+(54, NULL, 'Firman', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:47:57.000000', '2022-05-11 12:47:57.000000', NULL, NULL),
+(56, '2312312gdfsdas', '435345', NULL, 'Kota Pontianak, Kalimantan Barat', 'Laki-laki', 'ramadhanidwi289@gmail.com', 'Aktif', '2022-06-10 00:24:40.000000', '2022-06-10 07:24:40.793242', '012121212121212', 'Skema Sertifikasi Kompetensi KKNI Sertifikat III Bidang Pengelasan SMA');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `beranda`
+-- Table structure for table `banner`
 --
 
-CREATE TABLE `beranda` (
+CREATE TABLE `banner` (
   `id` int(11) NOT NULL,
-  `judul` varchar(255) DEFAULT NULL,
-  `judul2` varchar(255) DEFAULT NULL,
-  `deskripsi` text DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `beranda`
+-- Dumping data for table `banner`
 --
 
-INSERT INTO `beranda` (`id`, `judul`, `judul2`, `deskripsi`, `updated_at`, `created_at`) VALUES
-(1, '<h5><span style=\"color: rgb(66, 66, 66);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Lembaga Sertifikasi Profesi Pihak Kesatu - Politeknik Negeri Ketapang</span></span></span></h5>', NULL, NULL, '2022-05-11 02:25:44.000000', '2022-05-11 09:25:44.396733');
+INSERT INTO `banner` (`id`, `name`, `image`, `updated_at`, `created_at`) VALUES
+(1, 'Skema', 'public/uploads/info/16548764811652157112Kegiatan Mahasiswa (2).jpeg', '2022-06-10 08:54:41.000000', '2022-06-10 15:54:41.885021'),
+(2, 'TUK', 'public/uploads/info/16548771261652157112Kegiatan Mahasiswa (5).jpeg', '2022-06-10 09:05:26.000000', '2022-06-10 16:05:26.243379');
 
 -- --------------------------------------------------------
 
@@ -174,7 +175,7 @@ CREATE TABLE `beranda_img1` (
 
 INSERT INTO `beranda_img1` (`id`, `judul`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
 (67, NULL, NULL, 'public/uploads/carousel/16505618951.jpg', '2022-04-21 10:24:55.000000', '2022-04-21 10:24:55.000000'),
-(68, NULL, NULL, 'public/uploads/carousel/16505619262.jpg', '2022-05-09 17:15:43.000000', '2022-05-10 00:15:43.262057');
+(69, NULL, NULL, 'public/uploads/carousel/16546909263.jpg', '2022-06-08 05:22:06.000000', '2022-06-08 05:22:06.000000');
 
 -- --------------------------------------------------------
 
@@ -201,10 +202,10 @@ CREATE TABLE `beranda_img2` (
 --
 
 INSERT INTO `beranda_img2` (`id`, `keterangan`, `image`, `updated_at`, `created_at`, `no_hp`, `nama`, `facebook`, `twitter`, `intagram`, `email`) VALUES
-(36, 'Ketua LSP - POLITAP', 'public/uploads/pengelola/16505683451.png', '2022-04-21 12:12:25.000000', '2022-04-21 12:12:25.000000', '12121212121212', 'Budi Pratomo Sibuea, S.ST., M.ST', NULL, 'Ketua LSP - POLITAP', NULL, NULL),
-(37, 'Manajer Sertifikasi LSP - POLITAP', 'public/uploads/pengelola/16505684442.png', '2022-05-09 17:24:27.000000', '2022-05-10 00:24:27.552562', '2312', 'A. Nova Zulfahmi, S.Pi., M.Sc', 'www.google.com', 'Manajer Sertifikasi LSP - POLITAP', NULL, NULL),
-(38, 'Manajer Mutu LSP - POLITAP', 'public/uploads/pengelola/16505687524.png', '2022-04-21 12:19:12.000000', '2022-04-21 12:19:12.000000', '2312312', 'Ahmad Ravi, S.Pd., M.Pd', NULL, 'Manajer Mutu LSP - POLITAP', NULL, NULL),
-(39, 'Manajer Administrasi LSP - POLITAP', 'public/uploads/pengelola/16505690133.png', '2022-04-21 12:23:33.000000', '2022-04-21 12:23:33.000000', '2323', 'Firmanilah Kamil, S.Pd., M.Pd', NULL, 'Manajer Administrasi LSP - POLITAP', NULL, NULL);
+(36, 'Ketua LSP', 'public/uploads/pengelola/16505683451.png', '2022-06-08 09:18:36.000000', '2022-06-08 16:18:36.074794', '12121212121212', 'Budi Pratomo Sibuea, S.ST., M.ST', NULL, 'Ketua LSP', NULL, NULL),
+(37, 'Manajer Sertifikasi', 'public/uploads/pengelola/16505684442.png', '2022-06-09 14:07:09.960756', '2022-06-09 14:07:09.960756', '2312', 'A. Nova Zulfahmi, S.Pi., M.Sc', 'http://localhost/phpmyadmin/index.php?route=/sql&server=1&db=lspp1-politap&table=beranda_img2&pos=0', 'Manajer Sertifikasi', NULL, NULL),
+(38, 'Manajer Mutu', 'public/uploads/pengelola/16505687524.png', '2022-06-08 09:18:23.000000', '2022-06-08 16:18:23.326277', '2312312', 'Ahmad Ravi, S.Pd., M.Pd', NULL, 'Manajer Mutu', NULL, NULL),
+(39, 'Manajer Administrasi', 'public/uploads/pengelola/16505690133.png', '2022-06-08 09:18:08.000000', '2022-06-08 16:18:08.931625', '2323', 'Firmanilah Kamil, S.Pd., M.Pd', NULL, 'Manajer Administrasi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -331,6 +332,48 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fileapl2s`
+--
+
+CREATE TABLE `fileapl2s` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `fileapl2s`
+--
+
+INSERT INTO `fileapl2s` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
+(2, '34', 'public/uploads/fileapl2/1654883205BAB III_Arif W.pdf', '2022-06-10 10:46:46', '2022-06-10 10:46:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `filelains`
+--
+
+CREATE TABLE `filelains` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `filelains`
+--
+
+INSERT INTO `filelains` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
+(2, 'sdasdasda', 'public/uploads/file/1654883625SKKNI_2014-400_-_3D_Illustration_Artist.pdf', '2022-06-10 10:53:45', '2022-06-10 10:53:45');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `files`
 --
 
@@ -349,7 +392,8 @@ CREATE TABLE `files` (
 INSERT INTO `files` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
 (7, 'dokumen1', 'public/uploads/file/1652295056dokumen.pdf', '2022-05-11 11:50:57', '2022-05-11 11:50:57'),
 (8, 'dokumen2', 'public/uploads/file/1652295069dokumen.pdf', '2022-05-11 11:51:09', '2022-05-11 11:51:09'),
-(9, 'dokumen3', 'public/uploads/file/1652295080dokumen.pdf', '2022-05-11 11:51:20', '2022-05-11 11:51:20');
+(9, 'dokumen3', 'public/uploads/file/1652295080dokumen.pdf', '2022-05-11 11:51:20', '2022-05-11 11:51:20'),
+(10, 'dsasdasdasd', 'public/uploads/file/16547644491652150076S_PTA_1504738_Chapter3.pdf', '2022-06-09 01:47:29', '2022-06-09 01:47:29');
 
 -- --------------------------------------------------------
 
@@ -374,8 +418,8 @@ CREATE TABLE `f_profil` (
 --
 
 INSERT INTO `f_profil` (`id`, `profil`, `isi`, `visi`, `misi`, `motto`, `image`, `updated_at`, `created_at`) VALUES
-(1, '<h3 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">Profil Lembaga Sertifikasi Politeknik Negeri Ketapang</span> </span></h3>', '<h6 style=\"text-align: left;\"><span style=\"font-family: &quot;Arial&quot;;\">Lembaga Sertifikasi Profesi (LSP) Politeknik Negeri Ketapang adalah lembaga \r\nsertifikasi profesi yang telah memperoleh sertifikat lisensi No. </span><span style=\"font-family: &quot;Arial&quot;;\">BNSP-LSP-1214-ID dari Badan Nasional Sertifikasi Profesi\r\n (BNSP). dan memiliki Nomor SK </span>\r\n						KEP. 0429/BNSP/IV/2018&nbsp; <span style=\"font-family: &quot;Arial&quot;;\">Sebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema yang dimiliki LSP&nbsp; </span><span style=\"font-family: &quot;Arial&quot;;\">Politeknik Negeri Ketapang</span><span style=\"font-family: &quot;Arial&quot;;\"> diselaraskan dengan Kerangka Kualifikasi Nasional Indonesia (KKNI) dan Standar Kualifikasi Kerja\r\n            Nasional Indonesia (SKKNI).&nbsp; </span></h6><h6 style=\"text-align: left;\"><span style=\"font-family: &quot;Arial&quot;;\">Memiliki 6 skema, LSP&nbsp; Politeknik Negeri Ketapang  siap melaksanakan uji kompetensi\r\n            pada seluruh\r\n            mahasiswa  Politeknik Negeri Ketapang dari berbagai program studi dalam rangka menyiapkan lulusan Politeknik Negeri Ketapang yang memiliki kompetensi mumpuni sesuai bidangnya dan memiliki nilai lebih di pasar tenaga kerja\r\n            baik\r\n            nasional maupun internasional.</span></h6><p></p>', '<h2 align=\"center\"><span style=\"background-color: rgb(255, 255, 255);\"><span style=\"color: rgb(255, 0, 0);\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Visi</span></span></span></h2><p align=\"center\"><br></p><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">\"Menjadi Lembaga Sertifikasi Profesi yang terpecaya dalam </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">menjamin kompetensi sumberdaya manusia agar mampu bersaing </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">di era globalisasi.\"</span><br></h4>', '<h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Misi</span></b></span></h2><h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></b></span></h2><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">1. Melaksanakan Uji Kompetensi yang sistematis dan konsisten</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">2. Mengembangkan sumber daya manusia di LSP Politeknik Negeri </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; Ketapang dan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">seluruh asesor</span> <span style=\"font-family: &quot;Comic Sans MS&quot;;\">kompetensi menjadi tenaga profesional</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">3. Mengembangkan skema dan perangkat asesmen secara berkelanjutan</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">4. Mengembangkan sarana dan prasarana uji kompetensi </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">5.</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> Mengembangkan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">sistem </span></span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">informasi website untuk kepen</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">tingan internal </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; dan</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> eksternal LSP POLITAP </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">6. Mengembangkan jejaring dan kerjasama yang sinergis dengan stakeholder </span></h4><h5 align=\"justify\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h5><h5 align=\"justify\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"></span></h5><h5><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h5><h4><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4><h4><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4><h4><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4>', '<h4 style=\"text-align: center;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\">MOTTO</span></h4><h3 style=\"   text-align: center;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"font-family: &quot;Courier New&quot;;\">\"Kompeten , Unggul dan, Profesional\"</span><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\"><br></span></h3>', 'public/uploads/f_profil/1650562467lsp.png', '2022-05-09 20:45:14.000000', '2022-05-10 03:45:14.417740'),
-(2, '<h3 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><span style=\"color: rgb(0, 255, 255);\">Profil Lembaga Sertifikasi Politeknik Negeri Ketapang</span><br></span></h3><h4 align=\"center\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></h4><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">Lembaga Sertifikasi Profesi (LSP) Politeknik Negeri Ketapang adalah lembaga \r\nsertifikasi profesi </span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">yang telah memperoleh sertifikat lisensi No. </span><span style=\"font-family: &quot;Arial&quot;;\">BNSP-LSP-1214-ID dari Badan Nasional Sertifikasi </span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">Profesi\r\n (BNSP). dan memiliki Nomor SK </span>\r\n						KEP. 0429/BNSP/IV/2018<span style=\"font-family: &quot;Arial&quot;;\"></span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">Sebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema yang dimiliki LSP </span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span><span style=\"font-family: &quot;Arial&quot;;\">Politeknik Negeri Ketapang</span><span style=\"font-family: &quot;Arial&quot;;\"> diselaraskan dengan Kerangka Kualifikasi Nasional Indonesia (KKNI)</span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">dan Standar Kualifikasi Kerja\r\n            Nasional Indonesia (SKKNI).</span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">Memiliki 6 skema, LSP&nbsp; Politeknik Negeri Ketapang  siap melaksanakan uji\r\n</span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">kompetensi\r\n            pada seluruh\r\n            mahasiswa  Politeknik Negeri Ketapang dari berbagai program studi </span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\">dalam rangka menyiapkan lulusan Politeknik Negeri Ketapang yang memiliki kompetensi mumpuni</span></h5><h5 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">sesuai bidangnya dan memiliki nilai lebih di pasar tenaga kerja\r\n            baik\r\n            nasional maupun internasional.</span></h5>', '<p></p><h4><span style=\"background-color: inherit;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">Makna Logo LSP-P1 POLITAP meliputi:</span></span></h4><p></p><h6>1. LSP, merupakan singkatan dari Lembaga Sertifikasi Profesi; </h6><h6>2. POLITAP, merupakan singkatan dari Politeknik Negeri Ketapang;</h6><h6>3. Latar belakang tulisan warna merah-putih seperti bendera negara, melambangkan perjuangan Lembaga Sertifikasi Profesi Politeknik </h6><h6>&nbsp;&nbsp;&nbsp;&nbsp;Negeri Ketapang (LSP POLITAP) yang tiada henti untuk menjadi lembaga sertifikasi profesi yang profesional dan terpercaya; </h6><h6>4. Lingkaran berwarna merah seperti bola dunia, menunjukkan eksistensi perjuangan Lembaga Sertifikasi Profesi Politeknik Negeri </h6><h6>&nbsp;&nbsp;&nbsp; Ketapang (LSP POLITAP) hingga ketingkat internasional; </h6><h6>5. Simbol centang berwarna merah di dalam lingkaran, merupakan gambaran dari komitmen perjuangan Lembaga Sertifikasi Profesi</h6><h6>&nbsp;&nbsp;&nbsp;&nbsp; Politeknik Negeri Ketapang (LSP-POLITAP) untuk menghasilkan sumberdaya manusia yang berkualitas. </h6>', '<h2 align=\"center\"><span style=\"background-color: inherit;\"><span style=\"color: rgb(255, 0, 0);\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Visi</span></span></span></h2><p align=\"center\"><br></p><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">\"Menjadi Lembaga Sertifikasi Profesi yang terpecaya dalam </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">menjamin kompetensi sumberdaya manusia agar mampu bersaing </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">di era globalisasi.\"</span><br></h4>', '<h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Misi</span></b></span></h2><h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></b></span></h2><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">1. Melaksanakan Uji Kompetensi yang sistematis dan konsisten</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">2. Mengembangkan sumber daya manusia di LSP Politeknik Negeri </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">Ketapang dan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">seluruh asesor</span> <span style=\"font-family: &quot;Comic Sans MS&quot;;\">kompetensi menjadi tenaga profesional</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">3. Mengembangkan skema dan perangkat asesmen secara berkelanjutan</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">4. Mengembangkan sarana dan prasarana uji kompetensi </span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">5.</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> Mengembangkan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">sistem </span></span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">informasi website untuk kepen</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">tingan internal </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; </span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">dan</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> eksternal LSP POLITAP </span></span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">6. Mengembangkan jejaring dan kerjasama yang sinergis dengan stakeholder</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h4>', '<h4 style=\"text-align: center;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">MOTTO</span></h4><h3 style=\"   text-align: center;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"font-family: &quot;Courier New&quot;;\">\"Kompeten , Unggul dan, Profesional\"</span><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\"><br></span></h3>', 'public/uploads/f_profil/1650562467lsp.png', '2022-05-09 20:45:42.000000', '2022-05-10 03:45:42.900075');
+(1, '<h3 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">Profil Lembaga Sertifikasi Politeknik Negeri Ketapang</span></span></h3><h5 style=\"text-align: left;\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></h5><h5 style=\"text-align: left;\"><span style=\"font-family: &quot;Arial&quot;;\">Lembaga Sertifikasi Profesi (LSP) Politeknik Negeri Ketapang adalah lembaga \r\nsertifikasi profesi yang telah memperoleh sertifikat lisensi No. </span><span style=\"font-family: &quot;Arial&quot;;\">BNSP-LSP-1214-ID dari Badan Nasional Sertifikasi Profesi\r\n (BNSP). dan memiliki Nomor SK </span>\r\n						KEP. 0429/BNSP/IV/2018&nbsp; <span style=\"font-family: &quot;Arial&quot;;\">Sebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema yang dimiliki LSP&nbsp; </span><span style=\"font-family: &quot;Arial&quot;;\">Politeknik Negeri Ketapang</span><span style=\"font-family: &quot;Arial&quot;;\"> diselaraskan dengan Kerangka Kualifikasi Nasional Indonesia (KKNI) dan Standar Kualifikasi Kerja\r\n            Nasional Indonesia (SKKNI).&nbsp; </span></h5><h5 style=\"text-align: left;\"><span style=\"font-family: &quot;Arial&quot;;\">Memiliki\r\n 6 skema, LSP&nbsp; Politeknik Negeri Ketapang  siap melaksanakan uji \r\nkompetensi\r\n            pada seluruh\r\n            mahasiswa  Politeknik Negeri Ketapang dari berbagai program \r\nstudi dalam rangka menyiapkan lulusan Politeknik Negeri Ketapang yang \r\nmemiliki kompetensi mumpuni sesuai bidangnya dan memiliki nilai lebih di\r\n pasar tenaga kerja\r\n            baik\r\n            nasional maupun internasional.</span></h5><h3 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\"></span> </span></h3>', '<br>', '<h2 align=\"center\"><span style=\"background-color: rgb(255, 255, 255);\"><span style=\"color: rgb(255, 0, 0);\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Visi</span></span></span></h2><p align=\"center\"><br></p><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">\"Menjadi Lembaga Sertifikasi Profesi yang terpecaya dalam </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">menjamin kompetensi sumberdaya manusia agar mampu bersaing </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">di era globalisasi.\"</span><br></h4>', '<h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Misi</span></b></span></h2><h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></b></span></h2><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">1. Melaksanakan Uji Kompetensi yang sistematis dan konsisten</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">2. Mengembangkan sumber daya manusia di LSP Politeknik Negeri </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; Ketapang dan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">seluruh asesor</span> <span style=\"font-family: &quot;Comic Sans MS&quot;;\">kompetensi menjadi tenaga profesional</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">3. Mengembangkan skema dan perangkat asesmen secara berkelanjutan</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">4. Mengembangkan sarana dan prasarana uji kompetensi </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">5.</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> Mengembangkan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">sistem </span></span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">informasi website untuk kepen</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">tingan internal </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; dan</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> eksternal LSP POLITAP </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">6. Mengembangkan jejaring dan kerjasama yang sinergis dengan stakeholder </span></h4><h5 align=\"justify\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h5><h5 align=\"justify\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"></span></h5><h5><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h5><h4><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4><h4><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4><h4><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Impact&quot;;\"><br></span></b></span></h4>', '<h4 style=\"text-align: center;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\">MOTTO</span></h4><h3 style=\"   text-align: center;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"font-family: &quot;Courier New&quot;;\">\"Kompeten , Unggul dan, Profesional\"</span><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\"><br></span></h3>', 'public/uploads/f_profil/1650562467lsp.png', '2022-06-08 07:13:35.000000', '2022-06-08 14:13:35.591045'),
+(2, '<h3 align=\"left\"><span style=\"font-family: &quot;Arial&quot;;\"><span style=\"color: rgb(0, 255, 255);\">Profil Lembaga Sertifikasi Politeknik Negeri Ketapang</span><br></span></h3><h1 align=\"center\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></h1><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">Lembaga Sertifikasi Profesi (LSP) Politeknik Negeri Ketapang adalah lembaga \r\nsertifikasi profesi </span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">yang telah memperoleh sertifikat lisensi No. </span><span style=\"font-family: &quot;Arial&quot;;\">BNSP-LSP-1214-ID dari Badan Nasional Sertifikasi </span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">Profesi\r\n (BNSP). dan memiliki Nomor SK </span>\r\n						KEP. 0429/BNSP/IV/2018<span style=\"font-family: &quot;Arial&quot;;\"></span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">Sebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema yang dimiliki LSP </span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span><span style=\"font-family: &quot;Arial&quot;;\">Politeknik Negeri Ketapang</span><span style=\"font-family: &quot;Arial&quot;;\"> diselaraskan dengan Kerangka Kualifikasi Nasional Indonesia (KKNI)</span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">dan Standar Kualifikasi Kerja\r\n            Nasional Indonesia (SKKNI).</span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"><br></span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">Memiliki 6 skema, LSP&nbsp; Politeknik Negeri Ketapang  siap melaksanakan uji\r\n</span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">kompetensi\r\n            pada seluruh\r\n            mahasiswa  Politeknik Negeri Ketapang dari berbagai program studi </span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\">dalam rangka menyiapkan lulusan Politeknik Negeri Ketapang yang memiliki kompetensi mumpuni</span></span></span></h5><h5 align=\"left\"><span style=\"color: rgb(255, 255, 255);\"><span style=\"background-color: inherit;\"><span style=\"font-family: &quot;Arial&quot;;\"></span><span style=\"font-family: &quot;Arial&quot;;\">sesuai bidangnya dan memiliki nilai lebih di pasar tenaga kerja\r\n            baik\r\n            nasional maupun internasional.</span></span></span></h5>', '<p></p><h4><span style=\"background-color: inherit;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">Makna Logo LSP-P1 POLITAP meliputi:</span></span></h4><p></p><h6>1. LSP, merupakan singkatan dari Lembaga Sertifikasi Profesi; </h6><h6>2. POLITAP, merupakan singkatan dari Politeknik Negeri Ketapang;</h6><h6>3. Latar belakang tulisan warna merah-putih seperti bendera negara, melambangkan perjuangan Lembaga Sertifikasi Profesi Politeknik </h6><h6>&nbsp;&nbsp;&nbsp;&nbsp;Negeri Ketapang (LSP POLITAP) yang tiada henti untuk menjadi lembaga sertifikasi profesi yang profesional dan terpercaya; </h6><h6>4. Lingkaran berwarna merah seperti bola dunia, menunjukkan eksistensi perjuangan Lembaga Sertifikasi Profesi Politeknik Negeri </h6><h6>&nbsp;&nbsp;&nbsp; Ketapang (LSP POLITAP) hingga ketingkat internasional; </h6><h6>5. Simbol centang berwarna merah di dalam lingkaran, merupakan gambaran dari komitmen perjuangan Lembaga Sertifikasi Profesi</h6><h6>&nbsp;&nbsp;&nbsp;&nbsp; Politeknik Negeri Ketapang (LSP-POLITAP) untuk menghasilkan sumberdaya manusia yang berkualitas. </h6>', '<h2 align=\"center\"><span style=\"background-color: inherit;\"><span style=\"color: rgb(255, 0, 0);\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Visi</span></span></span></h2><p align=\"center\"><br></p><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">\"Menjadi Lembaga Sertifikasi Profesi yang terpecaya dalam </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">menjamin kompetensi sumberdaya manusia agar mampu bersaing </span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">di era globalisasi.\"</span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h4><h4 align=\"center\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span><br></h4>', '<h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\">Misi</span></b></span></h2><h2 align=\"center\"><span style=\"color: rgb(255, 0, 0);\"><b><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></b></span></h2><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">1. Melaksanakan Uji Kompetensi yang sistematis dan konsisten</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">2. Mengembangkan sumber daya manusia di LSP Politeknik Negeri </span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">Ketapang dan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">seluruh asesor</span> <span style=\"font-family: &quot;Comic Sans MS&quot;;\">kompetensi menjadi tenaga profesional</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">3. Mengembangkan skema dan perangkat asesmen secara berkelanjutan</span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">4. Mengembangkan sarana dan prasarana uji kompetensi </span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">5.</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> Mengembangkan </span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">sistem </span></span><span style=\"font-family: &quot;Comic Sans MS&quot;;\">informasi website untuk kepen</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">tingan internal </span></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">&nbsp;&nbsp; </span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">dan</span><span style=\"font-family: &quot;Comic Sans MS&quot;;\"> eksternal LSP POLITAP </span></span></h4><h4 align=\"left\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-family: &quot;Comic Sans MS&quot;;\">6. Mengembangkan jejaring dan kerjasama yang sinergis dengan stakeholder</span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h4><h4 align=\"left\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\"><br></span></h4>', '<h4 style=\"text-align: center;\"><span style=\"color: rgb(255, 0, 0); font-family: &quot;Comic Sans MS&quot;;\">MOTTO</span></h4><h3 style=\"   text-align: center;\"><span style=\"font-family: &quot;Comic Sans MS&quot;;\">﻿</span><span style=\"font-family: &quot;Courier New&quot;;\">\"Kompeten , Unggul dan, Profesional\"</span><span style=\"color: rgb(255, 0, 0); font-family: &quot;Impact&quot;;\"><br></span></h3>', 'public/uploads/f_profil/1650562467lsp.png', '2022-06-09 20:56:51.000000', '2022-06-10 03:56:51.879485');
 
 -- --------------------------------------------------------
 
@@ -415,7 +459,12 @@ INSERT INTO `galeri_fotos` (`id`, `group_galeri_id`, `image`, `created_at`, `upd
 (107, 5, 'public/uploads/galeri/1652157112Kegiatan Mahasiswa (14).jpeg', '2022-05-09 21:31:52', '2022-05-09 21:31:52'),
 (108, 5, 'public/uploads/galeri/1652157112Kegiatan Mahasiswa (15).jpeg', '2022-05-09 21:31:52', '2022-05-09 21:31:52'),
 (109, 5, 'public/uploads/galeri/1652157112Kegiatan Mahasiswa (16).jpeg', '2022-05-09 21:31:52', '2022-05-09 21:31:52'),
-(110, 5, 'public/uploads/galeri/1652157112Kegiatan Mahasiswa (17).jpeg', '2022-05-09 21:31:52', '2022-05-09 21:31:52');
+(110, 5, 'public/uploads/galeri/1652157112Kegiatan Mahasiswa (17).jpeg', '2022-05-09 21:31:52', '2022-05-09 21:31:52'),
+(112, 6, 'public/uploads/galeri/16548366955.jpeg', '2022-06-09 21:51:35', '2022-06-09 21:51:35'),
+(113, 6, 'public/uploads/galeri/16548366956.jpeg', '2022-06-09 21:51:35', '2022-06-09 21:51:35'),
+(114, 6, 'public/uploads/galeri/16548366958.jpeg', '2022-06-09 21:51:35', '2022-06-09 21:51:35'),
+(115, 6, 'public/uploads/galeri/16548366959.jpeg', '2022-06-09 21:51:35', '2022-06-09 21:51:35'),
+(116, 6, 'public/uploads/galeri/165483669510.jpeg', '2022-06-09 21:51:35', '2022-06-09 21:51:35');
 
 -- --------------------------------------------------------
 
@@ -436,7 +485,28 @@ CREATE TABLE `group_galeris` (
 
 INSERT INTO `group_galeris` (`id`, `galeri`, `created_at`, `updated_at`) VALUES
 (4, 'Carousel Album', '2022-05-09 19:37:54', '2022-05-09 19:37:54'),
-(5, 'Kegiatan Mahasiswa', '2022-05-09 19:39:55', '2022-05-09 21:31:27');
+(5, 'Kegiatan Mahasiswa', '2022-05-09 19:39:55', '2022-05-09 21:31:27'),
+(6, 'Testing', '2022-06-09 21:50:50', '2022-06-09 21:51:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `info2`
+--
+
+CREATE TABLE `info2` (
+  `id` bigint(20) DEFAULT NULL,
+  `image` varchar(225) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `info2`
+--
+
+INSERT INTO `info2` (`id`, `image`, `created_at`, `updated_at`) VALUES
+(1, 'public/uploads/info/16548758071652157112Kegiatan Mahasiswa (13).jpeg', '2022-06-10 15:43:27', '2022-06-10 08:43:27');
 
 -- --------------------------------------------------------
 
@@ -508,6 +578,27 @@ INSERT INTO `kategoris` (`id`, `kategori`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `kknis`
+--
+
+CREATE TABLE `kknis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kknis`
+--
+
+INSERT INTO `kknis` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
+(1, '1', 'public/uploads/kkni/1654882458BAB II.pdf', '2022-06-10 10:34:18', '2022-06-10 10:34:18');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -564,7 +655,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (40, '2022_04_26_053611_create_files_table', 32),
 (41, '2022_04_28_170453_create_notes_table', 33),
 (42, '2022_05_03_142051_create_asus_table', 34),
-(43, '2022_05_05_170426_create_dokumen__uploads_table', 34);
+(43, '2022_05_05_170426_create_dokumen__uploads_table', 34),
+(44, '2022_06_10_170400_create_skknis_table', 35),
+(45, '2022_06_10_172828_create_kknis_table', 36),
+(46, '2022_06_10_173640_create_fileapl2s_table', 37),
+(47, '2022_06_10_174907_create_filelains_table', 38);
 
 -- --------------------------------------------------------
 
@@ -862,6 +957,27 @@ INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `tuk_id`, `asesor
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `skknis`
+--
+
+CREATE TABLE `skknis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `skknis`
+--
+
+INSERT INTO `skknis` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
+(2, '12312312', 'public/uploads/skkni/1654881878SKKNI_2014-400_-_3D_Illustration_Artist.pdf', '2022-06-10 10:24:38', '2022-06-10 10:24:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status`
 --
 
@@ -936,22 +1052,24 @@ INSERT INTO `tokens` (`id`, `token`, `user_id`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `tuk` (
   `id` int(11) NOT NULL,
-  `image` varchar(255) NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `pengelola` varchar(255) NOT NULL,
   `tuk` varchar(255) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `kode` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tuk`
 --
 
-INSERT INTO `tuk` (`id`, `image`, `pengelola`, `tuk`, `alamat`, `updated_at`, `created_at`) VALUES
-(1, '', '', '-', NULL, '2022-04-14 09:21:33.428215', '2022-04-14 09:21:33.428215'),
-(13, '', '', 'Lab Bengkel Mesin', '-', '2022-05-09 20:31:01.000000', '2022-05-09 20:31:01.000000'),
-(14, 'public/uploads/pengelola/1654167630Screenshot (67).png', 'gsdfgsdfg1212', 'LAB KIMIA2', 'dfsdfsdfsdfsdf1212', '2022-06-02 04:00:30.000000', '2022-06-02 11:00:30.028158');
+INSERT INTO `tuk` (`id`, `image`, `pengelola`, `tuk`, `alamat`, `updated_at`, `created_at`, `kode`) VALUES
+(1, 'public/uploads/asesor/1654176913Screenshot (66).png', '', '-', NULL, '2022-06-09 15:43:03.180584', '2022-06-09 15:43:03.180584', ''),
+(13, 'public/uploads/asesor/1654176913Screenshot (66).png', 'erwerwerwer', 'Lab Bengkel Mesin', '-', '2022-06-09 10:54:31.432727', '2022-06-09 10:54:31.432727', ''),
+(14, 'public/uploads/pengelola/1654167630Screenshot (67).png', 'gsdfgsdfg1212', 'LAB KIMIA2', 'dfsdfsdfsdfsdf1212', '2022-06-02 04:00:30.000000', '2022-06-02 11:00:30.028158', ''),
+(15, 'public/uploads/pengelola/1654792126lsp-11.png', '234234234234234', 'Lab Bengkel Mesin', 'Ketapang, Kalimantan Barat', '2022-06-09 09:34:27.000000', '2022-06-09 16:34:27.951103', 'dffdgffrg/43423423/asdasdasdasd');
 
 -- --------------------------------------------------------
 
@@ -1117,7 +1235,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`, `surel`, `tmpt_lahir`, `email2`, `tempat_lahir`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'zWoNR3X9uB1DDvYbxgWfo3QFJFpofIO4l6bYIEItA1prGfFLLDE2mkH9phRr', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'bIIEBowl37bWhhCA7u9X8445xQ48x9uCf2TbvgkDhuvFtjMGR0x6ViB3BlLF', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
 (25, NULL, 'Dwi Ramadhani', '3042020057', NULL, '1995-05-17', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 81256390908, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652287117photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$ZF9y04L.RUIsE60DjwV0C.Ss3KFMk5VAi9xp2TjYospzqYXImBEPO', NULL, NULL, NULL, '2022-05-11 09:37:32', '2022-05-11 09:38:37', NULL, NULL, 'dwi222@gmail.com', 'Ketapang'),
 (26, NULL, 'Ponsianus JOPI', '3042020058', NULL, '2000-06-12', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 91256789696, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652302506photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$3OTmQaxoxzTHuN555seoHOaqj25qqu0G1Cb9ws.bnZ1yVFuM7panm', NULL, NULL, NULL, '2022-05-11 13:53:25', '2022-05-11 13:55:06', NULL, NULL, 'ponzzy22@gmail.com', 'Ketapang');
 
@@ -1185,9 +1303,9 @@ ALTER TABLE `asesor`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `beranda`
+-- Indexes for table `banner`
 --
-ALTER TABLE `beranda`
+ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1226,6 +1344,18 @@ ALTER TABLE `dokumen__uploads`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indexes for table `fileapl2s`
+--
+ALTER TABLE `fileapl2s`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `filelains`
+--
+ALTER TABLE `filelains`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `files`
@@ -1267,6 +1397,12 @@ ALTER TABLE `jurusan`
 -- Indexes for table `kategoris`
 --
 ALTER TABLE `kategoris`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `kknis`
+--
+ALTER TABLE `kknis`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1374,6 +1510,12 @@ ALTER TABLE `skemas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `skknis`
+--
+ALTER TABLE `skknis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `status`
 --
 ALTER TABLE `status`
@@ -1440,19 +1582,19 @@ ALTER TABLE `asesmens`
 -- AUTO_INCREMENT for table `asesor`
 --
 ALTER TABLE `asesor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
--- AUTO_INCREMENT for table `beranda`
+-- AUTO_INCREMENT for table `banner`
 --
-ALTER TABLE `beranda`
+ALTER TABLE `banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `beranda_img1`
 --
 ALTER TABLE `beranda_img1`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `beranda_img2`
@@ -1479,10 +1621,22 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `fileapl2s`
+--
+ALTER TABLE `fileapl2s`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `filelains`
+--
+ALTER TABLE `filelains`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `f_profil`
@@ -1494,13 +1648,13 @@ ALTER TABLE `f_profil`
 -- AUTO_INCREMENT for table `galeri_fotos`
 --
 ALTER TABLE `galeri_fotos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `group_galeris`
 --
 ALTER TABLE `group_galeris`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `infos`
@@ -1521,10 +1675,16 @@ ALTER TABLE `kategoris`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `kknis`
+--
+ALTER TABLE `kknis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `notes`
@@ -1593,6 +1753,12 @@ ALTER TABLE `skemas`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT for table `skknis`
+--
+ALTER TABLE `skknis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
@@ -1614,7 +1780,7 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `unikoms`
