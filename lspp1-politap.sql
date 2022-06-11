@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2022 at 09:22 PM
+-- Generation Time: Jun 11, 2022 at 10:34 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -607,13 +607,6 @@ CREATE TABLE `kknis` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `kknis`
---
-
-INSERT INTO `kknis` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
-(1, '1', 'public/uploads/kkni/1654882458BAB II.pdf', '2022-06-10 10:34:18', '2022-06-10 10:34:18');
-
 -- --------------------------------------------------------
 
 --
@@ -731,7 +724,7 @@ CREATE TABLE `notes` (
 INSERT INTO `notes` (`id`, `judul`, `isi`, `created_at`, `updated_at`) VALUES
 (2, 'TO-DO-LIST', '<h5><span style=\"color: rgb(255, 0, 0); --darkreader-inline-color: #ff1a1a; font-family: &quot;Comic Sans MS&quot;;\" data-darkreader-inline-color=\"\">ADMIN</span></h5><ol><li>input link navbar admin<br></li><li>setting akun</li><li>efek aos pada admin</li><li>menambahkan modal di admin</li><li>mengubah validate di admin</li><li>print untuk setiap menu administrasi dan pendaftaran</li><li>edit admin profil</li><li>edit user password</li><li>menu navigasi</li><li>membuat tata cara menggunakan web di info pendaftaran</li><li>galeri thumbnail<br></li></ol>', '2022-04-28 22:32:00', '2022-04-29 07:33:09'),
 (3, 'PENTING', '<ol><li>membuat input tanpa refresh</li><li>membuat desain prosedur sertifikasi</li><li>ajax provinsi-kabupaten<br></li></ol>', '2022-05-09 11:32:33', '2022-05-09 11:37:16'),
-(4, 'BUG WEB', '<ol><li>Konversi ke pdf</li><li>Create backup data sertifikat</li><li>Create Format Formulir</li><li>Update password user dan admin</li><li>Validation API<br></li><li>Design banner</li><li>Fitur Filter<br></li></ol>', '2022-05-29 03:07:30', '2022-06-11 12:15:43');
+(4, 'BUG WEB', '<ol><li>Konversi ke pdf</li><li>Create backup data sertifikat</li><li>Create Format Formulir</li><li>Update password user dan admin</li><li>Validation API<br></li><li>Design banner</li><li>Fitur Filter</li><li>Verifikasi login melalui email<br></li></ol>', '2022-05-29 03:07:30', '2022-06-11 12:35:10');
 
 -- --------------------------------------------------------
 
@@ -993,13 +986,6 @@ CREATE TABLE `skknis` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `skknis`
---
-
-INSERT INTO `skknis` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
-(2, '12312312', 'public/uploads/skkni/1654881878SKKNI_2014-400_-_3D_Illustration_Artist.pdf', '2022-06-10 10:24:38', '2022-06-10 10:24:38');
-
 -- --------------------------------------------------------
 
 --
@@ -1201,44 +1187,6 @@ CREATE TABLE `upload_files` (
   `koreksi` varchar(225) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `upload_files`
---
-
-INSERT INTO `upload_files` (`id`, `kode_dokumen`, `data_register_id`, `name`, `image`, `created_at`, `updated_at`, `status`, `user_id`, `kode`, `koreksi`) VALUES
-(533, '12519', 2519, 'Photo', 'public/uploads/uploads_file_register/1654949238diagram konteks.drawio.png', '2022-06-11 05:07:05', '2022-06-11 05:09:02', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(534, '22519', 2519, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654949248diagram konteks.drawio.png', '2022-06-11 05:07:05', '2022-06-11 05:09:06', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(535, '32519', 2519, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654949258diagram konteks.drawio.png', '2022-06-11 05:07:05', '2022-06-11 05:09:12', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(536, '42519', 2519, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654949264diagram konteks.drawio.png', '2022-06-11 05:07:05', '2022-06-11 05:09:16', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(537, '12518', 2518, 'Photo', 'public/uploads/uploads_file_register/1654949558diagram konteks.drawio.png', '2022-06-11 05:12:24', '2022-06-11 05:15:56', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(538, '22518', 2518, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654949565diagram konteks.drawio.png', '2022-06-11 05:12:24', '2022-06-11 05:16:00', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(539, '32518', 2518, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654949572diagram konteks.drawio.png', '2022-06-11 05:12:24', '2022-06-11 05:16:04', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(540, '42518', 2518, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654949579diagram konteks.drawio.png', '2022-06-11 05:12:24', '2022-06-11 05:16:08', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(545, '12517', 2517, 'Photo', NULL, '2022-06-11 05:20:29', '2022-06-11 05:24:03', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(546, '22517', 2517, 'Kartu Tanda Penduduk', NULL, '2022-06-11 05:20:29', '2022-06-11 05:24:07', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(547, '32517', 2517, 'Kartu Tanda Mahasiswa', NULL, '2022-06-11 05:20:29', '2022-06-11 05:24:12', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(548, '42517', 2517, 'Kartu Hasil Studi', NULL, '2022-06-11 05:20:29', '2022-06-11 05:24:16', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(549, '12516', 2516, 'Photo', NULL, '2022-06-11 05:24:51', '2022-06-11 05:24:51', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 125, NULL),
-(550, '22516', 2516, 'Kartu Tanda Penduduk', NULL, '2022-06-11 05:24:51', '2022-06-11 05:24:51', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 225, NULL),
-(551, '32516', 2516, 'Kartu Tanda Mahasiswa', NULL, '2022-06-11 05:24:51', '2022-06-11 05:24:51', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 325, NULL),
-(552, '42516', 2516, 'Kartu Hasil Studi', NULL, '2022-06-11 05:24:51', '2022-06-11 05:24:51', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 25, 425, NULL),
-(557, '12619', 2619, 'Photo', 'public/uploads/uploads_file_register/1654951524diagram konteks.drawio.png', '2022-06-11 05:45:08', '2022-06-11 05:49:44', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(558, '22619', 2619, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654951530diagram konteks.drawio.png', '2022-06-11 05:45:08', '2022-06-11 05:49:48', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(559, '32619', 2619, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654951536diagram konteks.drawio.png', '2022-06-11 05:45:08', '2022-06-11 05:49:51', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(560, '42619', 2619, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654951541diagram konteks.drawio.png', '2022-06-11 05:45:08', '2022-06-11 05:49:54', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(573, '12618', 2618, 'Photo', 'public/uploads/uploads_file_register/1654952429diagram konteks.drawio.png', '2022-06-11 06:00:11', '2022-06-11 06:02:52', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(574, '22618', 2618, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654952435diagram konteks.drawio.png', '2022-06-11 06:00:11', '2022-06-11 06:02:56', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(575, '32618', 2618, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654952441diagram konteks.drawio.png', '2022-06-11 06:00:11', '2022-06-11 06:02:59', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(576, '42618', 2618, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654952446diagram konteks.drawio.png', '2022-06-11 06:00:11', '2022-06-11 06:03:02', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(577, '12617', 2617, 'Photo', 'public/uploads/uploads_file_register/1654952641diagram konteks.drawio.png', '2022-06-11 06:03:48', '2022-06-11 06:05:10', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(578, '22617', 2617, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654952648diagram konteks.drawio.png', '2022-06-11 06:03:49', '2022-06-11 06:05:14', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(579, '32617', 2617, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654952655diagram konteks.drawio.png', '2022-06-11 06:03:49', '2022-06-11 06:05:17', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(580, '42617', 2617, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654952662diagram konteks.drawio.png', '2022-06-11 06:03:49', '2022-06-11 06:05:20', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(581, '12614', 2614, 'Photo', 'public/uploads/uploads_file_register/1654952898diagram konteks.drawio.png', '2022-06-11 06:08:00', '2022-06-11 06:40:40', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(582, '22614', 2614, 'Kartu Tanda Penduduk', 'public/uploads/uploads_file_register/1654952903diagram konteks.drawio.png', '2022-06-11 06:08:00', '2022-06-11 06:40:43', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(583, '32614', 2614, 'Kartu Tanda Mahasiswa', 'public/uploads/uploads_file_register/1654955965diagram konteks.drawio.png', '2022-06-11 06:08:00', '2022-06-11 07:16:44', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(584, '42614', 2614, 'Kartu Hasil Studi', 'public/uploads/uploads_file_register/1654956174diagram konteks.drawio.png', '2022-06-11 06:08:00', '2022-06-11 07:16:52', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>');
-
 -- --------------------------------------------------------
 
 --
@@ -1285,10 +1233,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`, `surel`, `tmpt_lahir`, `email2`, `tempat_lahir`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'fagmusxISakMkrsGlV1p4Ai5xS5YTaCa2ZAVP7Q8BuEdsRDOSjEZCfwziPo6', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 82150040132, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1650562518lsp.png', NULL, 3, 3, NULL, 'y0OWD04lYpTu445zymRRL0lTdUebdJjufJNBxhJRYMvflkhSe2k35aSnP7NJ', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-05-09 07:00:10', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
 (25, NULL, 'Dwi Ramadhani2', '3042020057', NULL, '1995-05-17', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 81256390908, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652287117photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$ZF9y04L.RUIsE60DjwV0C.Ss3KFMk5VAi9xp2TjYospzqYXImBEPO', NULL, NULL, NULL, '2022-05-11 09:37:32', '2022-06-11 01:58:38', NULL, NULL, 'dwi222@gmail.com', 'Ketapang'),
-(26, NULL, 'Ponsianus JOPI', '3042020058', NULL, '2000-06-12', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 91256789696, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652302506photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$3OTmQaxoxzTHuN555seoHOaqj25qqu0G1Cb9ws.bnZ1yVFuM7panm', NULL, NULL, NULL, '2022-05-11 13:53:25', '2022-05-11 13:55:06', NULL, NULL, 'ponzzy22@gmail.com', 'Ketapang'),
-(29, NULL, 'asasasasasa', '3042020054', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, NULL, NULL, '$2y$10$ByFjb3Mrqa2nmlAToPg6EuelioyAomZT/FBfuSacUDhXiGmgyMf.O', NULL, NULL, NULL, '2022-06-10 23:15:43', '2022-06-10 23:15:43', NULL, NULL, 'dwi@gmail.com', NULL);
+(26, NULL, 'Ponsianus JOPI', '3042020058', NULL, '2000-06-12', '1', 'Indonesia', 'BTN Puri Nirwana', NULL, 91256789696, NULL, NULL, NULL, NULL, NULL, 'public/uploads/beranda_img2/1652302506photo.png', NULL, 4, 4, NULL, NULL, '$2y$10$3OTmQaxoxzTHuN555seoHOaqj25qqu0G1Cb9ws.bnZ1yVFuM7panm', NULL, NULL, NULL, '2022-05-11 13:53:25', '2022-05-11 13:55:06', NULL, NULL, 'ponzzy22@gmail.com', 'Ketapang');
 
 -- --------------------------------------------------------
 
@@ -1315,22 +1262,6 @@ CREATE TABLE `xnxxes` (
   `koreksi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `unikom_kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `xnxxes`
---
-
-INSERT INTO `xnxxes` (`id`, `kode_elemen`, `kriteria`, `user_id`, `unikom_id`, `unikom_name`, `asesmen_name`, `skema_name`, `skema_id`, `image`, `status`, `created_at`, `updated_at`, `data_register_id`, `kode`, `koreksi`, `unikom_kode`) VALUES
-(781, '12519', '<p>324234</p>', 25, 82, 'wefwfwf', '34234234', 'Junior Web Programmer', 19, 'public/uploads/formulir_apl2/1654949290BAB II.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 05:07:08', '2022-06-11 05:09:20', 2519, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '423423'),
-(782, '22519', '<p>2342342</p>', 25, 83, '341234', '234234', 'Junior Web Programmer', 19, 'public/uploads/formulir_apl2/16549492991652133241IAD_I-TI-v.22.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 05:07:08', '2022-06-11 05:09:26', 2519, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '4324'),
-(783, '12518', '<p>aad</p>', 25, 84, 'nq', 'na', 'Network Administrator Muda', 18, 'public/uploads/formulir_apl2/16549497051652150076S_PTA_1504738_Chapter3.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 05:12:27', '2022-06-11 05:16:12', 2518, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '231231'),
-(785, '12517', '<p>asu</p>', 25, 85, 'asu', 'asu', 'Personil K3', 17, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-06-11 05:20:31', '2022-06-11 05:24:39', 2517, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'as'),
-(786, '12619', '<p>324234</p>', 26, 82, 'wefwfwf', '34234234', 'Junior Web Programmer', 19, 'public/uploads/formulir_apl2/16549517061652133241IAD_I-TI-v.22.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 05:45:10', '2022-06-11 05:49:57', 2619, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '423423'),
-(787, '22619', '<p>2342342</p>', 26, 83, '341234', '234234', 'Junior Web Programmer', 19, 'public/uploads/formulir_apl2/16549517191652150076S_PTA_1504738_Chapter3.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 05:45:10', '2022-06-11 05:50:00', 2619, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '4324'),
-(791, '12618', '<p>aad</p>', 26, 84, 'nq', 'na', 'Network Administrator Muda', 18, 'public/uploads/formulir_apl2/16549524601652150076S_PTA_1504738_Chapter3.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 06:00:13', '2022-06-11 06:03:06', 2618, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '231231'),
-(792, '12617', '<p>asu</p>', 26, 85, 'asu', 'asu', 'Personil K3', 17, 'public/uploads/formulir_apl2/1654952676BAB II.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 06:03:50', '2022-06-11 06:05:24', 2617, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'as'),
-(793, '12614', '<p>-<br></p>', 26, 53, 'Melakukan komunikasi dengan pihak IKM', '-', 'Instalasi Listrik', 14, 'public/uploads/formulir_apl2/16549563621652150076S_PTA_1504738_Chapter3.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 06:08:04', '2022-06-11 07:16:56', 2614, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'M.702090.001.02'),
-(794, '22614', '<p>dfsdf</p>', 26, 86, 'Menerapkan prinsip-prinsip SMM dan TQC', 'kimak', 'Instalasi Listrik', 14, 'public/uploads/formulir_apl2/1654952945SKEMA-V05.1-RT006_-_3D_Illustration_Artist.pdf', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-11 06:08:04', '2022-06-11 06:41:03', 2614, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'M.702090.020.02');
 
 --
 -- Indexes for dumped tables
