@@ -15,6 +15,7 @@ use App\Models\Galeri_foto;
 use App\Models\Group_galeri;
 use App\Models\Info;
 use App\Models\Info2;
+use App\Models\Jurusan;
 use App\Models\Kkni;
 use App\Models\Skema;
 use App\Models\Skkni;
@@ -41,7 +42,8 @@ class ClientController extends Controller
         $asesor = Asesor::where('id', '>', 1)->get();
         $sertifikat = Data_register::where('status', 'Sertifikasi Selesai')->get();
         $galeri = Galeri_foto::orderBy('created_at','desc')->get();
-        $artikel = Berita::orderBy('created_at','desc')->take(10)->get();
+        $artikel = Berita::orderBy('created_at','desc')->take(10)
+            ->where('status', 'Posting')->get();
         $info = Info::all();
         $karyawan = Beranda_img2::all();
         return view('client', compact
@@ -65,7 +67,7 @@ class ClientController extends Controller
 
     public function berita()
     {
-        $berita = Berita::all();
+        $berita = Berita::where('status', 'Posting')->get();
         return view('client.berita', compact('berita'));
     }
 
@@ -116,7 +118,7 @@ class ClientController extends Controller
 
     public function sertifikat()
     {
-        $sertifikat = Data_register::where('status', 'Sertifikasi Selesai')->get();
+        $sertifikat = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->get();
         return view('client/sertifikat', compact('sertifikat'));
     }
 
@@ -226,6 +228,19 @@ class ClientController extends Controller
     {
         $file = Filelain::all();
         return view('client/filelain', compact('file'));
+    }
+
+
+    public function loginadmin()
+    {
+        return view('auth/loginadmin');
+    }
+
+
+    public function reg()
+    {
+        $jurusan = Jurusan::all();
+        return view('auth/register', compact('jurusan'));
     }
 
 

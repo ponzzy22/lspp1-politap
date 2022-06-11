@@ -53,7 +53,6 @@ class Beranda_img2Controller extends Controller
         $request->validate([
             'nama' => ['required'],
             'keterangan' => ['required'],
-            'no_hp' => ['required', 'numeric']
         ]);
         $beranda_img2 = Beranda_img2::findorfail($id);
         if ($request->has('image')) {

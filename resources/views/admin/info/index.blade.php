@@ -32,20 +32,22 @@
                     <div class="media">
                         <div class="media-body">
                             @foreach ($info2 as $asu2)
-                    <div class="col-md-5">
-                        <img src="{{ asset($asu2->image) }}" width="550px" alt="">
-                    </div><br>
-                    <div class="col-md-6">
-                        <form action="{{ route('save_image', $asu2->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('put')
-                            <label for="file">Input Gambar</label>
-                            <input type="file" class="form-control" name="image" id="file">
-                            <br>
-                            <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i> Update</button>
-                        </form>
-                    </div>
-                @endforeach
+                                <div class="col-md-6">
+                                    <form action="{{ route('save_image', $asu2->id) }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('put')
+                                        <label for="file">Input Gambar</label>
+                                        <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image" id="file">
+                                        <br>
+                                        <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
+                                            Update</button><br>
+                                    </form>
+                                </div>
+                                <div class="col-md-5">
+                                    <img src="{{ asset($asu2->image) }}" width="550px" alt="">
+                                </div><br>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -53,20 +55,22 @@
                     <div class="media">
                         <div class="media-body">
                             @foreach ($info as $asu)
-                    <div class="col-md-5">
-                        <video src="{{ asset($asu->image) }}" width="550px" alt="">
-                    </div><br>
-                    <div class="col-md-6">
-                        <form action="{{ route('info.update', $asu->id) }}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            @method('put')
-                            <label for="file">Input Video MP4</label>
-                            <input type="file" class="form-control" accept=".mp4" name="image" id="file">
-                            <br>
-                            <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i> Update</button>
-                        </form>
-                    </div>
-                @endforeach
+                                <div class="col-md-6">
+                                    <form action="{{ route('info.update', $asu->id) }}" method="POST"
+                                        enctype="multipart/form-data">
+                                        @csrf
+                                        @method('put')
+                                        <label for="file">Input Video MP4</label>
+                                        <input type="file" class="form-control" accept=".mp4" name="image" id="file">
+                                        <br>
+                                        <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
+                                            Update</button><br>
+                                    </form>
+                                </div>
+                                <div class="col-md-5">
+                                    <video src="{{ asset($asu->image) }}" width="550px" alt="">
+                                </div><br>
+                            @endforeach
                         </div>
                     </div>
                 </div>

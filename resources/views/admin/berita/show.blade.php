@@ -36,7 +36,8 @@
                         <div class="card-body">
                             <h4 class="card-title"><i class="fas fa-plus"></i> Edit Berita</h4>
                             <div class="col-md-12">
-                                <label for="image-upload" id="image-label">Pilih Gambar <i class="fas fa-image"></i></label>
+                                <label for="image-upload" id="image-label">Pilih Gambar <i
+                                        class="fas fa-image"></i></label>
                                 <input type="file" name="image">
                             </div><br>
                             <div class="col-md-12">
@@ -45,25 +46,32 @@
                                     <option value="" holder></option>
                                     @foreach ($kategori as $result)
                                         <option value="{{ $result->id }}"
-                                        @if ($berita->kategori_id == $result->id)
-                                            selected
-                                        @endif>{{ $result->kategori }}
+                                            @if ($berita->kategori_id == $result->id) selected @endif>{{ $result->kategori }}
                                         </option>
                                     @endforeach
                                 </select>
                             </div><br>
                             <div class="col-md-12">
+                                <label for="">Status Berita</label>
+                                <select class="form-control" name="status">
+                                    <option value="{{ $berita->status }}" holder>{{ $berita->status }}</option>
+                                        <option value="Posting">Posting</option>
+                                        <option value="Tidak Di Posting">Tidak Di Posting</option>
+                                </select>
+                            </div><br>
+                            <div class="col-md-12">
                                 <label for="">Judul Berita</label>
-                                <input type="text" class="form-control" placeholder="Judul berita" name="title" maxlength="100"
-                                    value="{{ $berita->title }}">
+                                <input type="text" class="form-control" placeholder="Judul berita" name="title"
+                                    maxlength="100" value="{{ $berita->title }}">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Excerpt</label>
                                 <input type="text" class="form-control" placeholder="Excerpt" name="excerpt"
                                     value="{{ $berita->excerpt }}">
                             </div><br>
-                            <label for="">Isi Konten Berita</label>
+
                             <div class="col-md-9">
+                                <label for="">Isi Konten Berita</label>
                                 <textarea class="summernote" name="body">{{ $berita->body }}</textarea>
                             </div>
                             <br>
@@ -77,15 +85,15 @@
         </div>
     </div><br>
     <!-- /////////////////////////////////// -->
-        <!-- TAMPIL DATA -->
-        <!-- /////////////////////////////////// -->
+    <!-- TAMPIL DATA -->
+    <!-- /////////////////////////////////// -->
     <div class="card col-md-6">
         <div class="card-body">
             <img class="card-img-top" src="{{ asset($berita->image) }}" alt="Card image cap">
-        <div class="card-body">
-            <h4 class="card-title">{{ $berita->title }}</h4>
-            <p class="card-text">{!! $berita->body !!}</p>
-        </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ $berita->title }}</h4>
+                <p class="card-text">{!! $berita->body !!}</p>
+            </div>
         </div>
     </div>
 @endsection

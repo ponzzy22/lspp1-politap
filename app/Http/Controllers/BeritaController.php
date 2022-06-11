@@ -25,6 +25,7 @@ class BeritaController extends Controller
             'excerpt' => ['required'],
             'kategori_id' => ['required'],
             'body' => ['required'],
+            'status' => ['required'],
             'image' => ['required']
         ]);
         $image = $request->image;
@@ -34,6 +35,7 @@ class BeritaController extends Controller
             'excerpt' => $request->excerpt,
             'kategori_id' => $request->kategori_id,
             'body' => $request->body,
+            'status' => $request->status,
             'image' => 'public/uploads/berita/' . $new_image,
         ]);
         $image->move('public/uploads/berita/', $new_image);
@@ -67,6 +69,7 @@ class BeritaController extends Controller
                 'excerpt' => $request->excerpt,
                 'kategori_id' => $request->kategori_id,
                 'body' => $request->body,
+                'status' => $request->status,
                 'image' => 'public/uploads/berita/' . $new_image,
             ];
         } else {
@@ -74,6 +77,7 @@ class BeritaController extends Controller
                 'title' => $request->title,
                 'excerpt' => $request->excerpt,
                 'body' => $request->body,
+                'status' => $request->status,
                 'kategori_id' => $request->kategori_id,
             ];
         }

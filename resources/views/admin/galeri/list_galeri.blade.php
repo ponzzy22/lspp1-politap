@@ -38,7 +38,7 @@
                         <div class="card-body">
                             <form action="{{ route('galeri.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="text" name="galeri" class="form-control" value=""><br>
+                                <input type="text" name="galeri" class="form-control" placeholder="Nama Album" value=""><br>
                                 <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
                                         class="fas fa-save"></i></button>
                             </form>
@@ -58,7 +58,6 @@
                 @foreach ($galeri as $asu)
                     <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="card-body">
-                            <a href="{{ route('uifoto.show', $asu->id) }}">
                                 <figure class="effect-text-in">
                                     <img src="{{ asset('public/assets/images/auth/placeholder_image1.png') }}"
                                         alt="image">
@@ -67,7 +66,6 @@
                                         <p>{{ $asu->created_at }}</p>
                                     </figcaption>
                                 </figure>
-                            </a>
                             <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
                                 id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">

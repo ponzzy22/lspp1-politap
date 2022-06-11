@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi/bolo3.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/assets/css/asesi.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -49,7 +49,7 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5> LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP - WEBSITE ASESI</h5>
+                            <h5> <i class="fas fa-user"></i> WEBSITE ASESI - LEMBAGA SERTIFIKASI PROFESI POLITEKNIK NEGERI KETAPANG</h5>
                         </div>
                     </li>
                 </ul>
@@ -221,7 +221,7 @@
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
                 with
                 <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
-                    Informatika </a><code class="text text-danger"> v.1.4.22</code></span>
+                    Informatika </a><code class="text text-danger"> v.3.06.22</code></span>
         </div>
     </footer>
 

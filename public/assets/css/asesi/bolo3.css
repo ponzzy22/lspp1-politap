@@ -20655,7 +20655,7 @@ input:focus {
 }
 
 
-/* text submenu */
+/* jo submenu */
 
 .sidebar .nav.sub-menu .nav-item .nav-link:hover {
     color: #ffffff;
@@ -20666,19 +20666,19 @@ input:focus {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
-    color: #0050e3;
+    color: #ec3732;
     background: transparent;
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active:before {
-    color: #0050e3;
+    color: #ec3732;
 }
 
 
 /* warna hightlight submune */
 
 .sidebar .nav.sub-menu .nav-item:hover {
-    background: #0050e3;
+    background: #ec3732;
 }
 
 .sidebar-dark .sidebar {

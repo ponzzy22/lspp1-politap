@@ -1,4 +1,4 @@
-@extends('layout/asesi2')
+@extends('layout/asesi1')
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -15,6 +15,22 @@
             </ol>
         </nav>
     </div><br>
+
+    <div class="card col-md-12">
+        <div class="card-body">
+            <h6 class="badge  badge-outline-warning font-weight-bold">Instruksi Pendaftaran Sertifikasi Skema</h6>
+            <ol>
+                <li class="font-weight-bold">Sebelum mendaftar sertifikasi skema, harap dilengkapi data "Profil Anda"
+                    terlebih dahulu.</li>
+                <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan memilih salah
+                    satu skema pada tabel dibawah ini.</li>
+                <li class="font-weight-bold">Pilih salah satu skema dengan melakukan "Konfirmasi Pendaftaran" dan kemudian
+                    pilih "Ambil Formulir Pendaftaran".</li>
+                <li class="font-weight-bold">Selanjutnya ikuti langkah-langkah sesuai dengan Instruksi pada tiap halamanya.
+                </li>
+            </ol>
+        </div>
+    </div><br>
     {{-- <-------------------- PROFIL --------------------> --}}
     <div class="row">
         <div class="col-md-4">
@@ -25,13 +41,18 @@
                         <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
                         <div class="ml-3">
                             <h6 class="text-danger font-weight-bold">{{ Auth::user()->name }}</h6>
-                            <p class="text-black font-weight-bold"><i class="fas fa-envelope"></i> {{ Auth::user()->email2 }}</p>
+                            <p class="text-black font-weight-bold"><i class="fas fa-envelope"></i>
+                                {{ Auth::user()->email2 }}</p>
                             <p class="text-black font-weight-bold">NIM :
                                 {{ Auth::user()->email }}</p>
                             <p class="text-black font-weight-bold">Mahasiswa Politeknik Negeri Ketapang</p>
                             <p class="mt-2 text-black font-weight-bold">{{ Auth::user()->jurusan->jurusan }}</p>
-                            <a href="{{ route('koleksi.sertifikat') }}"><p class="text text-black font-weight-bold"> <i class="fas fa-certificate text-black font-weight-bold"></i> Koleksi Sertifikat: {{ $datasertifikat }}
-                            </p></a>
+                            <a href="{{ route('koleksi.sertifikat') }}">
+                                <p class="text text-black font-weight-bold"> <i
+                                        class="fas fa-certificate text-black font-weight-bold"></i> Koleksi Sertifikat:
+                                    {{ $datasertifikat }}
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -323,11 +344,13 @@
                                                     <td class="font-weight-bold">{{ $asu->skema }}</td>
                                                     <td class="text-right">
                                                         <a href="{{ route('info_skema.show', $asu->id) }}"><button
-                                                                type="submit" class="btn btn-dark btn-sm btn-block font-weight-bold"><i
+                                                                type="submit"
+                                                                class="btn btn-dark btn-sm btn-block font-weight-bold"><i
                                                                     class="fa fa-eye "></i> Lihat
                                                                 Skema</button></a>
                                                     </td>
-                                                    <td> <button type="button" class="btn btn-primary font-weight-bold" data-toggle="modal"
+                                                    <td> <button type="button" class="btn btn-primary font-weight-bold"
+                                                            data-toggle="modal"
                                                             data-target="#exampleModal-{{ $asu->id }}"><i
                                                                 class="fas  fa-check-square"></i> Mendaftar</button>
                                                     </td>
@@ -341,6 +364,17 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div><br>
+
+    {{-- <--------------- FOOTER ---------------> --}}
+
+    <div class="card col-md-12">
+        <div class="card-body">
+            <h6 class="badge  badge-outline-info font-weight-bold">Kontak Admin LSP-POLITAP</h6>
+            <br><br>
+            <p style="font-size: 20px"><i class="fab fa-whatsapp-square"> 08965386474683</i></p>
+            <p style="font-size: 20px"><i class="fas fa-envelope-square"> lsp@politap.ac.id</i></p>
         </div>
     </div>
 
@@ -454,8 +488,7 @@
                         <div class="modal-body">
                             <p>Setelah mengirim data pendaftaran , maka data pendaftaran tidak dapat diedit kembali</p>
                             <p>Apakah anda yakin ingin akan mengirim data pendaftaran ini ke Admin LSP-POLITAP?</p>
-                            <input type="hidden" name="skema_id"
-                                value="{{ $data->kode_skema }}{{ $data->user_id }}">
+                            <input type="hidden" name="skema_id" value="{{ $data->kode_skema }}{{ $data->user_id }}">
                             <input type="hidden" name="status" value="<h4 style='color: green'>Menunggu Validasi...</h4>">
                         </div>
                         <div class="modal-footer">
@@ -536,9 +569,9 @@
                             <input type="hidden" class="form-control" name="tgl_lahir"
                                 value="{{ old('tgl_lahir', Auth::user()->tgl_lahir) }}">
                             <input type="hidden" class="form-control" name="tmpt_lahir"
-                                value="{{ old('tmpt_lahir', Auth::user()->tmpt_lahir) }}">
+                                value="{{ old('tmpt_lahir', Auth::user()->tempat_lahir) }}">
                             <input type="hidden" class="form-control" name="surel"
-                                value="{{ old('surel', Auth::user()->surel) }}">
+                                value="{{ old('surel', Auth::user()->email2) }}">
                             <input type="hidden" class="form-control" name="no_hp"
                                 value="{{ old('no_hp', Auth::user()->no_hp) }}">
                             <input type="hidden" class="form-control" name="jurusan_id"
@@ -549,13 +582,15 @@
                                 value="{{ old('alamat', Auth::user()->alamat) }}">
                             <input type="hidden" class="form-control" name="negara"
                                 value="{{ Auth::user()->negara }}">
-                            <p>1. Silahkan pilih <span class="text text-success">
-                                    Konfirmasi Pendaftaran</span>
-                            </p>
-                            <p>
-                                2. Setelah konfirmasi berhasil, kemudian <span class="text text-info">
-                                    Ambil Formulir Pendaftaran</span> dibawah ini
-                            </p>
+                            <ol>
+                                <li>Silahkan pilih <span class="text text-success">
+                                        Konfirmasi Pendaftaran</span>
+                                </li>
+                                <li>
+                                    Setelah konfirmasi berhasil, kemudian <span class="text text-info">
+                                        Ambil Formulir Pendaftaran</span> dibawah ini
+                                </li>
+                            </ol>
 
                             <button class="btn btn-success btn-block font-weight-bold"><i class="fas fa-check-circle"></i>
                                 Konfirmasi Pendaftaran</button>

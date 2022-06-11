@@ -171,6 +171,12 @@ class RegistrasiController extends Controller
 
     public function show($id)
     {
+
+        $registrasi = Data_register::where('user_id', auth()->user()->id)->get();
+        $xnxx = Xnxx::where('user_id', auth()->user()->id)
+                    ->where('kode', '>', 3)
+                    ->get();
+
         $datareg = Data_register::where('user_id', auth()->user()->id)
             ->where('status', "<h4 style='color: rgb(163, 129, 8)'>Lengkapi Data Anda</h4>")
             ->get();
@@ -182,12 +188,17 @@ class RegistrasiController extends Controller
         $identitas = Upload_file::where('user_id', auth()->user()->id)
                     ->where('kode', '>', 3)
                     ->get();
-        return view('asesi/registrasi/formulirapl1', compact('data', 'datareg', 'sex', 'jurusan', 'semester', 'dokumen_upload', 'identitas'));
+        return view('asesi/registrasi/formulirapl1', compact('data', 'datareg', 'sex', 'jurusan', 'semester', 'dokumen_upload', 'identitas', 'xnxx', 'registrasi'));
     }
 
 
     public function data_edit_tolak($id)
     {
+        $registrasi = Data_register::where('user_id', auth()->user()->id)->get();
+        $xnxx = Xnxx::where('user_id', auth()->user()->id)
+                    ->where('kode', '>=', 1)
+                    ->get();
+
         $datareg = Data_register::where('user_id', auth()->user()->id)
             ->where('status', "<h4 style='color: rgb(141, 7, 7)'>Pendaftaran Ditolak</h4>")
             ->get();
@@ -199,7 +210,8 @@ class RegistrasiController extends Controller
         $identitas = Upload_file::where('user_id', auth()->user()->id)
                 ->where('kode', '>', 1)
                 ->get();
-        return view('asesi/registrasi/formulirapl1_tolak', compact('data', 'datareg', 'sex', 'jurusan', 'semester', 'dokumen_upload', 'identitas'));
+        return view('asesi/registrasi/formulirapl1_tolak', compact('data', 'datareg', 'sex', 'jurusan',
+        'semester', 'dokumen_upload', 'identitas', 'registrasi', 'xnxx'));
     }
 
 

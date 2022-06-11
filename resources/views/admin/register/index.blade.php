@@ -77,7 +77,7 @@
                                                             <a href="{{ route('validasi.show', $asu->id) }}"><button
                                                                     type="submit"
                                                                     class="btn btn-inverse-info btn-block"><i
-                                                                        class="fa fa-eye "></i> Detail Data</button></a>
+                                                                        class="fa fa-magic "></i> Proses Data</button></a>
                                                             <form action="{{ route('validasi.destroy', $asu->id) }}"
                                                                 method="POST"
                                                                 onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">

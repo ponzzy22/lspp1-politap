@@ -8,7 +8,7 @@
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
+        <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('info.skema') }}">Skema/Kluster</a></li>
             <li class="breadcrumb-item active" aria-current="page">Detail Skema </li>
@@ -54,7 +54,7 @@
                             <div class="media-body">
                                 <h6 class="mb-1">{{ $skema->asesor->nama }}</h6>
                                 <p class="mb-0 text-muted">
-                                    Asesor
+                                    Penanggung Jawab Skema
                                 </p>
                             </div>
                         </div>

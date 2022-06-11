@@ -206,7 +206,7 @@
                                             </li>
                                             <li class="u-nav-item"><a
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
-                                                    href="{{ route('register') }}">Register</a>
+                                                    href="{{ route('reg') }}">Register</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -304,7 +304,7 @@
                                                             href="{{ route('login') }}">Login</a>
                                                     </li>
                                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                            href="{{ route('register') }}">Register</a>
+                                                            href="{{ route('reg') }}">Register</a>
                                                     </li>
                                                 </ul>
                                             </div>

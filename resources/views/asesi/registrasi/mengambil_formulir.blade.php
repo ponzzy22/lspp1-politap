@@ -7,7 +7,7 @@
             <i class="fa fa-window-restore"></i> Mengambil Formulir Pendaftaran
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
+            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Mengambil Formulir</li>
             </ol>
@@ -26,7 +26,7 @@
                         <tr>
                             <th style="width: 200px">
                                 <button style="align-items: center" type="button"
-                                    class="btn btn-rounded btn-warning btn-block btn-sm" data-toggle="modal"
+                                    class="btn btn-rounded btn-warning btn-block btn-sm btn-block font-weight-bold" data-toggle="modal"
                                     data-target="#exampleModal-1">
                                     <i class="fas fa-question-circle"></i> Instruksi Ambil Formulir
                                 </button>
@@ -46,7 +46,7 @@
                                         <input type="hidden" name="status[]"
                                             value="<label class='badge badge-outline-danger badge-pill'>Kosong</label>">
                                     @endforeach
-                                    <button class="btn btn-primary btn-sm btn-rounded btn-block" type="submit"><i
+                                    <button class="btn btn-primary btn-sm btn-rounded btn-block font-weight-bold" type="submit"><i
                                             class="fas fa-arrow-alt-circle-down"></i>
                                         Ambil Formulir APL-01</button>
                                 </form>
@@ -74,7 +74,7 @@
                                         <input type="hidden" name="unikom_id[]" value="{{ $asu->id }}">
                                         <input type="hidden" name="kriteria[]" value="{{ $asu->kriteria }}">
                                     @endforeach
-                                    <button class="btn btn-primary btn-sm btn-rounded btn-block" type="submit"><i
+                                    <button class="btn btn-primary btn-sm btn-rounded btn-block btn-block font-weight-bold" type="submit"><i
                                             class="fas fa-arrow-alt-circle-down"></i>
                                         Ambil Formulir APL-02</button>
                                 </form>
@@ -82,7 +82,7 @@
                             <th style="width: 200px">
                                 @foreach ($datareg as $item)
                                     <a href="{{ route('registrasi.show', $item->id) }}"><button
-                                            class="btn btn-rounded btn-success btn-block btn-sm" type="submit">Selanjutnya
+                                            class="btn btn-rounded btn-success btn-block btn-sm btn-block font-weight-bold" type="submit">Selanjutnya
                                             <i class="fas fa-angle-double-right"></i>
                                         </button></a>
                                 @endforeach

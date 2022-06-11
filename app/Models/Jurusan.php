@@ -10,4 +10,8 @@ class Jurusan extends Model
     use HasFactory;
     protected $fillable = ['id', 'jurusan'];
     protected $table = 'jurusan';
+
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

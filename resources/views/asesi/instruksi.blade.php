@@ -8,7 +8,7 @@
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-info">
+        <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item active" aria-current="page">Tutorial Pendaftaran Sertifikasi</li>
         </ol>

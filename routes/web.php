@@ -55,9 +55,12 @@ Route::get('strorg1', function () {
 Route::get('404', function () {
     return view('404');
 });
-Route::get('loginadmin', function () {
-    return view('auth/loginadmin');
-});
+// Route::get('loginadmin', function () {
+//     return view('auth/loginadmin');
+// });
+
+Route::get('loginadmin', [ClientController::class, 'loginadmin'])->name('loginadmin');
+Route::get('registrasi_Authentification', [ClientController::class, 'reg'])->name('reg');
 
 ///////////  CLIENT END /////////////
 Route::get('/', [ClientController::class, 'clientutama'])->name('/');

@@ -157,7 +157,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Actions: activate to sort column ascending"
-                                                    style="width: 100.141px;">Kode Skema</th>
+                                                    style="width: 200.141px;">Kode Skema</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
@@ -165,11 +165,15 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
-                                                    style="width: 97.5469px;">Asesor</th>
+                                                    style="width: 97.5469px;">Pengelola</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending"
-                                                    style="width: 66.1094px;">Prodi</th>
+                                                    style="width: 106.1094px;">Prodi</th>
+                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                    rowspan="1" colspan="1"
+                                                    aria-label="Status: activate to sort column ascending"
+                                                    style="width: 6.1094px;">Status</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -212,6 +216,8 @@
                                                     <td>{{ $asu->skema }}</td>
                                                     <td>{{ $asu->asesor->nama }}</td>
                                                     <td><label class="badge badge-light">{{ $asu->prodi->prodi }}</label>
+                                                    </td>
+                                                    <td><label class="badge badge-light">{{ $asu->status->status }}</label>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -40,7 +40,7 @@
                                     Kode Skema &rarr;
                                 </span>
                                 <span class="float-right ">
-                                    {{ $validasi->skema_id }}
+                                    {{ $validasi->kode_skema }}
                                 </span>
                             </p>
                             {{-- <p class="clearfix">

@@ -36,7 +36,7 @@
                                         <input type="text"
                                             class="form-control @error('email') is-invalid @enderror form-control-lg border-left-0"
                                             id="email" name="email" value="{{ old('email') }}" required
-                                            autocomplete="email" autofocus placeholder="NIM">
+                                            autocomplete="email" autofocus placeholder="Username">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>

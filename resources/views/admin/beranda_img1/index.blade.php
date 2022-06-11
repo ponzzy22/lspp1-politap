@@ -21,7 +21,7 @@
         <div class="card-body">
             <h4 class="card-title"><i class="fas fa-images"></i> Tambah Carousel</h4>
             <p class="card-description">
-                <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >> <code>1366x724px</code>
+                <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >> <code>4012 x 1701 px</code>
             </p>
             <form action="{{ route('beranda_img1.store') }}" class="forms-sample" method="POST"
                 enctype="multipart/form-data">
@@ -29,7 +29,7 @@
                 <div class="form-control">
                     <div class="card-columns">
                         <label>File upload</label>
-                        <input type="file" class="form-control" name="image">
+                        <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image">
                         <label> Judul</label>
                         <input type="text" class="form-control" maxlength="100" name="judul">
                         <label>Keterangan</label>

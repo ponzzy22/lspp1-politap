@@ -41,7 +41,7 @@ class Data_register extends Model
         'ktm',
         'lain',
         'koreksi',
-        'date', 'time', 'tuk_id', 'asesor_id', 'keterangan'
+        'date', 'time', 'tuk_id', 'asesor_id', 'keterangan', 'valuesurel', 'valuelahir'
     ];
 
     public function xnxxes(){

@@ -56,8 +56,9 @@
                     </li>
                     <li>
                         <div class="card-subtitle2">
-                            <h5>LEMBAGA SERTIFIKASI PROFESI PIHAK KESATU POLITAP -
-                                ADMINISTRASI WEBSITE</h5>
+                            <h5><i class="fas fa-cogs"></i> ADMINISTRASI WEBSITE - LEMBAGA SERTIFIKASI PROFESI
+                                POLITEKNIK NEGERI KETAPANG
+                            </h5>
                         </div>
                     </li>
                 </ul>
@@ -67,22 +68,22 @@
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
-                            href="{{ route('beranda') }}">
+                            href="{{ route('/') }}">
                             <i class="fas fa-home mx-0"></i>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
                             href="{{ route('dashasesi.index') }}">
                             <i class="fas fa-user mx-0"></i>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
                             href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
                             <i class="fas fa-database mx-0"></i>
                         </a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown"
                             aria-expanded="false">
@@ -200,6 +201,34 @@
                         </a>
                     </li>
                     <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts2" aria-expanded="false"
+                            aria-controls="sidebar-layouts">
+                            <i class="fas fa-id-card  menu-icon"></i>
+                            <span class="menu-title"> Sertifikasi</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="sidebar-layouts2">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('registrasi.baru') }}">Pendaftaran
+                                        Terbaru</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('list.valid') }}">Pendaftaran
+                                        Diterima</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('list.tolak') }}">Pendaftaran
+                                        Ditolak</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ Route('list.sertifikat') }}">Pemegang
+                                        Sertifikat</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
                         <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts" aria-expanded="false"
                             aria-controls="sidebar-layouts">
                             <i class="fab fa-pagelines menu-icon"></i>
@@ -225,36 +254,30 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('asesmen.index') }}">Elemen
-                                        </a>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item d-none d-lg-block">
-                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts2" aria-expanded="false"
+                        <a class="nav-link" data-toggle="collapse" href="#sidebar-layouts22" aria-expanded="false"
                             aria-controls="sidebar-layouts">
-                            <i class="fas fa-id-card  menu-icon"></i>
-                            <span class="menu-title"> Sertifikasi</span>
+                            <i class="fas fa-file-code  menu-icon"></i>
+                            <span class="menu-title"> Format Formulir</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div class="collapse" id="sidebar-layouts2">
+                        <div class="collapse" id="sidebar-layouts22">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('registrasi.baru') }}">Pendaftaran Terbaru</a>
+                                    <a class="nav-link" href="#">Formulir APL-01</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('list.valid') }}">Pendaftaran Diterima</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('list.tolak') }}">Pendaftaran Ditolak</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ Route('list.sertifikat') }}">Pemegang
-                                        Sertifikat</a>
+                                    <a class="nav-link" href="#">Formulir APL-02</a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('user.index') }}">
                             <i class="fa fa-users menu-icon"></i>
@@ -312,7 +335,7 @@
                             <li>
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('file.index') }}" class="text text-white"><i
-                                            class="fas fa-file-upload"></i> Upload File</a>
+                                            class="fas fa-file-upload"></i> Upload Dokumen</a>
                                 </div>
                             </li>
                             <li>
@@ -390,47 +413,47 @@
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
                 with
                 <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
-                    Informatika </a><code class="text text-danger"> v.1.4.22</code></span>
+                    Informatika </a><code class="text text-danger"> v.3.06.22</code></span>
         </div>
     </footer>
 
 
     {{-- <----------------------  JS----------------------> --}}
-        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-        <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
-        <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
-        <script src="{{ asset('public/assets/js/misc.js') }}"></script>
-        <script src="{{ asset('public/assets/js/settings.js') }}"></script>
-        <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
-        <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
-        <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
-        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
-        <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
-        <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
-        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
-        <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
-        <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
-        <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
-        <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
-        <script src="{{ asset('public/assets/modules/dropzone.min.js') }}"></script>
-        <script src="{{ asset('public/assets/modules/components-multiple-upload.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/stisla.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/summernote/summernote-bs4.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/codemirror/lib/codemirror.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('public/assets/js/misc.js') }}"></script>
+    <script src="{{ asset('public/assets/js/settings.js') }}"></script>
+    <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
+    <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
+    <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
+    <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
+    <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
+    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
+    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+    <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+    <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
+    <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
+    <script src="{{ asset('public/assets/modules/dropzone.min.js') }}"></script>
+    <script src="{{ asset('public/assets/modules/components-multiple-upload.js') }}"></script>
+    <script src="{{ asset('public/assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('public/assets2/js/stisla.js') }}"></script>
+    <script src="{{ asset('public/assets2/modules/summernote/summernote-bs4.js') }}"></script>
+    <script src="{{ asset('public/assets2/modules/codemirror/lib/codemirror.js') }}"></script>
+    <script src="{{ asset('public/assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
+    <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+    <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
+    <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
 
 </body>
 

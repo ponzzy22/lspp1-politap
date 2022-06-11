@@ -22,7 +22,7 @@
                             <div class="brand-logo">
                                 <img src="{{ asset('public/assets/images/logo/lsp.png') }}" alt="logo">
                             </div>
-                            <h4>Welcome back!</h4>
+                            <h4>Login Asesi</h4>
                             <h6 class="font-weight-light">Senang Melihat Anda Kembali</h6>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
@@ -84,7 +84,11 @@
                                 </div>
 
                                 <div class="text-center mt-4 font-weight-light">
-                                    Belum Punya Akun? <a href="{{ route('register') }}" class="text-primary">Daftar
+                                    Belum Punya Akun? <a href="{{ route('reg') }}" class="text-primary">Daftar
+                                        Sini</a>
+                                </div>
+                                <div class="text-center mt-4 font-weight-light">
+                                    Login Admin <a href="{{ route('loginadmin') }}" class="text-primary">Klik
                                         Sini</a>
                                 </div>
                             </form>

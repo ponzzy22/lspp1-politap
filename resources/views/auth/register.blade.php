@@ -54,9 +54,9 @@
                                                 <i class="fas fa-graduation-cap text-primary"></i>
                                             </span>
                                         </div>
-                                        <input type="text"
+                                        <input type="number"
                                             class="form-control @error('email') is-invalid @enderror form-control-lg border-left-0"
-                                            name="email" value="{{ old('email') }}" required autocomplete="email"
+                                            name="email" value="{{ old('email') }}" minlength="10" required autocomplete="email"
                                             placeholder="Nomor Induk Mahasiswa">
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -81,7 +81,7 @@
                                                 </option>
                                             @endforeach
                                         </select>
-                                        @error('email2')
+                                        @error('jurusan_id')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>

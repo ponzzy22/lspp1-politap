@@ -29,20 +29,28 @@
                             </p>
                             <p class="clearfix">
                                 <span class="float-left text-muted">
+                                    NIM Asesi &rarr;
+                                </span>
+                                <span class="float-right ">
+                                    {{ $validasi->nim }}
+                                </span>
+                            </p>
+                            <p class="clearfix">
+                                <span class="float-left text-muted">
                                     Skema &rarr;
                                 </span>
                                 <span class="float-right ">
                                     {{ $validasi->skema_name }}
                                 </span>
                             </p>
-                            <p class="clearfix">
+                            {{-- <p class="clearfix">
                                 <span class="float-left text-muted">
                                     Kode Skema &rarr;
                                 </span>
                                 <span class="float-right ">
                                     {{ $validasi->skema_id }}
                                 </span>
-                            </p>
+                            </p> --}}
                             <p class="clearfix">
                                 <span class="float-left text-muted">
                                     Email &rarr;
@@ -91,14 +99,14 @@
                                     {{ $validasi->alamat }}
                                 </span>
                             </p>
-                            <p class="clearfix">
+                            {{-- <p class="clearfix">
                                 <span class="float-left text-muted">
                                     Kode Post &rarr;
                                 </span>
                                 <span class="float-right">
                                     {{ $validasi->kode_post }}
                                 </span>
-                            </p>
+                            </p> --}}
                             <p class="clearfix">
                                 <span class="float-left text-muted">
                                     Nomor Handphone Aktif &rarr;
@@ -123,7 +131,7 @@
                                     {{ $validasi->semester->semester }}
                                 </span>
                             </p>
-                            <p class="clearfix">
+                            {{-- <p class="clearfix">
                                 <span class="float-left text-muted">
                                     Provinsi &rarr;
                                 </span>
@@ -154,7 +162,7 @@
                                 <span class="float-right">
                                     {{ $validasi->kecamatan }}
                                 </span>
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <!-- /////////////////////////////////// -->
@@ -207,9 +215,10 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10%">#</th>
-                                        <th style="width: 10%">Status</th>
-                                        <th style="width: 100%">Elemen</th>
+                                        <th class="text-muted" style="width: 10%">#</th>
+                                        <th class="text-muted" style="width: 10%">Status</th>
+                                        <th class="text-muted" style="width: 100%">Elemen</th>
+                                        <th class="text-muted" style="width: 10%">Lihat</th>
                                     </tr>
                                 </thead>
                                 @foreach ($validasi->xnxxes as $data)
@@ -219,7 +228,7 @@
                                             <td>
                                                 {!! $data->status !!}
                                             </td>
-                                            <td>{{ $data->asesmen_name }}</td>
+                                            <td class="font-weight-bold">{{ $data->asesmen_name }}</td>
                                             <td>
                                                 <a href="{{ asset($data->image) }}" target="_blank"
                                                     class="btn btn-info btn-rounded"><i class="fas fa-eye"></i></a>

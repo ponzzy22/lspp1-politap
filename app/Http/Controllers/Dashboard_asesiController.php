@@ -15,7 +15,7 @@ class Dashboard_asesiController extends Controller
     public function index()
     {
         $xnxx = Xnxx::all();
-        $skema = Skema::all();
+        $skema = Skema::where('status_id', '1')->get();
         $jurusan = Jurusan::all();
         $datasertifikat = Data_register::where('nim', auth()->user()->email)
             ->where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->count();
@@ -50,38 +50,4 @@ class Dashboard_asesiController extends Controller
     }
 
 
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show($id)
-    {
-        //
-    }
-
-
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-    public function destroy($id)
-    {
-        //
-    }
 }

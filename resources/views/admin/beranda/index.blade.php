@@ -46,7 +46,7 @@
                                         @csrf
                                         @method('put')
                                         <label for="file">Input Gambar</label>
-                                        <input type="file" class="form-control" name="image" id="file">
+                                        <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" id="file">
                                         <br>
                                         <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
                                             Update</button><br>
@@ -69,7 +69,7 @@
                                     @csrf
                                     @method('put')
                                     <label for="file">Input Gambar</label>
-                                    <input type="file" class="form-control" name="image" id="file">
+                                    <input type="file" class="form-control" name="image" accept=".png, .jpg, .jpeg" id="file">
                                     <br>
                                     <button type="submit" class="btn btn-info btn-block"><i class="fas fa-save"></i>
                                         Update</button><br>

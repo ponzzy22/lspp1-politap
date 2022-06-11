@@ -42,6 +42,10 @@ class UiController extends Controller
 
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'image' => ['required', 'mimes:jpg,jpeg,png'],
+        ]);
+
         $skema = Beranda::findorfail($id);
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();

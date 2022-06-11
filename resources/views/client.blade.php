@@ -3,7 +3,7 @@
     LSP P1 - POLITAP | Lembaga Sertifikasi Profesi Pihak Ke Satu Politeknik Negeri Ketapang
 @endsection
 @section('css')
-<link rel="stylesheet" href="{{ asset('public/client/css/Home.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('public/client/css/Home.css') }}" media="screen">
 @endsection
 @section('isi')
     {{-- <---------------------- CAROUSEL ----------------------> --}}
@@ -42,6 +42,10 @@
         </a>
     </div>
 
+
+
+
+
     {{-- <---------------------- PROFIL LSP ----------------------> --}}
 
     <section
@@ -52,7 +56,8 @@
                     alt=""></span>&nbsp; Profil&nbsp; LSP - POLITAP
             <br>
         </h1>
-        <div class="u-tab-links-align-justify u-tabs u-tabs-1">
+        <div data-animation-name="customAnimationIn"
+        data-animation-duration="1000" class="u-tab-links-align-justify u-tabs u-tabs-1">
             <ul class="u-tab-list u-unstyled" role="tablist">
                 <li class="u-tab-item" role="presentation">
                     <a class="active u-active-white u-button-style u-custom-color-1 u-hover-black u-radius-11 u-tab-link u-text-active-black u-tab-link-1"
@@ -110,9 +115,42 @@
                     </div>
                 </div>
             @endforeach
-
         </div>
     </section>
+
+    {{-- <section class="u-clearfix u-custom-color-3 u-section-3" id="carousel_47cb">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-26-lg u-size-28-xl u-size-29-md u-size-29-sm u-size-29-xs u-layout-cell-1"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000">
+                            <div
+                                class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xl u-container-layout-1">
+                                <h1 class="u-custom-font u-font-lato u-text u-text-1">Can't make it in-person? Join Us
+                                    Online<br>
+                                </h1>
+                                <a href="https://nicepage.com/c/medicine-science-html-templates"
+                                    class="u-active-white u-align-center u-border-none u-btn u-button-style u-custom-color-1 u-hover-white u-btn-1"><span
+                                        class="u-icon"><svg class="u-svg-content" viewBox="0 0 512 512" x="0px"
+                                            y="0px" style="width: 1em; height: 1em;">
+                                            <path
+                                                d="m19.98,200.65909l180.67121,0l55.82879,-171.63684l55.82883,171.63684l180.67118,0l-146.16581,106.07619l55.83168,171.63684l-146.16587,-106.07908l-146.16584,106.07908l55.8317,-171.63684l-146.16586,-106.07619z">
+                                            </path>
+                                        </svg><img></span>&nbsp;Church Online
+                                </a>
+                            </div>
+                        </div>
+                        <img src="{{ asset('public/images/back/2.jpg') }}" class="u-container-style u-image u-layout-cell u-right-cell u-shape-rectangle u-size-31-md u-size-31-sm u-size-31-xs u-size-32-xl u-size-34-lg u-image-1"
+                            data-image-width="1280" data-image-height="720" data-animation-name="customAnimationIn"
+                            data-animation-duration="1000">
+                            <div class="u-container-layout u-container-layout-2"></div>
+                        </img>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> --}}
 
     {{-- <---------------------- BERITA ----------------------> --}}
 
@@ -132,7 +170,7 @@
                                 <img alt=""
                                     class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xl u-hover-feature u-image u-image-default u-image-1"
                                     data-image-width="920" data-image-height="920" src="{{ $asu->image }}"
-                                    data-animation-name="flipIn" data-animation-duration="1000"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000"
                                     data-animation-direction="X">
                                 <h3 class="u-custom-font u-font-merriweather u-text u-text-default u-text-2"
                                     data-animation-name="customAnimationIn" data-animation-duration="1000">
@@ -152,17 +190,19 @@
                     href="#" role="button">
                     <span aria-hidden="true">
                         <svg viewBox="0 0 451.847 451.847">
-                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                            <path
+                                d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                             </path>
                         </svg>
                     </span>
                     <span class="sr-only">
                         <svg viewBox="0 0 451.847 451.847">
-                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                            <path
+                                d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                             </path>
                         </svg>
                     </span>
@@ -172,15 +212,15 @@
                     <span aria-hidden="true">
                         <svg viewBox="0 0 451.846 451.847">
                             <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                         </svg>
                     </span>
                     <span class="sr-only">
                         <svg viewBox="0 0 451.846 451.847">
                             <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                         </svg>
                     </span>
                 </a>
@@ -188,17 +228,19 @@
                     href="#" role="button">
                     <span aria-hidden="true">
                         <svg viewBox="0 0 451.847 451.847">
-                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                            <path
+                                d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                             </path>
                         </svg>
                     </span>
                     <span class="sr-only">
                         <svg viewBox="0 0 451.847 451.847">
-                            <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                            <path
+                                d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                             </path>
                         </svg>
                     </span>
@@ -208,15 +250,15 @@
                     <span aria-hidden="true">
                         <svg viewBox="0 0 451.846 451.847">
                             <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                         </svg>
                     </span>
                     <span class="sr-only">
                         <svg viewBox="0 0 451.846 451.847">
                             <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                         </svg>
                     </span>
                 </a>
@@ -230,41 +272,46 @@
         <div class="u-expanded-width u-grey-90 u-shape u-shape-rectangle u-shape-1"></div>
         <h2 class="u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-default u-text-1"
             data-animation-name="customAnimationIn" data-animation-duration="1000"><span
-                class="u-file-icon u-icon u-text-white"><img src="{{ asset('public/images/logo/18.png') }}" alt=""></span>&nbsp;&nbsp;PENGELOLA
+                class="u-file-icon u-icon u-text-white"><img src="{{ asset('public/images/logo/18.png') }}"
+                    alt=""></span>&nbsp;&nbsp;PENGELOLA
             LSP - POLITAP
         </h2>
         <div class="u-layout-horizontal u-list u-list-1">
             <div class="u-repeater u-repeater-1">
                 @foreach ($karyawan as $asu)
-                <div class="u-align-center u-container-style u-grey-90 u-list-item u-repeater-item u-list-item-1">
-                    <div
-                        class="u-container-layout u-similar-container u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
-                        <img alt="" class="u-border-2 u-expanded-width-lg u-hover-feature u-image u-image-default u-image-1"
-                            data-image-width="404" data-image-height="404" src="{{ $asu->image }}" data-animation-name="flipIn"
-                            data-animation-duration="1000" data-animation-direction="X">
-                        <h3 class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn"
-                            data-animation-duration="1000">{{ $asu->nama }}</h3>
-                        <p class="u-align-center u-text u-text-palette-3-base u-text-3"
-                            data-animation-name="customAnimationIn" data-animation-duration="1000">{{ $asu->keterangan }}</p>
+                    <div class="u-align-center u-container-style u-grey-90 u-list-item u-repeater-item u-list-item-1">
+                        <div
+                            class="u-container-layout u-similar-container u-valign-top-md u-valign-top-sm u-valign-top-xl u-container-layout-1">
+                            <img alt=""
+                                class="u-border-2 u-expanded-width-lg u-hover-feature u-image u-image-default u-image-1"
+                                data-image-width="404" data-image-height="404" src="{{ $asu->image }}"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-direction="X">
+                            <h3 class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn"
+                                data-animation-duration="1000">{{ $asu->nama }}</h3>
+                            <p class="u-align-center u-text u-text-palette-3-base u-text-3"
+                                data-animation-name="customAnimationIn" data-animation-duration="1000">
+                                {{ $asu->keterangan }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
             <a class="u-absolute-vcenter u-gallery-nav u-gallery-nav-prev u-grey-70 u-icon-circle u-opacity u-opacity-70 u-spacing-10 u-text-white u-gallery-nav-1"
                 href="#" role="button">
                 <span aria-hidden="true">
                     <svg viewBox="0 0 451.847 451.847">
-                        <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                        <path
+                            d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                         </path>
                     </svg>
                 </span>
                 <span class="sr-only">
                     <svg viewBox="0 0 451.847 451.847">
-                        <path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
-                c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
-                c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
+                        <path
+                            d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0
+                        c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744
+                        c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z">
                         </path>
                     </svg>
                 </span>
@@ -274,15 +321,15 @@
                 <span aria-hidden="true">
                     <svg viewBox="0 0 451.846 451.847">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                     </svg>
                 </span>
                 <span class="sr-only">
                     <svg viewBox="0 0 451.846 451.847">
                         <path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744
-                L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
-                c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+                        L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284
+                        c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
                     </svg>
                 </span>
             </a>
@@ -301,7 +348,8 @@
         <div class="u-clearfix u-sheet u-sheet-1">
             <h1 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn"
                 data-animation-duration="1000" data-animation-delay="0"><span class="u-file-icon u-icon"><img
-                        src="{{ asset('public/images/logo/592245.png') }}" alt=""></span>&nbsp;&nbsp;PETA LOKASI LSP - POLITAP
+                        src="{{ asset('public/images/logo/592245.png') }}" alt=""></span>&nbsp;&nbsp;PETA LOKASI LSP -
+                POLITAP
             </h1>
             <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
                 <div class="u-layout">
@@ -323,8 +371,8 @@
                             <div
                                 class="u-container-layout u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-2">
                                 <img class="u-image u-image-round u-radius-10 u-image-1"
-                                    src="{{ asset('public/images/logo/IMG_20220420_131245.jpg') }}" alt="" data-image-width="4160"
-                                    data-image-height="2352" data-animation-name="customAnimationIn"
+                                    src="{{ asset('public/images/logo/IMG_20220420_131245.jpg') }}" alt=""
+                                    data-image-width="4160" data-image-height="2352" data-animation-name="customAnimationIn"
                                     data-animation-duration="1000">
                                 <h2 class="u-align-center u-custom-font u-font-merriweather u-text u-text-2"
                                     data-animation-name="customAnimationIn" data-animation-duration="1000"
@@ -342,18 +390,21 @@
                                     LSP - POLITAP :</p>
                                 <p class="u-text u-text-5" data-animation-name="customAnimationIn"
                                     data-animation-duration="1000"><span class="u-file-icon u-icon"><img
-                                            src="{{ asset('public/images/logo/1384023.png') }}" alt=""></span>&nbsp;<i> 08965386474683</i>
+                                            src="{{ asset('public/images/logo/1384023.png') }}" alt=""></span>&nbsp;<i>
+                                        08965386474683</i>
                                 </p>
                                 <p class="u-text u-text-6" data-animation-name="customAnimationIn"
                                     data-animation-duration="1000"><span class="u-file-icon u-icon"><img
-                                            src="{{ asset('public/images/logo/561127.png') }}" alt=""></span> &nbsp;<i>lsp@politap.ac.id</i>
+                                            src="{{ asset('public/images/logo/561127.png') }}" alt=""></span>
+                                    &nbsp;<i>lsp@politap.ac.id</i>
                                 </p>
                                 <p class="u-text u-text-7" data-animation-name="customAnimationIn"
                                     data-animation-duration="1000">
                                     <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1"
                                         href="https://www.instagram.com/lsppolitap/" target="_blank"><span
-                                            class="u-file-icon u-icon"><img src="{{ asset('public/images/logo/1384031.png') }}"
-                                                alt=""></span>&nbsp; LSPPOLITAP
+                                            class="u-file-icon u-icon"><img
+                                                src="{{ asset('public/images/logo/1384031.png') }}" alt=""></span>&nbsp;
+                                        LSPPOLITAP
                                     </a>
                                 </p>
                             </div>
@@ -370,8 +421,8 @@
 
     <section class="u-align-center u-clearfix u-hidden-sm u-hidden-xs u-white u-section-6" id="sec-eb3e">
         <h1 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000"
-            data-animation-delay="0"><span class="u-file-icon u-icon"><img src="{{ asset('public/images/logo/58061.png') }}"
-                    alt=""></span>&nbsp;&nbsp;LEMBAGA YANG TERTAUT<br>
+            data-animation-delay="0"><span class="u-file-icon u-icon"><img
+                    src="{{ asset('public/images/logo/58061.png') }}" alt=""></span>&nbsp;&nbsp;LEMBAGA YANG TERTAUT<br>
         </h1>
         <div class="u-list u-list-1">
             <div class="u-repeater u-repeater-1">
@@ -380,7 +431,8 @@
                         class="u-container-layout u-similar-container u-valign-bottom-md u-valign-middle-xl u-container-layout-1">
                         <span class="u-file-icon u-icon u-icon-2" data-href="https://bnsp.go.id/" data-target="_blank"
                             data-animation-name="customAnimationIn" data-animation-duration="1000"
-                            data-animation-direction=""><img src="{{ asset('public/images/logo/bnsp.png') }}" alt=""></span>
+                            data-animation-direction=""><img src="{{ asset('public/images/logo/bnsp.png') }}"
+                                alt=""></span>
                     </div>
                 </div>
                 <div class="u-align-center u-container-style u-list-item u-repeater-item">
@@ -388,7 +440,8 @@
                         class="u-container-layout u-similar-container u-valign-bottom-md u-valign-middle-xl u-container-layout-2">
                         <span class="u-file-icon u-icon u-icon-3" data-href="https://www.kemdikbud.go.id/"
                             data-target="_blank" data-animation-name="customAnimationIn" data-animation-duration="1000"
-                            data-animation-direction=""><img src="{{ asset('public/images/logo/kemendikbud.png') }}" alt=""></span>
+                            data-animation-direction=""><img src="{{ asset('public/images/logo/kemendikbud.png') }}"
+                                alt=""></span>
                     </div>
                 </div>
                 <div class="u-container-style u-list-item u-repeater-item">
@@ -396,14 +449,16 @@
                         class="u-container-layout u-similar-container u-valign-bottom-md u-valign-middle-xl u-container-layout-3">
                         <span class="u-file-icon u-icon u-icon-4" data-href="https://politap.ac.id/" data-target="_blank"
                             data-animation-name="customAnimationIn" data-animation-duration="1000"
-                            data-animation-direction=""><img src="{{ asset('public/images/logo/politap.png') }}" alt=""></span>
+                            data-animation-direction=""><img src="{{ asset('public/images/logo/politap.png') }}"
+                                alt=""></span>
                     </div>
                 </div>
                 <div class="u-container-style u-list-item u-repeater-item">
                     <div
                         class="u-container-layout u-similar-container u-valign-bottom-md u-valign-middle-xl u-container-layout-4">
-                        <span class="u-file-icon u-icon u-icon-5" data-href="{{ route('/') }}" data-animation-name="customAnimationIn"
-                            data-animation-duration="1000" data-animation-direction=""><img src="{{ asset('public/images/logo/lsp.png') }}"
+                        <span class="u-file-icon u-icon u-icon-5" data-href="{{ route('/') }}"
+                            data-animation-name="customAnimationIn" data-animation-duration="1000"
+                            data-animation-direction=""><img src="{{ asset('public/images/logo/lsp.png') }}"
                                 alt=""></span>
                     </div>
                 </div>

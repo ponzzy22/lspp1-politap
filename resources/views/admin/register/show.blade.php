@@ -42,7 +42,7 @@
                                         Kode Skema &rarr;
                                     </span>
                                     <span class="float-right ">
-                                        {{ $validasi->skema_id }}
+                                        {{ $validasi->kode_skema }}
                                     </span>
                                 </p>
                                 <p class="clearfix">
@@ -93,14 +93,14 @@
                                         {{ $validasi->alamat }}
                                     </span>
                                 </p>
-                                <p class="clearfix">
+                                {{-- <p class="clearfix">
                                     <span class="float-left text-muted">
                                         Kode Post &rarr;
                                     </span>
                                     <span class="float-right">
                                         {{ $validasi->kode_post }}
                                     </span>
-                                </p>
+                                </p> --}}
                                 <p class="clearfix">
                                     <span class="float-left text-muted">
                                         Nomor Handphone Aktif &rarr;
@@ -125,7 +125,7 @@
                                         {{ $validasi->semester->semester }}
                                     </span>
                                 </p>
-                                <p class="clearfix">
+                                {{-- <p class="clearfix">
                                     <span class="float-left text-muted">
                                         Provinsi &rarr;
                                     </span>
@@ -156,7 +156,7 @@
                                     <span class="float-right">
                                         {{ $validasi->kecamatan }}
                                     </span>
-                                </p>
+                                </p> --}}
                             </div>
                         </div>
                         <!-- /////////////////////////////////// -->
@@ -234,5 +234,5 @@
         </div>
     </div>
     </div>
-   
+
 @endsection

@@ -22,16 +22,13 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Ubah Gambar</h4>
-                <p class="card-description">
-                    Persyaratan: Ukuran gambar harus -> 800x390px
-                </p>
                 <form action="{{ route('strorg.update', $asu->id) }}" class="forms-sample" method="POST"
                     enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                     <div class="form-group">
                         <label>File upload</label>
-                        <input type="file" class="form-control" name="image">
+                        <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image">
                     </div>
                     <button type="submit" class="btn btn-info btn-icon-text">
                         <i class="fa fa-magic btn-icon-prepend"></i>

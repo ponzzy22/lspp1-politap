@@ -52,6 +52,14 @@
                                 </select>
                             </div><br>
                             <div class="col-md-12">
+                                <label for="">Status Berita</label>
+                                <select class="form-control" name="status">
+                                    <option value="" holder>Pilih Status</option>
+                                    <option value="Posting">Posting</option>
+                                    <option value="Tidak di Posting">Tidak di Posting</option>
+                                </select>
+                            </div><br>
+                            <div class="col-md-12">
                                 <label for="">Judul Berita</label>
                                 <input type="text" class="form-control" placeholder="Judul berita" name="title"
                                     maxlength="100">
@@ -98,7 +106,10 @@
                                 Judul
                             </th>
                             <th>
-                                Posting
+                                Dibuat
+                            </th>
+                            <th>
+                                Status
                             </th>
                         </tr>
                     </thead>
@@ -134,6 +145,9 @@
                                 </td>
                                 <td>
                                     {{ $asu->created_at->diffforhumans() }}
+                                </td>
+                                <td>
+                                    <p class="badge badge-outline-dark">{{ $asu->status }}</p>
                                 </td>
                             </tr>
                         @endforeach

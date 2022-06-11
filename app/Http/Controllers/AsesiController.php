@@ -107,17 +107,17 @@ class AsesiController extends Controller
         // dd($request->all());
         $request->validate([
             'name' => ['min:3', 'max:100', 'required'],
-            'email' => ['min:3','alpha_num', 'numeric', 'required', 'unique:users,email,'. auth()->id()],
+            'email' => ['min:3', 'required', 'unique:users,email,'. auth()->id()],
             'sex_id' => ['max:100', 'required'],
             'tgl_lahir' => ['required'],
-            'tempat_lahir' => ['min:3', 'max:100', 'required'],
+            'valuelahir' => ['required'],
             'negara' => ['min:3', 'max:100', 'required'],
             'alamat' => ['min:3', 'max:100', 'required'],
             'jurusan_id' => ['required'],
             'semester_id' => ['required'],
             // 'kode_post' => ['min:3', 'max:10000000', 'numeric', 'required'],
             // 'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
-            // 'surel' => ['email','min:3', 'max:100', 'required', 'unique:users,surel,'.auth()->id()],
+            'valuesurel' => ['required'],
             // 'image' => ['required'],
             // 'ktm' => ['required'],
         ]);
@@ -136,10 +136,11 @@ class AsesiController extends Controller
                 'tmpt_lahir' => $request->tmpt_lahir,
                 'no_hp' => $request->no_hp,
                 'kode_post' => $request->kode_post,
-                'email2' => $request->email2,
+                'surel' => $request->surel,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
-                'tempat_lahir' => $request->tempat_lahir,
+                'valuesurel' => $request->valuesurel,
+                'valuelahir' => $request->valuelahir,
                 'image' => 'public/uploads/beranda_img2/'.$new_image,
             ]);
         }
@@ -154,18 +155,20 @@ class AsesiController extends Controller
             'tmpt_lahir' => $request->tmpt_lahir,
             'no_hp' => $request->no_hp,
             'kode_post' => $request->kode_post,
-            'email2' => $request->email2,
+            'surel' => $request->surel,
             'semester_id' => $request->semester_id,
             'jurusan_id' => $request->jurusan_id,
-            'tempat_lahir' => $request->tempat_lahir,
+            'valuesurel' => $request->valuesurel,
+            'valuelahir' => $request->valuelahir,
             ]);
         }
+        // Data_register::whereId($id)->update($data);
         return back()->with('success', ' Data Formulir APL-01 Anda Berhasil Disimpan');
     }
 
 
     public function info_skema(){
-        $skema = Skema::all();
+        $skema = Skema::where('status_id', '1')->get();
         return view('asesi/info_skema', compact('skema'));
     }
 
