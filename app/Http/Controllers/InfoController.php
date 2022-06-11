@@ -72,9 +72,4 @@ class InfoController extends Controller
         return back()->with('success','Informasi berhasil di Update');
     }
 
-
-    public function destroy($id)
-    {
-        //
-    }
 }

@@ -42,27 +42,15 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
-///////////  FRONT END /////////////
-// Route::get('/', function () {
-//     return view('beranda');
-// });
-Route::get('profil', function () {
-    return view('front/profil');
-});
-Route::get('strorg1', function () {
-    return view('front/strorg');
-});
+
 Route::get('404', function () {
-    return view('404');
+    return view('layout/404');
 });
-// Route::get('loginadmin', function () {
-//     return view('auth/loginadmin');
-// });
 
 Route::get('loginadmin', [ClientController::class, 'loginadmin'])->name('loginadmin');
 Route::get('registrasi_Authentification', [ClientController::class, 'reg'])->name('reg');
 
-///////////  CLIENT END /////////////
+// =============== CLIENT NEW ===============
 Route::get('/', [ClientController::class, 'clientutama'])->name('/');
 Route::get('tentang', [ClientController::class, 'tentang'])->name('tentang');
 Route::get('tutorial', [ClientController::class, 'tutorial'])->name('tutorial');
@@ -88,10 +76,7 @@ Route::get('berita_detail/{berita_detail}', [ClientController::class, 'berita_de
 Route::get('client_galeri', [ClientController::class, 'galeri'])->name('client_galeri');
 Route::get('galeri_detail/{galeri_detail}', [ClientController::class, 'galeri_detail'])->name('galeri_detail');
 
-Route::get('/exportPDF', [ValidasiController::class, 'generatepdf'])->name('pdf');
-
-Route::get('/3', [UiController::class, 'ui_beranda'])->name('beranda');
-Route::get('/2', [UiController::class, 'ui_beranda2']);
+// =============== CLIENT OLD ===============
 Route::get('profil', [UiController::class, 'profil'])->name('profil.front');
 Route::get('show_artikel_berita', [UiController::class, 'berita_list'])->name('berita.list');
 Route::get('show_pengumuman', [UiController::class, 'pengumuman_list'])->name('pengumuman.list');
@@ -103,23 +88,23 @@ Route::resource('uifoto', UiFotosController::class);
 
 Auth::routes();
 
-
+// =============== ADMIN WEB ===============
 Route::group(['middleware' => 'role:admin'], function () {
-    ///////////  DASHBOARD  /////////////
+    // <------------------  DASHBOARD  ------------------>
     Route::resource('admin', Dashboard_adminController::class);
-    /////////// SKEMA  /////////////
+    // <------------------ SKEMA  ------------------>
     Route::resource('skema', SkemaController::class);
     Route::get('show_asesmen/{id}', [SkemaController::class, 'show_asesmen'])->name('show_asesmen');
     Route::get('detail/{id}', [SkemaController::class, 'detail'])->name('skema.detail');
-    /////////// LAYANAN  /////////////
+    // <------------------ LAYANAN  ------------------>
     Route::resource('prodi', ProdiController::class);
     Route::resource('asesor', AsesorController::class);
     Route::resource('tuk', TukController::class);
     Route::resource('unikom', UnikomController::class);
     Route::resource('asesmen', AsesmenController::class);
-    /////////// PENGGUNA  /////////////
+    // <------------------ PENGGUNA  ------------------>
     Route::resource('user', UserController::class);
-    /////////// DATA REGISTRASI  /////////////
+    // <------------------ DATA REGISTRASI  ------------------>
     Route::resource('validasi', ValidasiController::class);
     Route::get('validasi2/{validasi}/edit', [ValidasiController::class, 'index_edit'])->name('validasi.edit2');
     Route::get('registrasi_baru', [ValidasiController::class, 'registrasi_baru'])->name('registrasi.baru');
@@ -132,16 +117,16 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::put('koreksiformulirapl2_update/{koreksiformulirapl2_update}', [ValidasiController::class, 'koreksiformulirapl2_update'])->name('koreksiformulirapl2_update');
     Route::get('koreksiformulir/{id}', [ValidasiController::class, 'koreksiformulir'])->name('koreksiformulir');
     Route::resource('readapl2', ReadAPL2Controller::class);
-    /////////// GALERI  /////////////
+    // <------------------ GALERI  ------------------>
     Route::resource('galeri', GaleriController::class);
     Route::resource('dashadmin', Dashboard_adminController::class);
     Route::resource('delete_galeri_foto', DeleteGaleriFotoController::class);
     Route::post('upload_foto', [GaleriController::class, 'foto_store'])->name('foto.store');
-    /////////// BERITA  /////////////
+    // <------------------ BERITA  ------------------>
     Route::resource('berita', BeritaController::class);
     Route::resource('info', InfoController::class);
     Route::put('save_image/{save_image}', [InfoController::class, 'save_image'])->name('save_image');
-    /////////// FILE UPLOAD  /////////////
+    // <------------------ FILE UPLOAD  ------------------>
     Route::resource('file', FileController::class);
     Route::resource('skkni', SkkniController::class);
     Route::get('skkni_detail/{skkni_detail}', [SkkniController::class, 'skkni_detail'])->name('skkni_detail');
@@ -151,9 +136,9 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::get('fileapl2_detail/{fileapl2_detail}', [Fileapl2Controller::class, 'fileapl2_detail'])->name('fileapl2_detail');
     Route::resource('filelain', FilelainController::class);
     Route::get('filelain_detail/{filelain_detail}', [FilelainController::class, 'filelain_detail'])->name('filelain_detail');
-     /////////// NOTE  /////////////
+    //  <------------------ NOTE  ------------------>
     Route::resource('note', NoteController::class);
-     /////////// FRONT SETTING  /////////////
+    //  <------------------ FRONT SETTING  ------------------>
     Route::resource('sett-beranda', UiController::class);
     Route::resource('beranda_img1', Beranda_img1Controller::class);
     Route::resource('beranda_img2', Beranda_img2Controller::class);
@@ -163,33 +148,31 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::post('finishstore', [ValidasiController::class, 'finishstore'])->name('finishstore');
 });
 
+
+// =============== ASESION ===============
 Route::group(['middleware' => 'auth'], function () {
-     /////////// REGISTER  /////////////
+    //  <------------------ REGISTER  ------------------>
     Route::resource('dashasesi', Dashboard_asesiController::class);
     Route::resource('asesi', AsesiController::class);
     Route::resource('registrasi', RegistrasiController::class);
     Route::resource('pendaftaran', XnxxController::class);
     Route::post('xnxx2', [XnxxController::class, 'store2'])->name('xnxx.store2');
-    /////////// ASSESMENT  /////////////
+    // <------------------ ASSESMENT  ------------------>
     Route::get('info_skema', [AsesiController::class, 'info_skema'])->name('info.skema');
     Route::get('info_skema/show/{id}', [AsesiController::class, 'info_skema_show'])->name('info_skema.show');
     Route::get('koleksi_sertifikat', [AsesiController::class, 'koleksi_sertifikat'])->name('koleksi.sertifikat');
     Route::get('instruksi_registrasi', [AsesiController::class, 'instruksi_registrasi'])->name('instruksi.registrasi');
-    /////////// XNXX  /////////////
+    // <------------------ XNXX  ------------------>
     Route::post('for_apl2', [XnxxController::class, 'token_store'])->name('token.store');
     Route::post('Registrasi_Validate', [XnxxController::class, 'token2_store'])->name('token2.store');
     Route::get('rekap_registrasi', [XnxxController::class, 'rekap_registrasi'])->name('rekap.registrasi');
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
     Route::resource('identitas', Upload_DokumenController::class);
-
     Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
     Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
-
     Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
     Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');
-
     Route::get('formulirapl2edit/{id}', [RegistrasiController::class, 'formulirapl2edit'])->name('formulirapl2edit');
-
     Route::get('sertifikat_show/{id}', [AsesiController::class, 'sertifikat_show'])->name('sertifikat_show');
     Route::get('rekap_pendaftaran/{id}', [RegistrasiController::class, 'rekap_pendaftaran'])->name('rekap_pendaftaran');
     Route::get('info_sertifikasi/{id}', [RegistrasiController::class, 'info_sertifikasi'])->name('info_sertifikasi');
@@ -200,6 +183,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::resource('post', PostController::class);
 
+// =============== AUTH ===============
 Route::get('asesion', [App\Http\Controllers\HomeController::class, 'index3'])->name('asesion');
 Route::middleware('role:admin')->get('admin', [App\Http\Controllers\Dashboard_adminController::class, 'index'])->name('admin');
 Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

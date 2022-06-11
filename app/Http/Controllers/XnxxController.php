@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\DB;
 
 class XnxxController extends Controller
 {
-   public function store(Request $request )
-   {
+    public function store(Request $request )
+    {
         // dd($request->all());
 
         $request->validate([

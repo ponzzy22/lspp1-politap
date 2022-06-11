@@ -32,14 +32,6 @@ class UiController extends Controller
 
 
 
-    // public function edit($id)
-    // {
-    //     $skema = Beranda::where('name', 'skema');
-    //     return view('admin/beranda/edit', compact('skema'));
-    // }
-
-
-
     public function update(Request $request, $id)
     {
         $request->validate([
