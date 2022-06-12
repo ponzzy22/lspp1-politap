@@ -26,16 +26,10 @@
             <form action="{{ route('beranda_img1.store') }}" class="forms-sample" method="POST"
                 enctype="multipart/form-data">
                 @csrf
-                <div class="form-control">
-                    <div class="card-columns">
-                        <label>File upload</label>
+                <label>File upload</label>
                         <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image">
-                        <label> Judul</label>
-                        <input type="text" class="form-control" maxlength="100" name="judul">
                         <label>Keterangan</label>
-                        <input type="text" class="form-control" maxlength="100" name="keterangan">
-                    </div>
-                </div><br>
+                        <input type="text" class="form-control" maxlength="200" name="keterangan"><br>
                 <button type="submit" class="btn btn-success btn-icon-text">
                     <i class="fa fa-plus btn-icon-prepend"></i>
                     TAMBAH

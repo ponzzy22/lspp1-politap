@@ -42,11 +42,11 @@ class ClientController extends Controller
         $asesor = Asesor::where('id', '>', 1)->get();
         $sertifikat = Data_register::where('status', 'Sertifikasi Selesai')->get();
         $galeri = Galeri_foto::orderBy('created_at','desc')->get();
-        $artikel = Berita::orderBy('created_at','desc')->take(10)
-            ->where('status', 'Posting')->get();
+        $artikel = Berita::orderBy('created_at','desc')
+            ->where('status', 'Posting')->take(3)->get();
         $info = Info::all();
         $karyawan = Beranda_img2::all();
-        return view('client', compact
+        return view('beranda', compact
         (
             'beranda',
             'artikel',

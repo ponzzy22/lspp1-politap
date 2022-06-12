@@ -179,4 +179,9 @@ class UiController extends Controller
         $file = File::all();
         return view('front/file', compact('file', 'beranda'));
     }
+
+
+    public function notfound(){
+        return view('layout.404');
+    }
 }

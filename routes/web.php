@@ -42,13 +42,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
 
-
-Route::get('404', function () {
-    return view('layout/404');
-});
-
 Route::get('loginadmin', [ClientController::class, 'loginadmin'])->name('loginadmin');
 Route::get('registrasi_Authentification', [ClientController::class, 'reg'])->name('reg');
+Route::get('404', [UiController::class, 'notfound'])->name('404');
 
 // =============== CLIENT NEW ===============
 Route::get('/', [ClientController::class, 'clientutama'])->name('/');

@@ -12,15 +12,15 @@
     <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
 </head>
 
-<body>
+<body style="background-image: url('{{ asset('public/images/back/1.jpg') }}')">
     <div class="container-scroller">
         <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="content-wrapper d-flex align-items-center auth lock-full-bg">
+            <div  style="background-image: url('{{ asset('public/images/back/1.jpg') }}'); background-size: cover" class="content-wrapper d-flex align-items-center auth lock-full-bg">
                 <div class="row w-100">
                     <div class="col-lg-4 mx-auto">
                         <form class="pt-5">
                             <div class="mt-3 text-center">
-                                <h2 for="examplePassword1" class="text text-white">Selamat Bergabung...</h2>
+                                <h2 for="examplePassword1" class="text text-danger">Selamat Bergabung...</h2>
                             </div>
                             <div class="mt-5">
                                 <a class="btn btn-block btn-info btn-lg font-weight-medium"
@@ -32,7 +32,7 @@
                             </div>
                             <div class="mt-5">
                                 <a class="btn btn-block btn-primary btn-lg font-weight-medium"
-                                    href="{{ url('/') }}"><i class="fas fa-home"></i> Ke Halaman Beranda</a>
+                                    href="{{ route('/') }}"><i class="fas fa-home"></i> Ke Halaman Beranda</a>
                             </div>
                         </form>
                     </div>

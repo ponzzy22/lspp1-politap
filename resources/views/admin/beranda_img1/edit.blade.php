@@ -29,11 +29,8 @@
                 <label for="file">Pilih Gambar</label>
                 <input type="file" class="form-control" id="file" name="image">
                 <br>
-                <label for="judul">Judul</label>
-                <input type="text" name="judul" class="form-control" value="{{ $beranda_img1->judul }}">
-                <br>
                 <label for="keterangan">Keterangan</label>
-                <input type="text" name="keterangan" class="form-control" value="{{ $beranda_img1->keterangan }}">
+                <input type="text" name="keterangan" maxlength="200" class="form-control" value="{{ $beranda_img1->keterangan }}">
                 <div class="form-action"><br>
                     <button type="submit" class="btn btn-info btn-icon-text btn-block">
                         <i class="far fa-check-square btn-icon-prepend"></i>

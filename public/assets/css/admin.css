@@ -32601,11 +32601,10 @@ div.tagsinput span.tag a {
 
 /* joAuth */
 
-
-/* .auth .login-half-bg {
+.auth .lock-full-bg {
     background: url("../images/auth/login.png");
     background-size: cover;
-} */
+}
 
 .auth .lock-profile-img {
     width: 90px;

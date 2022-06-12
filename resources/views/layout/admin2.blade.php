@@ -268,10 +268,10 @@
                         <div class="collapse" id="sidebar-layouts22">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Formulir APL-01</a>
+                                    <a class="nav-link" href="{{ route('404') }}">Formulir APL-01</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">Formulir APL-02</a>
+                                    <a class="nav-link" href="{{ route('404') }}">Formulir APL-02</a>
                                 </li>
                             </ul>
                         </div>
