@@ -233,11 +233,11 @@
                 <button type="submit" class="btn btn-info btn-sm"><i class="fas fa-save"></i> Simpan Data
                     Anda</button><br><br>
             </form>
-            @foreach ($datareg as $item)
+            {{-- @foreach ($datareg as $item)
                 <a href="{{ route('formulirapl2edit', $item->id) }}"><button type="submit"
                         class="btn btn-success btn-block btn-rounded font-weight-bold">Selanjutnya
                         <i class="fas fa-angle-double-right"></i></button></a>
-            @endforeach
+            @endforeach --}}
         </div>
     </div><br><br>
 

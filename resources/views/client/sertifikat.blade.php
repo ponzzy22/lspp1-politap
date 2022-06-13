@@ -40,6 +40,7 @@
                             <th class="u-table-cell">No</th>
                             <th class="u-table-cell">Kode Registrasi</th>
                             <th class="u-table-cell">Nama Asesi</th>
+                            <th class="u-table-cell">Skema</th>
                         </tr>
                     </thead>
                     <tbody class="u-custom-font u-font-ubuntu u-table-body u-text-black u-white u-table-body-1">
@@ -53,6 +54,9 @@
                             </td>
                             <td class="u-border-1 u-border-grey-70 u-border-no-left u-border-no-right u-table-cell">
                                 {{ $asu->user_name }}
+                            </td>
+                            <td class="u-border-1 u-border-grey-70 u-border-no-left u-border-no-right u-table-cell">
+                                {{ $asu->skema_name }}
                             </td>
                         </tr>
                         @endforeach

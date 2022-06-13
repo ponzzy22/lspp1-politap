@@ -91,10 +91,10 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
-                            <a href="{{ route('user.show', Auth::user()->id) }}" class="dropdown-item">
+                            {{-- <a href="{{ route('user.show', Auth::user()->id) }}" class="dropdown-item">
                                 <i class="fas fa-cog text-primary"></i>
                                 Setting Akun
-                            </a>
+                            </a> --}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"><i

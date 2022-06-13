@@ -179,10 +179,10 @@
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('client_skkni') }}">SKKNI</a>
                                             </li>
-                                            <li class="u-nav-item"><a
+                                            {{-- <li class="u-nav-item"><a
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('client_kkni') }}">KKNI</a>
-                                            </li>
+                                            </li> --}}
                                             <li class="u-nav-item"><a
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('clien_fileapl2') }}">FR-APL-02</a>
@@ -220,7 +220,7 @@
                                     <div class="u-menu-close"></div>
                                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-5">
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="Home.html">Home</a>
+                                                href="{{ route('/') }}">Home</a>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link">Profil ▼</a>
                                             <div class="u-nav-popup">
@@ -284,9 +284,9 @@
                                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                         href="{{ route('client_skkni') }}">SKKNI</a>
                                                     </li>
-                                                    <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                    {{-- <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                         href="{{ route('client_kkni') }}">KKNI</a>
-                                                    </li>
+                                                    </li> --}}
                                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                         href="{{ route('clien_fileapl2') }}">FR-APL-02</a>
                                                     </li>

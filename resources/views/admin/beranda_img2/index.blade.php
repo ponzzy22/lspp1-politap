@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="col-md-4">
-                                <input type="file" class="form-control" accept=".png" name="image"><br>
+                                <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image"><br>
                             </div>
                         </div>
                         <div class="form-action">
@@ -174,7 +174,7 @@
                                                         </td>
                                                         <td>{{ $asu->nama }}</td>
                                                         <td>{{ $asu->keterangan }}</td>
-                                                        
+
                                                     </tr>
                                                 @endforeach
                                             </tbody>

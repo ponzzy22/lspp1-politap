@@ -56,7 +56,7 @@
                 <!-- /////////////////////////////////// -->
                 <ul class="navbar-nav navbar-nav-right">
                     <li class="nav-item">
-                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ route('beranda') }}">
+                        <a class="nav-link count-indicator" id="notificationDropdown" target="_blank" href="{{ route('/') }}">
                             <i class="fas fa-home mx-0"></i>
                         </a>
                     </li>

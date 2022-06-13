@@ -114,10 +114,10 @@
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
                                                     style="width: 909.75px;">Assesmen</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                {{-- <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
-                                                    style="width: 447.5469px;">Unit Kompetensi</th>
+                                                    style="width: 447.5469px;">Unit Kompetensi</th> --}}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -147,7 +147,7 @@
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->asesmen }}</td>
-                                                    <td>{{ $asu->unikom->unikom }}</td>
+                                                    {{-- <td>{{ $asu->unikom->unikom }}</td> --}}
                                                 </tr>
                                             @endforeach
                                         </tbody>

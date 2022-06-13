@@ -7,6 +7,7 @@
     <meta name="keywords" content="INTUITIVE">
     <meta name="description" content="">
     <title>LSP P1 - POLITAP | Lembaga Sertifikasi Profesi Pihak Ke Satu Politeknik Negeri Ketapang</title>
+    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
     <link rel="stylesheet" href="{{ asset('public/client/cok/nicepage.css') }}" media="screen">
     <link rel="stylesheet" href="{{ asset('public/client/cok/Home.css') }}" media="screen">
     <script class="u-script" type="text/javascript" src="{{ asset('public/client/cok/jquery.js') }}" defer=""></script>
@@ -172,10 +173,10 @@
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('client_skkni') }}">SKKNI</a>
                                             </li>
-                                            <li class="u-nav-item"><a
+                                            {{-- <li class="u-nav-item"><a
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('client_kkni') }}">KKNI</a>
-                                            </li>
+                                            </li> --}}
                                             <li class="u-nav-item"><a
                                                     class="u-active-white u-button-style u-grey-90 u-hover-custom-color-1 u-nav-link"
                                                     href="{{ route('clien_fileapl2') }}">FR-APL-02</a>
@@ -213,7 +214,7 @@
                                     <div class="u-menu-close"></div>
                                     <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-5">
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="Home.html">Home</a>
+                                                href="{{ route('/') }}">Home</a>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link">Profil ▼</a>
                                             <div class="u-nav-popup">
@@ -277,9 +278,9 @@
                                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                             href="{{ route('client_skkni') }}">SKKNI</a>
                                                     </li>
-                                                    <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                                    {{-- <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                             href="{{ route('client_kkni') }}">KKNI</a>
-                                                    </li>
+                                                    </li> --}}
                                                     <li class="u-nav-item"><a class="u-button-style u-nav-link"
                                                             href="{{ route('clien_fileapl2') }}">FR-APL-02</a>
                                                     </li>
@@ -552,7 +553,7 @@
     <section class="u-align-center u-clearfix u-gradient u-section-5" id="carousel_02fc">
         <div class="u-container-style u-custom-color-3 u-expanded-width u-group u-shape-rectangle u-group-1">
             <div class="u-container-layout u-container-layout-1">
-                <h2 class="u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-default u-text-1"
+                <h2 class="u-align-center u-custom-font u-font-merriweather u-text u-text-body-alt-color u-text-default u-text-1"
                     data-animation-name="customAnimationIn" data-animation-duration="1000"><span
                         class="u-file-icon u-icon u-text-white"><img src="{{ asset('public/images/logo/18.png') }}"
                             alt=""></span>&nbsp;&nbsp;PENGELOLA
