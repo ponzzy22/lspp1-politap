@@ -21,9 +21,9 @@ class StrorgController extends Controller
         $new_image = time().$image->getClientOriginalName();
         $strorg = Strorg::create([
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/strorg/'.$new_image,
+            'image' => 'uploads/strorg/'.$new_image,
         ]);
-        $image->move('public/uploads/strorg/', $new_image);
+        $image->move('uploads/strorg/', $new_image);
         return redirect()->route('strorg.index')->with('success','Gambar anda berhasil di Posting');
     }
 
@@ -34,10 +34,10 @@ class StrorgController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/strorg/', $new_image);
+            $image->move('uploads/strorg/', $new_image);
             $strorg_data = [
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/strorg/'.$new_image,
+                'image' => 'uploads/strorg/'.$new_image,
             ];
         }
         else{

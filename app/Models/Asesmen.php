@@ -9,6 +9,8 @@ class Asesmen extends Model
 {
     use HasFactory;
 
+    protected $table = 'elemen';
+
     protected $fillable = ['unikom_id', 'kriteria', 'asesmen'];
 
     public function unikom(){

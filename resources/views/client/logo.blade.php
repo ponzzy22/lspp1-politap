@@ -3,7 +3,7 @@
     Logo | LSP-POLITAP
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/client/css/Logo.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('client/css/Logo.css') }}" media="screen">
 @endsection
 @section('isi')
     <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-ceac">
@@ -15,7 +15,7 @@
                             <div class="u-container-layout u-valign-top u-container-layout-1">
                                 <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-text-1"><span
                                         class="u-file-icon u-icon u-text-white u-icon-1"><img
-                                            src="{{ asset('public/images/logo3/14.png') }}" alt=""></span>Logo LSP -
+                                            src="{{ asset('images/logo3/14.png') }}" alt=""></span>Logo LSP -
                                     POLITAP
                                 </h1>
                             </div>
@@ -35,7 +35,7 @@
                         <div class="u-align-center u-container-style u-layout-cell u-right-cell u-size-24 u-size-xs-60 u-layout-cell-1"
                             src="">
                             <div class="u-container-layout u-container-layout-1" src="">
-                                <img class="u-image u-image-1" src="{{ $asu->image }}" data-image-width="362"
+                                <img class="u-image u-image-1" src="{{ asset($asu->image) }}" data-image-width="362"
                                     data-image-height="220">
                             </div>
                         </div>

@@ -34,9 +34,9 @@ class FileController extends Controller
         $new_image = time().$image->getClientOriginalName();
         $beranda_img1 = File::create([
             'file' =>$request->file,
-            'image' => 'public/uploads/file/'.$new_image,
+            'image' => 'uploads/file/'.$new_image,
         ]);
-        $image->move('public/uploads/file/', $new_image);
+        $image->move('uploads/file/', $new_image);
         return back()->with('success','File anda berhasil di Upload');
     }
 

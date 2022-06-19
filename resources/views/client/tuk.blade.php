@@ -3,21 +3,26 @@
     TUK | LSP-POLITAP
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/client/css/tuk.css') }}" media="screen">
+    <link rel="stylesheet" href="{{ asset('client/Skema.css') }}" media="screen">
 @endsection
 @section('isi')
-    <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-c910">
-        <div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+    <section class="u-clearfix u-grey-10 u-section-1" id="sec-9790">
+        <div class="u-align-left u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
             <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
                 <div class="u-layout">
                     <div class="u-layout-row">
                         <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                            <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
                                 <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-text-1"
                                     data-animation-name="customAnimationIn" data-animation-duration="1000"><span
-                                        class="u-file-icon u-icon u-text-white u-icon-1"><img src="{{ asset('public/images/logo2/12.png') }}"
-                                            alt=""></span>&nbsp;Tempat Uji Kompetensi
+                                        class="u-file-icon u-icon u-icon-1"><img src="{{ asset('images/logo3/11.png') }}"
+                                            alt=""></span>&nbsp;Tempat
+                                            Uji Kompetensi
                                 </h1>
+                                <div class="u-border-3 u-border-custom-color-2 u-line u-line-horizontal u-line-1"
+                                    data-animation-name="customAnimationIn" data-animation-duration="1000"
+                                    data-animation-direction="">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -26,19 +31,22 @@
         </div>
     </section>
 
-    <section class="u-align-center u-clearfix u-grey-10 u-section-2" id="sec-966e"><br>
+
+    <section class="u-clearfix u-grey-5 u-section-2" src="" id="sec-83b6">
         @foreach ($banner as $asu)
             <img src="{{ $asu->image }}" width="75%" alt="">
         @endforeach
-        <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-align-left u-clearfix u-sheet u-sheet-1">
             <div class="u-expanded-width u-table u-table-responsive u-table-1">
                 <table class="u-table-entity">
                     <colgroup>
-                        <col width="11.5%">
-                        <col width="76%">
-                        <col width="12.5%">
+                        <col width="5.5%">
+                        <col width="17.6%">
+                        <col width="49.8%">
+                        <col width="7.1%">
+                        <col width="20%">
                     </colgroup>
-                    <thead class="u-align-left u-custom-font u-grey-75 u-table-header u-text-font u-table-header-1">
+                    <thead class="u-align-left u-custom-color-1 u-custom-font u-table-header u-text-font u-table-header-1">
                         <tr style="height: 28px;">
                             <th class="u-table-cell">No</th>
                             <th class="u-table-cell">Nama TUK</th>
@@ -55,13 +63,15 @@
                                 {{ $asu->tuk }}
                             </td>
                             <td class="u-border-1 u-border-grey-30 u-border-no-left u-border-no-right u-table-cell">
-                                <a href="{{ route('tuk_detail', $asu->id) }}"><button class="btn btn-info"><i class="fas fa-eye"></i></button></a>
+                                <a href="{{ route('tuk_detail', $asu->id) }}"><button class="btn btn-info"><i
+                                            class="fas fa-eye"></i></button></a>
                             </td>
                         </tr>
-                        @endforeach
+                    @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
     </section>
+
 @endsection

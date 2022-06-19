@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesor;
+use App\Models\CekPendaftaran;
 use App\Models\Data_register;
 use App\Models\Dokumen_Upload;
 use App\Models\Jurusan;
@@ -266,6 +267,20 @@ class RegistrasiController extends Controller
         $tuk = Tuk::all();
         $asesor = Asesor::all();
         return view('asesi/registrasi/info_sertifikasi', compact('validasi', 'tuk', 'asesor', 'identitas', 'xnxx'));
+    }
+
+
+    public function daftar()
+    {
+        $skema = Skema::all();
+        return view('asesi.registrasi.daftar_sertifikasi', compact('skema'));
+    }
+
+
+    public function skema_pendaftaran()
+    {
+        $skema = Skema::all();
+        return view('asesi.registrasi.skema_pendaftaran', compact('skema'));
     }
 
 

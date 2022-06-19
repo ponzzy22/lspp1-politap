@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>LOGIN-ASESI | LSP P1-POLITAP</title>
-    <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}"> --}}
-    {{-- <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
-    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}"> --}}
+    {{-- <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
 </head>
 
 <body>
@@ -20,7 +20,7 @@
                     <div class="col-lg-6 d-flex align-items-center justify-content-center">
                         <div class="auth-form-transparent text-left p-3">
                             <div class="brand-logo">
-                                <img src="{{ asset('public/assets/images/logo/lsp.png') }}" alt="logo">
+                                <img src="{{ asset('assets/images/logo/lsp.png') }}" alt="logo">
                             </div>
                             <h4>Login Asesi</h4>
                             <h6 class="font-weight-light">Senang Melihat Anda Kembali</h6>
@@ -31,7 +31,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend bg-transparent">
                                             <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="fas fa-graduation-cap text-primary"></i>
+                                                <i class="fas fa-graduation-cap text-danger"></i>
                                             </span>
                                         </div>
                                         <input type="number"
@@ -50,7 +50,7 @@
                                     <div class="input-group">
                                         <div class="input-group-prepend bg-transparent">
                                             <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="fa fa-lock text-primary"></i>
+                                                <i class="fa fa-lock text-danger"></i>
                                             </span>
                                         </div>
                                         <input type="password"
@@ -80,21 +80,17 @@
                                 </div>
                                 <div class="my-3">
                                     <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
+                                        class="btn btn-block btn-danger btn-lg font-weight-medium auth-form-btn">LOGIN</button>
                                 </div>
 
                                 <div class="text-center mt-4 font-weight-light">
                                     Belum Punya Akun? <a href="{{ route('reg') }}" class="text-primary">Daftar
                                         Sini</a>
                                 </div>
-                                <div class="text-center mt-4 font-weight-light">
-                                    Login Admin <a href="{{ route('loginadmin') }}" class="text-primary">Klik
-                                        Sini</a>
-                                </div>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-6 d-flex flex-row" style="background-image: url('public/assets/images/auth/login.png'); background-size: cover">
+                    <div class="col-lg-6 d-flex flex-row" style="background-image: url('assets/images/auth/login.png'); background-size: cover">
                         <p class="text-white font-weight-medium text-center flex-grow align-self-end">Designed &
                             Developed By Politeknik Negeri Ketapang 2022</p>
                     </div>
@@ -103,27 +99,27 @@
         </div>
     </div>
 
-    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('public/assets/js/misc.js') }}"></script>
-    <script src="{{ asset('public/assets/js/settings.js') }}"></script>
-    <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
-    <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
-    <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
-    <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
-    <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
-    <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
-    <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
-    <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
-    <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+    <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+    <script src="{{ asset('assets/js/misc.js') }}"></script>
+    <script src="{{ asset('assets/js/settings.js') }}"></script>
+    <script src="{{ asset('assets/js/todolist.js') }}"></script>
+    <script src="{{ asset('assets/js/google-maps.js') }}"></script>
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('assets/js/form-addons.js') }}"></script>
+    <script src="{{ asset('assets/js/x-editable.js') }}"></script>
+    <script src="{{ asset('assets/js/dropify.js') }}"></script>
+    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-file-upload.js') }}"></script>
+    <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+    <script src="{{ asset('assets/js/form-repeater.js') }}"></script>
+    <script src="{{ asset('assets/js/alerts.js') }}"></script>
+    <script src="{{ asset('assets/js/avgrund.js') }}"></script>
+    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
 
 </body>
 

@@ -1,9 +1,12 @@
 @extends('layout/asesi1')
+@section('judul')
+    Informasi Skema | LSP-POLITAP
+@endsection
 @section('isi')
 
 <div class="page-header">
     <h4>
-        <i class="fas fa-list"></i>  Informasi & Daftar Skema
+        <i class="fas fa-list"></i>  Informasi Skema
     </h4>
     <!-- /////////////////////////////////// -->
     <!-- BREADCRUMB -->
@@ -11,7 +14,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
             <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Informasi & Daftar Skema</li>
+            <li class="breadcrumb-item active" aria-current="page">Informasi Skema</li>
         </ol>
     </nav>
 </div><br>

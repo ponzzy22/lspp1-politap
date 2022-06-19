@@ -35,9 +35,9 @@ class TukController extends Controller
             'kode' => $request->kode,
             'pengelola' => $request->pengelola,
             'alamat' => $request->alamat,
-            'image' => 'public/uploads/pengelola/'.$new_image,
+            'image' => 'uploads/pengelola/'.$new_image,
         ]);
-        $image->move('public/uploads/pengelola/', $new_image);
+        $image->move('uploads/pengelola/', $new_image);
         return redirect()->route('tuk.index')->with('success', 'TUK Berhasil Ditambahkan');
     }
 
@@ -48,13 +48,13 @@ class TukController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/pengelola/', $new_image);
+            $image->move('uploads/pengelola/', $new_image);
             $tuk_data = [
                 'tuk' => $request->tuk,
                 'kode' => $request->kode,
                 'pengelola' => $request->pengelola,
                 'alamat' => $request->alamat,
-                'image' => 'public/uploads/pengelola/'.$new_image,
+                'image' => 'uploads/pengelola/'.$new_image,
             ];
         }
         else{

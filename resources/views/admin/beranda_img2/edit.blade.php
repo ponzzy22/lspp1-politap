@@ -23,11 +23,11 @@
                 <h6 class="mb-0">
                     <a class="collapsed" data-toggle="collapse" href="#collapse-11" aria-expanded="true"
                         aria-controls="collapse-11">
-                        &plus; Klik disini Untuk Menambahkan Asesor
+                        &plus; Klik disini Untuk Mengedit Pengelola
                     </a>
                 </h6>
             </div>
-            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+            <div id="collapse-11" role="tabpanel" aria-labelledby="heading-11"
                 data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('beranda_img2.update', $pengelola->id) }}" method="post"
@@ -46,12 +46,17 @@
                             </div>
 
                             <div class="col-md-4">
+                                <label>Email</label>
+                                <input type="email" class="form-control" maxlength="40" rows="1" name="email" value="{{ $pengelola->email }}"><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <label>No Handphone</label>
                                 <input type="text" class="form-control" value="{{ $pengelola->no_hp }}" maxlength="40"
                                     name="no_hp" id="">
                             </div>
-                        </div>
-                        <div class="row">
+
                             <div class="col-md-4">
                                 <label>Link Facebook</label>
                                 <textarea class="form-control" maxlength="40" rows="1" name="facebook">{{ $pengelola->facebook }}</textarea><br>
@@ -66,17 +71,13 @@
                                 <label>Link Instagram</label>
                                 <textarea class="form-control" maxlength="40" rows="1" name="instagram">{{ $pengelola->instagram }}</textarea><br>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <label>Link Email</label>
-                                <textarea class="form-control" maxlength="40" rows="1" name="email">{{ $pengelola->email }}</textarea><br>
-                            </div>
 
                             <div class="col-md-4">
+                                <label>Foto</label>
                                 <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image"><br>
                             </div>
                         </div>
+
                         <div class="form-action">
                             <button type="submit" class="btn btn-info btn-icon-text">
                                 <i class="fas fa-edit btn-icon-prepend"></i>
@@ -95,7 +96,7 @@
                 <h4 class="card-text">{{ $pengelola->nama }}</h4>
                 <h5 class="card-text">{!! $pengelola->keterangan !!}</h5>
                 <h5 class="card-text">{!! $pengelola->no_hp !!}</h5>
-                <h5 class="card-text">{!! $pengelola->email !!}</h5>
+                <h5 class="card-text">{{  $pengelola->email  }}</h5>
             </div>
             </div>
         </div>

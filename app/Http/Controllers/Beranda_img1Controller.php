@@ -24,9 +24,9 @@ class Beranda_img1Controller extends Controller
         $beranda_img1 = Beranda_img1::create([
             'judul' =>$request->judul,
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/carousel/'.$new_image,
+            'image' => 'uploads/carousel/'.$new_image,
         ]);
-        $image->move('public/uploads/carousel/', $new_image);
+        $image->move('uploads/carousel/', $new_image);
         return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Posting');
     }
 
@@ -52,11 +52,11 @@ class Beranda_img1Controller extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/carousel/', $new_image);
+            $image->move('uploads/carousel/', $new_image);
             $beranda_img1_data = [
                 'judul' =>$request->judul,
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/carousel/'.$new_image,
+                'image' => 'uploads/carousel/'.$new_image,
             ];
         }
         else{

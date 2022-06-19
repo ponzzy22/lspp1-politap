@@ -25,8 +25,6 @@
                 class="form-sample">
                 @csrf
                 @method('put')
-                <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i> Update data
-                        Pengguna</button></a>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -45,7 +43,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Nomor Induk Mahasiswa</label>
                             <div class="col-sm-9">
-                                <input type="number" maxlength="100" class="form-control" name="email"
+                                <input type="text" maxlength="100" class="form-control" name="email"
                                     value="{{ $user->email }}">
                                 @error('email')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
@@ -95,11 +93,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Kode Post</label>
+                            <label class="col-sm-3 col-form-label">Warga Negara</label>
                             <div class="col-sm-9">
-                                <input type="number" maxlength="50" class="form-control" name="kode_post"
-                                    value="{{ old('kode_post', $user->kode_post) }}">
-                                @error('kode_post')
+                                <input type="text" maxlength="100" class="form-control" name="negara"
+                                    value="{{ old('negara', $user->negara) }}">
+                                @error('negara')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -112,7 +110,6 @@
                             <label class="col-sm-3 col-form-label">Nomor Handphone</label>
                             <div class="col-sm-9">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">+62</i></span>
                                     <input type="number" maxlength="50" class="form-control" name="no_hp"
                                         value="{{ old('no_hp', $user->no_hp) }}">
                                 </div>
@@ -122,18 +119,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Warga Negara</label>
-                            <div class="col-sm-9">
-                                <input type="text" maxlength="100" class="form-control" name="negara"
-                                    value="{{ old('negara', $user->negara) }}">
-                                @error('negara')
-                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -159,6 +145,8 @@
                     </div>
                 </div>
                 <br>
+                <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i> Update data
+                    Pengguna</button></a>
             </form>
         </div>
     </div>

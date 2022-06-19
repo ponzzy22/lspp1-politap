@@ -41,9 +41,9 @@ class UiController extends Controller
         $skema = Beranda::findorfail($id);
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
-        $image->move('public/uploads/info/', $new_image);
+        $image->move('uploads/info/', $new_image);
         $info_data = [
-            'image' => 'public/uploads/info/'.$new_image,
+            'image' => 'uploads/info/'.$new_image,
         ];
 
         Beranda::whereId($id)->update($info_data);

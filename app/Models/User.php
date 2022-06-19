@@ -48,7 +48,6 @@ class User extends Authenticatable
         'jurusan_id',
         'semester_id',
         'tempat_lahir',
-        'email'
     ];
 
 

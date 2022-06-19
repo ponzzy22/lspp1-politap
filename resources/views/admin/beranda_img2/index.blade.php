@@ -28,8 +28,7 @@
                     </a>
                 </h6>
             </div>
-            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
-                data-parent="#accordion-4">
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                 <div class="card-body">
                     <p class="card-description">
                         <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >>
@@ -157,7 +156,8 @@
                                                                             class="fa fa-edit "></i> Lihat & Edit
                                                                         Pengelola</button></a>
                                                                 {{-- <a href=""><button type="submit" class="btn btn-inverse-primary btn-sm btn-block"><i class="fa fa-list "></i>  List Pengguna</button></a> --}}
-                                                                <form action="{{ route('beranda_img2.destroy', $asu->id) }}"
+                                                                <form
+                                                                    action="{{ route('beranda_img2.destroy', $asu->id) }}"
                                                                     method="POST"
                                                                     onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                                                     @csrf
@@ -170,11 +170,15 @@
                                                             </div>
                                                         </td>
                                                         <td class="py-1" style="align-content: right">
-                                                            <img src="{{ asset($asu->image) }}" alt="image">
+                                                            @if ($asu->image)
+                                                                <img src="{{ asset($asu->image) }}" alt="image">
+                                                            @else
+                                                                <img src="{{ asset('images/back/photo.png') }}"
+                                                                    alt="image">
+                                                            @endif
                                                         </td>
                                                         <td>{{ $asu->nama }}</td>
                                                         <td>{{ $asu->keterangan }}</td>
-
                                                     </tr>
                                                 @endforeach
                                             </tbody>

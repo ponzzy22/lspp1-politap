@@ -1,36 +1,53 @@
 @extends('layout/asesi1')
+@section('judul')
+    LSP P1-POLITAP | ASESI
+@endsection
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
         <h4>
             <i class="fas fa-user"></i> Welcome, {{ Auth::user()->name }}
         </h4>
-        <!-- /////////////////////////////////// -->
-        <!-- BREADCRUMB -->
-        <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-black font-weight-bold">
-                {{-- <li class="breadcrumb-item"><a href="#"></a></li> --}}
                 <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
     </div><br>
 
-    <div class="card col-md-12">
-        <div class="card-body">
-            <h6 class="badge  badge-outline-warning font-weight-bold">Instruksi Pendaftaran Sertifikasi Skema</h6>
-            <ol>
-                <li class="font-weight-bold">Sebelum mendaftar sertifikasi skema, harap dilengkapi data "Profil Anda"
-                    terlebih dahulu.</li>
-                <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan memilih salah
-                    satu skema pada tabel dibawah ini.</li>
-                <li class="font-weight-bold">Pilih salah satu skema dengan melakukan "Konfirmasi Pendaftaran" dan kemudian
-                    pilih "Ambil Formulir Pendaftaran".</li>
-                <li class="font-weight-bold">Selanjutnya ikuti langkah-langkah sesuai dengan Instruksi pada tiap halamanya.
-                </li>
-            </ol>
+    <div class="row">
+        <div class="card col-md-7">
+            <div class="card-body">
+                <div class="card-title">
+                    <h4>Instruksi Pendaftaran Sertifikasi Skema</h4>
+                </div>
+                <hr>
+                <ol>
+                    <li class="font-weight-bold">Sebelum mendaftar sertifikasi skema, harap dilengkapi data "Profil Anda"
+                        terlebih dahulu.</li>
+                    <li class="font-weight-bold">Sebelum mendaftar harap diperhatikan dan dipelajari unit-unit skema yang
+                        akan anda dipilih.</li>
+                    <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan menekaan
+                        tombol "Daftar Sertifkasi" yang terletak disebelah kanan.</li>
+                    <li class="font-weight-bold">Jika masih bingun dalam proses mendaftar di aplikasi maka anda dapat memilih tombol
+                        bantuan yang ada dibawah ini.</li>
+                </ol>
+                <button class="btn btn-sm btn-warning"><i class="fas fa-play-circle"></i> Video Tutorial Penggunaan Aplikasi</button>
+                <button class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button>
+            </div>
         </div>
-    </div><br>
+        <div class="card col-md-5">
+            <div class="card-body">
+                <div class="card-title">
+                    <h4>Daftar Sertifikasi Disini</h4>
+                </div>
+                <hr>
+                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/logo3/daftar-sekarang.png') }}" width="300px" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <br>
+
     {{-- <-------------------- PROFIL --------------------> --}}
     <div class="row">
         <div class="col-md-4">
@@ -38,15 +55,19 @@
                 <div class="card-body">
                     <br>
                     <div class="d-flex flex-row">
+                        @if (Auth::user()->image)
                         <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
+                        @else
+                        <img src="{{ asset('images/back/photo.png') }}" class="img-lg rounded" alt="image">
+                        @endif
                         <div class="ml-3">
                             <h6 class="text-danger font-weight-bold">{{ Auth::user()->name }}</h6>
-                            <p class="text-black font-weight-bold"><i class="fas fa-envelope"></i>
-                                {{ Auth::user()->email2 }}</p>
                             <p class="text-black font-weight-bold">NIM :
                                 {{ Auth::user()->email }}</p>
                             <p class="text-black font-weight-bold">Mahasiswa Politeknik Negeri Ketapang</p>
                             <p class="mt-2 text-black font-weight-bold">{{ Auth::user()->jurusan->jurusan }}</p>
+                            <p class="text-black font-weight-bold"><i class="fas fa-envelope"></i>
+                                {{ Auth::user()->email2 }}</p>
                             <a href="{{ route('koleksi.sertifikat') }}">
                                 <p class="text text-black font-weight-bold"> <i
                                         class="fas fa-certificate text-black font-weight-bold"></i> Koleksi Sertifikat:
@@ -58,6 +79,8 @@
                 </div>
             </div>
         </div>
+
+
 
         {{-- <-------------------- LENGKAPI DATA PENDAFTARAN --------------------> --}}
         @foreach ($datareg as $asu)
@@ -299,73 +322,8 @@
         @endforeach --}}
     </div><br>
 
-    {{-- <-------------------- TABEL SKEMA --------------------> --}}
-    <div class="card">
-        <div class="card-body">
-            <h4 class="font-weight-bold"><i class="fab fa-pagelines "></i> Tabel Skema</h4>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive">
-                        <div id="order-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <table id="order-listing" class="table dataTable no-footer" role="grid"
-                                        aria-describedby="order-listing_info">
-                                        <thead>
-                                            <tr class="bg-danger text-white" role="row">
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Order #: activate to sort column ascending"
-                                                    style="width: 10.4219px;">#</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Actions: activate to sort column ascending"
-                                                    style="width: 100.141px;">Kode Skema</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Customer: activate to sort column ascending"
-                                                    style="width: 575.75px;">Skema</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Order #: activate to sort column ascending"
-                                                    style="width: 10.4219px;">Lihat</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Order #: activate to sort column ascending"
-                                                    style="width: 10.4219px;">Mendaftar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach ($skema as $hasil => $asu)
-                                                <tr role="row" class="odd">
-                                                    <td class="font-weight-bold">{{ $loop->iteration }}</td>
-                                                    <td class="font-weight-bold">{{ $asu->kode_skema }}</td>
-                                                    <td class="font-weight-bold">{{ $asu->skema }}</td>
-                                                    <td class="text-right">
-                                                        <a href="{{ route('info_skema.show', $asu->id) }}"><button
-                                                                type="submit"
-                                                                class="btn btn-dark btn-sm btn-block font-weight-bold"><i
-                                                                    class="fa fa-eye "></i> Lihat
-                                                                Skema</button></a>
-                                                    </td>
-                                                    <td> <button type="button" class="btn btn-primary font-weight-bold"
-                                                            data-toggle="modal"
-                                                            data-target="#exampleModal-{{ $asu->id }}"><i
-                                                                class="fas  fa-check-square"></i> Mendaftar</button>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><br>
+
 
     {{-- <--------------- FOOTER ---------------> --}}
 
@@ -400,7 +358,6 @@
                             @method('delete')
                             <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
                                 Pendaftaran</button>
-
                         </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                     </div>
@@ -468,47 +425,12 @@
             </div>
         </div>
     @endforeach
-
-    {{-- <--------------- MODAL KIRIM DATA ---------------> --}}
-    @foreach ($datareg as $data)
-        <div class="modal fade" id="exampleModal-{{ $data->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form action="{{ route('registrasi.update', $data->id) }}" method="post"
-                        enctype="multipart/form-data">
-                        @csrf
-                        @method('put')
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Kirim Data Pendaftaran</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Setelah mengirim data pendaftaran , maka data pendaftaran tidak dapat diedit kembali</p>
-                            <p>Apakah anda yakin ingin akan mengirim data pendaftaran ini ke Admin LSP-POLITAP?</p>
-                            <input type="hidden" name="skema_id" value="{{ $data->kode_skema }}{{ $data->user_id }}">
-                            <input type="hidden" name="status" value="<h4 style='color: green'>Menunggu Validasi...</h4>">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block font-weight-bold">Kirim Data Pendaftaran
-                                <i class="fas fa-flag-checkered"></i></button>
-                            <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
     {{-- <--------------- MODAL INFO ---------------> --}}
     @foreach ($datareg3 as $data)
         <div class="modal fade" id="exampleModal2-{{ $data->id }}" tabindex="-1" role="dialog"
             aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-
                     <div class="modal-header">
                         <h5 class="modal-title" id="ModalLabel">Info dari Admin</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -523,86 +445,6 @@
                         <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>
                     </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    @endforeach
-
-    {{-- <--------------- MODAL KONFIRMASI PENDAFTARAN ---------------> --}}
-    @foreach ($skema as $asu)
-        <div class="modal fade" id="exampleModal-{{ $asu->id }}" tabindex="-1" role="dialog"
-            aria-labelledby="ModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel"><i class="fab fa-pagelines"></i> {{ $asu->skema }}
-                        </h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="{{ route('registrasi.store') }}" method="POST" enctype="multipart/form-data"
-                            class="form-sample">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ Auth::user()->id }}{{ $asu->id }}">
-                            <input type="hidden" name="kode" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="id_skema" value="{{ $asu->id }}">
-                            <input type="hidden" name="skema_name" value="{{ $asu->skema }}">
-                            <input type="hidden" name="skema_id" value="{{ $asu->kode_skema }}{{ Auth::user()->id }}">
-                            <input type="hidden" name="kode_skema" value="{{ $asu->kode_skema }}">
-                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                            <input type="hidden" name="status"
-                                value="<h4 style='color: rgb(163, 129, 8)'>Lengkapi Data Anda</h4>">
-                            <input type="hidden" name="tuk_id" value="1">
-                            <input type="hidden" name="asesor_id" value="1">
-                            <input type="hidden" name="image" value="{{ Auth::user()->image }}">
-                            {{-- <--------------- DATA PRIBADI ---------------> --}}
-                            <input type="hidden" class="form-control" name="user_name"
-                                value="{{ old('name', Auth::user()->name) }}">
-                            <input type="hidden" maxlength="25" class="form-control" name="nim"
-                                value="{{ old('email', Auth::user()->email) }}">
-                            <input type="hidden" maxlength="25" class="form-control" name="nim"
-                                value="{{ old('email', Auth::user()->email) }}">
-                            <input type="hidden" maxlength="25" class="form-control" name="sex_id"
-                                value="{{ old('email', Auth::user()->sex_id) }}">
-                            <input type="hidden" class="form-control" name="tgl_lahir"
-                                value="{{ old('tgl_lahir', Auth::user()->tgl_lahir) }}">
-                            <input type="hidden" class="form-control" name="tmpt_lahir"
-                                value="{{ old('tmpt_lahir', Auth::user()->tempat_lahir) }}">
-                            <input type="hidden" class="form-control" name="surel"
-                                value="{{ old('surel', Auth::user()->email2) }}">
-                            <input type="hidden" class="form-control" name="no_hp"
-                                value="{{ old('no_hp', Auth::user()->no_hp) }}">
-                            <input type="hidden" class="form-control" name="jurusan_id"
-                                value="{{ old('jurusan_id', Auth::user()->jurusan_id) }}">
-                            <input type="hidden" class="form-control" name="semester_id"
-                                value="{{ old('semester_id', Auth::user()->semester_id) }}">
-                            <input type="hidden" class="form-control" name="alamat"
-                                value="{{ old('alamat', Auth::user()->alamat) }}">
-                            <input type="hidden" class="form-control" name="negara"
-                                value="{{ Auth::user()->negara }}">
-                            <ol>
-                                <li>Silahkan pilih <span class="text text-success">
-                                        Konfirmasi Pendaftaran</span>
-                                </li>
-                                <li>
-                                    Setelah konfirmasi berhasil, kemudian <span class="text text-info">
-                                        Ambil Formulir Pendaftaran</span> dibawah ini
-                                </li>
-                            </ol>
-
-                            <button class="btn btn-success btn-block font-weight-bold"><i class="fas fa-check-circle"></i>
-                                Konfirmasi Pendaftaran</button>
-                            <br>
-                        </form>
-                        <a href="{{ route('registrasi.edit', $asu->id) }}"><button
-                                class="btn btn-info btn-block font-weight-bold"><i class="fa fa-window-restore"></i>
-                                Ambil Formulir Pendaftaran </button></a>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                    </div>
                 </div>
             </div>
         </div>

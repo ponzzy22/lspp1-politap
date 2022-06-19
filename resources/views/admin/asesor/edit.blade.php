@@ -25,7 +25,11 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="border-bottom text-center pb-4">
-                            <img src="{{ asset($asesor->image) }}" alt="profile" class="img-lg rounded-circle mb-3">
+                            @if ($asesor->image)
+                                <img src="{{ asset($asesor->image) }}" alt="profile" class="img-lg rounded-circle mb-3">
+                            @else
+                                <img src="{{ asset('images/back/photo.png') }}" alt="profile" class="img-lg rounded-circle mb-3">
+                            @endif
                             <h4>{{ $asesor->nama }}</h4>
                             <h6 class="text text-muted">#{{ $asesor->nik }}</h6>
                         </div>
@@ -38,7 +42,7 @@
                         <div class="border-bottom py-4">
                             <p>Skema</p>
                             <div>
-                                    <label class="badge badge-outline-info">{{ $asesor->skema }}</label>
+                                <label class="badge badge-outline-info">{{ $asesor->skema }}</label>
                             </div>
                         </div>
                         <div class="d-flex">
@@ -101,12 +105,6 @@
                                     enctype="multipart/form-data" class="form-sample">
                                     @csrf
                                     @method('patch')
-                                    <div class="card-description text-right">
-                                        <button type="submit" class="btn btn-info btn-icon-text btn-block">
-                                            <i class="fa fa-edit btn-icon-prepend"></i>
-                                            Update Data {{ $asesor->nama }}
-                                        </button>
-                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Nama </label>
@@ -163,8 +161,8 @@
                                         <div class="form-group row">
                                             <label class="col-sm-3  col-form-label">Email</label>
                                             <div class="col-sm-9">
-                                                <input class="form-control" maxlength="100" type="email" name="email"
-                                                    value="{{ $asesor->email }}">
+                                                <input class="form-control" maxlength="100" type="email"
+                                                    name="email" value="{{ $asesor->email }}">
                                                 @error('email')
                                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                                 @enderror
@@ -217,6 +215,12 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="card-description text-right">
+                                        <button type="submit" class="btn btn-info btn-icon-text btn-block">
+                                            <i class="fa fa-edit btn-icon-prepend"></i>
+                                            Update Data {{ $asesor->nama }}
+                                        </button>
                                     </div>
                                 </form>
                             </div>

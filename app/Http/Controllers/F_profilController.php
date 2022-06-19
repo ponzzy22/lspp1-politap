@@ -27,9 +27,9 @@ class F_profilController extends Controller
             'visi' =>$request->visi,
             'misi' =>$request->misi,
             'motto' =>$request->motto,
-            'image' => 'public/uploads/f_profil/'.$new_image,
+            'image' => 'uploads/f_profil/'.$new_image,
         ]);
-        $image->move('public/uploads/f_profil/', $new_image);
+        $image->move('uploads/f_profil/', $new_image);
         return redirect()->route('f_profil.index')->with('success','Profil LSP POLITAP berhasil di Posting');
     }
 
@@ -47,14 +47,14 @@ class F_profilController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/f_profil/', $new_image);
+            $image->move('uploads/f_profil/', $new_image);
             $profil_data = [
                 'profil' =>$request->profil,
                 'visi' =>$request->visi,
                 'isi' =>$request->isi,
                 'misi' =>$request->misi,
                 'motto' =>$request->motto,
-                'image' => 'public/uploads/f_profil/'.$new_image,
+                'image' => 'uploads/f_profil/'.$new_image,
             ];
         }
         else{

@@ -58,7 +58,7 @@ class AsesiController extends Controller
         {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img2/', $new_image);
+            $image->move('uploads/beranda_img2/', $new_image);
             auth()->user()->update([
                 'name' => $request->name,
                 'email' => $request->email,
@@ -72,7 +72,7 @@ class AsesiController extends Controller
                 'kode_post' => $request->kode_post,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
-                'image' => 'public/uploads/beranda_img2/'.$new_image,
+                'image' => 'uploads/beranda_img2/'.$new_image,
             ]);
         }
         else{
@@ -93,12 +93,90 @@ class AsesiController extends Controller
         }
         return back()->with('success', ' Data Profil Anda Berhasil di Update');
     }
+
+
+    public function edit2(){
+        $user = User::all();
+        $sex = Sex::all();
+        $semester = Semester::all();
+        $jurusan = Jurusan::all();
+        return view('asesi/registrasi/profil_edit2', compact('semester', 'jurusan','sex', 'user'));
+    }
+
+
     public function formulirapl2_edit(){
         $user = User::all();
         $sex = Sex::all();
         $semester = Semester::all();
         $jurusan = Jurusan::all();
         return view('asesi/registrasi/forapl1', compact('semester', 'jurusan','sex', 'user'));
+    }
+
+
+    public function formulirapl3_update(Request $request)
+    {
+        // dd($request->all());
+        $request->validate([
+            'name' => ['min:3', 'max:100', 'required'],
+            'email' => ['min:3', 'required', 'unique:users,email,'. auth()->id()],
+            'sex_id' => ['max:100', 'required'],
+            'tgl_lahir' => ['required'],
+            // 'valuelahir' => ['required'],
+            'negara' => ['min:3', 'max:100', 'required'],
+            'alamat' => ['min:3', 'max:100', 'required'],
+            'jurusan_id' => ['required'],
+            'semester_id' => ['required'],
+            // 'kode_post' => ['min:3', 'max:10000000', 'numeric', 'required'],
+            // 'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
+            // 'valuesurel' => ['required'],
+            // 'image' => ['required'],
+            // 'ktm' => ['required'],
+        ]);
+        if ($request->has('image'))
+        {
+            $image = $request->image;
+            $new_image = time().$image->getClientOriginalName();
+            $image->move('uploads/beranda_img2/', $new_image);
+            auth()->user()->update([
+                'name' => $request->name,
+                'email' => $request->email,
+                'email2' => $request->email2,
+                'sex_id' => $request->sex_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'negara' => $request->negara,
+                'alamat' => $request->alamat,
+                'tempat_lahir' => $request->tempat_lahir,
+                'no_hp' => $request->no_hp,
+                'kode_post' => $request->kode_post,
+                'surel' => $request->surel,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
+                'valuesurel' => $request->valuesurel,
+                'valuelahir' => $request->valuelahir,
+                'image' => 'uploads/beranda_img2/'.$new_image,
+            ]);
+        }
+        else{
+            auth()->user()->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'email2' => $request->email2,
+            'sex_id' => $request->sex_id,
+            'tgl_lahir' => $request->tgl_lahir,
+            'negara' => $request->negara,
+            'alamat' => $request->alamat,
+            'tempat_lahir' => $request->tempat_lahir,
+            'no_hp' => $request->no_hp,
+            'kode_post' => $request->kode_post,
+            'surel' => $request->surel,
+            'semester_id' => $request->semester_id,
+            'jurusan_id' => $request->jurusan_id,
+            'valuesurel' => $request->valuesurel,
+            'valuelahir' => $request->valuelahir,
+            ]);
+        }
+        // Data_register::whereId($id)->update($data);
+        return redirect()->route('daftar');
     }
 
 
@@ -125,15 +203,16 @@ class AsesiController extends Controller
         {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img2/', $new_image);
+            $image->move('uploads/beranda_img2/', $new_image);
             auth()->user()->update([
                 'name' => $request->name,
                 'email' => $request->email,
+                'email2' => $request->email2,
                 'sex_id' => $request->sex_id,
                 'tgl_lahir' => $request->tgl_lahir,
                 'negara' => $request->negara,
                 'alamat' => $request->alamat,
-                'tmpt_lahir' => $request->tmpt_lahir,
+                'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
                 'kode_post' => $request->kode_post,
                 'surel' => $request->surel,
@@ -141,18 +220,19 @@ class AsesiController extends Controller
                 'jurusan_id' => $request->jurusan_id,
                 'valuesurel' => $request->valuesurel,
                 'valuelahir' => $request->valuelahir,
-                'image' => 'public/uploads/beranda_img2/'.$new_image,
+                'image' => 'uploads/beranda_img2/'.$new_image,
             ]);
         }
         else{
             auth()->user()->update([
             'name' => $request->name,
             'email' => $request->email,
+            'email2' => $request->email2,
             'sex_id' => $request->sex_id,
             'tgl_lahir' => $request->tgl_lahir,
             'negara' => $request->negara,
             'alamat' => $request->alamat,
-            'tmpt_lahir' => $request->tmpt_lahir,
+            'tempat_lahir' => $request->tempat_lahir,
             'no_hp' => $request->no_hp,
             'kode_post' => $request->kode_post,
             'surel' => $request->surel,

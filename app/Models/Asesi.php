@@ -34,6 +34,7 @@ class Asesi extends Model
         'jurusan_id',
         'semester_id',
         'surel',
+        'email2',
         'email'
     ];
 
