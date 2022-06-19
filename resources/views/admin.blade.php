@@ -142,7 +142,7 @@
                                                     onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href=""><button type="submit"
+                                                    <a href=""><button data-toggle="tooltip" title="" data-original-title="Hapus" type="submit"
                                                             class="btn btn-danger btn-rounded btn-sm"><i
                                                                 class="fa fa-trash "></i></button></a>
                                                 </form>
@@ -241,29 +241,29 @@
     </div><br><br>
 
 
-    {{-- <---------------------- FOOTERT ----------------------> --}}
+    {{-- <---------------------- FOOTER ----------------------> --}}
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="public/assets/images/logo/bnsp.png" width="150px" alt="">
+                            <img src="assets/images/logo/bnsp.png" width="150px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="public/assets/images/logo/kemendikbud.png" width="90px" alt="">
+                            <img src="assets/images/logo/kemendikbud.png" width="90px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="public/assets/images/logo/politap.png" width="90px" alt="">
+                            <img src="assets/images/logo/politap.png" width="90px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="public/assets/images/logo/lsp.png" width="110px" alt="">
+                            <img src="assets/images/logo/lsp.png" width="110px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">

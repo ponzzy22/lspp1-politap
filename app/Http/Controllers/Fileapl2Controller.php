@@ -17,9 +17,9 @@ class Fileapl2Controller extends Controller
         $new_image = time().$image->getClientOriginalName();
         $beranda_img1 = Fileapl2::create([
             'file' =>$request->file,
-            'image' => 'public/uploads/fileapl2/'.$new_image,
+            'image' => 'uploads/fileapl2/'.$new_image,
         ]);
-        $image->move('public/uploads/fileapl2/', $new_image);
+        $image->move('uploads/fileapl2/', $new_image);
         return back()->with('success','File anda berhasil di Upload');
     }
 

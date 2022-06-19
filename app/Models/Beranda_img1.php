@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Beranda_img1 extends Model
 {
     protected $fillable = ['id', 'keterangan', 'judul', 'image'];
-    protected $table = 'beranda_img1';
+    protected $table = 'carousel';
 }

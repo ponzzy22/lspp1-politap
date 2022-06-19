@@ -35,9 +35,9 @@ class Beranda_img2Controller extends Controller
             'intagram' =>$request->intagram,
             'no_hp' =>$request->no_hp,
             'email' =>$request->email,
-            'image' => 'public/uploads/pengelola/'.$new_image,
+            'image' => 'uploads/pengelola/'.$new_image,
         ]);
-        $image->move('public/uploads/pengelola/', $new_image);
+        $image->move('uploads/pengelola/', $new_image);
         return back()->with('success','Portofolio anda berhasil di Posting');
     }
 
@@ -58,7 +58,7 @@ class Beranda_img2Controller extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/pengelola/', $new_image);
+            $image->move('uploads/pengelola/', $new_image);
             $beranda_img2_data = [
                 'nama' =>$request->nama,
                 'facebook' =>$request->facebook,
@@ -67,7 +67,7 @@ class Beranda_img2Controller extends Controller
                 'no_hp' =>$request->no_hp,
                 'email' =>$request->email,
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/pengelola/'.$new_image,
+                'image' => 'uploads/pengelola/'.$new_image,
             ];
         }
         else{

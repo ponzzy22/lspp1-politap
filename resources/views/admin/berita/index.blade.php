@@ -73,7 +73,7 @@
                                 <textarea class="summernote" name="body"></textarea>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-inverse-success btn-block"><i class="fas fa-upload"></i>
+                            <button type="submit" class="btn btn-success btn-block"><i class="fas fa-upload"></i>
                                 Posting</button><br>
                         </div>
                     </form>
@@ -92,7 +92,7 @@
                 <table id="order-listing" class="table dataTable no-footer" role="grid"
                     aria-describedby="order-listing_info">
                     <thead>
-                        <tr>
+                        <tr class="bg-light text-black">
                             <th style="width: 10px">
                                 #
                             </th>

@@ -3,7 +3,7 @@
     KKNI | LSP-POLITAP
 @endsection
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/client/css/Download.css') }}">
+    <link rel="stylesheet" href="{{ asset('client/css/Download.css') }}">
 @endsection
 @section('isi')
     <section class="u-clearfix u-custom-color-1 u-section-1" id="sec-ceb4">
@@ -17,7 +17,7 @@
                                 <h1 class="u-custom-font u-font-merriweather u-text u-text-default u-title u-text-1"
                                     data-animation-name="customAnimationIn" data-animation-duration="1000"><span
                                         class="u-file-icon u-icon u-text-white u-icon-1"><img
-                                            src="{{ asset('public/images/logo2/16.png') }}" alt=""></span>&nbsp;KKNI
+                                            src="{{ asset('images/logo2/16.png') }}" alt=""></span>&nbsp;KKNI
 
                                 </h1>
                             </div>

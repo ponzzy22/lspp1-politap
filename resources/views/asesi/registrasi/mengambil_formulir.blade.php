@@ -26,13 +26,14 @@
                         <tr>
                             <th style="width: 200px">
                                 <button style="align-items: center" type="button"
-                                    class="btn btn-rounded btn-warning btn-block btn-sm btn-block font-weight-bold" data-toggle="modal"
-                                    data-target="#exampleModal-1">
+                                    class="btn btn-rounded btn-warning btn-block btn-sm btn-block font-weight-bold"
+                                    data-toggle="modal" data-target="#exampleModal-1">
                                     <i class="fas fa-question-circle"></i> Instruksi Ambil Formulir
                                 </button>
                             </th>
                             <th style="width: 200px">
-                                <form action="{{ route('identitas.store') }}" enctype="multipart/form-data" method="post">
+                                <form action="{{ route('identitas.store') }}" enctype="multipart/form-data"
+                                    method="post">
                                     @csrf
                                     @foreach ($dokumen_upload as $asu)
                                         <input type="hidden" name="data_register_id[]"
@@ -46,8 +47,8 @@
                                         <input type="hidden" name="status[]"
                                             value="<label class='badge badge-outline-danger badge-pill'>Kosong</label>">
                                     @endforeach
-                                    <button class="btn btn-primary btn-sm btn-rounded btn-block font-weight-bold" type="submit"><i
-                                            class="fas fa-arrow-alt-circle-down"></i>
+                                    <button class="btn btn-primary btn-sm btn-rounded btn-block font-weight-bold"
+                                        type="submit"><i class="fas fa-arrow-alt-circle-down"></i>
                                         Ambil Formulir APL-01</button>
                                 </form>
                             </th>
@@ -69,23 +70,23 @@
                                         <input type="hidden" name="skema_id[]" value="{{ $skema->id }}">
                                         <input type="hidden" name="skema_name[]" value="{{ $skema->skema }}">
                                         <input type="hidden" name="unikom_name[]" value="{{ $asu->unikom->unikom }}">
-                                        <input type="hidden" name="unikom_kode[]" value="{{ $asu->unikom->kode_unikom }}">
+                                        <input type="hidden" name="unikom_kode[]"
+                                            value="{{ $asu->unikom->kode_unikom }}">
                                         <input type="hidden" name="asesmen_name[]" value="{{ $asu->asesmen }}">
                                         <input type="hidden" name="unikom_id[]" value="{{ $asu->id }}">
                                         <input type="hidden" name="kriteria[]" value="{{ $asu->kriteria }}">
                                     @endforeach
-                                    <button class="btn btn-primary btn-sm btn-rounded btn-block btn-block font-weight-bold" type="submit"><i
-                                            class="fas fa-arrow-alt-circle-down"></i>
+                                    <button class="btn btn-primary btn-sm btn-rounded btn-block btn-block font-weight-bold"
+                                        type="submit"><i class="fas fa-arrow-alt-circle-down"></i>
                                         Ambil Formulir APL-02</button>
                                 </form>
                             </th>
                             <th style="width: 200px">
-                                @foreach ($datareg as $item)
-                                    <a href="{{ route('registrasi.show', $item->id) }}"><button
-                                            class="btn btn-rounded btn-success btn-block btn-sm btn-block font-weight-bold" type="submit">Selanjutnya
-                                            <i class="fas fa-angle-double-right"></i>
-                                        </button></a>
-                                @endforeach
+                                <a href="{{ route('dashasesi.index') }}"><button
+                                        class="btn btn-rounded btn-success btn-block btn-sm btn-block font-weight-bold"
+                                        type="submit">Selanjutnya
+                                        <i class="fas fa-angle-double-right"></i>
+                                    </button></a>
 
                             </th>
                         </tr>
@@ -166,9 +167,12 @@
                 <div class="modal-body">
                     Langkah-langkah dalam Mengambil Formulir :
                     <br><br>
-                    <p>1. Tekan Tombol <span class="text text-primary">Ambil Formulir APL-01</span> </p>
-                    <p>2. Tekan Tombol <span class="text text-primary">Ambil Formulir APL-02</span> </p>
-                    <p>3. Tekan Tombol <span style="color: green">Selanjutnya</span> </p>
+                    <ol>
+                        <li>Tekan Tombol "<span class="text text-primary">Ambil Formulir APL-01</span>" , sampai data Formulir APL-01 muncul. </li>
+                        <li>Tekan Tombol "<span class="text text-primary">Ambil Formulir APL-02</span>" , sampai data Formulir APL-02 muncul.</li>
+                        <li>Tekan Tombol "<span style="color: green">Selanjutnya</span>", maka anda akan diarahkan ke laman Dashboard  </li>
+                        <li>Dilaman Dashboard akan muncul sebuah card yang berisi data pendaftaran anda, Kemudian tekan tombol "<span class="text text-success">Lanjutkan Pengisian Data Pendaftaran Anda</span> ". </li>
+                    </ol>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
@@ -182,7 +186,8 @@
         <div class="modal fade" id="exampleModal-{{ $data->id }}" tabindex="-1" role="dialog"
             aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <form action="{{ route('identitas.update', $data->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('identitas.update', $data->id) }}" method="post"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="modal-content">

@@ -70,12 +70,12 @@
                                     value="{{ $berita->excerpt }}">
                             </div><br>
 
-                            <div class="col-md-9">
+                            <div class="col-md-12">
                                 <label for="">Isi Konten Berita</label>
                                 <textarea class="summernote" name="body">{{ $berita->body }}</textarea>
                             </div>
                             <br>
-                            <button type="submit" class="btn btn-inverse-info btn-block"><i class="fas fa-upload"></i>
+                            <button type="submit" class="btn btn-info btn-block"><i class="fas fa-upload"></i>
                                 Posting</button><br>
                         </div>
                     </form>

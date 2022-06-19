@@ -17,9 +17,9 @@ class KkniController extends Controller
         $new_image = time().$image->getClientOriginalName();
         $beranda_img1 = Kkni::create([
             'file' =>$request->file,
-            'image' => 'public/uploads/kkni/'.$new_image,
+            'image' => 'uploads/kkni/'.$new_image,
         ]);
-        $image->move('public/uploads/kkni/', $new_image);
+        $image->move('uploads/kkni/', $new_image);
         return back()->with('success','File anda berhasil di Upload');
     }
 

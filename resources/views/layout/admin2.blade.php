@@ -7,19 +7,19 @@
     <title>LSP P1-POLITAP | ADMINISTRASI</title>
 
     {{-- <---------------------- ASSET ----------------------> --}}
-    <link rel="stylesheet" href="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/admin.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/css/counter.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/modules/dropzone.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets/modules/components.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets2/modules/summernote/summernote-bs4.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets2/modules/codemirror/lib/codemirror.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets2/modules/codemirror/theme/duotone-dark.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/assets2/modules/jquery-selectric/selectric.css') }}">
-    <link rel="shortcut icon" href="{{ asset('public/assets/images/logo/lsp.png') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendors/summernote/dist/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/counter.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/dropzone.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/modules/components.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/modules/summernote/summernote-bs4.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/modules/codemirror/lib/codemirror.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/modules/codemirror/theme/duotone-dark.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets2/modules/jquery-selectric/selectric.css') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
 </head>
@@ -32,12 +32,12 @@
         <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row default-layout-navbar">
             <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
                 <a class="navbar-brand brand-logo" href="{{ route('admin') }}"><img
-                        src="{{ asset('public/assets/images/logo/lsp1.png') }}" alt="logo" /></a>
+                        src="{{ asset('assets/images/logo/lsp1.png') }}" alt="logo" /></a>
                 <!-- /////////////////////////////////// -->
                 <!-- LOGO MINI -->
                 <!-- /////////////////////////////////// -->
                 <a class="navbar-brand brand-logo-mini" href="{{ route('admin') }}"><img
-                        src="{{ asset('public/assets/images/logo/mini3.png') }}" alt="logo" /></a>
+                        src="{{ asset('assets/images/logo/mini3.png') }}" alt="logo" /></a>
             </div>
             <!-- /////////////////////////////////// -->
             <!-- MENU NAVIGASI -->
@@ -178,7 +178,11 @@
                     <li class="nav-item nav-profile">
                         <div id="home" class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ asset(Auth::user()->image) }}" alt="image" /></a>
+                                @if (Auth::user()->image)
+                                <img src="{{ asset(Auth::user()->image) }}" alt="profile">
+                                @else
+                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
+                                @endif
                             </div>
                             <div class="profile-name">
                                 <p class="name">
@@ -418,41 +422,41 @@
 
 
     {{-- <----------------------  JS----------------------> --}}
-        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.base.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-        <script src="{{ asset('public/assets/js/off-canvas.js') }}"></script>
-        <script src="{{ asset('public/assets/js/hoverable-collapse.js') }}"></script>
-        <script src="{{ asset('public/assets/js/misc.js') }}"></script>
-        <script src="{{ asset('public/assets/js/settings.js') }}"></script>
-        <script src="{{ asset('public/assets/js/todolist.js') }}"></script>
-        <script src="{{ asset('public/assets/js/google-maps.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
-        <script src="{{ asset('public/assets/js/owl-carousel.js') }}"></script>
-        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('public/assets/js/form-addons.js') }}"></script>
-        <script src="{{ asset('public/assets/js/x-editable.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dropify.js') }}"></script>
-        <script src="{{ asset('public/assets/js/dropzone.js') }}"></script>
-        <script src="{{ asset('public/assets/js/jquery-file-upload.js') }}"></script>
-        <script src="{{ asset('public/assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('public/assets/js/form-repeater.js') }}"></script>
-        <script src="{{ asset('public/assets/js/alerts.js') }}"></script>
-        <script src="{{ asset('public/assets/js/avgrund.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/tinymce/tinymce.min.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
-        <script src="{{ asset('public/assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
-        <script src="{{ asset('public/assets/js/data-table.js') }}"></script>
-        <script src="{{ asset('public/assets/js/wizard.js') }}"></script>
-        <script src="{{ asset('public/assets/modules/dropzone.min.js') }}"></script>
-        <script src="{{ asset('public/assets/modules/components-multiple-upload.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/stisla.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/summernote/summernote-bs4.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/codemirror/lib/codemirror.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
-        <script src="{{ asset('public/assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/scripts.js') }}"></script>
-        <script src="{{ asset('public/assets2/js/custom.js') }}"></script>
+        <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+        <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+        <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('assets/js/misc.js') }}"></script>
+        <script src="{{ asset('assets/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/js/todolist.js') }}"></script>
+        <script src="{{ asset('assets/js/google-maps.js') }}"></script>
+        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('assets/js/form-addons.js') }}"></script>
+        <script src="{{ asset('assets/js/x-editable.js') }}"></script>
+        <script src="{{ asset('assets/js/dropify.js') }}"></script>
+        <script src="{{ asset('assets/js/dropzone.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery-file-upload.js') }}"></script>
+        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('assets/js/form-repeater.js') }}"></script>
+        <script src="{{ asset('assets/js/alerts.js') }}"></script>
+        <script src="{{ asset('assets/js/avgrund.js') }}"></script>
+        <script src="{{ asset('assets/vendors/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+        <script src="{{ asset('assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+        <script src="{{ asset('assets/js/data-table.js') }}"></script>
+        <script src="{{ asset('assets/js/wizard.js') }}"></script>
+        <script src="{{ asset('assets/modules/dropzone.min.js') }}"></script>
+        <script src="{{ asset('assets/modules/components-multiple-upload.js') }}"></script>
+        <script src="{{ asset('assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+        <script src="{{ asset('assets2/js/stisla.js') }}"></script>
+        <script src="{{ asset('assets2/modules/summernote/summernote-bs4.js') }}"></script>
+        <script src="{{ asset('assets2/modules/codemirror/lib/codemirror.js') }}"></script>
+        <script src="{{ asset('assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
+        <script src="{{ asset('assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+        <script src="{{ asset('assets2/js/scripts.js') }}"></script>
+        <script src="{{ asset('assets2/js/custom.js') }}"></script>
 
 </body>
 

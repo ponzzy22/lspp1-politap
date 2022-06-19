@@ -92,6 +92,7 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::resource('skema', SkemaController::class);
     Route::get('show_asesmen/{id}', [SkemaController::class, 'show_asesmen'])->name('show_asesmen');
     Route::get('detail/{id}', [SkemaController::class, 'detail'])->name('skema.detail');
+    Route::post('verifikasi_skema',[SkemaController::class, 'verifikasi_skema'])->name('verifikasi_skema');
     // <------------------ LAYANAN  ------------------>
     Route::resource('prodi', ProdiController::class);
     Route::resource('asesor', AsesorController::class);
@@ -151,8 +152,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('dashasesi', Dashboard_asesiController::class);
     Route::resource('asesi', AsesiController::class);
     Route::resource('registrasi', RegistrasiController::class);
+    Route::get('skema_pendaftaran', [RegistrasiController::class, 'skema_pendaftaran'])->name('skema_pendaftaran');
     Route::resource('pendaftaran', XnxxController::class);
     Route::post('xnxx2', [XnxxController::class, 'store2'])->name('xnxx.store2');
+    Route::get('daftar', [RegistrasiController::class, 'daftar'])->name('daftar');
     // <------------------ ASSESMENT  ------------------>
     Route::get('info_skema', [AsesiController::class, 'info_skema'])->name('info.skema');
     Route::get('info_skema/show/{id}', [AsesiController::class, 'info_skema_show'])->name('info_skema.show');
@@ -165,9 +168,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
     Route::resource('identitas', Upload_DokumenController::class);
     Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
+    Route::get('edit2', [AsesiController::class, 'edit2'])->name('profil.edit2');
     Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
     Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
     Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');
+    Route::put('formulirapl3_update', [AsesiController::class, 'formulirapl3_update'])->name('formulirapl3.update');
     Route::get('formulirapl2edit/{id}', [RegistrasiController::class, 'formulirapl2edit'])->name('formulirapl2edit');
     Route::get('sertifikat_show/{id}', [AsesiController::class, 'sertifikat_show'])->name('sertifikat_show');
     Route::get('rekap_pendaftaran/{id}', [RegistrasiController::class, 'rekap_pendaftaran'])->name('rekap_pendaftaran');

@@ -1,4 +1,7 @@
 @extends('layout/asesi2')
+@section('judul')
+    Rekap Pendaftaran | LSP-POLITAP
+@endsection
 @section('isi')
 <div class="row">
     <!-- /////////////////////////////////// -->

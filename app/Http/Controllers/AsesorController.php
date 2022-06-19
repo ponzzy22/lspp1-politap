@@ -19,7 +19,7 @@ class AsesorController extends Controller
     public function store(Request $request) {
         // dd($request->all());
         $request->validate([
-            // 'nik' => ['required', 'unique:asesor,nik'],
+            'nik' => ['required', 'unique:asesor,nik'],
             'nama' => ['required'],
             // 'alamat' => ['required'],
             // 'sex' => ['required'],
@@ -31,7 +31,7 @@ class AsesorController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/asesor/', $new_image);
+            $image->move('uploads/asesor/', $new_image);
             $asesor_data = [
                 'nik' => $request->nik,
                 'nama' => $request->nama,
@@ -41,7 +41,7 @@ class AsesorController extends Controller
                 'email' => $request->email,
                 'status' => $request->status,
                 'skema' => $request->skema,
-                'image' => 'public/uploads/asesor/'.$new_image,
+                'image' => 'uploads/asesor/'.$new_image,
             ];
         }
         else{
@@ -56,7 +56,7 @@ class AsesorController extends Controller
                 'skema' => $request->skema,
             ]);
         }
-        // $image->move('public/uploads/asesor/', $new_image);
+        // $image->move('uploads/asesor/', $new_image);
         return redirect()->route('asesor.index')->with('success','Asesor Berhasil Ditambah');
     }
 
@@ -72,16 +72,16 @@ class AsesorController extends Controller
         $request->validate([
             'nik' => ['required'],
             'nama' => ['required'],
-            'alamat' => ['required'],
-            'sex' => ['required'],
-            'no_hp' => ['required'],
-            'status' => ['required'],
+            // 'alamat' => ['required'],
+            // 'sex' => ['required'],
+            // 'no_hp' => ['required'],
+            // 'status' => ['required'],
         ]);
         $asesor = Asesor::findorfail($id);
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/asesor/', $new_image);
+            $image->move('uploads/asesor/', $new_image);
             $asesor_data = [
                 'nik' => $request->nik,
                 'nama' => $request->nama,
@@ -91,7 +91,7 @@ class AsesorController extends Controller
                 'email' => $request->email,
                 'status' => $request->status,
                 'skema' => $request->skema,
-                'image' => 'public/uploads/asesor/'.$new_image,
+                'image' => 'uploads/asesor/'.$new_image,
             ];
         }
         else{

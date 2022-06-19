@@ -14,7 +14,6 @@
         </nav>
     </div><br>
 
-
     {{-- <---------------------- TAMBAH SKEMA ----------------------> --}}
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
@@ -181,10 +180,9 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
-                                                            type="button" id="dropdownMenuSizeButton3"
-                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false">
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle" type="button"
+                                                            id="dropdownMenuSizeButton3" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
                                                             <i class="fa fa-cog"></i>
                                                         </button>
                                                         <div class="dropdown-menu"
@@ -215,10 +213,18 @@
                                                     <td class="">{{ $asu->kode_skema }}</td>
                                                     <td>{{ $asu->skema }}</td>
                                                     <td>{{ $asu->asesor->nama }}</td>
-                                                    <td><label class="badge badge-light">{{ $asu->prodi->prodi }}</label>
+                                                    <td><label
+                                                            class="badge badge-light">{{ $asu->prodi->prodi }}</label>
                                                     </td>
-                                                    <td><label class="badge badge-light">{{ $asu->status->status }}</label>
+                                                    <td><label
+                                                            class="badge badge-light">{{ $asu->status->status }}</label>
                                                     </td>
+                                                    {{-- <td>@if ($asu->cekpendaftaran->cek)
+                                                        <label class="badge badge-light">{{ $asu->cekpendaftaran->cek }}</label>
+                                                    @else
+                                                        <label for="kosong"></label>
+                                                    @endif
+                                                    </td> --}}
                                                 </tr>
                                             @endforeach
                                         </tbody>

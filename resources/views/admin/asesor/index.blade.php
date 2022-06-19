@@ -28,8 +28,7 @@
                     </a>
                 </h6>
             </div>
-            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
-                data-parent="#accordion-4">
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('asesor.store') }}" method="POST" enctype="multipart/form-data"
                         class="form-sample">
@@ -179,7 +178,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">
-                        <div id="order-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
+                        <div id="order-listing_wrapper"
+                            class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
@@ -226,8 +226,7 @@
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('asesor.edit', $asu->id) }}"><button
-                                                                    type="submit"
-                                                                    class="btn btn-info  btn-block"><i
+                                                                    type="submit" class="btn btn-info  btn-block"><i
                                                                         class="fa fa-eye "></i> Lihat & Edit
                                                                     Asesor</button></a>
                                                             <form action="{{ route('asesor.destroy', $asu->id) }}"
@@ -243,7 +242,14 @@
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->nik }}</td>
-                                                    <td><img src="{{ asset($asu->image) }}" alt=""></td>
+                                                    <td>
+                                                        @if ($asu->image)
+                                                            <img src="{{ asset($asu->image) }}" alt="">
+                                                        @else
+                                                            <img src="{{ asset('images/back/photo.png') }}"
+                                                                alt="">
+                                                        @endif
+                                                    </td>
                                                     <td>{{ $asu->nama }}</td>
                                                     <td>
                                                         <label class="badge badge-light">{{ $asu->status }}</label>

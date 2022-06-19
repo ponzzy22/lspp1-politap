@@ -15,7 +15,9 @@ class Skema extends Model
         'prodi_id',
         'asesor_id',
         'tuk_id',
-        'status_id'
+        'status_id',
+        'verifikasi_skema_id',
+        'cekpendaftaran_id'
     ];
 
 
@@ -41,6 +43,16 @@ class Skema extends Model
 
     public function unikoms(){
         return $this->hasMany(Unikom::class);
+    }
+
+
+    public function verifikasi_skema(){
+        return $this->belongsTo(VerifikasiSkema::class);
+    }
+
+
+    public function cekpendaftaran(){
+        return $this->belongsTo(CekPendaftaran::class);
     }
 
 

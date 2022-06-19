@@ -28,8 +28,7 @@
                     </a>
                 </h6>
             </div>
-            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
-                data-parent="#accordion-4">
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('tuk.store') }}" enctype="multipart/form-data" method="POST"
                         class="form-sample">
@@ -49,8 +48,8 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">TUK</label>
                                     <div class="col-sm-9">
-                                        <input type="text" placeholder="Tempat Uji Kompetensi" maxlength="100" name="tuk"
-                                            class="form-control" />
+                                        <input type="text" placeholder="Tempat Uji Kompetensi" maxlength="100"
+                                            name="tuk" class="form-control" />
                                         @error('tuk')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -149,7 +148,8 @@
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('tuk.show', $asu->id) }}"><button
-                                                                    type="submit" class="btn btn-warning btn-sm btn-block"><i
+                                                                    type="submit"
+                                                                    class="btn btn-warning btn-sm btn-block"><i
                                                                         class="fa fa-eye "></i> Edit & Lihat
                                                                     TUK</button></a>
                                                             <form action="{{ route('tuk.destroy', $asu->id) }}"

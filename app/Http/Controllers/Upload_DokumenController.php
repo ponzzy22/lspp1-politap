@@ -10,7 +10,7 @@ class Upload_DokumenController extends Controller
     public function store(Request $request)
     {
         //   dd($request->all());
-        
+
         $request->validate([
             'kode' => ['required', 'unique:upload_files,kode'],
             'kode_dokumen' => ['required', 'unique:upload_files,kode_dokumen'],
@@ -40,11 +40,11 @@ class Upload_DokumenController extends Controller
         ]);
         $image = $request->image;
         $new_image = time() . $image->getClientOriginalName();
-        $image->move('public/uploads/uploads_file_register/', $new_image);
+        $image->move('uploads/uploads_file_register/', $new_image);
         $data = [
             'status' => $request->status,
             'koreksi' => $request->koreksi,
-            'image' => 'public/uploads/uploads_file_register/' . $new_image,
+            'image' => 'uploads/uploads_file_register/' . $new_image,
         ];
     Upload_file::whereId($id)->update($data);
     return back()->with('success', 'Dokumen Berhasil Diupload');

@@ -28,9 +28,9 @@ class XnxxController extends Controller
                     $images = $request->image;
                     foreach ($images as $image) {
                         $new_image = time() . $image->getClientOriginalName();
-                        $image->move('public/uploads/formulir_apl2/', $new_image);
+                        $image->move('uploads/formulir_apl2/', $new_image);
                         $laptop = Xnxx::create([
-                            'image' => 'public/uploads/formulir_apl2/' . $new_image,
+                            'image' => 'uploads/formulir_apl2/' . $new_image,
                         ]);
                     }
                 } else {
@@ -65,11 +65,11 @@ class XnxxController extends Controller
             ]);
             $image = $request->image;
             $new_image = time() . $image->getClientOriginalName();
-            $image->move('public/uploads/formulir_apl2/', $new_image);
+            $image->move('uploads/formulir_apl2/', $new_image);
             $data = [
                 'status' => $request->status,
                 'koreksi' => $request->koreksi,
-                'image' => 'public/uploads/formulir_apl2/' . $new_image,
+                'image' => 'uploads/formulir_apl2/' . $new_image,
             ];
 
         xnxx::whereId($id)->update($data);

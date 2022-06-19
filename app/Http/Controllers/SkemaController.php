@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesor;
+use App\Models\CekPendaftaran;
 use App\Models\Prodi;
 use App\Models\Skema;
 use App\Models\Status;
 use App\Models\Tuk;
 use App\Models\Unikom;
+use App\Models\VerifikasiSkema;
 use Illuminate\Http\Request;
 
 class SkemaController extends Controller
@@ -24,13 +26,14 @@ class SkemaController extends Controller
 
 
     public function store(Request $request){
+        // dd($request->all());
         $request->validate([
             'kode_skema' => ['required'],
             'skema' => ['required'],
             'prodi_id' => ['required'],
             'asesor_id' => ['required'],
             'tuk_id' => ['required'],
-            'status_id' => ['required']
+            'status_id' => ['required'],
         ]);
         $skema = Skema::create([
             'kode_skema' =>$request->kode_skema,
@@ -39,6 +42,7 @@ class SkemaController extends Controller
             'asesor_id' =>$request->asesor_id,
             'tuk_id' =>$request->tuk_id,
             'status_id' =>$request->status_id,
+
         ]);
         return redirect()->route('skema.index')->with('success','Skema anda berhasil di Posting');
     }

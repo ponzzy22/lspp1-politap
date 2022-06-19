@@ -1,7 +1,23 @@
 @extends('layout/asesi1')
+@section('judul')
+Profil Anda | LSP-POLITAP
+@endsection
 @section('isi')
     @include('layout/verifikasi')
-
+    <div class="page-header">
+        <h4>
+            <i class="fas fa-user"></i>  Profil Anda
+        </h4>
+        <!-- /////////////////////////////////// -->
+        <!-- BREADCRUMB -->
+        <!-- /////////////////////////////////// -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+                <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Profil Anda</li>
+            </ol>
+        </nav>
+    </div><br>
     <div class="card">
         <div class="card-body">
             <h5 class="font font-weight-bold">Lengkapi Profile Anda</h5>
@@ -99,7 +115,6 @@
                             <label class="col-sm-3 col-form-label">Nomor Handphone</label>
                             <div class="col-sm-9">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text">+62</i></span>
                                     <input type="number" class="form-control" name="no_hp"
                                         value="{{ old('no_hp', Auth::user()->no_hp) }}">
                                 </div>
@@ -153,9 +168,30 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
+                    {{-- <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Kata Sandi</label>
+                            <div class="col-sm-9">
+                                <input type="number" maxlength="25" class="form-control" name="email"
+                                    value="{{ old('email', Auth::user()->email) }}">
+                                @error('password')
+                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Alamat Sesuai KTP</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="alamat"
+                                    value="{{ old('alamat', Auth::user()->alamat) }}">
+                                @error('alamat')
+                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Photo</label>
@@ -169,19 +205,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Alamat Sesuai KTP</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="alamat"
-                                    value="{{ old('alamat', Auth::user()->alamat) }}">
-                                @error('alamat')
-                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                </div> <br>
+                </div>
 
                 <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i> Simpan</button></a>
             </form>

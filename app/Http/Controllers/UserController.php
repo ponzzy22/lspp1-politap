@@ -24,7 +24,7 @@ class UserController extends Controller
     public function update(Request $request, $id) {
         $request->validate([
             'name' => ['min:1', 'max:100', 'required'],
-            'email' => ['min:3','alpha_num', 'numeric', 'required'],
+            'email' => ['min:3', 'required'],
             // 'sex_id' => ['max:100', 'required'],
             // 'tgl_lahir' => ['min:3', 'max:100', 'required'],
             // 'tmpt_lahir' => ['min:3', 'max:100', 'required'],
@@ -32,18 +32,18 @@ class UserController extends Controller
             // 'alamat' => ['min:3', 'max:100', 'required'],
             // 'jurusan_id' => ['required'],
             // 'semester_id' => ['required'],
-            'kode_post' => ['max:100000000000'],
+            // 'kode_post' => ['max:100000000000'],
             // 'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
             // 'surel' => ['email','min:3', 'max:100', 'required', 'unique:users,surel,'.auth()->id()],
             // 'image' => ['required'],
             // 'ktm' => ['required'],
         ]);
 
-        if ($request->has('image')) 
+        if ($request->has('image'))
         {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/beranda_img2/', $new_image);
+            $image->move('uploads/beranda_img2/', $new_image);
             $user_data = [
                 'name' => $request->name,
                 'email' => $request->email,
@@ -51,29 +51,29 @@ class UserController extends Controller
                 'tgl_lahir' => $request->tgl_lahir,
                 'negara' => $request->negara,
                 'alamat' => $request->alamat,
-                'tmpt_lahir' => $request->tmpt_lahir,
+                'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
                 'kode_post' => $request->kode_post,
-                'surel' => $request->surel,
+                'email2' => $request->email2,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
-                'image' => 'public/uploads/beranda_img2/'.$new_image,
+                'image' => 'uploads/beranda_img2/'.$new_image,
             ];
         }
         else{
             $user_data = [
                 'name' => $request->name,
-            'email' => $request->email,
-            'sex_id' => $request->sex_id,
-            'tgl_lahir' => $request->tgl_lahir,
-            'negara' => $request->negara,
-            'alamat' => $request->alamat,
-            'tmpt_lahir' => $request->tmpt_lahir,
-            'no_hp' => $request->no_hp,
-            'kode_post' => $request->kode_post,
-            'surel' => $request->surel,
-            'semester_id' => $request->semester_id,
-            'jurusan_id' => $request->jurusan_id,
+                'email' => $request->email,
+                'sex_id' => $request->sex_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'negara' => $request->negara,
+                'alamat' => $request->alamat,
+                'tempat_lahir' => $request->tempat_lahir,
+                'no_hp' => $request->no_hp,
+                'kode_post' => $request->kode_post,
+                'email2' => $request->email2,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
             ];
         }
         User::whereId($id)->update($user_data);

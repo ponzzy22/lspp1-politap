@@ -25,9 +25,9 @@ class InfoController extends Controller
         $new_image = time().$image->getClientOriginalName();
         $strorg = Info::create([
             'keterangan' =>$request->keterangan,
-            'image' => 'public/uploads/info/'.$new_image,
+            'image' => 'uploads/info/'.$new_image,
         ]);
-        $image->move('public/uploads/info/', $new_image);
+        $image->move('uploads/info/', $new_image);
         return redirect()->route('info.index')->with('success','Video anda berhasil di Posting');
     }
 
@@ -39,9 +39,9 @@ class InfoController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/info/', $new_image);
+            $image->move('uploads/info/', $new_image);
             $info_data = [
-                'image' => 'public/uploads/info/'.$new_image,
+                'image' => 'uploads/info/'.$new_image,
             ];
         }
 
@@ -57,10 +57,10 @@ class InfoController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('public/uploads/info/', $new_image);
+            $image->move('uploads/info/', $new_image);
             $info_data = [
                 'keterangan' =>$request->keterangan,
-                'image' => 'public/uploads/info/'.$new_image,
+                'image' => 'uploads/info/'.$new_image,
             ];
         }
         else{

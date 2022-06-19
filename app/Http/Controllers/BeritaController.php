@@ -36,9 +36,9 @@ class BeritaController extends Controller
             'kategori_id' => $request->kategori_id,
             'body' => $request->body,
             'status' => $request->status,
-            'image' => 'public/uploads/berita/' . $new_image,
+            'image' => 'uploads/berita/' . $new_image,
         ]);
-        $image->move('public/uploads/berita/', $new_image);
+        $image->move('uploads/berita/', $new_image);
         return back()->with('success', 'Artikel Berita Anda  berhasil di Posting');
     }
 
@@ -70,7 +70,7 @@ class BeritaController extends Controller
                 'kategori_id' => $request->kategori_id,
                 'body' => $request->body,
                 'status' => $request->status,
-                'image' => 'public/uploads/berita/' . $new_image,
+                'image' => 'uploads/berita/' . $new_image,
             ];
         } else {
             $berita_data = [
@@ -81,7 +81,7 @@ class BeritaController extends Controller
                 'kategori_id' => $request->kategori_id,
             ];
         }
-
+        $image->move('uploads/berita/', $new_image);
         Berita::whereId($id)->update($berita_data);
         return back()->with('success', 'Artikel Berita Anda  berhasil di Update');
     }

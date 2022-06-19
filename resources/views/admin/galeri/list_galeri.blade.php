@@ -38,7 +38,8 @@
                         <div class="card-body">
                             <form action="{{ route('galeri.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <input type="text" name="galeri" class="form-control" placeholder="Nama Album" value=""><br>
+                                <input type="text" name="galeri" class="form-control" placeholder="Nama Album"
+                                    value=""><br>
                                 <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
                                         class="fas fa-save"></i></button>
                             </form>
@@ -58,14 +59,13 @@
                 @foreach ($galeri as $asu)
                     <div class="card col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                         <div class="card-body">
-                                <figure class="effect-text-in">
-                                    <img src="{{ asset('public/assets/images/auth/placeholder_image1.png') }}"
-                                        alt="image">
-                                    <figcaption>
-                                        <h4>{{ $asu->galeri }}</h4>
-                                        <p>{{ $asu->created_at }}</p>
-                                    </figcaption>
-                                </figure>
+                            <figure class="effect-text-in">
+                                <img src="{{ asset('assets/images/auth/placeholder_image1.png') }}" alt="image">
+                                <figcaption>
+                                    <h4>{{ $asu->galeri }}</h4>
+                                    <p>{{ $asu->created_at }}</p>
+                                </figcaption>
+                            </figure>
                             <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
                                 id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
@@ -79,8 +79,9 @@
                                     onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                     @csrf
                                     @method('delete')
-                                    <a href=""><button type="submit" class="btn btn-inverse-danger btn-sm btn-block"><i
-                                                class="fa fa-trash "></i> Hapus Album {{ $asu->galeri }}</button></a>
+                                    <a href=""><button type="submit"
+                                            class="btn btn-inverse-danger btn-sm btn-block"><i class="fa fa-trash "></i>
+                                            Hapus Album {{ $asu->galeri }}</button></a>
                                 </form>
                             </div>
                         </div>
