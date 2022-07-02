@@ -184,9 +184,15 @@
                         <div id="home" class="nav-link">
                             <div class="profile-image">
                                 @if (Auth::user()->image)
+<<<<<<< HEAD
                                     <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                                 @else
                                     <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
+=======
+                                <img src="{{ asset(Auth::user()->image) }}" alt="profile">
+                                @else
+                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 @endif
                             </div>
                             <div class="profile-name">
@@ -427,6 +433,7 @@
 
 
     {{-- <----------------------  JS----------------------> --}}
+<<<<<<< HEAD
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
@@ -462,6 +469,43 @@
     <script src="{{ asset('assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('assets2/js/scripts.js') }}"></script>
     <script src="{{ asset('assets2/js/custom.js') }}"></script>
+=======
+        <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
+        <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
+        <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
+        <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
+        <script src="{{ asset('assets/js/misc.js') }}"></script>
+        <script src="{{ asset('assets/js/settings.js') }}"></script>
+        <script src="{{ asset('assets/js/todolist.js') }}"></script>
+        <script src="{{ asset('assets/js/google-maps.js') }}"></script>
+        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+        <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
+        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('assets/js/form-addons.js') }}"></script>
+        <script src="{{ asset('assets/js/x-editable.js') }}"></script>
+        <script src="{{ asset('assets/js/dropify.js') }}"></script>
+        <script src="{{ asset('assets/js/dropzone.js') }}"></script>
+        <script src="{{ asset('assets/js/jquery-file-upload.js') }}"></script>
+        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
+        <script src="{{ asset('assets/js/form-repeater.js') }}"></script>
+        <script src="{{ asset('assets/js/alerts.js') }}"></script>
+        <script src="{{ asset('assets/js/avgrund.js') }}"></script>
+        <script src="{{ asset('assets/vendors/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ asset('assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
+        <script src="{{ asset('assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
+        <script src="{{ asset('assets/js/data-table.js') }}"></script>
+        <script src="{{ asset('assets/js/wizard.js') }}"></script>
+        <script src="{{ asset('assets/modules/dropzone.min.js') }}"></script>
+        <script src="{{ asset('assets/modules/components-multiple-upload.js') }}"></script>
+        <script src="{{ asset('assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+        <script src="{{ asset('assets2/js/stisla.js') }}"></script>
+        <script src="{{ asset('assets2/modules/summernote/summernote-bs4.js') }}"></script>
+        <script src="{{ asset('assets2/modules/codemirror/lib/codemirror.js') }}"></script>
+        <script src="{{ asset('assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
+        <script src="{{ asset('assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
+        <script src="{{ asset('assets2/js/scripts.js') }}"></script>
+        <script src="{{ asset('assets2/js/custom.js') }}"></script>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 
 </body>
 

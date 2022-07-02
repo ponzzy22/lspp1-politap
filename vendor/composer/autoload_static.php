@@ -569,8 +569,11 @@ class ComposerStaticInit5519225995f2740f704a91aeb0876374
         'App\\Http\\Controllers\\FileController' => __DIR__ . '/../..' . '/app/Http/Controllers/FileController.php',
         'App\\Http\\Controllers\\Fileapl2Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Fileapl2Controller.php',
         'App\\Http\\Controllers\\FilelainController' => __DIR__ . '/../..' . '/app/Http/Controllers/FilelainController.php',
+<<<<<<< HEAD
         'App\\Http\\Controllers\\Formapl1Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Formapl1Controller.php',
         'App\\Http\\Controllers\\Formapl2Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Formapl2Controller.php',
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         'App\\Http\\Controllers\\GaleriController' => __DIR__ . '/../..' . '/app/Http/Controllers/GaleriController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\InfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/InfoController.php',

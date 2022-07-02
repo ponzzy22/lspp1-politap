@@ -36,19 +36,30 @@
                 <button class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button>
             </div>
         </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         <div class="card col-md-5">
             <div class="card-body">
                 <div class="card-title">
                     <h4>Daftar Sertifikasi Disini</h4>
                 </div>
                 <hr>
+<<<<<<< HEAD
                 <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/back/1') }}" width="300px" alt=""></a>
+=======
+                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/logo3/daftar-sekarang.png') }}" width="300px" alt=""></a>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
             </div>
         </div>
     </div>
     <br>
 
+<<<<<<< HEAD
+=======
+    {{-- <-------------------- PROFIL --------------------> --}}
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     <div class="row">
         <div class="col-md-4">
             <div class="card">

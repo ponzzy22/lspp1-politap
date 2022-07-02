@@ -212,10 +212,17 @@
                                                     </td>
                                                     <td class="">{{ $asu->kode_skema }}</td>
                                                     <td>{{ $asu->skema }}</td>
+<<<<<<< HEAD
                                                     <!-- <td>{{ $asu->asesor->nama }}</td>
                                                     <td><label
                                                             class="badge badge-light">{{ $asu->prodi->prodi }}</label>
                                                     </td> -->
+=======
+                                                    <td>{{ $asu->asesor->nama }}</td>
+                                                    <td><label
+                                                            class="badge badge-light">{{ $asu->prodi->prodi }}</label>
+                                                    </td>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                                     <td><label
                                                             class="badge badge-light">{{ $asu->status->status }}</label>
                                                     </td>

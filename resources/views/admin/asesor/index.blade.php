@@ -225,8 +225,13 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
+<<<<<<< HEAD
                                                             <a href="{{ route('asesor.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-warning  btn-block"><i
+=======
+                                                            <a href="{{ route('asesor.edit', $asu->id) }}"><button
+                                                                    type="submit" class="btn btn-info  btn-block"><i
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                                                         class="fa fa-eye "></i> Lihat & Edit
                                                                     Asesor</button></a>
                                                             <form action="{{ route('asesor.destroy', $asu->id) }}"

@@ -58,6 +58,7 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
+<<<<<<< HEAD
                 'postal' => $request->postal,
                 'email2' => $request->email2,
                 'telp' => $request->telp,
@@ -69,6 +70,12 @@ class UserController extends Controller
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
                 'password' => bcrypt($request->password),
+=======
+                'kode_post' => $request->kode_post,
+                'email2' => $request->email2,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 'image' => 'uploads/beranda_img2/'.$new_image,
             ];
         }
@@ -82,6 +89,7 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
+<<<<<<< HEAD
                 'postal' => $request->postal,
                 'email2' => $request->email2,
                 'telp' => $request->telp,
@@ -93,6 +101,12 @@ class UserController extends Controller
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
                 'password' => bcrypt($request->password),
+=======
+                'kode_post' => $request->kode_post,
+                'email2' => $request->email2,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
             ];
         }
         User::whereId($id)->update($user_data);

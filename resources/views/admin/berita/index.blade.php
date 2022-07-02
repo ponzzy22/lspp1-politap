@@ -92,7 +92,11 @@
                 <table id="order-listing" class="table dataTable no-footer" role="grid"
                     aria-describedby="order-listing_info">
                     <thead>
+<<<<<<< HEAD
                         <tr class="bg-danger text-white">
+=======
+                        <tr class="bg-light text-black">
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                             <th style="width: 10px">
                                 #
                             </th>

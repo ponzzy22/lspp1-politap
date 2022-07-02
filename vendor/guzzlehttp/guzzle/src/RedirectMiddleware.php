@@ -196,8 +196,13 @@ class RedirectMiddleware
             $modify['remove_headers'][] = 'Referer';
         }
 
+<<<<<<< HEAD
         // Remove Authorization and Cookie headers if URI is cross-origin.
         if (Psr7\UriComparator::isCrossOrigin($request->getUri(), $modify['uri'])) {
+=======
+        // Remove Authorization and Cookie headers if required.
+        if (self::shouldStripSensitiveHeaders($request->getUri(), $modify['uri'])) {
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
             $modify['remove_headers'][] = 'Authorization';
             $modify['remove_headers'][] = 'Cookie';
         }
@@ -206,8 +211,36 @@ class RedirectMiddleware
     }
 
     /**
+<<<<<<< HEAD
      * Set the appropriate URL on the request based on the location header.
      */
+=======
+     * Determine if we should strip sensitive headers from the request.
+     *
+     * We return true if either of the following conditions are true:
+     *
+     * 1. the host is different;
+     * 2. the scheme has changed, and now is non-https.
+     */
+    private static function shouldStripSensitiveHeaders(
+        UriInterface $originalUri,
+        UriInterface $modifiedUri
+    ): bool {
+        if (\strcasecmp($originalUri->getHost(), $modifiedUri->getHost()) !== 0) {
+            return true;
+        }
+
+        if ($originalUri->getScheme() !== $modifiedUri->getScheme() && 'https' !== $modifiedUri->getScheme()) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Set the appropriate URL on the request based on the location header.
+     */
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     private static function redirectUri(
         RequestInterface $request,
         ResponseInterface $response,

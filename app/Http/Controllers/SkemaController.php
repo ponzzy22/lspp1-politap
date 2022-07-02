@@ -35,8 +35,11 @@ class SkemaController extends Controller
             'asesor_id' => ['required'],
             'tuk_id' => ['required'],
             'status_id' => ['required'],
+<<<<<<< HEAD
         ],[
             'skema.required' => 'Skemanya mana?',
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         ]);
         $skema = Skema::create([
             'kode_skema' =>$request->kode_skema,

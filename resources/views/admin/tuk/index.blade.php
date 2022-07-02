@@ -143,7 +143,11 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
+<<<<<<< HEAD
                                                             <a href="{{ route('tuk.show', Crypt::encryptString($asu->id)) }}"><button
+=======
+                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                                                     type="submit"
                                                                     class="btn btn-warning btn-sm btn-block"><i
                                                                         class="fa fa-eye "></i> Edit & Lihat

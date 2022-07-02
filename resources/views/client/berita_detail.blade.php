@@ -2,15 +2,21 @@
 @section('judul')
     {{ $berita->title }}
 @endsection
+<<<<<<< HEAD
 
 @section('berita')
     active
+=======
+@section('css')
+    <link rel="stylesheet" href="{{ asset('client/Detail-Berita.css') }}">
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 @endsection
 
 @section('css')
 @endsection
 
 @section('isi')
+<<<<<<< HEAD
     <div class="single-services">
         <div class="container">
             <div style="margin-bottom: 100px" class="row" id="tabs">
@@ -41,6 +47,9 @@
 
 
     {{-- <section class="u-clearfix u-grey-5 u-section-1" id="carousel_eba2">
+=======
+    <section class="u-clearfix u-grey-5 u-section-1" id="carousel_eba2">
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         <div class="u-clearfix u-sheet u-sheet-1">
             <img src="{{ asset($berita->image) }}" alt="" class="u-image u-image-default u-image-1" data-image-width="1620"
                 data-image-height="1080" data-animation-name="customAnimationIn" data-animation-duration="1000">
@@ -57,7 +66,11 @@
                                 <div class="u-border-8 u-border-custom-color-2 u-expanded-width u-line u-line-horizontal u-line-1"
                                     data-animation-name="customAnimationIn" data-animation-duration="1000"></div>
                                 <p class="u-text u-text-custom-color-1 u-text-2" data-animation-name="customAnimationIn"
+<<<<<<< HEAD
                                     data-animation-duration="1000">{{ $berita->created_at->format('d-M-Y') }}</p>
+=======
+                                    data-animation-duration="1000">{{ $berita->created_at }}</p>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 <p class="u-text u-text-custom-color-1 u-text-2" data-animation-name="customAnimationIn"
                                     data-animation-duration="1000">{{ $berita->kategori->kategori }}</p>
                                 <p class="u-custom-font u-heading-font u-text u-text-3"

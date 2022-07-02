@@ -184,8 +184,12 @@
                                                                             class="btn btn-inverse-info btn-sm btn-block"><i
                                                                                 class="fa fa-eye "></i> Lihat
                                                                             Kompetensi</button></a>
+<<<<<<< HEAD
                                                                     <form
                                                                         action="{{ route('skkni.destroy', $asu->id) }}"
+=======
+                                                                    <form action="{{ route('skkni.destroy', $asu->id) }}"
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                                                         method="POST"
                                                                         onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                                                         @csrf

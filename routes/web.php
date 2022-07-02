@@ -179,7 +179,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
     Route::resource('identitas', Upload_DokumenController::class);
     Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
+<<<<<<< HEAD
     Route::get('Pendaftaran_Sertifikasi', [AsesiController::class, 'edit2'])->name('profil.edit2');
+=======
+    Route::get('edit2', [AsesiController::class, 'edit2'])->name('profil.edit2');
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
     Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
     Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');

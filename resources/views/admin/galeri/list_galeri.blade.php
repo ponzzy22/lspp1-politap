@@ -21,6 +21,7 @@
     <!-- /////////////////////////////////// -->
     <!-- TAMBAH DATA -->
     <!-- /////////////////////////////////// -->
+<<<<<<< HEAD
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
             <div class="card-header" role="tab" id="heading-10">
@@ -41,6 +42,32 @@
                         <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
                                 class="fas fa-save"></i></button>
                     </form>
+=======
+    <div class="col-md-12">
+        <div class="mt-4">
+            <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading-10">
+                        <h6 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse-10" aria-expanded="false" aria-controls="collapse-10"
+                                class="collapsed">
+                                + Tambah Album Baru
+                            </a>
+                        </h6>
+                    </div>
+                    <div id="collapse-10" class="collapse" role="tabpanel" aria-labelledby="heading-10"
+                        data-parent="#accordion-4" style="">
+                        <div class="card-body">
+                            <form action="{{ route('galeri.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <input type="text" name="galeri" class="form-control" placeholder="Nama Album"
+                                    value=""><br>
+                                <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
+                                        class="fas fa-save"></i></button>
+                            </form>
+                        </div>
+                    </div>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 </div>
             </div>
         </div>
@@ -62,7 +89,11 @@
                                     <p>{{ $asu->created_at }}</p>
                                 </figcaption>
                             </figure>
+<<<<<<< HEAD
                             <button class="btn btn-dark btn-sm dropdown-toggle" type="button"
+=======
+                            <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                                 <i class="fa fa-cog"></i> {{ $asu->galeri }}
@@ -76,7 +107,11 @@
                                     @csrf
                                     @method('delete')
                                     <a href=""><button type="submit"
+<<<<<<< HEAD
                                             class="btn btn-danger btn-sm btn-block"><i class="fa fa-trash "></i>
+=======
+                                            class="btn btn-inverse-danger btn-sm btn-block"><i class="fa fa-trash "></i>
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                             Hapus Album {{ $asu->galeri }}</button></a>
                                 </form>
                             </div>

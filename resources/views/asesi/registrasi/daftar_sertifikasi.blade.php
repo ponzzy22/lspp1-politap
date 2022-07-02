@@ -12,7 +12,11 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
+<<<<<<< HEAD
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
+=======
+            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tabel Skema</li>
             </ol>
@@ -173,6 +177,7 @@
                                 value="{{ old('alamat', Auth::user()->alamat) }}">
                             <input type="hidden" class="form-control" name="negara"
                                 value="{{ Auth::user()->negara }}">
+<<<<<<< HEAD
                             <input type="hidden" name="institusi" value="{{ old('institusi', Auth::user()->institusi) }}">
                             <input type="hidden" name="email3" value="{{ old('email3', Auth::user()->email3) }}">
                             <input type="hidden" name="postal" value="{{ old('postal', Auth::user()->postal) }}">
@@ -204,6 +209,8 @@
                                     </div>
                                 </div>
                             </div>
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                             <ol>
                                 <li>Jika anda yakin ingin memilih skema ini maka silahkan pilih "<span class="text text-success">
                                         Konfirmasi Pendaftaran</span>".

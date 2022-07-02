@@ -87,7 +87,11 @@
                             <th style="width: 200px">
                                 <a href="{{ route('dashasesi.index') }}"><button
                                         class="btn btn-rounded btn-success btn-block btn-sm btn-block font-weight-bold"
+<<<<<<< HEAD
                                         type="submit">Simpan Perubahan
+=======
+                                        type="submit">Selanjutnya
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                         <i class="fas fa-angle-double-right"></i>
                                     </button></a>
 

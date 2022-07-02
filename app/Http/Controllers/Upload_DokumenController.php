@@ -49,9 +49,12 @@ class Upload_DokumenController extends Controller
         $data = [
             'status' => $request->status,
             'koreksi' => $request->koreksi,
+<<<<<<< HEAD
             'y' => $request->y,
             'n' => $request->n,
             'z' => $request->z,
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
             'image' => 'uploads/uploads_file_register/' . $new_image,
         ];
     Upload_file::whereId($id)->update($data);

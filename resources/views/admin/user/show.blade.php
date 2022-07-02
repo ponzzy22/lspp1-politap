@@ -25,7 +25,10 @@
                 class="form-sample">
                 @csrf
                 @method('put')
+<<<<<<< HEAD
                 <!-- <input type="hidden" name="role" value="user"> -->
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 <br>
                 <div class="row">
                     <div class="col-md-6">

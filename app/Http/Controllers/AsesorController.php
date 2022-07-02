@@ -34,7 +34,11 @@ class AsesorController extends Controller
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
             $image->move('uploads/asesor/', $new_image);
+<<<<<<< HEAD
             $asesor_data = Asesor::create([
+=======
+            $asesor_data = [
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
@@ -44,7 +48,11 @@ class AsesorController extends Controller
                 'status' => $request->status,
                 'skema' => $request->skema,
                 'image' => 'uploads/asesor/'.$new_image,
+<<<<<<< HEAD
             ]);
+=======
+            ];
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         }
         else{
             $asesor_data = Asesor::create( [

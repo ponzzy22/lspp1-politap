@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+<<<<<<< HEAD
 ## 2.4.0 - 2022-06-20
 
 ### Added
@@ -14,20 +15,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added provisional PHP 8.2 support
 - Added `UriComparator::isCrossOrigin` method
 
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 ## 2.3.0 - 2022-06-09
 
 ### Fixed
 
+<<<<<<< HEAD
 - Added `Header::splitList` method
 - Added `Utils::tryGetContents` method
 - Improved `Stream::getContents` method
+=======
+- Added `Header::splitList()`
+- Added `Utils::tryGetContents`
+- Improved `Stream::getContents()`
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 - Updated mimetype mappings
 
 ## 2.2.2 - 2022-06-08
 
 ### Fixed
 
+<<<<<<< HEAD
 - Fix `Message::parseRequestUri` for numeric headers
+=======
+- Fix `Message::parseRequestUri()` for numeric headers
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 - Re-wrap exceptions thrown in `fread` into runtime exceptions
 - Throw an exception when multipart options is misformatted
 

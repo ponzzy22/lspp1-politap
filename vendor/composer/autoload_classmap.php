@@ -29,8 +29,11 @@ return array(
     'App\\Http\\Controllers\\FileController' => $baseDir . '/app/Http/Controllers/FileController.php',
     'App\\Http\\Controllers\\Fileapl2Controller' => $baseDir . '/app/Http/Controllers/Fileapl2Controller.php',
     'App\\Http\\Controllers\\FilelainController' => $baseDir . '/app/Http/Controllers/FilelainController.php',
+<<<<<<< HEAD
     'App\\Http\\Controllers\\Formapl1Controller' => $baseDir . '/app/Http/Controllers/Formapl1Controller.php',
     'App\\Http\\Controllers\\Formapl2Controller' => $baseDir . '/app/Http/Controllers/Formapl2Controller.php',
+=======
+>>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     'App\\Http\\Controllers\\GaleriController' => $baseDir . '/app/Http/Controllers/GaleriController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\InfoController' => $baseDir . '/app/Http/Controllers/InfoController.php',
