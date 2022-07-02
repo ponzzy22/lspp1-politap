@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('asesor.index') }}">Asesor</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detail & Update data Asesor</li>
@@ -119,18 +119,6 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
-                                            <label class="col-sm-3 col-form-label">Skema </label>
-                                            <div class="col-sm-9">
-                                                <input type="text" maxlength="100" name="skema" class="form-control"
-                                                    value="{{ $asesor->skema }}">
-                                                @error('skema')
-                                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Kode Asesor</label>
                                             <div class="col-sm-9">
                                                 <input type="text" maxlength="100" name="nik" class="form-control"
@@ -140,7 +128,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>                                                                  
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
@@ -201,6 +189,18 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label">Skema </label>
+                                            <div class="col-sm-9">
+                                                <input type="text" maxlength="100" name="skema" class="form-control"
+                                                    value="{{ $asesor->skema }}">
+                                                @error('skema')
+                                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                    </div>   
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Status</label>

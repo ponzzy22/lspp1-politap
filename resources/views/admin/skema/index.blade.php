@@ -7,7 +7,7 @@
             <i class="fab fa-pagelines"></i> Skema
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Skema</li>
             </ol>
@@ -61,7 +61,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Prodi</label>
                                     <div class="col-sm-9">
-                                        <select class="form-control" name="prodi_id">
+                                        <select class="form-control" name="skema_id">
                                             <option value="" holder>Pilih Prodi</option>
                                             @foreach ($prodi as $result)
                                                 <option value="{{ $result->id }}">{{ $result->prodi }}</option>
@@ -161,14 +161,14 @@
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
                                                     style="width: 575.75px;">Skema</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                <!-- <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
                                                     style="width: 97.5469px;">Pengelola</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending"
-                                                    style="width: 106.1094px;">Prodi</th>
+                                                    style="width: 106.1094px;">Prodi</th> -->
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending"
@@ -187,14 +187,14 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('skema.show', $asu->id) }}"><button
+                                                            <a href="{{ route('skema.show', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-success btn-block"><i
                                                                         class="fa fa-list "></i> Unit
                                                                 </button></a>
-                                                            <a href="{{ route('skema.edit', $asu->id) }}"><button
+                                                            <a href="{{ route('skema.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-warning btn-block"><i
                                                                         class="fa fa-edit "></i> Edit Skema</button></a>
-                                                            <a href="{{ route('skema.detail', $asu->id) }}"><button
+                                                            <a href="{{ route('skema.detail', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-info btn-block"><i
                                                                         class="fa fa-eye "></i> Detail
                                                                     Skema</button></a>
@@ -206,16 +206,16 @@
                                                                 <a href=""><button type="submit"
                                                                         class="btn btn-danger btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus
-                                                                        Skema</button></a>
+                                       
                                                             </form>
                                                         </div>
                                                     </td>
                                                     <td class="">{{ $asu->kode_skema }}</td>
                                                     <td>{{ $asu->skema }}</td>
-                                                    <td>{{ $asu->asesor->nama }}</td>
+                                                    <!-- <td>{{ $asu->asesor->nama }}</td>
                                                     <td><label
                                                             class="badge badge-light">{{ $asu->prodi->prodi }}</label>
-                                                    </td>
+                                                    </td> -->
                                                     <td><label
                                                             class="badge badge-light">{{ $asu->status->status }}</label>
                                                     </td>

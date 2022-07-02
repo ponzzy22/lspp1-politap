@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 19, 2022 at 04:12 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Host: localhost
+-- Generation Time: Jun 27, 2022 at 11:19 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.0.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,17 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asesor` (
   `id` int(11) NOT NULL,
-  `nik` varchar(255) DEFAULT NULL,
-  `nama` varchar(255) DEFAULT NULL,
+  `nik` varchar(50) DEFAULT NULL,
+  `nama` varchar(50) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
-  `sex` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `alamat` varchar(50) DEFAULT NULL,
+  `sex` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `no_hp` varchar(20) DEFAULT NULL,
-  `skema` varchar(200) DEFAULT NULL
+  `skema` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -48,38 +48,36 @@ CREATE TABLE `asesor` (
 
 INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `status`, `updated_at`, `created_at`, `no_hp`, `skema`) VALUES
 (1, '-', '-', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00.000000', '0000-00-00 00:00:00.000000', NULL, NULL),
-(24, 'MET.000.010629 2017', 'Adha Panca Wardanu', NULL, '-', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-06-16 10:26:44.075967', '2022-06-16 10:26:44.075967', '34532', 'Skema Sertifikasi Kompetensi KKNI Sertifikat III Bidang Pengelasan SMAw'),
-(25, 'MET.000.009812 2021', 'Ahmad Ravi', NULL, 'Luwu Utara, Sulawesi Selatan', NULL, NULL, 'Aktif', '2022-05-09 21:53:14.000000', '2022-05-09 21:53:14.000000', NULL, NULL),
-(26, 'MET.000.004633 2020', 'Alfath Desita Jumiar', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:35.000000', '2022-05-09 21:53:35.000000', NULL, NULL),
-(27, 'MET.000.010618 2017', 'Ar-Razy Muhammad', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:53:48.000000', '2022-05-09 21:53:48.000000', NULL, NULL),
-(28, 'MET.000.010613 2017', 'Beny Setiawan', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:03.000000', '2022-05-09 21:54:03.000000', NULL, NULL),
-(29, 'MET.000.009818 2021', 'Darmanto', NULL, 'Lamandau, Kalimantan Tengah', NULL, NULL, 'Aktif', '2022-06-16 10:26:50.260657', '2022-06-16 10:26:50.260657', NULL, NULL),
-(30, 'MET.000.009815 2021', 'Erick Radwitya', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:38.000000', '2022-05-09 21:54:38.000000', NULL, NULL),
-(31, 'MET.000.009816 2021', 'Fachrul Rozie', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:54:54.000000', '2022-05-09 21:54:54.000000', NULL, NULL),
-(32, 'MET.000.009813 2021', 'Firmanilah Kamil', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:07.000000', '2022-05-09 21:55:07.000000', NULL, NULL),
-(33, 'MET.000.009822 2021', 'Halimansyah', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:18.000000', '2022-05-09 21:55:18.000000', NULL, NULL),
-(34, 'MET.000.010619 2017', 'Irfan Cholid', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:32.000000', '2022-05-09 21:55:32.000000', NULL, NULL),
-(35, 'MET.000.009819 2021', 'Kharisma', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:45.000000', '2022-05-09 21:55:45.000000', NULL, NULL),
-(36, 'MET.000.009824 2021', 'Maya Santi', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:55:58.000000', '2022-05-09 21:55:58.000000', NULL, NULL),
-(37, 'MET.000.009821 2021', 'Nenengsih Verawati', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:56:12.000000', '2022-05-09 21:56:12.000000', NULL, NULL),
-(38, 'MET.000.009820 2021', 'Rosmalinda', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:56:36.000000', '2022-05-09 21:56:36.000000', NULL, NULL),
-(39, 'MET.000.010604 2017', 'Saifudin Usman', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:56:59.000000', '2022-05-09 21:56:59.000000', NULL, NULL),
-(40, 'MET.000.010608 2017', 'Venti Jatsiyah', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:57:12.000000', '2022-05-09 21:57:12.000000', NULL, NULL),
-(41, 'MET.000.009814 2021', 'Yudi Chandra', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:57:31.000000', '2022-05-09 21:57:31.000000', NULL, NULL),
-(42, 'MET.000.010614 2017', 'Yusuf', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:57:46.000000', '2022-05-09 21:57:46.000000', NULL, NULL),
-(43, 'MET.000.009817 2021', 'Muhammad Jimi Rizaldi', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 21:59:06.000000', '2022-05-09 21:59:06.000000', NULL, NULL),
-(44, 'MET.000.010609 2017', 'Encik Eko Rifkowaty', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-05-09 22:00:12.000000', '2022-05-09 22:00:12.000000', NULL, NULL),
-(45, NULL, 'Eka Wahyudi', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-05-11 12:26:19.000000', '2022-05-11 12:26:19.000000', NULL, NULL),
-(46, NULL, 'A. Nova Zulfahmi', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:38:02.000000', '2022-05-11 12:38:02.000000', NULL, NULL),
-(47, NULL, 'Budi Pratomo', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:38:38.000000', '2022-05-11 12:38:38.000000', NULL, NULL),
-(48, NULL, 'Dian Fitriani', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:38:58.000000', '2022-05-11 12:38:58.000000', NULL, NULL),
-(49, NULL, 'M. Iwan Toro', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:40:37.000000', '2022-05-11 12:40:37.000000', NULL, NULL),
-(50, NULL, 'Novi Indah Pradasari', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:41:19.000000', '2022-05-11 12:41:19.000000', NULL, NULL),
-(51, NULL, 'Sartika', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:41:51.000000', '2022-05-11 12:41:51.000000', NULL, NULL),
-(52, NULL, 'Sy. Indra Septiansyah', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:24.000000', '2022-05-11 12:42:24.000000', NULL, NULL),
-(53, NULL, 'Syarifah Aqla', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:42:49.000000', '2022-05-11 12:42:49.000000', NULL, NULL),
-(54, NULL, 'Firman', NULL, NULL, NULL, NULL, 'Aktif', '2022-05-11 12:47:57.000000', '2022-05-11 12:47:57.000000', NULL, NULL),
-(56, '2312312gdfsdas', '435345', NULL, 'Kota Pontianak, Kalimantan Barat', 'Laki-laki', 'ramadhanidwi289@gmail.com', 'Aktif', '2022-06-10 00:24:40.000000', '2022-06-10 07:24:40.793242', '012121212121212', 'Skema Sertifikasi Kompetensi KKNI Sertifikat III Bidang Pengelasan SMA');
+(24, 'MET.000.010629 2017', 'Adha Panca Wardanu, S.TP., M.P', NULL, '-', 'Laki-laki', 'cino7130@gmail.com', 'Aktif', '2022-06-26 22:51:47.000000', '2022-06-27 05:51:47.814919', '034529', NULL),
+(25, 'MET.000.009812 2021', 'Ahmad Ravi, S.Pd., M.Pd', NULL, 'Luwu Utara, Sulawesi Selatan', NULL, NULL, 'Aktif', '2022-06-24 01:45:49.000000', '2022-06-24 08:45:49.214812', NULL, NULL),
+(26, 'MET.000.004633 2020', 'Alfath Desita Jumiar, S.P., M.Si', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:46:51.000000', '2022-06-24 08:46:51.168584', NULL, NULL),
+(27, 'MET.000.010618 2017', 'Ar-Razy Muhammad, S.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:47:19.000000', '2022-06-24 08:47:19.457959', NULL, NULL),
+(28, 'MET.000.010613 2017', 'Beny Setiawan, S.Tp., M.P', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:47:59.000000', '2022-06-24 08:47:59.462946', NULL, NULL),
+(29, 'MET.000.009818 2021', 'Darmanto, S.Kom., M.Kom', NULL, 'Lamandau, Kalimantan Tengah', NULL, NULL, 'Aktif', '2022-06-24 01:48:39.000000', '2022-06-24 08:48:39.058245', NULL, NULL),
+(30, 'MET.000.009815 2021', 'Erick Radwitya, S.S.T., M.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:49:17.000000', '2022-06-24 08:49:17.508052', NULL, NULL),
+(31, 'MET.000.009816 2021', 'Fachrul Rozie, S.T., M.Tr.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:49:54.000000', '2022-06-24 08:49:54.065927', NULL, NULL),
+(32, 'MET.000.009813 2021', 'Firmanilah Kamil, S.Pd., M.Pd', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:51:47.000000', '2022-06-24 08:51:47.995468', NULL, NULL),
+(33, 'MET.000.009823 20212sd', 'M. Iwan Toro, A.Mdsadasdasdasdasdas', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-06-27 06:11:00.580091', '2022-06-27 06:11:00.580091', NULL, NULL),
+(34, 'MET.000.010619 2017', 'Irfan Cholid, S.P., M.MA', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:54:17.000000', '2022-06-24 08:54:17.968855', NULL, NULL),
+(35, 'MET.000.009819 2021', 'Kharisma, S.Kom., M.Kom', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:54:48.000000', '2022-06-24 08:54:48.944209', NULL, NULL),
+(36, 'MET.000.009824 2021', 'Maya Santi, S.Pd., M.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:55:19.000000', '2022-06-24 08:55:19.401027', NULL, NULL),
+(37, 'MET.000.009821 2021', 'Nenengsih Verawati, S.TP., M.P', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:55:54.000000', '2022-06-24 08:55:54.633013', NULL, NULL),
+(38, 'MET.000.009820 2021', 'Rosmalinda, S.ST., M.P', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:56:23.000000', '2022-06-24 08:56:23.286903', NULL, NULL),
+(39, 'MET.000.010604 2017', 'Saifudin Usman, S.T., M.Tr.Kom', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:56:55.000000', '2022-06-24 08:56:55.623026', NULL, NULL),
+(40, 'MET.000.010608 2017', 'Venti Jatsiyah, S.P., M.Si', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:57:39.000000', '2022-06-24 08:57:39.193338', NULL, NULL),
+(41, 'MET.000.009814 2021', 'Yudi Chandra, S.ST., M.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:58:21.000000', '2022-06-24 08:58:21.279745', NULL, NULL),
+(42, 'MET.000.010614 2017', 'Yusuf, S.ST., M.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:58:49.000000', '2022-06-24 08:58:49.705848', NULL, NULL),
+(43, 'MET.000.009817 2021', 'M. Jimi Rizaldi, S.ST., M.T', NULL, 'Ketapang, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 01:59:53.000000', '2022-06-24 08:59:53.499269', NULL, NULL),
+(44, 'MET.000.010609 2017', 'Encik Eko Rifkowaty, S.TP., M.P', NULL, 'Kota Pontianak, Kalimantan Barat', NULL, NULL, 'Aktif', '2022-06-24 02:00:39.000000', '2022-06-24 09:00:39.218082', NULL, NULL),
+(45, 'MET.000.01512 2022', 'Eka Wahyudi, S.Pd., M.Cs', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-06-24 02:01:25.000000', '2022-06-24 09:01:25.436973', NULL, NULL),
+(46, 'MET.OOO.008402 2021', 'A. Nova Zulfahmi, S.Pi., M.Sc', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-06-24 02:02:59.000000', '2022-06-24 09:02:59.333408', NULL, NULL),
+(47, 'MET.000.008401 2021', 'Budi Pratomo Sibuea, S.ST., M.ST', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-06-24 02:03:33.000000', '2022-06-24 09:03:33.979241', NULL, NULL),
+(49, 'MET.000.009823 2021', 'M. Iwan Toro, A.Md', NULL, NULL, 'Laki-laki', NULL, 'Aktif', '2022-06-24 02:04:30.000000', '2022-06-24 09:04:30.622465', NULL, NULL),
+(50, 'MET.000.004637 2020', 'Novi Indah Pradasari, S.Kom., M.Kom', NULL, NULL, 'Perempuan', NULL, 'Aktif', '2022-06-24 02:07:20.000000', '2022-06-24 09:07:20.366150', NULL, NULL),
+(51, 'MET.000.004642 2020', 'Sartika, S.Si., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:07:50.000000', '2022-06-24 09:07:50.930562', NULL, NULL),
+(52, 'MET.000.004645 2020', 'Sy. Indra Septiansyah, S.Si., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:08:27.000000', '2022-06-24 09:08:27.711489', NULL, NULL),
+(53, 'MET.000.004643 2020', 'Syarifah Aqla, S.Pd., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:09:18.000000', '2022-06-24 09:09:18.147761', NULL, NULL),
+(54, 'MET.000.004644 2020', 'Firman, S.Pd., M.P.Fis', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:09:54.000000', '2022-06-24 09:09:54.330513', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -100,8 +98,8 @@ CREATE TABLE `banner` (
 --
 
 INSERT INTO `banner` (`id`, `name`, `image`, `updated_at`, `created_at`) VALUES
-(1, 'Skema', 'public/uploads/info/16549630353.jpg', '2022-06-11 08:57:15.000000', '2022-06-11 15:57:15.101756'),
-(2, 'TUK', 'public/uploads/info/16548771261652157112Kegiatan Mahasiswa (5).jpeg', '2022-06-10 09:05:26.000000', '2022-06-10 16:05:26.243379');
+(1, 'Skema', 'uploads/info/16563141241655040701index.png', '2022-06-27 00:15:24.000000', '2022-06-27 07:15:24.820887'),
+(2, 'TUK', 'uploads/info/16563145261655040767WhatsApp Image 2022-03-10 at 16.14.59.jpeg', '2022-06-27 00:22:06.000000', '2022-06-27 07:22:06.496930');
 
 -- --------------------------------------------------------
 
@@ -175,20 +173,10 @@ CREATE TABLE `data_registers` (
   `negara` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kode_post` int(11) DEFAULT NULL,
-  `no_hp` bigint(20) DEFAULT NULL,
-  `provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kabupaten` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kota` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kecamatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jurusan_id` int(11) DEFAULT NULL,
   `semester_id` int(11) DEFAULT NULL,
-  `ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ktm` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `khs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `lain` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
   `nim` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
   `time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -199,17 +187,22 @@ CREATE TABLE `data_registers` (
   `id_skema` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `kode_skema` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `koreksi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `valuesurel` varchar(222) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `valuelahir` varchar(222) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `institusi` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email3` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jabatan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postal` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `data_registers`
 --
 
-INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `image`, `jurusan_id`, `semester_id`, `ktp`, `ktm`, `khs`, `lain`, `created_at`, `updated_at`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`, `id_skema`, `kode_skema`, `koreksi`, `valuesurel`, `valuelahir`) VALUES
-(2614, 'Instalasi Listrik', 'belom-26', '26', 'Ponsianus JOPI', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzzy22@gmail.com', 'Ketapang22', '2000-06-12', '2', 'Indonesia2', 'BTN Puri Nirwana2', NULL, 91256789696, NULL, NULL, NULL, NULL, 'uploads/beranda_img2/1655350830loginadmin.png', 4, 5, NULL, NULL, NULL, NULL, '2022-06-17 10:22:41', '2022-06-17 13:09:00', '3042020058', NULL, NULL, 1, 1, NULL, '-', NULL, '-', NULL, NULL, NULL),
-(2617, 'Personil K3', 'belom-26', '26', 'Ponsianus Jopi', '<h4 style=\'color: green\'>Menunggu Validasi...</h4>', 'ponzzy22@gmail.com', 'Ketapang', '2000-06-12', '2', 'Indonesia', 'BTN Puri Nirwana', NULL, 812156390909, NULL, NULL, NULL, NULL, NULL, 4, 4, NULL, NULL, NULL, NULL, '2022-06-17 12:20:17', '2022-06-17 13:19:18', '3042020058', NULL, NULL, 1, 1, NULL, '26', '17', '-', NULL, NULL, NULL);
+INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `image`, `jurusan_id`, `semester_id`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`, `id_skema`, `kode_skema`, `koreksi`, `institusi`, `email3`, `jabatan`, `telp`, `fax`, `postal`, `created_at`, `updated_at`) VALUES
+(219, 'Junior Web Programmer', '-2', '2', 'Ponsianus Jopi2', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzy22e@gmail.com', 'Ketapang', '1976-04-13', '1', 'Indonesia', 'Ketapang Kalbar', NULL, '0821500401322', 'uploads/beranda_img2/1656250853d795ebcce6432ef85d4bd6cd6f5fe363.jpg', 4, 4, '3042020058', NULL, NULL, 1, 1, NULL, '-', NULL, '-', NULL, 'apa', '23423@fdsdf', 'domaan', '23234', '231231', '2312', '2022-06-26 09:30:15', '2022-06-26 09:40:30');
 
 -- --------------------------------------------------------
 
@@ -258,8 +251,6 @@ INSERT INTO `elemen` (`id`, `unikom_id`, `asesmen`, `kriteria`, `created_at`, `u
 (50, 80, 'Melaksanakan pengelasan pipa pada posisis sumbu miring tidak dapat diputar', '<p>2.1 karakteristik mesin las dan teknik pengelasan dipahami sesuai dengan kebutuhan pengelasan</p><p>2.2 besarnya arus listrik diatur berdasarkan jenis dan ukuran elektroda las yang digunakan atau WPS yang di tentukan</p><p>2.3 Las Cantum ( tack weld ) dibuat dengan ukuran dan jumlah sesuai dengan ukuran bahan yang dilas</p><p>2.4 pengelasan pipa pada pelat posisi sumbu miring tidak dapat diputar didemonstrasikan sesuai dengan teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3</p><p>2.5 pengelasan Pipa sambungan tumpul kampuh V posisi sumbu miring tidak dapat diputar di demonstrasikan sesuai dengan Teknik pengelasan yang berlaku ( SOP ) dengan menerapkan K3<br></p>', '2022-05-09 01:14:47', '2022-05-09 01:14:47'),
 (51, 80, 'Melakasanakan pemeriksaan hasil pengelasan secara visual', '<p>3.1 Alat uji dan alat ukur hasil pengelasan diidentifikasi disiapkan dan diperiksa fungsi dan validasinnya</p><p>3.2 Seluruh hasil pengelasan diperiksa secara visual dan dibandingkan dengan standar baku</p><p>3.3 Hasil pemeriksaan visual disimpulkan dan ditafsirkan</p><p>3.4 Perbaikan hasil las (bila diperlukan) dilakukan secara SOP<br></p>', '2022-05-09 01:18:16', '2022-05-09 01:18:16'),
 (52, 80, 'Melaporkan hasil pengelasan', '<p>4.1 Instrumen Pengamatan proses dan pengukuran hasil las ( WPQR ) dipahami</p><p>4.2 Data hasil pengamatan dan pengukuran diinput dalam instrumen</p><p>4.3 Laporan hasil pengamatan dan pengukuran diserahkan kepada yang berhak sesuai dengan SOP<br></p>', '2022-05-09 01:21:02', '2022-05-09 01:21:02'),
-(53, 86, '-', '<p>-<br></p>', '2022-05-10 21:44:54', '2022-05-10 21:44:54'),
-(54, 94, '-', '<p>-<br></p>', '2022-05-10 21:45:18', '2022-05-10 21:45:18'),
 (58, 109, 'Mengidentifikasi  konsep data dan struktur data', '<p>1.1 Konsep data dan struktur data diidentifikasi sesuai dengan konteks permasalahan.<br>1.2 Alternatif struktur data dibandingkan kelebihan dan kekurangannya untuk konteks permasalahan yang diselesaikan.<br></p>', '2022-05-11 13:11:52', '2022-05-11 13:11:52'),
 (59, 109, 'Menerapkan struktur data dan akses terhadap struktur data tersebut', '2.1 Struktur data diimplementasikan sesuai dengan bahasa pemrograman yang akan dipergunakan.<br>2.2 Akses terhadap data dinyatakan dalam algoritma yang efisiensi sesuai bahasa pemrograman yang akan dipakai. <br>', '2022-05-11 13:13:11', '2022-05-11 13:13:11'),
 (60, 110, 'Mengidentifikasi rancangan user interface', '<p>1.1 Rancangan user interface diidentifikasi sesuai kebutuhan. <br>1.2 Komponen user interface dialog diidentifikasi sesuai konteks rancangan proses.<br>1.3 Urutan dari akses komponen user interface dialog dijelaskan.<br>1.4 Simulasi (mock-up) dari aplikasi yang akan dikembangkan dibuat. <br></p>', '2022-05-11 13:14:49', '2022-05-11 13:14:49'),
@@ -284,11 +275,8 @@ INSERT INTO `elemen` (`id`, `unikom_id`, `asesmen`, `kriteria`, `created_at`, `u
 (79, 116, 'Mempersiapkan kode program', '<p>1.1 Kode program sesuai spesifikasi disiapkan. </p><p>1.2 Debugging tools untuk melihat proses suatu modul dipersiapkan. <br></p>', '2022-05-11 13:32:47', '2022-05-11 13:32:47'),
 (80, 116, 'Melakukan debugging', '<p>2.1 Kode program dikompilasi sesuai bahasa pemrograman yang digunakan. </p><p>2.2 Kriteria lulus build dianalisis. </p><p>2.3 Kriteria eksekusi aplikasi dianalisis. </p><p>2.4 Kode kesalahan dicatat. <br></p>', '2022-05-11 13:33:17', '2022-05-11 13:33:17'),
 (81, 116, 'Memperbaiki program', '<p>3.1 Perbaikan terhadap kesalahan kompilasi maupun build dirumuskan. </p><p>3.2 Perbaikan dilakukan. <br></p>', '2022-05-11 13:33:50', '2022-05-11 13:33:50'),
-(82, 117, '34234234', '<p>324234</p>', '2022-06-11 04:23:41', '2022-06-11 04:23:41'),
-(83, 118, '234234', '<p>2342342</p>', '2022-06-11 04:24:01', '2022-06-11 04:24:01'),
-(84, 119, 'na', '<p>aad</p>', '2022-06-11 04:24:32', '2022-06-11 04:24:32'),
-(85, 120, 'asu', '<p>asu</p>', '2022-06-11 05:17:29', '2022-06-11 05:17:29'),
-(86, 93, 'kimak', '<p>dfsdf</p>', '2022-06-11 06:07:28', '2022-06-11 06:07:28');
+(87, 124, 'Elemen1', '<p>Kriteria1</p>', '2022-06-26 10:57:29', '2022-06-26 10:57:41'),
+(88, 125, 'Elemen2', '<p>Kriteria2<br></p>', '2022-06-26 10:58:20', '2022-06-26 10:58:20');
 
 -- --------------------------------------------------------
 
@@ -669,27 +657,27 @@ INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 
 CREATE TABLE `pengelola` (
   `id` int(11) NOT NULL,
-  `keterangan` varchar(255) DEFAULT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `keterangan` varchar(50) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
+  `no_hp` varchar(20) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
   `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `no_hp` varchar(225) DEFAULT NULL,
-  `nama` varchar(225) DEFAULT NULL,
   `facebook` varchar(255) DEFAULT NULL,
   `twitter` varchar(255) DEFAULT NULL,
-  `intagram` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL
+  `intagram` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `pengelola`
 --
 
-INSERT INTO `pengelola` (`id`, `keterangan`, `image`, `updated_at`, `created_at`, `no_hp`, `nama`, `facebook`, `twitter`, `intagram`, `email`) VALUES
-(36, 'Ketua LSP', 'uploads/pengelola/16553938941655040745index1.jpg', '2022-06-16 08:38:15.000000', '2022-06-16 15:38:15.003816', NULL, 'Budi Pratomo Sibuea, S.ST., M.ST', NULL, 'Ketua LSP', NULL, NULL),
-(37, 'Manajer Sertifikasi', 'uploads/pengelola/16553922371655040684WhatsApp Image 2022-03-10 at 16.15.00.jpeg', '2022-06-16 08:39:45.000000', '2022-06-16 15:39:45.299556', NULL, 'A. Nova Zulfahmi, S.Pi., M.Sc', NULL, 'Manajer Sertifikasi', NULL, NULL),
-(38, 'Manajer Mutu', 'uploads/pengelola/16553940111655040767WhatsApp Image 2022-03-10 at 16.14.59.jpeg', '2022-06-16 08:40:22.000000', '2022-06-16 15:40:22.551450', NULL, 'Ahmad Ravi, S.Pd., M.Pd', NULL, 'Manajer Mutu', NULL, NULL),
-(39, 'Manajer Administrasi', 'uploads/pengelola/16553940451655040701index.png', '2022-06-16 08:40:45.000000', '2022-06-16 15:40:45.731786', NULL, 'Firmanilah Kamil, S.Pd., M.Pd', NULL, 'Manajer Administrasi', NULL, NULL);
+INSERT INTO `pengelola` (`id`, `nama`, `keterangan`, `image`, `no_hp`, `email`, `updated_at`, `created_at`, `facebook`, `twitter`, `intagram`) VALUES
+(36, 'Budi Pratomo Sibuea, S.ST., M.ST', 'Ketua LSP', 'uploads/pengelola/16553938941655040745index1.jpg', NULL, NULL, '2022-06-16 08:38:15.000000', '2022-06-16 15:38:15.003816', NULL, 'Ketua LSP', NULL),
+(37, 'A. Nova Zulfahmi, S.Pi., M.Sc', 'Manajer Sertifikasi', 'uploads/pengelola/16553922371655040684WhatsApp Image 2022-03-10 at 16.15.00.jpeg', NULL, NULL, '2022-06-16 08:39:45.000000', '2022-06-16 15:39:45.299556', NULL, 'Manajer Sertifikasi', NULL),
+(38, 'Ahmad Ravi, S.Pd., M.Pd', 'Manajer Mutu', 'uploads/pengelola/16553940111655040767WhatsApp Image 2022-03-10 at 16.14.59.jpeg', NULL, NULL, '2022-06-16 08:40:22.000000', '2022-06-16 15:40:22.551450', NULL, 'Manajer Mutu', NULL),
+(39, 'Firmanilah Kamil, S.Pd., M.Pd', 'Manajer Administrasi', 'uploads/pengelola/16553940451655040701index.png', NULL, NULL, '2022-06-16 08:40:45.000000', '2022-06-16 15:40:45.731786', NULL, 'Manajer Administrasi', NULL);
 
 -- --------------------------------------------------------
 
@@ -907,16 +895,16 @@ CREATE TABLE `skemas` (
 --
 
 INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `status_id`, `tuk_id`, `asesor_id`, `created_at`, `updated_at`) VALUES
-(8, '-', 'Asisten Kebun Kelapa Sawit', 17, '1', 1, 38, '2022-04-05 11:26:03', '2022-05-11 12:29:35'),
-(10, '-', 'Teknisi Laboratorium', 12, '1', 1, 44, '2022-04-11 09:44:53', '2022-05-11 12:21:50'),
-(13, '-', 'Kewirausahaan Industri', 14, '1', 1, 34, '2022-04-17 05:37:07', '2022-05-11 12:21:31'),
-(14, '-', 'Instalasi Listrik', 15, '1', 1, 30, '2022-04-17 05:43:24', '2022-05-11 12:21:04'),
-(15, '-', 'Sertifikat III Bidang Pengelasan SMAW', 10, '1', 1, 25, '2022-04-17 05:45:23', '2022-05-11 12:29:06'),
-(16, '-', 'Inspector Keamanan Pangan', 14, '1', 1, 24, '2022-05-11 12:19:42', '2022-05-11 12:19:42'),
-(17, '-', 'Personil K3', 11, '1', 1, 53, '2022-05-11 12:25:10', '2022-05-11 13:02:39'),
-(18, '-', 'Network Administrator Muda', 13, '1', 1, 45, '2022-05-11 12:27:05', '2022-05-11 12:27:05'),
-(19, '-', 'Junior Web Programmer', 13, '1', 1, 27, '2022-05-11 12:28:20', '2022-05-11 12:28:20'),
-(20, '-', 'Junior Graphic Designer', 13, '1', 1, 29, '2022-05-11 12:28:43', '2022-06-15 23:23:28');
+(8, 'SS.AKKS/LSPP/001/2022', 'Asisten Kebun Kelapa Sawit', 17, '1', 1, 38, '2022-04-05 11:26:03', '2022-06-24 01:28:26'),
+(10, 'SS.TL/LSPP/002/2022', 'Teknisi Laboratorium', 12, '1', 1, 44, '2022-04-11 09:44:53', '2022-06-24 01:29:13'),
+(13, 'SS.KI/LSPP/003/2022', 'Kewirausahaan Industri', 14, '1', 1, 34, '2022-04-17 05:37:07', '2022-06-24 01:29:44'),
+(14, 'SS.SPPTR/LSPP/009/2022', 'Supervisor Pemeliharaan Pemanfaatan Tegangan Rendah', 15, '1', 1, 30, '2022-04-17 05:43:24', '2022-06-24 01:42:27'),
+(15, 'SS.WS/LSPP/007/2022', 'Welding Supervisor', 10, '1', 1, 25, '2022-04-17 05:45:23', '2022-06-24 01:37:56'),
+(16, 'SS.PPJ/LSPP/010/2022', 'Pelaksanaan Pemeliharaan Jalan', 14, '1', 1, 24, '2022-05-11 12:19:42', '2022-06-24 01:43:32'),
+(17, 'SS.TKKK/LSPP/008/2022', 'Teknisi Keselamatan dan Kesehatan Kerja (K3)', 11, '1', 1, 53, '2022-05-11 12:25:10', '2022-06-24 01:36:27'),
+(18, 'SS.NAM/LSPP/004/2022', 'Network Administrator Muda', 13, '1', 1, 45, '2022-05-11 12:27:05', '2022-06-24 01:30:47'),
+(19, 'SS.JWP/LSPP/005/2022', 'Junior Web Programmer', 13, '1', 1, 27, '2022-05-11 12:28:20', '2022-06-24 01:31:28'),
+(20, 'SS.DGM/LSPP/006/2022', 'Desainer Grafis Muda', 13, '1', 1, 29, '2022-05-11 12:28:43', '2022-06-26 23:24:57');
 
 -- --------------------------------------------------------
 
@@ -972,7 +960,7 @@ CREATE TABLE `strorg` (
 --
 
 INSERT INTO `strorg` (`id`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
-(1, NULL, 'uploads/strorg/16556194821649792551Struktur LSP_1.jpg', '2022-06-18 23:18:02', '2022-06-19 06:18:02');
+(1, NULL, 'uploads/strorg/16563165851655040745index1.jpg', '2022-06-27 00:56:25', '2022-06-27 07:56:25');
 
 -- --------------------------------------------------------
 
@@ -1009,22 +997,29 @@ INSERT INTO `tokens` (`id`, `token`, `user_id`, `created_at`, `updated_at`) VALU
 
 CREATE TABLE `tuk` (
   `id` int(11) NOT NULL,
+  `kode` varchar(50) DEFAULT NULL,
+  `pengelola` varchar(50) DEFAULT NULL,
+  `tuk` varchar(50) DEFAULT NULL,
+  `alamat` varchar(50) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `pengelola` varchar(255) DEFAULT NULL,
-  `tuk` varchar(255) DEFAULT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
   `updated_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `kode` varchar(50) DEFAULT NULL
+  `created_at` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tuk`
 --
 
-INSERT INTO `tuk` (`id`, `image`, `pengelola`, `tuk`, `alamat`, `updated_at`, `created_at`, `kode`) VALUES
-(1, 'images/back/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg', '-', '-', '-', '2022-06-19 04:20:59.214903', '2022-06-19 04:20:59.214903', '-'),
-(2, 'images/back/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg', '-', '-', '-', '2022-06-19 04:20:59.214903', '2022-06-19 04:20:59.214903', '-');
+INSERT INTO `tuk` (`id`, `kode`, `pengelola`, `tuk`, `alamat`, `image`, `updated_at`, `created_at`) VALUES
+(1, '-', '-', '-', '-', 'images/back/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg', '2022-06-19 04:20:59.214903', '2022-06-19 04:20:59.214903'),
+(18, NULL, 'Rosmalinda, S.ST., M.P', 'Laboratorium Uji Mutu', NULL, NULL, '2022-06-26 22:35:54.000000', '2022-06-27 05:35:54.926688'),
+(19, NULL, 'Sopiana, S.P., M.Si', 'TUK Kebun Praktik', NULL, NULL, '2022-06-24 01:15:12.000000', '2022-06-24 01:15:12.000000'),
+(20, NULL, 'Dian Fitriarni, S.ST., M.Sc', 'TUK Manajemen', NULL, NULL, '2022-06-24 01:16:38.000000', '2022-06-24 01:16:38.000000'),
+(21, NULL, 'Darmanto, S.Kom., M.Kom', 'TUK Teknik Informatika', NULL, NULL, '2022-06-24 01:17:45.000000', '2022-06-24 01:17:45.000000'),
+(22, NULL, 'Asepp Ruchiyat, S.T., M.T', 'TUK Teknik Mesin', NULL, NULL, '2022-06-24 01:18:53.000000', '2022-06-24 01:18:53.000000'),
+(23, NULL, 'Syarifah Aqla, S.Pd., M.T', 'TUK Teknik Pertambangan', NULL, NULL, '2022-06-24 01:19:44.000000', '2022-06-24 01:19:44.000000'),
+(24, NULL, 'Ivan Suwanda, S.T., M.T', 'TUK Teknik Elektro', NULL, NULL, '2022-06-24 01:20:25.000000', '2022-06-24 01:20:25.000000'),
+(25, NULL, 'Abdul Hafid, S.T', 'TUK Teknik Sipil', NULL, NULL, '2022-06-24 01:21:02.000000', '2022-06-24 01:21:02.000000');
 
 -- --------------------------------------------------------
 
@@ -1038,78 +1033,72 @@ CREATE TABLE `unikoms` (
   `skema_id` bigint(20) NOT NULL,
   `unikom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `zzz` int(11) DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `unikoms`
 --
 
-INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, `updated_at`, `zzz`) VALUES
-(40, 'JIP.SM01.001.01', 15, 'Melakukan Komunikasi Timbal Balik', '2022-04-17 06:50:03', '2022-04-26 00:52:48', NULL),
-(41, 'JIP.SM01.002.01', 15, 'Mengidentifikasi Prinsip-prinsip Keselamatan dan  Kesehatan Kerja (K3)', '2022-04-26 00:57:53', '2022-04-26 01:06:45', NULL),
-(42, 'JIP.SM02.001.01', 15, 'Mengukur dengan alat ukur mekanika dasar', '2022-04-26 01:04:26', '2022-04-26 01:07:41', NULL),
-(43, 'JIP.SM02.002.01', 15, 'Membaca sketsa dan/atau gambar kerja sederhana', '2022-04-26 01:08:39', '2022-04-26 01:08:39', NULL),
-(44, 'JIP.SM02.003.01', 15, 'Menggunakan peralatan tangan dan mesin-mesin ringan', '2022-04-26 01:09:06', '2022-04-26 01:09:06', NULL),
-(45, 'JIP.SM02.004.01', 15, 'Melaksanakan pemotongan secara mekanik', '2022-04-26 01:09:35', '2022-04-26 01:09:35', NULL),
-(46, 'JIP.SM02.005.01', 15, 'Melaksanakan pemotongan dengan gas', '2022-04-26 01:10:24', '2022-04-26 01:10:24', NULL),
-(47, 'JIP.SM02.008.01', 15, 'Melaksanakan rutinitas (dasar) pengelasan dengan proses  las busur manual', '2022-04-26 01:11:14', '2022-04-26 01:11:14', NULL),
-(48, 'JIP.SM02.009.01', 15, 'Mengelas pelat posisi di bawah tangan / Flat dengan proses  las busur manual', '2022-04-26 01:11:58', '2022-04-26 01:11:58', NULL),
-(49, 'JIP.SM02.010.01', 15, 'Mengelas pelat posisi mendatar / Horizontal dengan proses  las busur manual', '2022-04-26 01:12:25', '2022-04-26 01:12:25', NULL),
-(50, 'JIP.SM03.001.01', 15, 'Membuat laporan', '2022-04-26 01:13:02', '2022-04-26 01:13:02', NULL),
-(51, 'JIP.SM03.002.01', 15, 'Melakukan perhitungan dasar teknik', '2022-04-26 01:13:25', '2022-04-26 01:13:25', NULL),
-(52, 'JIP.SM01.003.01', 15, 'Melakukan pekerjaan secara tim', '2022-04-26 01:13:44', '2022-04-26 01:13:44', NULL),
-(53, 'JIP.SM01.004.01', 15, 'Menerapkan Keselamatan dan Kesehatan Kerja serta  Lingkungan Hidup (K3L)', '2022-04-26 01:14:09', '2022-04-26 01:14:09', NULL),
-(54, 'JIP.SM01.006.01', 15, 'Mengukur dengan alat ukur mekanik presisi', '2022-04-26 01:15:42', '2022-04-26 01:15:42', NULL),
-(55, 'JIP.SM01.007.01', 15, 'Membaca gambar teknik dan simbol las', '2022-04-26 01:16:02', '2022-04-26 01:16:02', NULL),
-(56, 'JIP.SM02.011.01', 15, 'Mengelas pelat posisi tegak/ Vertical dengan proses las  busur manual', '2022-04-26 01:16:22', '2022-04-26 01:16:22', NULL),
-(57, 'JIP.SM02.012.01', 15, 'Mengelas pelat posisi di atas kepala / Overhead dengan  proses las busur manual', '2022-04-26 01:16:48', '2022-04-26 01:16:48', NULL),
-(58, 'JIP.SM02.013.01', 15, 'Mengelas pipa posisi sumbu mendatar dapat diputar dengan  proses las busur manual', '2022-04-26 01:17:11', '2022-04-26 01:17:11', NULL),
-(59, 'JIP.SM02.014.01', 15, 'Mengelas pipa posisi sumbu tegak dapat diputar dengan  proses las busur manual', '2022-04-26 01:17:32', '2022-04-26 01:17:32', NULL),
-(60, 'JIP.SM03.003.01', 15, 'Menafsirkan literatur berbahasa inggris', '2022-04-26 01:17:53', '2022-04-26 01:17:53', NULL),
-(61, 'JIP.SM03.004.01', 15, 'Mengoperasikan komputer', '2022-04-26 01:18:12', '2022-04-26 01:18:12', NULL),
-(62, 'JIP.SM01.005.01', 15, 'Menerapkan sistem mutu', '2022-04-26 01:18:33', '2022-04-26 01:18:33', NULL),
-(78, 'JIP.SM01.006.01', 15, 'Merencanakan tugas rutin', '2022-04-26 01:44:26', '2022-04-26 01:44:26', NULL),
-(79, 'JIP.SM02.015.01', 15, 'Mengelas pipa posisi sumbu mendatar tidak dapat diputar  dengan proses las busur manual', '2022-04-26 01:49:49', '2022-04-26 01:49:49', NULL),
-(80, 'JIP.SM02.016.01', 15, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', '2022-04-26 01:50:14', '2022-04-26 01:50:14', NULL),
-(81, 'JIP.SM02.017.01', 15, 'Mengelas pelat dan/atau pipa segala posisi dengan proses  kombinasi TIG (GTAW) dan las busur manual', '2022-04-26 01:50:42', '2022-04-26 01:50:42', NULL),
-(82, 'JIP.SM03.005.01', 15, 'Menerapkan penanganan material', '2022-04-26 01:51:05', '2022-04-26 01:51:05', NULL),
-(83, 'JIP.SM03.006.01', 15, 'Mengenal karakteristik dan penggunaan bahan', '2022-04-26 01:51:31', '2022-04-26 01:51:31', NULL),
-(84, 'JIP.SM03.007.01', 15, 'Melakukan pemeliharaan mesin dan perlengkapan las', '2022-04-26 01:52:04', '2022-04-26 01:52:04', NULL),
-(85, 'JIP.SM03.008.01', 15, 'Menerapkan Metalurgi Las', '2022-04-26 01:52:26', '2022-04-26 01:52:26', NULL),
-(86, 'M.702090.001.02', 14, 'Melakukan komunikasi dengan pihak IKM', '2022-04-26 01:54:48', '2022-04-26 01:54:48', NULL),
-(87, 'M.702090.002.02', 14, 'Melakukan inventarisasi masalah pada IKM', '2022-04-26 01:55:19', '2022-04-26 01:55:19', NULL),
-(88, 'M.702090.003.02', 14, 'Memberikan jasa konsultasi kepada pihak IKM', '2022-04-26 01:55:43', '2022-04-26 01:55:43', NULL),
-(89, 'M.702090.004.02', 14, 'Melakukan evaluasi pelaksanaan konsultasi', '2022-04-26 01:56:15', '2022-04-26 01:56:15', NULL),
-(90, 'M.702090.017.02', 14, 'Menggunakan 7 alat QC pada manajemen mutu', '2022-04-26 01:56:40', '2022-04-26 01:56:40', NULL),
-(91, 'M.702090.018.02', 14, 'Melakukan inspeksi penerapan QC', '2022-04-26 01:57:07', '2022-04-26 01:57:07', NULL),
-(92, 'M.702090.019.02', 14, 'Melaksanakan perbaikan mutu produk/ Jasa', '2022-04-26 01:57:32', '2022-04-26 01:57:32', NULL),
-(93, 'M.702090.020.02', 14, 'Menerapkan prinsip-prinsip SMM dan TQC', '2022-04-26 01:57:52', '2022-04-26 01:57:52', NULL),
-(94, 'M.749000.020.01', 13, 'Menerima sampel yang akan dianalisis', '2022-04-26 01:59:48', '2022-04-26 01:59:48', NULL),
-(95, 'M.749000.021.01', 13, 'Mengambil sampel uji (sub-sampling) dari sampel  lapangan', '2022-04-26 02:00:07', '2022-04-26 02:00:07', NULL),
-(96, 'M.749000.022.01', 13, 'Menyiapkan sampel untuk analisa kimia', '2022-04-26 02:00:26', '2022-04-26 02:00:26', NULL),
-(97, 'M.749000.023.01', 13, 'Mengarsipkan sampel', '2022-04-26 02:00:49', '2022-04-26 02:00:49', NULL),
-(98, 'M.749000.025.01', 13, 'Menyajikan data analisis kimia', '2022-04-26 02:01:11', '2022-04-26 02:01:11', NULL),
-(99, 'M.749000.026.01', 13, 'Melaksanakan analisis titrimetri konvensional mengikuti  prosedur', '2022-04-26 02:01:41', '2022-04-26 02:01:41', NULL),
-(100, 'M.749000.027.01', 13, 'Melaksanakan analisis gravimetri konvensional mengikuti  prosedur', '2022-04-26 02:01:59', '2022-04-26 02:01:59', NULL),
-(101, 'M.749000.031.01', 13, 'Melaksanakan analisis fisiko-kimia mengikuti prosedur', '2022-04-26 02:02:41', '2022-04-26 02:02:41', NULL),
-(102, 'M.749000.033.01', 13, 'Melaksanakan analisis secara spektrofotometri mengikuti  prosedur', '2022-04-26 02:03:30', '2022-04-26 02:03:30', NULL),
-(103, 'M.749000.035.01', 13, 'Melaksanakan analisis organoleptik mengikuti prosedur', '2022-04-26 02:03:51', '2022-04-26 02:03:51', NULL),
-(104, 'M.749000.036.01', 13, 'Melaksanakan analisis proksimat (konvensional) mengikuti  prosedur', '2022-04-26 02:04:19', '2022-04-26 02:04:19', NULL),
-(109, 'J.620100.004.02', 20, 'Menggunakan Struktur Data', '2022-05-11 13:05:11', '2022-05-11 13:05:11', NULL),
-(110, 'J.620100.005.02', 20, 'Mengimplementasikan User Interface', '2022-05-11 13:05:31', '2022-06-15 23:26:44', NULL),
-(111, 'J.620100.011.01', 20, 'Melakukan instalasi Software Tools Pemrograman', '2022-05-11 13:06:23', '2022-05-11 13:06:23', NULL),
-(112, 'J.620100.016.01', 20, 'Menulis Kode dengan Prinsip Sesuai Guidelines dan Best Practices', '2022-05-11 13:06:40', '2022-05-11 13:06:40', NULL),
-(113, 'J.620100.017.02', 20, 'Mengimplementasikan Pemrograman Terstruktur', '2022-05-11 13:07:09', '2022-05-11 13:07:09', NULL),
-(114, 'J.620100.019.02', 20, 'Menggunakan Library atau Komponen Pre-Existing', '2022-05-11 13:07:37', '2022-05-11 13:07:37', NULL),
-(115, 'J.620100.023.02', 20, 'Membuat Dokumen Kode Program', '2022-05-11 13:07:52', '2022-05-11 13:07:52', NULL),
-(116, 'J.620100.025.02', 20, 'Melakukan Debugging', '2022-05-11 13:08:18', '2022-05-11 13:08:18', NULL),
-(117, '423423', 19, 'wefwfwf', '2022-06-11 04:23:27', '2022-06-11 04:23:27', NULL),
-(118, '4324', 19, '341234', '2022-06-11 04:23:31', '2022-06-11 04:23:31', NULL),
-(119, '231231', 18, 'nq', '2022-06-11 04:24:21', '2022-06-11 04:24:21', NULL),
-(120, 'as', 17, 'asu', '2022-06-11 05:17:04', '2022-06-11 05:17:04', NULL),
-(121, 'asu222', 17, 'asu222', '2022-06-11 05:17:12', '2022-06-16 05:19:17', NULL);
+INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, `updated_at`) VALUES
+(40, 'JIP.SM01.001.01', 15, 'Melakukan Komunikasi Timbal Balik', '2022-04-17 06:50:03', '2022-04-26 00:52:48'),
+(41, 'JIP.SM01.002.01', 15, 'Mengidentifikasi Prinsip-prinsip Keselamatan dan  Kesehatan Kerja (K3)', '2022-04-26 00:57:53', '2022-04-26 01:06:45'),
+(42, 'JIP.SM02.001.01', 15, 'Mengukur dengan alat ukur mekanika dasar', '2022-04-26 01:04:26', '2022-04-26 01:07:41'),
+(43, 'JIP.SM02.002.01', 15, 'Membaca sketsa dan/atau gambar kerja sederhana', '2022-04-26 01:08:39', '2022-04-26 01:08:39'),
+(44, 'JIP.SM02.003.01', 15, 'Menggunakan peralatan tangan dan mesin-mesin ringan', '2022-04-26 01:09:06', '2022-04-26 01:09:06'),
+(45, 'JIP.SM02.004.01', 15, 'Melaksanakan pemotongan secara mekanik', '2022-04-26 01:09:35', '2022-04-26 01:09:35'),
+(46, 'JIP.SM02.005.01', 15, 'Melaksanakan pemotongan dengan gas', '2022-04-26 01:10:24', '2022-04-26 01:10:24'),
+(47, 'JIP.SM02.008.01', 15, 'Melaksanakan rutinitas (dasar) pengelasan dengan proses  las busur manual', '2022-04-26 01:11:14', '2022-04-26 01:11:14'),
+(48, 'JIP.SM02.009.01', 15, 'Mengelas pelat posisi di bawah tangan / Flat dengan proses  las busur manual', '2022-04-26 01:11:58', '2022-04-26 01:11:58'),
+(49, 'JIP.SM02.010.01', 15, 'Mengelas pelat posisi mendatar / Horizontal dengan proses  las busur manual', '2022-04-26 01:12:25', '2022-04-26 01:12:25'),
+(50, 'JIP.SM03.001.01', 15, 'Membuat laporan', '2022-04-26 01:13:02', '2022-04-26 01:13:02'),
+(51, 'JIP.SM03.002.01', 15, 'Melakukan perhitungan dasar teknik', '2022-04-26 01:13:25', '2022-04-26 01:13:25'),
+(52, 'JIP.SM01.003.01', 15, 'Melakukan pekerjaan secara tim', '2022-04-26 01:13:44', '2022-04-26 01:13:44'),
+(53, 'JIP.SM01.004.01', 15, 'Menerapkan Keselamatan dan Kesehatan Kerja serta  Lingkungan Hidup (K3L)', '2022-04-26 01:14:09', '2022-04-26 01:14:09'),
+(54, 'JIP.SM01.006.01', 15, 'Mengukur dengan alat ukur mekanik presisi', '2022-04-26 01:15:42', '2022-04-26 01:15:42'),
+(55, 'JIP.SM01.007.01', 15, 'Membaca gambar teknik dan simbol las', '2022-04-26 01:16:02', '2022-04-26 01:16:02'),
+(56, 'JIP.SM02.011.01', 15, 'Mengelas pelat posisi tegak/ Vertical dengan proses las  busur manual', '2022-04-26 01:16:22', '2022-04-26 01:16:22'),
+(57, 'JIP.SM02.012.01', 15, 'Mengelas pelat posisi di atas kepala / Overhead dengan  proses las busur manual', '2022-04-26 01:16:48', '2022-04-26 01:16:48'),
+(58, 'JIP.SM02.013.01', 15, 'Mengelas pipa posisi sumbu mendatar dapat diputar dengan  proses las busur manual', '2022-04-26 01:17:11', '2022-04-26 01:17:11'),
+(59, 'JIP.SM02.014.01', 15, 'Mengelas pipa posisi sumbu tegak dapat diputar dengan  proses las busur manual', '2022-04-26 01:17:32', '2022-04-26 01:17:32'),
+(60, 'JIP.SM03.003.01', 15, 'Menafsirkan literatur berbahasa inggris', '2022-04-26 01:17:53', '2022-04-26 01:17:53'),
+(61, 'JIP.SM03.004.01', 15, 'Mengoperasikan komputer', '2022-04-26 01:18:12', '2022-04-26 01:18:12'),
+(62, 'JIP.SM01.005.01', 15, 'Menerapkan sistem mutu', '2022-04-26 01:18:33', '2022-04-26 01:18:33'),
+(78, 'JIP.SM01.006.01', 15, 'Merencanakan tugas rutin', '2022-04-26 01:44:26', '2022-04-26 01:44:26'),
+(79, 'JIP.SM02.015.01', 15, 'Mengelas pipa posisi sumbu mendatar tidak dapat diputar  dengan proses las busur manual', '2022-04-26 01:49:49', '2022-04-26 01:49:49'),
+(80, 'JIP.SM02.016.01', 15, 'Mengelas pipa posisi sumbu miring tidak dapat diputar  dengan proses las busur manual', '2022-04-26 01:50:14', '2022-04-26 01:50:14'),
+(81, 'JIP.SM02.017.01', 15, 'Mengelas pelat dan/atau pipa segala posisi dengan proses  kombinasi TIG (GTAW) dan las busur manual', '2022-04-26 01:50:42', '2022-04-26 01:50:42'),
+(82, 'JIP.SM03.005.01', 15, 'Menerapkan penanganan material', '2022-04-26 01:51:05', '2022-04-26 01:51:05'),
+(83, 'JIP.SM03.006.01', 15, 'Mengenal karakteristik dan penggunaan bahan', '2022-04-26 01:51:31', '2022-04-26 01:51:31'),
+(84, 'JIP.SM03.007.01', 15, 'Melakukan pemeliharaan mesin dan perlengkapan las', '2022-04-26 01:52:04', '2022-04-26 01:52:04'),
+(85, 'JIP.SM03.008.01', 15, 'Menerapkan Metalurgi Las', '2022-04-26 01:52:26', '2022-04-26 01:52:26'),
+(86, 'M.702090.001.02', 14, 'Melakukan komunikasi dengan pihak IKM', '2022-04-26 01:54:48', '2022-04-26 01:54:48'),
+(87, 'M.702090.002.02', 14, 'Melakukan inventarisasi masalah pada IKM', '2022-04-26 01:55:19', '2022-04-26 01:55:19'),
+(88, 'M.702090.003.02', 14, 'Memberikan jasa konsultasi kepada pihak IKM', '2022-04-26 01:55:43', '2022-04-26 01:55:43'),
+(89, 'M.702090.004.02', 14, 'Melakukan evaluasi pelaksanaan konsultasi', '2022-04-26 01:56:15', '2022-04-26 01:56:15'),
+(90, 'M.702090.017.02', 14, 'Menggunakan 7 alat QC pada manajemen mutu', '2022-04-26 01:56:40', '2022-04-26 01:56:40'),
+(91, 'M.702090.018.02', 14, 'Melakukan inspeksi penerapan QC', '2022-04-26 01:57:07', '2022-04-26 01:57:07'),
+(92, 'M.702090.019.02', 14, 'Melaksanakan perbaikan mutu produk/ Jasa', '2022-04-26 01:57:32', '2022-04-26 01:57:32'),
+(93, 'M.702090.020.02', 14, 'Menerapkan prinsip-prinsip SMM dan TQC', '2022-04-26 01:57:52', '2022-04-26 01:57:52'),
+(94, 'M.749000.020.01', 13, 'Menerima sampel yang akan dianalisis', '2022-04-26 01:59:48', '2022-04-26 01:59:48'),
+(95, 'M.749000.021.01', 13, 'Mengambil sampel uji (sub-sampling) dari sampel  lapangan', '2022-04-26 02:00:07', '2022-04-26 02:00:07'),
+(96, 'M.749000.022.01', 13, 'Menyiapkan sampel untuk analisa kimia', '2022-04-26 02:00:26', '2022-04-26 02:00:26'),
+(97, 'M.749000.023.01', 13, 'Mengarsipkan sampel', '2022-04-26 02:00:49', '2022-04-26 02:00:49'),
+(98, 'M.749000.025.01', 13, 'Menyajikan data analisis kimia', '2022-04-26 02:01:11', '2022-04-26 02:01:11'),
+(99, 'M.749000.026.01', 13, 'Melaksanakan analisis titrimetri konvensional mengikuti  prosedur', '2022-04-26 02:01:41', '2022-04-26 02:01:41'),
+(100, 'M.749000.027.01', 13, 'Melaksanakan analisis gravimetri konvensional mengikuti  prosedur', '2022-04-26 02:01:59', '2022-04-26 02:01:59'),
+(101, 'M.749000.031.01', 13, 'Melaksanakan analisis fisiko-kimia mengikuti prosedur', '2022-04-26 02:02:41', '2022-04-26 02:02:41'),
+(102, 'M.749000.033.01', 13, 'Melaksanakan analisis secara spektrofotometri mengikuti  prosedur', '2022-04-26 02:03:30', '2022-04-26 02:03:30'),
+(103, 'M.749000.035.01', 13, 'Melaksanakan analisis organoleptik mengikuti prosedur', '2022-04-26 02:03:51', '2022-04-26 02:03:51'),
+(104, 'M.749000.036.01', 13, 'Melaksanakan analisis proksimat (konvensional) mengikuti  prosedur', '2022-04-26 02:04:19', '2022-04-26 02:04:19'),
+(109, 'J.620100.004.02', 20, 'Menggunakan Struktur Data', '2022-05-11 13:05:11', '2022-06-26 23:25:21'),
+(110, 'J.620100.005.02', 20, 'Mengimplementasikan User Interface', '2022-05-11 13:05:31', '2022-06-15 23:26:44'),
+(111, 'J.620100.011.01', 20, 'Melakukan instalasi Software Tools Pemrograman', '2022-05-11 13:06:23', '2022-05-11 13:06:23'),
+(112, 'J.620100.016.01', 20, 'Menulis Kode dengan Prinsip Sesuai Guidelines dan Best Practices', '2022-05-11 13:06:40', '2022-05-11 13:06:40'),
+(113, 'J.620100.017.02', 20, 'Mengimplementasikan Pemrograman Terstruktur', '2022-05-11 13:07:09', '2022-05-11 13:07:09'),
+(114, 'J.620100.019.02', 20, 'Menggunakan Library atau Komponen Pre-Existing', '2022-05-11 13:07:37', '2022-05-11 13:07:37'),
+(115, 'J.620100.023.02', 20, 'Membuat Dokumen Kode Program', '2022-05-11 13:07:52', '2022-05-11 13:07:52'),
+(116, 'J.620100.025.02', 20, 'Melakukan Debugging', '2022-05-11 13:08:18', '2022-05-11 13:08:18');
 
 -- --------------------------------------------------------
 
@@ -1136,14 +1125,10 @@ CREATE TABLE `upload_files` (
 --
 
 INSERT INTO `upload_files` (`id`, `kode_dokumen`, `data_register_id`, `name`, `image`, `created_at`, `updated_at`, `status`, `user_id`, `kode`, `koreksi`) VALUES
-(614, '12614', 2614, 'Photo', NULL, '2022-06-17 10:23:45', '2022-06-17 10:26:39', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(615, '22614', 2614, 'Kartu Tanda Penduduk', NULL, '2022-06-17 10:23:45', '2022-06-17 10:26:43', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(616, '32614', 2614, 'Kartu Tanda Mahasiswa', NULL, '2022-06-17 10:23:45', '2022-06-17 10:26:47', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(617, '42614', 2614, 'Kartu Hasil Studi', NULL, '2022-06-17 10:23:45', '2022-06-17 10:26:50', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
-(634, '12617', 2617, 'Photo', NULL, '2022-06-17 12:27:22', '2022-06-17 12:27:22', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 126, NULL),
-(635, '22617', 2617, 'Kartu Tanda Penduduk', NULL, '2022-06-17 12:27:22', '2022-06-17 12:27:22', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 226, NULL),
-(636, '32617', 2617, 'Kartu Tanda Mahasiswa', NULL, '2022-06-17 12:27:22', '2022-06-17 12:27:22', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 326, NULL),
-(637, '42617', 2617, 'Kartu Hasil Studi', NULL, '2022-06-17 12:27:22', '2022-06-17 12:27:22', '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', 26, 426, NULL);
+(655, '1219', 219, 'Photo', 'uploads/uploads_file_register/165626105016521547396.png', '2022-06-26 09:30:22', '2022-06-26 09:40:06', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 2, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
+(656, '2219', 219, 'Kartu Tanda Penduduk', 'uploads/uploads_file_register/16562610571655040701index.png', '2022-06-26 09:30:22', '2022-06-26 09:40:11', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 2, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
+(657, '3219', 219, 'Kartu Tanda Mahasiswa', 'uploads/uploads_file_register/165626106316521547396.png', '2022-06-26 09:30:22', '2022-06-26 09:40:14', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 2, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>'),
+(658, '4219', 219, 'Kartu Hasil Studi', 'uploads/uploads_file_register/165626106916521547396.png', '2022-06-26 09:30:22', '2022-06-26 09:40:17', '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', 2, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>');
 
 -- --------------------------------------------------------
 
@@ -1152,48 +1137,44 @@ INSERT INTO `upload_files` (`id`, `kode_dokumen`, `data_register_id`, `name`, `i
 --
 
 CREATE TABLE `users` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL,
   `role` varchar(111) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `kode` int(11) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
-  `sex_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `negara` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sex_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kode_post` int(11) DEFAULT NULL,
   `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `provinsi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kabupaten` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kota` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `kecamatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institusi` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `tamatan_id` int(11) DEFAULT NULL,
-  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ttd` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jabatan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `jurusan_id` int(11) DEFAULT NULL,
   `semester_id` int(11) DEFAULT NULL,
-  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `email2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email3` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat_kantor` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postal` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ktp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `khs` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ktm` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  `surel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tmpt_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `provinsi`, `kabupaten`, `kota`, `kecamatan`, `tamatan_id`, `image`, `ttd`, `jurusan_id`, `semester_id`, `email_verified_at`, `remember_token`, `password`, `ktp`, `khs`, `ktm`, `created_at`, `updated_at`, `surel`, `tmpt_lahir`, `email2`, `tempat_lahir`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', NULL, 'Indonesia', NULL, NULL, '82150040132', NULL, NULL, NULL, NULL, NULL, 'uploads/beranda_img2/1655388138register.jpg', NULL, 4, NULL, NULL, 'xT3Syh9BDio58jxVFN5ipjIKbhzL8ZQR4ZqlIdQ0D7R91YLGUw0eEQHg2BFK', '$2y$10$.77uDWW0GccOEAmSygpKbegD0rupPTlKLd/Tivp2/BHEP8acP/lD.', NULL, NULL, NULL, '2022-03-31 01:01:51', '2022-06-16 07:02:18', NULL, NULL, 'sdfsd@fsdfsdfsdf', 'fsdgdfsdf'),
-(25, NULL, 'Dwi Ramadhani', '3042020057', NULL, '1994-05-10', NULL, 'Indonesia2', NULL, NULL, '081256390908', NULL, NULL, NULL, NULL, NULL, 'uploads/beranda_img2/1655387143login.png', NULL, NULL, NULL, NULL, NULL, '$2y$10$ZF9y04L.RUIsE60DjwV0C.Ss3KFMk5VAi9xp2TjYospzqYXImBEPO', NULL, NULL, NULL, '2022-05-11 09:37:32', '2022-06-16 07:13:52', NULL, NULL, 'dwi@gmail.com', 'Ketapang123'),
-(26, NULL, 'Ponsianus Jopi', '3042020058', NULL, '2000-06-12', '2', 'Indonesia', 'BTN Puri Nirwana', NULL, '0812156390909', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 4, NULL, NULL, '$2y$10$3OTmQaxoxzTHuN555seoHOaqj25qqu0G1Cb9ws.bnZ1yVFuM7panm', NULL, NULL, NULL, '2022-05-11 13:53:25', '2022-06-17 11:50:52', NULL, NULL, 'ponzzy22@gmail.com', 'Ketapang');
+INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `negara`, `sex_id`, `alamat`, `no_hp`, `institusi`, `tamatan_id`, `jabatan`, `jurusan_id`, `semester_id`, `email2`, `email3`, `tempat_lahir`, `alamat_kantor`, `postal`, `telp`, `fax`, `ktp`, `image`, `remember_token`, `password`, `email_verified_at`, `created_at`, `updated_at`) VALUES
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', 0, '1998-08-27', 'Indonesia', NULL, 'sdasdas', '082150040128', NULL, NULL, NULL, 1, 1, 'sdfsd@fsdfsdfsdf', NULL, 'fsdgdfsdferwerdasdasdasdasdasdasd', NULL, NULL, NULL, NULL, '', 'uploads/beranda_img2/16563131901655040684WhatsApp Image 2022-03-10 at 16.15.00.jpeg', 'xOn0cCL0gSOddLWmTDlYblh5uF2kEk3qPWSh3eibTalpDh44MUn6FHJgWRMW', '$2y$10$L3FDVXnkT9qMofATD3wkQ.mGkLRoyt5hmRX5ahuxKlOiG8Lg3G0tq', NULL, '2022-03-31 01:01:51', '2022-06-27 01:17:17'),
+(2, 'User', 'Ponsianus Jopi2', '3042020058', NULL, '1976-04-13', 'Indonesia', '1', 'Ketapang Kalbar', '0821500401322', 'apa', NULL, 'domaan', 4, 4, 'ponzy22e@gmail.com', '23423@fdsdf', 'Ketapang', 'ayp', '2312', '23234', '231231', NULL, 'uploads/beranda_img2/1656250853d795ebcce6432ef85d4bd6cd6f5fe363.jpg', NULL, '$2y$10$raBf7d85ytR9eFAaPezzxODSDhK4v.eqUkd/9jIxsnl7mc3RDRF4a', NULL, '2022-06-26 06:29:37', '2022-06-26 09:19:29');
 
 -- --------------------------------------------------------
 
@@ -1226,9 +1207,8 @@ CREATE TABLE `xnxxes` (
 --
 
 INSERT INTO `xnxxes` (`id`, `kode_elemen`, `kriteria`, `user_id`, `unikom_id`, `unikom_name`, `asesmen_name`, `skema_name`, `skema_id`, `image`, `status`, `created_at`, `updated_at`, `data_register_id`, `kode`, `koreksi`, `unikom_kode`) VALUES
-(895, '12614', '<p>-<br></p>', 26, 53, 'Melakukan komunikasi dengan pihak IKM', '-', 'Instalasi Listrik', 14, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-06-17 10:23:47', '2022-06-17 10:26:53', 2614, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'M.702090.001.02'),
-(896, '22614', '<p>dfsdf</p>', 26, 86, 'Menerapkan prinsip-prinsip SMM dan TQC', 'kimak', 'Instalasi Listrik', 14, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-06-17 10:23:47', '2022-06-17 10:26:57', 2614, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'M.702090.020.02'),
-(901, '12617', '<p>asu</p>', 26, 85, 'asu', 'asu', 'Personil K3', 17, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-06-17 12:27:26', '2022-06-17 12:27:26', 2617, 126, NULL, 'as');
+(930, '1219', '<p>324234</p>', 2, 82, 'wefwfwf', '34234234', 'Junior Web Programmer', 19, 'uploads/formulir_apl2/16562610751655040701index.png', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-26 09:30:24', '2022-06-26 09:40:20', 219, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '423423'),
+(931, '2219', '<p>2342342</p>', 2, 83, '341234', '234234', 'Junior Web Programmer', 19, 'uploads/formulir_apl2/16562612351655040701index.png', '<label class=\'badge badge-outline-success badge-pill\'>Kompeten</label>', '2022-06-26 09:30:24', '2022-06-26 09:40:23', 219, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '4324');
 
 --
 -- Indexes for dumped tables
@@ -1523,7 +1503,7 @@ ALTER TABLE `xnxxes`
 -- AUTO_INCREMENT for table `asesor`
 --
 ALTER TABLE `asesor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `banner`
@@ -1553,7 +1533,7 @@ ALTER TABLE `dokumen__uploads`
 -- AUTO_INCREMENT for table `elemen`
 --
 ALTER TABLE `elemen`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1697,7 +1677,7 @@ ALTER TABLE `sex`
 -- AUTO_INCREMENT for table `skemas`
 --
 ALTER TABLE `skemas`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `skknis`
@@ -1727,31 +1707,31 @@ ALTER TABLE `tokens`
 -- AUTO_INCREMENT for table `tuk`
 --
 ALTER TABLE `tuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `unikoms`
 --
 ALTER TABLE `unikoms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
 
 --
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=638;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=659;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `xnxxes`
 --
 ALTER TABLE `xnxxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=902;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=932;
 
 --
 -- Constraints for dumped tables

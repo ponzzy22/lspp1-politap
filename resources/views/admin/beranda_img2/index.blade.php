@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Portofolio Pengelola</li>
             </ol>
@@ -114,7 +114,7 @@
                                         <table id="order-listing" class="table dataTable no-footer" role="grid"
                                             aria-describedby="order-listing_info">
                                             <thead>
-                                                <tr class="bg-dark text-white" role="row">
+                                                <tr class="bg-danger text-white" role="row">
                                                     <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                         rowspan="1" colspan="1"
                                                         aria-label="Order #: activate to sort column ascending"
@@ -142,7 +142,7 @@
                                                     <tr role="row" class="odd">
                                                         <td class="">{{ $loop->iteration }}</td>
                                                         <td class="text-right">
-                                                            <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                            <button class="btn btn-dark btn-sm dropdown-toggle"
                                                                 type="button" id="dropdownMenuSizeButton3"
                                                                 data-toggle="dropdown" aria-haspopup="true"
                                                                 aria-expanded="false">

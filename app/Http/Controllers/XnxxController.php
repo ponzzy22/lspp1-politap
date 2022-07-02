@@ -22,6 +22,10 @@ class XnxxController extends Controller
         $request->validate([
                 'kode' => ['required', 'unique:xnxxes,kode'],
                 'kode_elemen' => ['required', 'unique:xnxxes,kode_elemen']
+                ],[
+                    'kode.unique' => 'Data sudah diambil',
+                    'kode.required' => 'Data Elemen Kosong',
+                    'kode_elemen.required' => 'Tidak dapat mengambil formulir',
                 ]);
 
                 if ($request->hasFile('image')) {
@@ -61,7 +65,7 @@ class XnxxController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'image' => ['required', 'mimes:pdf,png', 'max:2000']
+            'image' => ['required', 'max:2000']
             ]);
             $image = $request->image;
             $new_image = time() . $image->getClientOriginalName();

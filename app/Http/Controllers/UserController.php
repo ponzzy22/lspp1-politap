@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Jurusan;
+use App\Models\Semester;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,11 +19,14 @@ class UserController extends Controller
 
     public function show($id){
         $user = User::findorfail($id);
-        return view('admin/user/show', compact('user'));
+        $jurusan = Jurusan::all();
+        $semester = Semester::all();
+        return view('admin/user/show', compact('user', 'jurusan', 'semester'));
     }
 
 
     public function update(Request $request, $id) {
+        // dd($request->all());
         $request->validate([
             'name' => ['min:1', 'max:100', 'required'],
             'email' => ['min:3', 'required'],
@@ -30,11 +35,11 @@ class UserController extends Controller
             // 'tmpt_lahir' => ['min:3', 'max:100', 'required'],
             // 'negara' => ['min:3', 'max:100', 'required'],
             // 'alamat' => ['min:3', 'max:100', 'required'],
-            // 'jurusan_id' => ['required'],
+            'jurusan_id' => ['required'],
             // 'semester_id' => ['required'],
             // 'kode_post' => ['max:100000000000'],
             // 'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
-            // 'surel' => ['email','min:3', 'max:100', 'required', 'unique:users,surel,'.auth()->id()],
+            'email2' => ['email','min:3', 'max:100', 'required', 'unique:users,email2,'.auth()->id()],
             // 'image' => ['required'],
             // 'ktm' => ['required'],
         ]);
@@ -53,10 +58,17 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
-                'kode_post' => $request->kode_post,
+                'postal' => $request->postal,
                 'email2' => $request->email2,
+                'telp' => $request->telp,
+                'fax' => $request->fax,
+                'email3' => $request->email3,
+                'jabatan' => $request->jabatan,
+                'alamat_kantor' => $request->alamat_kantor,
+                'institusi' => $request->institusi,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
+                'password' => bcrypt($request->password),
                 'image' => 'uploads/beranda_img2/'.$new_image,
             ];
         }
@@ -70,10 +82,17 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
-                'kode_post' => $request->kode_post,
+                'postal' => $request->postal,
                 'email2' => $request->email2,
+                'telp' => $request->telp,
+                'fax' => $request->fax,
+                'email3' => $request->email3,
+                'jabatan' => $request->jabatan,
+                'alamat_kantor' => $request->alamat_kantor,
+                'institusi' => $request->institusi,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
+                'password' => bcrypt($request->password),
             ];
         }
         User::whereId($id)->update($user_data);

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Tuk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class TukController extends Controller
 {
@@ -15,7 +17,8 @@ class TukController extends Controller
 
 
     public function show($id) {
-        $tuk = Tuk::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $tuk = Tuk::findorfail($decryptID);
         return view('admin/tuk/show', compact('tuk'));
     }
 
@@ -25,19 +28,28 @@ class TukController extends Controller
             'tuk' => ['required'],
             'kode' => ['required'],
             'alamat' => ['required'],
-            'image' => ['required']
+            // 'image' => ['required']
         ]);
-
-        $image = $request->image;
-        $new_image = time().$image->getClientOriginalName();
-        $tuk = Tuk::create([
+        if ($request->has('image')) {
+            $image = $request->image;
+            $new_image = time().$image->getClientOriginalName();
+            $image->move('uploads/tuk/', $new_image);
+            $tuk = Tuk::create([
             'tuk' => $request->tuk,
             'kode' => $request->kode,
             'pengelola' => $request->pengelola,
             'alamat' => $request->alamat,
-            'image' => 'uploads/pengelola/'.$new_image,
+            'image' => 'uploads/tuk/'.$new_image,
         ]);
-        $image->move('uploads/pengelola/', $new_image);
+        }
+        else{
+           $tuk = Tuk::create([
+            'tuk' => $request->tuk,
+            'kode' => $request->kode,
+            'pengelola' => $request->pengelola,
+            'alamat' => $request->alamat,
+        ]);
+        }
         return redirect()->route('tuk.index')->with('success', 'TUK Berhasil Ditambahkan');
     }
 
@@ -48,13 +60,13 @@ class TukController extends Controller
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
-            $image->move('uploads/pengelola/', $new_image);
+            $image->move('uploads/tuk/', $new_image);
             $tuk_data = [
                 'tuk' => $request->tuk,
                 'kode' => $request->kode,
                 'pengelola' => $request->pengelola,
                 'alamat' => $request->alamat,
-                'image' => 'uploads/pengelola/'.$new_image,
+                'image' => 'uploads/tuk/'.$new_image,
             ];
         }
         else{

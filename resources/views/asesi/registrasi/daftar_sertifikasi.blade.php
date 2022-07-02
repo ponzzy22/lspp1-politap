@@ -12,7 +12,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tabel Skema</li>
             </ol>
@@ -173,6 +173,37 @@
                                 value="{{ old('alamat', Auth::user()->alamat) }}">
                             <input type="hidden" class="form-control" name="negara"
                                 value="{{ Auth::user()->negara }}">
+                            <input type="hidden" name="institusi" value="{{ old('institusi', Auth::user()->institusi) }}">
+                            <input type="hidden" name="email3" value="{{ old('email3', Auth::user()->email3) }}">
+                            <input type="hidden" name="postal" value="{{ old('postal', Auth::user()->postal) }}">
+                            <input type="hidden" name="jabatan" value="{{ old('jabatan', Auth::user()->jabatan) }}">
+                            <input type="hidden" name="telp" value="{{ old('telp', Auth::user()->telp) }}">
+                            <input type="hidden" name="fax" value="{{ old('fax', Auth::user()->fax) }}">
+                            <input type="hidden" name="tmt" value="{{ old('tmt', Auth::user()->tmt) }}">
+                            <input type="hidden" name="rmh" value="{{ old('rmh', Auth::user()->rmh) }}">
+                            <input type="hidden" name="ktr" value="{{ old('ktr', Auth::user()->ktr) }}">
+                            <input type="hidden" name="kode_post" value="{{ old('kode_post', Auth::user()->kode_post) }}">
+                            <input type="hidden" name="alamat_kantor" value="{{ old('alamat_kantor', Auth::user()->alamat_kantor) }}">
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="jenis"
+                                                id="membershipRadios1" value="Sertifikasi" checked="">
+                                                Sertifikasi
+                                            <i class="input-helper"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-check">
+                                        <label class="form-check-label">
+                                            <input type="radio" class="form-check-input" name="jenis"
+                                                id="membershipRadios2" value="Sertifikasi Ulang">
+                                                Sertifikasi Ulang
+                                            <i class="input-helper"></i></label>
+                                    </div>
+                                </div>
+                            </div>
                             <ol>
                                 <li>Jika anda yakin ingin memilih skema ini maka silahkan pilih "<span class="text text-success">
                                         Konfirmasi Pendaftaran</span>".

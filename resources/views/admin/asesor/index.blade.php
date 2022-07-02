@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Asesor</li>
             </ol>
@@ -40,7 +40,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Nama </label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="100" name="nama" class="form-control">
+                                        <input type="text" maxlength="50" name="nama" class="form-control">
                                         @error('nama')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -51,7 +51,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">NIK</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="100" name="nik" class="form-control">
+                                        <input type="text" maxlength="50" name="nik" class="form-control">
                                         @error('nik')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -92,7 +92,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Alamat</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="200" class="form-control" name="alamat">
+                                        <input type="text" maxlength="50" class="form-control" name="alamat">
                                         @error('alamat')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -148,7 +148,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Skema</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="200" class="form-control" name="skema">
+                                        <input type="text" maxlength="50" class="form-control" name="skema">
                                         @error('skema')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -185,7 +185,7 @@
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
-                                            <tr class="bg-dark text-white" role="row">
+                                            <tr class="bg-danger text-white" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Order #: activate to sort column ascending"
@@ -217,7 +217,7 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -225,8 +225,8 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('asesor.edit', $asu->id) }}"><button
-                                                                    type="submit" class="btn btn-info  btn-block"><i
+                                                            <a href="{{ route('asesor.edit', Crypt::encryptString($asu->id)) }}"><button
+                                                                    type="submit" class="btn btn-warning  btn-block"><i
                                                                         class="fa fa-eye "></i> Lihat & Edit
                                                                     Asesor</button></a>
                                                             <form action="{{ route('asesor.destroy', $asu->id) }}"

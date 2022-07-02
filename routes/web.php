@@ -3,7 +3,6 @@
 use App\Http\Controllers\AsesiController;
 use App\Http\Controllers\AsesmenController;
 use App\Http\Controllers\AsesorController;
-use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Beranda_img1Controller;
 use App\Http\Controllers\Beranda_img2Controller;
@@ -36,11 +35,14 @@ use App\Http\Controllers\Upload_DokumenController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\XnxxController;
+use App\Http\Controllers\Formapl2Controller;
+use App\Http\Controllers\Formapl1Controller;
 use App\Models\Fileapl2;
-use App\Models\Galeri_foto;
 use GuzzleHttp\Client;
 use GuzzleHttp\Middleware;
 use Illuminate\Routing\RouteGroup;
+
+Route::get('pdf', [UiController::class, 'pdf'])->name('pdf');
 
 Route::get('loginadmin', [ClientController::class, 'loginadmin'])->name('loginadmin');
 Route::get('registrasi_Authentification', [ClientController::class, 'reg'])->name('reg');
@@ -101,10 +103,19 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::resource('asesmen', AsesmenController::class);
     // <------------------ PENGGUNA  ------------------>
     Route::resource('user', UserController::class);
+    // <------------------ FORM APL-01  ------------------>
+    Route::resource('formapl2', Formapl2Controller::class);
+    Route::post('formapl2_save',[Formapl2Controller::class, 'formapl2_save'])->name('formapl2_save');
+    Route::get('jwp1/{jwp1}', [Formapl1Controller::class, 'jwp1'])->name('jwp1');
+    // <------------------ FORM APL-02  ------------------>
+    Route::get('jwp2/{jwp2}', [Formapl2Controller::class, 'jwp2'])->name('jwp2');
+    Route::get('dgm2/{dgm2}', [Formapl2Controller::class, 'dgm2'])->name('dgm2');
+
     // <------------------ DATA REGISTRASI  ------------------>
     Route::resource('validasi', ValidasiController::class);
     Route::get('validasi2/{validasi}/edit', [ValidasiController::class, 'index_edit'])->name('validasi.edit2');
     Route::get('registrasi_baru', [ValidasiController::class, 'registrasi_baru'])->name('registrasi.baru');
+    Route::get('proses_show/{proses_show}', [ValidasiController::class, 'proses_show'])->name('proses_show');
     Route::get('pengguna_ditolak', [ValidasiController::class, 'list_tolak'])->name('list.tolak');
     Route::get('pengguna_divalidasi', [ValidasiController::class, 'list_valid'])->name('list.valid');
     Route::get('pengguna_bersertifikat', [ValidasiController::class, 'list_sertifikat'])->name('list.sertifikat');
@@ -168,7 +179,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
     Route::resource('identitas', Upload_DokumenController::class);
     Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
-    Route::get('edit2', [AsesiController::class, 'edit2'])->name('profil.edit2');
+    Route::get('Pendaftaran_Sertifikasi', [AsesiController::class, 'edit2'])->name('profil.edit2');
     Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
     Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
     Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');

@@ -41,8 +41,28 @@ class Data_register extends Model
         'ktm',
         'lain',
         'koreksi',
-        'date', 'time', 'tuk_id', 'asesor_id', 'keterangan', 'valuesurel', 'valuelahir'
+        'date',
+        'time',
+        'tuk_id',
+        'asesor_id',
+        'keterangan',
+        'institusi',
+        'jabatan',
+        'email3',
+        'fax',
+        'telp',
+        'postal',
+        'jenis',
+        'ktr',
+        'tmt',
+        'rmh',
+        'alamat_kantor',
+
     ];
+
+    protected $dates = ['tgl_lahir'];
+
+    // protected $dates = ['created_at'];
 
     public function xnxxes(){
         return $this->hasMany(Xnxx::class);

@@ -11,6 +11,8 @@ class Berita extends Model
 
     protected $guarded = ['id'];
 
+    protected $dates = ['created_at'];
+
     public function kategori(){
         return $this->belongsTo(Kategori::class);
     }

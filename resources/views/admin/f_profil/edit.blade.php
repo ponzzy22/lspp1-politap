@@ -7,7 +7,7 @@
             <i class="fas fa-cogs"></i> Edit Profil LSP - POLITAP
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item">
                     <a href="{{ route('f_profil.index') }}">LSP P1-POLITAP</a>
@@ -26,31 +26,31 @@
                 @csrf
                 @method('patch')
                 <div class="form-group">
-                    <label for="exampleTextarea1">Judul Profil LSP P1-POLITAP</label>
+                    <label class="font-weight-bold text-primary" for="exampleTextarea1">Judul Profil LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="profil">{{ $profil->profil }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea1">Isi Profil LSP P1-POLITAP</label>
+                    <label class="font-weight-bold text-primary" for="exampleTextarea1">Isi Profil LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="isi">{{ $profil->isi }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea1">Visi LSP P1-POLITAP</label>
+                    <label class="font-weight-bold text-primary" for="exampleTextarea1">Visi LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="visi">{{ $profil->visi }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea1">Misi LSP P1-POLITAP</label>
+                    <label class="font-weight-bold text-primary" for="exampleTextarea1">Misi LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="misi">{{ $profil->misi }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea1">Motto LSP P1-POLITAP</label>
+                    <label class="font-weight-bold text-primary" for="exampleTextarea1">Motto LSP P1-POLITAP</label>
                     <textarea maxlength="1000" class="summernote" id="exampleTextarea1"
                         name="motto">{{ $profil->motto }}</textarea>
                 </div>
-                <label for="input">Logo Politap</label>
+                <label class="font-weight-bold text-primary" for="input">Logo Politap</label>
                 <input type="file" id="input" class="form-control" accept=".png" name="image"><br>
                 <button type="submit" class="btn btn-info btn-icon-text">
                     <i class="far fa-check-square btn-icon-prepend"></i>

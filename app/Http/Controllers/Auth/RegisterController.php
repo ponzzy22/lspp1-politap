@@ -30,6 +30,7 @@ class RegisterController extends Controller
             'email' => ['required', 'min:9', 'unique:users'],
             'email2' => ['required', 'unique:users'],
             'jurusan_id' => ['required'],
+            'role' => ['required'],
             'password' => ['required', 'string', 'min:4', 'confirmed'],
         ]);
     }
@@ -42,6 +43,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'email2' => $data['email2'],
             'jurusan_id' => $data['jurusan_id'],
+            'role' => $data['role'],
             'password' => Hash::make($data['password']),
         ]);
 

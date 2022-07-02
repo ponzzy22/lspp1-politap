@@ -7,7 +7,7 @@
             <i class="fas fa-list-alt"></i> Elemen
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">List Skema</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Unit Kompetensi</a></li>

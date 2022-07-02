@@ -11,7 +11,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('unikom.index') }}">Unit Kompetensi</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Unit Kompetensi</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Unit Kompetensi</li>
             </ol>
         </nav>

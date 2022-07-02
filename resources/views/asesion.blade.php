@@ -36,24 +36,25 @@
                 <button class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button>
             </div>
         </div>
+
         <div class="card col-md-5">
             <div class="card-body">
                 <div class="card-title">
                     <h4>Daftar Sertifikasi Disini</h4>
                 </div>
                 <hr>
-                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/logo3/daftar-sekarang.png') }}" width="300px" alt=""></a>
+                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/back/1') }}" width="300px" alt=""></a>
             </div>
         </div>
     </div>
     <br>
 
-    {{-- <-------------------- PROFIL --------------------> --}}
     <div class="row">
         <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
                     <br>
+                    {{-- <-------------------- PROFIL --------------------> --}}
                     <div class="d-flex flex-row">
                         @if (Auth::user()->image)
                         <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
@@ -87,7 +88,7 @@
             <div class="card col-md-8">
                 <div class="card-body">
                     <div class="row">
-                        <a style="padding-left: 0%" href="{{ route('registrasi.show', $asu->id) }}"><button
+                        <a style="padding-left: 0%" href="{{ route('registrasi.show', Crypt::encryptString($asu->id)) }}"><button
                                 class="btn btn-success btn-rounded btn-sm">
                                 <i class="fas fa-play-circle"></i> Lanjutkan Pengisian Data Pendaftaran Anda </button></a>
                         {{-- <a href="{{ route('formulirapl2edit', $asu->id) }}"><button
@@ -304,10 +305,13 @@
         @endforeach
 
         {{-- <-------------------- SERTIFIKAT --------------------> --}}
-        {{-- @foreach ($datareg4 as $asu)
+        <!-- @foreach ($datareg4 as $asu)
         <div class="col-md-4 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <div class="btn btn-warning btn-rounded btn-sm" data-toggle="modal"
+                            data-target="#exampleModal2z-{{ $asu->id }}"><i class="fa fa-info-circle "></i> Info
+                        </div>
                     <div class="d-flex flex-row">
                         <img src="../images/faces/face11.html" class="img-lg rounded" alt="profile image">
                         <div class="ml-3">
@@ -319,7 +323,7 @@
                 </div>
             </div>
         </div>
-        @endforeach --}}
+        @endforeach -->
     </div><br>
 
 
@@ -395,6 +399,39 @@
             </div>
         </div>
     @endforeach
+
+{{-- <--------------- MODAL SERTIFIKASI ---------------> --}}
+    @foreach ($datareg4 as $asu)
+        <div class="modal fade" id="exampleModal2z-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                            {{ $asu->skema_name }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        OK
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('registrasi.update', $asu->id) }}" method="POST">
+                            @csrf
+                            @method('put')
+                            <input type="hidden" name="status" value="selesai">
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
+                                Pendaftaran</button>
+
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
     {{-- <--------------- MODAL HAPUS Pendaftaran Ditolak... ---------------> --}}
     @foreach ($datareg3 as $asu)
         <div class="modal fade" id="datareg-{{ $asu->id }}" tabindex="-1" role="dialog"

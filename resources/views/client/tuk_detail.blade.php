@@ -2,11 +2,44 @@
 @section('judul')
     TUK | {{ $tuk->tuk }}
 @endsection
-@section('css')
-    <link rel="stylesheet" href="{{ asset('client/Detail-tuk.css') }}">
+
+@section('layanan')
+    active
 @endsection
+
 @section('isi')
-    <section style="background-image: url('{{ asset('images/back/1.jpg') }}')" class="u-align-center u-clearfix u-image u-section-1" id="sec-035d" data-image-width="4000"
+    <div style="margin-top: 8%; margin-bottom: 8%" class="more-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="more-info-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="left-image">
+                                    @if ($tuk->image)
+                                    <img src="{{ asset($tuk->image) }}" alt="">
+                                    @else
+                                    <img src="{{ asset('general/assets/images/gedung1.jpg') }}" alt="">
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-md-6 align-self-center">
+                                <div class="right-content">
+                                    <span>Tempat Uji Kompetensi</span>
+                                    <h2>{{ $tuk->tuk }}</h2>
+                                    <h4><i class="fas fa-user"></i> Pengelola : {{ $tuk->pengelola }}</h4><br>
+                                    <h6>
+                                        <i class="fas fa-map"></i> Alamat : {{ $tuk->alamat }}
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- <section style="background-image: url('{{ asset('images/back/1.jpg') }}')" class="u-align-center u-clearfix u-image u-section-1" id="sec-035d" data-image-width="4000"
         data-image-height="2667">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
@@ -40,6 +73,5 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> --}}
 @endsection

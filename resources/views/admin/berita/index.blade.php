@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Berita</li>
             </ol>
@@ -92,7 +92,7 @@
                 <table id="order-listing" class="table dataTable no-footer" role="grid"
                     aria-describedby="order-listing_info">
                     <thead>
-                        <tr class="bg-light text-black">
+                        <tr class="bg-danger text-white">
                             <th style="width: 10px">
                                 #
                             </th>
@@ -118,21 +118,21 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>
-                                    <button class="btn btn-inverse-dark btn-sm dropdown-toggle" type="button"
+                                    <button class="btn btn-dark btn-sm dropdown-toggle" type="button"
                                         id="dropdownMenuSizeButton3" data-toggle="dropdown" aria-haspopup="true"
                                         aria-expanded="false">
                                         <i class="fa fa-cog"></i>
                                     </button>
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuSizeButton3">
                                         <a href="{{ route('berita.show', $asu->id) }}"><button type="submit"
-                                                class="btn btn-inverse-info btn-sm btn-block"><i class="fa fa-eye "></i>
+                                                class="btn btn-warning btn-sm btn-block"><i class="fa fa-eye "></i>
                                                 Edit & Detail Berita</button></a>
                                         <form action="{{ route('berita.destroy', $asu->id) }}" method="POST"
                                             onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                             @csrf
                                             @method('delete')
                                             <a href=""><button type="submit"
-                                                    class="btn btn-inverse-danger btn-sm btn-block"><i
+                                                    class="btn btn-danger btn-sm btn-block"><i
                                                         class="fa fa-trash "></i> Hapus</button></a>
                                         </form>
                                     </div>

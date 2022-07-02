@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Pengguna</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Pengguna</li>
@@ -25,6 +25,7 @@
                 class="form-sample">
                 @csrf
                 @method('put')
+                <!-- <input type="hidden" name="role" value="user"> -->
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -51,6 +52,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Jurusan</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="jurusan_id">
+                                    <option value="" holder></option>
+                                    @foreach ($jurusan as $result)
+                                        <option value="{{ $result->id }}"
+                                            @if (old('jurusan_id', Auth::user()->jurusan_id) == $result->id) selected @endif>{{ $result->jurusan }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Ganti Password</label>
+                            <div class="col-sm-9">
+                                <input type="password" maxlength="100" class="form-control" name="password">
+                                @error('password')
+                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -63,6 +90,33 @@
                                         value="{{ old('email2', $user->email2) }}">
                                 </div>
                                 @error('email2')
+                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Semester</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" name="semester_id">
+                                    <option value="" holder></option>
+                                    @foreach ($semester as $result)
+                                        <option value="{{ $result->id }}"
+                                            @if (old('semester_id', Auth::user()->semester_id) == $result->id) selected @endif>{{ $result->semester }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Alamat Sesuai KTP</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="alamat"
+                                    value="{{ old('alamat', Auth::user()->alamat) }}">
+                                @error('alamat')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                 @enderror
                             </div>

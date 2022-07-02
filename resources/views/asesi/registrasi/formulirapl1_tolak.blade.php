@@ -5,7 +5,7 @@
 @section('isi')
     @include('layout/verifikasi')
     <br>
-    <div class="card col-md-12">
+    <div id="home" class="card col-md-12">
         <form action="{{ route('registrasi.update', $data->id) }}" method="post"
             enctype="multipart/form-data">
             @csrf
@@ -138,7 +138,10 @@
                             @empty
                             @endforelse
                             {{-- </form> --}}
-                        </table><br><br>
+                        </table>
+                        <br><br>
+                            <a href="#home"><button type="button" class="btn btn-success btn-sm" data-whatever="@mdo"><i class="fas fa-arrow-up"></i></button></a>
+                        <br><br>
                     </div>
                 </div>
             </div>
@@ -208,7 +211,7 @@
                     Langkah-langkah pengisian formulir APL-02 :
                     <br><br>
                     <ol>
-                        <li>Upload data file Formulir APL-02, file berupa <span style="color: brown">png/pdf</span>.</li>
+                        <li>Upload data file Formulir APL-02, file berupa <span style="color: brown">pdf</span>.</li>
                         <li>File yang diupload datanya harus sesuai dengan elemen yang diperlukan </li>
                         <li>Setelah Upload berhasil keterangan "Koreksi Admin" akan menjadi <span style="color: brown">Belum
                             Dikoreksi</span>. </li>

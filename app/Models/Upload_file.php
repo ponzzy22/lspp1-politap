@@ -17,6 +17,9 @@ class Upload_file extends Model
         'koreksi',
         'status',
         'user_id',
+        'y',
+        'n',
+        'z',
         'image'
     ];
 

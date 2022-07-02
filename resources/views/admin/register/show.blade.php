@@ -156,7 +156,63 @@
                                     <span class="float-right">
                                         {{ $validasi->kecamatan }}
                                     </span>
-                                </p> --}}
+                                </p> --}}<br>
+                                <h4 class="card-title"><i class="far fa-id-card "></i> Data Pekerjaan Sekarang</h4>
+                        {{-- <div class="border-bottom py-4"> --}}
+                        <div class="d-flex">
+                            <div class="progress progress-md flex-grow">
+                                <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="75"
+                                    style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div><br>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Institusi &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->institusi }}
+                                </span>
+                        </p>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Jabatan &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->jabatan }}
+                                </span>
+                        </p>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Email (Perusahaan) &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->email3 }}
+                                </span>
+                        </p>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Nomor Telepon &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->telp }}
+                                </span>
+                        </p>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Fax &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->fax }}
+                                </span>
+                        </p>
+                        <p class="clearfix">
+                                <span class="float-left text-muted">
+                                    Kode Post &rarr;
+                                </span>
+                                <span class="float-right">
+                                    {{ $validasi->postal }}
+                                </span>
+                        </p>
                             </div>
                         </div>
                         <!-- /////////////////////////////////// -->
@@ -208,6 +264,7 @@
                                             <th style="width: 10px">#</th>
                                             <th style="width: 10px">Status</th>
                                             <th style="width: 400px">Elemen</th>
+                                            <th style="width: 400px">Lihat</th>
                                         </tr>
                                     </thead>
                                     @foreach ($validasi->xnxxes as $data)
@@ -219,8 +276,12 @@
                                                 </td>
                                                 <td>{{ $data->asesmen_name }}</td>
                                                 <td>
+                                                    @if ($data->image)
                                                     <a href="{{ asset($data->image) }}" target="_blank"
                                                         class="btn btn-info btn-rounded"><i class="fas fa-download"></i></a>
+                                                    @else
+                                                        <p>Kosong</p>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         </tbody>

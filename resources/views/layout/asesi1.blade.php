@@ -70,19 +70,19 @@
                             @if (Auth::user()->image)
                                 <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                             @else
-                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
+                                <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
                             aria-labelledby="profileDropdown">
                             {{-- <a class="dropdown-item">
-                                <i class="fas fa-cog text-primary"></i>
-                                Settings
-                            </a> --}}
+                    <i class="fas fa-cog text-primary"></i>
+                    Settings
+                </a> --}}
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"><i
+                document.getElementById('logout-form').submit();"><i
                                     class="fas fa-power-off text-primary"></i>
                                 {{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -99,14 +99,14 @@
             <!-- TEMA WEBSITE -->
             <!-- /////////////////////////////////// -->
             {{-- <div class="theme-setting-wrapper">
-                <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
-                <div id="theme-settings" class="settings-panel">
-                    <i class="settings-close fa fa-times"></i>
-                    <p class="settings-heading">Tema Sidebar</p>
-                    <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-                        <div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-                    <div class="sidebar-bg-options" id="sidebar-dark-theme">
-                        <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+        <div id="settings-trigger"><i class="fas fa-fill-drip"></i></div>
+        <div id="theme-settings" class="settings-panel">
+            <i class="settings-close fa fa-times"></i>
+            <p class="settings-heading">Tema Sidebar</p>
+            <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+                <div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+                <div class="sidebar-bg-options" id="sidebar-dark-theme">
+                    <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
                     <p class="settings-heading mt-2">Tema Navigasi</p>
                     <div class="color-tiles mx-0 px-4">
                         <div class="tiles primary"></div>
@@ -132,7 +132,7 @@
                                 @if (Auth::user()->image)
                                     <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                                 @else
-                                    <img src="{{ asset('images/back/photo.png') }}" alt="profile">
+                                    <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
                                 @endif
                             </div>
                             <div class="profile-name">
@@ -174,11 +174,11 @@
                                 </li>
                             </ul>
                             {{-- <ul class="nav flex-column sub-menu">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('formulirapl2.edit') }}">Registrasi
-                                        Sertifikasi</a>
-                                </li>
-                            </ul> --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('formulirapl2.edit') }}">Registrasi
+                                Sertifikasi</a>
+                            </li>
+                        </ul> --}}
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('koleksi.sertifikat') }}">Koleksi
@@ -223,7 +223,8 @@
                     Ketapang</a>.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
                 with
-                <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
+                <i class="far fa-heart text-danger"></i><a href="http://informatika.politap.ac.id/" target="_blank">
+                    Teknik
                     Informatika </a><code class="text text-danger"> v.3.06.22</code></span>
         </div>
     </footer>

@@ -11,7 +11,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Koleksi Sertifikat</li>
             </ol>
@@ -61,9 +61,9 @@
                                                 <tr role="row" class="odd">
                                                     <td class="font-weight-bold">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <a href="{{ route('sertifikat_show', $asu->id) }}"><button
+                                                        <a href="{{ route('sertifikat_show', Crypt::encryptString($asu->id)) }}"><button
                                                                 type="submit"
-                                                                class="btn btn-inverse-info btn-sm btn-block font-weight-bold"><i
+                                                                class="btn btn-dark btn-sm btn-block font-weight-bold"><i
                                                                     class="fa fa-eye "></i> Lihat Detail</button></a>
                                                     </td>
                                                     <td class="font-weight-bold">{{ $asu->id }}</td>

@@ -9,7 +9,7 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Tempat Uji Kompetensi</li>
             </ol>
@@ -115,7 +115,7 @@
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
-                                            <tr class="bg-dark text-white" role="row">
+                                            <tr class="bg-danger text-white" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Order #: activate to sort column ascending"
@@ -124,10 +124,6 @@
                                                     rowspan="1" colspan="1"
                                                     aria-label="Actions: activate to sort column ascending"
                                                     style="width: 14.141px;">Actions</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Actions: activate to sort column ascending"
-                                                    style="width: 304.141px;">Kode TUK</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
@@ -139,7 +135,7 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -147,7 +143,7 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button
+                                                            <a href="{{ route('tuk.show', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit"
                                                                     class="btn btn-warning btn-sm btn-block"><i
                                                                         class="fa fa-eye "></i> Edit & Lihat
@@ -164,7 +160,6 @@
                                                             </form>
                                                         </div>
                                                     </td>
-                                                    <td>{{ $asu->kode }}</td>
                                                     <td>{{ $asu->tuk }}</td>
                                                 </tr>
                                             @endforeach

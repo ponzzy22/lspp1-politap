@@ -8,7 +8,7 @@
             <i class="fas fa-image"></i> Edit Carousel
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('beranda_img1.index') }}">Carousel</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Edit Carousel</li>

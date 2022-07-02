@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Skema;
 use App\Models\Unikom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class UnikomController extends Controller
 {
@@ -31,8 +33,9 @@ class UnikomController extends Controller
 
 
     public function edit($id) {
+        $decryptID = Crypt::decryptString($id);
         $skema = Skema::all();
-        $unikom = Unikom::findorfail($id);
+        $unikom = Unikom::findorfail($decryptID);
         return view('admin/unikom/edit', compact('unikom', 'skema'));
     }
 
@@ -44,7 +47,7 @@ class UnikomController extends Controller
             'skema_id' => $request->skema_id,
         ];
         Unikom::whereId($id)->update($unikom_data);
-        return redirect()->route('unikom.index')->with('success','Unit Kompetensi Berhasil di Ubah');
+        return redirect()->back()->with('success','Unit Kompetensi Berhasil di Ubah');
     }
 
 

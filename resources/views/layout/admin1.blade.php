@@ -88,9 +88,9 @@
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown"
                             aria-expanded="false">
                             @if (Auth::user()->image)
-                            <img src="{{ asset(Auth::user()->image) }}" alt="profile">
+                                <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                             @else
-                            <img src="{{ asset('images/back/photo.png') }}" alt="profile">
+                                <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
@@ -100,12 +100,12 @@
                                 Setting Akun
                             </a> --}}
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"><i
                                     class="fas fa-power-off text-primary"></i>
                                 {{ __('Logout') }}</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                class="d-none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf
                             </form>
                         </div>
@@ -183,7 +183,11 @@
                     <li class="nav-item nav-profile">
                         <div id="home" class="nav-link">
                             <div class="profile-image">
-                                <a href="#"> <img src="{{ asset(Auth::user()->image) }}" alt="image" /></a>
+                                @if (Auth::user()->image)
+                                    <img src="{{ asset(Auth::user()->image) }}" alt="profile">
+                                @else
+                                    <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
+                                @endif
                             </div>
                             <div class="profile-name">
                                 <p class="name">
@@ -253,13 +257,13 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('tuk.index') }}">TUK</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('unikom.index') }}">Unit Kompetensi</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('asesmen.index') }}">Elemen
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                     </li>

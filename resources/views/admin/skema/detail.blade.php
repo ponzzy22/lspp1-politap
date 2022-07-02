@@ -7,7 +7,7 @@
             <i class="fab fa-pagelines"></i> Detail Skema
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">List Skema</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detail Skema</li>
@@ -84,6 +84,19 @@
                                     <h6 class="mb-1">{{ $skema->status->status }}</h6>
                                     <p class="mb-0 text-muted">
                                         Status Skema
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card rounded border mb-2">
+                        <div class="card-body p-3">
+                            <div class="media">
+                                <i class="fa fa-check-square icon-sm align-self-center mr-3"></i>
+                                <div class="media-body">
+                                    <h6 class="mb-1">{{ $skema->created_at->format('d/M/Y') }}</h6>
+                                    <p class="mb-0 text-muted">
+                                        Tanggal Dibuat
                                     </p>
                                 </div>
                             </div>

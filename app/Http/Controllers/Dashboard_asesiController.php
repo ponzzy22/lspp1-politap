@@ -45,7 +45,7 @@ class Dashboard_asesiController extends Controller
             'xnxx',
             'skema',
             'jurusan',
-            'upload'
+            'upload',
         ));
     }
 

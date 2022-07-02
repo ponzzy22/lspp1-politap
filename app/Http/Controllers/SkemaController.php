@@ -11,6 +11,7 @@ use App\Models\Tuk;
 use App\Models\Unikom;
 use App\Models\VerifikasiSkema;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class SkemaController extends Controller
 {
@@ -34,6 +35,8 @@ class SkemaController extends Controller
             'asesor_id' => ['required'],
             'tuk_id' => ['required'],
             'status_id' => ['required'],
+        ],[
+            'skema.required' => 'Skemanya mana?',
         ]);
         $skema = Skema::create([
             'kode_skema' =>$request->kode_skema,
@@ -49,17 +52,19 @@ class SkemaController extends Controller
 
 
     public function show($id) {
-        $skema = Skema::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $skema = Skema::findorfail($decryptID);
         return view('admin/skema/show')->with('skema', $skema);
     }
 
 
     public function edit($id) {
+        $decryptID = Crypt::decryptString($id);
         $status = Status::all();
         $tuk = Tuk::all();
         $asesor = Asesor::all();
         $prodi = Prodi::all();
-        $skema = Skema::findorfail($id);
+        $skema = Skema::findorfail($decryptID);
         return view('admin/skema/edit', compact('skema', 'prodi', 'asesor', 'tuk', 'status'));
     }
 
@@ -93,13 +98,15 @@ class SkemaController extends Controller
 
 
     public function show_asesmen($id){
-        $unikom = Unikom::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $unikom = Unikom::findorfail($decryptID);
         return view('admin/skema/show_asesmen')->with('unikom', $unikom);
     }
 
 
     public function detail($id){
-        $skema = Skema::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $skema = Skema::findorfail($decryptID);
         return view('admin/skema/detail', compact('skema'));
     }
 }

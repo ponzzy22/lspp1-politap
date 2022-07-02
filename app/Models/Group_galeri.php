@@ -10,6 +10,7 @@ class Group_galeri extends Model
     use HasFactory;
 
     protected $fillable = ['galeri'];
+    protected $dates = ['created_at'];
 
     public function galeri_fotos(){
         return $this->hasMany(Galeri_foto::class);

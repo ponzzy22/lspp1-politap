@@ -16,6 +16,7 @@ use App\Models\Upload_file;
 use App\Models\User;
 use App\Models\Xnxx;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class RegistrasiController extends Controller
 {
@@ -57,7 +58,12 @@ class RegistrasiController extends Controller
             // 'kabupaten' => ['required'],
             // 'kecamatan' => ['required'],
             // 'kota' => ['required']
+        ],[
+            'kode.unique' => 'Pendaftaran Sertifikasi Ditolak',
+            'skema_id.unique' => 'Harap periksa kembali status pendaftaran sertifikasi sebelumnya',
+            'id.unique' => ' Kemungkinan anda sudah mendaftar dengan skema ini',
         ]);
+
             $data_register = Data_register::create([
                 'id' => $request->id,
                 'kode' => $request->kode,
@@ -81,13 +87,20 @@ class RegistrasiController extends Controller
                 'no_hp' => $request->no_hp,
                 'kode_post' => $request->kode_post,
                 'surel' => $request->surel,
-                'provinsi' => $request->provinsi,
-                'kabupaten' => $request->kabupaten,
-                'kecamatan' => $request->kecamatan,
-                'kota' => $request->kota,
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
-                'image' => $request->image
+                'image' => $request->image,
+                'institusi' => $request->institusi,
+                'jabatan' => $request->jabatan,
+                'email3' => $request->email3,
+                'fax' => $request->fax,
+                'telp' => $request->telp,
+                'postal' => $request->postal,
+                'jenis' => $request->jenis,
+                'rmh' => $request->rmh,
+                'ktr' => $request->ktr,
+                'tmt' => $request->tmt,
+                'alamat_kantor' => $request->alamat_kantor,
             ]);
         return back()->with('success', ' Pendaftaran anda Berhasil, Selanjutnya Silahkan "Ambil Formulir Pendafatran"');
     }
@@ -172,7 +185,7 @@ class RegistrasiController extends Controller
 
     public function show($id)
     {
-
+        $decryptID = Crypt::decryptString($id);
         $registrasi = Data_register::where('user_id', auth()->user()->id)->get();
         $xnxx = Xnxx::where('user_id', auth()->user()->id)
                     ->where('kode', '>', 3)
@@ -185,7 +198,7 @@ class RegistrasiController extends Controller
         $semester = Semester::all();
         $jurusan = Jurusan::all();
         $dokumen_upload = Dokumen_Upload::all();
-        $data = Data_register::findorfail($id);
+        $data = Data_register::findorfail($decryptID);
         $identitas = Upload_file::where('user_id', auth()->user()->id)
                     ->where('kode', '>', 3)
                     ->get();

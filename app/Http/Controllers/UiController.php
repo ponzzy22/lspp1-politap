@@ -31,6 +31,12 @@ class UiController extends Controller
     }
 
 
+    public function pdf()
+    {
+        return view('pdf');
+    }
+
+
 
     public function update(Request $request, $id)
     {

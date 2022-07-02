@@ -7,7 +7,7 @@
         <i class="fab fa-pagelines"></i>  Edit Skema
     </h4>
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+        <ol class="breadcrumb breadcrumb-custom  bg-danger">
             <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Skema/Kluster</a></li>
             <li class="breadcrumb-item active" aria-current="page">Edit Skema</li>

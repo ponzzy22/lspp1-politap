@@ -26,6 +26,6 @@ class LoginController extends Controller
         if ($user->hasRole('admin')) {
             return redirect()->route('admin');
         }
-        return redirect()->route('dashasesi.index');
+        return redirect()->route('/');
     }
 }

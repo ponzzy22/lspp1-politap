@@ -6,6 +6,8 @@ use App\Models\Asesor;
 use App\Models\Skema;
 use App\Models\Tuk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class AsesorController extends Controller
 {
@@ -32,7 +34,7 @@ class AsesorController extends Controller
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
             $image->move('uploads/asesor/', $new_image);
-            $asesor_data = [
+            $asesor_data = Asesor::create([
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
@@ -42,7 +44,7 @@ class AsesorController extends Controller
                 'status' => $request->status,
                 'skema' => $request->skema,
                 'image' => 'uploads/asesor/'.$new_image,
-            ];
+            ]);
         }
         else{
             $asesor_data = Asesor::create( [
@@ -62,7 +64,8 @@ class AsesorController extends Controller
 
 
     public function edit($id) {
-        $asesor = Asesor::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $asesor = Asesor::findorfail($decryptID);
         $skema = Skema::all();
         return view('admin/asesor/edit', compact('asesor', 'skema'));
     }

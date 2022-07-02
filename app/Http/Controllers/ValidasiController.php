@@ -12,7 +12,7 @@ use Illuminate\Validation\Rules\Unique;
 
 class ValidasiController extends Controller
 {
-    
+
     public function registrasi_baru(){
         $validasi = Data_register::where('status', "<h4 style='color: green'>Menunggu Validasi...</h4>")->get();
         return view('admin/register/index', compact('validasi'));
@@ -36,20 +36,6 @@ class ValidasiController extends Controller
         return view('admin/register/list_sertifikat', compact('validasi'));
     }
 
-    public function generatepdf(){
-        $validasi = Data_register::findorfail($id);
-        $xnxx = Xnxx::all();
-        $identitas = Upload_file::all();
-        $tuk = Tuk::all();
-        $asesor = Asesor::all();
-        view()->shared(
-            'validasi', $validasi,
-            'xnxx', $xnxx,
-            'identitas', $identitas,
-            'tuk', $tuk,
-            'asesor', $asesor
-        );
-}
 
 
     public function show(Request $request, $id){
@@ -62,8 +48,29 @@ class ValidasiController extends Controller
     }
 
 
+    public function proses_show(Request $request, $id){
+        $validasi = Data_register::findorfail($id);
+        $xnxx = Xnxx::all();
+        $identitas = Upload_file::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
+        return view('admin/register/proses_show', compact('validasi', 'tuk', 'asesor', 'identitas', 'xnxx'));
+    }
+
+
     public function update(Request $request, $id){
         // dd($request->all());
+        $request->validate([
+            'date' => ['required'],
+            'time' => ['required'],
+            'asesor_id' => ['required'],
+            'tuk_id' => ['required'],
+        ],[
+            'date.required' => 'Masukan tanggal sertifikasi',
+            'time.required' => 'Masukan waktu sertifikasi',
+            'asesor_id.required' => 'Pilih Penguji',
+            'tuk_id.required' => 'Pilih Tempat Uji Kompetensi',
+        ]);
         $validasi_data = [
             'status' => $request->status,
             'date' => $request->date,

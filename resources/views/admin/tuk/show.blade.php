@@ -9,7 +9,7 @@
     <!-- BREADCRUMB -->
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+        <ol class="breadcrumb breadcrumb-custom  bg-danger">
             <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
             <li class="breadcrumb-item"><a href="{{ route('tuk.index') }}">Tempat Uji Kompetensi</a></li>
             <li class="breadcrumb-item active" aria-current="page">Detail TUK</li>
@@ -100,8 +100,12 @@
 </div>
 
 <div class="card col-md-6">
-    <div class="card-body">
-        <img class="card-img-top" src="{{ asset($tuk->image) }}" alt="Card image cap">
+    <div class="card-body"> 
+        @if($tuk->image)
+           <img class="card-img-top" src="{{ asset($tuk->image) }}" alt="Card image cap"> 
+        @else
+            <img class="card-img-top" src="{{ asset('images/back/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg') }}" alt="Card image cap">
+        @endif
     <div class="card-body">
         <h4 class="card-title">Nama TUK : {{ $tuk->tuk }}</h4>
         <h4 class="card-title">Kode TUK : {{ $tuk->kode }}</h4>

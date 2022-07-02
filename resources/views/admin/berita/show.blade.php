@@ -9,13 +9,15 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('berita.index') }}">Berita</a></li>
                 <li class="breadcrumb-item active" aria-current="page"> Edit & Detail Berita</li>
             </ol>
         </nav>
     </div><br>
+
+
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
             <div class="card-header" role="tab" id="heading-11">
@@ -87,7 +89,8 @@
     <!-- /////////////////////////////////// -->
     <!-- TAMPIL DATA -->
     <!-- /////////////////////////////////// -->
-    <div class="card col-md-6">
+
+    <div class="card col-md-12">
         <div class="card-body">
             <img class="card-img-top" src="{{ asset($berita->image) }}" alt="Card image cap">
             <div class="card-body">

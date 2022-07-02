@@ -7,7 +7,7 @@
             <i class="fas fa-edit"></i> Catatan
         </h3>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ url('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Catatan</li>
             </ol>
@@ -31,7 +31,7 @@
                                     <table id="order-listing" class="table dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
-                                            <tr class="bg-dark text-white" role="row">
+                                            <tr class="bg-danger text-white" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Order #: activate to sort column ascending"
@@ -59,7 +59,7 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -69,12 +69,12 @@
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             <a href="{{ route('note.edit', $asu->id) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-warning btn-block"><i
+                                                                    class="btn btn-warning btn-block"><i
                                                                         class="fa fa-edit "></i> Edit
                                                                     Catatan</button></a>
                                                             <a href="{{ route('note.show', $asu->id) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-info btn-block"><i
+                                                                    class="btn btn-info btn-block"><i
                                                                         class="fa fa-eye "></i> Lihat
                                                                     Catatan</button></a>
                                                             <form action="{{ route('note.destroy', $asu->id) }}"
@@ -83,7 +83,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-block"><i
+                                                                        class="btn btn-danger btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus
                                                                         Catatan</button></a>
                                                             </form>

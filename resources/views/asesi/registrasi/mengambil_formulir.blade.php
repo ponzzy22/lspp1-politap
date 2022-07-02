@@ -7,7 +7,7 @@
             <i class="fa fa-window-restore"></i> Mengambil Formulir Pendaftaran
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Mengambil Formulir</li>
             </ol>
@@ -46,6 +46,9 @@
                                         <input type="hidden" name="user_id[]" value="{{ Auth::user()->id }}">
                                         <input type="hidden" name="status[]"
                                             value="<label class='badge badge-outline-danger badge-pill'>Kosong</label>">
+                                        <input type="hidden" name="y[]" value=".">
+                                        <input type="hidden" name="n[]" value=".">
+                                        <input type="hidden" name="z[]" value=".">
                                     @endforeach
                                     <button class="btn btn-primary btn-sm btn-rounded btn-block font-weight-bold"
                                         type="submit"><i class="fas fa-arrow-alt-circle-down"></i>
@@ -84,7 +87,7 @@
                             <th style="width: 200px">
                                 <a href="{{ route('dashasesi.index') }}"><button
                                         class="btn btn-rounded btn-success btn-block btn-sm btn-block font-weight-bold"
-                                        type="submit">Selanjutnya
+                                        type="submit">Simpan Perubahan
                                         <i class="fas fa-angle-double-right"></i>
                                     </button></a>
 

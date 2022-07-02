@@ -16,20 +16,20 @@
                             <button class="btn btn-light text-white">{!! $validasi->status !!}</button>
                             <div class="mt-4 py-2 border-top border-bottom">
                                 <div>
-                                    <h3>{{ $validasi->user_name }}</h3>
+                                    <h5 class="mb-0 mr-2 text-muted">{{ $validasi->user_name }}</h5>
                                     <div class="d-flex align-items-center">
                                         <h5 class="mb-0 mr-2 text-muted">NIM :
-                                            <h4>{{ $validasi->nim }}</h4>
+                                            {{ $validasi->nim }}</h5>
                                         </h5>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <h5 class="mb-0 mr-2 text-muted">Kode Registrasi:
-                                            <h4>#{{ $validasi->id }}</h4>
+                                            #{{ $validasi->id }}</h4>
                                         </h5>
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <h5 class="mb-0 mr-2 text-muted">{{ $validasi->kode_skema }}
-                                            <h4>{{ $validasi->skema_name }}</h4>
+                                            {{ $validasi->skema_name }}</h4>
                                         </h5>
                                     </div>
                                 </div>
@@ -77,8 +77,8 @@
                             </div><br>
                             {{-- <--------------- MODAL FORMULIR APL-01 ---------------> --}}
                             @foreach ($validasi->upload_files as $asu)
-                                <div class="modal fade" id="exampleModal-{{ $asu->id }}" tabindex="-1"
-                                    role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal-{{ $asu->id }}" tabindex="-1" role="dialog"
+                                    aria-labelledby="ModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -117,14 +117,22 @@
                                                     <button class="btn btn-danger btn-sm btn-rounded"><i
                                                             class="fas fa-times-circle"></i> Tidak Ada Data</button>
                                                 </form>
-                                                <a href="{{ asset($asu->image) }}" target="_blank"
-                                                    class="btn btn-light btn-sm btn-rounded"><i class="fas fa-download"></i>
-                                                </a>
+                                                @if ($asu->image)
+                                                    <a href="{{ asset($asu->image) }}" target="_blank"
+                                                        class="btn btn-light btn-sm btn-rounded"><i
+                                                            class="fas fa-download"></i>
+                                                    </a>
+                                                @else
+                                                @endif
                                                 <button type="button" class="btn btn-sm btn-rounded btn-light"
                                                     data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
                                             </div>
                                             <div class="modal-body">
-                                                <img src="{{ asset($asu->image) }}" width="100%" alt="">
+                                                @if ($asu->image)
+                                                    <img src="{{ asset($asu->image) }}" width="100%" alt="">
+                                                @else
+                                                    <h2>TIDAK ADA DATA</h2>
+                                                @endif
                                             </div>
                                             <div class="modal-footer">
                                             </div>
@@ -186,61 +194,64 @@
     </div><br>
     {{-- <--------------- MODAL FORMULIR APL-02 ---------------> --}}
     @foreach ($validasi->xnxxes as $asu)
-    <div class="modal fade" id="exampleModal1-{{ $asu->id }}" tabindex="-1"
-        role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>{{ $asu->name }} </h4>
-                    <button type="button" class="close" data-dismiss="modal"
-                        aria-label="close">
-                        <span aria-hidden="true"></span>
-                    </button>
-                    <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}"
-                        method="post">
-                        @csrf
-                        @method('put')
-                        <input type="hidden" name="koreksi"
-                            value="<label class='badge badge-outline-info badge-pill'>Valid</label>">
-                        <input type="hidden" name="kode" value="0">
-                        <button class="btn btn-info btn-sm btn-rounded"><i
-                                class="fas fa-check-circle"></i>Data Valid</button>
-                    </form>
-                    <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}"
-                        method="post">
-                        @csrf
-                        @method('put')
-                        <input type="hidden" name="kode" value="1">
-                        <input type="hidden" name="koreksi"
-                            value="<label class='badge badge-outline-danger badge-pill'>Tidak Valid</label>">
-                        <button class="btn btn-danger btn-sm btn-rounded"><i
-                                class="fas fa-times-circle"></i> Tidak Valid</button>
-                    </form>
-                    <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}"
-                        method="post">
-                        @csrf
-                        @method('put')
-                        <input type="hidden" name="kode" value="1">
-                        <input type="hidden" name="koreksi"
-                            value="<label class='badge badge-outline-light badge-pill'>Tidak Ada Data</label>">
-                        <button class="btn btn-danger btn-sm btn-rounded"><i
-                                class="fas fa-times-circle"></i> Tidak Ada Data</button>
-                    </form>
-                    <a href="{{ asset($asu->image) }}" target="_blank"
-                        class="btn btn-light btn-sm btn-rounded"><i class="fas fa-download"></i>
-                    </a>
-                    <button type="button" class="btn btn-sm btn-rounded btn-light"
-                        data-dismiss="modal"><i class="fas fa-times-circle"></i></button>
-                </div>
-                <div class="modal-body">
-                    <embed src="{{ asset($asu->image) }}" width="100%" height="400%" alt="">
-                </div>
-                <div class="modal-footer">
+        <div class="modal fade" id="exampleModal1-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>{{ $asu->name }} </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                        <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}" method="post">
+                            @csrf
+                            @method('put')
+                            <input type="hidden" name="koreksi"
+                                value="<label class='badge badge-outline-info badge-pill'>Valid</label>">
+                            <input type="hidden" name="kode" value="0">
+                            <button class="btn btn-info btn-sm btn-rounded"><i class="fas fa-check-circle"></i>Data
+                                Valid</button>
+                        </form>
+                        <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}" method="post">
+                            @csrf
+                            @method('put')
+                            <input type="hidden" name="kode" value="1">
+                            <input type="hidden" name="koreksi"
+                                value="<label class='badge badge-outline-danger badge-pill'>Tidak Valid</label>">
+                            <button class="btn btn-danger btn-sm btn-rounded"><i class="fas fa-times-circle"></i> Tidak
+                                Valid</button>
+                        </form>
+                        <form action="{{ route('koreksiformulirapl2_update', $asu->id) }}" method="post">
+                            @csrf
+                            @method('put')
+                            <input type="hidden" name="kode" value="1">
+                            <input type="hidden" name="koreksi"
+                                value="<label class='badge badge-outline-light badge-pill'>Tidak Ada Data</label>">
+                            <button class="btn btn-danger btn-sm btn-rounded"><i class="fas fa-times-circle"></i> Tidak
+                                Ada Data</button>
+                        </form>
+                        @if ($asu->image)
+                            <a href="{{ asset($asu->image) }}" target="_blank"
+                                class="btn btn-light btn-sm btn-rounded"><i class="fas fa-download"></i>
+                            </a>
+                        @else
+                            <button type="button" class="btn btn-sm btn-rounded btn-light" data-dismiss="modal"><i
+                                    class="fas fa-times-circle"></i></button>
+                        @endif
+                    </div>
+                    <div class="modal-body">
+                        @if ($asu->image)
+                            <embed src="{{ asset($asu->image) }}" width="100%" height="400%" alt="">
+                        @else
+                            <h2>TIDAK ADA DATA</h2>
+                        @endif
+                    </div>
+                    <div class="modal-footer">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-@endforeach
+    @endforeach
 
     {{-- <--------------- MODAL FORMULIR APL-02 ---------------> --}}
     {{-- @foreach ($validasi->xnxxes as $asu)
@@ -296,52 +307,20 @@
             </div>
     @endforeach --}}
     <!-- /////////////////////////////////// -->
-    <!-- VALIDASI DATA -->
+    <!-- VALIDASI DATA DITERIMA -->
     <!-- /////////////////////////////////// -->
-    <div class="accordion accordion-multi-colored" id="accordion-7" role="tablist">
+    <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
-            <div class="card-header" role="tab" id="heading-7">
-                <h5 class="mb-0">
-                    <a data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7"
-                        class="">
-                        KONFIRMASI SERTIFIKASI SELESAI
-                    </a>
-                </h5>
-            </div>
-            <div id="collapse-7" class="collapse" role="tabpanel" aria-labelledby="heading-7"
-                data-parent="#accordion-3" style="">
-                <div class="card-body">
-                    <form action="{{ route('finish.update', $validasi->id) }}" method="POST">
-                        @csrf
-                        @method('put')
-                        <input type="hidden" name="status" value="<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>">
-                        <input type="hidden" name="kode" value="-">
-                        {{-- <input type="hidden" name="id_skema" value="final"> --}}
-                        {{-- <input type="hidden" name="id" value="2022{{ $validasi->user_id }}{{$validasi->id_skema }}"> --}}
-                        <input type="hidden" name="skema_id"
-                            value="{{ $validasi->kode_skema }}{{ $validasi->user_id }}">
-                        <input type="hidden" name="date" value="">
-                        <input type="hidden" name="time" value="">
-                        <input type="hidden" name="asesor_id" value="1">
-                        <input type="hidden" name="tuk_id" value="1">
-                        <button type="submit" class="btn btn-light btn-block"><i class="fas fa-check-circle"></i>
-                            Mahasiswa Sudah Kompeten di Skema {{ $validasi->skema_name }}</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header" role="tab" id="heading-8">
-                <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" href="#collapse-8" aria-expanded="false"
-                        aria-controls="collapse-8">
+            <div style="background-color: #4E944F" class="card-header" role="tab" id="heading-11">
+                <h6 style="background-color: #4E944F" class="mb-0">
+                    <a style="background-color: #4E944F" class="collapsed" data-toggle="collapse" href="#collapse-1111111" aria-expanded="true"
+                        aria-controls="collapse-1111111">
                         SETUJUI PENDAFTARAN SERTIFIKASI
                     </a>
-                </h5>
+                </h6>
             </div>
-            <div id="collapse-8" class="collapse" role="tabpanel" aria-labelledby="heading-8"
-                data-parent="#accordion-3" style="">
+            <div id="collapse-1111111" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+                data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('validasi.update', $validasi->id) }}" method="POST">
                         @csrf
@@ -349,16 +328,16 @@
                         <input type="hidden" name="status"
                             value="<h4 style='color: rgb(34, 123, 138)'>Pendaftaran Divalidasi</h4>">
                         <li><label for="">Tanggal</label></li>
-                        <input type="date" class="form-control" name="date">
+                        <input type="date" class="form-control" name="date"><br>
                         <li>Waktu</li>
                         <div class="input-group date" id="timepicker-example" data-target-input="nearest">
                             <div class="input-group" data-target="#timepicker-example" data-toggle="datetimepicker">
-                                <input name="time" type="text" class="form-control datetimepicker-input" style="width: 10px"
-                                    data-target="#timepicker-example">
+                                <input name="time" type="text" class="form-control datetimepicker-input"
+                                    style="width: 10px" data-target="#timepicker-example">
                                 <div class="input-group-addon input-group-append"><i
                                         class="far fa-clock input-group-text"></i></div>
                             </div>
-                        </div>
+                        </div><br>
                         <li>Asesor</li>
                         <select class="form-control" name="asesor_id">
                             <option value="" holder>Pilih Asesor</option>
@@ -366,7 +345,7 @@
                                 <option value="{{ $result->id }}">{{ $result->nama }}</option>
                                 select
                             @endforeach
-                        </select>
+                        </select><br>
                         <li>Tempat Uji Kompetensi</li>
                         <select class="form-control" name="tuk_id">
                             <option value="" holder>Pilih Tempat Uji Kompetensi</option>
@@ -374,7 +353,7 @@
                                 <option value="{{ $result->id }}">{{ $result->tuk }}</option>
                                 select
                             @endforeach
-                        </select>
+                        </select><br>
                         <li>Keterangan Lain</li>
                         <textarea name="keterangan" class="summernote" id="" cols="36" rows="5"></textarea><br>
                         <button type="submit" class="btn btn-dark btn-block"><i class="fas fa-check-double"></i>
@@ -383,18 +362,22 @@
                 </div>
             </div>
         </div>
-
+    </div>
+ <!-- /////////////////////////////////// -->
+    <!-- VALIDASI DATA DITOLAK -->
+    <!-- /////////////////////////////////// -->
+    <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
-            <div class="card-header" role="tab" id="heading-9">
-                <h5 class="mb-0">
-                    <a class="collapsed" data-toggle="collapse" href="#collapse-9" aria-expanded="false"
-                        aria-controls="collapse-9">
+            <div style="background-color: #B20600" class="card-header" role="tab" id="heading-11">
+                <h6 style="background-color: #B20600" class="mb-0">
+                    <a style="background-color: #B20600" class="collapsed" data-toggle="collapse" href="#collapse-21111111" aria-expanded="true"
+                        aria-controls="collapse-21111111">
                         TOLAK PENDAFTARAN SERTIFIKASI
                     </a>
-                </h5>
+                </h6>
             </div>
-            <div id="collapse-9" class="collapse" role="tabpanel" aria-labelledby="heading-9"
-                data-parent="#accordion-3">
+            <div id="collapse-21111111" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+                data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('tolak.update', $validasi->id) }}" method="POST">
                         @csrf
@@ -413,7 +396,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 
 

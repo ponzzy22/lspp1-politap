@@ -7,7 +7,7 @@
             <i class="fas fa-bars"></i> Unit Kompetensi
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">List Skema</a></li>
                 <li class="breadcrumb-item active" aria-current="page">List Unit Kompetensi </li>
@@ -83,7 +83,7 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-inverse-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -91,14 +91,14 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('show_asesmen', $asu->id) }}"><button
+                                                            <a href="{{ route('show_asesmen', Crypt::encryptString($asu->id)) }}"><button
                                                                 type="submit"
-                                                                class="btn btn-inverse-success btn-block"><i
+                                                                class="btn btn-success btn-block"><i
                                                                     class="fa fa-list-alt "></i>
                                                                 Elemen</button></a>
-                                                            <a href="{{ route('unikom.edit', $asu->id) }}"><button
+                                                            <a href="{{ route('unikom.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit"
-                                                                    class="btn btn-inverse-warning btn-block"><i
+                                                                    class="btn btn-warning btn-block"><i
                                                                         class="fa fa-edit "></i> Edit Unit
                                                                     </button></a>
                                                             <form action="{{ route('unikom.destroy', $asu->id) }}"
@@ -107,7 +107,7 @@
                                                                 @csrf
                                                                 @method('delete')
                                                                 <a href=""><button type="submit"
-                                                                        class="btn btn-inverse-danger btn-block"><i
+                                                                        class="btn btn-danger btn-block"><i
                                                                             class="fa fa-trash "></i> Hapus
                                                                         Unit</button></a>
                                                             </form>

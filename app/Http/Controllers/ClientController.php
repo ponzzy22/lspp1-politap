@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Asesi;
 use App\Models\Asesor;
 use App\Models\Beranda;
 use App\Models\Beranda_img1;
@@ -17,20 +19,30 @@ use App\Models\Info;
 use App\Models\Info2;
 use App\Models\Jurusan;
 use App\Models\Kkni;
+use App\Models\Prodi;
 use App\Models\Skema;
 use App\Models\Skkni;
 use App\Models\Strorg;
 use App\Models\Tuk;
 use App\Models\Unikom;
 use App\Models\Upload_file;
+use App\Models\User;
 use Illuminate\Http\Request;
 use PHPUnit\TextUI\XmlConfiguration\Group;
+use Illuminate\Support\Facades\Crypt;
+
 
 class ClientController extends Controller
 {
 
     public function clientutama()
     {
+        $datatuk = Tuk::where('id', '>', 1)->count();
+        $dataasesi = User::where('id', '>', 2)->count();
+        $dataskema = Skema::all()->count();
+        $dataprodi = Prodi::all()->count();
+        $datasertifikat = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->count();
+        $dataasesor = Asesor::where('id', '>', 1)->count();
         $image2 = Beranda_img2::orderBy('created_at','desc')->take(4)->get();
         $carousel = Beranda_img1::all();
         $beranda = Beranda::all();
@@ -48,6 +60,12 @@ class ClientController extends Controller
         $karyawan = Beranda_img2::all();
         return view('beranda', compact
         (
+            'datatuk',
+            'dataasesi',
+            'dataprodi',
+            'datasertifikat',
+            'dataskema',
+            'dataasesor',
             'beranda',
             'artikel',
             'galeri',
@@ -67,16 +85,18 @@ class ClientController extends Controller
 
     public function berita()
     {
-        $berita = Berita::where('status', 'Posting')->get();
+        $berita = Berita::orderBy('created_at','desc')
+            ->where('status', 'Posting')->get();
         return view('client.berita', compact('berita'));
     }
 
 
     public function berita_detail($id)
     {
+        $decryptID = Crypt::decryptString($id);
         $pengumuman = Berita::where('kategori_id', '2')->take(6)->get();
         $artikel = Berita::where('kategori_id', '1')->take(6)->get();
-        $berita = Berita::findorfail($id);
+        $berita = Berita::findorfail($decryptID);
         return view('client.berita_detail', compact('berita', 'artikel', 'pengumuman'));
     }
 
@@ -90,7 +110,8 @@ class ClientController extends Controller
 
     public function galeri_detail($id)
     {
-        $galeri = Group_galeri::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $galeri = Group_galeri::findorfail($decryptID);
         return view('client.galeri_detail', compact('galeri'));
     }
 
@@ -111,7 +132,8 @@ class ClientController extends Controller
 
     public function asesor_detail($id)
     {
-        $asesor = Asesor::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $asesor = Asesor::findorfail($decryptID);
         return view('client/asesor_detail', compact('asesor'));
     }
 
@@ -133,7 +155,8 @@ class ClientController extends Controller
 
     public function skema_detail($id)
     {
-        $skema = Skema::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $skema = Skema::findorfail($decryptID);
         return view('client/skema_detail', compact('skema'));
     }
 
@@ -148,7 +171,8 @@ class ClientController extends Controller
 
     public function tuk_detail($id)
     {
-        $tuk = Tuk::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $tuk = Tuk::findorfail($decryptID);
         return view('client/tuk_detail', compact('tuk'));
     }
 
@@ -184,7 +208,8 @@ class ClientController extends Controller
 
     public function pengelola_detail($id)
     {
-        $pengelola = Beranda_img2::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $pengelola = Beranda_img2::findorfail($decryptID);
         return view('client/pengelola_detail', compact('pengelola'));
     }
 

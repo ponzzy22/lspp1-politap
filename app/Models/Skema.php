@@ -20,7 +20,7 @@ class Skema extends Model
         'cekpendaftaran_id'
     ];
 
-
+        protected $dates = ['created_at'];
 
     public function prodi(){
         return $this->belongsTo(Prodi::class);
@@ -64,5 +64,9 @@ class Skema extends Model
             'skema_id',
             'unikom_id'
         );
+    }
+
+    public function formapl2s(){
+        return $this->hasMany(Formapl2::class);
     }
 }

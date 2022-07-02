@@ -15,6 +15,8 @@ class Upload_DokumenController extends Controller
             'kode' => ['required', 'unique:upload_files,kode'],
             'kode_dokumen' => ['required', 'unique:upload_files,kode_dokumen'],
             'name' =>['required'],
+        ],[
+            'kode.unique' => 'Data sudah diambil',
         ]);
         $data = $request->all();
         foreach($data['name'] as $item => $value) {
@@ -24,6 +26,9 @@ class Upload_DokumenController extends Controller
                         'user_id' => $request->user_id[$item],
                         'status' => $request->status[$item],
                         'kode' => $request->kode[$item],
+                        'y' => $request->y[$item],
+                        'n' => $request->n[$item],
+                        'z' => $request->z[$item],
                         'kode_dokumen' => $request->kode_dokumen[$item],
                     );
                     Upload_file::create($data2);
@@ -44,6 +49,9 @@ class Upload_DokumenController extends Controller
         $data = [
             'status' => $request->status,
             'koreksi' => $request->koreksi,
+            'y' => $request->y,
+            'n' => $request->n,
+            'z' => $request->z,
             'image' => 'uploads/uploads_file_register/' . $new_image,
         ];
     Upload_file::whereId($id)->update($data);
