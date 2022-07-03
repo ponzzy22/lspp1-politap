@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\F_profil;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class F_profilController extends Controller
 {
@@ -36,7 +37,8 @@ class F_profilController extends Controller
 
     public function edit($id)
     {
-        $profil = F_profil::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $profil = F_profil::findorfail($decryptID);
         return view('admin/f_profil/edit', compact('profil'));
     }
 

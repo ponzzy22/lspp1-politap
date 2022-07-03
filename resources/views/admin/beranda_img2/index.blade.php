@@ -1,22 +1,31 @@
-@extends('layout/admin2')
+@extends('layout/admin')
+
+@section('judul')
+    Pengelola | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-icon-only
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
         <h3>
-            <i class="fas fa-users"></i> Settingan Portofolio Pengelola
+            <i class="fas fa-users"></i> Pengelola
         </h3>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Portofolio Pengelola</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Pengelola</li>
             </ol>
         </nav>
     </div><br>
     <!-- /////////////////////////////////// -->
-    {{-- TAMBAH GAMBAR --}}
+    {{-- TAMBAH DATA --}}
     <!-- /////////////////////////////////// -->
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
@@ -24,27 +33,27 @@
                 <h6 class="mb-0">
                     <a class="collapsed" data-toggle="collapse" href="#collapse-11" aria-expanded="true"
                         aria-controls="collapse-11">
-                        &plus; Klik disini Untuk Menambahkan Pengelola
+                        &plus; Klik Disini Untuk Menambahkan Pengelola
                     </a>
                 </h6>
             </div>
             <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                 <div class="card-body">
                     <p class="card-description">
-                        <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >>
-                        <code>470x625px</code>
+                        {{-- <i class="fas  fa-exclamation-circle"></i> Persyaratan: Ukuran gambar harus >>
+                        <code>470x625px</code> --}}
                     </p>
                     <form action="{{ route('beranda_img2.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-4">
                                 <label>Nama Pengelola</label>
-                                <textarea class="form-control" maxlength="40" rows="1" name="nama" placeholder="Nama Pengelola"></textarea><br>
+                                <textarea class="form-control" maxlength="50" rows="1" name="nama" placeholder="Nama Pengelola"></textarea><br>
                             </div>
 
                             <div class="col-md-4">
                                 <label>Jabatan</label>
-                                <textarea class="form-control" maxlength="40" rows="1" name="keterangan" placeholder="Jabatan Pengelola"></textarea><br>
+                                <textarea class="form-control" maxlength="20" rows="1" name="keterangan" placeholder="Jabatan Pengelola"></textarea><br>
                             </div>
 
                             <div class="col-md-4">
@@ -99,7 +108,7 @@
         </div>
     </div>
     <!-- /////////////////////////////////// -->
-    {{-- SHOW GAMBAR --}}
+    {{-- SHOW DATA --}}
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
@@ -142,7 +151,7 @@
                                                     <tr role="row" class="odd">
                                                         <td class="">{{ $loop->iteration }}</td>
                                                         <td class="text-right">
-                                                            <button class="btn btn-dark btn-sm dropdown-toggle"
+                                                            <button class="btn btn-primary btn-sm dropdown-toggle"
                                                                 type="button" id="dropdownMenuSizeButton3"
                                                                 data-toggle="dropdown" aria-haspopup="true"
                                                                 aria-expanded="false">
@@ -150,7 +159,8 @@
                                                             </button>
                                                             <div class="dropdown-menu"
                                                                 aria-labelledby="dropdownMenuSizeButton3">
-                                                                <a href="{{ route('beranda_img2.edit', $asu->id) }}"><button
+                                                                <a
+                                                                    href="{{ route('beranda_img2.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                         type="submit"
                                                                         class="btn btn-warning btn-sm btn-block"><i
                                                                             class="fa fa-edit "></i> Lihat & Edit

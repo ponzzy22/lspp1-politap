@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/asesi.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
 </head>
 
@@ -70,11 +70,7 @@
                             @if (Auth::user()->image)
                                 <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                             @else
-<<<<<<< HEAD
                                 <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
-=======
-                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
@@ -86,11 +82,7 @@
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
-<<<<<<< HEAD
                 document.getElementById('logout-form').submit();"><i
-=======
-                                document.getElementById('logout-form').submit();"><i
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                     class="fas fa-power-off text-primary"></i>
                                 {{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -140,11 +132,7 @@
                                 @if (Auth::user()->image)
                                     <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                                 @else
-<<<<<<< HEAD
                                     <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
-=======
-                                    <img src="{{ asset('images/back/photo.png') }}" alt="profile">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 @endif
                             </div>
                             <div class="profile-name">

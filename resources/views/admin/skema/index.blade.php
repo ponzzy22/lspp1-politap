@@ -1,4 +1,12 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+@section('judul')
+    Skema | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
@@ -8,8 +16,8 @@
         </h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Skema</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Skema</li>
             </ol>
         </nav>
     </div><br>
@@ -25,8 +33,7 @@
                     </a>
                 </h6>
             </div>
-            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
-                data-parent="#accordion-4">
+            <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                 <div class="card-body">
                     <form action="{{ route('skema.store') }}" method="POST" class="form-sample">
                         @csrf
@@ -118,7 +125,7 @@
                         </div>
 
                         <div class="card-description text-left">
-                            <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                            <button type="submit" class="btn btn-success btn-rounded btn-icon-text btn-block">
                                 <i class="fa fa-save btn-icon-prepend"></i> Simpan
                             </button>
                         </div>
@@ -132,12 +139,10 @@
     {{-- <---------------------- TAMPIL SKEMA ----------------------> --}}
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fas fa-bars"> List Skema</i></h4>
-            <div class="row grid-margin">
-            </div>
+            <h4 class="card-title"><i class="fas fa-table"></i> Table Skema</h4>
             <div class="row">
                 <div class="col-12">
-                    <div class="table-responsive">
+                    <div class="table-responsive table-striped">
                         <div id="order-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
                                 <div class="col-sm-12">
@@ -162,13 +167,13 @@
                                                     aria-label="Customer: activate to sort column ascending"
                                                     style="width: 575.75px;">Skema</th>
                                                 <!-- <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Ship to: activate to sort column ascending"
-                                                    style="width: 97.5469px;">Pengelola</th>
-                                                <th class="sorting" tabindex="0" aria-controls="order-listing"
-                                                    rowspan="1" colspan="1"
-                                                    aria-label="Status: activate to sort column ascending"
-                                                    style="width: 106.1094px;">Prodi</th> -->
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Ship to: activate to sort column ascending"
+                                                        style="width: 97.5469px;">Pengelola</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="order-listing"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Status: activate to sort column ascending"
+                                                        style="width: 106.1094px;">Prodi</th> -->
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Status: activate to sort column ascending"
@@ -180,52 +185,42 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle" type="button"
-                                                            id="dropdownMenuSizeButton3" data-toggle="dropdown"
-                                                            aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-primary btn-sm dropdown-toggle"
+                                                            type="button" id="dropdownMenuSizeButton3"
+                                                            data-toggle="dropdown" aria-haspopup="true"
+                                                            aria-expanded="false">
                                                             <i class="fa fa-cog"></i>
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            <a href="{{ route('skema.show', Crypt::encryptString($asu->id)) }}"><button
+                                                            <a
+                                                                href="{{ route('skema.show', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-success btn-block"><i
                                                                         class="fa fa-list "></i> Unit
                                                                 </button></a>
-                                                            <a href="{{ route('skema.edit', Crypt::encryptString($asu->id)) }}"><button
+                                                            <a
+                                                                href="{{ route('skema.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-warning btn-block"><i
                                                                         class="fa fa-edit "></i> Edit Skema</button></a>
-                                                            <a href="{{ route('skema.detail', Crypt::encryptString($asu->id)) }}"><button
+                                                            <a
+                                                                href="{{ route('skema.detail', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-info btn-block"><i
                                                                         class="fa fa-eye "></i> Detail
                                                                     Skema</button></a>
-                                                            <form action="{{ route('skema.destroy', $asu->id) }}"
-                                                                method="POST"
-                                                                onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <a href=""><button type="submit"
-                                                                        class="btn btn-danger btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus
-                                       
-                                                            </form>
+                                                            <button data-toggle="modal"
+                                                                data-target="#datareg-{{ $asu->id }}"
+                                                                class="btn btn-danger btn-block"><i
+                                                                    class="fa fa-trash "></i> Hapus</button>
                                                         </div>
                                                     </td>
                                                     <td class="">{{ $asu->kode_skema }}</td>
                                                     <td>{{ $asu->skema }}</td>
-<<<<<<< HEAD
                                                     <!-- <td>{{ $asu->asesor->nama }}</td>
-                                                    <td><label
-                                                            class="badge badge-light">{{ $asu->prodi->prodi }}</label>
-                                                    </td> -->
-=======
-                                                    <td>{{ $asu->asesor->nama }}</td>
-                                                    <td><label
-                                                            class="badge badge-light">{{ $asu->prodi->prodi }}</label>
-                                                    </td>
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
-                                                    <td><label
-                                                            class="badge badge-light">{{ $asu->status->status }}</label>
-                                                    </td>
+                                                        <td><label
+                                                                {{-- class="badge badge-light">{{ $asu->prodi->prodi }}</label> --}}
+                                                        </td> -->
+                                                    <td>{!! $asu->status->keterangan !!}</td>
+
                                                     {{-- <td>@if ($asu->cekpendaftaran->cek)
                                                         <label class="badge badge-light">{{ $asu->cekpendaftaran->cek }}</label>
                                                     @else
@@ -244,4 +239,33 @@
             </div>
         </div>
     </div>
+    {{-- <--------------- MODAL HAPUS DATA ---------------> --}}
+    @foreach ($skema as $asu)
+        <div class="modal fade" id="datareg-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                            {{ $asu->skema }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah Anda Yakin Untuk Menghapus Data Ini?
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('skema.destroy', $asu->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <a href=""><button type="submit" class="btn btn-success btn-block"><i
+                                        class="fa fa-trash "></i> Hapus</button></a>
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

@@ -5,11 +5,7 @@
 @section('isi')
     @include('layout/verifikasi')
     <br>
-<<<<<<< HEAD
     <div id="home" class="card col-md-12">
-=======
-    <div class="card col-md-12">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         <form action="{{ route('registrasi.update', $data->id) }}" method="post"
             enctype="multipart/form-data">
             @csrf
@@ -142,14 +138,10 @@
                             @empty
                             @endforelse
                             {{-- </form> --}}
-<<<<<<< HEAD
                         </table>
                         <br><br>
                             <a href="#home"><button type="button" class="btn btn-success btn-sm" data-whatever="@mdo"><i class="fas fa-arrow-up"></i></button></a>
                         <br><br>
-=======
-                        </table><br><br>
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                     </div>
                 </div>
             </div>

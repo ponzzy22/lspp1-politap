@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/format.min.css')}}">
+    <script>
+        window.addEventListener("load", window.print());
+    </script>
 </head>
 
 <body>
@@ -278,7 +281,7 @@
                             <td align="center">{!!$asu->y!!}</td>
                             <td align="center">{!!$asu->n!!}</td>
                             <td align="center">{!!$asu->z!!}</td>
-                        </tr>                
+                        </tr>
                     @endforeach
                 </tbody>
             </table><br>
@@ -308,7 +311,7 @@
             </table>
             <table class="table table-bordered">
                 <tr>
-                    <td  class="font-weight-bold" rowspan="5">Catatan : 
+                    <td  class="font-weight-bold" rowspan="5">Catatan :
                         <p></p>
                     </td>
                     <td class="font-weight-bold"  colspan="2">Admin LSP :</td>
@@ -322,7 +325,7 @@
                     <td style="width: 300px;"></td>
                 </tr>
                 <tr>
-                    <td style="width: 300px;">Tanda tangan/Tanggal                        
+                    <td style="width: 300px;">Tanda tangan/Tanggal
                         <br><br><br><br><br>
                     </td style="width: 300px;">
                     <td style="width: 300px;" align="RIGHT">
@@ -332,10 +335,6 @@
             </table>
         </div>
     </div>
-
-    <!-- <script>
-        window.addEventListener("load", window.print());
-    </script> -->
 </body>
 
 </html>

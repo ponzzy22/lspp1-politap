@@ -17,6 +17,8 @@ class User extends Authenticatable
 
     protected $table = 'users';
 
+    protected $dates = ['created_at'];
+
     protected $fillable = [
         'id',
         'role',
@@ -47,13 +49,10 @@ class User extends Authenticatable
         'jurusan_id',
         'semester_id',
         'tempat_lahir',
-<<<<<<< HEAD
         'kode_post',
         'rmh',
         'tmt',
         'ktr',
-=======
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     ];
 
 

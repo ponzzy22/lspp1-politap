@@ -69,4 +69,8 @@ class Skema extends Model
     public function formapl2s(){
         return $this->hasMany(Formapl2::class);
     }
+
+    public function skknis(){
+        return $this->hasMany(Skkni::class);
+    }
 }

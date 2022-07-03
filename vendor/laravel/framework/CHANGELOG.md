@@ -1,6 +1,5 @@
 # Release Notes for 9.x
 
-<<<<<<< HEAD
 ## [Unreleased](https://github.com/laravel/framework/compare/v9.17.0...9.x)
 
 
@@ -20,9 +19,6 @@
 
 ### Changed
 -  Allow assertions against pushed string based pushed jobs ([#42676](https://github.com/laravel/framework/pull/42676))
-=======
-## [Unreleased](https://github.com/laravel/framework/compare/v9.16.0...9.x)
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 
 
 ## [v9.16.0](https://github.com/laravel/framework/compare/v9.15.0...v9.16.0) - 2022-06-02

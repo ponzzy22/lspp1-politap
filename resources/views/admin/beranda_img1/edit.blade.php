@@ -1,4 +1,13 @@
-@extends('layout/admin2')
+@extends('layout/admin')
+
+@section('judul')
+    {{ $beranda_img1->id }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-icon-only
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
 
@@ -9,9 +18,9 @@
         </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('beranda_img1.index') }}">Carousel</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Carousel</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('beranda_img1.index') }}">Carousel</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">{{ $beranda_img1->id }}</li>
             </ol>
         </nav>
     </div><br>
@@ -19,8 +28,6 @@
 
     {{-- <-------------------EDIT CAROUSEL --------------------> --}}
     <div class="card">
-        <div class="card-body">
-                <img src="{{ asset($beranda_img1->image) }}" width="500px" alt="carousel">
         <div class="card-body">
             <form action="{{ route('beranda_img1.update', $beranda_img1->id) }}" method="post"
                 enctype="multipart/form-data">
@@ -30,15 +37,15 @@
                 <input type="file" class="form-control" id="file" name="image">
                 <br>
                 <label for="keterangan">Keterangan</label>
-                <input type="text" name="keterangan" maxlength="200" class="form-control" value="{{ $beranda_img1->keterangan }}">
+                <input type="text" name="keterangan" maxlength="20" class="form-control" value="{{ $beranda_img1->keterangan }}">
                 <div class="form-action"><br>
-                    <button type="submit" class="btn btn-info btn-icon-text btn-block">
+                    <button type="submit" class="btn btn-rounded btn-info btn-icon-text btn-block">
                         <i class="far fa-check-square btn-icon-prepend"></i>
                         Update
                     </button>
                 </div>
             </form><br>
-        </div>
+            <img src="{{ asset($beranda_img1->image) }}" width="200px" alt="carousel">
         </div>
     </div>
 @endsection

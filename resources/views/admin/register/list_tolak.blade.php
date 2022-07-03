@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    Data Ditolak | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
 
@@ -11,8 +20,8 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Registrasi Ditolak</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Data Registrasi Ditolak</li>
             </ol>
         </nav>
     </div><br>
@@ -21,7 +30,6 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            {{-- <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4> --}}
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -45,7 +53,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
-                                                    style="width: 155.75px;">Id Register</th>
+                                                    style="width: 155.75px;">Kode Register</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
@@ -65,7 +73,7 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-primary btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -73,26 +81,20 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-                                                            {{-- <a href="{{ route('validasi.edit', $asu->id) }}"><button type="submit" class="btn btn-warning btn-sm btn-block"><i class="fa fa-edit "></i>  Edit </button></a> --}}
                                                             <a href="{{ route('validasi.show', $asu->id) }}"><button
-                                                                    type="submit"
-                                                                    class="btn btn-info btn-sm btn-block"><i
-                                                                        class="fa fa-eye "></i> Detail Data</button></a>
-                                                            <form action="{{ route('validasi.destroy', $asu->id) }}"
-                                                                method="POST"
-                                                                onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <a href=""><button type="submit"
-                                                                        class="btn btn-danger btn-sm btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus</button></a>
-                                                            </form>
+                                                                type="submit"
+                                                                class="btn btn-info btn-sm btn-block"><i
+                                                                    class="fa fa-eye "></i> Detail Data</button></a>
+                                                            <button data-toggle="modal"
+                                                            data-target="#datareg-{{ $asu->id }}"
+                                                            class="btn btn-danger btn-block"><i
+                                                                class="fa fa-trash "></i> Hapus</button>
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->id }}</td>
                                                     <td>{{ $asu->user_name }}</td>
                                                     <td>{{ $asu->skema_name }}</td>
-                                                    <td>{{ $asu->created_at }}</td>
+                                                    <td>{{ $asu->created_at->format('d-M-Y') }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -105,4 +107,33 @@
             </div>
         </div>
     </div>
+    {{-- <--------------- MODAL HAPUS DATA ---------------> --}}
+@foreach ($validasi as $asu)
+<div class="modal fade" id="datareg-{{ $asu->id }}" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                    {{ $asu->user_name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda Yakin Untuk Menghapus Pendaftaran Ini?
+            </div>
+            <div class="modal-footer">
+                <form action="{{ route('validasi.destroy', $asu->id) }}" method="POST">
+                    @csrf
+                    @method('delete')
+                    <a href=""><button type="submit" class="btn btn-success btn-block"><i
+                                class="fa fa-trash "></i> Hapus</button></a>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
 @endsection

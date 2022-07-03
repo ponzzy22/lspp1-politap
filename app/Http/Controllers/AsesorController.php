@@ -23,22 +23,23 @@ class AsesorController extends Controller
         $request->validate([
             'nik' => ['required', 'unique:asesor,nik'],
             'nama' => ['required'],
+            'image' => ['max:1000'],
             // 'alamat' => ['required'],
             // 'sex' => ['required'],
             // 'no_hp' => ['required'],
             // 'email' => ['required', 'unique:asesor,email'],
             // 'status' => ['required'],
             // 'image' => ['required', 'image']
+        ],[
+            'nik.required' => 'Kode Asesor diperlukan',
+            'nama.required' => 'Namanya Mana?',
+            'image.max' => 'Maksimal ukuran  gambar 1 mb',
         ]);
         if ($request->has('image')) {
             $image = $request->image;
             $new_image = time().$image->getClientOriginalName();
             $image->move('uploads/asesor/', $new_image);
-<<<<<<< HEAD
             $asesor_data = Asesor::create([
-=======
-            $asesor_data = [
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 'nik' => $request->nik,
                 'nama' => $request->nama,
                 'alamat' => $request->alamat,
@@ -48,11 +49,7 @@ class AsesorController extends Controller
                 'status' => $request->status,
                 'skema' => $request->skema,
                 'image' => 'uploads/asesor/'.$new_image,
-<<<<<<< HEAD
             ]);
-=======
-            ];
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         }
         else{
             $asesor_data = Asesor::create( [
@@ -83,10 +80,15 @@ class AsesorController extends Controller
         $request->validate([
             'nik' => ['required'],
             'nama' => ['required'],
+            'image' => ['max:1000'],
             // 'alamat' => ['required'],
             // 'sex' => ['required'],
             // 'no_hp' => ['required'],
             // 'status' => ['required'],
+        ],[
+            'nik.required' => 'Kode Asesor diperlukan',
+            'nama.required' => 'Namanya Mana?',
+            'image.max' => 'Maksimal ukuran  gambar 1 mb',
         ]);
         $asesor = Asesor::findorfail($id);
         if ($request->has('image')) {

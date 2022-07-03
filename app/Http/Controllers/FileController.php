@@ -6,6 +6,7 @@ use App\Models\File;
 use App\Models\Fileapl2;
 use App\Models\Filelain;
 use App\Models\Kkni;
+use App\Models\Skema;
 use App\Models\Skkni;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class FileController extends Controller
         $skkni = Skkni::all();
         $kkni = Kkni::all();
         $fileapl2 = Fileapl2::all();
-        return view('admin/file/index', compact('file', 'filelain', 'skkni', 'kkni', 'fileapl2'));
+        $skema = Skema::all();
+        return view('admin/file/index', compact('file', 'filelain', 'skkni', 'skema', 'kkni', 'fileapl2'));
     }
 
 

@@ -18,6 +18,8 @@ class Beranda_img1Controller extends Controller
     {
         $request->validate([
             'image' => 'required'
+        ],[
+            'image.required' => 'Gambar Diperlukan',
         ]);
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
@@ -66,7 +68,7 @@ class Beranda_img1Controller extends Controller
             ];
         }
         $beranda_img1->update($beranda_img1_data);
-        return redirect()->route('beranda_img1.index')->with('success','Carousel anda berhasil di Update');
+        return redirect()->back()->with('success','Carousel anda berhasil di Update');
     }
 
 

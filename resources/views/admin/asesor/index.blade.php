@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    Asesor | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -10,8 +19,8 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Asesor</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Asesor</li>
             </ol>
         </nav>
     </div><br>
@@ -40,7 +49,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Nama </label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="50" name="nama" class="form-control">
+                                        <input type="text" maxlength="75" name="nama" class="form-control">
                                         @error('nama')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -103,7 +112,7 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Photo</label>
                                     <div class="col-sm-9">
-                                        <input type="file" class="form-control" name="image">
+                                        <input type="file" accept=".png, .jpg, .jpeg" class="form-control" name="image">
                                         @error('image')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -156,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                        <button type="submit" class="btn btn-rounded btn-success btn-icon-text btn-block">
                             <i class="fa fa-save btn-icon-prepend"></i>
                             Simpan
                         </button>
@@ -182,8 +191,8 @@
                             class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <table id="order-listing" class="table dataTable no-footer" role="grid"
-                                        aria-describedby="order-listing_info">
+                                    <table id="order-listing" class="table table-striped dataTable no-footer"
+                                        role="grid" aria-describedby="order-listing_info">
                                         <thead>
                                             <tr class="bg-danger text-white" role="row">
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
@@ -217,7 +226,7 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-primary btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -225,25 +234,15 @@
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-<<<<<<< HEAD
-                                                            <a href="{{ route('asesor.edit', Crypt::encryptString($asu->id)) }}"><button
+                                                            <a
+                                                                href="{{ route('asesor.edit', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit" class="btn btn-warning  btn-block"><i
-=======
-                                                            <a href="{{ route('asesor.edit', $asu->id) }}"><button
-                                                                    type="submit" class="btn btn-info  btn-block"><i
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                                                         class="fa fa-eye "></i> Lihat & Edit
                                                                     Asesor</button></a>
-                                                            <form action="{{ route('asesor.destroy', $asu->id) }}"
-                                                                method="POST"
-                                                                onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <a href=""><button type="submit"
-                                                                        class="btn btn-danger  btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus
-                                                                        Asesor</button></a>
-                                                            </form>
+                                                            <button data-toggle="modal"
+                                                                data-target="#datareg-{{ $asu->id }}"
+                                                                class="btn btn-danger btn-block"><i
+                                                                    class="fa fa-trash "></i> Hapus</button>
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->nik }}</td>
@@ -251,13 +250,13 @@
                                                         @if ($asu->image)
                                                             <img src="{{ asset($asu->image) }}" alt="">
                                                         @else
-                                                            <img src="{{ asset('images/back/photo.png') }}"
+                                                            <img src="{{ asset('general/assets/images/photo.jpg') }}"
                                                                 alt="">
                                                         @endif
                                                     </td>
                                                     <td>{{ $asu->nama }}</td>
                                                     <td>
-                                                        <label class="badge badge-light">{{ $asu->status }}</label>
+                                                        <label class="badge badge-info">{{ $asu->status }}</label>
                                                     </td>
                                                 </tr>
                                             @endforeach
@@ -271,4 +270,33 @@
             </div>
         </div>
     </div>
+    {{-- <--------------- MODAL HAPUS DATA ---------------> --}}
+    @foreach ($asesor as $hasil => $asu)
+        <div class="modal fade" id="datareg-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                            {{ $asu->nama }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah Anda Yakin Untuk Menghapus Data Ini?
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('asesor.destroy', $asu->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <a href=""><button type="submit" class="btn btn-success btn-block"><i
+                                        class="fa fa-trash "></i> Hapus</button></a>
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

@@ -3,11 +3,7 @@
 Profil Anda | LSP-POLITAP
 @endsection
 @section('isi')
-<<<<<<< HEAD
     <!-- @include('layout/verifikasi') -->
-=======
-    @include('layout/verifikasi')
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     <div class="page-header">
         <h4>
             <i class="fas fa-user"></i>  Profil Anda
@@ -16,11 +12,7 @@ Profil Anda | LSP-POLITAP
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-<<<<<<< HEAD
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-=======
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Profil Anda</li>
             </ol>
@@ -186,8 +178,6 @@ Profil Anda | LSP-POLITAP
                         </div>
                     </div>
                     {{-- <div class="col-md-6">
-<<<<<<< HEAD
-=======
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Kata Sandi</label>
                             <div class="col-sm-9">
@@ -198,32 +188,6 @@ Profil Anda | LSP-POLITAP
                                 @enderror
                             </div>
                         </div>
-                    </div> --}}
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Alamat Sesuai KTP</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="alamat"
-                                    value="{{ old('alamat', Auth::user()->alamat) }}">
-                                @error('alamat')
-                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Kata Sandi</label>
-                            <div class="col-sm-9">
-                                <input type="number" maxlength="25" class="form-control" name="email"
-                                    value="{{ old('email', Auth::user()->email) }}">
-                                @error('password')
-                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                @enderror
-                            </div>
-                        </div>
-<<<<<<< HEAD
                     </div> --}}
                     <div class="col-md-6">
                         <div class="form-group row">
@@ -337,8 +301,6 @@ Profil Anda | LSP-POLITAP
                                 @enderror
                             </div>
                         </div>
-=======
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                     </div>
                 </div>
 

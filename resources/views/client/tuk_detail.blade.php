@@ -2,18 +2,12 @@
 @section('judul')
     TUK | {{ $tuk->tuk }}
 @endsection
-<<<<<<< HEAD
 
 @section('layanan')
     active
-=======
-@section('css')
-    <link rel="stylesheet" href="{{ asset('client/Detail-tuk.css') }}">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 @endsection
 
 @section('isi')
-<<<<<<< HEAD
     <div style="margin-top: 8%; margin-bottom: 8%" class="more-info">
         <div class="container">
             <div class="row">
@@ -46,9 +40,6 @@
         </div>
     </div>
     {{-- <section style="background-image: url('{{ asset('images/back/1.jpg') }}')" class="u-align-center u-clearfix u-image u-section-1" id="sec-035d" data-image-width="4000"
-=======
-    <section style="background-image: url('{{ asset('images/back/1.jpg') }}')" class="u-align-center u-clearfix u-image u-section-1" id="sec-035d" data-image-width="4000"
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         data-image-height="2667">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">

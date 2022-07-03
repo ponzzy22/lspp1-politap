@@ -58,6 +58,16 @@ class ValidasiController extends Controller
     }
 
 
+    public function sertifikat_show(Request $request, $id){
+        $validasi = Data_register::findorfail($id);
+        $xnxx = Xnxx::all();
+        $identitas = Upload_file::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
+        return view('admin/register/sertifikat_show', compact('validasi', 'tuk', 'asesor', 'identitas', 'xnxx'));
+    }
+
+
     public function update(Request $request, $id){
         // dd($request->all());
         $request->validate([
@@ -88,16 +98,16 @@ class ValidasiController extends Controller
         // dd($request->all());
         $validasi_data = [
             'status' => $request->status,
-            'date' => $request->date,
+            // 'date' => $request->date,
             'id_skema' => $request->id_skema,
             'kode' => $request->kode,
-            'time' => $request->time,
-            'asesor_id' => $request->asesor_id,
-            'tuk_id' => $request->tuk_id,
-            'keterangan' => $request->keterangan
+            // 'time' => $request->time,
+            // 'asesor_id' => $request->asesor_id,
+            // 'tuk_id' => $request->tuk_id,
+            // 'keterangan' => $request->keterangan
         ];
         Data_register::whereId($id)->update($validasi_data);
-        return back()->with('success', 'Proses Update Data Registrasi Berhasil');
+        return back()->with('success', 'Proses Validasi Data Registrasi Berhasil');
     }
 
     public function finishstore(Request $request)
@@ -115,7 +125,7 @@ class ValidasiController extends Controller
             'skema_id' => $request->skema_id,
             'id' => $request->id
         ]);
-        return back()->with('success', 'Berhasil');
+        return back()->with('success', 'Proses Validasi Data Registrasi Berhasil');
     }
 
 
@@ -131,7 +141,7 @@ class ValidasiController extends Controller
             'keterangan' => $request->keterangan
         ];
         Data_register::whereId($id)->update($validasi_data);
-        return back()->with('success', 'Proses Update Data Registrasi Berhasil');
+        return back()->with('success', 'Proses Validasi Data Registrasi Berhasil');
     }
 
 

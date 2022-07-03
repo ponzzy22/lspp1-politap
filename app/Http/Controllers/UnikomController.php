@@ -22,6 +22,9 @@ class UnikomController extends Controller
             'kode_unikom' => ['required', 'unique:unikoms,kode_unikom'],
             'unikom' => ['required'],
             'skema_id' => ['required']
+        ],[
+            'kode_unikom.required' => 'Kode Unitnya Mana?',
+            'unikom.required' => 'Nama Unitnya Mana?',
         ]);
         $unikom = Unikom::create([
             'kode_unikom' => $request->kode_unikom,
@@ -41,6 +44,14 @@ class UnikomController extends Controller
 
 
     public function update(Request $request, $id) {
+        $request->validate([
+            'kode_unikom' => ['required', 'unique:unikoms,kode_unikom'],
+            'unikom' => ['required'],
+            'skema_id' => ['required']
+        ],[
+            'kode_unikom.required' => 'Kode Unitnya Mana?',
+            'unikom.required' => 'Nama Unitnya Mana?',
+        ]);
         $unikom_data = [
             'kode_unikom' => $request->kode_unikom,
             'unikom' => $request->unikom,

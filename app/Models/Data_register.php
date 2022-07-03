@@ -60,7 +60,7 @@ class Data_register extends Model
 
     ];
 
-    protected $dates = ['tgl_lahir'];
+    protected $dates = ['tgl_lahir', 'date', 'created_at', 'updated_at'];
 
     // protected $dates = ['created_at'];
 

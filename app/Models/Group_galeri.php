@@ -9,7 +9,7 @@ class Group_galeri extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['galeri'];
+    protected $fillable = ['galeri', 'image'];
     protected $dates = ['created_at'];
 
     public function galeri_fotos(){

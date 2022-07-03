@@ -4,7 +4,6 @@
 @endsection
 
 @section('css')
-<<<<<<< HEAD
     {{-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" />
     <style>
@@ -44,9 +43,6 @@
             margin-bottom: 10px;
         }
     </style>
-=======
-    <link rel="stylesheet" href="{{ asset('client/Detail-Album.css') }}">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 @endsection
 
 @section('javascript')
@@ -87,8 +83,7 @@
 @endsection
 
 @section('isi')
-<<<<<<< HEAD
-    <div style="margin-top: 8%" class="container">
+    <div style="margin-top: 10%" class="container">
         {{-- <div class="row">
             <div class="col-lg-12 text-center my-2">
                 <h3 class="py-3"><a href="https://spreeowl.com/">Spreeowl</a></h3>
@@ -122,9 +117,6 @@
 
 
     {{-- <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="carousel_95bf">
-=======
-    <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="carousel_95bf">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
         <div class="u-expanded-width u-grey-5 u-shape u-shape-rectangle u-shape-1"></div>
         <div class="u-align-center u-container-style u-group u-shape-rectangle u-group-1">
             <div class="u-container-layout">
@@ -147,10 +139,5 @@
             </div>
         </div>
         <p class="u-align-right u-text u-text-custom-color-1 u-text-2">{{ $galeri->created_at }} </p>
-<<<<<<< HEAD
     </section> --}}
-=======
-    </section>
-
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 @endsection

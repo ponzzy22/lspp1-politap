@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<<<<<<< HEAD
     <title>Login-Admin | LSP POLITAP</title>
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/auth.css')}}">
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -31,87 +30,6 @@
                     </div>
                     <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
                         <img src="{{ asset('assets/images/auth/login_admin.png') }}" class="image2">
-=======
-    <title>LOGIN-ADMIN | LSP P1-POLITAP</title>
-    <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.base.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/vendors/css/vendor.bundle.addons.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
-    <link rel="shortcut icon" href="{{ asset('assets/images/logo/lsp.png') }}" />
-</head>
-
-<body>
-    <div class="container-scroller">
-        <div class="container-fluid page-body-wrapper full-page-wrapper">
-            <div class="content-wrapper d-flex align-items-stretch auth auth-img-bg">
-                <div class="row flex-grow">
-                    <div class="col-lg-6 d-flex align-items-center justify-content-center">
-                        <div class="auth-form-transparent text-left p-3">
-                            <div class="brand-logo">
-                                <img src="{{ asset('assets/images/logo/lsp.png') }}" alt="logo">
-                            </div>
-                            <h4>Login Sebagai Administrator</h4>
-                            <form method="POST" action="{{ route('login') }}">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="email">Username</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend bg-transparent">
-                                            <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="fas fa-user-alt text-primary"></i>
-                                            </span>
-                                        </div>
-                                        <input type="text"
-                                            class="form-control @error('email') is-invalid @enderror form-control-lg border-left-0"
-                                            id="email" name="email" value="{{ old('email') }}" required
-                                            autocomplete="email" autofocus placeholder="Username">
-                                        @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword">Password</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend bg-transparent">
-                                            <span class="input-group-text bg-transparent border-right-0">
-                                                <i class="fa fa-lock text-primary"></i>
-                                            </span>
-                                        </div>
-                                        <input type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                            form-control-lg border-left-0" required autocomplete="current-password"
-                                            id="exampleInputPassword" placeholder="Password">
-                                        @error('password')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="my-3">
-                                    <button type="submit"
-                                        class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">LOGIN</button>
-                                </div>
-
-                                <div class="my-2 d-flex justify-content-between align-items-center">
-                                    <div class="form-check">
-                                    </div>
-                                    @if (Route::has('password.request'))
-                                        <a class="btn btn-link" href="{{ route('password.request') }}">
-                                            {{ __('Lupa Password?') }}
-                                        </a>
-                                    @endif
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-lg-6  d-flex flex-row" style="background-image: url('assets/images/auth/loginadmin.png'); background-size: cover">
-                        <p class="text-white font-weight-medium text-center flex-grow align-self-end">Designed &
-                            Developed By Politeknik Negeri Ketapang 2022</p>
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                     </div>
                 </div>
             </div>
@@ -176,33 +94,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </div>    
-=======
-
-    {{-- <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-    <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-    <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('assets/js/misc.js') }}"></script>
-    <script src="{{ asset('assets/js/settings.js') }}"></script>
-    <script src="{{ asset('assets/js/todolist.js') }}"></script>
-    <script src="{{ asset('assets/js/google-maps.js') }}"></script>
-    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
-    <script src="{{ asset('assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('assets/js/form-addons.js') }}"></script>
-    <script src="{{ asset('assets/js/x-editable.js') }}"></script>
-    <script src="{{ asset('assets/js/dropify.js') }}"></script>
-    <script src="{{ asset('assets/js/dropzone.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery-file-upload.js') }}"></script>
-    <script src="{{ asset('assets/js/formpickers.js') }}"></script>
-    <script src="{{ asset('assets/js/form-repeater.js') }}"></script>
-    <script src="{{ asset('assets/js/alerts.js') }}"></script>
-    <script src="{{ asset('assets/js/avgrund.js') }}"></script>
-    <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script> --}}
-
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 </body>
 
 

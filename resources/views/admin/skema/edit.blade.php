@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    {{ $skema->skema }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
 @include('layout/verifikasi')
 {{-- <---------------------- PAGE HEADER ----------------------> --}}
@@ -8,9 +17,9 @@
     </h4>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-danger">
-            <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Skema/Kluster</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Edit Skema</li>
+            <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+            <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('skema.index') }}">Skema/Kluster</a></li>
+            <li style="color: #eadcdc" class="breadcrumb-item active" aria-current="page">{{ $skema->id }}</li>
         </ol>
     </nav>
 </div><br>
@@ -19,6 +28,7 @@
 {{-- <----------------------EDIT SKEMA ----------------------> --}}
 <div class="card">
     <div class="card-body">
+        <h4 class="card-title"><i class="fas fa-suitcase"></i> {{ $skema->skema }}</h4>
         <form action="{{ route('skema.update', $skema->id) }}" method="POST" class="form-sample">
         @csrf
         @method('put')
@@ -120,7 +130,7 @@
                     </div>
                 </div>
             </div>
-            <button type="submit" class="btn btn-info btn-icon-text btn-block">
+            <button type="submit" class="btn btn-rounded btn-info btn-icon-text btn-block">
                 <i class="fa fa-magic btn-icon-prepend"></i>
                 Update
             </button>

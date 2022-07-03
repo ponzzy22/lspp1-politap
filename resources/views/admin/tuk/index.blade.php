@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    TUK | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -10,8 +19,8 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tempat Uji Kompetensi</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Tempat Uji Kompetensi</li>
             </ol>
         </nav>
     </div><br>
@@ -88,7 +97,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success btn-icon-text btn-block">
+                        <button type="submit" class="btn btn-rounded btn-success btn-icon-text btn-block">
                             <i class="fa fa-save btn-icon-prepend"></i>
                             Simpan
                         </button>
@@ -112,7 +121,7 @@
                         <div id="order-listing_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4 no-footer">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <table id="order-listing" class="table dataTable no-footer" role="grid"
+                                    <table id="order-listing" class="table table-striped dataTable no-footer" role="grid"
                                         aria-describedby="order-listing_info">
                                         <thead>
                                             <tr class="bg-danger text-white" role="row">
@@ -135,33 +144,23 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
-                                                            type="button" id="dropdownMenuSizeButton3"
-                                                            data-toggle="dropdown" aria-haspopup="true"
-                                                            aria-expanded="false">
+                                                        <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
+                                                            id="dropdownMenuSizeButton3" data-toggle="dropdown"
+                                                            aria-haspopup="true" aria-expanded="false">
                                                             <i class="fa fa-cog"></i>
                                                         </button>
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
-<<<<<<< HEAD
-                                                            <a href="{{ route('tuk.show', Crypt::encryptString($asu->id)) }}"><button
-=======
-                                                            <a href="{{ route('tuk.show', $asu->id) }}"><button
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
+                                                            <a
+                                                                href="{{ route('tuk.show', Crypt::encryptString($asu->id)) }}"><button
                                                                     type="submit"
                                                                     class="btn btn-warning btn-sm btn-block"><i
                                                                         class="fa fa-eye "></i> Edit & Lihat
                                                                     TUK</button></a>
-                                                            <form action="{{ route('tuk.destroy', $asu->id) }}"
-                                                                method="POST"
-                                                                onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <a href=""><button type="submit"
-                                                                        class="btn btn-danger btn-sm btn-block"><i
-                                                                            class="fa fa-trash "></i> Hapus
-                                                                        TUK</button></a>
-                                                            </form>
+                                                            <button data-toggle="modal"
+                                                                data-target="#datareg-{{ $asu->id }}"
+                                                                class="btn btn-danger btn-block"><i
+                                                                    class="fa fa-trash "></i> Hapus</button>
                                                         </div>
                                                     </td>
                                                     <td>{{ $asu->tuk }}</td>
@@ -177,4 +176,32 @@
             </div>
         </div>
     </div>
+    @foreach ($tuk as $hasil => $asu)
+        <div class="modal fade" id="datareg-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                            {{ $asu->tuk }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah Anda Yakin Untuk Menghapus Data Ini?
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('tuk.destroy', $asu->id) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <a href=""><button type="submit" class="btn btn-success btn-block"><i
+                                        class="fa fa-trash "></i> Hapus</button></a>
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

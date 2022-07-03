@@ -1,14 +1,23 @@
-@extends('layout/admin1')
+@extends('layout.admin')
+
+@section('judul')
+Dashboard | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
-        <h3>
+        <h4>
             <i class="fas fa-chart-pie"></i> Dashboard
-        </h3>
+        </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                {{-- <li class="breadcrumb-item"><a href="#">Dashboard</a></li> --}}
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">LSP POLITAP</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
     </div><br>
@@ -98,10 +107,10 @@
         {{-- <---------------------- NEW REGISTER ----------------------> --}}
         <div class="col-lg-7 col-md-12 col-12 col-sm-12">
             <div class="card">
-                <div class="card-header">
+                <div style="background-color: #3a862e " class="card-header">
                     <div class="row">
                         <a href="">
-                            <h4 class="text text-dark"><i class="fas fa-id-card"></i> Register Terbaru </h4>
+                            <h4 class="text text-white"><i class="fas fa-id-card"></i> Register Terbaru </h4>
                         </a>
                     </div>
                 </div>
@@ -142,7 +151,8 @@
                                                     onsubmit="return confirm('Apa anda yakin akan menghapus Data ini (Yakinkan lah aku)')">
                                                     @csrf
                                                     @method('delete')
-                                                    <a href=""><button data-toggle="tooltip" title="" data-original-title="Hapus" type="submit"
+                                                    <a href=""><button data-toggle="tooltip" title=""
+                                                            data-original-title="Hapus" type="submit"
                                                             class="btn btn-danger btn-rounded btn-sm"><i
                                                                 class="fa fa-trash "></i></button></a>
                                                 </form>
@@ -160,8 +170,8 @@
         {{-- <---------------------- JADWAL SERTIFIKASI ----------------------> --}}
         <div class="col-lg-5 col-md-12 col-12 col-sm-12">
             <div class="card">
-                <div class="card-header">
-                    <h4 class="text text-dark"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h4>
+                <div style="background-color: #3a862e " class="card-header">
+                    <h4 class="text text-white"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h4>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -202,10 +212,12 @@
         {{-- PEMEGANG SERTIFIKAT --}}
         <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
             <div class="card">
-                <div class="card-body">
+                <div style="background-color: #3a862e " class="card-header">
                     <div class="d-flex justify-content-between">
-                        <h4 class="text text-dark"><i class="fas fa-certificate"></i> Pemegang Sertifikat</h4>
+                        <h4 class="text text-white"><i class="fas fa-certificate"></i> Pemegang Sertifikat</h4>
                     </div>
+                </div>
+                <div class="card-body">
                     @foreach ($datapemegang as $asu)
                         <div class="list d-flex align-items-center border-bottom py-3">
                             <img class="img-sm rounded-circle" src="{{ $asu->image }}" alt="">
@@ -248,22 +260,22 @@
                 <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="assets/images/logo/bnsp.png" width="150px" alt="">
+                            <img src="{{ asset('general/assets/images/bnsp.png') }}" width="150px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="assets/images/logo/kemendikbud.png" width="90px" alt="">
+                            <img src="{{ asset('general/assets/images/kemendikbud_small.png') }}" width="90px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="assets/images/logo/politap.png" width="90px" alt="">
+                            <img src="{{ asset('general/assets/images/politap_small.png') }}" width="90px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">
                         <div class="card-img">
-                            <img src="assets/images/logo/lsp.png" width="110px" alt="">
+                            <img src="{{ asset('general/assets/images/lsp_small.jpg') }}" width="110px" alt="">
                         </div>
                     </div>
                     <div class="statistics-item">

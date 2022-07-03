@@ -83,11 +83,7 @@ class BroadcastManager implements FactoryContract
      * @param  array|null  $attributes
      * @return void
      */
-<<<<<<< HEAD
     public function userRoutes(array $attributes = null)
-=======
-    public function userAuthenticationRoutes(array $attributes = null)
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     {
         if ($this->app instanceof CachesRoutes && $this->app->routesAreCached()) {
             return;
@@ -111,11 +107,7 @@ class BroadcastManager implements FactoryContract
      * @param  array|null  $attributes
      * @return void
      */
-<<<<<<< HEAD
     public function channelRoutes(array $attributes = null)
-=======
-    public function channelAuthorizationRoutes(array $attributes = null)
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     {
         return $this->routes($attributes);
     }

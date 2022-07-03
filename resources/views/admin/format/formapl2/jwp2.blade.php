@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/format.min.css')}}">
+    <script>
+        window.addEventListener("load", window.print());
+    </script>
 </head>
 
 <body>
@@ -218,7 +221,7 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            2.1 Tools pemrogaman ter-install sesuai dengan prosedur.  
+                                            2.1 Tools pemrogaman ter-install sesuai dengan prosedur.
                                         </li>
                                         <li>
                                             2.2 Tools pemrograman bisa dijalankan di lingkungan pengembangan yang telah ditetapkan.
@@ -237,7 +240,7 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            3.1 Script (source code) sederhana dibuat  sesuai tools pemrogaman yang di-install  
+                                            3.1 Script (source code) sederhana dibuat  sesuai tools pemrogaman yang di-install
                                         </li>
                                         <li>
                                             2.3.2 Script dapat dijalankan dengan benar dan menghasilkan keluaran sesuai skenario yang diharapkan
@@ -275,10 +278,10 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            1.1 Kode sumber dituliskan mengikuti coding-guidelines dan best practices. 
+                                            1.1 Kode sumber dituliskan mengikuti coding-guidelines dan best practices.
                                         </li>
                                         <li>
-                                            1.2 Struktur program yang sesuai dengan konsep paradigmanya dibuat. 
+                                            1.2 Struktur program yang sesuai dengan konsep paradigmanya dibuat.
                                         </li>
                                         <li>
                                             1.3 Galat/error ditangani.
@@ -297,7 +300,7 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            2.1 Efisiensi penggunaan resources oleh kode dihitung. 
+                                            2.1 Efisiensi penggunaan resources oleh kode dihitung.
                                         </li>
                                         <li>
                                            2.2 Kemudahan interaksi selalu diimplementasikan  sesuai standar yang berlaku.
@@ -316,7 +319,7 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            3.1 Script (source code) sederhana dibuat  sesuai tools pemrogaman yang di-install  
+                                            3.1 Script (source code) sederhana dibuat  sesuai tools pemrogaman yang di-install
                                         </li>
                                         <li>
                                             2.3.2 Script dapat dijalankan dengan benar dan menghasilkan keluaran sesuai skenario yang diharapkan
@@ -357,7 +360,7 @@
                                             1.1 Tipe data yang sesuai standar ditentukan .
                                         </li>
                                         <li>
-                                            1.2 Syntax program yang dikuasai digunakan sesuai standar. 
+                                            1.2 Syntax program yang dikuasai digunakan sesuai standar.
                                         </li>
                                         <li>
                                             1.3 Struktur kontrol program yang dikuasai digunakan sesuai standar.
@@ -609,7 +612,7 @@
                                             1.1 Modul program diidentifikasi
                                         </li>
                                         <li>
-                                            1.2 Parameter  yang  dipergunakan  diidentifikasi 
+                                            1.2 Parameter  yang  dipergunakan  diidentifikasi
                                         </li>
                                         <li>
                                             1.3 Algoritma dijelaskan cara kerjanya
@@ -637,7 +640,7 @@
                                             2.2 Identifikasi dokumentasi diterapkan
                                         </li>
                                         <li>
-                                            2.3 Kegunaan modul dijelaskan 
+                                            2.3 Kegunaan modul dijelaskan
                                         </li>
                                         <li>
                                             2.4 Dokumen direvisi sesuai perubahan kode program
@@ -656,10 +659,10 @@
                                     <li>Kriteria Unjuk Kerja:</li>
                                     <ul>
                                         <li>
-                                            3.1 Dokumentasi fungsi, prosedur atau metod dibuat 
+                                            3.1 Dokumentasi fungsi, prosedur atau metod dibuat
                                         </li>
                                         <li>
-                                            3.2 Kemungkinan eksepsi dijelaskan 
+                                            3.2 Kemungkinan eksepsi dijelaskan
                                         </li>
                                         <li>
                                             3.3 Dokumen direvisi sesuai perubahan kode program
@@ -738,7 +741,7 @@
                                             1.1 Kode program sesuai spesifikasi disiapkan.
                                         </li>
                                         <li>
-                                            1.2 Debugging tools untuk melihat proses suatu modul dipersiapkan. 
+                                            1.2 Debugging tools untuk melihat proses suatu modul dipersiapkan.
                                         </li>
                                     </ul>
                                 </ul>
@@ -782,7 +785,7 @@
                                             3.1 Perbaikan terhadap kesalahan kompilasi maupun build dirumuskan.
                                         </li>
                                         <li>
-                                            3.2 Perbaikan dilakukan. 
+                                            3.2 Perbaikan dilakukan.
                                         </li>
                                     </ul>
                                 </ul>
@@ -822,10 +825,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        window.addEventListener("load", window.print());
-    </script> -->
 </body>
 
 </html>

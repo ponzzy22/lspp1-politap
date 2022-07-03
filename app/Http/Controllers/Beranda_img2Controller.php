@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Beranda_img2;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class Beranda_img2Controller extends Controller
 {
@@ -19,10 +21,13 @@ class Beranda_img2Controller extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'image' => ['required'],
+            // 'image' => ['required'],
             'nama' => ['required'],
             'keterangan' => ['required'],
-            'no_hp' => ['required', 'numeric']
+            // 'no_hp' => ['required', 'numeric']
+        ],[
+            'nama.required' => 'Namanya mana?',
+            'keterangan.required' => 'Jabatannya Tolong diisi',
         ]);
 
         $image = $request->image;
@@ -43,7 +48,8 @@ class Beranda_img2Controller extends Controller
 
     public function edit($id)
     {
-        $pengelola = Beranda_img2::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $pengelola = Beranda_img2::findorfail($decryptID);
         return view('admin/beranda_img2/edit', compact('pengelola'));
     }
 
@@ -53,6 +59,9 @@ class Beranda_img2Controller extends Controller
         $request->validate([
             'nama' => ['required'],
             'keterangan' => ['required'],
+        ],[
+            'nama.required' => 'Namanya mana?',
+            'keterangan.required' => 'Jabatannya Tolong diisi',
         ]);
         $beranda_img2 = Beranda_img2::findorfail($id);
         if ($request->has('image')) {
@@ -62,8 +71,8 @@ class Beranda_img2Controller extends Controller
             $beranda_img2_data = [
                 'nama' =>$request->nama,
                 'facebook' =>$request->facebook,
-                'twitter' =>$request->keterangan,
-                'intagram' =>$request->intagram,
+                'twitter' =>$request->twitter,
+                'instagram' =>$request->instagram,
                 'no_hp' =>$request->no_hp,
                 'email' =>$request->email,
                 'keterangan' =>$request->keterangan,
@@ -75,8 +84,8 @@ class Beranda_img2Controller extends Controller
                 'keterangan' =>$request->keterangan,
                 'nama' =>$request->nama,
                 'facebook' =>$request->facebook,
-                'twitter' =>$request->keterangan,
-                'intagram' =>$request->intagram,
+                'twitter' =>$request->twitter,
+                'instagram' =>$request->instagram,
                 'no_hp' =>$request->no_hp,
                 'email' =>$request->email,
             ];

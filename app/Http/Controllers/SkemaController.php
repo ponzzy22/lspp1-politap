@@ -35,11 +35,13 @@ class SkemaController extends Controller
             'asesor_id' => ['required'],
             'tuk_id' => ['required'],
             'status_id' => ['required'],
-<<<<<<< HEAD
         ],[
             'skema.required' => 'Skemanya mana?',
-=======
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
+            'kode_skema.required' => 'Kode Skemanya mana?',
+            'prodi_id.required' => 'Pilih Prodinya',
+            'asesor_id.required' => 'Pilih Asesornya',
+            'tuk_id.required' => 'Pilih TUKnya',
+            'status_id.required' => 'Pilih Status Skema',
         ]);
         $skema = Skema::create([
             'kode_skema' =>$request->kode_skema,
@@ -79,6 +81,13 @@ class SkemaController extends Controller
             'asesor_id' => ['required'],
             'tuk_id' => ['required'],
             'status_id' => ['required']
+        ],[
+            'skema.required' => 'Skemanya mana?',
+            'kode_skema.required' => 'Kode Skemanya mana?',
+            'prodi_id.required' => 'Pilih Prodinya',
+            'asesor_id.required' => 'Pilih Asesornya',
+            'tuk_id.required' => 'Pilih TUKnya',
+            'status_id.required' => 'Pilih Status',
         ]);
         $skema_data = [
             'kode_skema' =>$request->kode_skema,

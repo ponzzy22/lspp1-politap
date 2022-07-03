@@ -1,4 +1,13 @@
-@extends('layout/admin2')
+@extends('layout.admin')
+
+@section('judul')
+    {{ $galeri->galeri }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-icon-only
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <!-- /////////////////////////////////// -->
@@ -6,13 +15,13 @@
     <!-- /////////////////////////////////// -->
     <div class="page-header">
         <h4>
-            <i class="fas fa-eye"></i> Album Foto
+            <i class="fas fa-eye"></i> Foto
         </h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('galeri.index') }}">Galeri Foto</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Album Foto </li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('galeri.index') }}">Album Foto</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page"> Foto </li>
             </ol>
         </nav>
     </div>
@@ -35,32 +44,37 @@
                 </form>
             </div>
         </div>
+        <!-- /////////////////////////////////// -->
+        {{-- TAMBAH FOTO --}}
+        <!-- /////////////////////////////////// -->
         <div class="col-md-6">
             <div class="mt-4">
                 <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
                     <div class="card">
-                        <div class="card-header" role="tab" id="heading-10">
+                        <div style="background-color: #563fbb" class="card-header text-white" role="tab" id="heading-10">
                             <h6 class="mb-0">
-                                <a data-toggle="collapse" href="#collapse-10" aria-expanded="false"
-                                    aria-controls="collapse-10" class="collapsed">
+                                <a data-toggle="    " href="#collapse-10" aria-expanded="true"
+                                    aria-controls="collapse-10" class=" ">
                                     Tambah Foto Baru ke Album {{ $galeri->galeri }}
                                 </a>
                             </h6>
                         </div>
-                        <div id="collapse-10" class="collapse" role="tabpanel" aria-labelledby="heading-10"
+                        <div id="collapse-10" class="   " role="tabpanel" aria-labelledby="heading-10"
                             data-parent="#accordion-4" style="">
                             <div class="card-body">
                                 <form action="{{ route('foto.store') }}" method="POST" enctype="multipart/form-data"
-                                    class="dropzone" id="mydropzone">
+                                    class="" id="mydropzone">
                                     <div class="card-body">
                                         @csrf
                                         <div class="fallback">
                                             <input type="hidden" name="group_galeri_id" value="{{ $galeri->id }}">
                                             <input type="file" name="image[]" multiple="true">
-                                            <button type="submit" class="btn btn-inverse-success"><i
-                                                    class="fas fa-upload"></i></button>
+                                            <label class="badge badge-info" for="">Drag Gambar kesini</label>
+                                            <br><br>
                                         </div>
                                     </div>
+                                    <button type="submit" class="btn btn-rounded btn-success"><i
+                                        class="fas fa-upload"> </i> Simpan Gambar</button>
                                 </form>
                             </div>
                         </div>
@@ -75,25 +89,29 @@
             <div class="mt-4">
                 <div class="accordion accordion-solid-header" id="accordion-5" role="tablist">
                     <div class="card">
-                        <div class="card-header" role="tab" id="heading-11">
+                        <div style="background-color: #563fbb" class="card-header text-white" role="tab" id="heading-11">
                             <h6 class="mb-0">
-                                <a data-toggle="collapse" href="#collapse-11" aria-expanded="false"
+                                <a data-toggle="" href="#collapse-11" aria-expanded="true"
                                     aria-controls="collapse-11" class="collapsed">
                                     Ubah Nama Folder/Album {{ $galeri->galeri }}
                                 </a>
                             </h6>
                         </div>
-                        <div id="collapse-11" class="collapse" role="tabpanel" aria-labelledby="heading-11"
+                        <div id="collapse-11" class="" role="tabpanel" aria-labelledby="heading-11"
                             data-parent="#accordion-5" style="">
                             <div class="card-body">
                                 <form action="{{ route('galeri.update', $galeri->id) }}" method="POST"
                                     enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
+                                    <div class="form-group">
+                                        <label for="">Edit Thumbnail</label><br>
+                                        <input type="file" name="image" id="">
+                                    </div>
                                     <input type="text" name="galeri" class="form-control"
                                         value="{{ $galeri->galeri }}"><br>
-                                    <button class="btn btn-inverse-success btn-sm btn-block" type="submit"><i
-                                            class="fas fa-save"></i></button>
+                                    <button class="btn btn-rounded btn-success btn-sm btn-block" type="submit"><i
+                                            class="fas fa-save"></i> Simpan</button>
                                 </form>
                             </div>
                         </div>

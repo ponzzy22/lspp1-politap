@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    {{ $skema->skema }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
@@ -10,7 +19,7 @@
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
                 <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">List Skema</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Detail Skema</li>
+                <li class="breadcrumb-item active" aria-current="page">{{ $skema->id }}</li>
             </ol>
         </nav>
     </div><br>

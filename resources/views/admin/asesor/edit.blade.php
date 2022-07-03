@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    {{ $asesor->nama }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -10,9 +19,9 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('asesor.index') }}">Asesor</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Detail & Update data Asesor</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('asesor.index') }}">Asesor</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">{{ $asesor->id }}</li>
             </ol>
         </nav>
     </div><br>
@@ -47,7 +56,7 @@
                         </div>
                         <div class="d-flex">
                             <div class="progress progress-md flex-grow">
-                                <div class="progress-bar bg-success" role="progressbar" aria-valuenow="75"
+                                <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="75"
                                     style="width: 100%" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
@@ -128,7 +137,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                    </div>                                                                  
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
@@ -200,7 +209,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                     <div class="col-md-12">
                                         <div class="form-group row">
                                             <label class="col-sm-3 col-form-label">Status</label>

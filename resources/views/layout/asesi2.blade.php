@@ -70,11 +70,7 @@
                             @if (Auth::user()->image)
                                 <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                             @else
-<<<<<<< HEAD
                                 <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
-=======
-                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                             @endif
                         </a>
                         <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
@@ -136,11 +132,7 @@
                                 @if (Auth::user()->image)
                                     <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                                 @else
-<<<<<<< HEAD
                                     <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
-=======
-                                    <img src="{{ asset('images/back/photo.png') }}" alt="profile">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 @endif
                             </div>
                             <div class="profile-name">

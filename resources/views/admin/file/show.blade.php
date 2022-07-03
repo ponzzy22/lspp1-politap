@@ -1,4 +1,13 @@
-@extends('layout/admin2')
+@extends('layout/admin')
+
+@section('judul')
+{{ $file->file }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-icon-only
+@endsection
+
 @section('isi')
     {{-- <---------------------- PAGE HEADER ----------------------> --}}
     <div class="page-header">
@@ -6,18 +15,17 @@
             <i class="fas fa-upload"></i> Tampilan File
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('file.index') }}">Upload File Dokumen</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tampilan File</li>
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('file.index') }}">Upload File Dokumen</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">{{ $file->id }}</li>
             </ol>
         </nav>
     </div><br>
     <div class="card col-md-12">
         <div class="card-body">
-            <h4 class="card-title">{{ $file->file }}</h4>
+            <h4 class="card-title">Nama File : {{ $file->file }}</h4>
             <embed src="{{ asset($file->image) }}" class="col-md-12" height="500px" type="application/pdf">
-            {{-- <img class="card-img-top" src="{{ asset($file->image) }}" alt=""> --}}
             <div class="card-body">
             </div>
         </div>

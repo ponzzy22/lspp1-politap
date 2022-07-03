@@ -10,13 +10,19 @@ class SkkniController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'file' => 'required',
-            'image' => 'required'
+            'file' => ['required'],
+            'skema_id' => ['required'],
+            'image' => ['required', 'max:5000']
+        ],[
+            'file.required' => 'Nama File Perlu diisi',
+            'image.required' => 'Gambarnya Mana?',
+            'image.max' => 'Batas Ukuran Gambar 5 mb',
         ]);
         $image = $request->image;
         $new_image = time().$image->getClientOriginalName();
         $beranda_img1 = Skkni::create([
             'file' =>$request->file,
+            'skema_id' =>$request->skema_id,
             'image' => 'uploads/skkni/'.$new_image,
         ]);
         $image->move('uploads/skkni/', $new_image);

@@ -1,4 +1,13 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+
+@section('judul')
+    {{ $unikom->unikom }} | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -9,10 +18,10 @@
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('skema.index') }}">Unit Kompetensi</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Edit Unit Kompetensi</li>
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('skema.index') }}">Unit Kompetensi</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">{{ $unikom->id }}</li>
             </ol>
         </nav>
     </div><br>
@@ -31,7 +40,7 @@
                 <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="kode_unikom"
                     value="{{ $unikom->kode_unikom }}">
                 <label class="sr-only" for="inlineFormInputGroupUsername2"></label>
-                <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group mb- mr-sm-2">
                     <input type="text" class="form-control" id="inlineFormInputGroupUsername2" name="unikom"
                         value="{{ $unikom->unikom }}">
                 </div>
@@ -46,7 +55,7 @@
                         @endforeach
                     </select>
                 </div>
-                <button type="submit" class="btn btn-info mb-2 btn-block"><i class="fas fa-save"> </i> Update</button>
+                <button type="submit" class="btn btn-info mb-2 btn-rounded btn-block"><i class="fas fa-save"> </i> Update</button>
             </form>
         </div>
     </div>

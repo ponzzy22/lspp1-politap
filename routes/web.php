@@ -103,6 +103,8 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::resource('asesmen', AsesmenController::class);
     // <------------------ PENGGUNA  ------------------>
     Route::resource('user', UserController::class);
+    Route::put('update2/{update2}', [UserController::class, 'update2'])->name('user_update2');
+
     // <------------------ FORM APL-01  ------------------>
     Route::resource('formapl2', Formapl2Controller::class);
     Route::post('formapl2_save',[Formapl2Controller::class, 'formapl2_save'])->name('formapl2_save');
@@ -116,10 +118,11 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::get('validasi2/{validasi}/edit', [ValidasiController::class, 'index_edit'])->name('validasi.edit2');
     Route::get('registrasi_baru', [ValidasiController::class, 'registrasi_baru'])->name('registrasi.baru');
     Route::get('proses_show/{proses_show}', [ValidasiController::class, 'proses_show'])->name('proses_show');
+    Route::get('sertifikat_show/{sertifikat_show}', [ValidasiController::class, 'sertifikat_show'])->name('sertifikat_show');
     Route::get('pengguna_ditolak', [ValidasiController::class, 'list_tolak'])->name('list.tolak');
     Route::get('pengguna_divalidasi', [ValidasiController::class, 'list_valid'])->name('list.valid');
     Route::get('pengguna_bersertifikat', [ValidasiController::class, 'list_sertifikat'])->name('list.sertifikat');
-    Route::put('finish/{finish}', [ValidasiController::class, 'update2'])->name('finish.update');
+    Route::put('update2/{finish}', [ValidasiController::class, 'update2'])->name('finish.update');
     Route::put('tolak/{tolak}', [ValidasiController::class, 'update3'])->name('tolak.update');
     Route::put('koreksiformulir_update/{koreksiformulir_update}', [ValidasiController::class, 'koreksiformulir_update'])->name('koreksiformulir_update.update');
     Route::put('koreksiformulirapl2_update/{koreksiformulirapl2_update}', [ValidasiController::class, 'koreksiformulirapl2_update'])->name('koreksiformulirapl2_update');
@@ -179,11 +182,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('register/{register}', [XnxxController::class, 'destroy2'])->name('register.destroy');
     Route::resource('identitas', Upload_DokumenController::class);
     Route::get('edit', [AsesiController::class, 'edit'])->name('profil.edit');
-<<<<<<< HEAD
     Route::get('Pendaftaran_Sertifikasi', [AsesiController::class, 'edit2'])->name('profil.edit2');
-=======
-    Route::get('edit2', [AsesiController::class, 'edit2'])->name('profil.edit2');
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
     Route::put('update', [AsesiController::class, 'update'])->name('profil.update');
     Route::get('formulirapl2_edit', [AsesiController::class, 'formulirapl2_edit'])->name('formulirapl2.edit');
     Route::put('formulirapl2_update', [AsesiController::class, 'formulirapl2_update'])->name('formulirapl2.update');

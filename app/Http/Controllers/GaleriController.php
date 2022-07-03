@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Galeri_foto;
 use App\Models\Group_galeri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
+
 
 class GaleriController extends Controller
 {
@@ -19,16 +21,35 @@ class GaleriController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $galeri = Group_galeri::create([
-            'galeri' => $request->galeri
+        $request->validate([
+            'galeri' => ['required'],
+            'image' => ['max:1000']
+        ],[
+            'galeri.required' => 'Masukan Judul Album',
+            'image.max' => 'Ukuran gambar maksimal 1 mb',
         ]);
+        if ($request->has('image')) {
+            $image = $request->image;
+            $new_image = time() . $image->getClientOriginalName();
+            $image->move('uploads/group-galeri/', $new_image);
+            $galeri = Group_galeri::create([
+                'galeri' => $request->galeri,
+                'image' => 'uploads/group-galeri/' . $new_image,
+            ]);
+        } else {
+            $galeri = Group_galeri::create([
+                'galeri' => $request->galeri,
+            ]);
+        }
+        // $image->move('uploads/berita/', $new_image);
         return back()->with('success', 'Galeri Berhasil dibuat');
     }
 
 
     public function show($id)
     {
-        $galeri = Group_galeri::findorfail($id);
+        $decryptID = Crypt::decryptString($id);
+        $galeri = Group_galeri::findorfail($decryptID);
         return view('admin/galeri/show', compact('galeri'));
     }
 
@@ -43,9 +64,26 @@ class GaleriController extends Controller
     public function update(Request $request, $id)
     {
         // dd($request->all());
-        $galeri_data = [
-            'galeri' => $request->galeri
-        ];
+        $request->validate([
+            'galeri' => ['required'],
+            'image' => ['max:1000']
+        ],[
+            'galeri.required' => 'Masukan Judul Album',
+            'image.max' => 'Ukuran gambar maksimal 1 mb',
+        ]);
+        if ($request->has('image')) {
+            $image = $request->image;
+            $new_image = time() . $image->getClientOriginalName();
+            $image->move('uploads/group-galeri/', $new_image);
+            $galeri_data = [
+                'galeri' => $request->galeri,
+                'image' => 'uploads/group-galeri/' . $new_image,
+            ];
+        } else {
+            $galeri_data = [
+                'galeri' => $request->galeri,
+            ];
+        }
         Group_galeri::whereId($id)->update($galeri_data);
         return back()->with('success', 'Galeri Berhasil diubah');
     }

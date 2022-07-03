@@ -1,4 +1,12 @@
-@extends('layout/admin1')
+@extends('layout/admin')
+@section('judul')
+    Data Sertifikat | Admin LSP POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
 
@@ -11,8 +19,8 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Data Pemegang Sertifikat</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Data Pemegang Sertifikat</li>
             </ol>
         </nav>
     </div><br>
@@ -21,7 +29,14 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            {{-- <h4 class="card-title"><i class="fas fa-users"> List Asesi</i></h4> --}}
+            <div class="card-description">
+                <p><i class="fas fa-info-circle"></i> Informasi :
+                    <ul>
+                        <li>Pada tabel ini menampilkan data pemegang sertifikat atau data sertifikasi yang kompeten.
+                        <li>Anda dapat melakukan proses backup data dan rekap laporan pada tabel ini.
+                    </ul>
+                </p>
+            </div>
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -45,7 +60,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
-                                                    style="width: 155.75px;">Id Register</th>
+                                                    style="width: 155.75px;">Kode Register</th>
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Ship to: activate to sort column ascending"
@@ -65,7 +80,7 @@
                                                 <tr role="row" class="odd">
                                                     <td class="">{{ $loop->iteration }}</td>
                                                     <td class="text-right">
-                                                        <button class="btn btn-dark btn-sm dropdown-toggle"
+                                                        <button class="btn btn-primary btn-sm dropdown-toggle"
                                                             type="button" id="dropdownMenuSizeButton3"
                                                             data-toggle="dropdown" aria-haspopup="true"
                                                             aria-expanded="false">
@@ -74,7 +89,7 @@
                                                         <div class="dropdown-menu"
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             {{-- <a href="{{ route('validasi.edit', $asu->id) }}"><button type="submit" class="btn btn-warning btn-sm btn-block"><i class="fa fa-edit "></i>  Edit </button></a> --}}
-                                                            <a href="{{ route('validasi.show', $asu->id) }}"><button
+                                                            <a href="{{ route('sertifikat_show', $asu->id) }}"><button
                                                                     type="submit"
                                                                     class="btn btn-info  btn-block"><i
                                                                         class="fa fa-eye "></i> Detail Data</button></a>
@@ -92,7 +107,7 @@
                                                     <td>{{ $asu->id }}</td>
                                                     <td>{{ $asu->user_name }}</td>
                                                     <td>{{ $asu->skema_name }}</td>
-                                                    <td>{{ $asu->updated_at }}</td>
+                                                    <td>{{ $asu->created_at->format('d-M-Y') }}</td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -9,4 +9,8 @@ class Skkni extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function skema(){
+        return $this->belongsTo(Skema::class);
+    }
 }

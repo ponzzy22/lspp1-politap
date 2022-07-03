@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('assets/vendors/iconfonts/font-awesome/css/all.min.css') }}">
     <link rel="stylesheet" href="{{asset('assets/css/format.min.css')}}">
+    <script>
+        window.addEventListener("load", window.print());
+    </script>
 </head>
 
 <body>
@@ -126,10 +129,6 @@
             </div>
         </div>
     </div>
-
-    <!-- <script>
-        window.addEventListener("load", window.print());
-    </script> -->
 </body>
 
 </html>

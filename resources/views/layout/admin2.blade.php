@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>LSP P1-POLITAP | ADMINISTRASI</title>
+    <title>@yield('judul')</title>
 
     {{-- <---------------------- ASSET ----------------------> --}}
     <link rel="stylesheet" href="{{ asset('assets/vendors/summernote/dist/summernote-bs4.css') }}">
@@ -43,7 +43,7 @@
             <!-- MENU NAVIGASI -->
             <!-- /////////////////////////////////// -->
             <div class="navbar-menu-wrapper d-flex align-items-stretch">
-                <button class="navbar-toggler  align-self-center" type="button" data-toggle="minimize">
+                <button style="color: #fff" class="navbar-toggler  align-self-center" type="button" data-toggle="minimize">
                     <span class="fas fa-bars"></span></button>
                 <!-- /////////////////////////////////// -->
                 <!-- JUDUL BARIS -->
@@ -55,8 +55,8 @@
                         </a> -->
                     </li>
                     <li>
-                        <div class="card-subtitle2">
-                            <h5><i class="fas fa-cogs"></i> ADMINISTRASI WEBSITE - LEMBAGA SERTIFIKASI PROFESI
+                        <div class="card-subtitle2 text-white">
+                            <h5><i class="fas fa-cogs"></i>&nbsp; ADMINISTRASI WEBSITE - LEMBAGA SERTIFIKASI PROFESI
                                 POLITEKNIK NEGERI KETAPANG
                             </h5>
                         </div>
@@ -77,14 +77,14 @@
                             href="{{ route('dashasesi.index') }}">
                             <i class="fas fa-user mx-0"></i>
                         </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+                    {{-- <li class="nav-item">
                         <a class="nav-link count-indicator" id="notificationDropdown" target="_blank"
                             href="http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=lspp1-politap">
                             <i class="fas fa-database mx-0"></i>
                         </a>
                     </li> --}}
-                    <li class="nav-item nav-profile dropdown">
+                    <li style="color: #fff" class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown"
                             aria-expanded="false">
                             @if (Auth::user()->image)
@@ -132,7 +132,7 @@
                     </li> --}}
                     <li class="nav-item nav-settings d-none d-lg-block">
                         <a class="nav-link" href="#">
-                            <i class="fas fa-cog"></i>
+                            <i style="color: #fff" class="fas fa-cog"></i>
                         </a>
                     </li>
                 </ul>
@@ -184,15 +184,9 @@
                         <div id="home" class="nav-link">
                             <div class="profile-image">
                                 @if (Auth::user()->image)
-<<<<<<< HEAD
                                     <img src="{{ asset(Auth::user()->image) }}" alt="profile">
                                 @else
                                     <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile">
-=======
-                                <img src="{{ asset(Auth::user()->image) }}" alt="profile">
-                                @else
-                                <img src="{{ asset('images/back/photo.png') }}" alt="profile">
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                                 @endif
                             </div>
                             <div class="profile-name">
@@ -228,8 +222,7 @@
                                         Terbaru</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('list.valid') }}">Pendaftaran
-                                        Diterima</a>
+                                    <a class="nav-link" href="{{ route('list.valid') }}">Proses Sertifikasi</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('list.tolak') }}">Pendaftaran
@@ -263,7 +256,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ Route('tuk.index') }}">TUK</a>
                                 </li>
-                                <!--  <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" href="{{ route('unikom.index') }}">Unit Kompetensi</a>
                                 </li>
                                 <li class="nav-item">
@@ -421,19 +414,15 @@
     <footer class="footer">
         <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text text-white text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022
-                &diamondsuit;
-                Designed & Developed By <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
-                    Ketapang</a>.</span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Hand-crafted &amp; made
-                with
-                <i class="far fa-heart text-danger"></i><a href="https://politap.ac.id/" target="_blank"> Teknik
-                    Informatika </a><code class="text text-danger"> v.3.06.22</code></span>
+                &diamondsuit; All Right Reserved
+                </span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Designed & Developed By <a href="http://informatika.politap.ac.id/" target="_blank">Teknologi Informatika</a> <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
+                Ketapang</a>.</span>
         </div>
     </footer>
 
 
     {{-- <----------------------  JS----------------------> --}}
-<<<<<<< HEAD
     <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
     <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
@@ -469,43 +458,6 @@
     <script src="{{ asset('assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
     <script src="{{ asset('assets2/js/scripts.js') }}"></script>
     <script src="{{ asset('assets2/js/custom.js') }}"></script>
-=======
-        <script src="{{ asset('assets/vendors/js/vendor.bundle.base.js') }}"></script>
-        <script src="{{ asset('assets/vendors/js/vendor.bundle.addons.js') }}"></script>
-        <script src="{{ asset('assets/js/off-canvas.js') }}"></script>
-        <script src="{{ asset('assets/js/hoverable-collapse.js') }}"></script>
-        <script src="{{ asset('assets/js/misc.js') }}"></script>
-        <script src="{{ asset('assets/js/settings.js') }}"></script>
-        <script src="{{ asset('assets/js/todolist.js') }}"></script>
-        <script src="{{ asset('assets/js/google-maps.js') }}"></script>
-        <script src="{{ asset('assets/js/dashboard.js') }}"></script>
-        <script src="{{ asset('assets/js/owl-carousel.js') }}"></script>
-        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('assets/js/form-addons.js') }}"></script>
-        <script src="{{ asset('assets/js/x-editable.js') }}"></script>
-        <script src="{{ asset('assets/js/dropify.js') }}"></script>
-        <script src="{{ asset('assets/js/dropzone.js') }}"></script>
-        <script src="{{ asset('assets/js/jquery-file-upload.js') }}"></script>
-        <script src="{{ asset('assets/js/formpickers.js') }}"></script>
-        <script src="{{ asset('assets/js/form-repeater.js') }}"></script>
-        <script src="{{ asset('assets/js/alerts.js') }}"></script>
-        <script src="{{ asset('assets/js/avgrund.js') }}"></script>
-        <script src="{{ asset('assets/vendors/tinymce/tinymce.min.js') }}"></script>
-        <script src="{{ asset('assets/vendors/tinymce/themes/modern/theme.js') }}"></script>
-        <script src="{{ asset('assets/vendors/summernote/dist/summernote-bs4.min.js') }}"></script>
-        <script src="{{ asset('assets/js/data-table.js') }}"></script>
-        <script src="{{ asset('assets/js/wizard.js') }}"></script>
-        <script src="{{ asset('assets/modules/dropzone.min.js') }}"></script>
-        <script src="{{ asset('assets/modules/components-multiple-upload.js') }}"></script>
-        <script src="{{ asset('assets2/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('assets2/js/stisla.js') }}"></script>
-        <script src="{{ asset('assets2/modules/summernote/summernote-bs4.js') }}"></script>
-        <script src="{{ asset('assets2/modules/codemirror/lib/codemirror.js') }}"></script>
-        <script src="{{ asset('assets2/modules/codemirror/mode/javascript/javascript.js') }}"></script>
-        <script src="{{ asset('assets2/modules/jquery-selectric/jquery.selectric.min.js') }}"></script>
-        <script src="{{ asset('assets2/js/scripts.js') }}"></script>
-        <script src="{{ asset('assets2/js/custom.js') }}"></script>
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
 
 </body>
 

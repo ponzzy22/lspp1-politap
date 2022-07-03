@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 
     public function index(){
-        $user = User::all();
+        $user = User::where('role', 'User')->get();
         return view('admin/user/index', compact('user'));
     }
 
@@ -58,7 +58,6 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
-<<<<<<< HEAD
                 'postal' => $request->postal,
                 'email2' => $request->email2,
                 'telp' => $request->telp,
@@ -70,12 +69,6 @@ class UserController extends Controller
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
                 'password' => bcrypt($request->password),
-=======
-                'kode_post' => $request->kode_post,
-                'email2' => $request->email2,
-                'semester_id' => $request->semester_id,
-                'jurusan_id' => $request->jurusan_id,
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
                 'image' => 'uploads/beranda_img2/'.$new_image,
             ];
         }
@@ -89,7 +82,6 @@ class UserController extends Controller
                 'alamat' => $request->alamat,
                 'tempat_lahir' => $request->tempat_lahir,
                 'no_hp' => $request->no_hp,
-<<<<<<< HEAD
                 'postal' => $request->postal,
                 'email2' => $request->email2,
                 'telp' => $request->telp,
@@ -101,14 +93,25 @@ class UserController extends Controller
                 'semester_id' => $request->semester_id,
                 'jurusan_id' => $request->jurusan_id,
                 'password' => bcrypt($request->password),
-=======
-                'kode_post' => $request->kode_post,
-                'email2' => $request->email2,
-                'semester_id' => $request->semester_id,
-                'jurusan_id' => $request->jurusan_id,
->>>>>>> b6059d523f85d340682094e54c8f33088f088db9
             ];
         }
+        User::whereId($id)->update($user_data);
+        return back()->with('success', ' Data Profil Pengguna Berhasil diUpdate');
+    }
+
+    public function update2(Request $request, $id) {
+        // dd($request->all());
+        $request->validate([
+            'name' => ['min:1', 'max:100', 'required'],
+            'email' => ['required'],
+            'password' => ['min:4', 'required'],
+        ]);
+
+        $user_data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ];
         User::whereId($id)->update($user_data);
         return back()->with('success', ' Data Profil Pengguna Berhasil diUpdate');
     }
