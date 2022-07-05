@@ -1,20 +1,27 @@
-@extends('layout/asesi1')
+@extends('layout/asesi')
+
 @section('judul')
-Profil Anda | LSP-POLITAP
+    Profil Anda | LSP-POLITAP
 @endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     <!-- @include('layout/verifikasi') -->
     <div class="page-header">
         <h4>
-            <i class="fas fa-user"></i>  Profil Anda
+            <i class="fas fa-user"></i> Profil Anda
         </h4>
         <!-- /////////////////////////////////// -->
         <!-- BREADCRUMB -->
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Profil Anda</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a>
+                </li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Profil Anda</li>
             </ol>
         </nav>
     </div><br>
@@ -76,9 +83,9 @@ Profil Anda | LSP-POLITAP
                             <div class="col-sm-9">
                                 <input type="date" class="form-control" name="tgl_lahir"
                                     value="{{ old('tgl_lahir', Auth::user()->tgl_lahir) }}">
-                                    @error('tgl_lahir')
+                                @error('tgl_lahir')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                    @enderror
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -120,9 +127,9 @@ Profil Anda | LSP-POLITAP
                                 <div class="input-group-prepend">
                                     <input type="number" class="form-control" name="no_hp"
                                         value="{{ old('no_hp', Auth::user()->no_hp) }}">
-                                        @error('no_hp')
-                                    <div class="text-danger mt-2 text-sm">{{ $message }}</div>
-                                @enderror
+                                    @error('no_hp')
+                                        <div class="text-danger mt-2 text-sm">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -206,11 +213,13 @@ Profil Anda | LSP-POLITAP
                             <label class="col-sm-3 col-form-label">Photo</label>
                             <div class="col-sm-9">
                                 <div class="input-group-prepend">
-                                    <input type="file" name="image" accept=".png, .jpg, .jpeg" class="form-control">
+                                    <input type="file" name="image" accept=".png, .jpg, .jpeg"
+                                        class="form-control">
                                     <a href="{{ old('image', Auth::user()->image) }}" target="_blank"
                                         class="btn btn-info"><i class="fas fa-download"></i></a>
                                 </div><br>
-                                <img src="{{ old('image', Auth::user()->image) }}" width="100px" type="application/pdf">
+                                <img src="{{ old('image', Auth::user()->image) }}" width="100px"
+                                    type="application/pdf">
                             </div>
                         </div>
                     </div>
@@ -290,7 +299,7 @@ Profil Anda | LSP-POLITAP
                             </div>
                         </div>
                     </div>
-                     <div class="col-md-6">
+                    <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Kode Post</label>
                             <div class="col-sm-9">
@@ -304,7 +313,8 @@ Profil Anda | LSP-POLITAP
                     </div>
                 </div>
 
-                <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i> Simpan</button></a>
+                <a href=""><button class="btn btn-rounded btn-info btn-block"><i class="fas fa-save"></i>
+                        Simpan</button></a>
             </form>
         </div>
     </div>

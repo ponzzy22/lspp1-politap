@@ -35,26 +35,26 @@
     <div class="request-form">
         <div class="container">
             @if (Auth::user())
-            <div class="row">
-                <div class="col-md-8">
-                    <h4>Selamat Bergabung, {{ Auth::user()->name }}....</h4>
-                    <span>Formulir pengisian biodata registrasi disertai bukti lengkap secara online. </span>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Selamat Bergabung, {{ Auth::user()->name }}....</h4>
+                        <span>Formulir pengisian biodata registrasi disertai bukti lengkap secara online. </span>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{ route('profil.edit2') }}" class="border-button">Daftar Sertifikasi</a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="{{ route('profil.edit2') }}" class="border-button">Daftar Sertifikasi</a>
-                </div>
-            </div>
             @else
-            <div class="row">
-                <div class="col-md-8">
-                    <h4>Ayo Tingkatkan Kualitas Skill
-                        Anda Bersama Kami</h4>
-                    <span>Sebelum mendaftar sertifikasi pastikan anda telah memiliki akun terlebih dahulu...</span>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Ayo Tingkatkan Kualitas Skill
+                            Anda Bersama Kami</h4>
+                        <span>Sebelum mendaftar sertifikasi pastikan anda telah memiliki akun terlebih dahulu...</span>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="{{ route('reg') }}" class="border-button">Buat Akun anda</a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="{{ route('reg') }}" class="border-button">Buat Akun anda</a>
-                </div>
-            </div>
             @endif
         </div>
     </div>
@@ -89,7 +89,7 @@
                                             Nasional Indonesia (SKKNI).&nbsp; </li><br>
                                         <li>
                                             Memiliki
-                                            6 skema, LSP&nbsp; Politeknik Negeri Ketapang siap melaksanakan uji
+                                            10 skema, LSP&nbsp; Politeknik Negeri Ketapang siap melaksanakan uji
                                             kompetensi
                                             pada seluruh
                                             mahasiswa Politeknik Negeri Ketapang dari berbagai program
@@ -144,12 +144,13 @@
                 <div class="col-md-6">
                     <div class="left-content">
                         <h2>Layanan yang tersedia <br><em></em></h2>
-                        {{-- <p>Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum.
-                            Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue.
-                            <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit
-                            molestie nunc, ut posuere ante tortor ut neque.
-                        </p> --}}
-                        <a href="#" class="filled-button">Selengkapnya</a>
+                        <p>
+                            Dalam melaksanakan tugas dan fungsi LSP P1-POLITAP mengacu pada pedoman yang dikeluarkan oleh BNSP. Dalam pedoman tersebut ditetapkan persyaratan yang harus dipatuhi untuk menjamin agar lembaga sertifikasi menjalankan sistem sertifikasi secara konsisten dan profesional, sehingga dapat diterima di tingkat nasional yang relevan demi kepentingan pengembangan sumber daya manusia dalam aspek peningkatan kualitas dan perlindungan tenaga kerja.
+                        </p>
+                        <p>
+                            Saat ini LSP P1-POLITAP memiliki :
+                        </p>
+                        <a href="{{ route('client_skema') }}" class="filled-button">Selengkapnya</a>
                     </div>
                 </div>
                 <div class="col-md-6 align-self-center">
@@ -276,8 +277,8 @@
                     <table class="table">
                         <tr>
                             <td align="center" style="width: 200px"><a href="https://bnsp.go.id/" target="_blank"
-                                    rel="noopener noreferrer"><img
-                                        src="{{ asset('general/assets/images/bnsp.png') }}" height="100px"></a>
+                                    rel="noopener noreferrer"><img src="{{ asset('general/assets/images/bnsp.png') }}"
+                                        height="100px"></a>
                             </td>
                             <td align="center" style="width: 200px"><a href="https://www.kemdikbud.go.id/"
                                     target="_blank" rel="noopener noreferrer"><img
@@ -289,8 +290,8 @@
                                         height="100px"></a>
                             </td>
                             <td align="center" style="width: 200px"><a href="{{ route('/') }}"><img
-                                        src="{{ asset('general/assets/images/lsp_small.jpg') }}"
-                                        height="100px"></a></td>
+                                        src="{{ asset('general/assets/images/lsp_small.jpg') }}" height="100px"></a>
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -31,6 +31,11 @@ class ValidasiController extends Controller
     }
 
 
+    public function list_blacklist(){
+        $validasi = Data_register::where('status', "<h4 style='color: #000'>Pendaftaran Sementara Diblokir</h4>")->get();
+        return view('admin/register/list_blacklist', compact('validasi'));
+    }
+
     public function list_sertifikat(){
         $validasi = Data_register::where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->get();
         return view('admin/register/list_sertifikat', compact('validasi'));
@@ -65,6 +70,16 @@ class ValidasiController extends Controller
         $tuk = Tuk::all();
         $asesor = Asesor::all();
         return view('admin/register/sertifikat_show', compact('validasi', 'tuk', 'asesor', 'identitas', 'xnxx'));
+    }
+
+
+    public function blacklist_show(Request $request, $id){
+        $validasi = Data_register::findorfail($id);
+        $xnxx = Xnxx::all();
+        $identitas = Upload_file::all();
+        $tuk = Tuk::all();
+        $asesor = Asesor::all();
+        return view('admin/register/blacklist_show', compact('validasi', 'tuk', 'asesor', 'identitas', 'xnxx'));
     }
 
 
@@ -183,4 +198,77 @@ class ValidasiController extends Controller
         Xnxx::whereId($id)->update($validasi_data);
         return back()->with('success', 'Koreksi Data Formulir Berhasil');
     }
+
+    public function backup_store(Request $request)
+    {
+        dd($request->all());
+        $request->validate([
+            'kode' => ['required', 'unique:data_registers,kode'],
+            'skema_id' => ['required', 'unique:data_registers,skema_id'],
+            'id' => ['required', 'unique:data_registers,id'],
+            // 'sex_id' => ['required'],
+            'kode_skema' => ['required'],
+            'nim' => ['required'],
+            // 'tmpt_lahir' => ['required'],
+            // 'no_hp' => ['required'],
+            // 'semester_id' => ['required'],
+            // 'tgl_lahir' => ['required'],
+            // 'surel' => ['required'],
+            'jurusan_id' => ['required'],
+            // 'alamat' => ['required'],
+            // 'negara' => ['required'],
+            'id_skema' => ['required'],
+            // 'image' => ['required'],
+            // 'kode_post' => ['required'],
+            // 'provinsi' => ['required'],
+            // 'kabupaten' => ['required'],
+            // 'kecamatan' => ['required'],
+            // 'kota' => ['required']
+        ],[
+            'kode.unique' => 'Pendaftaran Sertifikasi Ditolak',
+            'skema_id.unique' => 'Harap periksa kembali status pendaftaran sertifikasi sebelumnya',
+            'id.unique' => ' Kemungkinan anda sudah mendaftar dengan skema ini',
+        ]);
+
+            $data_register = Data_register::create([
+                'id' => $request->id,
+                'kode' => $request->kode,
+                'nim' => $request->nim,
+                'skema_name' => $request->skema_name,
+                'tuk_id' => $request->tuk_id,
+                'kode_skema' => $request->kode_skema,
+                'asesor_id' => $request->asesor_id,
+                'status' => $request->status,
+                'skema_id' => $request->skema_id,
+                'user_id' => $request->user_id,
+                'id_skema' => $request->id_skema,
+                'user_name' => $request->user_name,
+                'status' => $request->status,
+                'email' => $request->email,
+                'sex_id' => $request->sex_id,
+                'tgl_lahir' => $request->tgl_lahir,
+                'tmpt_lahir' => $request->tmpt_lahir,
+                'negara' => $request->negara,
+                'alamat' => $request->alamat,
+                'no_hp' => $request->no_hp,
+                'kode_post' => $request->kode_post,
+                'surel' => $request->surel,
+                'semester_id' => $request->semester_id,
+                'jurusan_id' => $request->jurusan_id,
+                'image' => $request->image,
+                'institusi' => $request->institusi,
+                'jabatan' => $request->jabatan,
+                'email3' => $request->email3,
+                'fax' => $request->fax,
+                'telp' => $request->telp,
+                'postal' => $request->postal,
+                'jenis' => $request->jenis,
+                'rmh' => $request->rmh,
+                'ktr' => $request->ktr,
+                'tmt' => $request->tmt,
+                'alamat_kantor' => $request->alamat_kantor,
+            ]);
+        return back()->with('success', ' Pendaftaran anda Berhasil, Selanjutnya Silahkan "Ambil Formulir Pendafatran"');
+    }
+
 }

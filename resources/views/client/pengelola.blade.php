@@ -139,7 +139,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Pengelola SDM</h1>
+                    <h1><i class="fas fa-user"></i> Pengelola SDM</h1>
                     <span>Lembaga Sertifikasi Profesi Politeknik Negeri Ketapang</span>
                 </div>
             </div>

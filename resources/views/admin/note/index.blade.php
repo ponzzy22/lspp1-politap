@@ -135,14 +135,14 @@
             </div>
         </div>
     @endforeach
-    {{-- <--------------- MODAL HAPUS DATA ---------------> --}}
+    {{-- <--------------- MODAL TAMPIL DATA ---------------> --}}
     @foreach ($note as $hasil => $asu)
         <div class="modal fade" id="datareg2-{{ $asu->id }}" tabindex="-1" role="dialog"
             aria-labelledby="ModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-edit"></i>
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-eye"></i>
                             {{ $asu->judul }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="close">
                             <span aria-hidden="true">&times;</span>
@@ -152,12 +152,6 @@
                         {!! $asu->isi !!}
                     </div>
                     <div class="modal-footer">
-                        <form action="{{ route('note.destroy', $asu->id) }}" method="POST">
-                            @csrf
-                            @method('delete')
-                            <a href=""><button type="submit" class="btn btn-success btn-block"><i
-                                        class="fa fa-trash "></i> Hapus</button></a>
-                        </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                     </div>
                 </div>

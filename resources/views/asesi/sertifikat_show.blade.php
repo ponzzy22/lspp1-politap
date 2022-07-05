@@ -1,4 +1,13 @@
-@extends('layout/asesi2')
+@extends('layout.asesi')
+
+@section('judul')
+    Koleksi Sertifikat | LSP-POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
 <div class="row">
     <!-- /////////////////////////////////// -->

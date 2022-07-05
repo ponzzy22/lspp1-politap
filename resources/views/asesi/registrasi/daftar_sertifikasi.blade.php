@@ -1,7 +1,13 @@
-@extends('layout/asesi1')
+@extends('layout/asesi')
+
 @section('judul')
     Daftar Skema | LSP-POLITAP
 @endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -13,8 +19,8 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tabel Skema</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Tabel Skema</li>
             </ol>
         </nav>
     </div><br>

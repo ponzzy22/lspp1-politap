@@ -1,4 +1,13 @@
-@extends('layout/asesi1')
+@extends('layout/asesi')
+
+@section('judul')
+    Informasi Skema | LSP-POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
 <div class="page-header">
     <h4>
@@ -9,9 +18,9 @@
     <!-- /////////////////////////////////// -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb breadcrumb-custom  bg-danger">
-            <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item"><a href="{{ route('info.skema') }}">Skema/Kluster</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Detail Skema </li>
+            <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
+            <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('info.skema') }}">Skema/Kluster</a></li>
+            <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Detail Skema </li>
         </ol>
     </nav>
 </div><br>

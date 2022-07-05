@@ -73,11 +73,11 @@
                             <div class="col-md-12">
                                 <label for="">Judul Berita</label>
                                 <input type="text" class="form-control" placeholder="Judul berita" name="title"
-                                    maxlength="50" value="{{ $berita->title }}">
+                                    maxlength="75" value="{{ $berita->title }}">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Excerpt</label>
-                                <input type="text" class="form-control" maxlength="50" placeholder="Excerpt"
+                                <input type="text" class="form-control" maxlength="100" placeholder="Excerpt"
                                     name="excerpt" value="{{ $berita->excerpt }}">
                             </div><br>
                             <div class="col-md-6">

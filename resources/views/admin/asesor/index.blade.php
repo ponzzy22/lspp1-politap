@@ -181,7 +181,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fas fa-user"> List Asesor</i></h4>
+            <h4 class="card-title"><i class="fas fa-table"></i> Table Asesor</h4>
             <div class="row grid-margin">
             </div>
             <div class="row">

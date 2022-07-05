@@ -34,6 +34,8 @@ class Dashboard_asesiController extends Controller
             ->get();
         $datareg4 = Data_register::where('nim', auth()->user()->email)
             ->where('status', "<h4 style='color: rgb(0, 0, 0)'>Sertifikasi Selesai</h4>")->get();
+        $datareg5 = Data_register::where('nim', auth()->user()->email)
+            ->where('status', "<h4 style='color: #000'>Pendaftaran Sementara Diblokir</h4>")->get();
         return view('asesion', compact
         (
             'datareg',
@@ -41,6 +43,7 @@ class Dashboard_asesiController extends Controller
             'datareg2',
             'datareg3',
             'datareg4',
+            'datareg5',
             'datasertifikat',
             'xnxx',
             'skema',

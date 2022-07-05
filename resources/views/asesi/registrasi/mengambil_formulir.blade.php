@@ -1,4 +1,13 @@
-@extends('layout/asesi2')
+@extends('layout/asesi')
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
+@section('judul')
+    Mengambil Formulir | LSP-POLITAP
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     {{-- <--------------- Mengambil Formulir Pendaftaran ---------------> --}}
@@ -8,8 +17,8 @@
         </h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Mengambil Formulir</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Mengambil Formulir</li>
             </ol>
         </nav>
     </div><br>

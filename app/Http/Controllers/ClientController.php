@@ -55,7 +55,7 @@ class ClientController extends Controller
         $sertifikat = Data_register::where('status', 'Sertifikasi Selesai')->get();
         $galeri = Galeri_foto::orderBy('created_at','desc')->get();
         $artikel = Berita::orderBy('created_at','desc')
-            ->where('status', 'Posting')->take(3)->get();
+            ->where('status', '<label class="badge badge-info">Posting</label>')->take(3)->get();
         $info = Info::all();
         $karyawan = Beranda_img2::all();
         return view('beranda', compact
@@ -86,8 +86,14 @@ class ClientController extends Controller
     public function berita()
     {
         $berita = Berita::orderBy('created_at','desc')
-            ->where('status', 'Posting')->get();
+            ->where('status', '<label class="badge badge-info">Posting</label>')->get();
         return view('client.berita', compact('berita'));
+    }
+
+
+    public function kontak()
+    {
+        return view('client.kontak');
     }
 
 

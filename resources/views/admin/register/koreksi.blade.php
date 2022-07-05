@@ -389,48 +389,4 @@
             </div>
         </div>
     </div>
-    <!-- /////////////////////////////////// -->
-    <!-- VALIDASI DATA DIBLOKIR -->
-    <!-- /////////////////////////////////// -->
-    <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
-        <div class="card">
-            <div style="background-color: #3a3f51" class="card-header" role="tab" id="heading-11">
-                <h6 style="background-color: #3a3f51" class="mb-0">
-                    <a style="background-color: #3a3f51; color: #fff" class="collapsed font-weight-bold"
-                        data-toggle="collapse" href="#collapse-asd21111111" aria-expanded="true"
-                        aria-controls="collapse-asd21111111">
-                        BLACKLIST PENDAFTARAN
-                    </a>
-                </h6>
-            </div>
-            <div id="collapse-asd21111111" class="collapse" role="tabpanel" aria-labelledby="heading-11"
-                data-parent="#accordion-4">
-                <div class="card-body">
-                    <div style="font-size: 12px" class="card-description">
-                        <ul>
-                            <li>Dengan anda melakukan blacklist pada pendaftaran ini, maka asesi yang bersangkutan tidak
-                                dapat melakukan pendaftaran sertifikasi di semua skema. </li>
-                            <li>Tanda berbintang/* wajib untuk diisi</li>
-                        </ul>
-                    </div>
-                    <form action="{{ route('tolak.update', $validasi->id) }}" method="POST">
-                        @csrf
-                        @method('put')
-                        <input type="hidden" name="status"
-                            value="<h4 style='color: #000'>Pendaftaran di Blacklist</h4>">
-                        <li>Alasan/Keterangan*</li>
-                        <textarea name="keterangan" class="summernote" id="" cols="36" rows="5">
-                            <ul>
-                                <li>Akun anda kami blokir.</li>
-                                <li>Anda tidak dapat melakukan pendaftaran sertifikasi.</li>
-                                <li>Mohon untuk menghubungi pihak admin LSP POLITAP untuk melakukan pemulihan akun.</li>
-                            </ul>
-                        </textarea><br>
-                        <button type="submit" class="btn btn-dark btn-block"><i class="fas fa-times-circle"></i>
-                            Tolak Pendaftaran</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

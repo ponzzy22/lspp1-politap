@@ -1,7 +1,13 @@
-@extends('layout/asesi2')
+@extends('layout/asesi')
+
 @section('judul')
     Revisi Pendaftaran | LSP-POLITAP
 @endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <br>

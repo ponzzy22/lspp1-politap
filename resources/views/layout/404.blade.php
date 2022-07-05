@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>404 Not Found</title>
     <link rel="stylesheet" href="{{ asset('assets/css/404.css') }}">
 </head>
 
@@ -45,7 +45,7 @@
                     </p>
                 </div>
                 <div class="error__nav e-nav">
-                    <a href="{{ url('/') }}" target="_blanck" class="e-nav__link"></a>
+                    <a href="{{ route('/') }}" target="_blanck" class="e-nav__link"></a>
                 </div>
             </div>
             <!-- END Content -->

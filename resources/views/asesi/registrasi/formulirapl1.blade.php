@@ -1,7 +1,13 @@
-@extends('layout/asesi2')
+@extends('layout.asesi')
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('judul')
     Mengisi Formulir | LSP-POLITAP
 @endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <br>
@@ -9,9 +15,9 @@
     {{-- <-------------------- KIRIM DATA --------------------> --}}
     <div id="home"  class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
-            <div style="background-color: #3F4E4F" class="card-header" role="tab" id="heading-11">
-                <h6 style="background-color: #3F4E4F" class="mb-0">
-                    <a style="background-color: #3F4E4F" class="collapsed font-weight-bold" data-toggle="collapse"
+            <div style="background-color: #563fbb" class="card-header" role="tab" id="heading-11">
+                <h6 style="background-color: #563fbb" class="mb-0">
+                    <a style="background-color: #563fbb" class="collapsed font-weight-bold" data-toggle="collapse"
                         href="#collapse-1111111" aria-expanded="true" aria-controls="collapse-1111111">
                         Kirim Data Pendaftaran
                     </a>
@@ -40,7 +46,7 @@
                         <input type="hidden" name="status" value="<h4 style='color: green'>Menunggu Validasi...</h4>">
                     </div>
                     <div class="modal-footer">
-                        <button data-toggle="modal" data-target="#exampleModal-12" type="submit" class="btn btn-success btn-block font-weight-bold">Kirim Data Pendaftaran
+                        <button data-toggle="modal" data-target="#exampleModal-12" type="submit" class="btn btn-rounded btn-success btn-block font-weight-bold">Kirim Data Pendaftaran
                             <i class="fas fa-flag-checkered"></i></button>
                     </div>
                 {{-- </form> --}}
@@ -51,9 +57,9 @@
     {{-- <-------------------- UPLOAD DOKUMEN 1 --------------------> --}}
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
-            <div style="background-color: #3F4E4F" class="card-header" role="tab" id="heading-11">
-                <h6 style="background-color: #3F4E4F" class="mb-0">
-                    <a style="background-color: #3F4E4F" class="collapsed font-weight-bold" data-toggle="collapse"
+            <div style="background-color: #563fbb" class="card-header" role="tab" id="heading-11">
+                <h6 style="background-color: #563fbb" class="mb-0">
+                    <a style="background-color: #563fbb" class="collapsed font-weight-bold" data-toggle="collapse"
                         href="#collapse-2323" aria-expanded="true" aria-controls="collapse-2323">
                         FR.APL.01. PERMOHONAN SERTIFIKASI KOMPETENSI
                     </a>
@@ -125,9 +131,9 @@
     {{-- <-------------------- UPLOAD DOKUMEN 2 --------------------> --}}
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
         <div class="card">
-            <div style="background-color: #3F4E4F" class="card-header" role="tab" id="heading-11">
-                <h6 style="background-color: #3F4E4F" class="mb-0">
-                    <a style="background-color: #3F4E4F" class="collapsed font-weight-bold" data-toggle="collapse"
+            <div style="background-color: #563fbb" class="card-header" role="tab" id="heading-11">
+                <h6 style="background-color: #563fbb" class="mb-0">
+                    <a style="background-color: #563fbb" class="collapsed font-weight-bold" data-toggle="collapse"
                         href="#collapse-2323" aria-expanded="true" aria-controls="collapse-2323">
                         FR.APL.02. ASESMEN MANDIRI
                     </a>
@@ -359,7 +365,7 @@
                                 value="<h4 style='color: green'>Menunggu Validasi...</h4>">
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-block font-weight-bold">Kirim Data
+                            <button type="submit" class="btn btn-success btn-rounded btn-block font-weight-bold">Kirim Data
                                 Pendaftaran <i class="fas fa-flag-checkered"></i></button>
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                         </div>

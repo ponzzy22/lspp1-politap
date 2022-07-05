@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Struktur Organisasi</h1>
+                    <h1><i class="fas fa-sitemap"></i> Struktur Organisasi</h1>
                     <span>Lembaga Sertifikasi Profesi Politeknik Negeri Ketapang</span>
                 </div>
             </div>

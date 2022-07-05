@@ -85,7 +85,7 @@ a.border-button:hover {
 }
 
 .section-heading h2 {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
     color: #1e1e1e;
 }
@@ -194,7 +194,7 @@ more-info-content .section-heading em {
 
 .sub-header {
     background-color: #8b0000;
-    height: 60px;
+    height: 50px;
     line-height: 46px;
 }
 
@@ -204,7 +204,7 @@ more-info-content .section-heading em {
 
 .sub-header ul.left-info li {
     border-left: 1px solid #8b0000;
-    padding: 5px 20px;
+    padding: 1px 20px;
 }
 
 .sub-header ul.left-info li:last-child {
@@ -224,7 +224,7 @@ more-info-content .section-heading em {
 
 .sub-header ul.right-icons {
     float: right;
-    margin: 5px;
+    margin: 1px;
 }
 
 .sub-header ul.right-icons li {

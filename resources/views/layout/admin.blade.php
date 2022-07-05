@@ -276,7 +276,7 @@
                         <div class="collapse" id="sidebar-layouts22">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('404') }}">Formulir APL-01</a>
+                                    <a class="nav-link" href="{{ route('form1.index') }}">Formulir APL-01</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('404') }}">Formulir APL-02</a>
@@ -380,12 +380,6 @@
                                 <div class="btn btn-primary btn-block">
                                     <a href="{{ route('beranda_img1.index') }}" class="text text-white"><i
                                             class="fas fa-image"></i> Carousel</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="btn btn-primary btn-block">
-                                    <a href="{{ route('sett-beranda.index') }}" class="text text-white"><i
-                                            class="fas fa-window-maximize"></i> Banner</a>
                                 </div>
                             </li>
                         </ul>

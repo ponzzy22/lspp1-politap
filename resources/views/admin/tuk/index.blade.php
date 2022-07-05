@@ -112,7 +112,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fas fa-map"> List Tempat Uji Kompetensi</i></h4>
+            <h4 class="card-title"><i class="fas fa-table"></i> Table Tempat Uji Kompetensi</h4>
             <div class="row grid-margin">
             </div>
             <div class="row">
@@ -136,7 +136,7 @@
                                                 <th class="sorting" tabindex="0" aria-controls="order-listing"
                                                     rowspan="1" colspan="1"
                                                     aria-label="Customer: activate to sort column ascending"
-                                                    style="width: 775.75px;">TUK</th>
+                                                    style="width: 1075.75px;">TUK</th>
                                             </tr>
                                         </thead>
                                         <tbody>

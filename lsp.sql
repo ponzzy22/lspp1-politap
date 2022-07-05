@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2022 at 01:21 AM
+-- Generation Time: Jul 05, 2022 at 11:18 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -109,8 +109,8 @@ INSERT INTO `banner` (`id`, `name`, `image`, `updated_at`, `created_at`) VALUES
 CREATE TABLE `beritas` (
   `id` int(5) UNSIGNED NOT NULL,
   `kategori_id` int(5) NOT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `excerpt` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `excerpt` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `body` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `status` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -123,12 +123,10 @@ CREATE TABLE `beritas` (
 --
 
 INSERT INTO `beritas` (`id`, `kategori_id`, `title`, `excerpt`, `body`, `image`, `status`, `updated_at`, `created_at`) VALUES
-(35, 2, 'Layanan Skema Lembaga Sertifikasi Profesi Politekn', 'Lembaga sertifikasi ', '<h6>Lembaga sertifikasi profesi merupakan lembaga pendukung BNSP yang \r\nbertanggungjawab melaksanakan sertifikasi kompetensi profesi. LSP-P1 \r\ndibentuk wajib berbadan hukum dan dibentuk oleh perusahaan atau lembaga \r\npendidikan dan pelatihan yang teregistrasi oleh BNSP. LSP-P1 memiliki \r\ntugas untuk mengembangkan standar kompetensi, melaksanakan uji \r\nkompetensi, menerbitkan sertifikat kompetensi serta melakukan verifikasi\r\n tempat uji kompetensi.&nbsp; </h6><p><br></p><h6>Dalam melaksanakan tugas \r\ndan fungsi LSP-P1 POLITAP mengacu pada pedoman yang dikeluarkan oleh \r\nBNSP, untuk menjamin agar lembaga sertifikasi menjalankan sistem \r\nsertifikasi pihak pertama secara konsisten dan profesional, sehingga \r\ndapat diterima di tingkat nasional yang relevan demi kepentingan \r\npengembangan sumber daya manusia dalam aspek peningkatan kualitas dan \r\nperlindungan tenaga kerja.&nbsp; </h6><h6><br></h6><h6>LSP P1 POLITAP \r\nmerupakan bagian dari Politeknik Negeri Ketapang. Politeknik Negeri \r\nKetapang adalah satu-satunya perguruan tinggi negeri di Kabupaten \r\nKetapang.. LSP P1 POLITAP memenuhi kebutuhan sertifikasi kompetensi \r\nmahasiswa dari 8 Prodi di Politeknik Negeri Ketapang, meliputi Prodi \r\nPerawatan dan Perbaikan Mesin, Teknik Informatika, Teknik Pertambangan, \r\nTeknik Elektro, Perancangan Jalan dan Jembatan,, Agroindustri, Teknologi\r\n Pengolahan Hasil Perkebunan, dan Budidya Tanaman Perkebunan. <br></h6>', 'uploads/berita/16553957711652156312IMG_20220420_131245.jpg', 'Posting', '2022-06-16 09:09:31', '2022-05-09 21:23:35'),
-(37, 2, 'Layanan Skema Lembaga Sertifikasi Profesi Politekn', 'Lembaga sertifikasi ', '<div style=\"color: rgb(106, 112, 107); font-family: &quot;Fira Code SemiBold&quot;, Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre;\"><div><span style=\"background-color: inherit;\"><span style=\"color: rgb(106, 112, 107); font-family: &quot;Times New Roman&quot;;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempora quasi et, accusantium dicta facere saepe odit ipsum sunt ducimus! Quo soluta quasi minima tenetur! Qui perferendis eaque rem ipsa.</span></span></div></div>', 'uploads/berita/16567639596.png', 'Posting', '2022-07-02 05:12:39', '2022-06-11 09:20:52'),
-(41, 1, 'Layanan Skema Lembaga Sertifikasi Profesi Politekn', 'Lembaga sertifikasi ', '<div style=\"color: rgb(106, 112, 107); font-family: &quot;Fira Code SemiBold&quot;, Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 14px; line-height: 19px; white-space: pre;\"><div><span style=\"background-color: inherit;\"><span style=\"color: rgb(106, 112, 107); font-family: &quot;Tahoma&quot;;\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique tempora quasi et, accusantium dicta facere saepe odit ipsum sunt ducimus! Quo soluta quasi minima tenetur! Qui perferendis eaque rem ipsa.</span></span></div></div>', 'uploads/berita/16553957451652155910WhatsApp Image 2020-06-26 at 10.01.35.jpeg', 'Posting', '2022-06-16 09:09:05', '2022-06-11 09:20:52'),
-(43, 1, 'erwerwe', 'werwe', '<p>wer<br></p>', 'uploads/berita/16567640152.jpg', 'Posting', '2022-07-02 05:13:35', '2022-07-02 05:13:35'),
-(44, 1, 'SDASDASD', 'ASDAS', '<p><span style=\"background-color: inherit; --darkreader-inline-bgcolor: inherit;\" data-darkreader-inline-bgcolor=\"\"><span style=\"color: rgb(255, 0, 0); --darkreader-inline-color: #ff1a1a;\" data-darkreader-inline-color=\"\"><span style=\"\">PONSIANUS JOPI</span></span></span></p><p align=\"justify\">1. Asdasdasjdasdj J dfsfkjdfksdjfkls;df dfsdkfsddfsd saddd ddddddddd ddddd sadddd ddddd ddddd ddddd&nbsp; fsdfsdfsdf asdas da sd as dasd asd as das das d asdas das das das das a sdas da s<br></p><div align=\"justify\"><ol><li>sdasdas dasdasdasd asdasdasdasda sdasdasd asdasdasdasd asdasd asd asdasdasd sdasdas asd asd as dasd as dasdas das das das da sda sd asd as asdasdasdasdasdasdasdasd asdasdas dasdas dasdasda sdasdasdasd asdasdasd asda sdasdas sdasdasd sad asd as as das dasd as das da sd asd asd as da sdas da sda sd as das das da sdas das dasd as dasdas as a sdas das&nbsp; sd asd asd asd as d as dasd as da sda da<a href=\"http://127.0.0.1:8000/berita/eyJpdiI6Ik1tcW50SUYvQkZ1eGs4UFlaaFVEZ3c9PSIsInZhbHVlIjoiZndoS0JTNmthK3VJa1Z5eU4vYVNEQT09IiwibWFjIjoiNjMzYjBlYWU0ZDcxMzEzYmFjZWJhM2UyMDBmNzI1MmQ2YjlmNDlkMGRmZmE1ODRhZGRjNzQ1MzU2OWM4NmZlMSIsInRhZyI6IiJ9\" target=\"_blank\">fsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf</a>sadasdasdas dasdasdasd asdasdasda sdasdasd asdasdasda sdadsdadasdasdasdasdasdasdasd<br></li></ol></div>', 'uploads/berita/16567654182.jpg', '<label class=\"badge badge-danger\">Tidak di Posting</label>', '2022-07-03 12:43:44', '2022-07-02 05:36:58'),
-(45, 2, 'sdas', 'asdas', '<p>sada<br></p>', 'uploads/berita/1656876958login balsamiq.jpg', '<label class=\"badge badge-info\">Posting</label>', '2022-07-03 12:43:29', '2022-07-03 12:35:58');
+(46, 1, 'Lembaga Sertifikasi Profesi Pihak Kesatu Politeknik Negeri Ketapang', 'Lembaga Sertifikasi Profesi Pihak Kesatu Politekni', '<p><span>Lembaga Sertifikasi Profesi Pihak Kesatu Politeknik Negeri Ketapang</span>\r\n                                    </p><ul class=\"u-custom-font u-font-arial u-text u-text-2\" data-animation-name=\"customAnimationIn\" data-animation-duration=\"1000\"><li> Lembaga Sertifikasi Profesi (LSP) Politeknik Negeri Ketapang adalah lembaga\r\n                                            sertifikasi profesi yang telah memperoleh sertifikat lisensi No.\r\n                                            BNSP-LSP-1214-ID dari\r\n                                            Badan Nasional Sertifikasi Profesi\r\n                                            (BNSP). dan memiliki Nomor SK\r\n                                            KEP. 0429/BNSP/IV/2018.</li><br><li>Sebagai lembaga pelaksanaan kegiatan sertifikasi profesi kategori P1, skema\r\n                                            yang\r\n                                            dimiliki LSP&nbsp; Politeknik Negeri Ketapang diselaraskan dengan Kerangka\r\n                                            Kualifikasi\r\n                                            Nasional Indonesia (KKNI) dan Standar Kualifikasi Kerja\r\n                                            Nasional Indonesia (SKKNI).&nbsp; </li><br><li>\r\n                                            Memiliki\r\n                                            10 skema, LSP&nbsp; Politeknik Negeri Ketapang siap melaksanakan uji\r\n                                            kompetensi\r\n                                            pada seluruh\r\n                                            mahasiswa Politeknik Negeri Ketapang dari berbagai program\r\n                                            studi dalam rangka menyiapkan lulusan Politeknik Negeri Ketapang yang\r\n                                            memiliki kompetensi mumpuni sesuai bidangnya dan memiliki nilai lebih di\r\n                                            pasar tenaga kerja\r\n                                            baik\r\n                                            nasional maupun Internasional.\r\n                                        </li></ul>', 'uploads/berita/165705014616553907293-min.jpg', '<label class=\"badge badge-info\">Posting</label>', '2022-07-05 13:09:45', '2022-07-05 12:42:26'),
+(47, 1, 'Layanan LSP POLITAP', 'Lembaga Sertifikasi Profesi Politeknik Negeri Ketapang(LSP-POLITAP) adalah lembaga pendukung BNSP...', '<div class=\"entry-content\">\r\n\r\n      <p>Lembaga Sertifikasi Profesi Politeknik Negeri Ketapang(LSP-POLITAP) adalah lembaga pendukung BNSP yang bertanggung jawab \r\nmelaksanakan sertifikasi kompetensi profesi.</p>\r\n\r\n<p>LSP P1-POLITAPdibentuk dengan Surat Keputusan Direktur Politeknik \r\nNegeri Jember Nomor: 7730/PL.17/SK/OT/2014 tanggal 12 September 2014. \r\nDalam pembentukkanya LSP P1-POLITAP mendapat dukungan dari Pemerintah \r\nmelalui Direktorat Jenderal Pendidikan Tinggi Kementerian Pendidikan dan\r\n Kebudayaan.</p>\r\n\r\n<p>Dalam melaksanakan tugas dan fungsi LSP P1-POLITAP mengacu pada \r\npedoman yang dikeluarkan oleh BNSP. Dalam pedoman tersebut ditetapkan \r\npersyaratan yang harus dipatuhi untuk menjamin agar lembaga sertifikasi \r\nmenjalankan sistem sertifikasi secara konsisten dan profesional, \r\nsehingga dapat diterima di tingkat nasional yang relevan demi \r\nkepentingan pengembangan sumber daya manusia dalam aspek peningkatan \r\nkualitas dan perlindungan tenaga kerja.</p>\r\n\r\n<p>Saat ini LSP P1-POLIJE memiliki :</p>\r\n\r\n<ol><li>Skema sejumlah 10 skema</li><li>Asesor sejumlah 30 asesor</li><li>TUK (tempat uji kompetensi) sejumlah 8 TUK</li></ol>\r\n      </div>', 'uploads/berita/1657050554lsp_small.jpg', '<label class=\"badge badge-info\">Posting</label>', '2022-07-05 13:06:58', '2022-07-05 12:49:14'),
+(48, 1, 'Junior Web Developer', 'Skema sertifikasi Junior Web Developer adalah skema sertifikasi yang  dikembangkan oleh Komite......', '<div class=\"entry-content\">\r\n		\r\n<p>Skema sertifikasi Junior Web Developer adalah skema sertifikasi yang&nbsp;\r\n dikembangkan oleh Komite Skema LSP Teknologi Informatika memenuhi \r\nkebutuhan sertifikasi kompetensi kerja di LSP Teknologi Informatika. \r\nKemasan yang digunakan mengacu pada Standar Kompetensi Kerja Nasional \r\nIndonesia berdasarkan Keputusan Menteri Ketenagakerjaan Republik \r\nIndonesia Nomor 282 Tahun 2016 Skema sertifikasi ini digunakan sebagai \r\nacuan pada pelaksanaan assesmen oleh Asesor kompetensi LSP Teknologi \r\nInformatika dan memastikan kompetensi pada jabatan Junior Web Developer.</p>\r\n\r\n\r\n\r\n<p>Jenis Skema &nbsp; : <s>KKNI </s>/ Okupasi / <s>Klaster</s></p>\r\n\r\n\r\n\r\n<p>Nama Skema : Junior Web Developer</p>\r\n\r\n\r\n\r\n<p>Rincian Unit Kompetensi :<strong></strong></p>\r\n\r\n\r\n\r\n<figure class=\"wp-block-table\"><table><thead><tr><td><strong>NO</strong></td><td><strong>KODE UNIT</strong></td><td><strong>JUDUL UNIT KOMPETENSI</strong><strong></strong></td></tr></thead><tbody><tr><td>1</td><td>J.620100.005.02&nbsp;</td><td>Mengimplementasikan user interface</td></tr><tr><td>2</td><td>J.620100.010.01</td><td>Menerapkan perintah eksekusi bahasa pemrograman berbasis teks, grafik, dan multimedia</td></tr><tr><td>3</td><td>J.620100.015.01</td><td>Menyusun fungsi, file atau sumber daya pemrograman yang lain dalam organisasi yang rapi</td></tr><tr><td>4</td><td>J.620100.016.01&nbsp;</td><td>Menulis kode dengan prinsip sesuai guidelines dan best practices</td></tr><tr><td>5</td><td>J.620100.017.02&nbsp;</td><td>Mengimplementasikan pemrograman terstruktur</td></tr><tr><td>6</td><td>J.620100.019.02&nbsp;</td><td>Menggunakan library atau komponen pre-existing</td></tr></tbody></table></figure>\r\n\r\n\r\n\r\n<ul><li><strong>Persyaratan Dasar Pemohon Sertifikasi</strong><ol><li>Minimal Pemegang Sertifikat Pelatihan bidang Web Developer, atau;</li><li>Peserta Didik SMK/MAK Kelas XII Jurusan RPL, kompetensi&nbsp; sesuai Skema Web Developer junior, atau;</li><li>SMA<strong>/</strong>MA Sederajat memiliki Sertifikat Pelatihan bidang Web Developer, atau;</li><li>Mahasiswa&nbsp; Semester IV Program Studi Ilmu Komputer sesuai bidang web developer, atau;</li><li>Lulusan Diploma/Sarjana yang memiliki Sertifikat Pelatihan bidang web developer, atau;</li><li>Pekerja Profesional di bidang Pengembangan Web Developer minimal 1 Tahun pengalaman.</li></ol></li></ul>\r\n\r\n			</div><p></p>', 'uploads/berita/16570510931-min.jpg', '<label class=\"badge badge-info\">Posting</label>', '2022-07-05 13:08:15', '2022-07-05 12:58:13'),
+(49, 1, 'Pengertian Pendidikan Profesi & Sertifikasi Profesi', 'Pengertian Pendidikan Profesi & Sertifikasi Profesi memiliki perbedaan yang mendasar terutama ......', '<p>Pengertian Pendidikan Profesi &amp; Sertifikasi Profesi memiliki \r\nperbedaan yang mendasar terutama berkaitan dengan konsep dan tujuan \r\nserta penyelenggaranya. Berdasarkan konsep, profesi memiliki dua \r\npengertian yaitu:</p>\r\n<ul><li><strong>Pengertian profesi</strong>&nbsp;adalah jenjang pendidikan \r\nsetelah sarjana untuk mempersiapkan peserta didik agar dapat bekerja \r\npada bidang yang memerlukan keahlian khusus. (Undang-Undang No.20 Tahun \r\n2003)</li><li><strong>Pengertian profesi</strong> adalah bidang pekerjaan yang untuk pelaksanaannya diperlukan kompetensi tertentu (Peraturan Pemerintah No.31 Tahun 2006)</li></ul>\r\n<p>Konsep profesi pertama berkaitan dengan pendidikan.&nbsp;<strong>Pengertian pendidikan profesi</strong>&nbsp;adalah\r\n untuk mempersiapkan peserta didik agar dapat bekerja pada bidang yang \r\nmemerlukan keahlian khusus. Pendidikan profesi penyelenggaranya dominan \r\noleh Kementrian Pendidikan dan Kebudayaan, misalkan pendidikan profesi \r\nguru, dokter, akuntan, psikolog dan pendidikan profesi lainnya.</p>\r\n<p>Sedangkan konsep profesi kedua berkaitan dengan bidang pekerjaan.&nbsp;<strong>Pengertian sertifikasi profesi</strong>&nbsp;adalah\r\n sertifikasi kerja yang diperlukan untuk mendapatkan atau meningkatkan \r\nkompetensi tertentu. Sertifikasi profesi merupakan sertifikasi kerja \r\nyang dominan dikeluarkan oleh LSP (Lembaga Sertifikasi Profesi) yang \r\ndiakreditasi oleh BNSP (Badan Nasional Sertifikasi Profesi), contohnya \r\nadalah Sertifikasi Profesi Ahli Manajemen Risiko, Analis Keuangan, \r\nAkuntan Publik, Konsultan Pajak dan berbagai sertifikasi profesi untuk \r\nkompetensi yang lain.</p>\r\n<p>Sesuai dengan&nbsp;<strong>PERPRES 8/2012,</strong>&nbsp;<strong>Sertifikasi Kompetensi Kerja</strong>&nbsp;adalah\r\n proses pemberian sertifikat kompetensi yang dilakukan secara sistematis\r\n dan objektif melalui uji kompetensi sesuai Standar Kompetensi Kerja \r\nNasional Indonesia, Standar Internasional, dan/atau Standar Khusus.&nbsp; \r\nSehingga sistim sertifikasi ini mempunyai fleksibilitas berharmonisasi \r\ndengan berbagai sistem nasional maupun internasional.</p>\r\n<p>Sesuai dengan&nbsp;<strong>Peraturan BNSP 01/2015,</strong>&nbsp;<strong>Sistem Sertifikasi Kompetensi Profesi Nasional</strong>&nbsp;adalah\r\n tatanan keterkaitan komponen sertifikasi kompetensi profesi yang \r\nmencakup pembentukan kelembagaan sertifikasi, lisensi, lembaga \r\nsertifikasi, pengembangan sistem informasi sertifikasi kompetensi dan \r\npengendalaian mutu sertifikasi yang sinergis dan harmonis dalam rangka \r\nmencapai tujuan pelaksanaan sertifikasi kompetensi kerja nasional.</p>\r\n<p><span style=\"color: rgb(0, 51, 102); --darkreader-inline-color: #8fcdff;\" data-darkreader-inline-color=\"\"><strong>JENIS SERTIFIKASI</strong></span></p>\r\n<p>Secara umum terdapat tiga jenis umum sertifikasi. Tercantum dalam \r\nurutan tingkat pembangunan dan portabilitas, mereka adalah: perusahaan \r\n(internal), produk-spesifik, dan profesi.</p>\r\n<p><strong>Sertifikasi perusahaan</strong>, atau&nbsp;<strong>internal</strong>&nbsp;yang\r\n dirancang oleh perusahaan atau organisasi untuk kebutuhan internal. \r\nMisalnya, perusahaan mungkin memerlukan kursus satu hari pelatihan untuk\r\n semua personil penjualan, setelah itu mereka menerima sertifikat. \r\nSementara sertifikat ini memiliki portabilitas yang terbatas khusunya \r\nuntuk perusahaan lain,</p>\r\n<p><strong>Sertifikasi produk,</strong>&nbsp;spesifik sertifikasi yang lebih \r\nterlibat, dan dimaksudkan untuk dirujuk ke produk di semua aplikasi. \r\nPendekatan ini sangat umum di dunia teknologi infomasi&nbsp; industri, di \r\nmana personil bersertifikat pada versi perangkat lunak (software) atau \r\nperangkat keras (hardware). Jenis sertifikasi portabel di lokasi \r\n(misalnya, perusahaan yang berbeda yang menggunakan perangkat lunak \r\nitu), tetapi tidak seluruh produk lainnya.</p>\r\n<p><strong>Sertifikasi profesi,</strong>&nbsp;dilakukan untuk kompetensi atau\r\n keahlian khusus. Misalnya profesi medis sering membutuhkan tenaga ahli \r\natau spesialisasi tertentu dalam memberikan pelayanan kepada pasien. \r\nSertifikasi profesi dilakukan dalam rangka menerapkan standar \r\nprofesional, meningkatkan tingkat praktek, dan mungkin melindungi \r\nmasyarakat (meskipun ini juga merupakan domain dari lisensi), sebuah \r\norganisasi profesional mungkin menetapkan sertifikasi. Hal ini \r\ndimaksudkan untuk menjadi acuan bagi semua tempat dimana seorang \r\nprofesional bersertifikat mungkin bekerja. Tentu saja, hal ini \r\nmembutuhkan pola penilaian dan pertanggungjawaban secara hukum dari \r\nseluruh profesi yang ada.</p>\r\n<p><strong>Sertifikasi professional</strong>; Istilah sertifikasi \r\nprofesional seringkali digunakan untuk menunjukkan kemampuan atau \r\nkualifikasi seseorang berdasarkan atribut atau kriteria yang telah \r\nditentukan oleh sebuah organisasi/badan atau lembaga pengembangan \r\n(biasanya sudah terakreditasi). Sebutan ‘sertifikasi’ atau ‘kualifikasi’\r\n tersebut ditetapkan bagi tenaga profesional, sering disebut hanya \r\nsertifikasi atau kualifikasi, untuk menjamin kualifikasi dalam melakukan\r\n tugas atau pekerjaan tertentu.&nbsp; Misalnya, pemberian sertifikasi kepada \r\ntenaga guru dapat diartikan sebagai suatu proses pemberian pengakuan \r\nbahwa seseorang telah memiliki kompetensi untuk melaksanakan pelayanan \r\npendidikan pada satuan pendidikan tertentu, setelah lulus uji kompetensi\r\n yang diselenggarakan oleh lembaga sertifikasi. Dengan kata lain, \r\nsertifikasi guru adalah proses uji kompetensi yang dirancang untuk \r\nmengungkapkan penguasaan kompetensi seseorang sebagai landasan pemberian\r\n sertifikat pendidik (UU RI No 14 Tahun 2005 dalam Depdiknas, 2004).</p>\r\n<p>Sertifikasi sangat umum digunakan dalam bidang konstruksi, \r\npenerbangan, teknologi, keuangan, lingkungan, sektor industri, bisnis, \r\npendididikan, dan kesehatan. Di Amerika Serikat, Federah Aviation \r\nAdministration (FAA) mengatur sertifikasi penerbang. Certified Internal \r\nAuditor (CIA) merupakan sebuah organiasi berbasis di Amerika \r\nmengkhususkan diri dalam penilaian kinerja keuangan internal yang \r\nberoperasi di hampir 165 negara. Organisasi ini juga melakukan \r\nsertifikasi terhadap tenaga audit profesionalnya dalam memperoleh \r\nlisensi, dan pengembangan sumber daya manusia. Banyak anggota dari \r\nAssociation of Test Publishers (ATP) juga organisasi sertifikasi.</p>\r\n<p>Sertifikasi yang diperoleh dari masyarakat profesional atau dari \r\nvendor sebuah perusahaan. Misalnya, Perusahaan Microsoft, Cisco, \r\nMachintos, dll). Secara umum, harus diperbaharui secara berkala, atau \r\nmungkin berlaku untuk suatu periode waktu tertentu (misalnya, masa pakai\r\n produk di mana seseorang dinyatakan). Sebagai bagian dari pembaharuan \r\nsertifikasi lengkap dari individu, itu adalah umum bagi individu untuk \r\nmenunjukkan bukti belajar secara berkelanjutan.</p>\r\n<p><span style=\"color: rgb(0, 51, 102); --darkreader-inline-color: #8fcdff;\" data-darkreader-inline-color=\"\"><strong>MENGAPA PERLU SERTIFIKASI PROFESI?</strong></span></p>\r\n<p>Tantangan di era globalisasi dan pasar yang kompetitif menuntut daya \r\ntahan dan daya saing sebuah kelompok, komunitas, organisasi dan negara \r\ndalam bentuk pengembangan sumber daya manusia sebagai&nbsp;<strong>“intelectual asset”</strong>&nbsp;menjadi salah satu faktor yang penting dalam mendukung produktivitas dan keunggulan kompetititf perusahaan.</p>\r\n<p>Pengembangan SDM stratejik merupakan tuntutan bagi setiap organisasi \r\nuntuk menyelaraskan program training dengan strategi organisasi. Selain \r\nitu, pengembangan SDM menuntut perpaduan yang sinergik antara aspek \r\npembelajaran (learning) dan aspek kinerja (performance). Untuk itu, \r\npengembangan SDM melalui program training di tempat kerja membutuhkan \r\nsuatu sarana dan fasilitas yaitu Training Center.</p>\r\n<p>Untuk merealiasikan upaya peningkatan pembelajaran dan kinerja, maka \r\ndiperlukan suatu standar kompetensi profesi khususnya bagi para training\r\n manager untuk mengelola training center dalam suatu organisasi. Isu \r\nsertifikasi menjadi sangat hangat dibicarakan oleh berbagai kalangan \r\nkhususnya pihak-pihak yang terlibat dalam proses pembinaan profesi baik \r\npendidikan, kesehatan, keuangan, pemerintahan dan kemasyarakatan. Isu \r\nsertifikasi menjadi salah satu cara yang digunakan dalam membangun \r\nstruktur karir profesional dan pengembangan kualitas atau mutu.</p>\r\n<p>Tahun 2015, merupakan momentum besar dalam pembangunan kompetensi \r\nyaitu tahun implementasi integrasi Masyarakat Ekonomi ASEAN, di mana \r\nsalah satu unsur penting adalah <strong>aliran bebas tenaga kerja trampil (free flow of labor skill)</strong>\r\n di antara negara-negara yang tergabung dalam ASEAN.&nbsp; Dengan telah \r\nditetapkan Kerangka Kualifikasi Nasional Indonesia (KKNI) melalui \r\nPeraturan Presiden Nomor 08 tahun 2012 dan telah disepakatinya <strong>ASEAN Qualification Reference Framewrok (AQRF)</strong>\r\n pada akhir tahun 2014, maka pengembangan kompetensi SDM semakin jelas \r\nuntuk dapat bersaing dengan negara-negara mitra bisnis, dan memberikan \r\nkepastian <strong>link and match</strong> antara dunia kerja dengan \r\ndunia industri, di mana Kerangka Kualifikasi ini memberikan pedoman \r\npenyetaraan proses pembelajaran dari dunia pendidikan, pelatihan dan \r\npembelajaran di tempat kerja.</p>\r\n<p>Masalah link and match, dan relevansi lulusan Pendidikan termasuk \r\npelatihan dengan dunia kerja masih terus menjadi isu nasional. Karena \r\nmasalah kurangnya&nbsp;<strong>employability (kecakapan bekerja)</strong> pada dunia kerja.&nbsp; Hal ini menyebabkan industri harus mengembangkan kelembagaan pendidikan dan pelatihan seperti <em>training centre, corporate university</em> dan bahkan Pendidikan tinggi, walaupun&nbsp;sudah merekrut calon karyawan yang berasal dari Pendidikan vokasional.</p>\r\n<p>Guna bersaing dalam Masyarakat Ekonomi ASEAN (MEA) diperlukan \r\npeningkatkan kompetensi baik dari sisi sumber daya manusia (SDM) maupun \r\norganisasi. Para praktisi SDM dituntut untuk lebih meningkatkan \r\nprofesionalisme dalam mengelola SDM di organisasi, SDM harus memiliki \r\nkompetensi sesuai standar yang dtetapkan (UU 13 tahun 2003) bahwa \r\nkompetensi kerja adalah kemampuan kerja setiap individu yang mencakup \r\naspek pengetahuan,keterampilan dan sikap kerja. Hal ini menjadi penting \r\nkarena Divisi SDM adalah mitra strategis bagi pimpinan organisasi dalam \r\nmengelola dan mengembangkan SDM.</p>\r\n<p>Salah satu bentuk dukungan untuk meningkatkan&nbsp;<strong>profesionalisme praktisi SDM</strong>&nbsp;juga diberikan oleh pemerintah melalui Kementerian Tenaga Kerja yang mengeluarkan&nbsp;<strong>Standar Kompetensi Kerja Nasional Indonesia (SKKNI)</strong>.\r\n SKKNI ini berisi rumusan kemampuan kerja yang mencakup aspek \r\npengetahuan, keterampilan, atau keahlian serta yang terkait dengan \r\npelaksanaan tugas dan syarat jabatan.</p>\r\n<p><strong>Program sertifikasi kompetensi</strong>&nbsp;merupakan upaya \r\npengembangan sumber daya manusia (SDM) untuk meningkatkan produktivitas \r\ndan daya saing tenaga kerja Indonesia, baik untuk skala domestik maupun \r\ninternasional.</p>\r\n<p>Tidak bisa kita pungkiri bahwa&nbsp;<strong>kualitas pekerja kita cukup rendah</strong>&nbsp;dimana\r\n tenaga kerja kita masih kalah bersaing dengan tenaga kerja yang berasal\r\n dari Malaysia, Singapura ,Thailand dan Negara Tetangga Lainnya. Hal ini\r\n semakin diperparah dengan adanya&nbsp;<strong>MEA (Masyarakat Ekonomi ASEAN)</strong>&nbsp;dimana pekerja kita harus bersaing dengan pekerja dari negara ASEAN.</p>\r\n<p>MEA sendiri adalah sistem perdagangan bebas antara negara-negara \r\nASEAN dimana kawasan MEA mengharuskan membebaskan arus tenaga terampil. \r\nOleh karena itu, sekarang banyak orang yang berlomba-lomba guna \r\nmendapatkan&nbsp;<strong>gelar akademik yang lebih tinggi (S1/S2/S3)</strong>. Tetapi apakah cara tersebut sudah benar? Cara tersebut dibenarkan sebatas untuk&nbsp;<strong>lingkungan akademik</strong>. Tetapi untuk&nbsp;<strong>lingkungan kerja&nbsp;</strong>tentunya tidak benar. Jadi apa yang dibutuhkan dalam lingkungan kerja? Jawabannya adalah<strong><em>&nbsp;sertifikasi profesi</em>.</strong></p>\r\n<p><strong>Sertifikasi profesi</strong>&nbsp;adalah suatu penetapan yang \r\ndiberikan oleh suatu organisasi profesional terhadap seseorang untuk \r\nmenunjukkan bahwa orang tersebut mampu untuk melakukan suatu pekerjaan \r\natau tugas spesifik.</p>\r\n<p><strong>MANFAAT, KELEBIHAN DAN KEKURANGAN SERTIFIKASI PROFESI</strong></p>\r\n<p>“Menurut Kepala Sekretariat Badan Nasional Sertifikasi Profesi (BNSP)\r\n Darwanto, pihaknya menyadari adanya ketidakcocokan antara kebutuhan \r\npasar ketenagakerjaan nasional dan keterampilan pekerja. “Oleh karena \r\nitu, salah satu strategi percepatan peningkatan kompetensi SDM adalah \r\nmelalui pengembangan Standar Kompetensi Kerja Nasional Indonesia (SKKNI)\r\n dan sertifikasi kompetensi. Jumlah SKKNI saat ini tercatat sebanyak 624\r\n SKKNI pada 9 sektor industri dan jasa,” kata Darwanto.</p>\r\n<p>Dalam hal mendukung peningkatan kompetensi SDM, menurut Darwanto, \r\npemerintah sejatinya telah melakukan upaya antisipasi kompetisi global. \r\n“Antara lain melalui pencanangan paket kebijakan ekonomi XII pada April \r\n2016 lalu yang salah satunya menitikberatkan pada peningkatan kualitas \r\nSDM. Badan Nasional Sertifikasi Profesi (BNSP) pun akan mempercepat \r\nproses sertifikasi untuk 120 ribu tenaga kerja profesional pada tahun \r\n2017. Per Agustus 2016, jumlah tenaga kerja yang telah tersertifikasi \r\nsebanyak 2.463.806 orang,” ujarnya.</p>\r\n<p><strong>Manfaat Bagi Industri :</strong></p>\r\n<ul><li>Membantu Industri meyakinkan kepada Kliennya bahwa Produk/Jasanya telah dibuat oleh Tenaga-tenaga Yang Kompeten</li><li>Membantu Indutri dalam recruitment dan mengembangkan tenaga berbasis\r\n kompetensi guna meningkatkan efisiensi HRD khususnya dan efisiensi \r\nNasional pada Umumnya</li><li>Membantu Indutri dalam sistim pengembangan Karir dan Renumerasi Tenaga berbasis Kompetensi dan meningkatkan Produktifitas</li></ul>\r\n<p><strong>Manfaat Bagi Tenaga Kerja / Profesional :</strong></p>\r\n<ul><li>Membantu Tenaga profesi meyakinkan kepada \r\nOrganisasi/Industri/Kliennya bahwa dirinya KOMPETEN dalam Bekerja atau \r\nMenghasilkan Produk atau Jasa dan Meningkatkan Percaya Diri Tenaga \r\nProfesi</li><li>Membantu Tenaga Profesi dalam merencanakan Karirnya dan Mengukur \r\nTingkat Pencapaian Kompetensi dalam Proses Belajar di Lembaga Formal \r\nmaupun secara Mandiri</li><li>Membantu Tenaga Profesi dalam memenuhi Prasyarat Regulasi</li><li>Membantu Pengakuan Kompetensi Lintas Sektor dan Lintas Negara</li><li>Membantu Tenaga Profesi dalam Promosi Profesinya di Pasar Bursa Tenaga Kerja</li></ul>\r\n<p><strong>Kelebihan sertifikasi profesi:</strong></p>\r\n<ul><li>Memiliki daya saing yang tinggi dalam dunia kerja</li><li>Memiliki kompetensi kerja yang sesuai standar kerja baik nasional,international maupun khusus</li><li>Mendapatkan pengakuan kompetensi secara nasional dan internasional.</li><li>Meningkatkan peluang karir profesional dan meningkatkan kredibilitas orang tersebut</li><li>Menambah wawasan baru yang tidak didapat pada saat menempuh pendidikan formal.</li><li>Dapat meningkatkan posisi dan juga reputasi si profesional tersebut apabila sudah bekerja di dalam sebuah perusahaan.</li></ul>\r\n<p><strong>Kekurangan sertifikasi profesi:</strong></p>\r\n<ul><li>Tingkat &nbsp;Pemahaman dan Pengertian tentang Sertifikasi Profesi di Masyarakat</li><li>Program Pelatihan dan Pengembangan untuk mendapatkan Sertifikasi Kompetensi Profesi tidak murah.</li><li>Masih terbatasnya Instruktur yang berpengalaman dari industri dalam \r\nprofesi tertentu untuk memberikan transfer knowledge dalam pelatihan \r\nberbasis kompetensi</li><li>Program Sertifikasi Profesi belum merata secara Nasional di Indonesia</li></ul><p></p>', 'uploads/berita/1657051449Web-Design-AKUBANK-20214-min.jpg', '<label class=\"badge badge-info\">Posting</label>', '2022-07-05 13:04:09', '2022-07-05 13:04:09');
 
 -- --------------------------------------------------------
 
@@ -150,12 +148,9 @@ CREATE TABLE `carousel` (
 --
 
 INSERT INTO `carousel` (`id`, `judul`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
-(71, NULL, NULL, 'uploads/carousel/16553907202.jpg', '2022-06-16 07:45:20.000000', '2022-06-16 07:45:20.000000'),
-(72, NULL, NULL, 'uploads/carousel/16553907293.jpg', '2022-06-16 07:48:39.000000', '2022-06-16 14:48:39.836530'),
-(73, NULL, NULL, 'uploads/carousel/16554023141652155910WhatsApp Image 2020-06-26 at 10.01.35.jpeg', '2022-06-16 10:58:34.000000', '2022-06-16 10:58:34.000000'),
-(74, NULL, 'rtertczxczc', 'uploads/carousel/16567587716.png', '2022-07-02 03:53:44.000000', '2022-07-02 10:53:44.996807'),
-(75, NULL, NULL, 'uploads/carousel/16567594552.jpg', '2022-07-02 03:57:35.000000', '2022-07-02 03:57:35.000000'),
-(76, NULL, NULL, 'uploads/carousel/16567594632.jpg', '2022-07-02 03:57:43.000000', '2022-07-02 03:57:43.000000');
+(77, NULL, NULL, 'uploads/carousel/165704976216553907202-min.jpg', '2022-07-05 12:36:02.000000', '2022-07-05 12:36:02.000000'),
+(78, NULL, NULL, 'uploads/carousel/165704977216553907293-min.jpg', '2022-07-05 12:36:12.000000', '2022-07-05 12:36:12.000000'),
+(79, NULL, NULL, 'uploads/carousel/165704977916567587716-min.png', '2022-07-05 12:36:19.000000', '2022-07-05 12:36:19.000000');
 
 -- --------------------------------------------------------
 
@@ -225,7 +220,56 @@ CREATE TABLE `data_registers` (
 --
 
 INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `image`, `jurusan_id`, `semester_id`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`, `id_skema`, `kode_skema`, `jenis`, `koreksi`, `rmh`, `tmt`, `ktr`, `institusi`, `alamat_kantor`, `email3`, `jabatan`, `telp`, `fax`, `postal`, `created_at`, `updated_at`) VALUES
-(3319, 'Junior Web Programmer', 'belomSS.JWP/LSPP/005/202233', '33', 'Ponsianus Jopi', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzy22@gmail.com', 'Ketapang', '2022-06-29', '1', 'Ketapang', 'BTNSASDASDHAJSDK', '7888111', '081256390909', 'uploads/beranda_img2/1656504172d795ebcce6432ef85d4bd6cd6f5fe363.jpg', 4, 4, '3042020058', '2022-06-30', '8:59 PM', 38, 24, NULL, '-', NULL, 'SS.JWP/LSPP/005/2022', 'Sertifikasi', NULL, '-', 'SMA', '-', 'PEGADAIAN', 'dimana dak tau', 'apelah@assu', 'ketua', '03030303030', '3333333', '76767', '2022-07-02 22:48:43', '2022-07-03 07:03:09');
+(3319, 'Junior Web Programmer', 'belomSS.JWP/LSPP/005/202233', '33', 'Ponsianus Jopi', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzy22@gmail.com', 'Ketapang', '2022-06-29', '1', 'Ketapang', 'BTNSASDASDHAJSDK', '7888111', '081256390909', 'uploads/beranda_img2/1656916980photo.png', 4, 4, '3042020058', '2022-07-07', '12:01 AM', 38, 23, NULL, '-', NULL, 'SS.JWP/LSPP/005/2022', 'Sertifikasi', NULL, '-', 'SMA', '-', 'PEGADAIAN', 'dimana dak tau', 'apelah@assu', 'ketua', '03030303030', '3333333', '76767', '2022-07-05 09:43:26', '2022-07-05 10:02:22');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_registers_backup`
+--
+
+CREATE TABLE `data_registers_backup` (
+  `id` bigint(20) NOT NULL,
+  `skema_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `skema_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `surel` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tmpt_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `sex_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `negara` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode_post` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `no_hp` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jurusan_id` int(11) DEFAULT NULL,
+  `semester_id` int(11) DEFAULT NULL,
+  `nim` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `asesor_id` int(11) DEFAULT NULL,
+  `tuk_id` bigint(20) DEFAULT NULL,
+  `keterangan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_skema` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kode_skema` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jenis` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `koreksi` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rmh` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tmt` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ktr` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institusi` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alamat_kantor` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email3` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `jabatan` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `telp` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fax` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `postal` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -245,10 +289,11 @@ CREATE TABLE `dokumen__uploads` (
 --
 
 INSERT INTO `dokumen__uploads` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Photo', '2022-05-05 17:06:57', '2022-05-05 17:06:57'),
+(1, 'Photo Identitas', '2022-05-05 17:06:57', '2022-07-05 05:59:53'),
 (2, 'Kartu Tanda Penduduk', '2022-05-05 17:06:57', '2022-05-05 17:06:57'),
 (3, 'Kartu Tanda Mahasiswa', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
-(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37');
+(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
+(7, '112', '2022-07-05 11:52:42', '2022-07-05 11:52:42');
 
 -- --------------------------------------------------------
 
@@ -300,7 +345,9 @@ INSERT INTO `elemen` (`id`, `unikom_id`, `asesmen`, `kriteria`, `created_at`, `u
 (81, 116, 'Memperbaiki program', '<p>3.1 Perbaikan terhadap kesalahan kompilasi maupun build dirumuskan. </p><p>3.2 Perbaikan dilakukan. <br></p>', '2022-05-11 13:33:50', '2022-05-11 13:33:50'),
 (87, 124, 'Elemen1', '<p>Kriteria1</p>', '2022-06-26 10:57:29', '2022-06-26 10:57:41'),
 (88, 125, 'Elemen2', '<p>Kriteria2<br></p>', '2022-06-26 10:58:20', '2022-06-26 10:58:20'),
-(90, 126, 'sdasd', '<p>asd</p>', '2022-06-28 11:59:47', '2022-06-28 11:59:47');
+(90, 126, 'sdasd', '<p>asd</p>', '2022-06-28 11:59:47', '2022-06-28 11:59:47'),
+(92, 128, '-', '<p>-</p>', '2022-07-04 12:41:53', '2022-07-04 12:41:53'),
+(93, 136, '-', '<p><u>-</u></p>', '2022-07-04 12:52:25', '2022-07-04 12:52:25');
 
 -- --------------------------------------------------------
 
@@ -346,14 +393,6 @@ CREATE TABLE `filelains` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `filelains`
---
-
-INSERT INTO `filelains` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'weqweqw', 'uploads/file/165672476202. FR.APL-02. ASKOM.pdf', '2022-07-01 18:19:22', '2022-07-01 18:19:22'),
-(4, 'sgsgsfg', 'uploads/file/1656780587Design Frontend LSP-POLITAP.pdf', '2022-07-02 09:49:47', '2022-07-02 09:49:47');
-
 -- --------------------------------------------------------
 
 --
@@ -373,8 +412,8 @@ CREATE TABLE `files` (
 --
 
 INSERT INTO `files` (`id`, `file`, `image`, `created_at`, `updated_at`) VALUES
-(11, 'sdasdasdasd', 'uploads/file/165677989702. FR.APL-02. ASKOM.pdf', '2022-07-02 09:38:17', '2022-07-02 09:38:17'),
-(12, 'fsdfsdfsdf', 'uploads/file/165677994502. FR.APL-02. ASKOM.pdf', '2022-07-02 09:39:05', '2022-07-02 09:39:05');
+(13, 'FR.APL.01. Permohonan Sertifikasi Kompetensi', 'uploads/file/16570547101. FR.APL.01. Permohonan Sertifikasi Kompetensi.pdf', '2022-07-05 13:58:30', '2022-07-05 13:58:30'),
+(14, 'FR.APL.02. Asesmen Mandiri.', 'uploads/file/16570547532. FR.APL.02. Asesmen Mandiri.pdf', '2022-07-05 13:59:13', '2022-07-05 13:59:13');
 
 -- --------------------------------------------------------
 
@@ -395,10 +434,6 @@ CREATE TABLE `formapl2s` (
 --
 
 INSERT INTO `formapl2s` (`id`, `skema`, `kode`, `created_at`, `updated_at`) VALUES
-(1, 'sdasd', 'sdasd', '2022-06-27 23:14:25', '2022-06-27 23:14:25'),
-(2, 'dfsdf', 'sdfsd', '2022-06-27 23:18:41', '2022-06-27 23:18:41'),
-(4, 'qerqwe', 'erqwe', '2022-06-28 00:18:19', '2022-06-28 00:18:19'),
-(5, 'qwe', 'qwe', '2022-06-28 00:45:45', '2022-06-28 00:45:45'),
 (6, 'Asisten Kebun Kelapa Sawit', 'gdfg', '2022-06-28 01:12:02', '2022-06-28 01:12:02'),
 (7, 'Asisten Kebun Kelapa Sawit', 'SS.AKKS/LSPP/001/2022', '2022-06-28 01:13:41', '2022-06-28 01:13:41');
 
@@ -465,30 +500,6 @@ CREATE TABLE `galeri_fotos` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `galeri_fotos`
---
-
-INSERT INTO `galeri_fotos` (`id`, `group_galeri_id`, `image`, `created_at`, `updated_at`) VALUES
-(117, 6, 'uploads/galeri/165557804112.png', '2022-06-18 11:47:21', '2022-06-18 11:47:21'),
-(118, 6, 'uploads/galeri/1655578041IMG_20220420_131245.jpg', '2022-06-18 11:47:21', '2022-06-18 11:47:21'),
-(119, 6, 'uploads/galeri/16555782052.jpg', '2022-06-18 11:50:05', '2022-06-18 11:50:05'),
-(120, 6, 'uploads/galeri/16555782053.jpg', '2022-06-18 11:50:05', '2022-06-18 11:50:05'),
-(121, 6, 'uploads/galeri/16555782056.png', '2022-06-18 11:50:05', '2022-06-18 11:50:05'),
-(122, 6, 'uploads/galeri/1655578205lsp.jpg', '2022-06-18 11:50:05', '2022-06-18 11:50:05'),
-(123, 5, 'uploads/galeri/1656724866Untitled (2).png', '2022-07-01 18:21:06', '2022-07-01 18:21:06'),
-(124, 5, 'uploads/galeri/1656724866Untitled (Copy).png', '2022-07-01 18:21:06', '2022-07-01 18:21:06'),
-(125, 5, 'uploads/galeri/1656724866Untitled.png', '2022-07-01 18:21:06', '2022-07-01 18:21:06'),
-(126, 5, 'uploads/galeri/1656724953banner_1.jpg', '2022-07-01 18:22:33', '2022-07-01 18:22:33'),
-(127, 5, 'uploads/galeri/1656724953banner_2.jpg', '2022-07-01 18:22:33', '2022-07-01 18:22:33'),
-(128, 5, 'uploads/galeri/1656724953banner_12.jpg', '2022-07-01 18:22:33', '2022-07-01 18:22:33'),
-(129, 4, 'uploads/galeri/16567249761.png', '2022-07-01 18:22:56', '2022-07-01 18:22:56'),
-(130, 4, 'uploads/galeri/16567249762.png', '2022-07-01 18:22:56', '2022-07-01 18:22:56'),
-(131, 4, 'uploads/galeri/16567249763.png', '2022-07-01 18:22:56', '2022-07-01 18:22:56'),
-(132, 4, 'uploads/galeri/16567249764.png', '2022-07-01 18:22:56', '2022-07-01 18:22:56'),
-(133, 11, 'uploads/galeri/16568737001655221338asu.jpg', '2022-07-03 11:41:40', '2022-07-03 11:41:40'),
-(134, 11, 'uploads/galeri/16568737001655221962Rapat ASKOM (1).jpeg', '2022-07-03 11:41:40', '2022-07-03 11:41:40');
-
 -- --------------------------------------------------------
 
 --
@@ -508,9 +519,9 @@ CREATE TABLE `group_galeris` (
 --
 
 INSERT INTO `group_galeris` (`id`, `galeri`, `image`, `created_at`, `updated_at`) VALUES
-(4, 'Carousel Album', '', '2022-05-09 19:37:54', '2022-05-09 19:37:54'),
-(5, 'Kegiatan Mahasiswa', 'uploads/group-galeri/165677461316550431791652157112Kegiatan Mahasiswa (2).jpeg', '2022-05-09 19:39:55', '2022-07-02 08:10:13'),
-(11, 'sdasda', 'uploads/group-galeri/165677321216550431791652157112Kegiatan Mahasiswa (1).jpeg', '2022-07-02 07:46:52', '2022-07-02 07:46:52');
+(5, 'Kegiatan Mahasiswa', 'uploads/group-galeri/1657054305Kegiatan Mahasiswa (10).jpeg', '2022-05-09 19:39:55', '2022-07-05 13:51:45'),
+(11, 'Pelatihan Askom', 'uploads/group-galeri/1657054064IMG_0147.JPG', '2022-07-02 07:46:52', '2022-07-05 13:47:44'),
+(12, 'Rapat Penetapan Skema', 'uploads/group-galeri/1657054361Rapat Penetapan Skema LSP PI Politap (14).jpeg', '2022-07-05 13:52:41', '2022-07-05 13:52:41');
 
 -- --------------------------------------------------------
 
@@ -530,7 +541,7 @@ CREATE TABLE `info2` (
 --
 
 INSERT INTO `info2` (`id`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'uploads/info/16567675982.jpg', '2022-07-02 13:13:18', '2022-07-02 06:13:18');
+(1, NULL, '2022-07-05 20:33:01', '2022-07-05 20:33:01');
 
 -- --------------------------------------------------------
 
@@ -732,10 +743,7 @@ CREATE TABLE `notes` (
 --
 
 INSERT INTO `notes` (`id`, `judul`, `isi`, `created_at`, `updated_at`) VALUES
-(2, 'TO-DO-LIST', '<h5><span style=\"color: rgb(255, 0, 0); --darkreader-inline-color: #ff1a1a; font-family: &quot;Comic Sans MS&quot;;\" data-darkreader-inline-color=\"\">ADMIN</span></h5><ol><li>input link navbar admin<br></li><li>setting akun</li><li>efek aos pada admin</li><li>menambahkan modal di admin</li><li>mengubah validate di admin</li><li>print untuk setiap menu administrasi dan pendaftaran</li><li>edit admin profil</li><li>edit user password</li><li>menu navigasi</li><li>membuat tata cara menggunakan web di info pendaftaran</li><li>galeri thumbnail<br></li></ol>', '2022-04-28 22:32:00', '2022-04-29 07:33:09'),
-(3, 'PENTING', '<ol><li>membuat input tanpa refresh</li><li>membuat desain prosedur sertifikasi</li><li>ajax provinsi-kabupaten<br></li></ol>', '2022-05-09 11:32:33', '2022-05-09 11:37:16'),
-(4, 'BUG WEB', '<ol><li>Konversi ke pdf</li><li>Create backup data sertifikat</li><li>Create Format Formulir</li><li>Update password user dan admin</li><li>Validation API<br></li><li>Design banner</li><li>Fitur Filter</li><li>Verifikasi login melalui email</li><li>format tanggal</li><li>design penggunaan tutorial aplikasi png, pdf, dan video<br></li></ol>', '2022-05-29 03:07:30', '2022-06-16 07:29:10'),
-(5, 'update', '<ol><li>faq</li><li>kontak kami</li><li>data karyawan</li><li>agenda</li><li>laporan dan sharing</li><li>blacklist</li><li>buat crud formulir apl1<br><br></li></ol>', '2022-07-02 03:20:23', '2022-07-03 13:15:05');
+(5, 'update', '<ol><li><br><br></li></ol>', '2022-07-02 03:20:23', '2022-07-05 10:46:40');
 
 -- --------------------------------------------------------
 
@@ -781,10 +789,10 @@ CREATE TABLE `pengelola` (
 --
 
 INSERT INTO `pengelola` (`id`, `nama`, `keterangan`, `image`, `no_hp`, `email`, `updated_at`, `created_at`, `facebook`, `twitter`, `instagram`) VALUES
-(36, 'Budi Pratomo Sibuea, S.ST., M.STsdasdasd', 'Ketua LSP', 'uploads/pengelola/16566501531.png', 'asdas', 'dfsfdds@dsfdsf', '2022-07-02 04:25:07.000000', '2022-07-02 11:25:07.590008', 'sdasd', 'ukhuk', 'http://127.0.0.1:8000/beranda_img2/36/edit'),
-(37, 'A. Nova Zulfahmi, S.Pi., M.Sc', 'Manajer Sertifikasi', 'uploads/pengelola/16566501452.png', NULL, NULL, '2022-06-30 21:35:45.000000', '2022-07-01 04:35:45.011064', NULL, 'Manajer Sertifikasi', NULL),
-(38, 'Ahmad Ravi, S.Pd., M.Pd', 'Manajer Mutu', 'uploads/pengelola/16566501334.png', NULL, NULL, '2022-06-30 21:35:33.000000', '2022-07-01 04:35:33.923626', NULL, 'Manajer Mutu', NULL),
-(39, 'Firmanilah Kamil, S.Pd., M.Pd', 'Manajer Administrasi', 'uploads/pengelola/16566500873.png', NULL, NULL, '2022-06-30 21:34:47.000000', '2022-07-01 04:34:47.906944', NULL, 'Manajer Administrasi', NULL);
+(36, 'Budi Pratomo Sibuea, S.ST., M.ST', 'Ketua LSP', 'uploads/pengelola/16570524644-min.jpg', NULL, NULL, '2022-07-05 13:21:04.000000', '2022-07-05 20:21:04.647425', NULL, NULL, NULL),
+(37, 'A. Nova Zulfahmi, S.Pi., M.Sc', 'Manajer Sertifikasi', 'uploads/pengelola/16570524513-min.jpg', NULL, NULL, '2022-07-05 13:20:51.000000', '2022-07-05 20:20:51.124637', NULL, NULL, NULL),
+(38, 'Ahmad Ravi, S.Pd., M.Pd', 'Manajer Mutu', 'uploads/pengelola/16570524342-min.jpg', NULL, NULL, '2022-07-05 13:20:34.000000', '2022-07-05 20:20:34.688643', NULL, NULL, NULL),
+(39, 'Firmanilah Kamil, S.Pd., M.Pd', 'Manajer Administrasi', 'uploads/pengelola/16570524171-min.jpg', NULL, NULL, '2022-07-05 13:20:17.000000', '2022-07-05 20:20:17.019486', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -981,6 +989,250 @@ INSERT INTO `sex` (`id`, `sex`, `updated_at`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `simadu__pegawai`
+--
+
+CREATE TABLE `simadu__pegawai` (
+  `id` varchar(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nip` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nup` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nik_ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gelar_depan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gelar_belakang` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tempat_lahir` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tanggal_lahir` date DEFAULT NULL,
+  `jenis_kelamin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `agama` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `simadu__pegawai`
+--
+
+INSERT INTO `simadu__pegawai` (`id`, `nip`, `nup`, `nik_ktp`, `email`, `nama`, `gelar_depan`, `gelar_belakang`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `password`, `created_at`, `updated_at`) VALUES
+('02b2a632-7432-4eaa-9898-b2ea879ff373', NULL, '19780803 201509 168', NULL, NULL, 'Heri Darmawan', NULL, 'S.T', 'Ketapang', '1978-08-03', 'Laki-laki', '', '$2y$10$YfqqLjj.dGWiHsEArBdFmuKAAMTaF1dQfnbkMGA7RzPjUgRdQr0vG', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('02fb52d1-876d-4dca-83d5-a8d769842eb5', NULL, '19890614 201302 129', NULL, NULL, 'M. Riduan', NULL, 'A.Md', 'Ketapang', '1989-06-14', 'Laki-laki', 'Islam', '$2y$10$SGuEeraBx9VGhU1cqo5BEO3PeCt3d8IAgj28HRvnd4uhmFqL24HBy', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('03968e4c-1c63-4e6e-8d6a-4c31651cb5ac', '19850516 202121 2 004', NULL, NULL, NULL, 'Eva Susana', NULL, 'A.Md', 'Ketapang', '1985-05-16', 'Perempuan', '', '$2y$10$rM/WRNCXDGxGb2XPuXgT9.D6jIWP/wIkh50ApU9SNDEEB49xJ2tim', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('03c8bbe4-15b5-4fa5-8024-dcc8abd2f9ac', NULL, NULL, NULL, NULL, 'Vensya Aswal Anugerah Panca Poetri', NULL, 'A.Md', 'Pontianak', '1993-03-31', 'Perempuan', 'Islam', '$2y$10$fPeuQu29XZ8oOf7Rtad37ev5hDXcKn3m7iD7u/HqPJrjTVLIz0BNu', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('045cfd08-9a76-4c18-a1eb-b43a99f48c57', NULL, '19920717 201512 174', NULL, NULL, 'Devi Elvira', NULL, 'S.Pd', 'Ketapang', '1992-07-17', 'Perempuan', '', '$2y$10$LPZPR6X1kSg4hAUPvwG7zexRMn2eUaxEhbQxCLXoc4hXZbyXYf4re', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('0854e795-2c48-484e-b919-675b7be7dc7c', '19830917 202121 1 001', NULL, NULL, NULL, 'Adha Panca Wardanu', NULL, 'S.TP.,M.P', 'Pontianak', '1983-09-17', 'Laki-laki', 'Islam', '$2y$10$CfSd7FSllgs7kVucsyYph.MAzcFbOUrGtBuTGJq9itiwo6aUkK32i', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('093cca9b-a773-4867-a5f6-a665467f791b', NULL, '19890622 201601 95', NULL, NULL, 'Juniarti', NULL, 'A.Md', 'Ketapang', '1989-06-22', 'Perempuan', '', '$2y$10$6acohI.eAoA8ngAyvzjQxey6st3lFlQuItKdUWE795eK80QL9TCL2', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('0a89879b-7875-4420-ab42-4ec9cb00e86e', '19910217 202121 1 002', NULL, NULL, NULL, 'Fajar Pebriyono', NULL, 'A. Md', 'Ketapang', '1991-02-17', 'Laki-laki', '', '$2y$10$KTcD/E6Zj.h0DxTDaR/2xO6kzjaY3XZhdqyXvygWylPVcbD7a.znC', '2022-07-05 01:52:09', '2022-07-05 01:52:09'),
+('0ed02966-83fd-4b68-b3e6-077f75582dd2', NULL, '19961119 202107 260', '6171035911960020', NULL, 'Dyah Novia Nugraheni', NULL, 'S.Tr.Ak.,M.Ak.', 'pontianak', '1996-11-19', 'Perempuan', 'Islam', '$2y$10$p7qt4lJ9s5W949LBs5r5sei2Mw5AnSA1XkuloR9CSYzQKova8Hx/6', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('13c7279b-9d2e-4afa-a641-ca2ebc14f151', NULL, NULL, NULL, NULL, 'Moh Rokim', NULL, '', 'Purworejo', '1970-01-01', 'Laki-laki', '', '$2y$10$LOe3fgo8OaTugt.DUFmvY.K5vCfqxDm2EPGd7TLtrv34pg9KnN6re', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('13dd745d-221f-421f-b78b-138131893d28', NULL, NULL, NULL, NULL, 'Dedi Kurniadi', NULL, '', 'Ketapang', '1970-01-01', 'Laki-laki', '', '$2y$10$VHyeSKhfH42y.Vcg50G5bu3v8RkU.YqzNPo2u4MsUV.ixjuOVhYzi', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('143f2dec-fc53-45e6-a700-989bdf50c019', '19851008 202121 1 005', NULL, NULL, NULL, 'Erick Radwitya', NULL, 'S.ST., MT', 'Ketapang', '1985-10-08', 'Laki-laki', 'Islam', '$2y$10$bbLY0PzbuRks3mhj6Q2DqOa4HUdmZ/GJBhbC0.XF0gLYIGtj3vgKa', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('14e636c6-3ca1-4e24-9072-3b0b707abc99', NULL, NULL, NULL, NULL, 'M. Randi Hardiyanto', NULL, '', 'Ketapang', '1993-05-25', 'Laki-laki', '', '$2y$10$tYp0/7JVMpDbCRVS9rYeVuWnTGsxQBTLxWLG2tlI8sxeMvDbWV/dG', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('15417e2f-797e-43fe-ac3f-54b550f683ad', '19710324 202121 1 001', NULL, NULL, NULL, 'Molyadi', NULL, 'A.Md', 'Ketapang', '1971-03-24', 'Laki-laki', 'Islam', '$2y$10$WrVHeBii50MgiR.oJo0TkuQQc17qhpPmEUdI9BME1KQCxpNjxaoCq', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('159c1ff3-499e-4acc-84c2-bc844f8da135', '19820310 202121 1 003', NULL, NULL, NULL, 'Trian Adimarta', NULL, 'S.TP., M.Sc', 'Surabaya', '1982-03-10', 'Laki-laki', 'Islam', '$2y$10$lc9u6ITXBm.vfutZdkjTrOjYgaa0ZOWYyUhnlPnrgaKFCKJh4AJFq', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('16cb2f5a-392a-48bf-b846-bcf548ded51f', NULL, '19920521 201512 175', NULL, NULL, 'Muhamad Reza Lukmana', NULL, 'A.Md', 'Ketapang', '1992-05-21', 'Laki-laki', 'Islam', '$2y$10$47rm6K1amLGfvQcL/iLTaOWaGVcZ/txBYKDXWjocQSj8DB1kppzbu', '2022-07-05 01:52:10', '2022-07-05 01:52:10'),
+('18413e6f-09d1-4ae5-b32e-cb0d2c2f4427', NULL, NULL, NULL, NULL, 'Supiandi', NULL, '', 'Ketapang', '1980-06-09', 'Laki-laki', '', '$2y$10$qAfAFN0BwVgZ8.7WoXqiXu81Mme7IoZmCkKsJd0jeNos0gwAnkrnC', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('18514bb6-0287-4061-b323-05247b4132c4', '19720918 202121 2 002', NULL, NULL, NULL, 'Heni Haryani', NULL, NULL, 'Ketapang', '1972-09-18', 'Perempuan', '', '$2y$10$MO.nQ.rfBKzhlN9vD5BmG.ux.T/FIsEW3jy12ba6v9soRyo0N1J1W', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('189bd94f-5fd1-451a-8a00-031840e9a07a', NULL, NULL, NULL, NULL, 'Khairil', NULL, 'S.P.,M.P', 'Samili', '1981-09-17', 'Laki-laki', 'Islam', '$2y$10$Rg6EYTOHG2X29d2Tcq67v.UwTA35inTLSmEqAJzEgUCNBOCA2vj5K', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('18eebaa7-84fd-48ac-9c61-81dfe56e8074', '19770221 200803 1 001', NULL, NULL, NULL, 'Uti Rustam Efendi', NULL, 'S.T., M.T', NULL, '1977-02-21', 'Laki-laki', 'Islam', '$2y$10$SHz3wBLzZg9CCflCy5c6o.16TI/Mbdwl52VX3SkAE7y0s7iz4ifbq', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('193ca687-65a0-4711-b0c0-1927043c277d', NULL, '19930528 201603 202', NULL, NULL, 'Fachrul Rozie', NULL, 'S.T, M.Tr.T', 'Ketapang', '1993-05-28', 'Laki-laki', 'Islam', '$2y$10$40wPcyRG2pJpA.z7cD.1aext1Nhnp/DnvpnyOgS6D9iEJv67Iz14m', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1a3344f4-7b24-487e-a9fb-5ad326c13fff', '19900802 201903 1 003', NULL, NULL, NULL, 'Kondhang Dhika Kusuma', NULL, 'A.Md', 'Surakarta', '1990-08-02', 'Laki-laki', 'Islam', '$2y$10$/cIauHa5Mf/f567UdwigD.qzRD5bwQ/87.lDrTt1gabiEwBLQwUl.', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1a9c1f07-2017-4492-a4f6-0dc243e7d999', '19911112 201903 1 014', NULL, NULL, NULL, 'Kasrianto Wijaya', NULL, 'A.Md', 'Palopo', '1991-11-12', 'Laki-laki', 'Islam', '$2y$10$yWMgSBMROVx.auKVQL2EUuOy7HIle9egI7AlRok7ZPljkShNGB2re', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1b0267f4-d517-4512-a4c3-301a96372d12', '19890623 201903 2 015', NULL, NULL, NULL, 'Syarifah Aqla', NULL, 'S.Pd.,M.T', 'Pontianak', '1989-06-23', 'Perempuan', 'Islam', '$2y$10$ROPRB.I.AbV93gqP2kAgAuXkiOiK3P3zmWcAAJPygXwM7WQ8nRDki', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1b483074-16f8-4c4a-908a-ba3e3ee8e7e1', '19780511 202121 1 003', NULL, NULL, NULL, 'Helanianto', NULL, 'S.T.,M.T', 'Randau', '1978-05-11', 'Laki-laki', 'Katholik', '$2y$10$KwCBB9IRVUQedfa2hFiiDunBVWRXFr3AAN/BEhQ8/25vjwfr4uIVO', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1ba7321f-8186-4fbb-8cff-ff1d597d4336', '19760921 202121 1 002', NULL, NULL, NULL, 'Normansyah', NULL, 'S.T.,M.T', 'Ketapang', '1976-09-21', 'Laki-laki', 'Islam', '$2y$10$Y/cn9rNBclWuPlw.HJBt6.KrE2OywO.iIeYl.ABeb9piWLE.Uuh02', '2022-07-05 01:52:11', '2022-07-05 01:52:11'),
+('1d5b7688-73c1-4142-99f3-94bbae58ed79', '19880501 201903 1 007', NULL, NULL, NULL, 'Budi Pratomo Sibuea', NULL, 'S.ST.,M.ST', 'Tebing Karimun', '1988-05-01', 'Laki-laki', 'Kristen', '$2y$10$nk4A27ngV76mg7XNtKZx3OGwfSgMOiMjjpCENLtQP/iCFqVNJ823u', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('1e0985f8-2c11-4f3f-845b-6bf9a09c3b2d', NULL, '19930128 201609 210', NULL, NULL, 'Ar-Razy Muhammad', NULL, 'S.T', 'Pontianak', '1993-01-28', 'Laki-laki', 'Islam', '$2y$10$YiREa03DChkZAcgs7yAroOoeSonUF9pJ93MSt8VL0R6KMcerGXLU6', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('1e9dc080-4487-494e-9225-72b737e726c3', NULL, '19880328 201802 230', NULL, NULL, 'Muhammad Fadli', NULL, 'A.Md', 'Semarang', '1988-03-28', 'Laki-laki', 'Islam', '$2y$10$5QkmmoW9vmLBb.WcigxYDOXej.epoKXVDTQM.ggS53VtP0fNc9kae', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('1f160b23-2073-4ad4-9ffc-1e417dc85cc9', NULL, '19900109 201512 171', NULL, NULL, 'Sarwendah Ratnawati Hermanto', NULL, 'S.Pd., M.Sc', 'Surakarta', '1990-01-09', 'Perempuan', 'Islam', '$2y$10$/jijGwEJ0O1CCeltjv0WHu.fHAiRC7BZZWlgLE0oG0URuOH8nOQ2u', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('20ab0593-f9f5-405f-86ff-a3f3c50d804b', NULL, '19910413 201509 161', NULL, NULL, 'Rika Fitry Ramanda', NULL, 'M.P', 'Ketapang', '1991-04-13', 'Perempuan', 'Islam', '$2y$10$vjjWaXFXsPNo2u8eOSiwrueYTF8KPSDHdIyLG4..H32obpHEznLVW', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('20c6f98d-f528-4fc2-9016-ef526e32b7ba', NULL, '19830327 201701 215', NULL, NULL, 'Uray Sriyani', NULL, '', 'Balai Karangan', '1983-03-27', 'Perempuan', '', '$2y$10$kY7GoURBk2JU1.R1.bIvju6fXD/wugoWJCF8DwDIYOcCY7XeGWpL6', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('2189d7cd-773e-4845-84a5-fffaa1ea901f', '19880315 201903 2 011', NULL, NULL, NULL, 'Maya Santi', NULL, 'S.Pd.,M.T', 'Ketapang', '1988-03-15', 'Perempuan', 'Islam', '$2y$10$ny0KAGSHBOmqQchh5u2pVui.og9eaZq2zn7GwWbKTlFS4xesDnAx6', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('22bf31f9-6306-425e-9d54-89ace70ccda4', '19880424 201903 2 012', NULL, NULL, NULL, 'Hurul\'ain', 'Ir.', 'S.T.,M.T', 'Pemangkat', '1988-04-24', 'Perempuan', 'Islam', '$2y$10$3rQaz2jsLrsUrxvcM3mcTei8/./VknMwVnIQ9ZdIaUbyMwpdV6t/e', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('22e45ac1-e10f-4134-8739-23fd2faa507c', '19840605 202121 1 005', NULL, NULL, NULL, 'Effendi', NULL, ' A.Md', 'Ketapang', '1984-06-05', 'Laki-laki', '', '$2y$10$4a5z569hwglXXfw1HUNHe.KRBzX426HoCpNB0zn4pKqp2QB/6tG9u', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('252e762f-e81d-4c33-8aae-11b68c651c17', NULL, NULL, NULL, NULL, 'Ibnu Hajar', NULL, '', 'Ketapang', '1969-01-29', 'Laki-laki', '', '$2y$10$jqAxgJ6GxHVhjbIofMIoQeM.Rg93vG0w2uG2.Ixf73CDifRlvIb4.', '2022-07-05 01:52:12', '2022-07-05 01:52:12'),
+('26f5893c-c355-4040-9ae4-6e53187c725f', '19740722 202121 1 005', NULL, NULL, NULL, 'Muh Anhar', NULL, 'S.T.,M.T', 'Boyolali', '1974-07-22', 'Laki-laki', 'Islam', '$2y$10$YU9gs4WARWnA1Pk4XbvjwuEsf97yHulgg1UFFdE.Jz.4fTBRoynvy', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('28e2a56e-3c76-4d19-844f-a3092954f0b7', '19850217 201504 2 002', NULL, NULL, NULL, 'Encik Eko Rifkowaty', NULL, 'S.TP.,M.P', 'Pontianak', '1985-02-17', 'Perempuan', 'Islam', '$2y$10$LJeKz9pSyONXaiZ1okiIZuujsCE2dop8EpJQ3wg6IuUlIgnxQ/ON2', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('29157361-a115-43a4-86ed-fbe66964c0d7', '19810521 202121 1 006', NULL, NULL, NULL, 'Dedi Sartono', NULL, 'A.Md', 'Ketapang', '1981-05-21', 'Laki-laki', '', '$2y$10$n./ox.f6W4lLuS/JWquWW.2t/s2MP5vyt5y3U..cLHtcShENZNU5S', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('295e592a-3426-40a6-899c-8860e5929164', NULL, '19911010 201507 155', NULL, NULL, 'Lita Nurpuspita Sari', NULL, 'S.Sos.', 'Singkawang', '1991-10-10', 'Perempuan', 'Islam', '$2y$10$AecipZa1HqG8WON4hDnQXuSbcKfvAKraaUVduzzk8EwyQiUKHYIHC', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('29cb26c6-4361-4341-971d-07be567f2a6f', NULL, '19820601 201602 198', NULL, NULL, 'Lusia Romana', NULL, 'S.IP', 'Pantan', '1982-06-01', 'Perempuan', '', '$2y$10$Hf21MfMLSomvD2hr92bU4uSem1ffMnKPWPz5o5XKEj7TjqJTtsKrS', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('30ccea2e-48be-4213-ae9a-379abd41a42c', NULL, '19821217 201509 164', NULL, NULL, 'Beny Setiawan', NULL, 'S.TP.,M.P', 'Pontianak', '1982-12-17', 'Laki-laki', 'Islam', '$2y$10$fxDQ1y4HZurv26w2mBDKkOqWT70Ej9yLLn5aOiXygF1rQbe799pbO', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('30f2648e-3a3a-45a0-bdc2-e984af4abb7f', '19890705 202121 1 002', NULL, NULL, NULL, 'M. Iwan Toro', NULL, 'A.Md.', 'Pebihingan', '1989-07-05', 'Laki-laki', 'Islam', '$2y$10$qoy5V/DVmysIo3QkTsfQc.qt.5WsRmNEnk/y3wK8zFt4N2vRmwOa2', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('31236e8b-5191-4433-95a9-0390e1e13ac1', NULL, '19931213 201601 183', NULL, NULL, 'Yunita', NULL, 'A.Md', 'Ketapang', '1993-12-13', 'Perempuan', 'Islam', '$2y$10$Ufv9w5immxWCF3mo1c9gaufwLyZFhn2o9aKoNLPInsscWZY8SZKO6', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('321326cb-17cd-4634-bdc8-619c26d4aea3', NULL, '19911112 201411 146', NULL, NULL, 'Winda Arlianty', NULL, 'S.Kom.', 'Ketapang', '1991-11-12', 'Perempuan', 'Islam', '$2y$10$RRAkNcKx6jVbA0QFPjLgo.CWKL89S7xnq1xZluRV9nmNBF4R/a7Ne', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('32d16bd7-58b5-487a-aab3-66cbb4801605', '19761218 202121 1 004', NULL, NULL, NULL, 'Abang Suryadi', NULL, 'A.Md', 'Putussibau', '1976-12-18', 'Laki-laki', 'Islam', '$2y$10$Zr5biZRbrENAaVUnv6hbO.WK/axnd25osALvYhKnUjJGvw.tsMM3m', '2022-07-05 01:52:13', '2022-07-05 01:52:13'),
+('35a66251-da37-4d69-b652-7eee40512ca2', '19820521 202121 1 003', NULL, NULL, NULL, 'Refid Ruhibnur', NULL, 'S.ST., M.M.', 'Pontianak', '1982-05-21', 'Laki-laki', 'Islam', '$2y$10$jUgEcHX18fYxhJLP4Ayv/OE.YBbmYbQyW19ZPqi0LnI29eRXPvcN.', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('384a1c52-c826-4a58-9dac-effcab2e701a', NULL, '19901117 201604 205', NULL, NULL, 'Uci Novianti', NULL, 'S.Pd', 'Ketapang', '1990-11-17', 'Perempuan', '', '$2y$10$FirbxosmvDaOtsZmwaX0j.fUZV2g4/xuBsKbUZA1dwt2c6xX0V7z.', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('38e42c98-b490-4f03-a289-35939e035cfa', NULL, '19900123 201601 178', NULL, NULL, 'Irfan Cholid', NULL, 'S.P.,M.MA', 'Ketapang', '1990-01-23', 'Laki-laki', 'Islam', '$2y$10$KW2RJGaonTNOpC6Es6TFWeUKDilNckeAUwKH6h4ru0ADn78eH0pAG', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3a1f1872-c67a-4bc7-9f92-0c852f44e1ec', NULL, NULL, NULL, NULL, 'Agus Sudrajat', NULL, '', 'Banyumas', '1979-06-08', 'Laki-laki', '', '$2y$10$OUZmEXcN93dS2k3cvN1l2.MuJrol9ugt46/JDmLooBZzU6Ahq76ge', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3ae1bb68-15ef-4eaa-a153-0d7dd87c6654', NULL, NULL, NULL, NULL, 'Rosnila', NULL, '', 'Sembelangaan', '1967-01-05', 'Perempuan', '', '$2y$10$zwRjz3ZVcbZ9cx35wlTT6uGsrYoURlEZ1S.Z52GOyOe2.SARFvmS.', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3bb510ed-d9cc-4ae5-bf83-ecb726cbc832', '19640914 198601 1 003', NULL, NULL, NULL, 'Temy Akhyar', NULL, NULL, NULL, NULL, 'Laki-laki', 'Islam', '$2y$10$087Ur0M1a.BoCeNso4elFeF1DARV/cE..hVWlG8Xr9ebJSKJT4ydy', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3c7a9d69-339d-4ee3-9943-b9acec923fc5', NULL, '19871107 201507 156', NULL, NULL, 'Lukman Faisal', NULL, 'S.H.', 'Singkawang', '1987-11-07', 'Laki-laki', 'Islam', '$2y$10$GonO0P7pwGQC5/53c2M0eeyJgfWkRfyl4BGlDEjy3OjMZwSZczgbq', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3eeb6e49-8f87-483b-b811-e7b91dc94a8d', NULL, '19911121 201701 214', NULL, NULL, 'Anugrah Bayu Saputra', NULL, 'A.Md', 'Pontianak', '1991-11-21', 'Laki-laki', 'Islam', '$2y$10$3MzVkdpqER0ySnrBZ6PZaOeGY6qtfW29wv1OdsM47xivwEkPcDsii', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('3f60bbb2-e5e2-4297-b003-62fe2ffebf43', NULL, '19980609 202104 252', '6104120906980003', 'junaidiju4109@gmail.com', 'Junaidi', NULL, 'A.Md.Kom', 'Ketapang', '1998-06-09', 'Laki-laki', 'Islam', '$2y$10$RHVivF8KQgYHcmY62.rayOVhDSHnqpVs.VpxAVRK/UvWGbMwmubVK', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('42e5ae5d-611b-4c00-833e-ea735145b325', NULL, '19930216 201809 240', NULL, NULL, 'Ira Arianti', NULL, 'S.P.,M.P', 'Ketapang', '1993-02-16', 'Perempuan', '', '$2y$10$PcAJSMT.p6KO6nklItFGGOROCThFWWy2JGzC4cR96HOwXNeBd3GGK', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('436521dd-c443-4db6-89ae-9e237e349402', '19791002 202121 2 008', NULL, NULL, NULL, 'Erma Novita', NULL, 'A.Md', 'Ketapang', '1979-10-02', 'Perempuan', 'Islam', '$2y$10$iKF/FoQxiMc6tXQLk9UNEuHnRMFfryebaoTS0t4/8W.b04b8mFe.u', '2022-07-05 01:52:14', '2022-07-05 01:52:14'),
+('43a2c3e2-6794-4fe3-a410-260d71bec47d', NULL, '19840207 201001 092', NULL, NULL, 'M. Hanif Faisal', NULL, 'M.T.', 'Pontianak', '1984-02-07', 'Laki-laki', '', '$2y$10$zXCahEzkUm67Es7WH1ugquItGQRfPU3IOkdXymT9X3ljmUYxPdoke', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('4408ed64-f04d-48df-ba7f-9b082c9438fc', NULL, NULL, NULL, NULL, 'Ary Rubiyanto', NULL, '', 'Ketapang', '1989-02-18', 'Laki-laki', '', '$2y$10$jZzOoQ0f1Wp9bfiVMbxmXeS5/3bmhCre4lDv9C3tAd1r.dJzeUEUa', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('44c7b811-eae2-42cb-b1d6-243f09822b99', '19890816 201903 1 002', NULL, NULL, NULL, 'Ahmad Ravi', NULL, 'S.Pd.,M.Pd', 'Masamba', '1989-08-16', 'Laki-laki', 'Islam', '$2y$10$tjU8.OwnKerpOyCpDKvaku2SnkLBJ6.dJ4cYnLq/xZTjib2OtRW.G', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('458c592c-348c-46d1-b344-b792fb64d42c', NULL, '19980908 202008 241', '6104174809980004', NULL, 'Shela Krisdayanti', NULL, 'A.Md.P', NULL, '1998-09-08', 'Perempuan', 'Islam', '$2y$10$9vbY6dT3Nmx.CoFf0N9YF.HH/K9tRQQjZ8XlOPgfuHyhd6XmkbUFi', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('47ceee1a-b33b-4239-9a46-1e58b5a672ad', NULL, '19830627 201512 176', NULL, NULL, 'Wienda Soesanti Putri', NULL, 'SE', 'Surabaya', '1983-06-27', 'Perempuan', 'Islam', '$2y$10$ZoGnGGQ3PsU8agm1dtk9QujBjy.ajLr2vResRsREF1FtCdr571n5u', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('4839ee6d-2c3e-426a-9354-7db9e48ae439', '19880808 202121 1 001', NULL, NULL, NULL, 'Erwin', NULL, 'A.Md', 'Ketapang', '1988-08-08', 'Laki-laki', 'Islam', '$2y$10$Rv4t64f4UdGFDx4o2L1XU.T2OcmFWtvXKyB8I.YU2NGj6eA7FpGpO', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('488fb59f-f26b-48f9-96a9-fad9e800e4d1', '19891023 202121 1 001', NULL, NULL, NULL, 'A.Yani', NULL, 'SP', 'Ketapang', '1989-10-23', 'Laki-laki', 'Islam', '$2y$10$br2/IzG5m6uGx0YROmPTbeLlOsu864QFsuOb80yTQghm9PZoQ4kFa', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('49ce6c30-837f-45c3-8e2c-6f9870ebc2e9', '19750116 202121 1 003', NULL, NULL, NULL, 'Tardi Kurniawan', NULL, 'S.Sos,.M.Si', 'Pontianak', '1975-01-16', 'Laki-laki', 'Islam', '$2y$10$tJ5yr3LLOONouh6sBgWOE.fSRk0Q91UeaojDXPpF/W4dTQ4eSch2u', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('4c3d0071-440e-4e4a-837f-59eea1cc348e', NULL, NULL, NULL, NULL, 'Sy. Adly', NULL, '', 'Ketapang', '1980-09-04', 'Laki-laki', '', '$2y$10$P7Ic2Jg8ru9Re6OCfQ.pUeXcbD8nSnhJBSFhoDn9uzEO4dfWbgZVW', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('4d744851-78a2-40b9-ada0-0a17f50d990e', '19790626 202121 1 006', NULL, NULL, NULL, 'Sy. Ishak Alkadri', NULL, 'S.ST., M.T', 'Pontianak', '1979-06-26', 'Laki-laki', 'Islam', '$2y$10$0KH0JpxZCaU2rTVfKc0Xw.SjmxiMG7QuhODpaGZu0b4eB08ckA5em', '2022-07-05 01:52:15', '2022-07-05 01:52:15'),
+('4e441045-7e87-46c6-8f0c-68298b2934ae', NULL, '19770627 201601 187', NULL, NULL, 'Masyhudi', NULL, 'SE', 'Jakarta', '1977-06-27', 'Laki-laki', 'Islam', '$2y$10$rz4eqee1FmMuDNqOakOjiuzj9Com0lSI5HSvUJMfBy2oS/5INQYZ2', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('4eae5a1d-bc44-4301-afd8-833a1bd0f6cf', '19880919 201903 1 014', NULL, NULL, NULL, 'Herman', NULL, 'S.Si.,M.T', 'Singkawang', '1988-09-19', 'Laki-laki', 'Budha', '$2y$10$OY6ufRpquqiNrfevZ4XMD.sRgp.pwpAAuJoeu9D6X0GdH2Iq03Cre', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('50660972-640c-49bd-b4f3-b988cfa241ec', '19910414 201903 1 008', NULL, NULL, NULL, 'Sy. Muhammad Zaki', NULL, 'SST', 'Ketapang', '1991-04-14', 'Laki-laki', 'Islam', '$2y$10$w1kMBrlibkkxGTvQkBYBNeHa9oXPMobOF05UCFvtc13WhUB49i4/W', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('5123ac8d-c8fb-436a-b417-28a153cf6c16', '19921021 201903 2 017', NULL, NULL, NULL, 'Diani Dwi Oktavianti', NULL, 'S.ST', 'Putussibau', '1992-10-21', 'Perempuan', 'Islam', '$2y$10$KadhGO5qLfKSFYQMyM1z/OsY2zfK5MsItc2VY0Iz8p9CZEtjUr9Ei', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('51a80ae5-f512-4310-8243-2a4abe75a345', NULL, NULL, NULL, NULL, 'Sy. Abdurrahman', NULL, '', 'Pontianak', '1980-05-09', 'Laki-laki', '', '$2y$10$kLUv3OirDPthboWi9nWQQO4lN5nRUQtt.i.VH2aHeyf4F49WPPY2O', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('53765b6c-4322-4c67-956a-12f6b811fdbc', NULL, '19910102 201406 134', NULL, NULL, 'Januarso', NULL, 'S.P.', 'Ketapang', '1991-01-02', 'Laki-laki', 'Islam', '$2y$10$QIjNYSrdS2r4lEyZJhUdmem460ZKOC6/a88HTRdvDUYcYJL5RMnSu', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('54981c04-da78-4aa6-93db-6b30fb625794', NULL, NULL, NULL, NULL, 'Uti Nailul Auhar', NULL, '', 'Ketapang', '1983-06-16', 'Laki-laki', '', '$2y$10$C6u.Yqvf47Cx8BfQGS34.ez9m91ORTyRytv14MRRjFMkgZLOYCYDK', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('56391bb3-7220-4c57-97d8-c5e72987d775', NULL, NULL, NULL, NULL, 'Zulinda', NULL, '', 'Ketapang', '1979-09-28', 'Laki-laki', '', '$2y$10$mS1GpkVaRvqoBqUCsgC0/.y.fXLIr5em8TUV/ffmf0WrbIDdkk9Cu', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('56d27921-8de3-4a64-8db0-fa30ec6d9a85', '19820701 202121 2 009', NULL, NULL, NULL, 'Novia Dhian Yulita', NULL, 'A.Md', 'Ketapang', '1982-07-01', 'Perempuan', 'Islam', '$2y$10$RzJq1z8uSbZcOb2Zu4jY/eLWGqlehwqc4rEirCzlbjRksGlNjKku.', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('57e7dded-12ef-41c3-a728-71bee06f9526', NULL, '19941011 201803 239', NULL, NULL, 'Alan Purtanto', 'Ir.', 'M.T', 'Sintang', '1994-10-11', 'Laki-laki', 'Katholik', '$2y$10$SdCs98fgLoe6wlsS.o68t.BwNS19a7.qdbox038SEbFEiZnC9U9cS', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('58563118-abc4-4d1b-93a4-58e327972409', NULL, NULL, NULL, NULL, 'Desy Putri Syafrianti', NULL, 'S.Kom', 'Sekadau', '1991-12-02', 'Perempuan', 'Islam', '$2y$10$1bkD2kZWBy8hD/3LLomVjOSbH3kDkzmn2LXJD/owxUvz1G0kVUUoi', '2022-07-05 01:52:16', '2022-07-05 01:52:16'),
+('589661c7-7bc4-4517-aeda-812297d91c0c', '19940812 201903 2 019', NULL, NULL, NULL, 'Fionna Araminta Fabiola', NULL, 'S.E', 'Ketapang', '1994-08-12', 'Perempuan', 'Islam', '$2y$10$Cxt/0O7UGvCaATFsnT9Li.joSscGfQK8peyOh53VEfg4oTWKlfzhm', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5997603c-54d6-4b59-bb77-0fda630ee588', NULL, '19910127 201509 166', NULL, NULL, 'Pusparini Akhmad', NULL, 'S.Si', 'Palembang', '1987-01-27', 'Perempuan', 'Islam', '$2y$10$CjAsEC9FyiO/cL8eGXeDo.dKupMnHUWXZz8G4qDLHYMHUZ4LQVp0m', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5cde66a2-643d-46ea-83b0-7b1de9399637', NULL, '19890404 201512 117', NULL, NULL, 'Irfan', NULL, 'A.Md', 'Teluk Melano', '1989-04-04', 'Laki-laki', '', '$2y$10$ixFTwIs8gYfXQ5MG6JZ7cOinkxjS7mQ4wFkQwezCJn7Vlfz1TIXD.', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5e418a66-3916-43d2-aabb-6ff1908d25f4', '19741026 202121 2 003', NULL, NULL, NULL, 'Utin Ida Fitriana', NULL, 'SE', 'Ketapang', '1974-10-26', 'Perempuan', 'Islam', '$2y$10$vmtZzWpXXrpnZ2QLUNXYCOHo5ozDhGALwVog4bJQpZfc10HO4RwTu', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5e636dc2-6006-420e-88ac-18b7521e50bb', NULL, '19961218 202008 250', '6104175812960003', NULL, 'AMANDA TIARA REZKI', NULL, 'SM', NULL, '1996-12-18', 'Perempuan', 'Islam', '$2y$10$9FTkg06PwDQHcV58.zk1seVq9wa368QnqftKerUehBMcMJsd4pjVS', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5eb61db0-c4dc-4013-b48d-7aaafd73b9b6', NULL, NULL, NULL, NULL, 'Suherman', NULL, '', 'Ketapang', '1988-10-12', 'Laki-laki', '', '$2y$10$UFGqZsPLhqyDUIc4hmpn5OOJl.nEAIzTFdu1Vay5ao923HIGyyyW6', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5fb62dca-5b17-44ef-8849-257eaf4c8cc2', '19840105 202121 1 003', NULL, NULL, NULL, 'Epriyandi', NULL, 'S.T.,M.T', 'Ketapang', '1984-01-05', 'Laki-laki', 'Islam', '$2y$10$UwWKUZGcF0eL7CvZM0u1n.F35tcGYsWYgSgivXUEo1/jpZSYo0Qk.', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('5ffd6435-601b-4276-8c73-53c7cecdd701', '19801126 202121 2 005', NULL, NULL, NULL, 'Novitawati', NULL, 'A.Md', 'Ketapang', '1980-11-26', 'Perempuan', 'Islam', '$2y$10$M9Dnj4fT8EA3jchUiGQXpO7ww4pjIPWmPoCTN8pVARLW231MdyviS', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('6351842b-6db4-4549-94c6-587f7e8d3883', '19840425 202121 1 001', NULL, NULL, NULL, 'Khairul Muttaqin', NULL, 'S.Pd.I.,M.Ag.', 'Singkawang', '1984-04-25', 'Laki-laki', 'Islam', '$2y$10$0qSuT3wtlMatyI8JDdE/XOBc5trSWoU0mI5WcWym9BuVjsw2edBnS', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('643a252e-3129-4f67-aba4-8ad6cbaca0c8', '19930818 201903 2 026', NULL, NULL, NULL, 'Firmanilah Kamil', NULL, ' S.Pd.,M.Pd', 'Malang', '1993-08-18', 'Perempuan', '', '$2y$10$j0SIt9tSxx9mBafqcvNJ7.jphHgheknJnP3fpfcatXiOuA5IOYAo2', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('652d3790-71e1-449e-88fb-a380428c0135', '19900619 202121 1 001', NULL, NULL, NULL, 'Zulpandi', NULL, 'A.Md', 'Ketapang', '1990-06-19', 'Laki-laki', 'Islam', '$2y$10$o9ODuwpSJfW.YfJ2EDrbLOJbjy0GbRgFweRyWhBUnnUaUMu4fTWmK', '2022-07-05 01:52:17', '2022-07-05 01:52:17'),
+('68117ca1-bd03-47f2-849f-08f9d7c0d593', NULL, '19870311 201601 179', NULL, NULL, 'Sopiana', NULL, 'S.P.,M.Si', 'Mentibar', '1987-03-11', 'Perempuan', 'Islam', '$2y$10$1X4fY8GD.OWv07.QCbn6oudv//gp4tctSEiU52yDG6B7V92k5oola', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6885f19d-bc29-4b2b-9062-c2fedf8efc79', NULL, '19820623 201509 169', NULL, NULL, 'Saifudin Usman', NULL, 'S.T., M.Tr.Kom', 'Pontianak', '1982-06-23', 'Laki-laki', 'Islam', '$2y$10$1TbD504k5H3pk.oZ4M5tlenVPed8GOwj8zeM4ZYl0hntzKKTU2vq2', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6c395ad5-e91f-47f3-aa21-bc294c185ada', '19880830 201803 2 001', NULL, NULL, NULL, 'Venti Jatsiyah', NULL, 'S.P.,M.Si', 'Sambas', '1988-08-30', 'Perempuan', '', '$2y$10$IY9iN9ddGshPeOvP8EiYs.Xq6cw.lrd3ZX0lA1HLD7RKEzMaYhSxy', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6d42c4a4-f4de-4a38-9b96-bc7f1ee1bea4', NULL, '19790731 201211 123', NULL, NULL, 'Henny Yulianti', NULL, 'A.Md.', 'Ketapang', '1979-07-31', 'Perempuan', 'Islam', '$2y$10$SLmLW9uK0wZsWryAZa.BXea8kIiFyq/KniFzSs7FRN4Rf3YNvyIRG', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6da9d71f-9c64-40cf-b6b7-2d0657767ca4', '19771006 199703 1 003', NULL, NULL, NULL, 'Untoro Budi Harjanto', NULL, NULL, 'Yogyakarta', '1977-10-06', 'Laki-laki', 'Islam', '$2y$10$e1vEqQBMjAOLR48.fhGnOuIWTMSZUN8ClQQXHWpFATmcLQ8hopEd.', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6ed6b0f9-dc4b-4b84-90b6-099cfdd2e1c2', '19721212 202121 2 006', NULL, NULL, NULL, 'Utin Aimanul Habasiah', NULL, 'S.Sos', 'Ketapang', '1972-12-12', 'Perempuan', 'Islam', '$2y$10$7zCnALdzNQt2fXhiGvc2AueR0OI9blQoz9Ll12cfSnyctWVor5dgC', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('6f6de946-5158-424c-8bfe-aa4b8a9c4df6', '19811225 201503 1 001', NULL, NULL, NULL, 'M. Rangga CH', NULL, 'S.Kom', 'Ketapang', '1981-12-25', 'Laki-laki', 'Islam', '$2y$10$IgNkc.rzDv0JBAGf8CWXTOsf3t1.Dizroh4qkbF1fQfLIa.d7nzla', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('709b3b4e-969a-4c04-9e92-5e5654ea1172', '19861031 202121 1 001', NULL, NULL, NULL, 'M. Jimi Rizaldi', NULL, 'S.ST.,M.T', 'Ketapang', '1986-10-31', 'Laki-laki', 'Islam', '$2y$10$556RMhGgyUrHnKobQJjs0.KeKFRJ8gNZlckuMcG88Ktp52dMHtHbS', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('71b2657e-188b-4504-b605-6a488d35875a', NULL, '19871218 201512 173', NULL, NULL, 'Assrorudin', NULL, 'S.Pd.,M.Pd', 'Sidoarejo', '1987-12-18', 'Laki-laki', 'Islam', '$2y$10$hAvLbl5AKNT/UL215yDZj.I/qj2sTTHQA0uLHsDXQImXg4mePNrM6', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('73d67075-744c-43c1-b3db-90e635121b08', NULL, NULL, NULL, NULL, 'Almiana', NULL, '', 'Ketapang', '1974-05-07', 'Perempuan', '', '$2y$10$3dy0Ufotfnd.Oph31O2UZeH0cIsKapnFCBYqxvnvnh3VKaC1vPANe', '2022-07-05 01:52:18', '2022-07-05 01:52:18'),
+('769cc3ea-a955-4af8-9d8b-1509351aded3', '19910704 201903 1 015', NULL, NULL, NULL, 'Darmanto', NULL, 'M.Kom', 'Ngawi', '1991-07-04', 'Laki-laki', 'Islam', '$2y$10$PKZS4eEa5d4xthrQYkc/sudlSLOqto7F7zAgiTPPW20J/273n1nTK', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('78b3c200-ec4f-427c-be1e-eb899e259673', '19810822 202121 1 002', NULL, NULL, NULL, 'Awang Roy Lesmana', NULL, 'A.Md', 'Pontianak', '1981-08-22', 'Laki-laki', '', '$2y$10$x6GPN0f5KUu21P8HPEksUeHlO06OF9xvGKheUIz16kHMEZV3OpgS.', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('792d0bfd-2dc1-4f35-8a26-83a306dacfdc', '19900921 202203 1 005', '19900920 201603 201', NULL, NULL, 'Ivan Suwanda', NULL, 'M.T', 'Pontianak', '1990-09-20', 'Laki-laki', 'Islam', '$2y$10$4qFIhm5gbHtZKQ8zF1W7jOUpbLJzNn49VCY1YGilXq9kxbT8ona9q', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('799b456b-0e87-49de-8367-d2e78e9e74ae', NULL, '19841114 200801 047', NULL, NULL, 'Ningrum Dwi Hastuti', NULL, 'S.TP.,M.P', 'Klaten', '1984-11-14', 'Perempuan', '', '$2y$10$SvdaAQ.DrPNse2THcwY1ce2./c20dveRzMAE0nd0USSJICrzclMiC', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('79ae72a0-23be-4b20-ba79-703fb35a5eca', '19840504 201903 1 007', NULL, NULL, NULL, 'AKHDIYATUL', NULL, 'S.ST.,M.T', 'Ketapang', '1984-05-04', 'Laki-laki', 'Islam', '$2y$10$gs6FcmmTRzqFf7haNOo.4eT9jmMmT.DwqoTkovAy1xkKHHvRHwt82', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('7a8c08a9-467b-4afe-8abf-07f6c2431afb', NULL, '19860615 200810 025', NULL, NULL, 'Endi', NULL, 'SE', 'Mambuk', '1986-07-15', 'Laki-laki', 'Islam', '$2y$10$HXn3Q90xHljHozjYpJZyXOXoZHOjGmDcWG9bYD2FzmHdSnbWM1J46', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('7acb40e6-5725-40ae-a4ec-02f6ed63bd94', '19830526 201504 1 001', NULL, NULL, NULL, 'Anto Susanto', NULL, 'SST, M.P', 'Bandung', '1983-05-26', 'Laki-laki', 'Islam', '$2y$10$ZsWiMQ4OjwGfT28zTWlKbeyKrEaWk/yEiDkEALL35MHCrhomH94om', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('7bd1033c-7dfe-4f83-9aad-e11c292b1d84', NULL, NULL, NULL, NULL, 'Satira', NULL, '', 'Ketapang', '1974-09-06', 'Perempuan', '', '$2y$10$cnCGA0uJhMtP2.CuCJ7RCu8BYDG8kduJhq0bIY6KQJbvCWEBhN93a', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('7bea437a-8777-4c94-bf63-8e0ca9651691', '19640610 202121 1 004', NULL, NULL, NULL, 'Uti Sahibul Hekmi', NULL, 'A.Md', 'Ketapang', '1964-06-10', 'Laki-laki', 'Islam', '$2y$10$QzN0ie1CH1ymWqfxk7dPku4D5JWjt50mlmXL.pH5JNdIb/ZVo0VF.', '2022-07-05 01:52:19', '2022-07-05 01:52:19'),
+('7c7c26c8-47b9-48b3-8499-7ef04f7564ec', '19831001 202121 2 004', NULL, NULL, NULL, 'Nely Kurnila', NULL, 'S.Pd., M.Pd', 'Ketapang', '1983-10-01', 'Perempuan', 'Katholik', '$2y$10$LyI1ons9w.VAXQ0VmrUaYuBgTaeR0qToQo6gmM7jVj/ug9IwoFJXK', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('7e03dfc9-498e-4b16-8bce-d4823ce87ba8', NULL, '19860710 201204 118', NULL, NULL, 'Mustapa', NULL, ' A. Md', 'Ketapang', '1986-07-10', 'Laki-laki', '', '$2y$10$iAIrLUcu0a1LzXAVzfKiOO3xcIM/OBwASMGT9M028FETRddiErB9C', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('8084ae53-5ac6-40a7-9f5f-dea40fa2aab5', '19870114 201903 1 007', NULL, NULL, NULL, 'Eka Wahyudi', NULL, 'S.Pd., M.Cs', 'Mekar Asri', '1987-01-14', 'Laki-laki', 'Islam', '$2y$10$R0HkgGq7ukYs3l3pZCQKWO4WmJDmcYtesl3I8/JDxAvAQ89IfbNEa', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('86f15cfc-fcb7-47a6-ae81-5129f6ef4ddc', '19910310 202121 1 001', NULL, NULL, NULL, 'Sarijanto', NULL, 'A.Md', 'Ketapang', '1991-03-10', 'Laki-laki', '', '$2y$10$FNxNPcGsXZphOjxoJSwT9.E4sNdc05Byh92wAdhmgtADe0LxqGEa2', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('87284e92-8239-44a0-86cd-2040f3406f47', '19870716 202121 1 001', NULL, NULL, NULL, 'Deden Nugraha', NULL, 'S.P', 'Sukaresmi', '1987-07-16', 'Laki-laki', 'Islam', '$2y$10$xaEz8THZthPXltMfZkzzSOGeyXlEJNiOkjA9mCsQux28e9OlvczE6', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('8784ed8e-9d88-44a6-bb02-3f085de35b8c', NULL, '19890124 201512 172', NULL, NULL, 'Firman', NULL, 'S.Pd., M.P.Fis', 'Ketapang', '1989-01-24', 'Laki-laki', 'Islam', '$2y$10$FLwbQLO556vj4jPbr4OsZ.bk2Y5AWPyMRDKfCPnulBZzSFxxMDt3W', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('891f6a6b-8bd9-4ad4-bdd6-13c7b2d46782', NULL, '19950704 201708 222', NULL, NULL, 'Utin Kurnia Putri', NULL, 'A.Md', 'Semarang', '1995-07-04', 'Perempuan', 'Islam', '$2y$10$6zGzk2J0EJHMJJSvJ.4KUO2TSDi0JHZaPjXxZmLn3PULHhZ2gUFs6', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('89286b3a-69ef-47dc-8038-34175938abbc', NULL, '19880611 201601 196', NULL, NULL, 'Maya Andriana', NULL, 'SE', 'Teluk Melano', '1988-06-11', 'Perempuan', '', '$2y$10$XU2SOmIZEK8xY3XOMPXsNu4S7hcFo4G9G6PmU7898/PuYYmpO/lEm', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('8961f1e3-2848-4d15-b6b9-d79fdaa8a107', NULL, NULL, NULL, NULL, 'Karmila', NULL, '', 'Ketapang', '1970-01-01', 'Perempuan', '', '$2y$10$smxMu4euDCnHwHDTBGkyeu60kKmIErzq/PhJus4kxJ9bPFb0A6yTu', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('8a2a0fc9-7adb-47bc-978f-a12b9db859aa', '19860414 201903 2 011', NULL, NULL, NULL, 'Rosmalinda', NULL, 'S.ST.,M.P', 'Karang Baru', '1986-04-14', 'Perempuan', 'Islam', '$2y$10$RNQy9BNbYhy8sZguxImmmOib3llJvlZXKzSD8JYoq3PemvPY/tEFi', '2022-07-05 01:52:20', '2022-07-05 01:52:20'),
+('8a593376-eea9-4931-b0d7-86b72fd79b74', NULL, NULL, NULL, NULL, 'Henni', NULL, '', 'Ketapang', '1985-07-05', 'Perempuan', '', '$2y$10$mFZxCFt6.8o1u.TDJFcGO.Z3BuyWfc9lkUIR2QeazkChXP4kHhbMm', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8a75b21c-c073-4a58-8bf6-de1a0f9b5438', '19860125 201803 1 001', NULL, NULL, NULL, 'Yusuf', NULL, 'S.ST., M.T', 'Ketapang', '1986-01-25', 'Laki-laki', 'Islam', '$2y$10$NexXuKZSlmavkwrM9Sckaesi/e3Q4EKRFEnufG8EeWlXdNyqhH3im', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8c2e117d-01ad-4da2-a049-5490e078db83', '19770906 202121 1 003', NULL, NULL, NULL, 'Edi Rahmanto', NULL, ' SE', 'Kelampai', '1977-09-06', 'Laki-laki', '', '$2y$10$dCYYZi8AMIW/GOlnYhWY8ufvTd05.oGvYeq.OByxJkTd8jm2muJ6S', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8c6fdd85-dccf-4df8-888d-61910ca28761', '19891028 201903 2 011', NULL, NULL, NULL, 'Roida Oktovia Sihombing', NULL, 'SE', 'Pontianak', '1989-10-28', 'Perempuan', 'Kristen', '$2y$10$iWl9rkxeDuObIRuPW2R/qeXLbq/042ft9x/c0ysm8uwWKE.ccQM1C', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8d1a9392-ee5b-4086-a103-c86dbf04d2c6', NULL, NULL, NULL, NULL, 'ADMIN EVENT', NULL, NULL, 'BUMI', '2021-01-01', 'Laki-laki', 'Islam', '$2y$10$GTFvPhJYQCFwx2bdpsPgxuANWtHPvapX6rFnLAF/yApnlELQkycS.', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8da944a0-f7df-43a4-8bda-cc6c2b01cb5f', '19841207 201903 1 005', NULL, NULL, NULL, 'Munawar Kholil', NULL, 'S.Si.,M.Pd', 'Pamekasan', '1984-12-07', 'Laki-laki', 'Islam', '$2y$10$MaVKf9D4Aeeo.DFTdNsaM.WP5l8QxJ45GaQR0G8DIig7oPCgkz/7S', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8dbaf7b4-fdc6-4664-ad8f-28925262baaf', NULL, '19900126 201409 141', NULL, NULL, 'Syarifah Mastura', NULL, 'S.Pd.', 'Ketapang', '1990-01-26', 'Perempuan', 'Islam', '$2y$10$Leego2/SUtLYIHs7ZuwQs.iEvUXRiq9F4g0mdj8QC1FOGHRvOMlKi', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8e33ce55-5330-4cb2-836e-a22a0800b01c', '19890424 202121 1 002', NULL, NULL, NULL, 'Halimansyah', NULL, 'A.Md.', 'Kendawangan', '1989-04-24', 'Laki-laki', '', '$2y$10$/WsCXt2vYfYZm45WfJDf4eSv6BUPc2zmwUOQFnP2irzO4Z2Yr4w7m', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8eea1d3b-f883-435d-a8a9-453e46053607', '19831217 201903 2 008', NULL, NULL, NULL, 'Alfath Desita Jumiar', NULL, 'S.P.,M.Si', 'Pontianak', '1983-12-17', 'Perempuan', 'Islam', '$2y$10$pLug91A4MnTYeU8uNy41y.MDcvQ0Zf7/lh9gbdWq1FtrbrHdFgaiy', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8fdecaee-a3ef-4096-9165-26476c4e4753', '19710814 200604 1 005', NULL, NULL, NULL, 'Hidayat', NULL, NULL, 'Ketapang', '1971-08-14', 'Laki-laki', 'Islam', '$2y$10$rqMYM3X/ss4VrqXFpHpDKeYrSVgREkwjbQ0HvelBd0ts6N.unKrSq', '2022-07-05 01:52:21', '2022-07-05 01:52:21'),
+('8ffd423c-6a57-454d-b643-d1f134117073', NULL, '19780510 200801 055', NULL, NULL, 'Asep Ruchiyat', NULL, 'S.T.,M.T', 'Bengkayang', '1978-05-10', 'Laki-laki', 'Islam', '$2y$10$jaKR5yJA2Zr5743TYXu1HeDj/OuDqNS7KyQ0jipk1at0lXTnfZHIS', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('908b7dcc-8b5f-4d2a-b745-3caacb11c1c9', '19900614 202121 2 001', NULL, NULL, NULL, 'Kurnia Dewi Permata Sari', NULL, ' A.Md', 'Ketapang', '1990-06-14', 'Perempuan', '', '$2y$10$BMf0d/FjKZHOj3oyBH3C8eCn1Gdl7xD0cBRALkpEbqti/fGD/kJ9O', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('92408291-4e21-41bc-ba91-b632dbc03201', '19630804 198601 1 005', NULL, NULL, NULL, 'Safi\'ie', NULL, 'SE', NULL, '1963-08-04', 'Laki-laki', 'Islam', '$2y$10$mphKeqcTviKmsk52x7x78OpdvaOGUwKzGioNIZI6nALpI8HcQZ7nW', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('966bb315-7f59-470d-aaae-c9a60336c823', NULL, NULL, '3318091606890003', NULL, 'Rois Indriawan', NULL, NULL, 'Pati', '1989-06-16', 'Laki-laki', 'Islam', '$2y$10$yGjxAFvKrqRIoDscddMF9.RmxhaQCTPCLmgj.XpNie..FKjviG6me', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('966bb413-e9b5-46d7-9d60-6361134df0ea', NULL, NULL, '6172016207870003', NULL, 'Dewi Nurmayasari', NULL, NULL, NULL, NULL, 'Perempuan', '', '$2y$10$iw4qjWz2tRhGj87CXcj48eWrkwGMeDDlTMDCpT4krbhMJIeY9Y2Ry', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('968a0145-7799-46f2-b501-e4a26899ac9a', NULL, '19881026 201707 221', NULL, NULL, 'Redika Maulidya', NULL, 'ST', 'Ketapang', '1988-10-26', 'Perempuan', '', '$2y$10$9lwMS7FnocziukW88J07R.9BpOisOnJYUf3cDYnuzaR0Yx0TGq4.C', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('97693558-91bc-4335-b3cb-0311f337a795', '19631008 199603 1 003', NULL, NULL, NULL, 'Suratmin', 'Ir.', 'M.T', 'Ketapang', '1963-10-08', 'Laki-laki', 'Islam', '$2y$10$5ThLJY5zxovpG.dM0pGaBe7TpSU10edMCxcD5l2LIZGkfm2zrN06.', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('98ae6c59-c188-498e-83e4-e511251529b7', NULL, '19840310 200801 017', NULL, NULL, 'Rustiarni', NULL, 'M.H', 'Ketapang', '1984-03-10', 'Perempuan', 'Islam', '$2y$10$xjYgl3EBBP.jtzorvQ5HXOMmolv8tC03BknWHs4G4Q5IpRcof/ruK', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('98baf7ed-28bf-4a5d-8f4b-c0e789081d91', NULL, NULL, NULL, NULL, 'Muhammad Sa\'ari', NULL, '', 'Ketapang', '1963-06-23', 'Laki-laki', '', '$2y$10$j1fuoy7kC9hzM47LpMnx3esJGY1e7OTzVwq9TOmMaMoQOx8HaJBH6', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('98db1f9b-7be6-446f-a5ab-46208a47867b', '19861109 201903 1 005', NULL, NULL, NULL, 'Rosi Arrasyid', NULL, 'A.Md', 'Sentebang', '1986-11-09', 'Laki-laki', 'Islam', '$2y$10$nMZKs1300UcPo8kicAljQ.ZGI42hkee4ZayStsSt/ocmphhfsxCf6', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('99bba172-f59c-4bf4-a7df-31b6d3b00050', '19860923 201903 1 005', NULL, NULL, NULL, 'Yudi Chandra', NULL, 'S.ST., M.T', 'Ketapang', '1986-09-23', 'Laki-laki', 'Islam', '$2y$10$6QDE0pK7I6qDBSVB1LPazuQ/X8S/DzKXey8c.YgWs/YWHTlAFQbba', '2022-07-05 01:52:22', '2022-07-05 01:52:22'),
+('9a8e0752-f115-4c47-a7bc-49f8c1a862b4', '19880901 201903 1 010', NULL, NULL, NULL, 'Sy. Indra Septiansyah', NULL, 'S.Si.,M.T', 'Pontianak', '1988-09-01', 'Laki-laki', 'Islam', '$2y$10$NDzwwKk1BXIGShT1608C/e3ctPVWhtuZJDx7SabP5MWVBiBLIVo3i', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('9b26a021-e661-4f49-ab22-6f49afe9cd9b', NULL, '19790910 200801 058', NULL, NULL, 'Hairian Rahmadi', NULL, 'S.T.,M.T', 'Sungai Jaga B', '1979-09-10', 'Laki-laki', 'Islam', '$2y$10$gijzFjOkrYBM3lFohlhxF.kh4BYFdaFt2I/XdaQBrIcU7iHOdND6S', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('9b7afb74-0772-48e9-acee-2720557d1384', NULL, NULL, NULL, NULL, 'Ahmad Riduan', NULL, '', 'Ketapang', '1996-02-24', 'Laki-laki', '', '$2y$10$OwiAQTB4y98BSLzHvzFm.e3KLPNDs3Y.oPxVRaec3POk2BJocHL9C', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('9cc7f277-d556-4fae-8d75-68e64bcfcad4', NULL, '19820404 201611 213', NULL, NULL, 'Nurhayati', NULL, 'S.P.,M.Si', 'Pedada', '1982-04-04', 'Perempuan', 'Islam', '$2y$10$AsO4sgIfYOy6DVfKNwYnNe4jIwq9qejkL7tvjp.FheIcXZ2jKBCba', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('9ebea3d2-60b0-4817-9e36-661f71d69e73', NULL, '19950203 202107 259', '6104174302950003', NULL, 'Heni Rahmadianingsih', NULL, 'M.Pd', NULL, NULL, 'Perempuan', '', '$2y$10$kM3CLHb5dEu5zvw8IjkPOuqZ85U9oGDXXbIc.XJVmv1GVU2zVHErG', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('9faa86a0-147d-4657-9592-160f9bb9d06f', '19850805 202121 2 009', NULL, NULL, NULL, 'Nur Aida', NULL, 'S.Pd.,M. Pd', 'Ketapang', '1985-08-05', 'Perempuan', 'Islam', '$2y$10$CogHEGNoSVtBtquHUinKMuBhmfMjVmCphjgrakch6zs2OcRZo.el.', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('a12f6e04-c76b-44d0-ad59-7427ac275be8', '19931228 201903 1 012', NULL, NULL, NULL, 'Rahmat Aryanto', NULL, 'A.Md', 'Ketapang', '1993-12-28', 'Laki-laki', 'Islam', '$2y$10$RkBEDrr0FGJkpZ82iMY01OxP0cw.dIb28iflgpbSntbXOjnPG5tzq', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('a15ebfc3-4700-4231-b982-f6fd6f150f1f', NULL, NULL, NULL, NULL, 'Evi Mellianti', NULL, 'SST', 'Ketapang', '1993-06-02', 'Perempuan', 'Islam', '$2y$10$yukIX2fHX5chI9GvjriVUupC7T4brzb35INYxJMImNAtZaJ.mb3Y6', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('a1c5ae62-36d7-4d2e-b207-999afa6a6103', NULL, '19740401 201311 132', NULL, NULL, 'Ahmadin', NULL, 'S.Sos.', 'Pontianak', '1974-04-01', 'Laki-laki', '', '$2y$10$2BpqUp0.Db2NybvNdWHFwefGSbfPuKjJO/Kt/QO/.G14UTqVYcch2', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('a1f6271f-46a8-4f4d-ad97-b11ed9ecca1b', NULL, '19860505 201602 203', NULL, NULL, 'Ade Herlinda', NULL, 'S.Pd', 'Ketapang', '1986-05-05', 'Perempuan', 'Islam', '$2y$10$f4u.W1smOEfTlMXJmoNRReMGfmFrs1osznhmmQWdEW3XIPTLpSOqC', '2022-07-05 01:52:23', '2022-07-05 01:52:23'),
+('a3cf6b37-c6e0-411e-ab87-9333e5f9e84a', '19800518 202121 1 007', NULL, NULL, NULL, 'Fathurrahmi', NULL, 'SE.,MM.', 'Ketapang', '1980-05-18', 'Laki-laki', 'Islam', '$2y$10$ws8TkTeCXqVLeoCyO/YHneH97rD.F9dbufeEmdY0aahCjgpqOh8R6', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('a64ec6c9-f25d-40c9-acf2-f8054184f6c5', '19820520 202121 1 005', NULL, NULL, NULL, 'Ardiansyah Putra', NULL, 'A.Md.', 'Pontianak', '1982-05-20', 'Laki-laki', 'Islam', '$2y$10$JmrBRxaecHWXTK2b0uAFCOb1BeSi646blcl5ckJ9oRtpOim8YZ0xC', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('a7ab3156-4a6a-4d34-b4fd-ecdee3e951de', '19840926 201903 1 008', NULL, NULL, NULL, 'Irianto SP', NULL, 'S.ST.,M.MA', 'Pontianak', '1984-09-26', 'Laki-laki', 'Islam', '$2y$10$djolCfMeCrHbf6nqeoKv6eUkzwG5UtE8/0k9ix5FeheXJBw.Bo.6G', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('a8025fce-d1b8-4acf-80c2-ace804464787', NULL, NULL, NULL, NULL, 'Andri Gunawan', NULL, '', 'Ketapang', '1988-01-01', 'Laki-laki', '', '$2y$10$vaTtE0ZTg82/A3O.Ho3Lquemmibl/NWr24YMHbDxr9rdRfM7ykFCK', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('ac0df63f-204d-400a-83bd-66b7fc7d1d8d', '19770503 202121 1 004', NULL, NULL, NULL, 'Yudi Adlia', NULL, 'SE', 'Ketapang', '1977-05-03', 'Laki-laki', 'Islam', '$2y$10$9tkaBbpbsQytUddL1KQcyOYERsDl/tOf0788lSpDiC/LaInEwlgCm', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('aeb5d395-09f4-42b1-8680-75663045684e', NULL, NULL, NULL, NULL, 'Supardi', NULL, '', 'Ketapang', '1979-01-17', 'Laki-laki', '', '$2y$10$glCs2mX2NapIHF33bsHEMO3MiZIH2rh1bf4iWooT98b4zxSxVimpW', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('af76d150-7435-4f3a-bf5f-3fb3d991c626', '19920106 201903 2 015', NULL, NULL, NULL, 'Betti Ses Eka Polonia', NULL, 'S.Pd.,M.Pd', 'Lamongan', '1992-01-06', 'Perempuan', 'Islam', '$2y$10$.ruXbT8GlDnwCdJzwQx1L./CKwvIL6dhDkyqBreGs7kKdH1hICBRu', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('b14b7e81-2fc3-45e5-adc1-750cc73f0fb2', NULL, '19740510 200801 041', NULL, NULL, 'Isye Selvianti', NULL, 'SH.,M.AP', 'Solo', '1974-05-10', 'Perempuan', 'Islam', '$2y$10$MKpClNgQIG0a5.3jq3PJmupFchJP8aD6BqZi7vt.1ebXKIWEKYjIa', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('b2035d20-b83c-479d-a032-ecdef5bf9eb0', '19780324 202121 1 005', NULL, NULL, NULL, 'Rodiansyah', NULL, 'A.Md', 'Ketapang', '1978-03-24', 'Laki-laki', 'Islam', '$2y$10$XhAtvccj6rI/q/A/YWK0ueJ0Du6BFvfZV4xcHXi0F7c8wPRCs/vXu', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('b2c740a8-348b-4e2e-9713-38c9712fe1d8', '19910617 201903 2 022', NULL, NULL, NULL, 'Saima Putrini R Harahap', NULL, 'S.Pd.,M.Pd', 'Padang Sidimpuan', '1991-06-17', 'Perempuan', 'Islam', '$2y$10$wxUjQXUVI0bfnXNspNkCJOLZh.x3Vkocby2vBDnwDqEWo7Hvfz9l6', '2022-07-05 01:52:24', '2022-07-05 01:52:24'),
+('b2f3b1cc-0b55-4c9d-9e5b-0e6c7fac9c8b', '19750619 202121 2 006', NULL, NULL, NULL, 'Rohyati', NULL, 'A.Md', 'Trenggalek', '1975-06-19', 'Perempuan', '', '$2y$10$2V6PsTllHUzOPG9lROFZle9bXLKEbRdHfldX5s2Vlgh0ePz1LrvWm', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b3b814f5-e354-47b3-a000-156679809080', '19901105 201903 1 007', NULL, NULL, NULL, 'A. Nova Zulfahmi', NULL, 'S.Pi.,M.Sc', 'Kediri', '1990-11-05', 'Laki-laki', 'Islam', '$2y$10$fVDF1L0YnaWiYtEuUa.FV.Lu1R9sWobbl1J2LkArOEa8xCRlfJTUO', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b5f4d025-952e-4260-a45b-ab50e561a491', NULL, '19890730 201601 189', NULL, NULL, 'Nurhanudin', NULL, 'A.Md', 'Ketapang', '1989-07-30', 'Laki-laki', 'Islam', '$2y$10$JhXUSrt25ltM.lyzlMb3j.vvUBVRi.efF1KsXH8W4YWFjurbgTyjm', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b6308b4f-7569-47c1-980f-f266d255b293', '19780926 202121 1 003', NULL, NULL, NULL, 'Martanto', NULL, 'ST., MT', 'Sleman', '1978-09-26', 'Laki-laki', 'Islam', '$2y$10$1FcmbZK46xsrzNxbPlAF/O/PfElZf37TvpQB0pD1oQNFM8HT.G.mu', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b674c34c-18d8-4f2e-b78d-ba263ecb6f03', NULL, '19890711 201601 188', NULL, NULL, 'Nanang Hartoni', NULL, 'A.Md', 'Ketapang', '1989-07-11', 'Laki-laki', 'Islam', '$2y$10$knawOHGHLjTIYOwk25CBMu91fHepFk5uIFocnrACYy847voq3qqcW', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b67e1667-7681-4ba7-8eb7-49df4cae2eed', '19890316 202121 1 001', NULL, NULL, NULL, 'Faisal', NULL, 'A.Md.', 'Ketapang', '1989-03-16', 'Laki-laki', 'Islam', '$2y$10$wdTnVHiDy.jUvhFTS6ly2Op1pkPN2r/mEtLntSZc1m/fRLeerWXJ2', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b7369622-3dd7-487f-8add-b67d8512a6c3', NULL, '19911112 201601 184', NULL, NULL, 'Eva Prawinda', NULL, 'S.Pd', 'Ketapang', '1991-11-12', 'Perempuan', 'Islam', '$2y$10$Nlj770L5zlhQksemaaTfyu.EB5bdA8LPdU.7U1vows8.puoCyXvoW', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b77f8f84-beb9-4d27-8a5f-475ac4fd520b', '19900228 202121 2 001', NULL, NULL, NULL, 'Nisa Zahara', NULL, 'A.Md', 'Ketapang', '1990-02-28', 'Perempuan', 'Islam', '$2y$10$zTdFOMyQNOXG2XSjrfaCV.9lWGw0top2CPMDBpQf7ysv/du6Cyd66', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b83e233a-d9b4-459d-93de-d33523c566b0', NULL, '19890424 201509 165', NULL, NULL, 'Indra Pratiwi', NULL, 'M.Pd', 'Ketapang', '1989-04-24', 'Perempuan', 'Islam', '$2y$10$fQ0YdCue.0iYBLqrnCEC2ehlGz05xQmCcLZKawCfqmDqztY.lD/Gy', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('b95679cb-9866-4c31-8c5b-960b8ecec93c', NULL, NULL, NULL, NULL, 'Reino Muhammad', NULL, 'ST., M.Cs', 'Indonesia', '1945-08-18', 'Perempuan', '', '$2y$10$N6kJg7Go7Y7IV23RCl4pIO1VhECEIQG6ykwW2Z311L24fZI0p6752', '2022-07-05 01:52:25', '2022-07-05 01:52:25'),
+('bc1f265d-00ef-485c-867a-a32b2899a4e8', NULL, '19951222 202104 253', '6104182212950004', NULL, 'Teguh Eko Saputra', NULL, 'A.Md.Kom', 'Mayak', '1995-12-22', 'Laki-laki', 'Islam', '$2y$10$RS71L/sapYX1wA/0Xt2ApeJ0kaNMm4w7xrh00Qbor1BMqEt0Uk186', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('c0a53e24-a714-47cc-8651-1f413b8b72fe', NULL, '19881113 201601 182', NULL, NULL, 'Noprizan Azmi', NULL, 'ST', 'Simpang Empat', '1988-11-13', 'Laki-laki', 'Islam', '$2y$10$oyotFecMaH2CzIU0mmaf1eEb/Zd1Z97PycQuOi5T7G4mLksEnn.ii', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('c37724c8-36bf-4bbf-82ad-bac50ce9078a', NULL, '19940929 201601 193', NULL, NULL, 'Lia Kurnia', NULL, 'SP', 'Ketapang', '1994-09-29', 'Perempuan', 'Islam', '$2y$10$MOYm4rZyN/SJhZINqQKZv.wCDIueEcnllNFBoiikU/Pb9QD.3lQwa', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('c5bc3f89-addd-4737-bd78-ac8b414679da', '19750808 202121 1 005', NULL, NULL, NULL, 'Sahardi', NULL, 'SE', 'Ketapang', '1975-08-08', 'Laki-laki', '', '$2y$10$a4wQPOkJPa1g97vhEO5P..qjfgr4MpXdiZAfhP91u.Tjc/ZSXYcqm', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('cc37bab9-4d25-4dff-9ac9-3552e5921705', NULL, '19890424 201507 158', NULL, NULL, 'Aprianda Ibrahim', NULL, 'S.Kom', NULL, '1989-04-24', 'Laki-laki', 'Islam', '$2y$10$WtbTT4HJIdOYrKbx.jnczuoX4wIx.apB1Jc1wC8X7CYG1nCpRszbW', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('cda69cea-4502-4db3-9954-70f92c28f2f1', NULL, '19860410 201502 153', NULL, NULL, 'Arman', NULL, 'A.Md.', 'Ketapang', '1986-04-10', 'Laki-laki', 'Islam', '$2y$10$yWb1l.eqp.3XguhG.QR2JOpJQsTPC96NftB9hpVsRWHDDFPVpgPSK', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('cda9609b-0bed-49c5-96cc-e46831985dc7', NULL, '19950219 201708 220', NULL, NULL, 'Rahmadi', NULL, 'A.Md', 'Ketapang', '1995-02-19', 'Laki-laki', 'Islam', '$2y$10$UHGTPrVnCvQC.3T5vqnRbub7LBcSkJRu6JwVO8bpT5caskLBV8YKm', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('cdb42c37-d361-44aa-9d90-85dc5c02cc4c', NULL, '19891220 201404 133', NULL, NULL, 'Emy Arahman', NULL, 'S.Pd., M.Pd', 'Pontianak', '1989-12-20', 'Perempuan', 'Islam', '$2y$10$5ZXe8STvtmpZ2qiy2pXt1OM22T/MR7azEx2bjQ2BG6X/tJyyzueeC', '2022-07-05 01:52:26', '2022-07-05 01:52:26'),
+('d039bc2d-7c92-4349-ae77-e67fd4dcea7f', '19830501 202121 1 002', NULL, NULL, NULL, 'Muhammad Rizal', NULL, 'A.Md', 'Ketapang', '1983-05-01', 'Laki-laki', 'Islam', '$2y$10$mumRWjjbfdtiYjTgHsAf8uqiWIRxuJTmK3FkQtSRL3fX88GpjBGim', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d04a0a35-e772-4766-abc3-d90346ecc0a9', NULL, NULL, NULL, NULL, 'Zulkarnaen', NULL, '', 'Ketapang', '1988-09-24', 'Laki-laki', '', '$2y$10$cfaN9Nsdihwzdy3jn6QYrOd5ucgGq79T0SmpQcARxvPHg0CwrjuSi', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d2bc54ef-e3ec-46ae-adcf-8f856bbd35fc', '19901230 202121 1 001', NULL, NULL, NULL, 'Nasriadi', NULL, 'A.Md.', 'Watampone', '1990-12-30', 'Laki-laki', 'Islam', '$2y$10$4aB4Z5sjq1x2UyOimnHaoun1EqMbplptOhsBgxj1XV/eoaLFd5cuO', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d307a54a-f25e-4a3b-95e5-75c0a78fe2e2', NULL, '19890807 201302 128', NULL, NULL, 'Diah Chairunisa', NULL, 'SE.', 'Ketapang', '1989-08-07', 'Perempuan', 'Islam', '$2y$10$q5RgpDyjdnQE0bHJEBmk6udcCfXUJ0tp/NyttuS42knWJJibFbJhG', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d399b985-7411-4a15-8eed-fbdb43b44dbc', '19891109 201803 2 001', NULL, NULL, NULL, 'Rizqia Lestika Atimi', NULL, 'S.T., M.T', 'Pontianak', '1989-11-09', 'Perempuan', 'Islam', '$2y$10$yXBZtn8dbKyDqDv2ArwiOeIYbUoqi.xikBuCHvKphiGwIbm1H4Zvm', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d4845c8d-dcda-421c-99ec-545bf9527ca1', NULL, '19940130 201601 185', NULL, NULL, 'Utin Asiyatin Nur', NULL, 'SE', 'Ketapang', '1994-01-30', 'Perempuan', 'Islam', '$2y$10$aq1m2PxZEsF96Hv/U12Q9euhDPHFbeMPAPunBXTv0ZL94Qwb5eLJK', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d5090102-10f3-42ae-903d-0e583097ed02', NULL, '19911222 201409 144', NULL, NULL, 'Ningli Diniyati', NULL, 'S, ST', 'Teluk Melano', '1991-12-22', 'Perempuan', 'Islam', '$2y$10$bvJbwaC4B2s7NKF7thU6Pe9WP2LdjZjYsM4K9iYv4O9EsMb.fdgi6', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('d8987bf5-6238-4cc0-9be7-305f922cc657', NULL, NULL, NULL, NULL, 'Ernawati', NULL, '', 'Ketapang', '1970-01-01', 'Perempuan', '', '$2y$10$PgeG0QIpYqToJ6aTILAhcO8vANfCm6II6AMZdr12QWe1SxYk2eqGG', '2022-07-05 01:52:27', '2022-07-05 01:52:27');
+INSERT INTO `simadu__pegawai` (`id`, `nip`, `nup`, `nik_ktp`, `email`, `nama`, `gelar_depan`, `gelar_belakang`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `agama`, `password`, `created_at`, `updated_at`) VALUES
+('da2352ee-66c7-41f4-b95a-ebfbc4f231ad', '19821107 202121 2 007', NULL, NULL, NULL, 'Dian Fitriarni', NULL, 'S.ST.,M.Sc', 'Ketapang', '1982-11-07', 'Perempuan', 'Islam', '$2y$10$jfeby.TIdQoLOmElAT4VeeQW./af9wnrKY8d5Go84V8sSrerNE.3e', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('da94c955-4436-4ea5-bb45-b8fce9a4b154', NULL, '19910219 201507 154', NULL, NULL, 'Kharisma', NULL, 'S.Kom. M.Kom', 'Ketapang', '1991-02-19', 'Laki-laki', '', '$2y$10$MsqWY/vAP3pp252awAqjre.qX4c56/gPMnYZpCNr3kSsgfbk9ZSIq', '2022-07-05 01:52:27', '2022-07-05 01:52:27'),
+('db6d49db-22b0-409f-8450-1beb34250905', '19901111 201903 2 018', NULL, NULL, NULL, 'Novi Indah Pradasari', NULL, 'S.Kom., M.Kom', 'Ketapang', '1990-11-11', 'Perempuan', 'Islam', '$2y$10$jE/DBqvZYMlPCsFPVpxJ5udQ83QAjllZYP7H048WiSHkfGJBIhaxq', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('dc497585-9080-4954-8417-89be283b4665', '19881104 201903 1 004', NULL, NULL, NULL, 'Idris Herkan Afandi', NULL, 'S.Pd.,M.T', 'Ketapang', '1988-11-04', 'Laki-laki', 'Islam', '$2y$10$vSXkcbFSheVVgLrm3PPaFuotRjHMMDpib1KxLYixELeSFcFPKTOcm', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('de4b9779-eb40-42bf-8bfd-6bb1125c1703', NULL, '19840327 201110 103', NULL, NULL, 'Muhammad Taufik', NULL, ' S.T', 'Mempawah', '1984-03-27', 'Laki-laki', '', '$2y$10$I5bfBYTtgoQH0occwD/hU.jkwmmuZ8GnOoN97.n5liRZJ.IdcpYdW', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('de9a5fdb-117c-45fe-8b46-ae4ce536270f', NULL, 'NIP.1985 070720 080', NULL, NULL, 'Julyan Purnomo', NULL, 'S.ST., M.T.', 'Ketapang', '1985-07-07', 'Laki-laki', '', '$2y$10$OjVorP5O1vXgdulX7bfdr.3Bk731LfbdEIAKaA6PCjo1uNtdZyFxa', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('dee9fbb6-7eda-4464-8d26-1a41838a13d5', NULL, '19940702 201709 223', NULL, NULL, 'Agung Iswandi', NULL, 'ST', 'Ketapang', '1994-07-02', 'Laki-laki', 'Islam', '$2y$10$a7IfcgSc01RIBQdOGYgMe.3t1xn405tQGyXVBDXVq4t5849sx/c12', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e22b1a40-7094-48a7-8a1b-a7407d679e4c', '19771010 200811 1 024', NULL, NULL, NULL, 'Harsusani', NULL, 'S.T., M.T', NULL, '1970-01-01', 'Perempuan', '', '$2y$10$bK022TTvphPNqGbyAqokY./.N7lZ32A41f3iZlK2W3LhEMYNw.eJK', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e32d5a13-49c3-481a-9485-2ad0789512cc', '19880513 202121 1 001', NULL, NULL, NULL, 'Citro Handoyo', NULL, 'S.T', 'Pontianak', '1988-05-13', 'Laki-laki', 'Islam', '$2y$10$F08V/sf5AV.F1uEOPDKgqOUb4V2Hum9YCpxVNrYgKJ4ynUYyvIK7O', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e3825cea-49cf-4e22-8b9e-6927099e859f', NULL, NULL, NULL, NULL, 'Syarif Niswah', NULL, '', 'Ketapang', '1975-05-05', 'Laki-laki', '', '$2y$10$3idi3L461H3HCAZWbRdXCO/f65hdztJTPajFou2fHSApPpcqaGqXm', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e6ba9e74-e855-4438-b2de-32099b533aa2', NULL, '19880402 201601 191', NULL, NULL, 'Mulyo Hadi Santoso', NULL, ' A.Md', 'Jelai Hulu', '1988-04-02', 'Laki-laki', '', '$2y$10$KegylRC8pAL1dOnndfDREO9oDux9psSm1EPn0J1r8ijGLlI4kWvLW', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e70044c4-9afe-4ba9-88dc-67ece46c36f8', NULL, NULL, NULL, NULL, 'Nurmalawati', NULL, '', 'Ketapang', '1973-04-13', 'Perempuan', '', '$2y$10$ULLqxVfBmtu63TUaA1NvEeTzk/QWSQIVC6JU2I7sXZxh.CJH4YDpK', '2022-07-05 01:52:28', '2022-07-05 01:52:28'),
+('e8e2dbb1-c651-4a0a-8dea-0926135e428b', '19900121 201803 2 001', NULL, NULL, NULL, 'Sartika', NULL, 'S.Si.,M.T', 'Pontianak', '1990-01-21', 'Perempuan', 'Islam', '$2y$10$R2ifuomKEaVLunQsXyk3cuOalWs1FM2qCEXAQtVjc8JmriuJ9zjPq', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('e8fd3915-260d-4079-8962-6608c6550e77', '19901203 202121 1 001', NULL, NULL, NULL, 'Wahyu Iswanto', NULL, 'A.Md', 'Ketapang', '1990-12-03', 'Laki-laki', 'Islam', '$2y$10$uLVV7wHj1f76Eblot7/0Gu.cvy2OGpNirKnGaHc7uxfMIzA2kulB.', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('e9b3eaac-e378-4e61-a660-c06a4f47490a', '19820310 202121 2 011', NULL, NULL, NULL, 'Nenengsih Verawati', NULL, 'S.TP.,M.P', 'Bima', '1982-03-10', 'Perempuan', 'Islam', '$2y$10$GJ6TuEdC4/.aEO7QkhwuKOYwUWcum8BPZ3BNkrbHkTQbgKm9oTk.S', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('eb09439a-7370-4b1e-b765-252298ab31a8', NULL, NULL, NULL, NULL, 'M. Hidayat', NULL, '', 'Ketapang', '1978-10-26', 'Laki-laki', '', '$2y$10$j4Y.XCYXubxBFjL4RGFbPOkOIkB8g03f6vZSsQWZIX4N9FETOi1Cy', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('ed7828d3-b34d-4d25-8378-7e3b75a08f66', NULL, '19850220 201601 192', NULL, NULL, 'Abdul Hafid', NULL, 'S.T', 'Nanga Tayap', '1985-02-20', 'Laki-laki', 'Islam', '$2y$10$6PnltwFYyNUdzgyf8H2OUOiuUbhhj2mxj33WcgBfPvo1iH8z.pmze', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('ef103381-4e22-4d34-a141-83dfeb98340f', '19741101 202121 2 005', NULL, NULL, NULL, 'Sri Handayani', NULL, 'A.Md', 'Ketapang', '1974-11-01', 'Perempuan', 'Islam', '$2y$10$h7KK2j/LjhgtLcZmOV.dMOflBffAIPcfxb7alp8.6NeNHN8p4Yk7K', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('f34be033-0f08-4655-b2ba-b68f4139017f', '19770505 202121 1 007', NULL, NULL, NULL, 'Ismael Marjuki', NULL, 'S.T.,M.T', 'Ampalu Tinggi', '1977-05-05', 'Laki-laki', 'Islam', '$2y$10$oe1UvkwH9M7CiHJz1TErGuG0M2GgrVO/gnJCSyA4quNjK7lBzskgq', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('f585f46a-98ed-4663-9f26-28891e3127cc', NULL, '19900611 201604 204', NULL, NULL, 'Ari Budiansyah', NULL, 'SE', 'Ketapang', '1990-06-11', 'Laki-laki', 'Islam', '$2y$10$34wXhayXEq0qOjdnz35I2uY08ThGCe/ECFYQkUKeyf.iKH0TJybcW', '2022-07-05 01:52:29', '2022-07-05 01:52:29'),
+('f59fa54b-a4e7-4bc2-90c3-6ec9f03a928b', '19681030 200112 1 002', NULL, NULL, NULL, 'Endang Kusmana', NULL, 'S.E.,M.M.,Ak,CA', 'Ciamis', '1968-10-30', 'Laki-laki', 'Islam', '$2y$10$g02r4LZ9L4qZmlw7FWCZ8O36jng9uAXIgndx5pnRypgTgvOEvfszi', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('f7c75340-cf0b-4402-963f-e8aca8e5936b', NULL, '19920917 202104 251', '6104171709920003', NULL, 'M. Alpiani', NULL, 'S.T', NULL, NULL, 'Laki-laki', '', '$2y$10$zo00d6eP9gyUzXaoh5ixYeZKxUwo6WriRZgTQfKHwqsd5KaJwGBe6', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('f851e7bd-cc56-49dc-ab9b-97944d6041cd', NULL, '19810817 200801 042', NULL, NULL, 'Syf. Umi Kalsum', NULL, 'S.Sos.,M.AP', 'Ketapang', '1981-08-17', 'Perempuan', 'Islam', '$2y$10$HtD0cn1Na/9SX66BOlmfhe.QFDaOudPv1/zFAk12QJCRkzvrlX3P.', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('f97a9a05-82df-4dea-af31-c8014d4ca784', NULL, NULL, NULL, NULL, 'Rico Anugrah', NULL, '', 'Ketapang', '1994-09-01', 'Laki-laki', '', '$2y$10$YMLirr9MDaswG2Ajoh5IueGstardb4JkMbp2sVqqRav7uc/u7K0qW', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('fcf015d0-91e5-4808-8aa3-a8cf44bd547b', '19891017 202121 2 001', NULL, NULL, NULL, 'Tri Kumala', NULL, 'SP', 'Ketapang', '1989-10-17', 'Perempuan', 'Islam', '$2y$10$zNV80fB7jxs7JxUx/YwhduP8UeUHaU9lBcmJMRACLoaiHrUEo19Oe', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('fd63b679-ae5a-46da-9ac2-3759ece0eac6', '19920414 201903 2 025', NULL, NULL, NULL, 'Mia Anggreini', NULL, 'A.Md', 'Nanga Keduai', '1992-04-14', 'Perempuan', 'Islam', '$2y$10$cBx2Ip.b4zzJsW63fCq.DeXf6tHm/361Eq374yJI4pdlzHdy6iOzK', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('fea080ab-8d56-4ba0-99f2-5ed8f0d4e1d5', NULL, '19811111 200801 012', NULL, NULL, 'Marisa Nopriyanti', NULL, 'STP., M.P.', 'Ketapang', '1981-11-11', 'Perempuan', 'Islam', '$2y$10$H.wmEpI9Xy6bEVJXuCiLOe7.LvHm.6TEF0mLuoTayRrRfUImKpczG', '2022-07-05 01:52:30', '2022-07-05 01:52:30'),
+('fed5ef8b-675f-46be-9dc4-947c09e14dac', NULL, '19911104 201601 190', NULL, NULL, 'Nurimansyah', NULL, ' SP', 'Ketapang', '1991-11-04', 'Laki-laki', '', '$2y$10$TweRz1bDNX7gyUzSfdPJbu7Tvh9WnmEV859Z4fB12DnPOEOMQAJeK', '2022-07-05 01:52:30', '2022-07-05 01:52:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `skemas`
 --
 
@@ -1032,8 +1284,8 @@ CREATE TABLE `skknis` (
 --
 
 INSERT INTO `skknis` (`id`, `file`, `skema_id`, `image`, `created_at`, `updated_at`) VALUES
-(3, 'WEQWEQWEQWE', 0, 'uploads/skkni/165672440101. FR.APL-01. ASKOM.pdf', '2022-07-01 18:13:21', '2022-07-01 18:13:21'),
-(4, 'as', 14, 'uploads/skkni/165677715102. FR.APL-02. ASKOM.pdf', '2022-07-02 08:52:31', '2022-07-02 08:52:31');
+(5, 'Kewirausahaan Industri', 13, 'uploads/skkni/165705448499. Skema - Kewirausahaan Industri.(Ver.8) docx.pdf', '2022-07-05 13:54:44', '2022-07-05 13:54:44'),
+(6, 'Inspektor Keamanan Pangan', 13, 'uploads/skkni/1657054533107. Inspektor Keamanan Pangan- All. docx.pdf', '2022-07-05 13:55:33', '2022-07-05 13:55:33');
 
 -- --------------------------------------------------------
 
@@ -1076,7 +1328,7 @@ CREATE TABLE `strorg` (
 --
 
 INSERT INTO `strorg` (`id`, `keterangan`, `image`, `updated_at`, `created_at`) VALUES
-(1, NULL, 'uploads/strorg/16567639033.jpg', '2022-07-02 05:11:43', '2022-07-02 12:11:43');
+(1, NULL, 'uploads/strorg/165705260216550410041649792551Struktur LSP_1-min.jpg', '2022-07-05 13:23:22', '2022-07-05 20:23:22');
 
 -- --------------------------------------------------------
 
@@ -1215,7 +1467,67 @@ INSERT INTO `unikoms` (`id`, `kode_unikom`, `skema_id`, `unikom`, `created_at`, 
 (114, 'J.620100.019.02', 20, 'Menggunakan Library atau Komponen Pre-Existing', '2022-05-11 13:07:37', '2022-05-11 13:07:37'),
 (115, 'J.620100.023.02', 20, 'Membuat Dokumen Kode Program', '2022-05-11 13:07:52', '2022-05-11 13:07:52'),
 (116, 'J.620100.025.02', 20, 'Melakukan Debugging', '2022-05-11 13:08:18', '2022-05-11 13:08:18'),
-(126, '354354354354', 19, 'sdasd', '2022-06-28 11:59:38', '2022-06-28 13:01:57');
+(128, 'J.620100.004.02', 19, 'Menggunakan Struktur Data', '2022-07-04 07:25:19', '2022-07-04 07:25:19'),
+(129, 'J.620100.005.02', 19, 'Mengimplementasikan User Interface', '2022-07-04 07:25:43', '2022-07-04 07:25:43'),
+(130, 'J.620100.011.01', 19, 'Melakukan instalasi Software Tools Pemrograman', '2022-07-04 07:26:13', '2022-07-04 07:26:13'),
+(131, 'J.620100.016.01', 19, 'Menulis Kode dengan Prinsip Sesuai Guidelines dan Best Practices', '2022-07-04 07:26:37', '2022-07-04 07:26:37'),
+(132, 'J.620100.017.02', 19, 'Mengimplementasikan Pemrograman Terstruktur', '2022-07-04 07:26:59', '2022-07-04 07:26:59'),
+(133, 'J.620100.019.02', 19, 'Menggunakan Library atau Komponen Pre-Exiting', '2022-07-04 07:27:20', '2022-07-04 07:27:20'),
+(134, 'J.620100.023.02', 19, 'Membuat Dokumen Kode Program', '2022-07-04 07:27:44', '2022-07-04 07:27:44'),
+(135, 'J.620100.025.02', 19, 'Melakukan Debugging', '2022-07-04 07:28:03', '2022-07-04 07:28:03'),
+(136, 'J.611000.004.01', 18, 'Merancang Pengalamatan Jaringan', '2022-07-04 07:29:07', '2022-07-04 07:29:07'),
+(137, 'J.611000.010.02', 18, 'Memasang Jaringan Nirkabel', '2022-07-04 07:29:33', '2022-07-04 07:29:33'),
+(138, 'J.611000.012.02', 18, 'Mengkonfigurasi Switch pada Jaringan', '2022-07-04 07:30:18', '2022-07-04 07:30:18'),
+(139, 'J.611000.013.02', 18, 'Mengkonfigurasi Routing pada Perangkat  Jaringan dalam satu Autonomous System', '2022-07-04 07:30:43', '2022-07-04 07:30:43'),
+(140, 'J.611000.014.02', 18, 'Mengkonfigurasi Routing pada Perangkat  Jaringan antar Autonomous System', '2022-07-04 07:31:02', '2022-07-04 07:31:02'),
+(141, 'M.71KKK01.001.1', 17, 'Merancang Strategi Pengendalian Risiko K3 di Tempat Kerja', '2022-07-04 07:31:51', '2022-07-04 07:31:51'),
+(142, 'M.71KKK01.002.1', 17, 'Merancang Sistem Tanggap Darurat', '2022-07-04 07:32:07', '2022-07-04 07:32:07'),
+(143, 'M.71KKK01.003.1', 17, 'Melakukan Komunikasi K3', '2022-07-04 07:32:27', '2022-07-04 07:32:27'),
+(144, 'M.71KKK01.004.1', 17, 'Mengawasi Pelaksanaan Izin Kerja', '2022-07-04 07:32:44', '2022-07-04 07:32:44'),
+(145, 'M.71KKK01.005.1', 17, 'Melakukan Pengukuran Faktor Bahaya di Tempat kerja', '2022-07-04 07:33:03', '2022-07-04 07:33:03'),
+(146, 'M.71KKK01.006.1', 17, 'Mengelola Pertolongan Pertama pada Kecelakaan Kerja (P3K) di Tempat Kerja', '2022-07-04 07:33:24', '2022-07-04 07:33:24'),
+(147, 'M.71KKK01.007.1', 17, 'Mengelola Tindakan Tanggap Darurat', '2022-07-04 07:33:40', '2022-07-04 07:33:40'),
+(148, 'M.71KKK01.008.1', 17, 'Mengelola Alat Pelindung Diri (APD) di Tempat Kerja', '2022-07-04 07:33:57', '2022-07-04 07:33:57'),
+(149, 'M.71KKK01.009.1', 17, 'Menerapkan Program Pelayanan Kesehatan Kerja', '2022-07-04 07:34:25', '2022-07-04 07:34:25'),
+(150, 'M.71KKK01.010.1', 17, 'Mengelola Sistem Dokumentasi K3', '2022-07-04 07:34:51', '2022-07-04 07:34:51'),
+(151, 'M.71KKK01.011.1', 17, 'Menerapkan Manajemen Risiko K3', '2022-07-04 07:35:18', '2022-07-04 07:35:18'),
+(152, 'M.71KKK01.012.1', 17, 'Mengevaluasi Pemenuhan Persyaratan dan Prosedur K3', '2022-07-04 07:35:36', '2022-07-04 07:35:36'),
+(153, 'M.71KKK01.013.1', 17, 'Melakukan Investigasi Kecelakaan Kerja', '2022-07-04 07:35:56', '2022-07-04 07:35:56'),
+(154, 'MSAENV472B', 10, 'Menerapkan dan memantau praktek kerja ramah lingkungan', '2022-07-04 07:39:35', '2022-07-04 07:39:35'),
+(155, 'MSL913001A', 10, 'Berkomunikasi dengan orang lain', '2022-07-04 07:40:01', '2022-07-04 07:40:01'),
+(156, 'MSL913002A', 10, 'Merencanakan dan melaksanakan pekerjaan laboratorium/ lapangan', '2022-07-04 07:40:37', '2022-07-04 07:40:37'),
+(157, 'MSL915001A', 10, 'Memberikan Informasi kepada Pelanggan', '2022-07-04 07:40:54', '2022-07-04 07:40:54'),
+(158, 'MSL924001A', 10, 'Mengolah dan menginterpretasikan data', '2022-07-04 07:41:12', '2022-07-04 07:41:12'),
+(159, 'MSL924002A', 10, 'Menggunakan software aplikasi laboratorium', '2022-07-04 07:41:31', '2022-07-04 07:41:31'),
+(160, 'MSL925001A', 10, 'Menganalisis data dan melaporkan hasil', '2022-07-04 07:41:50', '2022-07-04 07:41:50'),
+(161, 'MSL934002A', 10, 'Menerapkan sistem mutu dan proses peningkatan yang berkelanjutan', '2022-07-04 07:42:23', '2022-07-04 07:42:23'),
+(162, 'MSL944001A', 10, 'Maintain laboratory/field workplace safety', '2022-07-04 07:42:39', '2022-07-04 07:42:39'),
+(163, 'MSL915002A', 10, 'Membuat Jadwal Kerja Laboratorium Untuk Tim Kecil', '2022-07-04 07:42:58', '2022-07-04 07:42:58'),
+(164, 'MSL935001A', 10, 'Memantau mutu hasil dan data pengujian', '2022-07-04 07:43:13', '2022-07-04 07:43:13'),
+(165, 'MSL935004A', 10, 'Memelihara instrumen dan peralatan', '2022-07-04 07:43:28', '2022-07-04 07:43:28'),
+(166, 'MSL975005A', 10, 'Melakukan analisis sensor', '2022-07-04 07:43:47', '2022-07-04 07:43:47'),
+(167, 'MSL975022A', 10, 'Melakukan analisa pangan', '2022-07-04 07:44:07', '2022-07-04 07:44:07'),
+(168, 'MSL973002A', 10, 'Menyiapkan larutan kerja', '2022-07-04 07:44:28', '2022-07-04 07:44:28'),
+(169, 'MSL973003A', 10, 'Menyiapkan media Kultur', '2022-07-04 07:44:45', '2022-07-04 07:44:45'),
+(170, 'MSL973004A', 10, 'Melakukan teknik aseptik', '2022-07-04 07:45:07', '2022-07-04 07:45:07'),
+(171, 'MSL974001A', 10, 'Menyiapkan, menstandardisasi, dan menggunakan larutan', '2022-07-04 07:45:22', '2022-07-04 07:45:22'),
+(172, 'MSL974003A', 10, 'Melakukan pengujian dan prosedur kimia', '2022-07-04 07:45:50', '2022-07-04 07:45:50'),
+(173, 'MSL974005A', 10, 'Melakukan Pengujian Fisik', '2022-07-04 07:46:26', '2022-07-04 07:46:26'),
+(174, 'MSL916001A', 10, 'Mengembangkan dan memelihara dokumen laboratorium', '2022-07-04 07:46:42', '2022-07-04 07:46:42'),
+(175, 'TAN. KS01.001.01', 8, 'Menerapkan Keselamatan Kerja dan  Kesehatan Kerja Serta Lingkungan Kerja', '2022-07-04 07:47:50', '2022-07-04 07:47:50'),
+(176, 'TAN. KS01.002.01', 8, 'Mengorganisasikan Pekerjaan', '2022-07-04 07:48:22', '2022-07-04 07:48:22'),
+(177, 'TAN. KS01.003.01', 8, 'Melakukan Komunikasi Efektif', '2022-07-04 07:48:46', '2022-07-04 07:48:46'),
+(178, 'TAN. KS01.004.01', 8, 'Membina Masyarakat di Lingkungan  Kebun', '2022-07-04 07:49:05', '2022-07-04 07:49:05'),
+(179, 'TAN. KS02.001.01', 8, 'Mengelola Penyiapan Lahan', '2022-07-04 07:49:27', '2022-07-04 07:49:27'),
+(180, 'TAN. KS02.002.01', 8, 'Mengelola Penyiapan Bahan Tanam', '2022-07-04 07:49:46', '2022-07-04 07:49:46'),
+(181, 'TAN. KS02.003.01', 8, 'Mengelola Pekerjaan Penanaman', '2022-07-04 07:50:05', '2022-07-04 07:50:05'),
+(182, 'TAN. KS02.004.01', 8, 'Mengelola Pekerjaan Peremajaan  Tanaman', '2022-07-04 07:50:41', '2022-07-04 07:50:41'),
+(183, 'TAN. KS02.005.01', 8, 'Mengelola Pemeliharaan Tanaman Belum  Menghasilkan (TBM)', '2022-07-04 07:51:08', '2022-07-04 07:51:08'),
+(184, 'TAN. KS02.006.01', 8, 'Mengelola Pemeliharaan Tanaman  Menghasilkan (TM)', '2022-07-04 07:51:24', '2022-07-04 07:51:24'),
+(185, 'TAN. KS02.007.01', 8, 'Mengelola Panen', '2022-07-04 07:51:42', '2022-07-04 07:51:42'),
+(186, 'TAN. KS02.008.01', 8, 'Mengelola Fungsi Lingkungan Kebun', '2022-07-04 07:52:02', '2022-07-04 07:52:02'),
+(187, 'TAN. KS02.009.01', 8, 'Mengelola Anggaran', '2022-07-04 07:52:19', '2022-07-04 07:52:19'),
+(188, 'TAN. KS02.010.01', 8, 'Membuat Laporan', '2022-07-04 07:52:37', '2022-07-04 07:52:37');
 
 -- --------------------------------------------------------
 
@@ -1245,10 +1557,10 @@ CREATE TABLE `upload_files` (
 --
 
 INSERT INTO `upload_files` (`id`, `kode_dokumen`, `name`, `data_register_id`, `user_id`, `status`, `y`, `n`, `z`, `kode`, `koreksi`, `image`, `created_at`, `updated_at`) VALUES
-(700, '13319', 'Photo', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', NULL, '2022-07-02 22:48:50', '2022-07-03 01:11:56'),
-(701, '23319', 'Kartu Tanda Penduduk', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 2, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Valid</label>', NULL, '2022-07-02 22:48:50', '2022-07-03 01:12:10'),
-(702, '33319', 'Kartu Tanda Mahasiswa', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 2, '<label class=\'badge badge-outline-light badge-pill\'>Tidak Ada Data</label>', NULL, '2022-07-02 22:48:50', '2022-07-03 01:12:48'),
-(703, '43319', 'Kartu Hasil Studi', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', NULL, '2022-07-02 22:48:50', '2022-07-03 01:14:09');
+(756, '13319', 'Photo Identitas', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 133, NULL, NULL, '2022-07-05 09:43:31', '2022-07-05 09:43:31'),
+(757, '23319', 'Kartu Tanda Penduduk', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 233, NULL, NULL, '2022-07-05 09:43:31', '2022-07-05 09:43:31'),
+(758, '33319', 'Kartu Tanda Mahasiswa', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 333, NULL, NULL, '2022-07-05 09:43:31', '2022-07-05 09:43:31'),
+(759, '43319', 'Kartu Hasil Studi', 3319, 33, '<label class=\'badge badge-outline-danger badge-pill\'>Kosong</label>', '.', '.', '.', 433, NULL, NULL, '2022-07-05 09:43:31', '2022-07-05 09:43:31');
 
 -- --------------------------------------------------------
 
@@ -1298,11 +1610,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `negara`, `sex_id`, `alamat`, `no_hp`, `institusi`, `tamatan_id`, `jabatan`, `jurusan_id`, `semester_id`, `email2`, `email3`, `tempat_lahir`, `alamat_kantor`, `postal`, `telp`, `fax`, `ktp`, `ktr`, `tmt`, `rmh`, `kode_post`, `image`, `remember_token`, `password`, `email_verified_at`, `proses`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'Admin', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'AzBNtVQAQcUmvjiA4HCaPth0tEONqvgosDe5V0bsGbEURwJJcfoPw8n1Ysl2', '$2y$10$raBf7d85ytR9eFAaPezzxODSDhK4v.eqUkd/9jIxsnl7mc3RDRF4a', NULL, NULL, '2022-06-29 04:59:35', '2022-06-29 05:02:52'),
-(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Ketapang', '1', 'BTNSASDASDHAJSDK', '081256390909', 'PEGADAIAN', NULL, 'ketua', 4, 4, 'ponzy22@gmail.com', 'apelah@assu', 'Ketapang', 'dimana dak tau', '76767', '03030303030', '3333333', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1656504172d795ebcce6432ef85d4bd6cd6f5fe363.jpg', 'Uu2mYDV2JvIh41cPvTPJnE8r9RT8VaaFe1u9NhpkOFkihnIU4e6IF3Z6JBEk', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-06-29 05:02:52'),
+(1, 'Administrator', 'Admin', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3lcvY0vUKilCKjkERWSE65m9M3t0KaNlYtys34YtoiaSky8iiQlBAokoebxH', '$2y$10$raBf7d85ytR9eFAaPezzxODSDhK4v.eqUkd/9jIxsnl7mc3RDRF4a', NULL, NULL, '2022-06-29 04:59:35', '2022-06-29 05:02:52'),
+(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Ketapang', '1', 'BTNSASDASDHAJSDK', '081256390909', 'PEGADAIAN', NULL, 'ketua', 4, 4, 'ponzy22@gmail.com', 'apelah@assu', 'Ketapang', 'dimana dak tau', '76767', '03030303030', '3333333', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1656916980photo.png', '5O8vHnLX5wxRs73Dz1kZvqGLLF3lHFuqU9ZjEe3tRih9qRFRcM8ob1FuaY5B', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-03 23:43:00'),
 (34, 'Mahasiswa', 'asdas', '12321312312131', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, '21312@fsdfsd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$n3aMIbkSH5rf9.c78/Y97eSjCJmC3IqYIs9hPKuY4k7HuPGs/WnXO', NULL, NULL, '2022-06-30 01:56:38', '2022-06-30 01:56:38'),
-(35, 'Mahasiswa', 'ererwerwe', '1234567890', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'qwe@gfsdg.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$.M4.E0jPeCRjUTljrD.Rwu3ci2ufcvvg8EtN0xlZgmPFjOgsKG8LW', NULL, NULL, '2022-07-01 02:05:29', '2022-07-01 02:05:29'),
-(36, 'User', '121212', '44444444444444444', NULL, '2022-07-04', '1212', NULL, '1212', '1212', NULL, NULL, NULL, 2, 1, '123123212@sdadw', NULL, '1212', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$wmuDRj/PSvvwi4hKbCW7nuaVw7Qf1tWdfrLQiHmDvL0uKypSZoW8i', NULL, NULL, '2022-07-01 02:09:16', '2022-07-03 09:44:41');
+(35, 'Mahasiswa', 'ererwerwe', '1234567890', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, 'qwe@gfsdg.com', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$.M4.E0jPeCRjUTljrD.Rwu3ci2ufcvvg8EtN0xlZgmPFjOgsKG8LW', NULL, NULL, '2022-07-01 02:05:29', '2022-07-01 02:05:29');
 
 -- --------------------------------------------------------
 
@@ -1348,7 +1659,7 @@ CREATE TABLE `xnxxes` (
 --
 
 INSERT INTO `xnxxes` (`id`, `kode_elemen`, `kriteria`, `user_id`, `unikom_id`, `unikom_name`, `asesmen_name`, `skema_name`, `skema_id`, `image`, `status`, `created_at`, `updated_at`, `data_register_id`, `kode`, `koreksi`, `unikom_kode`) VALUES
-(962, '13319', '<p>asd</p>', 33, 90, 'sdasd', 'sdasd', 'Junior Web Programmer', 19, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-07-02 22:48:52', '2022-07-03 01:51:37', 3319, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', '354354354354');
+(1066, '13319', '<p>-</p>', 33, 92, 'Menggunakan Struktur Data', '-', 'Junior Web Programmer', 19, NULL, '<label class=\'badge badge-outline-danger badge-pill\'>Tidak Kompeten</label>', '2022-07-05 09:43:32', '2022-07-05 09:43:32', 3319, 133, NULL, 'J.620100.004.02');
 
 --
 -- Indexes for dumped tables
@@ -1390,6 +1701,12 @@ ALTER TABLE `cek_pendaftarans`
 -- Indexes for table `data_registers`
 --
 ALTER TABLE `data_registers`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_registers_backup`
+--
+ALTER TABLE `data_registers_backup`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1595,6 +1912,12 @@ ALTER TABLE `sex`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `simadu__pegawai`
+--
+ALTER TABLE `simadu__pegawai`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `skemas`
 --
 ALTER TABLE `skemas`
@@ -1685,13 +2008,13 @@ ALTER TABLE `banner`
 -- AUTO_INCREMENT for table `beritas`
 --
 ALTER TABLE `beritas`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
 
 --
 -- AUTO_INCREMENT for table `cek_pendaftarans`
@@ -1703,13 +2026,13 @@ ALTER TABLE `cek_pendaftarans`
 -- AUTO_INCREMENT for table `dokumen__uploads`
 --
 ALTER TABLE `dokumen__uploads`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `elemen`
 --
 ALTER TABLE `elemen`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -1733,7 +2056,7 @@ ALTER TABLE `filelains`
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `formapl2s`
@@ -1763,7 +2086,7 @@ ALTER TABLE `galeri_fotos`
 -- AUTO_INCREMENT for table `group_galeris`
 --
 ALTER TABLE `group_galeris`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `info2`
@@ -1877,7 +2200,7 @@ ALTER TABLE `skemas`
 -- AUTO_INCREMENT for table `skknis`
 --
 ALTER TABLE `skknis`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -1907,13 +2230,13 @@ ALTER TABLE `tuk`
 -- AUTO_INCREMENT for table `unikoms`
 --
 ALTER TABLE `unikoms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=189;
 
 --
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=704;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=760;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -1931,7 +2254,7 @@ ALTER TABLE `verifikasi_skemas`
 -- AUTO_INCREMENT for table `xnxxes`
 --
 ALTER TABLE `xnxxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=963;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1067;
 
 --
 -- Constraints for dumped tables

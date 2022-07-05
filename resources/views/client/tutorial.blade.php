@@ -35,7 +35,7 @@
                                 @if ($asu->image)
                                     <img src="{{ $asu->image }}" width="100%">
                                 @else
-                                    <h1 class="text-danger">TIDAK ADA GAMBAR</h1>
+                                <img src="{{ asset('general/assets/images/no-image-min.jpg') }}" width="100%">
                                 @endif
                             @endforeach
                         </div>

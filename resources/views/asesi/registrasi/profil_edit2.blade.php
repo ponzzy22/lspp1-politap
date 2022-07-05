@@ -1,7 +1,13 @@
-@extends('layout/asesi1')
+@extends('layout/asesi')
+
 @section('judul')
     Edit Data Pribadi | LSP-POLITAP
 @endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -13,27 +19,27 @@
         <!-- /////////////////////////////////// -->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
-                <li class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">FR.APL.01</li>
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('dashasesi.index') }}">Dashboard</a>
+                </li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">FR.APL.01</li>
             </ol>
         </nav>
     </div><br>
-    <p>Pada bagian ini,  cantumlan data pribadi, data pendidikan formal serta data pekerjaan anda pada saat ini.</p>
+    <p>Pada bagian ini, cantumlan data pribadi, data pendidikan formal serta data pekerjaan anda pada saat ini.</p>
     <form action="{{ route('formulirapl3.update') }}" method="POST" enctype="multipart/form-data" class="form-sample">
         @csrf
         @method('put')
         <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
             <div class="card">
-                <div style="background-color: #3F4E4F" class="card-header" role="tab" id="heading-11">
-                    <h6 style="background-color: #3F4E4F" class="mb-0">
-                        <a style="background-color: #3F4E4F" class="collapsed font-weight-bold" data-toggle="collapse"
+                <div style="background-color: #563fbb" class="card-header" role="tab" id="heading-11">
+                    <h6 style="background-color: #563fbb" class="mb-0">
+                        <a style="background-color: #563fbb" class="collapsed font-weight-bold" data-toggle="collapse"
                             href="#collapse-1111111" aria-expanded="true" aria-controls="collapse-1111111">
                             a. Data Pribadi
                         </a>
                     </h6>
                 </div>
-                <div id="collapse-" class="" role="tabpanel" aria-labelledby="heading-11"
-                    data-parent="#accordion-4">
+                <div id="collapse-" class="" role="tabpanel" aria-labelledby="heading-11" data-parent="#accordion-4">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
@@ -284,11 +290,11 @@
 
         <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
             <div class="card">
-                <div style="background-color: #3F4E4F" class="card-header" role="tab" id="heading-11">
-                    <h6 style="background-color: #3F4E4F" class="mb-0">
-                        <a style="background-color: #3F4E4F" class="collapsed font-weight-bold" data-toggle="collapse"
+                <div style="background-color: #563fbb" class="card-header" role="tab" id="heading-11">
+                    <h6 style="background-color: #563fbb" class="mb-0">
+                        <a style="background-color: #563fbb" class="collapsed font-weight-bold" data-toggle="collapse"
                             href="#collapse-1111111" aria-expanded="true" aria-controls="collapse-1111111">
-                           b. Data Pekerjaan Sekarang
+                            b. Data Pekerjaan Sekarang
                         </a>
                     </h6>
                 </div>
@@ -382,7 +388,7 @@
                             </div>
                         </div>
 
-                        <a href=""><button class="btn btn-info btn-block"><i class="fas fa-save"></i>
+                        <a href=""><button class="btn btn-rounded btn-info btn-block"><i class="fas fa-save"></i>
                                 Simpan</button></a>
     </form>
     </div>

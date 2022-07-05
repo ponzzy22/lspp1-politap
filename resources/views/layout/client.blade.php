@@ -174,6 +174,7 @@
                                 <a href="{{ route('tentang') }}">Tentang LSP-POLITAP</a>
                                 <a href="{{ route('struktur') }}">Struktur Organisasi</a>
                                 <a href="{{ route('pengelola') }}">Pengelola LSP-POLITAP</a>
+                                <a href="{{ route('kontak') }}">Kontak Kami</a>
                             </div>
                         </li>
                         <li class="nav-item @yield('layanan') dropdown">
@@ -198,8 +199,9 @@
                         </li>
                         @if (Auth::user())
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropbtn" style="color: #40124fda"><i class="fa fa-user"></i> Akun
-                                    Anda</a>
+                                <a class="nav-link dropbtn" style="color: #40124fda"><i class="fa fa-user"></i>
+                                {{ Auth::user()->role }}
+                                </a>
                                 <div class="dropdown-content">
                                     <a href="{{ route('profil.edit2') }}">Daftar Sertifikasi</a>
                                     <a href="{{ route('dashasesi.index') }}">Dashboard Asesi</a>
@@ -282,7 +284,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>Copyright &copy; 2022 Lembaga Sertifikasi Profesi Politeknik Negeri Ketapang</a><br>
+                    <p>Copyright © 2022
+                        &diamondsuit; All Right Reserved</a><br>
                         Designed & Developed By : <a href="http://informatika.politap.ac.id/">Teknologi Informatika</a>
                         <a href="https://politap.ac.id/">Politeknik Negeri Ketapang</a>
                     </p>

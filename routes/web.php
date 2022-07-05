@@ -53,6 +53,7 @@ Route::get('/', [ClientController::class, 'clientutama'])->name('/');
 Route::get('tentang', [ClientController::class, 'tentang'])->name('tentang');
 Route::get('tutorial', [ClientController::class, 'tutorial'])->name('tutorial');
 Route::get('logo', [ClientController::class, 'logo'])->name('logo');
+Route::get('kontak', [ClientController::class, 'kontak'])->name('kontak');
 Route::get('pengelola', [ClientController::class, 'pengelola'])->name('pengelola');
 Route::get('pengelola_detail/{pengelola_detail}', [ClientController::class, 'pengelola_detail'])->name('pengelola_detail');
 Route::get('struktur', [ClientController::class, 'struktur'])->name('struktur');
@@ -104,12 +105,14 @@ Route::group(['middleware' => 'role:admin'], function () {
     // <------------------ PENGGUNA  ------------------>
     Route::resource('user', UserController::class);
     Route::put('update2/{update2}', [UserController::class, 'update2'])->name('user_update2');
+    // <------------------ CRUD FORM APL-01  ------------------>
+    Route::resource('form1', Formapl1Controller::class);
 
-    // <------------------ FORM APL-01  ------------------>
+    // <------------------ FORMAT APL-01  ------------------>
+    Route::get('jwp1/{jwp1}', [Formapl1Controller::class, 'jwp1'])->name('jwp1');
+    // <------------------ FORMAT APL-02  ------------------>
     Route::resource('formapl2', Formapl2Controller::class);
     Route::post('formapl2_save',[Formapl2Controller::class, 'formapl2_save'])->name('formapl2_save');
-    Route::get('jwp1/{jwp1}', [Formapl1Controller::class, 'jwp1'])->name('jwp1');
-    // <------------------ FORM APL-02  ------------------>
     Route::get('jwp2/{jwp2}', [Formapl2Controller::class, 'jwp2'])->name('jwp2');
     Route::get('dgm2/{dgm2}', [Formapl2Controller::class, 'dgm2'])->name('dgm2');
 
@@ -119,10 +122,12 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::get('registrasi_baru', [ValidasiController::class, 'registrasi_baru'])->name('registrasi.baru');
     Route::get('proses_show/{proses_show}', [ValidasiController::class, 'proses_show'])->name('proses_show');
     Route::get('sertifikat_show/{sertifikat_show}', [ValidasiController::class, 'sertifikat_show'])->name('sertifikat_show');
+    Route::get('blacklist_show/{blacklist_show}', [ValidasiController::class, 'blacklist_show'])->name('blacklist_show');
     Route::get('pengguna_ditolak', [ValidasiController::class, 'list_tolak'])->name('list.tolak');
     Route::get('pengguna_divalidasi', [ValidasiController::class, 'list_valid'])->name('list.valid');
     Route::get('pengguna_bersertifikat', [ValidasiController::class, 'list_sertifikat'])->name('list.sertifikat');
-    Route::put('update2/{finish}', [ValidasiController::class, 'update2'])->name('finish.update');
+    Route::get('pengguna_diblacklist', [ValidasiController::class, 'list_blacklist'])->name('list.blacklist');
+    Route::put('update2/{update2}', [ValidasiController::class, 'update2'])->name('finish.update');
     Route::put('tolak/{tolak}', [ValidasiController::class, 'update3'])->name('tolak.update');
     Route::put('koreksiformulir_update/{koreksiformulir_update}', [ValidasiController::class, 'koreksiformulir_update'])->name('koreksiformulir_update.update');
     Route::put('koreksiformulirapl2_update/{koreksiformulirapl2_update}', [ValidasiController::class, 'koreksiformulirapl2_update'])->name('koreksiformulirapl2_update');

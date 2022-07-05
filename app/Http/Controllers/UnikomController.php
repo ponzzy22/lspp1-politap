@@ -19,11 +19,11 @@ class UnikomController extends Controller
 
     public function store(Request $request) {
         $request->validate([
-            'kode_unikom' => ['required', 'unique:unikoms,kode_unikom'],
+            // 'kode_unikom' => ['required', 'unique:unikoms,kode_unikom'],
             'unikom' => ['required'],
             'skema_id' => ['required']
         ],[
-            'kode_unikom.required' => 'Kode Unitnya Mana?',
+            // 'kode_unikom.required' => 'Kode Unitnya Mana?',
             'unikom.required' => 'Nama Unitnya Mana?',
         ]);
         $unikom = Unikom::create([

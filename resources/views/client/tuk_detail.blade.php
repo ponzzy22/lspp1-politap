@@ -19,7 +19,7 @@
                                     @if ($tuk->image)
                                     <img src="{{ asset($tuk->image) }}" alt="">
                                     @else
-                                    <img src="{{ asset('general/assets/images/gedung1.jpg') }}" alt="">
+                                    <img src="{{ asset('general/assets/images/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg') }}" alt="">
                                     @endif
                                 </div>
                             </div>

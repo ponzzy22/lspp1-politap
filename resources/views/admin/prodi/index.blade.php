@@ -66,7 +66,7 @@
     <!-- /////////////////////////////////// -->
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title"><i class="fa fa-tasks "> List Program Studi</i></h4>
+            <h4 class="card-title"><i class="fas fa-table"></i> Table Program Studi</h4>
             <div class="row">
                 <div class="col-12">
                     <div class="table-responsive">

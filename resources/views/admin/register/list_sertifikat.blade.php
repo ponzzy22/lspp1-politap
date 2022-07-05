@@ -31,10 +31,10 @@
         <div class="card-body">
             <div class="card-description">
                 <p><i class="fas fa-info-circle"></i> Informasi :
-                    <ul>
-                        <li>Pada tabel ini menampilkan data pemegang sertifikat atau data sertifikasi yang kompeten.
-                        <li>Anda dapat melakukan proses backup data dan rekap laporan pada tabel ini.
-                    </ul>
+                <ul>
+                    <li>Pada tabel ini menampilkan data pemegang sertifikat atau data sertifikasi yang kompeten.
+                    <li>Anda dapat melakukan proses backup data dan rekap laporan pada tabel ini.
+                </ul>
                 </p>
             </div>
             <div class="row grid-margin">
@@ -90,8 +90,7 @@
                                                             aria-labelledby="dropdownMenuSizeButton3">
                                                             {{-- <a href="{{ route('validasi.edit', $asu->id) }}"><button type="submit" class="btn btn-warning btn-sm btn-block"><i class="fa fa-edit "></i>  Edit </button></a> --}}
                                                             <a href="{{ route('sertifikat_show', $asu->id) }}"><button
-                                                                    type="submit"
-                                                                    class="btn btn-info  btn-block"><i
+                                                                    type="submit" class="btn btn-info  btn-block"><i
                                                                         class="fa fa-eye "></i> Detail Data</button></a>
                                                             <form action="{{ route('validasi.destroy', $asu->id) }}"
                                                                 method="POST"

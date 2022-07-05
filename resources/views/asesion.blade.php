@@ -1,7 +1,13 @@
-@extends('layout.asesi1')
+@extends('layout.asesi')
+
 @section('judul')
-    LSP P1-POLITAP | ASESI
+    ASESI | LSP P1-POLITAP
 @endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">
@@ -9,8 +15,9 @@
             <i class="fas fa-user"></i> Welcome, {{ Auth::user()->name }}
         </h4>
         <nav aria-label="breadcrumb">
-            <ol class="breadcrumb breadcrumb-custom  bg-inverse-black font-weight-bold">
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+            <ol class="breadcrumb breadcrumb-custom  bg-danger">
+                <li style="color: #f64d4d" class="breadcrumb-item"><a href="{{ route('admin') }}">LSP POLITAP</a></li>
+                <li style="color: #fff" class="breadcrumb-item active" aria-current="page">Dashboard</li>
             </ol>
         </nav>
     </div><br>
@@ -18,9 +25,7 @@
     <div class="row">
         <div class="card col-md-7">
             <div class="card-body">
-                <div class="card-title">
-                    <h4>Instruksi Pendaftaran Sertifikasi Skema</h4>
-                </div>
+                <h4 class="card-title"><i class="fas fa-info-circle"></i> Informasi</h4>
                 <hr>
                 <ol>
                     <li class="font-weight-bold">Sebelum mendaftar sertifikasi skema, harap dilengkapi data "Profil Anda"
@@ -28,38 +33,26 @@
                     <li class="font-weight-bold">Sebelum mendaftar harap diperhatikan dan dipelajari unit-unit skema yang
                         akan anda dipilih.</li>
                     <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan menekaan
-                        tombol "Daftar Sertifkasi" yang terletak disebelah kanan.</li>
-                    <li class="font-weight-bold">Jika masih bingun dalam proses mendaftar di aplikasi maka anda dapat memilih tombol
+                        tombol "Pendaftaran Sertifkasi" yang terletak didalam menu Assesment.</li>
+                    <li class="font-weight-bold">Jika masih bingun dalam proses mendaftar di aplikasi maka anda dapat
+                        memilih tombol
                         bantuan yang ada dibawah ini.</li>
                 </ol>
-                <button class="btn btn-sm btn-warning"><i class="fas fa-play-circle"></i> Video Tutorial Penggunaan Aplikasi</button>
+                <button class="btn btn-sm btn-warning"><i class="fas fa-play-circle"></i> Video Tutorial Penggunaan
+                    Aplikasi</button>
                 <button class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button>
             </div>
         </div>
-
-        <div class="card col-md-5">
-            <div class="card-body">
-                <div class="card-title">
-                    <h4>Daftar Sertifikasi Disini</h4>
-                </div>
-                <hr>
-                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/logo/lsp-team.jpg') }}" width="300px" alt=""></a>
-            </div>
-        </div>
-    </div>
-    <br>
-
-    <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-5">
             <div class="card">
                 <div class="card-body">
-                    <br>
+                    <h4 class="card-title"><i class="fas fa-user"></i> Profil Anda</h4>
                     {{-- <-------------------- PROFIL --------------------> --}}
                     <div class="d-flex flex-row">
                         @if (Auth::user()->image)
-                        <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
+                            <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
                         @else
-                        <img src="{{ asset('images/back/photo.png') }}" class="img-lg rounded" alt="image">
+                            <img src="{{ asset('images/back/photo.png') }}" class="img-lg rounded" alt="image">
                         @endif
                         <div class="ml-3">
                             <h6 class="text-danger font-weight-bold">{{ Auth::user()->name }}</h6>
@@ -80,15 +73,24 @@
                 </div>
             </div>
         </div>
+    </div><br>
 
-
-
+    <div class="row">
+        {{-- <div class="card col-md-5">
+            <div class="card-body">
+                <h4 class="card-title"><i class="fas fa-table"></i> Daftar Disini</h4>
+                <hr>
+                <a href="{{ route('profil.edit2') }}"><img src="{{ asset('images/logo3/daftar-sekarang.png') }}"
+                        width="300px" alt=""></a>
+            </div>
+        </div> --}}
         {{-- <-------------------- LENGKAPI DATA PENDAFTARAN --------------------> --}}
         @foreach ($datareg as $asu)
-            <div class="card col-md-8">
+            <div class="card col-md-7">
                 <div class="card-body">
                     <div class="row">
-                        <a style="padding-left: 0%" href="{{ route('registrasi.show', Crypt::encryptString($asu->id)) }}"><button
+                        <a style="padding-left: 0%"
+                            href="{{ route('registrasi.show', Crypt::encryptString($asu->id)) }}"><button
                                 class="btn btn-success btn-rounded btn-sm">
                                 <i class="fas fa-play-circle"></i> Lanjutkan Pengisian Data Pendaftaran Anda </button></a>
                         {{-- <a href="{{ route('formulirapl2edit', $asu->id) }}"><button
@@ -143,12 +145,12 @@
 
         {{-- <-------------------- MENUNGGU VALIDASI --------------------> --}}
         @foreach ($datareg1 as $asu)
-            <div class="card col-md-8">
+            <div class="card col-md-7">
                 <div class="card-body">
                     <div class="row">
-                        <a href="{{ route('rekap_pendaftaran', $asu->id) }}"><button
+                        {{-- <a href="{{ route('rekap_pendaftaran', $asu->id) }}"><button
                                 class="btn btn-info btn-rounded btn-sm"><i class="fa fa-book "></i> Rekap Pendaftaran
-                            </button></a>
+                            </button></a> --}}
                         <div class="btn btn-danger btn-rounded btn-sm" data-toggle="modal"
                             data-target="#datareg-{{ $asu->id }}"><i class="fa fa-eraser "></i> Batalkan Pendaftaran
                         </div>
@@ -196,7 +198,7 @@
 
         {{-- <-------------------- PENDAFTARAN DITOLAK --------------------> --}}
         @foreach ($datareg3 as $asu)
-            <div class="card col-md-8">
+            <div class="card col-md-7">
                 <div class="card-body">
                     <div class="row">
                         <a style="padding-left: 0%" href="{{ route('data_edit_tolak', $asu->id) }}"><button
@@ -252,11 +254,11 @@
 
         {{-- <-------------------- BERHASIL DIVALIDASI --------------------> --}}
         @foreach ($datareg2 as $asu)
-            <div class="card col-md-8">
+            <div class="card col-md-7">
                 <div class="card-body">
                     <div class="row">
                         <a href="{{ route('rekap_pendaftaran', $asu->id) }}"><button
-                                class="btn btn-info btn-rounded btn-sm"><i class="fa fa-book "></i> Rekap Pendaftaran
+                                class="btn btn-info btn-rounded btn-sm"><i class="fa fa-book "></i> Print Bukti Pendaftaran
                             </button></a>
                         <a href="{{ route('info_sertifikasi', $asu->id) }}"><button
                                 class="btn btn-warning btn-rounded btn-sm"><i class="fa fa-info-circle "></i> Informasi
@@ -303,42 +305,37 @@
                 </div>
             </div>
         @endforeach
-
-        {{-- <-------------------- SERTIFIKAT --------------------> --}}
-        <!-- @foreach ($datareg4 as $asu)
-        <div class="col-md-4 grid-margin stretch-card">
-            <div class="card">
+        {{-- <-------------------- BLACKLIST --------------------> --}}
+        @foreach ($datareg5 as $asu)
+            <div class="card col-md-7">
                 <div class="card-body">
-                    <div class="btn btn-warning btn-rounded btn-sm" data-toggle="modal"
-                            data-target="#exampleModal2z-{{ $asu->id }}"><i class="fa fa-info-circle "></i> Info
-                        </div>
-                    <div class="d-flex flex-row">
-                        <img src="../images/faces/face11.html" class="img-lg rounded" alt="profile image">
-                        <div class="ml-3">
-                            <h6>Maria</h6>
-                            <p class="text-muted">maria@gmail.com</p>
-                            <p class="mt-2 text-primary font-weight-bold">{{ $asu->skema_name }}</p>
+                    <div class="row">
+                        <button
+                                class="btn btn-warning btn-rounded btn-sm" data-toggle="modal"
+                                data-target="#datareg223-{{ $asu->id }}"><i class="fa fa-info-circle "></i>Informasi
+                                Detail
+                            </button><br>
+                    </div><br>
+                    <div class="row">
+                        <h4 class="card-title mb-0">{{ $asu->skema_name }}</h4>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center"><div class="d-inline-block">{!! $asu->status !!}
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        @endforeach -->
-    </div><br>
-
-
-
-
-    {{-- <--------------- FOOTER ---------------> --}}
-
-    <div class="card col-md-12">
-        <div class="card-body">
-            <h6 class="badge  badge-outline-info font-weight-bold">Kontak Admin LSP-POLITAP</h6>
-            <br><br>
-            <p style="font-size: 20px"><i class="fab fa-whatsapp-square"> 08965386474683</i></p>
-            <p style="font-size: 20px"><i class="fas fa-envelope-square"> lsp@politap.ac.id</i></p>
+        @endforeach
+        {{-- <--------------- FOOTER ---------------> --}}
+        <div class="card col-md-5">
+            <div class="card-body">
+                <h4 class="card-title"><i class="fas fa-mobile"></i> Kontak Admin</h4>
+                <br><br>
+                <p style="font-size: 20px"><i class="fab fa-whatsapp-square"> 08965386474683</i></p>
+                <p style="font-size: 20px"><i class="fas fa-envelope-square"> lsp@politap.ac.id</i></p>
+            </div>
         </div>
     </div>
+
 
     {{-- <--------------- MODAL HAPUS LENGKAPI DATA ---------------> --}}
     @foreach ($datareg as $asu)
@@ -360,7 +357,8 @@
                         <form action="{{ route('registrasi.destroy', $asu->id) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i>
+                                Hapus
                                 Pendaftaran</button>
                         </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
@@ -389,9 +387,9 @@
                         <form action="{{ route('registrasi.destroy', $asu->id) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i>
+                                Hapus
                                 Pendaftaran</button>
-
                         </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                     </div>
@@ -400,7 +398,7 @@
         </div>
     @endforeach
 
-{{-- <--------------- MODAL SERTIFIKASI ---------------> --}}
+    {{-- <--------------- MODAL SERTIFIKASI ---------------> --}}
     @foreach ($datareg4 as $asu)
         <div class="modal fade" id="exampleModal2z-{{ $asu->id }}" tabindex="-1" role="dialog"
             aria-labelledby="ModalLabel" aria-hidden="true">
@@ -421,9 +419,41 @@
                             @csrf
                             @method('put')
                             <input type="hidden" name="status" value="selesai">
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i>
+                                Hapus
                                 Pendaftaran</button>
+                        </form>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
 
+    {{-- <--------------- MODAL BLACKLIST ---------------> --}}
+    @foreach ($datareg5 as $asu)
+        <div class="modal fade" id="datareg223-{{ $asu->id }}" tabindex="-1" role="dialog"
+            aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel"><i class="fas fa-trash"></i>
+                            {{ $asu->skema_name }}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        {!! $asu->keterangan !!}
+                    </div>
+                    <div class="modal-footer">
+                        <form action="{{ route('registrasi.update', $asu->id) }}" method="POST">
+                            @csrf
+                            @method('put')
+                            <input type="hidden" name="status" value="selesai">
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i>
+                                Hapus
+                                Pendaftaran</button>
                         </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                     </div>
@@ -452,9 +482,9 @@
                         <form action="{{ route('registrasi.destroy', $asu->id) }}" method="POST">
                             @csrf
                             @method('delete')
-                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i> Hapus
+                            <button type="submit" class="btn btn-success btn-block"><i class="fa fa-trash "></i>
+                                Hapus
                                 Pendaftaran</button>
-
                         </form>
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
                     </div>

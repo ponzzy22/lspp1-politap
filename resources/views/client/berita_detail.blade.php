@@ -18,8 +18,15 @@
                     <label style="font-size: 21px" class="font-weight-bold" for="">Artikel</label>
                     <ul>
                         @foreach ($artikel as $asu)
-                            <a href='{{ route('berita_detail', Crypt::encryptString($asu->id)) }}'
-                                style="font-size: 14px">{{ $asu->title }}</a>
+                        <table>
+                            <tr>
+                                <td><img src="{{ asset($asu->image) }}" width="350px"></td>
+                            </tr>
+                            <tr>
+                                <td><a href='{{ route('berita_detail', Crypt::encryptString($asu->id)) }}'
+                                    style="font-size: 14px">{{ $asu->title }}</a></td>
+                            </tr>
+                        </table><hr>
                         @endforeach
                     </ul>
                 </div>

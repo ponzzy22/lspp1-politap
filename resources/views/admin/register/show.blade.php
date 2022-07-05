@@ -187,7 +187,7 @@
                                 <h4 class="card-title"></h4>
                             </div><br>
                             <a href="{{ route('koreksiformulir', $validasi->id) }}"><button
-                                    class="btn btn-warning btn-block btn-sm"><i class="fas fa-edit"></i> Koreksi Data
+                                    class="btn btn-warning btn-rounded btn-block btn-sm"><i class="fas fa-edit"></i> Koreksi Data
                                     Formulir</button></a>
                             <div class="mt-4 py-2 border-top border-bottom">
                                 <h4 class="card-title"><i class="far fa-id-card "></i> Bukti Persyaratan Dasar Pemohon
@@ -228,7 +228,7 @@
                                 </div>
                             </div>
                             <div class="mt-4 py-2 border-top border-bottom">
-                                <table class="table table-striped">
+                                <table class="table table-responsive">
                                     <thead>
                                         <tr>
                                             <th style="width: 10px">#</th>

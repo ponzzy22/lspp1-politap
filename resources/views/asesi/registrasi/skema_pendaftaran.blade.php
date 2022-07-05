@@ -1,4 +1,13 @@
-@extends('layout/admin2')
+@extends('layout/admin')
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
+@section('judul')
+    Pendaftaran Skema | LSP-POLITAP
+@endsection
+
 @include('layout/verifikasi')
 @section('isi')
 

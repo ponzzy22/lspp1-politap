@@ -71,11 +71,11 @@
                             <div class="col-md-12">
                                 <label for="">Judul Berita</label>
                                 <input type="text" class="form-control" placeholder="Judul berita" name="title"
-                                    maxlength="50">
+                                    maxlength="75">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Excerpt</label>
-                                <input type="text" class="form-control" maxlength="50" placeholder="Excerpt"
+                                <input type="text" class="form-control" maxlength="100" placeholder="Excerpt"
                                     name="excerpt">
                             </div><br>
                             <label for="">Isi Konten Berita</label>

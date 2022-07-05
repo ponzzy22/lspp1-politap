@@ -1,4 +1,13 @@
-@extends('layout/asesi2')
+@extends('layout/asesi')
+
+@section('judul')
+    Pilihan Skema | LSP-POLITAP
+@endsection
+
+@section('sidebar')
+    sidebar-mini
+@endsection
+
 @section('isi')
     @include('layout/verifikasi')
     <div class="page-header">

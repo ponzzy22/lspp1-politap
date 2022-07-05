@@ -23,10 +23,10 @@ class GaleriController extends Controller
         // dd($request->all());
         $request->validate([
             'galeri' => ['required'],
-            'image' => ['max:1000']
+            'image' => ['max:10000']
         ],[
             'galeri.required' => 'Masukan Judul Album',
-            'image.max' => 'Ukuran gambar maksimal 1 mb',
+            'image.max' => 'Ukuran gambar maksimal 10 mb',
         ]);
         if ($request->has('image')) {
             $image = $request->image;
@@ -66,10 +66,10 @@ class GaleriController extends Controller
         // dd($request->all());
         $request->validate([
             'galeri' => ['required'],
-            'image' => ['max:1000']
+            'image' => ['max:10000']
         ],[
             'galeri.required' => 'Masukan Judul Album',
-            'image.max' => 'Ukuran gambar maksimal 1 mb',
+            'image.max' => 'Ukuran gambar maksimal 10 mb',
         ]);
         if ($request->has('image')) {
             $image = $request->image;

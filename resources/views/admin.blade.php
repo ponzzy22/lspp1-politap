@@ -107,10 +107,10 @@ Dashboard | Admin LSP POLITAP
         {{-- <---------------------- NEW REGISTER ----------------------> --}}
         <div class="col-lg-7 col-md-12 col-12 col-sm-12">
             <div class="card">
-                <div style="background-color: #3a862e " class="card-header">
+                <div style="background-color: #f64d4d " class="card-header">
                     <div class="row">
                         <a href="">
-                            <h4 class="text text-white"><i class="fas fa-id-card"></i> Register Terbaru </h4>
+                            <h5 class="text text-white"><i class="fas fa-id-card"></i> Register Terbaru </h5>
                         </a>
                     </div>
                 </div>
@@ -170,8 +170,8 @@ Dashboard | Admin LSP POLITAP
         {{-- <---------------------- JADWAL SERTIFIKASI ----------------------> --}}
         <div class="col-lg-5 col-md-12 col-12 col-sm-12">
             <div class="card">
-                <div style="background-color: #3a862e " class="card-header">
-                    <h4 class="text text-white"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h4>
+                <div style="background-color: #f64d4d " class="card-header">
+                    <h5 class="text text-white"><i class="fas fa-calendar-alt"></i> Jadwal Sertifikasi</h5>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -212,9 +212,9 @@ Dashboard | Admin LSP POLITAP
         {{-- PEMEGANG SERTIFIKAT --}}
         <div class="col-md-7 grid-margin grid-margin-md-0 stretch-card">
             <div class="card">
-                <div style="background-color: #3a862e " class="card-header">
+                <div style="background-color: #f64d4d " class="card-header">
                     <div class="d-flex justify-content-between">
-                        <h4 class="text text-white"><i class="fas fa-certificate"></i> Pemegang Sertifikat</h4>
+                        <h5 class="text text-white"><i class="fas fa-certificate"></i> Pemegang Sertifikat</h5>
                     </div>
                 </div>
                 <div class="card-body">
