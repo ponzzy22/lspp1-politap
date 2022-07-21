@@ -25,7 +25,10 @@
             </ol>
         </nav>
     </div><br>
-    <p>Pada bagian ini, cantumlan data pribadi, data pendidikan formal serta data pekerjaan anda pada saat ini.</p>
+    <ul>
+        <li>Pada bagian ini, cantumkanlah data pribadi, data pendidikan formal serta data pekerjaan anda pada saat ini.</li>
+        <li>Tanda yang memiliki Bintang/* tidak wajib diisi </li>
+    </ul>
     <form action="{{ route('formulirapl3.update') }}" method="POST" enctype="multipart/form-data" class="form-sample">
         @csrf
         @method('put')
@@ -187,8 +190,11 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Warga Negara</label>
                                     <div class="col-sm-9">
-                                        <input type="text" maxlength="20" class="form-control" name="negara"
-                                            value="{{ old('negara', Auth::user()->negara) }}">
+                                        <select name="negara" class="form-control" id="">
+                                            <option value="{{ old('negara', Auth::user()->negara) }}" holder>{{ old('negara', Auth::user()->negara) }}</option>
+                                            <option value="Indonesia">Indonesia</option>
+                                            <option value="Warga Asing" >Warga Asing</option>
+                                        </select>
                                         @error('negara')
                                             <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                         @enderror
@@ -304,7 +310,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Nama Institusi</label>
+                                    <label class="col-sm-3 col-form-label">Nama Institusi*</label>
                                     <div class="col-sm-9">
                                         <input type="text" maxlength="20" class="form-control" name="institusi"
                                             value="{{ old('institusi', Auth::user()->institusi) }}">
@@ -316,7 +322,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Jabatan</label>
+                                    <label class="col-sm-3 col-form-label">Jabatan*</label>
                                     <div class="col-sm-9">
                                         <input type="text" maxlength="25" class="form-control" name="jabatan"
                                             value="{{ old('jabatan', Auth::user()->jabatan) }}">
@@ -328,7 +334,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Alamat Kantor</label>
+                                    <label class="col-sm-3 col-form-label">Alamat Kantor*</label>
                                     <div class="col-sm-9">
                                         <input type="text" maxlength="50" class="form-control" name="alamat_kantor"
                                             value="{{ old('alamat_kantor', Auth::user()->alamat_kantor) }}">
@@ -340,7 +346,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">No. Telp</label>
+                                    <label class="col-sm-3 col-form-label">No. Telp*</label>
                                     <div class="col-sm-9">
                                         <input type="number" class="form-control" name="telp"
                                             value="{{ old('telp', Auth::user()->telp) }}">
@@ -352,7 +358,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Fax</label>
+                                    <label class="col-sm-3 col-form-label">Fax*</label>
                                     <div class="col-sm-9">
                                         <input type="number" class="form-control" name="fax"
                                             value="{{ old('fax', Auth::user()->fax) }}">
@@ -364,7 +370,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Email</label>
+                                    <label class="col-sm-3 col-form-label">Email*</label>
                                     <div class="col-sm-9">
                                         <input type="email" maxlength="25" class="form-control" name="email3"
                                             value="{{ old('email3', Auth::user()->email3) }}">
@@ -376,7 +382,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Kode Post</label>
+                                    <label class="col-sm-3 col-form-label">Kode Post*</label>
                                     <div class="col-sm-9">
                                         <input type="number" maxlength="20" class="form-control" name="postal"
                                             value="{{ old('postal', Auth::user()->postal) }}">

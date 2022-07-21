@@ -176,8 +176,11 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Warga Negara</label>
                             <div class="col-sm-9">
-                                <input type="text" maxlength="20" class="form-control" name="negara"
-                                    value="{{ old('negara', Auth::user()->negara) }}">
+                                <select name="negara" class="form-control" id="">
+                                    <option value="{{ old('negara', Auth::user()->negara) }}" holder>{{ old('negara', Auth::user()->negara) }}</option>
+                                    <option value="Indonesia">Indonesia</option>
+                                    <option value="Warga Asing" >Warga Asing</option>
+                                </select>
                                 @error('negara')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
                                 @enderror
