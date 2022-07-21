@@ -38,9 +38,15 @@
                         memilih tombol
                         bantuan yang ada dibawah ini.</li>
                 </ol>
-                <button class="btn btn-sm btn-warning"><i class="fas fa-play-circle"></i> Video Tutorial Penggunaan
-                    Aplikasi</button>
-                <button class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button>
+                @foreach ($info as $asu)
+                    <a href="{{ $asu->keterangan }}" target="_blank" rel="noopener noreferrer"><button
+                            class="btn btn-sm btn-warning"><i class="fas fa-play-circle"></i> Video Tutorial Penggunaan
+                            Aplikasi</button></a>
+                @endforeach
+                @foreach ($info2 as $asu)
+                    <a href="{{ asset($asu->image) }}" target="_blank" rel="noopener noreferrer"><button
+                            class="btn btn-sm btn-warning"><i class="fas fa-book-reader"></i> Manual Guide</button></a>
+                @endforeach
             </div>
         </div>
         <div class="col-md-5">
@@ -258,7 +264,8 @@
                 <div class="card-body">
                     <div class="row">
                         <a href="{{ route('rekap_pendaftaran', $asu->id) }}"><button
-                                class="btn btn-info btn-rounded btn-sm"><i class="fa fa-book "></i> Print Bukti Pendaftaran
+                                class="btn btn-info btn-rounded btn-sm"><i class="fa fa-book "></i> Print Bukti
+                                Pendaftaran
                             </button></a>
                         <a href="{{ route('info_sertifikasi', $asu->id) }}"><button
                                 class="btn btn-warning btn-rounded btn-sm"><i class="fa fa-info-circle "></i> Informasi
@@ -310,16 +317,16 @@
             <div class="card col-md-7">
                 <div class="card-body">
                     <div class="row">
-                        <button
-                                class="btn btn-warning btn-rounded btn-sm" data-toggle="modal"
-                                data-target="#datareg223-{{ $asu->id }}"><i class="fa fa-info-circle "></i>Informasi
-                                Detail
-                            </button><br>
+                        <button class="btn btn-warning btn-rounded btn-sm" data-toggle="modal"
+                            data-target="#datareg223-{{ $asu->id }}"><i class="fa fa-info-circle "></i>Informasi
+                            Detail
+                        </button><br>
                     </div><br>
                     <div class="row">
                         <h4 class="card-title mb-0">{{ $asu->skema_name }}</h4>
                     </div>
-                    <div class="d-flex justify-content-between align-items-center"><div class="d-inline-block">{!! $asu->status !!}
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-inline-block">{!! $asu->status !!}
                         </div>
                     </div>
                 </div>
@@ -330,8 +337,8 @@
             <div class="card-body">
                 <h4 class="card-title"><i class="fas fa-mobile"></i> Kontak Admin</h4>
                 <br><br>
-                <p style="font-size: 20px"><i class="fab fa-whatsapp-square"> 08965386474683</i></p>
-                <p style="font-size: 20px"><i class="fas fa-envelope-square"> lsp@politap.ac.id</i></p>
+                <p style="font-size: 20px"><i class="fab fa-whatsapp-square"></i> 08965386474683</p>
+                <p style="font-size: 20px"><i class="fas fa-envelope-square"></i> lsp@politap.ac.id</p>
             </div>
         </div>
     </div>

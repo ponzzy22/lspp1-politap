@@ -42,7 +42,7 @@
                             @method('put')
                             <label class="font-weight-bold text-primary" for="file"><i class="fas fa-images"></i> Input
                                 Gambar</label>
-                            <input type="file" class="form-control" accept=".png, .jpg, .jpeg" name="image"
+                            <input type="file" class="form-control" accept=".png, .jpg, .jpeg, .pdf" name="image"
                                 id="file">
                             <br>
                             <button type="submit" class="btn btn-rounded btn-success btn-block"><i class="fas fa-save"></i>

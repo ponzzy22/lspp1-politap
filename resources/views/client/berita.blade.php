@@ -9,195 +9,154 @@
 
 @section('css')
     <style>
-        section {
-            padding: 100px 0;
+        
+
+        .content-wrapper {
+            margin: 0 auto;
+            max-width: 1200px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            padding: 0.5rem;
         }
 
-        html,
-        body {
-            background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #ffe3ee 100%);
-        }
-
-        h1 {
-            font-size: 200%;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-weight: 400;
-        }
-
-        header p {
-            font-family: "Allura";
-            color: rgba(255, 255, 255, 0.2);
-            margin-bottom: 0;
-            font-size: 60px;
-            margin-top: -30px;
-        }
-
-        .timeline {
+        .news-card {
+            border: 0px solid aqua;
+            margin: 0.5rem;
             position: relative;
+            height: 12rem;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            flex: 1;
+            min-width: 290px;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
         }
 
-        .timeline::before {
-            content: "";
-            background: #C5CAE9;
-            width: 5px;
-            height: 95%;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+        @media (min-width: 900px) {
+
+            .news-card {
+                height: 20rem
+            }
         }
 
-        .timeline-item {
-            width: 100%;
-            margin-bottom: 70px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            float: right;
-            padding: 40px 30px 10px 30px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content .date {
-            right: auto;
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: "";
-            position: absolute;
-            border-style: solid;
-            width: 0;
-            height: 0;
-            top: 30px;
-            left: -15px;
-            border-width: 10px 15px 10px 0;
-            border-color: transparent #f5f5f5 transparent transparent;
-        }
-
-        .timeline-item::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        .timeline-content {
-            position: relative;
-            width: 45%;
-            padding: 10px 30px;
-            border-radius: 4px;
-            background: #f5f5f5;
-            box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
-        }
-
-        .timeline-content::after {
-            content: "";
-            position: absolute;
-            border-style: solid;
-            width: 0;
-            height: 0;
-            top: 30px;
-            right: -15px;
-            border-width: 10px 0 10px 15px;
-            border-color: transparent transparent transparent #f5f5f5;
-        }
-
-        .timeline-img {
-            width: 30px;
-            height: 30px;
-            background: #b60f0f;
-            border-radius: 50%;
-            position: absolute;
-            left: 50%;
-            margin-top: 25px;
-            margin-left: -15px;
-        }
-
-
-        a:hover,
-        a:active,
-        a:focus {
-            background: #8f323a;
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-
-        .timeline-card {
-            padding: 0 !important;
-        }
-
-        .timeline-card p {
-            padding: 0 20px;
-        }
-
-        .timeline-card a {
-            margin-left: 20px;
-        }
-
-        .timeline-item .timeline-img-header {
-            /* background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)), url("https://picsum.photos/1000/800/?random") center center no-repeat; */
-            background-size: cover;
-        }
-
-        .timeline-img-header {
-            height: 200px;
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .timeline-img-header h2 {
-            color: #FFFFFF;
-            position: absolute;
-            bottom: 5px;
-            left: 20px;
-        }
-
-        blockquote {
-            margin-top: 30px;
-            color: #757575;
-            border-left-color: #c1192f;
-            padding: 0 20px;
-        }
-
-        .date {
-            background: #0b0606;
-            display: inline-block;
-            color: #FFFFFF;
-            padding: 10px;
+        .news-card::before {
+            content: '';
             position: absolute;
             top: 0;
-            right: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.7) 80%);
+            ;
+            z-index: 0;
         }
 
-        @media screen and (max-width: 768px) {
-            .timeline::before {
-                left: 50px;
+        .news-card__card-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            /*     background: rgba(255,0,0,.5); */
+        }
+
+        .news-card__image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 3s ease;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            position: relative;
+            z-index: -1;
+        }
+
+        .news-card__text-wrapper {
+            position: absolute;
+            bottom: 0rem;
+            padding: 1rem;
+            color: white;
+            /*     background-color: rgba(0, 0, 0, 0.4); */
+            transition: background-color 1.5s ease;
+        }
+
+        .news-card__title {
+            transition: color 1s ease;
+            margin-bottom: .5rem;
+        }
+
+        .news-card__post-date {
+            font-size: .7rem;
+            margin-bottom: .5rem;
+            color: #CCC;
+        }
+
+        .news-card__details-wrapper {
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 1.5s ease, opacity 1s ease;
+        }
+
+        @media (min-width: 900px) {
+            .news-card:hover .news-card__details-wrapper {
+                max-height: 20rem;
+                opacity: 1;
             }
 
-            .timeline .timeline-img {
-                left: 50px;
+            .news-card:hover .news-card__text-wrapper {
+                background-color: rgba(0, 0, 0, 0.6);
             }
 
-            .timeline .timeline-content {
-                max-width: 100%;
-                width: auto;
-                margin-left: 70px;
+            .news-card:hover .news-card__title {
+                color: yellow;
             }
 
-            .timeline .timeline-item:nth-child(even) .timeline-content {
-                float: none;
+            .news-card:hover .news-card__image {
+                transform: scale(1.2);
+                z-index: -1;
             }
+        }
 
-            .timeline .timeline-item:nth-child(odd) .timeline-content::after {
-                content: "";
-                position: absolute;
-                border-style: solid;
-                width: 0;
-                height: 0;
-                top: 30px;
-                left: -15px;
-                border-width: 10px 15px 10px 0;
-                border-color: transparent #f5f5f5 transparent transparent;
-            }
+        .news-card__excerpt {
+            font-weight: 300;
+        }
+
+        .news-card__read-more {
+            background: black;
+            color: #bbb;
+            display: block;
+            padding: 0.4rem 0.6rem;
+            border-radius: 0.3rem;
+            margin-top: 1rem;
+            border: 1px solid #444;
+            font-size: 0.8rem;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            text-decoration: none;
+            width: 7rem;
+            margin-left: auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .news-card__read-more i {
+            position: relative;
+            left: 0.2rem;
+            color: #888;
+            transition: left 0.5s ease, color 0.6s ease;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .news-card__read-more:hover i {
+            left: 0.5rem;
+            color: yellow;
         }
     </style>
 @endsection
@@ -269,28 +228,33 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div><br><br>
     <!-- ***** Akhir Header ***** -->
 
 
- <!-- ***** Konten ***** -->
+    <!-- ***** Konten ***** -->
     <!-- Berita -->
-    <section class="timeline">
-        <div class="container">
-            @foreach ($berita as $asu)
-            <div class="timeline-item">
-                <div class="timeline-img"></div>
-                <div class="timeline-content timeline-card js--fadeInRight">
-                    <div style="background-image: url('{{ $asu->image }}')" class="timeline-img-header">
-                        <h2 style="font-size: 20px">{{ $asu->title }}</h2>
-                    </div>
-                    <div class="date">{{ $asu->created_at->format('d/M/Y') }}</div>
-                    <p>{{ $asu->excerpt }}</p>
-                    <a class="btn btn-danger" style="margin-left: 70%; margin-bottom: 20px" href="{{ route('berita_detail', Crypt::encryptString($asu->id) ) }}">Selengkapnya</a>
+    <div class="content-wrapper">
+        @foreach ($berita as $asu)
+        <div class="news-card col-4">
+            <a href="#" class="news-card__card-link"></a>
+            <img src="{{ $asu->image }}"
+                alt="" class="news-card__image">
+            <div class="news-card__text-wrapper">
+                <h2 class="news-card__title">{{ $asu->title }}</h2>
+                <div class="news-card__post-date">{{ $asu->created_at->format('d-M-Y') }}</div>
+                <div class="news-card__details-wrapper">
+                    <p class="news-card__excerpt">
+                        {{ $asu->excerpt }}
+                    </p>
+                    <a href="{{ route('berita_detail', Crypt::encryptString($asu->id)) }}" class="news-card__read-more">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
                 </div>
             </div>
-            @endforeach
         </div>
-    </section>
- <!-- ***** Akhir Konten ***** -->
+        @endforeach
+        {{ $berita->links() }}
+    </div><br><br>
+
+
+    <!-- ***** Akhir Konten ***** -->
 @endsection

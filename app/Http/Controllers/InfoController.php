@@ -42,10 +42,10 @@ class InfoController extends Controller
     {
         // dd($request->all());
         $request->validate([
-            'image' => ['required', 'max:1000']
+            'image' => ['required', 'max:3000']
         ],[
             'image.required' => 'Masukan Gambar Berita',
-            'image.max' => 'Ukuran gambar maksimal 1 mb',
+            'image.max' => 'Ukuran gambar maksimal 3 mb',
         ]);
         $info = Info2::findorfail($id);
         if ($request->has('image')) {

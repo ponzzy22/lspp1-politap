@@ -1,6 +1,6 @@
 @extends('layout.client')
 @section('judul')
-    Tentang | LSP POLITAP
+    LSP Politeknik Negeri Ketapang
 @endsection
 
 @section('home')

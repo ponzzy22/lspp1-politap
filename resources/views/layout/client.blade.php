@@ -174,7 +174,6 @@
                                 <a href="{{ route('tentang') }}">Tentang LSP-POLITAP</a>
                                 <a href="{{ route('struktur') }}">Struktur Organisasi</a>
                                 <a href="{{ route('pengelola') }}">Pengelola LSP-POLITAP</a>
-                                <a href="{{ route('kontak') }}">Kontak Kami</a>
                             </div>
                         </li>
                         <li class="nav-item @yield('layanan') dropdown">
@@ -286,7 +285,7 @@
                 <div class="col-md-12">
                     <p>Copyright © 2022
                         &diamondsuit; All Right Reserved</a><br>
-                        Designed & Developed By : <a href="http://informatika.politap.ac.id/">Teknologi Informatika</a>
+                        Designed & Developed By : <a href="http://informatika.politap.ac.id/">Teknologi Informasi</a>
                         <a href="https://politap.ac.id/">Politeknik Negeri Ketapang</a>
                     </p>
                 </div>

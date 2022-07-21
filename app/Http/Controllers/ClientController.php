@@ -85,8 +85,8 @@ class ClientController extends Controller
 
     public function berita()
     {
-        $berita = Berita::orderBy('created_at','desc')
-            ->where('status', '<label class="badge badge-info">Posting</label>')->get();
+        $berita = Berita::orderBy('created_at','desc')->paginate(4);
+            // ->where('status', '<label class="badge badge-info">Posting</label>')->get();
         return view('client.berita', compact('berita'));
     }
 

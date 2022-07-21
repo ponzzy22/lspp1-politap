@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Data_register;
+use App\Models\Info;
+use App\Models\Info2;
 use App\Models\Jurusan;
 use App\Models\Skema;
 use App\Models\Upload_file;
@@ -15,6 +17,8 @@ class Dashboard_asesiController extends Controller
     public function index()
     {
         $xnxx = Xnxx::all();
+        $info = Info::all();
+        $info2 = Info2::all();
         $skema = Skema::where('status_id', '1')->get();
         $jurusan = Jurusan::all();
         $datasertifikat = Data_register::where('nim', auth()->user()->email)
@@ -47,6 +51,8 @@ class Dashboard_asesiController extends Controller
             'datasertifikat',
             'xnxx',
             'skema',
+            'info',
+            'info2',
             'jurusan',
             'upload',
         ));

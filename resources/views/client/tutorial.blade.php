@@ -33,9 +33,10 @@
                         <div class="col-md-12">
                             @foreach ($tutorial2 as $asu)
                                 @if ($asu->image)
-                                    <img src="{{ $asu->image }}" width="100%">
+                                    <embed src="{{ asset($asu->image) }}" width="100%" height="700px"
+                                        type="application/pdf">
                                 @else
-                                <img src="{{ asset('general/assets/images/no-image-min.jpg') }}" width="100%">
+                                    <h1>Tidak Ada File</h1>
                                 @endif
                             @endforeach
                         </div>
@@ -48,30 +49,13 @@
     <!-- Video -->
     <div id="logo" class="more-info about-info">
         <div class="container">
-
             <div class="section-heading">
-                <h2>Video Tutorial <em>Pendaftaran Sertifikasi </em></h2>
+                @foreach ($tutorial as $asu)
+                    <a href="{!! $asu->keterangan !!}" target="_blank" rel="noopener noreferrer">
+                        <h2 style="color: blue">Video Tutorial <em>Pendaftaran Sertifikasi </em></h2>
+                    </a>
+                @endforeach
                 <span>▬▬▬▬▬<em>▬▬▬▬▬</em></span>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="more-info-content">
-                        <div class="col-md-8 align-self-center">
-                        </div>
-                        <div class="col-md-12">
-                            @foreach ($tutorial as $asu)
-                                @if ($asu->image)
-                                    <video width="100%" controls>
-                                        <source src="{{ $asu->image }}" type="video/mp4">
-                                        Your browser does not support HTML video.
-                                    </video>
-                                @else
-                                    <h1 class="text-danger">TIDAK ADA VIDEO</h1>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

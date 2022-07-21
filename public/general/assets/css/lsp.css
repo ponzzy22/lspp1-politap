@@ -668,7 +668,8 @@ ul.slick-dots {
 }
 
 .service-item img {
-    width: 100%;
+    width: 350px;
+    height: 200px;
     overflow: hidden;
 }
 

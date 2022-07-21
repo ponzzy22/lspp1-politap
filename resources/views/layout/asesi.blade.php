@@ -225,7 +225,7 @@
             <span class="text text-white text-center text-sm-left d-block d-sm-inline-block">Copyright © 2022
                 &diamondsuit; All Right Reserved
                 </span>
-            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Designed & Developed By <a href="http://informatika.politap.ac.id/" target="_blank">Teknologi Informatika</a> <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-white text-center">Designed & Developed By <a href="http://informatika.politap.ac.id/" target="_blank">Teknik Informatika</a> <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
                 Ketapang</a>.</span>
         </div>
     </footer>
