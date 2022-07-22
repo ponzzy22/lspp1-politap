@@ -236,7 +236,7 @@
     <!-- Berita -->
     <div class="content-wrapper">
         @foreach ($berita as $asu)
-        <div class="news-card col-4">
+        <div class="news-card">
             <a href="#" class="news-card__card-link"></a>
             <img src="{{ $asu->image }}"
                 alt="" class="news-card__image">

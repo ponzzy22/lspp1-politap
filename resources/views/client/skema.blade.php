@@ -8,52 +8,19 @@
 @endsection
 
 @section('css')
-    <style>
-        .hm-gradient {
-            background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
-        }
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+@endsection
 
-        .darken-grey-text {
-            color: #2E2E2E;
-        }
-
-        .input-group.md-form.form-sm.form-2 input {
-            border: 1px solid #bdbdbd;
-            border-top-left-radius: 0.25rem;
-            border-bottom-left-radius: 0.25rem;
-        }
-
-        .input-group.md-form.form-sm.form-2 input.purple-border {
-            border: 1px solid #9e9e9e;
-        }
-
-        .input-group.md-form.form-sm.form-2 input[type=text]:focus:not([readonly]).purple-border {
-            border: 1px solid #ba68c8;
-            box-shadow: none;
-        }
-
-        .form-2 .input-group-addon {
-            border: 1px solid #ba68c8;
-        }
-
-        .danger-text {
-            color: #ff3547;
-        }
-
-        .success-text {
-            color: #00C851;
-        }
-
-        .table-bordered.red-border,
-        .table-bordered.red-border th,
-        .table-bordered.red-border td {
-            border: 1px solid #ff3547 !important;
-        }
-
-        .table.table-bordered th {
-            text-align: center;
-        }
-    </style>
+@section('javascript')
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable({
+                pagingType: 'full_numbers',
+            });
+        });
+    </script>
 @endsection
 
 @section('isi')
@@ -78,7 +45,7 @@
             <div class="container mt-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <table class="table table-striped">
+                        <table id="example" class="table table-striped display">
                             <thead class="mdb-color darken-3">
                                 <tr style="background-color: #c20303c5" class="text-white">
                                     <th>#</th>
