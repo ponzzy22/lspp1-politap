@@ -104,7 +104,7 @@ Route::group(['middleware' => 'role:admin'], function () {
     Route::resource('asesmen', AsesmenController::class);
     // <------------------ PENGGUNA  ------------------>
     Route::resource('user', UserController::class);
-    Route::put('update2/{update2}', [UserController::class, 'update2'])->name('user_update2');
+    Route::put('user_update2/{user_update2}', [UserController::class, 'user_update2'])->name('user_update2');
     // <------------------ CRUD FORM APL-01  ------------------>
     Route::resource('form1', Formapl1Controller::class);
 

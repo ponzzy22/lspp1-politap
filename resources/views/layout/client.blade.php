@@ -285,7 +285,7 @@
                 <div class="col-md-12">
                     <p>Copyright © 2022
                         &diamondsuit; All Right Reserved</a><br>
-                        Designed & Developed By : <a href="http://informatika.politap.ac.id/">Teknologi Informasi</a>
+                        Designed & Developed By : <a href="http://informatika.politap.ac.id/">Teknik Informatika</a>
                         <a href="https://politap.ac.id/">Politeknik Negeri Ketapang</a>
                     </p>
                 </div>

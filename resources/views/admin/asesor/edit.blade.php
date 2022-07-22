@@ -37,7 +37,7 @@
                             @if ($asesor->image)
                                 <img src="{{ asset($asesor->image) }}" alt="profile" class="img-lg rounded-circle mb-3">
                             @else
-                                <img src="{{ asset('images/back/photo.png') }}" alt="profile" class="img-lg rounded-circle mb-3">
+                                <img src="{{ asset('general/assets/images/photo.jpg') }}" alt="profile" class="img-lg rounded-circle mb-3">
                             @endif
                             <h4>{{ $asesor->nama }}</h4>
                             <h6 class="text text-muted">#{{ $asesor->nik }}</h6>
@@ -143,7 +143,7 @@
                                             <label class="col-sm-3 col-form-label">Jenis Kelamin</label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" name="sex">
-                                                    <option value="{{ $asesor->sex }}" holder>Pilih Jenis Kelamin
+                                                    <option value="{{ $asesor->sex }}" holder>{{ $asesor->sex }}
                                                     </option>
                                                     <option>Laki-laki</option>
                                                     <option>Perempuan</option>
@@ -215,7 +215,7 @@
                                             <label class="col-sm-3 col-form-label">Status</label>
                                             <div class="col-sm-9">
                                                 <select class="form-control" name="status">
-                                                    <option value="{{ $asesor->status }}" holder>Pilih Status</option>
+                                                    <option value="{{ $asesor->status }}" holder>{{ $asesor->status }}</option>
                                                     <option value="Aktif" holder>Aktif</option>
                                                     <option value="Nonaktif" holder>Nonaktif</option>
                                                 </select>

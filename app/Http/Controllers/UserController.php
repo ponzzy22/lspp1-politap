@@ -99,7 +99,7 @@ class UserController extends Controller
         return back()->with('success', ' Data Profil Pengguna Berhasil diUpdate');
     }
 
-    public function update2(Request $request, $id) {
+    public function user_update2(Request $request, $id) {
         // dd($request->all());
         $request->validate([
             'name' => ['min:1', 'max:100', 'required'],

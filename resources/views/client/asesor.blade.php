@@ -9,53 +9,66 @@
 
 @section('css')
     <style>
-        @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
-
-        .hm-gradient {
-            background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #ffe3ee 100%);
+        * {
+            box-sizing: border-box;
         }
 
-        .shadow {
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) !important;
-        }
-
-        .main-content {
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
-
-        .banner {
-            position: absolute;
-            top: 0;
-            left: 0;
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
             width: 100%;
-            height: 125px;
-            background-color: #b40404c3;
-            background-position: center;
-            background-size: cover;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
         }
 
-        .img-circle {
-            height: 150px;
-            width: 150px;
-            border-radius: 150px;
-            border: 3px solid #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1;
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
         }
 
-        .social-links a {
-            transition: all 0.2s;
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
         }
 
-        .social-links a img {
-            height: 30px;
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
         }
 
-        .social-links a:hover {
-            transform: translateY(-3px);
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #f1f1f1;
         }
     </style>
+@endsection
+
+@section('javascript')
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 @endsection
 
 @section('isi')
@@ -74,39 +87,31 @@
 
     <!-- ***** Konten ***** -->
     <!-- Asesor -->
-
     <body class="hm-gradient">
-        <section class="main-content">
-            <div class="container">
-                <div class="row">
-                    @foreach ($asesor as $asu)
-                        <div class="col-md-4">
-                            <div
-                                class="profile-card card rounded-lg shadow p-4 p-xl-5 mb-4 text-center position-relative overflow-hidden">
-                                <div class="banner"></div>
-                                @if ($asu->image)
-                                    <img src="{{ asset($asu->image) }}" alt="" class="img-circle mx-auto mb-3">
-                                @else
-                                    <img src="{{ asset('general/assets/images/photo.jpg') }}" alt=""
-                                        class="img-circle mx-auto mb-3">
-                                @endif
-                                <h3 class="mb-4">{{ $asu->nama }}</h3>
-                                <div class="text-left mb-4">
-                                    <p class="mb-2"><i class="fa fa-code mr-2"></i> Kode : {{ $asu->nik }} </p>
-                                    <p class="mb-2"><i class="fa fa-whatsapp mr-2"></i> Whatsapp : </p>
-                                    <p class="mb-2"><i class="fa fa-envelope mr-2"></i> Email : </p>
-                                    <p class="mb-2"><i class="fa fa-pagelines mr-2"></i> Skema : {{ $asu->skema }}</p>
-                                </div>
-                                <div class="social-links d-flex justify-content-center">
-                                    <a href="#!" class="mx-2"><i class="fa fa-facebook"></i></a>
-                                    <a href="#!" class="mx-2"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+        <main>
+            <div class="container mt-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."
+                            title="Type in a name">
+                        <table id="myTable" class="table table-striped">
+                            <tr class="header" style="background-color: #c20303c5">
+                                <th style="width:10px; color: #ddd">#</th>
+                                <th style="width:60%; color: #ddd">Nama</th>
+                                <th style="width:40%; color: #ddd">Kode Asesor</th>
+                            </tr>
+                            @foreach ($asesor as $asu)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $asu->nama }}</td>
+                                    <td>{{ $asu->nik }}</td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
                 </div>
             </div>
-        </section>
+        </main>
     </body>
     <!-- ***** Akhir Konten ***** -->
 @endsection
