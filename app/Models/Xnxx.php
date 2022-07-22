@@ -9,6 +9,8 @@ class Xnxx extends Model
 {
     use HasFactory;
 
+    // protected $table = 'form';
+
 
     protected $fillable = [
         'id',

@@ -231,7 +231,7 @@
                             <span style="color: rgb(0, 0, 0)"
                                 class="font-weight-bold">{!! $data->kriteria !!}</span><br><br>
                             <input type="hidden" name="status"
-                                value="<label class='badge badge-outline-success badge-pill'>Kompeten</label>">
+                                value="<label class='badge badge-outline-success badge-pill'><i class='fas fa-check-circle'></i> Kompeten</label>">
                             <input type="hidden" name="koreksi"
                                 value="<label class='badge badge-outline-warning badge-pill'>Belum Dikoreksi</label>">
                             <input type="file" name="image" accept=".pdf, .png, .jpg, .jpeg" id="">

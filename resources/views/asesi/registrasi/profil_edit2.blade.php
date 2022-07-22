@@ -251,7 +251,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Kantor</label>
+                                    <label class="col-sm-3 col-form-label">Kantor*</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="ktr"
                                             value="{{ old('ktr', Auth::user()->ktr) }}">
