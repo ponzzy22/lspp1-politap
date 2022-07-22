@@ -163,7 +163,7 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th style="width: 200px">Unit</th>
+                                        <th style="width: 200px">Kode Unit</th>
                                         <th style="width: 900px">Elemen</th>
                                         <th style="width: 10px">Action</th>
                                         <th style="width: 10px">Status</th>
@@ -231,7 +231,7 @@
                             <span style="color: rgb(0, 0, 0)"
                                 class="font-weight-bold">{!! $data->kriteria !!}</span><br><br>
                             <input type="hidden" name="status"
-                                value="<label class='badge badge-outline-success badge-pill'><i class='fas fa-check-circle'></i> Kompeten</label>">
+                                value="<label class='badge badge-outline-success badge-pill'>&#10004; Kompeten</label>">
                             <input type="hidden" name="koreksi"
                                 value="<label class='badge badge-outline-warning badge-pill'>Belum Dikoreksi</label>">
                             <input type="file" name="image" accept=".pdf, .png, .jpg, .jpeg" id="">
@@ -249,7 +249,7 @@
     </div>
 
 
-    {{-- <--------------- MODAL INSTRUKSI ---------------> --}}
+    {{-- <--------------- MODAL INSTRUKSI Formulir APL-01 ---------------> --}}
     <div class="modal fade" id="exampleModal-1" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -263,8 +263,8 @@
                 <div class="modal-body">
                     Langkah-langkah pengisian formulir APL-01 :
                     <br><br>
-                    <p>1. Upload data file dokumen pendukung, file berupa. <span style="color: brown">png/pdf</span>.</p>
-                    <p>2. Setelah Upload berhasil keterangan Statusnya menjadi. <span style="color: green">Ada</span>. </p>
+                    <p>1. Upload data file dokumen pendukung, file berupa <span style="color: brown">"png/pdf"</span>.</p>
+                    <p>2. Setelah Upload berhasil keterangan Statusnya menjadi <span style="color: green">"Ada"</span>. </p>
                     <p>3. Pastikan semua data pada Upload Dokumen Pendukung harus terisi. </p>
                     <p>4. Kemudia lanjut mengisi data pada Formulir APL-02.
                 </div>
@@ -294,7 +294,7 @@
                         <div class="modal-body">
                             <input type="hidden" name="y" value="<i class='fas fa-check'></i>">
                             <input type="hidden" name="status"
-                                value="<label class='badge badge-outline-success badge-pill'>Ada</label>">
+                                value="<label class='badge badge-outline-success badge-pill'>&#10004; Ada</label>">
                             <input type="hidden" name="koreksi"
                                 value="<label class='badge badge-outline-warning badge-pill'>Belum Dikoreksi</label>">
                             <input type="file" name="image" accept=".png" id="">
@@ -375,7 +375,7 @@
         </div>
     @endforeach
 
-    {{-- <--------------- MODAL INSTRUKSI ---------------> --}}
+    {{-- <--------------- MODAL INSTRUKSI Formulir APL-02 ---------------> --}}
     <div class="modal fade" id="exampleModal-11" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -389,11 +389,11 @@
                 <div class="modal-body">
                     Langkah-langkah pengisian formulir APL-02 :
                     <br><br>
-                    <p>1. Upload data file Formulir APL-02, file berupa pdf.</p>
+                    <p>1. Upload data file Formulir APL-02, file berupa <span style="color: brown">"png/pdf"</span>.</p>
                     <p>2. File yang diupload datanya harus sesuai dengan elemen yang diperlukan </p>
                     <p>3. Setelah Upload berhasil keterangan Statusnya menjadi "Kompeten". </p>
-                    <p>4. Pastikan semua data pada Formulir APL-02 harus Kompeten. </p>
-                    <p>5. Klik tombol "Kirim Data Pendaftaran" pada paling atas halaman. </p>
+                    <p>4. Pastikan semua data pada Formulir APL-02 harus <span style="color: rgb(30, 187, 16)">"Kompeten"</span> . </p>
+                    <p>5. Klik tombol <span style="color: rgb(30, 187, 16)">"Kirim Data Pendaftaran"</span> yang terletak paling atas halaman. </p>
                     <p>6. Data pendaftaran akan terkirim ke Admin LSP-POLITAP.</p>
                 </div>
                 <div class="modal-footer">

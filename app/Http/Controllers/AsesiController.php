@@ -225,13 +225,14 @@ class AsesiController extends Controller
             'email' => [ 'required', 'min:3','unique:users,email,'. auth()->id()],
             'sex_id' => ['max:100', 'required'],
             'tgl_lahir' => ['required'],
-            'negara' => ['min:3', 'max:100', 'required'],
-            'alamat' => ['min:3', 'max:100', 'required'],
+            'negara' => ['required', 'min:3', 'max:100'],
+            'alamat' => ['required', 'min:3', 'max:100'],
             'jurusan_id' => ['required'],
             'semester_id' => ['required'],
             'no_hp' => ['required', 'unique:users,no_hp,'.auth()->id()],
             'tempat_lahir' => ['required'],
             'email2' => ['required'],
+            'kode_post' => ['required'],
         ],[
             'name.required' => 'Nama anda harus diisi',
             'name.min' => 'Nama minimal 3 karakter',
@@ -246,6 +247,7 @@ class AsesiController extends Controller
             'no_hp.required' => 'Nomor Handphone anda harus diisi',
             'semester_id.required' => 'Semester anda harus diisi',
             'jurusan_id.required' => 'Jurusan anda harus diisi',
+            'kode_post.required' => 'Kode Post anda harus diisi',
         ]);
 
         if ($request->has('image'))

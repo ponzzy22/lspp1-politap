@@ -247,8 +247,8 @@
                 <div class="modal-body">
                     <h6 class="text text-primary font-weight-bold">Prosedur dalam melakukan pemilihan skema yaitu:</h6>
                     <ol>
-                        <li>Memilih tombol biru "<span class="text text-info">Pilih Skema</span> " pada kolom pilih skema pada tabel dibawah.</li>
-                        <li>Kemudian memilih tombol hijau "<span class="text text-success">Ambil Formulir</span> " sesuai skema yang dipilih,  setelah itu anda akan diarahakan ke laman pengambilan Formulir APL-01 dan Formulir APL-01.</li>
+                        <li>Memilih tombol hijau "<span class="text text-success">Pilih Skema</span> " pada kolom pilih skema pada tabel dibawah.</li>
+                        <li>Kemudian memilih tombol biru "<span class="text text-info">Ambil Formulir</span> " sesuai skema yang dipilih,  setelah itu anda akan diarahakan ke laman pengambilan Formulir APL-01 dan Formulir APL-01.</li>
                     </ol>
                 </div>
                 <div class="modal-footer">

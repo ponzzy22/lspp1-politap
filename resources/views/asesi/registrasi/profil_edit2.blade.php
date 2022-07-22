@@ -9,7 +9,7 @@
 @endsection
 
 @section('isi')
-    @include('layout/verifikasi')
+    {{-- @include('layout/verifikasi') --}}
     <div class="page-header">
         <h4>
             <i class="fas fa-id-card"></i> PENGISIAN DATA PROFIL
@@ -239,7 +239,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Rumah</label>
+                                    <label class="col-sm-3 col-form-label">Telp Rumah*</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="rmh"
                                             value="{{ old('rmh', Auth::user()->rmh) }}">
@@ -251,7 +251,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Kantor*</label>
+                                    <label class="col-sm-3 col-form-label">Telp Kantor*</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="ktr"
                                             value="{{ old('ktr', Auth::user()->ktr) }}">
@@ -263,7 +263,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group row">
-                                    <label class="col-sm-3 col-form-label">Tamatan</label>
+                                    <label class="col-sm-3 col-form-label">Pendidikan Terakhir</label>
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" name="tmt"
                                             value="{{ old('tmt', Auth::user()->tmt) }}">
