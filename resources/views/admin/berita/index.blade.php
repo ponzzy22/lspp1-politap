@@ -47,7 +47,7 @@
                             <div class="col-md-12">
                                 <label for="image-upload" id="image-label">Pilih Gambar , Format gambar JPG &nbsp;<i
                                         class="fas fa-image"></i></label>
-                                <input accept=".jpg," type="file" name="image">
+                                <input accept=".jpg, ,jpeg" type="file" name="image">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Kategori</label>

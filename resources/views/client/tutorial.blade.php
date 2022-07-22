@@ -52,10 +52,9 @@
             <div class="section-heading">
                 @foreach ($tutorial as $asu)
                     <a href="{!! $asu->keterangan !!}" target="_blank" rel="noopener noreferrer">
-                        <h2 style="color: blue">Video Tutorial <em>Pendaftaran Sertifikasi </em></h2>
+                        <h2 style="color: blue; font-style: italic">Video Tutorial <em>Pendaftaran Sertifikasi </em></h2>
                     </a>
                 @endforeach
-                <span>▬▬▬▬▬<em>▬▬▬▬▬</em></span>
             </div>
         </div>
     </div>

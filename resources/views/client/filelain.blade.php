@@ -112,7 +112,7 @@
                                 class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
                             {{ $asu->file }}</button>
                     </div>
-                    <div id="collapse-240" class="collapse " aria-labelledby="heading-240" data-parent="#accordion">
+                    <div id="collapse-240" class="collapse show " aria-labelledby="heading-240" data-parent="#accordion">
                         <div class="card-body accordion-body">
                             <embed src="{{ asset($asu->image) }}" width="100%" height="400px" type="application/pdf">
                         </div>

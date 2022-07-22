@@ -146,32 +146,38 @@
                         <h2>Layanan yang tersedia <br><em></em></h2>
                         <p>
                             Dalam melaksanakan tugas dan fungsi LSP P1-POLITAP mengacu pada pedoman yang dikeluarkan oleh BNSP. Dalam pedoman tersebut ditetapkan persyaratan yang harus dipatuhi untuk menjamin agar lembaga sertifikasi menjalankan sistem sertifikasi secara konsisten dan profesional, sehingga dapat diterima di tingkat nasional yang relevan demi kepentingan pengembangan sumber daya manusia dalam aspek peningkatan kualitas dan perlindungan tenaga kerja.
-                        </p>
-                        <p>
-                            Saat ini LSP P1-POLITAP memiliki :
-                        </p>
-                        <a href="{{ route('client_skema') }}" class="filled-button">Selengkapnya</a>
+                        </p>                        
+                        {{-- <a href="{{ route('client_skema') }}" class="filled-button">Selengkapnya</a> --}}
                     </div>
                 </div>
                 <div class="col-md-6 align-self-center">
+                    <p>
+                        Saat ini LSP P1-POLITAP memiliki :
+                    </p>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">{{ $dataskema }}</div>
-                                <div class="count-title">Skema</div>
-                            </div>
+                            <a href="{{ route('client_skema') }}">
+                                <div class="count-area-content">
+                                    <div class="count-digit">{{ $dataskema }}</div>
+                                    <div class="count-title">Skema</div>
+                                </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">{{ $datatuk }}</div>
-                                <div class="count-title">TUK</div>
-                            </div>
+                            <a href="{{ route('client_tuk') }}">
+                                <div class="count-area-content">
+                                    <div class="count-digit">{{ $datatuk }}</div>
+                                    <div class="count-title">TUK</div>
+                                </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">{{ $dataasesor }}</div>
-                                <div class="count-title">Asesor</div>
-                            </div>
+                            <a href="{{ route('client_asesor') }}">
+                                <div class="count-area-content">
+                                    <div class="count-digit">{{ $dataasesor }}</div>
+                                    <div class="count-title">Asesor</div>
+                                </div>
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <div class="count-area-content">

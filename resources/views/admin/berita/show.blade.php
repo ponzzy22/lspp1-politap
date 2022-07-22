@@ -49,7 +49,7 @@
                             <h4 class="card-title"><i class="fas fa-plus"></i> Edit Berita</h4>
                             <div class="col-md-12">
                                 <label for="image-upload" id="image-label">Pilih Gambar , Format gambar JPG <i class="fas fa-image"></i></label>
-                                <input type="file" name="image" accept=".jpg,">
+                                <input type="file" name="image" accept=".jpg, .jpeg">
                             </div><br>
                             <div class="col-md-12">
                                 <label for="">Kategori</label>
