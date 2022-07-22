@@ -30,9 +30,9 @@
                 <ol>
                     <li class="font-weight-bold">Sebelum mendaftar sertifikasi skema, harap dilengkapi data "Profil Anda"
                         terlebih dahulu.</li>
-                    <li class="font-weight-bold">Sebelum mendaftar harap diperhatikan dan dipelajari unit-unit skema yang
+                    <li class="font-weight-bold">Sebelum mendaftar harap diperhatikan unit-unit skema yang
                         akan anda dipilih.</li>
-                    <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan menekaan
+                    <li class="font-weight-bold">Setelah itu anda dapat melakukan pendaftaran sertifikasi dengan menekan
                         tombol "Pendaftaran Sertifkasi" yang terletak didalam menu Assesment.</li>
                     <li class="font-weight-bold">Jika masih bingun dalam proses mendaftar di aplikasi maka anda dapat
                         memilih tombol
@@ -58,7 +58,7 @@
                         @if (Auth::user()->image)
                             <img src="{{ asset(Auth::user()->image) }}" class="img-lg rounded" alt="image">
                         @else
-                            <img src="{{ asset('images/back/photo.png') }}" class="img-lg rounded" alt="image">
+                            <img src="{{ asset('general/assets/images/photo.jpg') }}" class="img-lg rounded" alt="image">
                         @endif
                         <div class="ml-3">
                             <h6 class="text-danger font-weight-bold">{{ Auth::user()->name }}</h6>
@@ -73,7 +73,7 @@
                                         class="fas fa-certificate text-black font-weight-bold"></i> Koleksi Sertifikat:
                                     {{ $datasertifikat }}
                                 </p>
-                            </a>
+                            </a><br>
                         </div>
                     </div>
                 </div>

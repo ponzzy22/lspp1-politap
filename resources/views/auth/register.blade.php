@@ -118,7 +118,7 @@
             </div>
             <div  style="background-color: #ec3732;" class="bg text-white py-4">
                 <div class="row px-3">
-                    <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. Designed & Developed By <a href="http://informatika.politap.ac.id/" target="_blank"> Teknologi
+                    <small class="ml-4 ml-sm-5 mb-2">Copyright &copy; 2022. Designed & Developed By <a href="http://informatika.politap.ac.id/" target="_blank"> Teknik
                     Informatika </a> <a href="https://politap.ac.id/" target="_blank">Politeknik Negeri
                     Ketapang</small>
                 </div>
