@@ -12,7 +12,7 @@
     @include('layout/verifikasi')
     <div class="page-header">
         <h4>
-            <i class="fas fa-user"></i> Welcome, {{ Auth::user()->name }}
+            <i class="fas fa-user"></i> Selamat Datang, {{ Auth::user()->name }}
         </h4>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-custom  bg-danger">
