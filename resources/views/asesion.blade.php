@@ -333,14 +333,14 @@
             </div>
         @endforeach
         {{-- <--------------- FOOTER ---------------> --}}
-        <div class="card col-md-5">
+        {{-- <div class="card col-md-5">
             <div class="card-body">
                 <h4 class="card-title"><i class="fas fa-mobile"></i> Kontak Admin</h4>
                 <br><br>
                 <p style="font-size: 20px"><i class="fab fa-whatsapp-square"></i> 08965386474683</p>
                 <p style="font-size: 20px"><i class="fas fa-envelope-square"></i> lsp@politap.ac.id</p>
             </div>
-        </div>
+        </div> --}}
     </div>
 
 

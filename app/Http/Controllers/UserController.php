@@ -12,7 +12,7 @@ class UserController extends Controller
 {
 
     public function index(){
-        $user = User::where('role', 'User')->get();
+        $user = User::all();
         return view('admin/user/index', compact('user'));
     }
 

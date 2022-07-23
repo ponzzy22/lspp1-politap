@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2022 at 07:15 PM
+-- Generation Time: Jul 23, 2022 at 07:24 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -344,8 +344,30 @@ INSERT INTO `elemen` (`id`, `unikom_id`, `asesmen`, `kriteria`, `created_at`, `u
 (87, 124, 'Elemen1', '<p>Kriteria1</p>', '2022-06-26 10:57:29', '2022-06-26 10:57:41'),
 (88, 125, 'Elemen2', '<p>Kriteria2<br></p>', '2022-06-26 10:58:20', '2022-06-26 10:58:20'),
 (90, 126, 'sdasd', '<p>asd</p>', '2022-06-28 11:59:47', '2022-06-28 11:59:47'),
-(92, 128, '-', '<p>-</p>', '2022-07-04 12:41:53', '2022-07-04 12:41:53'),
-(93, 136, '-', '<p><u>-</u></p>', '2022-07-04 12:52:25', '2022-07-04 12:52:25');
+(92, 128, 'Elemen1', '<p>-</p>', '2022-07-04 12:41:53', '2022-07-22 21:55:34'),
+(93, 136, 'Elemen1', NULL, '2022-07-04 12:52:25', '2022-07-22 21:56:35'),
+(94, 128, 'Elemen2', NULL, '2022-07-22 21:55:46', '2022-07-22 21:55:46'),
+(95, 128, 'Elemen3', NULL, '2022-07-22 21:56:00', '2022-07-22 21:56:00'),
+(96, 136, 'Elemen2', NULL, '2022-07-22 21:56:53', '2022-07-22 21:56:53'),
+(97, 136, 'Elemen3', NULL, '2022-07-22 21:57:03', '2022-07-22 21:57:03'),
+(98, 141, 'Elemen1', NULL, '2022-07-22 22:12:22', '2022-07-22 22:12:22'),
+(99, 141, 'Elemen2', NULL, '2022-07-22 22:12:29', '2022-07-22 22:12:29'),
+(100, 141, 'Elemen3', NULL, '2022-07-22 22:12:38', '2022-07-22 22:12:38'),
+(101, 40, 'Elemen1', NULL, '2022-07-22 22:18:45', '2022-07-22 22:18:45'),
+(102, 40, 'Elemen2', NULL, '2022-07-22 22:18:51', '2022-07-22 22:18:51'),
+(103, 40, 'Elemen3', NULL, '2022-07-22 22:18:58', '2022-07-22 22:18:58'),
+(104, 86, 'Elemen1', NULL, '2022-07-22 22:19:25', '2022-07-22 22:19:25'),
+(105, 86, 'Elemen2', NULL, '2022-07-22 22:19:32', '2022-07-22 22:19:32'),
+(106, 86, 'Elemen3', NULL, '2022-07-22 22:19:39', '2022-07-22 22:19:39'),
+(107, 94, 'Elemen1', NULL, '2022-07-22 22:20:36', '2022-07-22 22:20:36'),
+(108, 94, 'Elemen2', NULL, '2022-07-22 22:20:42', '2022-07-22 22:20:42'),
+(109, 94, 'Elemen3', NULL, '2022-07-22 22:20:49', '2022-07-22 22:20:49'),
+(110, 154, 'Elemen1', NULL, '2022-07-22 22:21:25', '2022-07-22 22:21:25'),
+(111, 154, 'Elemen2', NULL, '2022-07-22 22:21:36', '2022-07-22 22:21:36'),
+(112, 154, 'Elemen3', NULL, '2022-07-22 22:21:43', '2022-07-22 22:21:43'),
+(113, 175, 'Elemen1', NULL, '2022-07-22 22:22:48', '2022-07-22 22:22:48'),
+(114, 175, 'Elemen2', NULL, '2022-07-22 22:22:56', '2022-07-22 22:22:56'),
+(115, 175, 'Elemen3', NULL, '2022-07-22 22:23:04', '2022-07-22 22:23:04');
 
 -- --------------------------------------------------------
 
@@ -742,13 +764,6 @@ CREATE TABLE `notes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `notes`
---
-
-INSERT INTO `notes` (`id`, `judul`, `isi`, `created_at`, `updated_at`) VALUES
-(5, 'update', '<ol><li><br><br></li></ol>', '2022-07-02 03:20:23', '2022-07-05 10:46:40');
 
 -- --------------------------------------------------------
 
@@ -1258,7 +1273,7 @@ CREATE TABLE `skemas` (
 
 INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `status_id`, `tuk_id`, `asesor_id`, `created_at`, `updated_at`) VALUES
 (8, 'SS.AKKS/LSPP/001/2022', 'Asisten Kebun Kelapa Sawit', 17, '1', 1, 38, '2022-04-05 11:26:03', '2022-06-24 01:28:26'),
-(10, 'SS.TL/LSPP/002/2022', 'Teknisi Laboratorium', 12, '1', 1, 44, '2022-04-11 09:44:53', '2022-06-24 01:29:13'),
+(10, 'SS.TL/LSPP/002/2022', 'Teknisi Laboratorium', 12, '1', 1, 44, '2022-04-11 09:44:53', '2022-07-22 21:50:47'),
 (13, 'SS.KI/LSPP/003/2022', 'Kewirausahaan Industri', 14, '1', 1, 34, '2022-04-17 05:37:07', '2022-06-24 01:29:44'),
 (14, 'SS.SPPTR/LSPP/009/2022', 'Supervisor Pemeliharaan Pemanfaatan Tegangan Rendah', 15, '1', 1, 30, '2022-04-17 05:43:24', '2022-06-24 01:42:27'),
 (15, 'SS.WS/LSPP/007/2022', 'Welding Supervisor', 10, '1', 1, 25, '2022-04-17 05:45:23', '2022-06-24 01:37:56'),
@@ -1615,9 +1630,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `negara`, `sex_id`, `alamat`, `no_hp`, `institusi`, `tamatan_id`, `jabatan`, `jurusan_id`, `semester_id`, `email2`, `email3`, `tempat_lahir`, `alamat_kantor`, `postal`, `telp`, `fax`, `ktp`, `ktr`, `tmt`, `rmh`, `kode_post`, `image`, `remember_token`, `password`, `email_verified_at`, `proses`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'Admin', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'iKtdvDy64lTYM2PQ3IUInGnhwkziXW4gRaQXXAAIszNyzpbxLSxNkot65Hw3', '$2y$10$raBf7d85ytR9eFAaPezzxODSDhK4v.eqUkd/9jIxsnl7mc3RDRF4a', NULL, NULL, '2022-06-29 04:59:35', '2022-06-29 05:02:52'),
-(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'BTNSASDASDHAJSDK', '081256390909', 'PEGADAIAN', NULL, 'ketua', 4, 4, 'ponzy22@gmail.com', 'apelah@assu', 'Ketapang', 'dimana dak tau', '76767', '03030303030', '3333333', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658297625WhatsApp Image 2022-07-10 at 22.56.56.jpeg', 'OswpcXwwqisqh4WVRaHp6TZ6NDzny2g75V0eqKjyeWvsdtmHnSys8vgv3ynr', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-21 08:25:46'),
-(38, 'User', 'Ngeteh Asu', '3042020050', NULL, '2022-07-22', 'Indonesia', '1', 'sddsds', '3042020050', NULL, NULL, NULL, 4, 6, 'cino7130ds@gmail.com', NULL, 'Ketapang', NULL, NULL, NULL, NULL, NULL, NULL, 'SMA', NULL, '788892', 'uploads/beranda_img2/1658476921WhatsApp Image 2022-07-10 at 22.56.56.jpeg', NULL, '$2y$10$/yJTu.QRsOIYLLRIXkKRl.MwpCbjr.8ngCxnabCD5vIRUbSGxPYRC', NULL, NULL, '2022-07-21 22:48:27', '2022-07-22 04:30:17');
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'iKtdvDy64lTYM2PQ3IUInGnhwkziXW4gRaQXXAAIszNyzpbxLSxNkot65Hw3', '$2y$10$a6Qikrsxntmq5ZDBuk8/N.x7dMPqm4FlJd.9jLzx9JyUZoftdvvC2', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:48:55'),
+(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'Ketapang', '081256390909', 'Pegadaian', NULL, 'Penaksir', 4, 4, 'ponzy22@gmail.com', 'pegadaian@gmail.com', 'Ketapang', 'dimana dak tau', '781221', '081234566789', '303007', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658550646campus.png', 'U9fF5IsVegITjzpXMUemdUiOPJ0C7e8gdyZELypG7vkikGcJerDeFj1cYwcO', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:30:46');
 
 -- --------------------------------------------------------
 
@@ -2036,7 +2050,7 @@ ALTER TABLE `dokumen__uploads`
 -- AUTO_INCREMENT for table `elemen`
 --
 ALTER TABLE `elemen`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

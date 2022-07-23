@@ -56,6 +56,7 @@
     {{-- <---------------------- TAMPIL UNIT ----------------------> --}}
     <div class="card">
         <div class="card-body">
+            <h4 class="card-title"><i class="fab fa-pagelines"></i>Skema : {{ $skema->skema }}</h4>
             <h4 class="card-title"><i class="fas fa-table"></i> Table Unit Kompetensi</h4>
             <div class="row">
                 <div class="col-12">

@@ -54,7 +54,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Nomor Induk Mahasiswa</label>
                             <div class="col-sm-9">
-                                <input type="number" maxlength="100" class="form-control" name="email"
+                                <input type="text" maxlength="100" class="form-control" name="email"
                                     value="{{ $user->email }}">
                                 @error('email')
                                     <div class="text-danger mt-2 text-sm">{{ $message }}</div>
