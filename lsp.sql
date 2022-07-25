@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2022 at 07:24 AM
+-- Generation Time: Jul 25, 2022 at 12:29 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -76,7 +76,8 @@ INSERT INTO `asesor` (`id`, `nik`, `nama`, `image`, `alamat`, `sex`, `email`, `s
 (51, 'MET.000.004642 2020', 'Sartika, S.Si., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:07:50.000000', '2022-06-24 09:07:50.930562', NULL, NULL),
 (52, 'MET.000.004645 2020', 'Sy. Indra Septiansyah, S.Si., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:08:27.000000', '2022-06-24 09:08:27.711489', NULL, NULL),
 (53, 'MET.000.004643 2020', 'Syarifah Aqla, S.Pd., M.T', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:09:18.000000', '2022-06-24 09:09:18.147761', NULL, NULL),
-(54, 'MET.000.004644 2020', 'Firman, S.Pd., M.P.Fis', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:09:54.000000', '2022-06-24 09:09:54.330513', NULL, NULL);
+(54, 'MET.000.004644 2020', 'Firman, S.Pd., M.P.Fis', NULL, NULL, NULL, NULL, 'Aktif', '2022-06-24 02:09:54.000000', '2022-06-24 09:09:54.330513', NULL, NULL),
+(61, 'MET.000.010610 2017', 'Halimansyah, A.Md', NULL, NULL, NULL, NULL, 'Aktif', '2022-07-25 03:04:14.000000', '2022-07-25 03:04:14.000000', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,8 @@ INSERT INTO `dokumen__uploads` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Photo Identitas', '2022-05-05 17:06:57', '2022-07-05 05:59:53'),
 (2, 'Kartu Tanda Penduduk', '2022-05-05 17:06:57', '2022-05-05 17:06:57'),
 (3, 'Kartu Tanda Mahasiswa', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
-(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37');
+(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
+(8, 'Ngeteh Asu', '2022-07-23 05:13:23', '2022-07-23 05:13:23');
 
 -- --------------------------------------------------------
 
@@ -894,7 +896,8 @@ INSERT INTO `prodi` (`id`, `prodi`, `updated_at`, `created_at`) VALUES
 (14, 'D III Agroindustri', '2022-04-25 00:46:26.000000', '2022-04-25 00:46:26.000000'),
 (15, 'D III Teknik Elektro', '2022-04-25 00:46:41.000000', '2022-04-25 00:46:41.000000'),
 (16, 'D IV Rekontruksi Jalanan dan Jembatan', '2022-04-25 00:48:32.000000', '2022-04-25 00:48:32.000000'),
-(17, 'D IV Budidaya Tanaman Perkebunan', '2022-04-25 00:49:00.000000', '2022-04-25 00:49:00.000000');
+(17, 'D IV Budidaya Tanaman Perkebunan', '2022-04-25 00:49:00.000000', '2022-04-25 00:49:00.000000'),
+(19, 'D III Perawatan dan Perbaikan Mesin', '2022-07-25 02:50:11.000000', '2022-07-25 02:50:11.000000');
 
 -- --------------------------------------------------------
 
@@ -1272,16 +1275,16 @@ CREATE TABLE `skemas` (
 --
 
 INSERT INTO `skemas` (`id`, `kode_skema`, `skema`, `prodi_id`, `status_id`, `tuk_id`, `asesor_id`, `created_at`, `updated_at`) VALUES
-(8, 'SS.AKKS/LSPP/001/2022', 'Asisten Kebun Kelapa Sawit', 17, '1', 1, 38, '2022-04-05 11:26:03', '2022-06-24 01:28:26'),
-(10, 'SS.TL/LSPP/002/2022', 'Teknisi Laboratorium', 12, '1', 1, 44, '2022-04-11 09:44:53', '2022-07-22 21:50:47'),
+(8, 'SS.AKKS/LSPP/001/2022', 'Asisten Kebun Kelapa Sawit', 17, '1', 19, 38, '2022-04-05 11:26:03', '2022-07-25 02:52:15'),
+(10, 'SS.TL/LSPP/002/2022', 'Teknisi Laboratorium', 12, '1', 18, 44, '2022-04-11 09:44:53', '2022-07-25 02:52:00'),
 (13, 'SS.KI/LSPP/003/2022', 'Kewirausahaan Industri', 14, '1', 1, 34, '2022-04-17 05:37:07', '2022-06-24 01:29:44'),
-(14, 'SS.SPPTR/LSPP/009/2022', 'Supervisor Pemeliharaan Pemanfaatan Tegangan Rendah', 15, '1', 1, 30, '2022-04-17 05:43:24', '2022-06-24 01:42:27'),
-(15, 'SS.WS/LSPP/007/2022', 'Welding Supervisor', 10, '1', 1, 25, '2022-04-17 05:45:23', '2022-06-24 01:37:56'),
-(16, 'SS.PPJ/LSPP/010/2022', 'Pelaksanaan Pemeliharaan Jalan', 14, '1', 1, 24, '2022-05-11 12:19:42', '2022-06-24 01:43:32'),
-(17, 'SS.TKKK/LSPP/008/2022', 'Teknisi Keselamatan dan Kesehatan Kerja (K3)', 11, '1', 1, 53, '2022-05-11 12:25:10', '2022-06-24 01:36:27'),
-(18, 'SS.NAM/LSPP/004/2022', 'Network Administrator Muda', 13, '1', 1, 45, '2022-05-11 12:27:05', '2022-06-24 01:30:47'),
-(19, 'SS.JWP/LSPP/005/2022', 'Junior Web Programmer', 13, '1', 1, 27, '2022-05-11 12:28:20', '2022-06-24 01:31:28'),
-(20, 'SS.DGM/LSPP/006/2022', 'Desainer Grafis Muda', 13, '1', 1, 29, '2022-05-11 12:28:43', '2022-07-03 09:57:17');
+(14, 'SS.SPPTR/LSPP/009/2022', 'Supervisor Pemeliharaan Pemanfaatan Tegangan Rendah', 15, '1', 24, 30, '2022-04-17 05:43:24', '2022-07-25 02:51:13'),
+(15, 'SS.WS/LSPP/007/2022', 'Welding Supervisor', 19, '1', 22, 25, '2022-04-17 05:45:23', '2022-07-25 02:50:51'),
+(16, 'SS.PPJ/LSPP/010/2022', 'Pelaksanaan Pemeliharaan Jalan', 14, '1', 25, 24, '2022-05-11 12:19:42', '2022-07-25 02:48:11'),
+(17, 'SS.TKKK/LSPP/008/2022', 'Teknisi Keselamatan dan Kesehatan Kerja (K3)', 11, '1', 23, 53, '2022-05-11 12:25:10', '2022-07-25 02:47:50'),
+(18, 'SS.NAM/LSPP/004/2022', 'Network Administrator Muda', 13, '1', 21, 45, '2022-05-11 12:27:05', '2022-07-25 02:47:36'),
+(19, 'SS.JWP/LSPP/005/2022', 'Junior Web Programmer', 13, '1', 21, 27, '2022-05-11 12:28:20', '2022-07-25 02:47:24'),
+(20, 'SS.DGM/LSPP/006/2022', 'Desainer Grafis Muda', 13, '1', 21, 29, '2022-05-11 12:28:43', '2022-07-25 02:46:32');
 
 -- --------------------------------------------------------
 
@@ -2014,7 +2017,7 @@ ALTER TABLE `xnxxes`
 -- AUTO_INCREMENT for table `asesor`
 --
 ALTER TABLE `asesor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `banner`
@@ -2044,7 +2047,7 @@ ALTER TABLE `cek_pendaftarans`
 -- AUTO_INCREMENT for table `dokumen__uploads`
 --
 ALTER TABLE `dokumen__uploads`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `elemen`
@@ -2068,7 +2071,7 @@ ALTER TABLE `fileapl2s`
 -- AUTO_INCREMENT for table `filelains`
 --
 ALTER TABLE `filelains`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `files`
@@ -2098,7 +2101,7 @@ ALTER TABLE `f_profil`
 -- AUTO_INCREMENT for table `galeri_fotos`
 --
 ALTER TABLE `galeri_fotos`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `group_galeris`
@@ -2176,7 +2179,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `prodi`
 --
 ALTER TABLE `prodi`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `registers`

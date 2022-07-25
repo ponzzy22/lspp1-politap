@@ -113,7 +113,7 @@
                 <img class="card-img-top" src="{{ asset($tuk->image) }}" alt="Card image cap">
             @else
                 <img class="card-img-top"
-                    src="{{ asset('images/back/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg') }}"
+                    src="{{ asset('general/assets/images/Gedung-Kuliah-I-Laboratorium-Politeknik-Negeri-Ketapang.jpg') }}"
                     alt="Card image cap">
             @endif
             <div class="card-body">
