@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2022 at 12:29 PM
+-- Generation Time: Jul 25, 2022 at 02:35 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -292,8 +292,7 @@ INSERT INTO `dokumen__uploads` (`id`, `name`, `created_at`, `updated_at`) VALUES
 (1, 'Photo Identitas', '2022-05-05 17:06:57', '2022-07-05 05:59:53'),
 (2, 'Kartu Tanda Penduduk', '2022-05-05 17:06:57', '2022-05-05 17:06:57'),
 (3, 'Kartu Tanda Mahasiswa', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
-(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37'),
-(8, 'Ngeteh Asu', '2022-07-23 05:13:23', '2022-07-23 05:13:23');
+(4, 'Kartu Hasil Studi', '2022-05-05 17:07:37', '2022-05-05 17:07:37');
 
 -- --------------------------------------------------------
 
@@ -1633,8 +1632,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `negara`, `sex_id`, `alamat`, `no_hp`, `institusi`, `tamatan_id`, `jabatan`, `jurusan_id`, `semester_id`, `email2`, `email3`, `tempat_lahir`, `alamat_kantor`, `postal`, `telp`, `fax`, `ktp`, `ktr`, `tmt`, `rmh`, `kode_post`, `image`, `remember_token`, `password`, `email_verified_at`, `proses`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'iKtdvDy64lTYM2PQ3IUInGnhwkziXW4gRaQXXAAIszNyzpbxLSxNkot65Hw3', '$2y$10$a6Qikrsxntmq5ZDBuk8/N.x7dMPqm4FlJd.9jLzx9JyUZoftdvvC2', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:48:55'),
-(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'Ketapang', '081256390909', 'Pegadaian', NULL, 'Penaksir', 4, 4, 'ponzy22@gmail.com', 'pegadaian@gmail.com', 'Ketapang', 'dimana dak tau', '781221', '081234566789', '303007', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658550646campus.png', 'U9fF5IsVegITjzpXMUemdUiOPJ0C7e8gdyZELypG7vkikGcJerDeFj1cYwcO', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:30:46');
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sSgEynFuZsSIzVjeEKJbiNUqM5t1PXyPxNIOsKk696tF66kLtfMu5zlqvYoT', '$2y$10$a6Qikrsxntmq5ZDBuk8/N.x7dMPqm4FlJd.9jLzx9JyUZoftdvvC2', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:48:55'),
+(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'Ketapang', '081256390909', 'Pegadaian', NULL, 'Penaksir', 4, 4, 'ponzy22@gmail.com', 'pegadaian@gmail.com', 'Ketapang', 'dimana dak tau', '781221', '081234566789', '303007', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658550646campus.png', 'isq1xg87dcAqCl1XnYp54iuw3jhqXoCXU604lVAQB7SKa2WaHUWp27uIDGrU', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:30:46');
 
 -- --------------------------------------------------------
 
@@ -2257,7 +2256,7 @@ ALTER TABLE `unikoms`
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=801;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=810;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2275,7 +2274,7 @@ ALTER TABLE `verifikasi_skemas`
 -- AUTO_INCREMENT for table `xnxxes`
 --
 ALTER TABLE `xnxxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1073;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1079;
 
 --
 -- Constraints for dumped tables
