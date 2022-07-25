@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2022 at 02:35 PM
+-- Generation Time: Jul 25, 2022 at 03:40 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -220,7 +220,8 @@ CREATE TABLE `data_registers` (
 --
 
 INSERT INTO `data_registers` (`id`, `skema_name`, `skema_id`, `user_id`, `user_name`, `status`, `surel`, `tmpt_lahir`, `tgl_lahir`, `sex_id`, `negara`, `alamat`, `kode_post`, `no_hp`, `image`, `jurusan_id`, `semester_id`, `nim`, `date`, `time`, `asesor_id`, `tuk_id`, `keterangan`, `kode`, `id_skema`, `kode_skema`, `jenis`, `koreksi`, `rmh`, `tmt`, `ktr`, `institusi`, `alamat_kantor`, `email3`, `jabatan`, `telp`, `fax`, `postal`, `created_at`, `updated_at`) VALUES
-(3818, 'Network Administrator Muda', 'SS.NAM/LSPP/004/202238', '38', 'Ngeteh Asu', '<h4 style=\'color: rgb(163, 129, 8)\'>Lengkapi Data Anda</h4>', 'cino7130ds@gmail.com', 'Ketapang', '2022-07-22', '1', 'Indonesia', 'sddsds', '788892', '3042020050', 'uploads/beranda_img2/1658476921WhatsApp Image 2022-07-10 at 22.56.56.jpeg', 4, 6, '3042020050', NULL, NULL, 1, 1, NULL, '38', '18', 'SS.NAM/LSPP/004/2022', 'Sertifikasi', NULL, NULL, 'SMA', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-07-22 02:01:43', '2022-07-22 02:01:43');
+(338, 'Asisten Kebun Kelapa Sawit', 'belomSS.AKKS/LSPP/001/202233', '33', 'Ponsianus Jopi', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzy22@gmail.com', 'Ketapang', '2022-06-29', '1', 'Indonesia', 'Ketapang', '7888111', '081256390909', 'uploads/beranda_img2/1658550646campus.png', 4, 4, '3042020058', '2022-07-14', '8:26 PM', 34, 22, NULL, '-', NULL, 'SS.AKKS/LSPP/001/2022', 'Sertifikasi', NULL, '-', 'SMA', '-', 'Pegadaian', 'dimana dak tau', 'pegadaian@gmail.com', 'Penaksir', '081234566789', '303007', '781221', '2022-07-25 06:11:11', '2022-07-25 06:27:21'),
+(3310, 'Teknisi Laboratorium', 'belomSS.TL/LSPP/002/202233', '33', 'Ponsianus Jopi', '<h4 style=\'color: rgb(0, 0, 0)\'>Sertifikasi Selesai</h4>', 'ponzy22@gmail.com', 'Ketapang', '2022-06-29', '1', 'Indonesia', 'Ketapang', '7888111', '081256390909', 'uploads/beranda_img2/1658550646campus.png', 4, 4, '3042020058', '2022-07-25', '8:34 PM', 42, 23, NULL, '-', NULL, 'SS.TL/LSPP/002/2022', 'Sertifikasi', NULL, '-', 'SMA', '-', 'Pegadaian', 'dimana dak tau', 'pegadaian@gmail.com', 'Penaksir', '081234566789', '303007', '781221', '2022-07-25 06:15:55', '2022-07-25 06:34:51');
 
 -- --------------------------------------------------------
 
@@ -1578,11 +1579,14 @@ CREATE TABLE `upload_files` (
 --
 
 INSERT INTO `upload_files` (`id`, `kode_dokumen`, `name`, `data_register_id`, `user_id`, `status`, `y`, `n`, `z`, `kode`, `koreksi`, `image`, `created_at`, `updated_at`) VALUES
-(796, '13818', 'Photo Identitas', 3818, 38, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 138, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'uploads/uploads_file_register/1658480573ASSIST-3.png', '2022-07-22 02:01:56', '2022-07-22 02:02:53'),
-(797, '23818', 'Kartu Tanda Penduduk', 3818, 38, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 238, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'uploads/uploads_file_register/1658480581ASSIST-3.png', '2022-07-22 02:01:57', '2022-07-22 02:03:01'),
-(798, '33818', 'Kartu Tanda Mahasiswa', 3818, 38, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 338, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'uploads/uploads_file_register/1658480767ASSIST-3.png', '2022-07-22 02:01:57', '2022-07-22 02:06:07'),
-(799, '43818', 'Kartu Hasil Studi', 3818, 38, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 438, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'uploads/uploads_file_register/1658480775ASSIST-3.png', '2022-07-22 02:01:57', '2022-07-22 02:06:15'),
-(800, '53818', '112', 3818, 38, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 538, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'uploads/uploads_file_register/1658480783ASSIST-3.png', '2022-07-22 02:01:57', '2022-07-22 02:06:23');
+(822, '1338', 'Photo Identitas', 338, 33, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658754706photo.png', '2022-07-25 06:11:21', '2022-07-25 06:13:30'),
+(823, '2338', 'Kartu Tanda Penduduk', 338, 33, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658754713KTP.png', '2022-07-25 06:11:21', '2022-07-25 06:13:38'),
+(824, '3338', 'Kartu Tanda Mahasiswa', 338, 33, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658754721KTM.png', '2022-07-25 06:11:21', '2022-07-25 06:13:46'),
+(825, '4338', 'Kartu Hasil Studi', 338, 33, '<label class=\'badge badge-outline-success badge-pill\'>✔ Ada</label>', '<i class=\'fas fa-check\'></i>', NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658754733KHS.png', '2022-07-25 06:11:21', '2022-07-25 06:13:53'),
+(826, '13310', 'Photo Identitas', 3310, 33, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', NULL, NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658755868photo.png', '2022-07-25 06:16:07', '2022-07-25 06:32:49'),
+(827, '23310', 'Kartu Tanda Penduduk', 3310, 33, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', NULL, NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658755881KTP.png', '2022-07-25 06:16:07', '2022-07-25 06:32:55'),
+(828, '33310', 'Kartu Tanda Mahasiswa', 3310, 33, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', NULL, NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658755891KTM.png', '2022-07-25 06:16:07', '2022-07-25 06:33:02'),
+(829, '43310', 'Kartu Hasil Studi', 3310, 33, '<label class=\'badge badge-outline-success badge-pill\'>Ada</label>', NULL, NULL, NULL, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'uploads/uploads_file_register/1658755899KHS.png', '2022-07-25 06:16:07', '2022-07-25 06:33:13');
 
 -- --------------------------------------------------------
 
@@ -1632,8 +1636,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role`, `name`, `email`, `kode`, `tgl_lahir`, `negara`, `sex_id`, `alamat`, `no_hp`, `institusi`, `tamatan_id`, `jabatan`, `jurusan_id`, `semester_id`, `email2`, `email3`, `tempat_lahir`, `alamat_kantor`, `postal`, `telp`, `fax`, `ktp`, `ktr`, `tmt`, `rmh`, `kode_post`, `image`, `remember_token`, `password`, `email_verified_at`, `proses`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'sSgEynFuZsSIzVjeEKJbiNUqM5t1PXyPxNIOsKk696tF66kLtfMu5zlqvYoT', '$2y$10$a6Qikrsxntmq5ZDBuk8/N.x7dMPqm4FlJd.9jLzx9JyUZoftdvvC2', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:48:55'),
-(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'Ketapang', '081256390909', 'Pegadaian', NULL, 'Penaksir', 4, 4, 'ponzy22@gmail.com', 'pegadaian@gmail.com', 'Ketapang', 'dimana dak tau', '781221', '081234566789', '303007', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658550646campus.png', 'isq1xg87dcAqCl1XnYp54iuw3jhqXoCXU604lVAQB7SKa2WaHUWp27uIDGrU', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:30:46');
+(1, 'Administrator', 'Admin LSP-POLITAP', 'admin', NULL, '2022-06-08', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4EIssGgqZPMQ65bhBWGdoQxY2QLLink53BOkcNcdTLxyfVF7YeHl9LCZORfz', '$2y$10$a6Qikrsxntmq5ZDBuk8/N.x7dMPqm4FlJd.9jLzx9JyUZoftdvvC2', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:48:55'),
+(33, 'User', 'Ponsianus Jopi', '3042020058', NULL, '2022-06-29', 'Indonesia', '1', 'Ketapang', '081256390909', 'Pegadaian', NULL, 'Penaksir', 4, 4, 'ponzy22@gmail.com', 'pegadaian@gmail.com', 'Ketapang', 'dimana dak tau', '781221', '081234566789', '303007', NULL, '-', 'SMA', '-', '7888111', 'uploads/beranda_img2/1658550646campus.png', 'PgtOXSqCkVyVPbWMzmaL1ZRaFIIse03FL7wQsXCk57RxN34C8iuYLE6V89ak', '$2y$10$DZAYsDTZOFnuSXuoNuEpZOT7ry2NTYEYWa4B9K9uTDO8Awx4AE4TS', NULL, NULL, '2022-06-29 04:59:35', '2022-07-22 21:30:46');
 
 -- --------------------------------------------------------
 
@@ -1679,7 +1683,12 @@ CREATE TABLE `xnxxes` (
 --
 
 INSERT INTO `xnxxes` (`id`, `kode_elemen`, `kriteria`, `user_id`, `unikom_id`, `unikom_name`, `asesmen_name`, `skema_name`, `skema_id`, `image`, `status`, `created_at`, `updated_at`, `data_register_id`, `kode`, `koreksi`, `unikom_kode`) VALUES
-(1072, '13818', '<p><u>-</u></p>', 38, 93, 'Merancang Pengalamatan Jaringan', '-', 'Network Administrator Muda', 18, 'uploads/formulir_apl2/1658480537WhatsApp Image 2022-07-10 at 22.56.56.jpeg', '<label class=\'badge badge-outline-success badge-pill\'>✔ Kompeten</label>', '2022-07-22 02:02:01', '2022-07-22 02:02:17', 3818, 138, '<label class=\'badge badge-outline-warning badge-pill\'>Belum Dikoreksi</label>', 'J.611000.004.01');
+(1088, '1338', NULL, 33, 113, 'Menerapkan Keselamatan Kerja dan  Kesehatan Kerja Serta Lingkungan Kerja', 'Elemen1', 'Asisten Kebun Kelapa Sawit', 8, 'uploads/formulir_apl2/1658754741DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'>✔ Kompeten</label>', '2022-07-25 06:11:24', '2022-07-25 06:14:00', 338, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'TAN. KS01.001.01'),
+(1089, '2338', NULL, 33, 114, 'Menerapkan Keselamatan Kerja dan  Kesehatan Kerja Serta Lingkungan Kerja', 'Elemen2', 'Asisten Kebun Kelapa Sawit', 8, 'uploads/formulir_apl2/1658754750DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'>✔ Kompeten</label>', '2022-07-25 06:11:24', '2022-07-25 06:14:15', 338, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'TAN. KS01.001.01'),
+(1090, '3338', NULL, 33, 115, 'Menerapkan Keselamatan Kerja dan  Kesehatan Kerja Serta Lingkungan Kerja', 'Elemen3', 'Asisten Kebun Kelapa Sawit', 8, 'uploads/formulir_apl2/1658754758DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'>✔ Kompeten</label>', '2022-07-25 06:11:24', '2022-07-25 06:14:23', 338, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'TAN. KS01.001.01'),
+(1091, '13310', NULL, 33, 110, 'Menerapkan dan memantau praktek kerja ramah lingkungan', 'Elemen1', 'Teknisi Laboratorium', 10, 'uploads/formulir_apl2/1658755908DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'><i class=\'fas fa-check-circle\'></i> Kompeten</label>', '2022-07-25 06:16:12', '2022-07-25 06:33:24', 3310, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'MSAENV472B'),
+(1092, '23310', NULL, 33, 111, 'Menerapkan dan memantau praktek kerja ramah lingkungan', 'Elemen2', 'Teknisi Laboratorium', 10, 'uploads/formulir_apl2/1658755916DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'><i class=\'fas fa-check-circle\'></i> Kompeten</label>', '2022-07-25 06:16:12', '2022-07-25 06:33:36', 3310, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'MSAENV472B'),
+(1093, '33310', NULL, 33, 112, 'Menerapkan dan memantau praktek kerja ramah lingkungan', 'Elemen3', 'Teknisi Laboratorium', 10, 'uploads/formulir_apl2/1658755928DOKUMEN.pdf', '<label class=\'badge badge-outline-success badge-pill\'><i class=\'fas fa-check-circle\'></i> Kompeten</label>', '2022-07-25 06:16:13', '2022-07-25 06:33:48', 3310, 0, '<label class=\'badge badge-outline-info badge-pill\'>Valid</label>', 'MSAENV472B');
 
 --
 -- Indexes for dumped tables
@@ -2256,7 +2265,7 @@ ALTER TABLE `unikoms`
 -- AUTO_INCREMENT for table `upload_files`
 --
 ALTER TABLE `upload_files`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=810;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=830;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -2274,7 +2283,7 @@ ALTER TABLE `verifikasi_skemas`
 -- AUTO_INCREMENT for table `xnxxes`
 --
 ALTER TABLE `xnxxes`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1079;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1094;
 
 --
 -- Constraints for dumped tables
