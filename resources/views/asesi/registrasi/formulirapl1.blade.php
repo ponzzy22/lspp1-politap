@@ -25,9 +25,10 @@
             </div>
             <div id="collapse-1111111" class="" role="tabpanel" aria-labelledby="heading-11"
                 data-parent="#accordion-4">
-                {{-- <form action="{{ route('registrasi.update', $data->id) }}" method="post" enctype="multipart/form-data"> --}}
-                    {{-- @csrf --}}
-                    {{-- @method('put') --}}
+                <form action="{{ route('registrasi.update', $data->id) }}" method="post"
+                    enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         </button>
@@ -46,13 +47,48 @@
                         <input type="hidden" name="status" value="<h4 style='color: green'>Menunggu Validasi...</h4>">
                     </div>
                     <div class="modal-footer">
-                        <button data-toggle="modal" data-target="#exampleModal-12" type="submit" class="btn btn-rounded btn-success btn-block font-weight-bold">Kirim Data Pendaftaran
+                        <button type="submit" class="btn btn-rounded btn-success btn-block font-weight-bold">Kirim Data Pendaftaran
                             <i class="fas fa-flag-checkered"></i></button>
                     </div>
-                {{-- </form> --}}
+                </form>
             </div>
         </div>
     </div><br>
+    {{-- <--------------- MODAL KIRIM DATA ---------------> --}}
+    {{-- @foreach ($registrasi as $data)
+        <div class="modal fade" id="exampleModal-12" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form action="{{ route('registrasi.update', $data->id) }}" method="post"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('put')
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="ModalLabel">Kirim Data Pendaftaran</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Setelah mengirim data pendaftaran , maka data pendaftaran tidak dapat diedit kembali</p>
+                            <p>Apakah anda yakin ingin akan mengirim data pendaftaran ini ke Admin LSP-POLITAP?</p>
+                            <input type="hidden" name="skema_id"
+                                value="belom{{ $data->kode_skema }}{{ $data->user_id }}">
+                            <input type="hidden" name="status"
+                                value="<h4 style='color: green'>Menunggu Validasi...</h4>">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success btn-rounded btn-block font-weight-bold">Kirim Data
+                                Pendaftaran <i class="fas fa-flag-checkered"></i></button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    @endforeach --}}
+
 
     {{-- <-------------------- UPLOAD DOKUMEN 1 --------------------> --}}
     <div class="accordion accordion-solid-header" id="accordion-4" role="tablist">
@@ -340,40 +376,7 @@
         </div>
     </div>
 
-    {{-- <--------------- MODAL KIRIM DATA ---------------> --}}
-    @foreach ($registrasi as $data)
-        <div class="modal fade" id="exampleModal-12" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form action="{{ route('registrasi.update', $data->id) }}" method="post"
-                        enctype="multipart/form-data">
-                        @csrf
-                        @method('put')
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="ModalLabel">Kirim Data Pendaftaran</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Setelah mengirim data pendaftaran , maka data pendaftaran tidak dapat diedit kembali</p>
-                            <p>Apakah anda yakin ingin akan mengirim data pendaftaran ini ke Admin LSP-POLITAP?</p>
-                            <input type="hidden" name="skema_id"
-                                value="belom{{ $data->kode_skema }}{{ $data->user_id }}">
-                            <input type="hidden" name="status"
-                                value="<h4 style='color: green'>Menunggu Validasi...</h4>">
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-success btn-rounded btn-block font-weight-bold">Kirim Data
-                                Pendaftaran <i class="fas fa-flag-checkered"></i></button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    @endforeach
+
 
     {{-- <--------------- MODAL INSTRUKSI Formulir APL-02 ---------------> --}}
     <div class="modal fade" id="exampleModal-11" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
